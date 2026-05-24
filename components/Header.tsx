@@ -61,19 +61,19 @@ export default function Header() {
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
-          className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111] text-[#F5F5F5] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
+          className="relative z-10 inline-flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111] text-[#F5F5F5] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
         >
           <span className="sr-only">{isOpen ? "Menü schließen" : "Menü öffnen"}</span>
-          <span className="flex flex-col gap-1.5">
+          <span className="flex flex-col gap-[5px]">
             <span
-              className={`h-0.5 w-5 rounded-full bg-current transition ${
-                isOpen ? "translate-y-2 rotate-45" : ""
+              className={`h-px w-[18px] rounded-full bg-current transition ${
+                isOpen ? "translate-y-[6px] rotate-45" : ""
               }`}
             />
-            <span className={`h-0.5 w-5 rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
+            <span className={`h-px w-[18px] rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
             <span
-              className={`h-0.5 w-5 rounded-full bg-current transition ${
-                isOpen ? "-translate-y-2 -rotate-45" : ""
+              className={`h-px w-[18px] rounded-full bg-current transition ${
+                isOpen ? "-translate-y-[6px] -rotate-45" : ""
               }`}
             />
           </span>

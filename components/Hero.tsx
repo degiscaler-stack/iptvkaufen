@@ -100,13 +100,13 @@ export default function Hero() {
           <div className="absolute inset-x-8 -inset-y-7 -z-10 rounded-full bg-[#6BFF2A]/12 blur-3xl" />
           <Link
             href="#iptv-kaufen"
-            className="w-auto min-w-[260px] max-w-[330px] rounded-full bg-[#A6FF00] px-5 py-3 text-[13px] font-extrabold leading-none uppercase tracking-[0.16em] !text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] sm:min-w-0 sm:px-[22px] [&_*]:!text-[#000000]"
+            className="min-h-[48px] w-[calc(100%-48px)] max-w-[300px] rounded-full bg-[#A6FF00] px-5 py-2.5 text-[12px] font-extrabold leading-none uppercase tracking-[0.12em] !text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] sm:w-auto sm:min-w-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em] [&_*]:!text-[#000000]"
           >
             Jetzt IPTV Kaufen
           </Link>
           <Link
             href="#senderliste"
-            className="w-auto min-w-[260px] max-w-[330px] rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-5 py-3 text-[13px] font-extrabold leading-none uppercase tracking-[0.16em] text-[#F5F5F5] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_22px_rgba(107,255,42,0.16)] sm:min-w-0 sm:px-[22px]"
+            className="min-h-[48px] w-[calc(100%-48px)] max-w-[300px] rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-5 py-2.5 text-[12px] font-extrabold leading-none uppercase tracking-[0.10em] text-[#F5F5F5] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_22px_rgba(107,255,42,0.16)] sm:w-auto sm:min-w-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em]"
           >
             Senderliste Ansehen
           </Link>
