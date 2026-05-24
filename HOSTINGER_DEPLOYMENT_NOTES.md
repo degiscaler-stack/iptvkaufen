@@ -1,9 +1,6 @@
-Hostinger settings:
-Node version: 22.x or 20.x
+Hostinger static deployment settings:
 Install command: npm ci
 Build command: npm run build
-Start command: npm run start -- -p $PORT
-Output directory: .next
-Environment variables:
-NEXT_PUBLIC_SITE_NAME=iptvkaufenX
-NEXT_PUBLIC_SITE_URL=https://iptvkaufenx.de
+Output directory: out
+Start command: not needed for static hosting
+Environment variables: none required
