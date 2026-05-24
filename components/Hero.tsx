@@ -24,10 +24,10 @@ export default function Hero() {
     <section
       id="iptv-kaufen"
       aria-label="IPTV kaufen in Deutschland"
-      className="relative isolate flex min-h-[90vh] items-center justify-center overflow-hidden bg-[#050505] px-5 pb-20 pt-36 text-center sm:px-8 lg:px-10"
+      className="relative isolate flex min-h-[90vh] items-center justify-center overflow-hidden bg-[#050505] px-5 pb-16 pt-28 text-center sm:px-8 sm:pb-20 sm:pt-32 lg:px-10 lg:pt-36"
     >
       <div
-        className="absolute inset-0 -z-30 scale-[1.02] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 -z-30 scale-[1.02] bg-cover bg-no-repeat [background-position:38%_center] sm:[background-position:center_center]"
         style={{ backgroundImage: "url('/images/iptv-kaufen-hero-football.webp')" }}
       />
       <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
@@ -67,7 +67,7 @@ export default function Hero() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.65, ease: "easeOut" }}
-          className="mx-auto mb-5 inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-[#A6FF00] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]"
+          className="mx-auto mb-4 inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)] sm:mb-5 sm:px-4 sm:text-xs sm:tracking-[0.28em]"
         >
           Premium IPTV Deutschland
         </motion.p>
@@ -75,10 +75,10 @@ export default function Hero() {
         <motion.h1
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="text-balance text-[2.65rem] font-black leading-[0.95] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[3.35rem] md:text-[4.15rem] lg:text-[5.25rem]"
+          className="text-balance text-[2.55rem] font-black leading-[1] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[3.35rem] sm:leading-[0.95] md:text-[4.15rem] lg:text-[5.25rem]"
         >
           IPTV Kaufen in Deutschland
-          <span className="mt-3 block bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
+          <span className="mt-2 block bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none] sm:mt-3">
             Premium Streaming in Ultra HD
           </span>
         </motion.h1>
@@ -86,7 +86,7 @@ export default function Hero() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto mt-7 max-w-3xl text-pretty text-lg leading-8 text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:text-xl"
+          className="mx-auto mt-5 max-w-[92%] text-pretty text-base leading-[1.65] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:mt-7 sm:max-w-3xl sm:text-xl sm:leading-8"
         >
           Jetzt IPTV kaufen und über 22.000 Live-TV Sender, Filme, Serien und Fußball in HD, Full HD und
           4K auf allen Geräten genießen.
@@ -95,18 +95,18 @@ export default function Hero() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="relative mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4"
         >
           <div className="absolute inset-x-8 -inset-y-7 -z-10 rounded-full bg-[#6BFF2A]/12 blur-3xl" />
           <Link
             href="#iptv-kaufen"
-            className="w-full rounded-full bg-[#A6FF00] px-[22px] py-3 text-[13px] font-extrabold leading-none uppercase tracking-[0.16em] !text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] sm:w-auto [&_*]:!text-[#000000]"
+            className="w-auto min-w-[260px] max-w-[330px] rounded-full bg-[#A6FF00] px-5 py-3 text-[13px] font-extrabold leading-none uppercase tracking-[0.16em] !text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] sm:min-w-0 sm:px-[22px] [&_*]:!text-[#000000]"
           >
             Jetzt IPTV Kaufen
           </Link>
           <Link
             href="#senderliste"
-            className="w-full rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-[22px] py-3 text-[13px] font-extrabold leading-none uppercase tracking-[0.16em] text-[#F5F5F5] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_22px_rgba(107,255,42,0.16)] sm:w-auto"
+            className="w-auto min-w-[260px] max-w-[330px] rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-5 py-3 text-[13px] font-extrabold leading-none uppercase tracking-[0.16em] text-[#F5F5F5] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_22px_rgba(107,255,42,0.16)] sm:min-w-0 sm:px-[22px]"
           >
             Senderliste Ansehen
           </Link>
@@ -115,13 +115,13 @@ export default function Hero() {
         <motion.ul
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-2.5 sm:grid-cols-4"
+          className="mx-auto mt-11 grid max-w-[92%] grid-cols-2 gap-2 sm:mt-14 sm:max-w-3xl sm:grid-cols-4 sm:gap-2.5"
           aria-label="Vorteile von Premium IPTV"
         >
           {trustBadges.map((badge) => (
             <li
               key={badge}
-              className="rounded-2xl border border-[#1F1F1F]/90 bg-[#111111]/48 px-3 py-2 text-xs font-medium text-[#F5F5F5]/88 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] backdrop-blur-md transition duration-300 hover:border-[#A6FF00]/45 hover:text-[#F5F5F5]"
+              className="rounded-2xl border border-[#1F1F1F]/90 bg-[#111111]/48 px-2.5 py-2 text-[11px] font-medium text-[#F5F5F5]/88 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] backdrop-blur-md transition duration-300 hover:border-[#A6FF00]/45 hover:text-[#F5F5F5] sm:px-3 sm:text-xs"
             >
               {badge}
             </li>

@@ -19,12 +19,12 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#1F1F1F] bg-[#050505]">
-      <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:h-[88px] lg:px-10">
         <Link href="#" aria-label="Startseite" className="group relative z-10 flex items-center">
           <img
             src="/brand/iptv-kaufen-logo.webp"
             alt="IPTV Kaufen Logo"
-            className="h-auto w-[160px] transition duration-300 group-hover:drop-shadow-[0_0_14px_rgba(166,255,0,0.24)] lg:w-[230px]"
+            className="h-auto w-[150px] transition duration-300 group-hover:drop-shadow-[0_0_14px_rgba(166,255,0,0.24)] lg:w-[230px]"
           />
         </Link>
 
@@ -61,7 +61,7 @@ export default function Header() {
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
-          className="relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111] text-[#F5F5F5] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
+          className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111] text-[#F5F5F5] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
         >
           <span className="sr-only">{isOpen ? "Menü schließen" : "Menü öffnen"}</span>
           <span className="flex flex-col gap-1.5">
