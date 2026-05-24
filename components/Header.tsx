@@ -94,7 +94,7 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`rounded-md px-3 py-2 text-[14px] font-bold leading-[1.1] transition ${
+                className={`rounded-md px-3 py-[7px] text-[13px] font-medium leading-[1.15] tracking-[0.01em] transition ${
                   item.active
                     ? "bg-[#A6FF00]/5 text-[#A6FF00]"
                     : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
