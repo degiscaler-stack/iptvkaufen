@@ -61,18 +61,18 @@ export default function Header() {
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
-          className="relative z-10 inline-flex h-9 w-9 items-center justify-center border-0 bg-transparent p-0 text-[#A6FF00] shadow-none outline-none transition hover:bg-transparent hover:text-[#A6FF00] focus:bg-transparent focus:outline-none active:bg-transparent lg:hidden"
+          className="relative z-10 inline-flex h-8 w-8 items-center justify-center border-0 bg-transparent p-0 text-[#A6FF00] shadow-none outline-none transition hover:bg-transparent hover:text-[#A6FF00] focus:bg-transparent focus:outline-none active:bg-transparent lg:hidden"
         >
           <span className="sr-only">{isOpen ? "Menü schließen" : "Menü öffnen"}</span>
-          <span className="flex flex-col gap-[6px]">
+          <span className="flex flex-col gap-[5px]">
             <span
-              className={`h-px w-[26px] rounded-full bg-current transition ${
+              className={`h-0.5 w-5 rounded-full bg-current transition ${
                 isOpen ? "translate-y-[7px] rotate-45" : ""
               }`}
             />
-            <span className={`h-px w-[26px] rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
+            <span className={`h-0.5 w-5 rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
             <span
-              className={`h-px w-[26px] rounded-full bg-current transition ${
+              className={`h-0.5 w-5 rounded-full bg-current transition ${
                 isOpen ? "-translate-y-[7px] -rotate-45" : ""
               }`}
             />
@@ -94,9 +94,9 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`rounded-xl px-4 py-2.5 text-[20px] font-bold leading-[1.2] transition ${
+                className={`rounded-lg px-3.5 py-3.5 text-[18px] font-bold leading-[1.15] transition ${
                   item.active
-                    ? "bg-[#A6FF00]/8 text-[#A6FF00]"
+                    ? "bg-[#A6FF00]/7 text-[#A6FF00]"
                     : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
                 }`}
               >
@@ -106,7 +106,7 @@ export default function Header() {
             <Link
               href="#iptv-kaufen"
               onClick={() => setIsOpen(false)}
-              className="mx-auto mt-4 inline-flex min-h-[46px] w-[calc(100%_-_80px)] max-w-[300px] items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-center text-[12px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
+              className="mx-auto mt-4 inline-flex min-h-10 w-[calc(100%_-_110px)] max-w-[260px] items-center justify-center rounded-full bg-[#A6FF00] px-[18px] py-2 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
             >
               Jetzt IPTV Kaufen
             </Link>
