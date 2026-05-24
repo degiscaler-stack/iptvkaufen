@@ -86,17 +86,17 @@ export default function Header() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
           aria-label="Mobile Navigation"
-          className="border-t border-[#1F1F1F] bg-[#050505] px-5 pb-6 pt-3 lg:hidden"
+          className="border-t border-[#1F1F1F] bg-[#050505] px-5 pb-5 pt-2 lg:hidden"
         >
-          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+          <div className="mx-auto flex max-w-7xl flex-col gap-0.5">
             {navigation.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`rounded-lg px-3 py-3 text-[17px] font-bold leading-[1.15] transition ${
+                className={`rounded-md px-3 py-2 text-[14px] font-bold leading-[1.1] transition ${
                   item.active
-                    ? "bg-[#A6FF00]/6 text-[#A6FF00]"
+                    ? "bg-[#A6FF00]/5 text-[#A6FF00]"
                     : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
                 }`}
               >
@@ -106,7 +106,7 @@ export default function Header() {
             <Link
               href="#iptv-kaufen"
               onClick={() => setIsOpen(false)}
-              className="mx-auto mt-4 inline-flex min-h-[38px] w-[calc(100%_-_120px)] max-w-[250px] items-center justify-center rounded-full bg-[#A6FF00] px-4 py-2 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
+              className="mx-auto mt-3 inline-flex min-h-9 w-[calc(100%_-_140px)] max-w-[230px] items-center justify-center rounded-full bg-[#A6FF00] px-3.5 py-[7px] text-center text-[10.5px] font-extrabold leading-none uppercase tracking-[0.09em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
             >
               Jetzt IPTV Kaufen
             </Link>
