@@ -21,9 +21,9 @@ export default function Hero() {
         className="absolute inset-0 -z-30 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/iptv-kaufen-hero-football.webp')" }}
       />
-      <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(5,5,5,0.64)_0%,rgba(5,5,5,0.78)_46%,#050505_100%)]" />
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_38%,rgba(107,255,42,0.22),transparent_34rem)]" />
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.22)_42%,rgba(5,5,5,0.92)_100%)]" />
+      <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(5,5,5,0.34)_0%,rgba(5,5,5,0.48)_46%,rgba(5,5,5,0.86)_100%)]" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_38%,rgba(107,255,42,0.14),transparent_34rem)]" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.68)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-[#050505] to-transparent" />
 
       <motion.div

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -22,13 +21,10 @@ export default function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#1F1F1F]/90 bg-[#0A0A0A]/55 backdrop-blur-2xl">
       <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link href="#" aria-label="Startseite" className="group relative z-10 flex items-center">
-          <Image
+          <img
             src="/brand/iptv-kaufen-logo.webp"
-            alt="IPTV Deutschland"
-            width={200}
-            height={64}
-            priority
-            className="h-auto w-[150px] transition duration-300 group-hover:drop-shadow-[0_0_18px_rgba(166,255,0,0.36)] lg:w-[200px]"
+            alt="IPTV Kaufen Logo"
+            className="h-auto w-[150px] transition duration-300 group-hover:drop-shadow-[0_0_18px_rgba(166,255,0,0.36)] lg:w-[210px]"
           />
         </Link>
 
