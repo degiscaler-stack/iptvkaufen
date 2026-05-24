@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#1F1F1F] bg-[#050505]">
-      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:h-[88px] lg:px-10">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:h-[88px] lg:max-w-[1360px] lg:px-12">
         <Link href="#" aria-label="Startseite" className="group relative z-10 flex items-center">
           <img
             src="/brand/iptv-kaufen-logo.webp"
@@ -28,7 +28,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav aria-label="Hauptnavigation" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Hauptnavigation" className="hidden items-center gap-7 lg:flex lg:gap-8">
           {navigation.map((item) => (
             <Link
               key={item.label}
@@ -50,7 +50,7 @@ export default function Header() {
         <div className="hidden items-center sm:flex">
           <Link
             href="#iptv-kaufen"
-            className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
+            className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] lg:px-4 lg:py-2 lg:text-[12px] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
           >
             Jetzt IPTV Kaufen
           </Link>
