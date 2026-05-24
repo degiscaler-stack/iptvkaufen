@@ -50,7 +50,7 @@ export default function Header() {
         <div className="hidden items-center sm:flex">
           <Link
             href="#iptv-kaufen"
-            className="rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.14em] text-[#000000] shadow-[0_0_18px_rgba(166,255,0,0.35)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(166,255,0,0.45)]"
+            className="rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-4 py-2.5 text-sm font-extrabold uppercase tracking-[0.14em] text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)]"
           >
             Jetzt IPTV Kaufen
           </Link>
@@ -106,7 +106,7 @@ export default function Header() {
             <Link
               href="#iptv-kaufen"
               onClick={() => setIsOpen(false)}
-              className="mt-4 rounded-full bg-[#A6FF00] px-5 py-3 text-center text-sm font-extrabold uppercase tracking-[0.14em] text-[#000000] shadow-[0_0_18px_rgba(166,255,0,0.35)] transition hover:shadow-[0_0_28px_rgba(166,255,0,0.45)]"
+              className="mt-4 rounded-full bg-[#A6FF00] px-4 py-2.5 text-center text-sm font-extrabold uppercase tracking-[0.14em] text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)]"
             >
               Jetzt IPTV Kaufen
             </Link>

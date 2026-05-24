@@ -46,7 +46,7 @@ export default function Hero() {
           className="text-balance text-5xl font-black tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)] sm:text-6xl md:text-7xl lg:text-8xl"
         >
           IPTV Kaufen in Deutschland
-          <span className="mt-3 block bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent">
+          <span className="mt-3 block bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
             Premium Streaming in Ultra HD
           </span>
         </motion.h1>
@@ -54,7 +54,7 @@ export default function Hero() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto mt-7 max-w-3xl text-pretty text-lg leading-8 text-[#B8B8B8] sm:text-xl"
+          className="mx-auto mt-7 max-w-3xl text-pretty text-lg leading-8 text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:text-xl"
         >
           Jetzt IPTV kaufen und über 22.000 Live-TV Sender, Filme, Serien und Fußball in HD, Full HD und
           4K auf allen Geräten genießen.
@@ -67,13 +67,13 @@ export default function Hero() {
         >
           <Link
             href="#iptv-kaufen"
-            className="w-full rounded-full bg-[#A6FF00] px-8 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-[#000000] shadow-[0_0_18px_rgba(166,255,0,0.35)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_28px_rgba(166,255,0,0.45)] sm:w-auto"
+            className="w-full rounded-full bg-[#A6FF00] px-7 py-3.5 text-sm font-extrabold uppercase tracking-[0.16em] text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] sm:w-auto"
           >
             Jetzt IPTV Kaufen
           </Link>
           <Link
             href="#senderliste"
-            className="w-full rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-8 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-[#F5F5F5] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_36px_rgba(107,255,42,0.2)] sm:w-auto"
+            className="w-full rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-7 py-3.5 text-sm font-extrabold uppercase tracking-[0.16em] text-[#F5F5F5] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_22px_rgba(107,255,42,0.16)] sm:w-auto"
           >
             Senderliste Ansehen
           </Link>
