@@ -18,7 +18,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#1F1F1F]/90 bg-[#0A0A0A]/55 backdrop-blur-2xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#1F1F1F] bg-[#050505]">
       <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link href="#" aria-label="Startseite" className="group relative z-10 flex items-center">
           <img
@@ -50,7 +50,7 @@ export default function Header() {
         <div className="hidden items-center sm:flex">
           <Link
             href="#iptv-kaufen"
-            className="rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.14em] text-[#050505] shadow-[0_0_28px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#8DFF00] hover:shadow-[0_0_42px_rgba(166,255,0,0.5)]"
+            className="rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.14em] text-[#000000] shadow-[0_0_18px_rgba(166,255,0,0.35)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(166,255,0,0.45)]"
           >
             Jetzt IPTV Kaufen
           </Link>
@@ -61,7 +61,7 @@ export default function Header() {
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
-          className="relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111]/80 text-[#F5F5F5] shadow-[0_0_24px_rgba(107,255,42,0.12)] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
+          className="relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111] text-[#F5F5F5] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
         >
           <span className="sr-only">{isOpen ? "Menü schließen" : "Menü öffnen"}</span>
           <span className="flex flex-col gap-1.5">
@@ -86,7 +86,7 @@ export default function Header() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
           aria-label="Mobile Navigation"
-          className="border-t border-[#1F1F1F] bg-[#050505]/95 px-5 pb-6 pt-2 backdrop-blur-2xl lg:hidden"
+          className="border-t border-[#1F1F1F] bg-[#050505] px-5 pb-6 pt-2 lg:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navigation.map((item) => (
@@ -106,7 +106,7 @@ export default function Header() {
             <Link
               href="#iptv-kaufen"
               onClick={() => setIsOpen(false)}
-              className="mt-4 rounded-full bg-[#A6FF00] px-5 py-3 text-center text-sm font-extrabold uppercase tracking-[0.14em] text-[#050505] shadow-[0_0_34px_rgba(166,255,0,0.36)]"
+              className="mt-4 rounded-full bg-[#A6FF00] px-5 py-3 text-center text-sm font-extrabold uppercase tracking-[0.14em] text-[#000000] shadow-[0_0_18px_rgba(166,255,0,0.35)] transition hover:shadow-[0_0_28px_rgba(166,255,0,0.45)]"
             >
               Jetzt IPTV Kaufen
             </Link>
