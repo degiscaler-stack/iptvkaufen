@@ -24,7 +24,7 @@ export default function Header() {
           <img
             src="/brand/iptv-kaufen-logo.webp"
             alt="IPTV Kaufen Logo"
-            className="h-auto w-[150px] transition duration-300 group-hover:drop-shadow-[0_0_14px_rgba(166,255,0,0.24)] lg:w-[230px]"
+            className="h-auto w-[165px] transition duration-300 group-hover:drop-shadow-[0_0_14px_rgba(166,255,0,0.24)] lg:w-[230px]"
           />
         </Link>
 
@@ -50,7 +50,7 @@ export default function Header() {
         <div className="hidden items-center sm:flex">
           <Link
             href="#iptv-kaufen"
-            className="rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:!text-[#000000]"
+            className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
           >
             Jetzt IPTV Kaufen
           </Link>
@@ -61,18 +61,18 @@ export default function Header() {
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
-          className="relative z-10 inline-flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111] text-[#F5F5F5] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
+          className="relative z-10 inline-flex h-[46px] w-[46px] items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111] text-[#F5F5F5] transition hover:border-[#A6FF00]/70 hover:text-[#A6FF00] lg:hidden"
         >
           <span className="sr-only">{isOpen ? "Menü schließen" : "Menü öffnen"}</span>
           <span className="flex flex-col gap-[5px]">
             <span
-              className={`h-px w-[18px] rounded-full bg-current transition ${
+              className={`h-px w-5 rounded-full bg-current transition ${
                 isOpen ? "translate-y-[6px] rotate-45" : ""
               }`}
             />
-            <span className={`h-px w-[18px] rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
+            <span className={`h-px w-5 rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
             <span
-              className={`h-px w-[18px] rounded-full bg-current transition ${
+              className={`h-px w-5 rounded-full bg-current transition ${
                 isOpen ? "-translate-y-[6px] -rotate-45" : ""
               }`}
             />
@@ -106,7 +106,7 @@ export default function Header() {
             <Link
               href="#iptv-kaufen"
               onClick={() => setIsOpen(false)}
-              className="mt-4 rounded-full bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:!text-[#000000]"
+              className="mt-4 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
             >
               Jetzt IPTV Kaufen
             </Link>
