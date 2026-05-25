@@ -11,13 +11,13 @@ export default function PremiumExperience() {
   return (
     <section
       aria-labelledby="premium-experience-heading"
-      className="relative isolate overflow-hidden bg-[#050505] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-18"
+      className="relative isolate overflow-hidden bg-[#050505] px-5 pb-14 pt-8 sm:px-8 sm:pb-16 sm:pt-10 lg:px-10 lg:pb-[4.5rem] lg:pt-10"
     >
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_20%,rgba(166,255,0,0.08),transparent_30rem)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_82%_58%,rgba(30,76,110,0.16),transparent_34rem)]" />
       <div className="absolute inset-x-0 top-0 -z-10 h-px bg-[#1F1F1F]" />
 
-      <div className="mx-auto grid max-w-[1360px] items-center gap-10 lg:grid-cols-[1fr_0.96fr] lg:gap-14">
+      <div className="mx-auto grid max-w-[1360px] items-center gap-9 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
         <div className="max-w-2xl">
           <p className="mb-4 inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
             IPTV KAUFEN ERLEBNIS
@@ -25,12 +25,12 @@ export default function PremiumExperience() {
 
           <h2
             id="premium-experience-heading"
-            className="text-balance text-[2.15rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.85rem] lg:text-[3.35rem]"
+            className="text-balance text-[2rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.65rem] lg:text-[3rem]"
           >
             IPTV Kaufen für Premium Streaming in Deutschland
           </h2>
 
-          <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#F5F5F5]/86 sm:text-base">
+          <div className="mt-4 space-y-3.5 text-[15px] leading-7 text-[#F5F5F5]/86 sm:text-base">
             <p>
               Mit IPTV Kaufen genießen Sie Live-TV, Filme, Serien und Fußball in HD, Full HD und 4K.
               Das Streaming Erlebnis ist schnell, modern und für alle Geräte optimiert.
@@ -41,7 +41,7 @@ export default function PremiumExperience() {
             </p>
           </div>
 
-          <ul className="mt-7 grid gap-2.5 sm:grid-cols-2" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
+          <ul className="mt-6 grid gap-2 sm:grid-cols-2" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
             {highlights.map((highlight) => (
               <li
                 key={highlight}
@@ -55,7 +55,7 @@ export default function PremiumExperience() {
 
           <Link
             href="#iptv-kaufen"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-center text-[12px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.26)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(166,255,0,0.34)]"
+            className="mt-7 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-center text-[12px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.26)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(166,255,0,0.34)]"
           >
             JETZT IPTV KAUFEN
           </Link>
@@ -66,7 +66,7 @@ export default function PremiumExperience() {
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
               alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
-              className="aspect-[16/10] w-full object-cover"
+              className="aspect-video w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.02)_0%,rgba(5,5,5,0.16)_100%)]" />
           </div>
