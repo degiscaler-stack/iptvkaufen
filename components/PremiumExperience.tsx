@@ -25,7 +25,7 @@ export default function PremiumExperience() {
 
           <h2
             id="premium-experience-heading"
-            className="text-balance text-[1.92rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.52rem] lg:text-[2.85rem]"
+            className="text-balance text-[1.84rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[2.7rem]"
           >
             IPTV Kaufen für Premium Streaming in Deutschland
           </h2>
@@ -55,7 +55,7 @@ export default function PremiumExperience() {
 
           <Link
             href="#iptv-kaufen"
-            className="mt-6 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-center text-[12px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.26)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(166,255,0,0.34)]"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-[22px] py-3 text-center text-[12.5px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_15px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_21px_rgba(166,255,0,0.36)]"
           >
             JETZT IPTV KAUFEN
           </Link>
@@ -66,7 +66,7 @@ export default function PremiumExperience() {
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
               alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
-              className="aspect-[16/8.8] w-full object-cover"
+              className="aspect-[16/8.4] w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.02)_0%,rgba(5,5,5,0.16)_100%)]" />
           </div>
