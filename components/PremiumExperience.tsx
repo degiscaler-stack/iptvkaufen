@@ -11,7 +11,7 @@ export default function PremiumExperience() {
   return (
     <section
       aria-labelledby="premium-experience-heading"
-      className="relative isolate overflow-hidden bg-[#050505] px-5 pb-14 pt-8 sm:px-8 sm:pb-16 sm:pt-10 lg:px-10 lg:pb-[4.5rem] lg:pt-10"
+      className="relative isolate overflow-hidden bg-[#050505] px-5 pb-14 pt-7 sm:px-8 sm:pb-16 sm:pt-9 lg:px-10 lg:pb-[4.5rem] lg:pt-8"
     >
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_20%,rgba(166,255,0,0.08),transparent_30rem)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_82%_58%,rgba(30,76,110,0.16),transparent_34rem)]" />
@@ -25,7 +25,7 @@ export default function PremiumExperience() {
 
           <h2
             id="premium-experience-heading"
-            className="text-balance text-[2rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.65rem] lg:text-[3rem]"
+            className="text-balance text-[1.92rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.52rem] lg:text-[2.85rem]"
           >
             IPTV Kaufen für Premium Streaming in Deutschland
           </h2>
@@ -55,18 +55,18 @@ export default function PremiumExperience() {
 
           <Link
             href="#iptv-kaufen"
-            className="mt-7 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-center text-[12px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.26)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(166,255,0,0.34)]"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-center text-[12px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.26)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(166,255,0,0.34)]"
           >
             JETZT IPTV KAUFEN
           </Link>
         </div>
 
         <div className="relative lg:self-center">
-          <div className="relative overflow-hidden rounded-[26px] bg-[#111111] shadow-[0_18px_50px_rgba(0,0,0,0.34)]">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-[18px] lg:rounded-[20px] bg-[#111111] shadow-[0_16px_42px_rgba(0,0,0,0.3)]">
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
               alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
-              className="aspect-video w-full object-cover"
+              className="aspect-[16/8.8] w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.02)_0%,rgba(5,5,5,0.16)_100%)]" />
           </div>
