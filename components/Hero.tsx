@@ -24,7 +24,7 @@ export default function Hero() {
     <section
       id="iptv-kaufen"
       aria-label="IPTV kaufen in Deutschland"
-      className="relative isolate flex min-h-[90vh] items-center justify-center overflow-hidden bg-[#050505] px-5 pb-16 pt-28 text-center sm:px-8 sm:pb-20 sm:pt-32 lg:px-10 lg:pt-36"
+      className="relative isolate flex min-h-[90vh] items-center justify-center overflow-hidden bg-[#000000] px-5 pb-16 pt-28 text-center sm:px-8 sm:pb-20 sm:pt-32 lg:px-10 lg:pb-16 lg:pt-36"
     >
       <div
         className="absolute inset-0 -z-30 scale-[1.02] bg-cover bg-no-repeat [background-position:42%_center] sm:[background-position:center_center]"
@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_70%_18%,rgba(30,76,110,0.2),transparent_28rem)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.7)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-[#050505] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-[#000000] to-transparent" />
       <motion.div
         aria-hidden="true"
         initial={{ x: "-35%", opacity: 0 }}
