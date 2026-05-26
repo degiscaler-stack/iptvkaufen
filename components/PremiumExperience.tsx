@@ -11,7 +11,7 @@ export default function PremiumExperience() {
   return (
     <section
       aria-labelledby="premium-experience-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 lg:px-10 lg:pb-[4.5rem] lg:pt-5"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-14 pt-3 sm:px-8 sm:pb-16 sm:pt-8 lg:px-10 lg:pb-[4.5rem] lg:pt-5"
     >
       <div className="mx-auto grid max-w-[1380px] items-center gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:gap-12">
         <div className="max-w-[640px]">
