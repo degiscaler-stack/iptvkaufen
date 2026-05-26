@@ -62,7 +62,7 @@ export default function PremiumExperience() {
         </div>
 
         <div className="relative lg:-mr-5 lg:self-center">
-          <div className="relative overflow-hidden rounded-[10px] sm:rounded-xl lg:rounded-[12px] shadow-[0_24px_74px_rgba(0,0,0,0.42)] [clip-path:polygon(3%_0,100%_0,100%_94%,97%_100%,0_100%,0_4%)] lg:[clip-path:polygon(4%_0,100%_0,100%_92%,96%_100%,0_100%,0_5%)]">
+          <div className="relative overflow-hidden rounded-xl shadow-[0_24px_74px_rgba(0,0,0,0.42)] [clip-path:none] lg:rounded-none lg:[clip-path:polygon(7%_0,100%_0,93%_100%,0%_100%)]">
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
               alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
