@@ -13,7 +13,7 @@ export default function PremiumExperience() {
       aria-labelledby="premium-experience-heading"
       className="relative isolate overflow-hidden bg-[#050505] px-5 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 lg:px-10 lg:pb-[4.5rem] lg:pt-7"
     >
-      <div className="mx-auto grid max-w-[1360px] items-center gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12">
+      <div className="mx-auto grid max-w-[1380px] items-center gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:gap-12">
         <div className="max-w-[640px]">
           <p className="mb-4 inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-[9px] text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
             IPTV KAUFEN ERLEBNIS
@@ -23,7 +23,11 @@ export default function PremiumExperience() {
             id="premium-experience-heading"
             className="text-balance text-[1.84rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[2.7rem]"
           >
-            IPTV Kaufen für Premium Streaming in Deutschland
+            IPTV Kaufen für{" "}
+            <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
+              Premium Streaming
+            </span>{" "}
+            in Deutschland
           </h2>
 
           <div className="mt-4 max-w-[610px] space-y-3.5 text-[15px] leading-7 text-[#F5F5F5]/86 sm:text-base">
@@ -41,7 +45,7 @@ export default function PremiumExperience() {
             {highlights.map((highlight) => (
               <li
                 key={highlight}
-                className="flex items-center gap-2.5 rounded-2xl border border-[#1F1F1F]/90 bg-[#111111]/48 px-3.5 py-2.5 text-[13px] font-medium text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]"
+                className="flex items-center gap-2.5 rounded-xl border border-[#1F1F1F]/80 bg-[#111111]/42 px-3.5 py-2.5 text-[13px] font-medium text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00] shadow-[0_0_10px_rgba(166,255,0,0.25)]" />
                 {highlight}
@@ -57,14 +61,14 @@ export default function PremiumExperience() {
           </Link>
         </div>
 
-        <div className="relative lg:self-center">
-          <div className="relative overflow-hidden rounded-[14px] sm:rounded-2xl lg:rounded-[18px] bg-[#111111] shadow-[0_18px_54px_rgba(0,0,0,0.38)]">
+        <div className="relative lg:-mr-5 lg:self-center">
+          <div className="relative overflow-hidden rounded-[10px] sm:rounded-xl lg:rounded-[12px] shadow-[0_24px_74px_rgba(0,0,0,0.42)]">
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
               alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
-              className="aspect-[16/8.6] w-full object-cover"
+              className="aspect-[16/8.5] w-full object-cover"
             />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.03)_0%,rgba(5,5,5,0.18)_100%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.36)_0%,rgba(5,5,5,0.05)_28%,transparent_58%),linear-gradient(180deg,transparent_48%,rgba(5,5,5,0.28)_100%)]" />
           </div>
         </div>
       </div>
