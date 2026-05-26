@@ -13,10 +13,6 @@ export default function PremiumExperience() {
       aria-labelledby="premium-experience-heading"
       className="relative isolate overflow-hidden bg-[#050505] px-5 pb-14 pt-7 sm:px-8 sm:pb-16 sm:pt-9 lg:px-10 lg:pb-[4.5rem] lg:pt-8"
     >
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_20%,rgba(166,255,0,0.08),transparent_30rem)]" />
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_82%_58%,rgba(30,76,110,0.16),transparent_34rem)]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-px bg-[#1F1F1F]" />
-
       <div className="mx-auto grid max-w-[1360px] items-center gap-9 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
         <div className="max-w-2xl">
           <p className="mb-4 inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
