@@ -15,7 +15,7 @@ export default function PremiumExperience() {
     >
       <div className="mx-auto grid max-w-[1380px] items-center gap-5 sm:gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:gap-12">
         <div className="max-w-[640px]">
-          <p className="mb-4 inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-[9px] text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
+          <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/20 bg-[#111111]/45 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#A6FF00]/90 [text-shadow:none] sm:mb-4 sm:border-[#A6FF00]/30 sm:bg-[#111111]/70 sm:px-4 sm:py-[9px] sm:text-[11px] sm:font-bold sm:tracking-[0.24em] sm:text-[#A6FF00] sm:[text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
             IPTV KAUFEN ERLEBNIS
           </p>
 
@@ -41,11 +41,22 @@ export default function PremiumExperience() {
             </p>
           </div>
 
-          <ul className="mt-4 grid gap-2 sm:mt-6 sm:grid-cols-2 sm:gap-2.5" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
+          <div className="mt-4 sm:hidden">
+            <div className="relative overflow-hidden rounded-[12px] shadow-[0_16px_42px_rgba(0,0,0,0.36)]">
+              <img
+                src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
+                alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
+                className="h-auto w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.36)_0%,rgba(5,5,5,0.05)_28%,transparent_58%),linear-gradient(180deg,transparent_48%,rgba(5,5,5,0.28)_100%)]" />
+            </div>
+          </div>
+
+          <ul className="mt-3 grid gap-1.5 sm:mt-6 sm:grid-cols-2 sm:gap-2.5" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
             {highlights.map((highlight) => (
               <li
                 key={highlight}
-                className="flex items-center gap-2 rounded-xl border border-[#1F1F1F]/80 bg-[#111111]/42 px-3 py-2 text-[12.5px] font-medium leading-snug text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:text-[13px] sm:leading-normal"
+                className="flex items-center gap-2 rounded-xl border border-[#1F1F1F]/80 bg-[#111111]/42 px-2.5 py-1.5 text-[12px] font-medium leading-snug text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:text-[13px] sm:leading-normal"
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00] shadow-[0_0_10px_rgba(166,255,0,0.25)]" />
                 {highlight}
@@ -55,13 +66,13 @@ export default function PremiumExperience() {
 
           <Link
             href="#iptv-kaufen"
-            className="mt-4 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.09em] !text-[#000000] whitespace-nowrap shadow-[0_0_15px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_21px_rgba(166,255,0,0.36)] sm:mt-6 sm:px-[22px] sm:py-3 sm:text-[12.5px] sm:tracking-[0.10em]"
+            className="hidden items-center justify-center rounded-full bg-[#A6FF00] text-center font-extrabold leading-none uppercase !text-[#000000] whitespace-nowrap shadow-[0_0_15px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_21px_rgba(166,255,0,0.36)] sm:mt-6 sm:inline-flex sm:px-[22px] sm:py-3 sm:text-[12.5px] sm:tracking-[0.10em]"
           >
             JETZT IPTV KAUFEN
           </Link>
         </div>
 
-        <div className="relative lg:-mr-5 lg:self-center">
+        <div className="relative hidden sm:block lg:-mr-5 lg:self-center">
           <div className="relative overflow-hidden rounded-[14px] shadow-[0_24px_74px_rgba(0,0,0,0.42)]">
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
