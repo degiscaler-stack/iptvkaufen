@@ -13,7 +13,7 @@ export default function PremiumExperience() {
       aria-labelledby="premium-experience-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 pb-14 pt-3 sm:px-8 sm:pb-16 sm:pt-8 lg:px-10 lg:pb-[4.5rem] lg:pt-5"
     >
-      <div className="mx-auto grid max-w-[1380px] items-center gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:gap-12">
+      <div className="mx-auto grid max-w-[1380px] items-center gap-5 sm:gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:gap-12">
         <div className="max-w-[640px]">
           <p className="mb-4 inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-[9px] text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
             IPTV KAUFEN ERLEBNIS
@@ -21,7 +21,7 @@ export default function PremiumExperience() {
 
           <h2
             id="premium-experience-heading"
-            className="text-balance text-[1.84rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[2.7rem]"
+            className="text-balance text-[1.66rem] font-black leading-[1.04] tracking-[-0.045em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[2.7rem]"
           >
             IPTV Kaufen für{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
@@ -30,7 +30,7 @@ export default function PremiumExperience() {
             in Deutschland
           </h2>
 
-          <div className="mt-4 max-w-[610px] space-y-3.5 text-[15px] leading-7 text-[#F5F5F5]/86 sm:text-base">
+          <div className="mt-3 max-w-[610px] space-y-2.5 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:space-y-3.5 sm:text-base sm:leading-7">
             <p>
               Mit IPTV Kaufen genießen Sie Live-TV, Filme, Serien und Fußball in HD, Full HD und 4K.
               Das Streaming Erlebnis ist schnell, modern und für alle Geräte optimiert.
@@ -41,11 +41,11 @@ export default function PremiumExperience() {
             </p>
           </div>
 
-          <ul className="mt-6 grid gap-2.5 sm:grid-cols-2" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
+          <ul className="mt-4 grid gap-2 sm:mt-6 sm:grid-cols-2 sm:gap-2.5" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
             {highlights.map((highlight) => (
               <li
                 key={highlight}
-                className="flex items-center gap-2.5 rounded-xl border border-[#1F1F1F]/80 bg-[#111111]/42 px-3.5 py-2.5 text-[13px] font-medium text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
+                className="flex items-center gap-2 rounded-xl border border-[#1F1F1F]/80 bg-[#111111]/42 px-3 py-2 text-[12.5px] font-medium leading-snug text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:text-[13px] sm:leading-normal"
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00] shadow-[0_0_10px_rgba(166,255,0,0.25)]" />
                 {highlight}
@@ -55,7 +55,7 @@ export default function PremiumExperience() {
 
           <Link
             href="#iptv-kaufen"
-            className="mt-6 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-[22px] py-3 text-center text-[12.5px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_15px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_21px_rgba(166,255,0,0.36)]"
+            className="mt-4 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.09em] !text-[#000000] whitespace-nowrap shadow-[0_0_15px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_21px_rgba(166,255,0,0.36)] sm:mt-6 sm:px-[22px] sm:py-3 sm:text-[12.5px] sm:tracking-[0.10em]"
           >
             JETZT IPTV KAUFEN
           </Link>
