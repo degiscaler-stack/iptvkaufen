@@ -52,7 +52,7 @@ export default function PremiumExperience() {
             </div>
           </div>
 
-          <ul className="mt-3 grid gap-1.5 sm:mt-6 sm:grid-cols-2 sm:gap-2.5" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
+          <ul className="mt-5 grid gap-1.5 sm:mt-6 sm:grid-cols-2 sm:gap-2.5" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
             {highlights.map((highlight) => (
               <li
                 key={highlight}
