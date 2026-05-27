@@ -13,7 +13,7 @@ export default function PremiumExperience() {
       aria-labelledby="premium-experience-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 pb-14 pt-3 sm:px-8 sm:pb-16 sm:pt-8 lg:px-0 lg:pb-[4.5rem] lg:pt-5"
     >
-      <div className="mx-auto grid max-w-[1380px] items-center gap-5 sm:gap-8 lg:max-w-[1360px] lg:grid-cols-[0.86fr_1.14fr] lg:gap-12 lg:px-12">
+      <div className="mx-auto grid max-w-[1380px] items-center gap-5 sm:gap-8 lg:max-w-[1360px] lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-12">
         <div className="max-w-[640px]">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/20 bg-[#111111]/45 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#A6FF00]/90 [text-shadow:none] sm:mb-4 sm:border-[#A6FF00]/30 sm:bg-[#111111]/70 sm:px-4 sm:py-[9px] sm:text-[11px] sm:font-bold sm:tracking-[0.24em] sm:text-[#A6FF00] sm:[text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
             IPTV KAUFEN ERLEBNIS
@@ -72,7 +72,7 @@ export default function PremiumExperience() {
           </Link>
         </div>
 
-        <div className="relative hidden sm:block lg:-mr-5 lg:self-center">
+        <div className="relative hidden sm:block lg:self-center">
           <div className="relative overflow-hidden rounded-[14px] shadow-[0_24px_74px_rgba(0,0,0,0.42)]">
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
