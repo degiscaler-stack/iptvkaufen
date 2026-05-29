@@ -7,7 +7,6 @@
 <stop offset="1" stop-color="#E30613"/>
 </linearGradient>
 </defs>
-<rect width="160" height="64" rx="14" fill="#FFFFFF"/>
 <text x="47" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="30" font-weight="900" fill="url(#sky-buli-word)" letter-spacing="-2">sky</text>
 <rect x="76" y="19" width="62" height="27" rx="5" fill="#D20515"/>
 <text x="107" y="36" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="10.5" font-weight="900" fill="#FFFFFF" letter-spacing=".2">BUNDES</text>

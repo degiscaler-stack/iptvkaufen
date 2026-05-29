@@ -6,7 +6,6 @@
 <stop offset="1" stop-color="#B20710" stop-opacity="0"/>
 </linearGradient>
 </defs>
-<rect x="8" y="8" width="144" height="48" rx="16" fill="url(#netflix-glow)"/>
 <path d="M28 47V17h8.8l8.4 20.1V17H54v30h-8.5L37 26.8V47H28Z" fill="#E50914"/>
 <text x="95" y="40" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="23" font-weight="900" fill="#E50914" letter-spacing="1.4">NETFLIX</text>
 </svg>

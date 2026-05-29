@@ -8,7 +8,6 @@
 <stop offset="1" stop-color="#06D6A0"/>
 </linearGradient>
 </defs>
-<rect width="160" height="64" rx="14" fill="#F8F8F8"/>
 <path d="M32 17h36L53 47H32l11-22H32V17Z" fill="url(#prosieben-mark)"/>
 <text x="103" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="21" font-weight="900" fill="#202020" letter-spacing="-.4">ProSieben</text>
 <path d="M80 46h47" stroke="#E6007E" stroke-width="3" stroke-linecap="round"/>

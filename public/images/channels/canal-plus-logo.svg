@@ -12,7 +12,6 @@
 <stop offset="1" stop-color="#FF2D55"/>
 </linearGradient>
 </defs>
-<rect width="160" height="64" rx="14" fill="url(#canal-card)"/>
 <rect x="28" y="19" width="104" height="28" rx="3" fill="#FFFFFF"/>
 <text x="80" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="22" font-weight="900" fill="#050505" letter-spacing="1.2">CANAL+</text>
 <path d="M34 52h92" stroke="url(#canal-accent)" stroke-width="3" stroke-linecap="round"/>

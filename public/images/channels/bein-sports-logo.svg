@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64" role="img" aria-labelledby="bein-title">
-<title id="bein-title">beIN Sports</title>
+<title id="bein-title">beIN SPORT</title>
 <defs>
 <linearGradient id="bein-purple" x1="24" x2="136" y1="14" y2="50" gradientUnits="userSpaceOnUse">
 <stop stop-color="#5A1D85"/>
@@ -7,9 +7,8 @@
 <stop offset="1" stop-color="#B94BD8"/>
 </linearGradient>
 </defs>
-<rect width="160" height="64" rx="14" fill="url(#bein-purple)"/>
-<text x="63" y="40" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="29" font-weight="900" fill="#FFFFFF" letter-spacing="-1.4">beIN</text>
-<rect x="94" y="21" width="42" height="23" rx="4" fill="#FFFFFF"/>
-<text x="115" y="37" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="10.5" font-weight="900" fill="#5A1D85" letter-spacing=".4">SPORTS</text>
+<text x="63" y="40" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="29" font-weight="900" fill="url(#bein-purple)" letter-spacing="-1.4">beIN</text>
+<rect x="94" y="21" width="42" height="23" rx="4" fill="#5A1D85"/>
+<text x="115" y="37" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="10.5" font-weight="900" fill="#FFFFFF" letter-spacing=".4">SPORT</text>
 <path d="M34 49h92" stroke="#D9A7FF" stroke-width="3" stroke-linecap="round" opacity=".8"/>
 </svg>
