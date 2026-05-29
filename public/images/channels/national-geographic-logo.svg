@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="64" viewBox="0 0 180 64" role="img" aria-labelledby="national-geographic-title">
+<title id="national-geographic-title">National Geographic</title>
+<defs>
+<linearGradient id="natgeo-gold" x1="28" x2="58" y1="12" y2="52" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFE500"/>
+<stop offset="1" stop-color="#FFB800"/>
+</linearGradient>
+</defs>
+<rect x="30" y="15" width="25" height="34" fill="none" stroke="url(#natgeo-gold)" stroke-width="5"/>
+<text x="104" y="30" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing=".7">NATIONAL</text>
+<text x="108" y="44" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="14" font-weight="900" fill="#FFE500" letter-spacing=".4">GEOGRAPHIC</text>
+</svg>

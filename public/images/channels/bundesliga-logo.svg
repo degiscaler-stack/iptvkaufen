@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="64" viewBox="0 0 180 64" role="img" aria-labelledby="bundesliga-title">
+<title id="bundesliga-title">Bundesliga</title>
+<defs>
+<linearGradient id="bundesliga-red" x1="29" x2="79" y1="14" y2="50" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF173D"/>
+<stop offset="1" stop-color="#B40018"/>
+</linearGradient>
+<linearGradient id="bundesliga-text" x1="87" x2="153" y1="21" y2="44" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFFFFF"/>
+<stop offset="1" stop-color="#A6FF00"/>
+</linearGradient>
+</defs>
+<rect x="31" y="15" width="46" height="34" rx="5" fill="url(#bundesliga-red)"/>
+<circle cx="63" cy="29" r="5" fill="#FFFFFF"/>
+<path d="M43 41c10-4 17-10 22-21l4 3c-4 13-13 21-26 24v-6Z" fill="#FFFFFF"/>
+<text x="119" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="20" font-weight="900" fill="url(#bundesliga-text)" letter-spacing="-1">Bundesliga</text>
+</svg>

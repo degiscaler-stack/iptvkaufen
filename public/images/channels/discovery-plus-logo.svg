@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="64" viewBox="0 0 180 64" role="img" aria-labelledby="discovery-plus-title">
+<title id="discovery-plus-title">Discovery+</title>
+<defs>
+<linearGradient id="discovery-plus-ring" x1="31" x2="65" y1="14" y2="50" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00AEEF"/>
+<stop offset=".48" stop-color="#A6FF00"/>
+<stop offset="1" stop-color="#6B3CFF"/>
+</linearGradient>
+<linearGradient id="discovery-plus-text" x1="65" x2="153" y1="22" y2="42" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFFFFF"/>
+<stop offset=".5" stop-color="#75E6FF"/>
+<stop offset="1" stop-color="#A6FF00"/>
+</linearGradient>
+</defs>
+<circle cx="46" cy="32" r="17" fill="none" stroke="url(#discovery-plus-ring)" stroke-width="6"/>
+<path d="M35 28c7-7 18-7 25 0-5 2-10 5-14 10-4-4-8-7-11-10Z" fill="#1BC7FF" opacity=".9"/>
+<text x="108" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="21" font-weight="900" fill="url(#discovery-plus-text)" letter-spacing="-1">discovery+</text>
+</svg>
