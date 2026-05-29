@@ -9,6 +9,6 @@
 </linearGradient>
 </defs>
 <path d="M32 17h36L53 47H32l11-22H32V17Z" fill="url(#prosieben-mark)"/>
-<text x="103" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="21" font-weight="900" fill="#202020" letter-spacing="-.4">ProSieben</text>
+<text x="103" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="21" font-weight="900" fill="#F8FAFC" letter-spacing="-.4">ProSieben</text>
 <path d="M80 46h47" stroke="#E6007E" stroke-width="3" stroke-linecap="round"/>
 </svg>

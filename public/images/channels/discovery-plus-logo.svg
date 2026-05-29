@@ -3,13 +3,13 @@
 <defs>
 <linearGradient id="discovery-plus-ring" x1="31" x2="65" y1="14" y2="50" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00AEEF"/>
-<stop offset=".48" stop-color="#A6FF00"/>
+<stop offset=".48" stop-color="#22D3EE"/>
 <stop offset="1" stop-color="#6B3CFF"/>
 </linearGradient>
 <linearGradient id="discovery-plus-text" x1="65" x2="153" y1="22" y2="42" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FFFFFF"/>
 <stop offset=".5" stop-color="#75E6FF"/>
-<stop offset="1" stop-color="#A6FF00"/>
+<stop offset="1" stop-color="#C4B5FD"/>
 </linearGradient>
 </defs>
 <circle cx="46" cy="32" r="17" fill="none" stroke="url(#discovery-plus-ring)" stroke-width="6"/>

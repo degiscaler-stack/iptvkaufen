@@ -8,7 +8,7 @@ const topLogoRow = [
   { name: "Sky Sport", src: "/images/channels/sky-sport-logo.svg" },
   { name: "Sky Bundesliga", src: "/images/channels/sky-bundesliga-logo.svg" },
   { name: "Bundesliga", src: "/images/channels/bundesliga-logo.svg" },
-  { name: "Champions Sports", src: "/images/channels/champions-league-style-logo.svg" },
+  { name: "Champions League", src: "/images/channels/champions-league-style-logo.svg" },
   { name: "Eurosport", src: "/images/channels/eurosport-logo.svg" },
   { name: "SPORT1", src: "/images/channels/sport1-logo.svg" },
 ];
@@ -45,18 +45,18 @@ function LogoMarqueeRow({
           <div
             key={setIndex}
             aria-hidden={setIndex === 1}
-            className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4 lg:gap-5 lg:pr-5"
+            className="flex shrink-0 items-center gap-2 pr-2 sm:gap-3 sm:pr-3 lg:gap-3 lg:pr-3"
           >
             {logos.map((logo) => (
               <span
                 key={`${setIndex}-${logo.name}`}
-                className="channel-logo-shell relative isolate flex h-14 w-[100px] shrink-0 items-center justify-center sm:h-16 sm:w-[116px] lg:h-[4.35rem] lg:w-[138px]"
+                className="channel-logo-shell relative isolate flex h-16 w-[116px] shrink-0 items-center justify-center sm:h-[4.5rem] sm:w-[132px] lg:h-20 lg:w-40"
               >
                 <img
                   src={logo.src}
                   alt={`${logo.name} Logo`}
                   loading="lazy"
-                  className="relative z-10 max-h-11 w-auto max-w-full object-contain sm:max-h-12 lg:max-h-[3.2rem]"
+                  className="relative z-10 max-h-[3.25rem] w-auto max-w-full object-contain sm:max-h-[3.55rem] lg:max-h-[3.8rem]"
                 />
               </span>
             ))}
@@ -74,9 +74,6 @@ export default function ChannelLogos() {
       aria-labelledby="channel-logos-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 py-14 sm:px-8 sm:py-16 lg:px-0 lg:py-[4.5rem]"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/35 to-transparent" />
-      <div className="pointer-events-none absolute left-1/2 top-12 -z-20 h-72 w-72 -translate-x-1/2 rounded-full bg-[#A6FF00]/7 blur-3xl" />
-
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/60 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-[#A6FF00] sm:mb-4 sm:px-4 sm:py-2 sm:text-[11px]">
@@ -94,9 +91,7 @@ export default function ChannelLogos() {
           </p>
         </div>
 
-        <div className="relative mt-8 space-y-4 py-5 sm:mt-10 sm:space-y-5 sm:py-7">
-          <div className="pointer-events-none absolute inset-x-4 top-1/2 -z-10 h-44 -translate-y-1/2 rounded-full bg-[#A6FF00]/10 blur-3xl sm:inset-x-16 sm:h-56" />
-          <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-[#A6FF00]/35 to-transparent" />
+        <div className="relative mt-8 space-y-2 py-4 sm:mt-10 sm:space-y-3 sm:py-5">
           <LogoMarqueeRow logos={topLogoRow} direction="left" />
           <LogoMarqueeRow logos={bottomLogoRow} direction="right" />
         </div>
@@ -134,24 +129,10 @@ export default function ChannelLogos() {
             animation: channel-marquee-right 54s linear infinite;
           }
 
-          .channel-logo-shell::before {
-            content: "";
-            position: absolute;
-            inset: 18% 8%;
-            border-radius: 999px;
-            background:
-              radial-gradient(circle at 50% 50%, rgba(245, 245, 245, 0.18), transparent 56%),
-              radial-gradient(circle at 50% 50%, rgba(166, 255, 0, 0.16), transparent 70%);
-            filter: blur(12px);
-            opacity: 0.8;
-            transform: translateZ(0);
-          }
-
           .channel-logo-shell img {
             filter:
-              drop-shadow(0 0 8px rgba(245, 245, 245, 0.2))
-              drop-shadow(0 10px 20px rgba(0, 0, 0, 0.55))
-              drop-shadow(0 0 18px rgba(166, 255, 0, 0.12));
+              drop-shadow(0 1px 0 rgba(255, 255, 255, 0.2))
+              drop-shadow(0 12px 18px rgba(0, 0, 0, 0.72));
             will-change: transform;
           }
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64" role="img" aria-labelledby="eurosport-title">
 <title id="eurosport-title">Eurosport</title>
-<text x="85" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="23" font-weight="900" fill="#1D3F91" letter-spacing="-.7">Eurosport</text>
+<text x="85" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="23" font-weight="900" fill="#6EA8FF" letter-spacing="-.7">Eurosport</text>
 <path d="M34 23l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L34 23Z" fill="#E30613"/>
-<path d="M110 46c12-2 22-8 28-18" fill="none" stroke="#E30613" stroke-width="3" stroke-linecap="round"/>
+<path d="M110 46c12-2 22-8 28-18" fill="none" stroke="#FF384D" stroke-width="3" stroke-linecap="round"/>
 </svg>

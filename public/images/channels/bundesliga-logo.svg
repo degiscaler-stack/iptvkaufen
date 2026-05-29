@@ -7,7 +7,7 @@
 </linearGradient>
 <linearGradient id="bundesliga-text" x1="87" x2="153" y1="21" y2="44" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FFFFFF"/>
-<stop offset="1" stop-color="#A6FF00"/>
+<stop offset="1" stop-color="#FCA5A5"/>
 </linearGradient>
 </defs>
 <rect x="31" y="15" width="46" height="34" rx="5" fill="url(#bundesliga-red)"/>

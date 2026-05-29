@@ -2,13 +2,13 @@
 <title id="bbc-title">BBC</title>
 <defs>
 <linearGradient id="bbc-tile" x1="22" x2="138" y1="18" y2="46" gradientUnits="userSpaceOnUse">
-<stop stop-color="#2A2A2A"/>
-<stop offset=".52" stop-color="#050505"/>
-<stop offset="1" stop-color="#123300"/>
+<stop stop-color="#334155"/>
+<stop offset=".52" stop-color="#111827"/>
+<stop offset="1" stop-color="#1E3A8A"/>
 </linearGradient>
 <linearGradient id="bbc-accent" x1="25" x2="135" y1="50" y2="50" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00AEEF"/>
-<stop offset=".5" stop-color="#A6FF00"/>
+<stop offset=".5" stop-color="#F8FAFC"/>
 <stop offset="1" stop-color="#FF2D55"/>
 </linearGradient>
 </defs>

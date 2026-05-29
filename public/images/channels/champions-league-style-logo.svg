@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="190" height="64" viewBox="0 0 190 64" role="img" aria-labelledby="champions-style-title">
-<title id="champions-style-title">Champions League Style Sports</title>
+<title id="champions-style-title">Champions League</title>
 <defs>
 <radialGradient id="champions-ball" cx="50%" cy="48%" r="58%">
 <stop stop-color="#FFFFFF"/>
@@ -9,12 +9,11 @@
 <linearGradient id="champions-word" x1="80" x2="164" y1="21" y2="45" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FFFFFF"/>
 <stop offset=".55" stop-color="#75E6FF"/>
-<stop offset="1" stop-color="#A6FF00"/>
+<stop offset="1" stop-color="#C4B5FD"/>
 </linearGradient>
 </defs>
 <circle cx="49" cy="32" r="18" fill="none" stroke="url(#champions-ball)" stroke-width="3"/>
 <path d="M49 15 54 27h13L56 34l4 13-11-8-11 8 4-13-11-7h13l5-12Z" fill="url(#champions-ball)"/>
-<circle cx="49" cy="32" r="26" fill="none" stroke="#A6FF00" stroke-opacity=".18" stroke-width="2"/>
 <text x="123" y="31" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="15" font-weight="900" fill="url(#champions-word)" letter-spacing=".8">CHAMPIONS</text>
-<text x="123" y="45" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="12" font-weight="900" fill="#69D7FF" letter-spacing="2.1">SPORTS</text>
+<text x="123" y="45" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="12" font-weight="900" fill="#69D7FF" letter-spacing="2.1">LEAGUE</text>
 </svg>

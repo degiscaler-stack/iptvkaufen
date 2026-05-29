@@ -4,10 +4,10 @@
 <linearGradient id="warner-tv-shield" x1="36" x2="76" y1="13" y2="51" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00AEEF"/>
 <stop offset=".5" stop-color="#3467FF"/>
-<stop offset="1" stop-color="#A6FF00"/>
+<stop offset="1" stop-color="#C4B5FD"/>
 </linearGradient>
 </defs>
 <path d="M57 13 78 20v14c0 13-9 21-21 27-12-6-21-14-21-27V20l21-7Z" fill="url(#warner-tv-shield)"/>
-<text x="57" y="38" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="17" font-weight="900" fill="#050505">W</text>
+<text x="57" y="38" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="17" font-weight="900" fill="#F8FAFC">W</text>
 <text x="115" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="24" font-weight="900" fill="#FFFFFF" letter-spacing=".4">Warner TV</text>
 </svg>

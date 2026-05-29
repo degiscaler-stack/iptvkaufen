@@ -4,7 +4,7 @@
 <linearGradient id="paramount-plus-blue" x1="29" x2="151" y1="16" y2="48" gradientUnits="userSpaceOnUse">
 <stop stop-color="#0075FF"/>
 <stop offset=".55" stop-color="#00C8FF"/>
-<stop offset="1" stop-color="#A6FF00"/>
+<stop offset="1" stop-color="#F8FAFC"/>
 </linearGradient>
 </defs>
 <path d="M45 44 59 20l14 24H45Z" fill="url(#paramount-plus-blue)"/>
