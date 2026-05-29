@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64">
-<rect width="160" height="64" rx="14" fill="#0B0B0B"/>
-<rect x=".5" y=".5" width="159" height="63" rx="13.5" fill="none" stroke="#1F1F1F"/>
-<text x="80" y="38" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="900" fill="#F5F5F5" letter-spacing="1.5">ZDF</text>
-<path d="M58 48h44" stroke="#A6FF00" stroke-width="2" stroke-linecap="round" opacity=".72"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64" role="img" aria-labelledby="zdf-title">
+<title id="zdf-title">ZDF</title>
+<rect width="160" height="64" rx="14" fill="#FFF5EC"/>
+<circle cx="46" cy="32" r="19" fill="#FF7A00"/>
+<path d="M35 41l15-18H36v-5h22v4.2L43.1 40H59v5H35v-4Z" fill="#FFFFFF"/>
+<text x="101" y="40" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="29" font-weight="900" fill="#FF7A00" letter-spacing="1.6">ZDF</text>
+<path d="M76 47h49" stroke="#FFB000" stroke-width="3" stroke-linecap="round"/>
 </svg>

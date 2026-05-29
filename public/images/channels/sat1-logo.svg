@@ -1,6 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64">
-<rect width="160" height="64" rx="14" fill="#0B0B0B"/>
-<rect x=".5" y=".5" width="159" height="63" rx="13.5" fill="none" stroke="#1F1F1F"/>
-<text x="80" y="38" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="900" fill="#F5F5F5" letter-spacing="1">SAT.1</text>
-<path d="M56 48h48" stroke="#A6FF00" stroke-width="2" stroke-linecap="round" opacity=".72"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64" role="img" aria-labelledby="sat1-title">
+<title id="sat1-title">SAT.1</title>
+<defs>
+<linearGradient id="sat1-orb" x1="27" x2="67" y1="15" y2="50" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF512F"/>
+<stop offset=".45" stop-color="#F9D423"/>
+<stop offset="1" stop-color="#23D5AB"/>
+</linearGradient>
+</defs>
+<rect width="160" height="64" rx="14" fill="#F7FAFF"/>
+<circle cx="48" cy="32" r="18" fill="url(#sat1-orb)"/>
+<path d="M36 35c9-3 19-9 25-18 3 13-4 25-16 31-2-5-5-9-9-13Z" fill="#2456FF" opacity=".9"/>
+<text x="101" y="40" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="28" font-weight="900" fill="#243B8F" letter-spacing=".8">SAT.1</text>
 </svg>

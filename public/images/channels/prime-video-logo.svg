@@ -1,6 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64">
-<rect width="160" height="64" rx="14" fill="#0B0B0B"/>
-<rect x=".5" y=".5" width="159" height="63" rx="13.5" fill="none" stroke="#1F1F1F"/>
-<text x="80" y="38" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#F5F5F5" letter-spacing=".2">Prime Video</text>
-<path d="M48 48h64" stroke="#A6FF00" stroke-width="2" stroke-linecap="round" opacity=".72"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64" role="img" aria-labelledby="prime-title">
+<title id="prime-title">Prime Video</title>
+<defs>
+<linearGradient id="prime-blue" x1="28" x2="132" y1="18" y2="46" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A8E1"/>
+<stop offset="1" stop-color="#1A73E8"/>
+</linearGradient>
+</defs>
+<text x="78" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="800" fill="url(#prime-blue)" letter-spacing="-.5">prime</text>
+<text x="99" y="47" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#EAF8FF" letter-spacing="2.3">VIDEO</text>
+<path d="M43 45c22 11 52 10 78-6" fill="none" stroke="#00A8E1" stroke-width="3" stroke-linecap="round"/>
+<path d="M121 39l-9 1.6 5.4 7.1" fill="#00A8E1"/>
 </svg>

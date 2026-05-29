@@ -1,6 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64">
-<rect width="160" height="64" rx="14" fill="#0B0B0B"/>
-<rect x=".5" y=".5" width="159" height="63" rx="13.5" fill="none" stroke="#1F1F1F"/>
-<text x="80" y="38" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="900" fill="#F5F5F5" letter-spacing=".4">Apple TV+</text>
-<path d="M51 48h58" stroke="#A6FF00" stroke-width="2" stroke-linecap="round" opacity=".72"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="64" viewBox="0 0 160 64" role="img" aria-labelledby="apple-title">
+<title id="apple-title">Apple TV+</title>
+<defs>
+<linearGradient id="apple-card" x1="22" x2="138" y1="10" y2="54" gradientUnits="userSpaceOnUse">
+<stop stop-color="#111111"/>
+<stop offset=".55" stop-color="#2F2F35"/>
+<stop offset="1" stop-color="#000000"/>
+</linearGradient>
+<linearGradient id="apple-accent" x1="42" x2="118" y1="48" y2="48" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00D5FF"/>
+<stop offset=".5" stop-color="#8A5CFF"/>
+<stop offset="1" stop-color="#FF2D55"/>
+</linearGradient>
+</defs>
+<rect width="160" height="64" rx="14" fill="url(#apple-card)"/>
+<path d="M47 24c2.2-2.9 5.1-3.2 6.1-3.2.2 3-1.5 5.1-3 6.3-1.6 1.3-3.4 1.5-4.2 1.4-.2-1.5.3-3.2 1.1-4.5Z" fill="#F5F5F5"/>
+<path d="M45.6 29.8c2.1 0 3.1 1.2 4.8 1.2 1.6 0 2.4-1.2 4.8-1.2 2 0 4.1 1.1 5.2 3-4.6 2.5-3.8 9.1.8 10.8-.9 2.5-3.1 5.9-5.7 5.9-1.7 0-2.4-1.1-4.7-1.1-2.2 0-3.1 1.1-4.7 1.1-2.7.1-6.4-5.5-6.4-11.1 0-5 3-8.6 5.9-8.6Z" fill="#F5F5F5"/>
+<text x="94" y="41" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="24" font-weight="900" fill="#F5F5F5" letter-spacing="-.6">tv+</text>
+<path d="M43 53h75" stroke="url(#apple-accent)" stroke-width="3" stroke-linecap="round"/>
 </svg>
