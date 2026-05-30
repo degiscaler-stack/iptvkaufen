@@ -10,5 +10,5 @@
 <text x="63" y="40" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="29" font-weight="900" fill="url(#bein-purple)" letter-spacing="-1.4">beIN</text>
 <rect x="92" y="21" width="48" height="23" rx="4" fill="#5A1D85"/>
 <text x="116" y="37" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="9.8" font-weight="900" fill="#FFFFFF" letter-spacing=".25">SPORTS</text>
-<path d="M34 49h92" stroke="#D9A7FF" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+<path d="M34 49h92" stroke="#D9A7FF" stroke-width="3" stroke-linecap="round"/>
 </svg>

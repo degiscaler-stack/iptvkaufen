@@ -12,9 +12,9 @@
 <stop offset="1" stop-color="#FF2D55"/>
 </linearGradient>
 </defs>
-<rect x="24" y="18" width="34" height="28" rx="2" fill="url(#bbc-tile)" stroke="#FFFFFF" stroke-opacity=".18"/>
-<rect x="63" y="18" width="34" height="28" rx="2" fill="url(#bbc-tile)" stroke="#FFFFFF" stroke-opacity=".18"/>
-<rect x="102" y="18" width="34" height="28" rx="2" fill="url(#bbc-tile)" stroke="#FFFFFF" stroke-opacity=".18"/>
+<rect x="24" y="18" width="34" height="28" rx="2" fill="url(#bbc-tile)" stroke="#CBD5E1"/>
+<rect x="63" y="18" width="34" height="28" rx="2" fill="url(#bbc-tile)" stroke="#CBD5E1"/>
+<rect x="102" y="18" width="34" height="28" rx="2" fill="url(#bbc-tile)" stroke="#CBD5E1"/>
 <text x="41" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">B</text>
 <text x="80" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">B</text>
 <text x="119" y="39" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">C</text>

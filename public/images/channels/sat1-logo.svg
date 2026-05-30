@@ -8,6 +8,6 @@
 </linearGradient>
 </defs>
 <circle cx="48" cy="32" r="18" fill="url(#sat1-orb)"/>
-<path d="M36 35c9-3 19-9 25-18 3 13-4 25-16 31-2-5-5-9-9-13Z" fill="#2456FF" opacity=".9"/>
+<path d="M36 35c9-3 19-9 25-18 3 13-4 25-16 31-2-5-5-9-9-13Z" fill="#2456FF"/>
 <text x="101" y="40" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="28" font-weight="900" fill="#93C5FD" letter-spacing=".8">SAT.1</text>
 </svg>

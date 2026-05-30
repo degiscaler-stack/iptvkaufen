@@ -29,6 +29,67 @@ const bottomLogoRow = [
   { name: "CNN", src: "/images/channels/cnn-logo.svg" },
 ];
 
+const channelFeatures = [
+  { label: "22.000+ Sender", icon: "broadcast" },
+  { label: "HD, Full HD & 4K", icon: "quality" },
+  { label: "Alle Geräte", icon: "devices" },
+  { label: "Stabil & Sicher", icon: "shield" },
+  { label: "24/7 Support", icon: "support" },
+] as const;
+
+function FeatureIcon({ icon }: { icon: (typeof channelFeatures)[number]["icon"] }) {
+  const iconClass = "h-5 w-5 text-[#A6FF00] sm:h-6 sm:w-6";
+
+  if (icon === "broadcast") {
+    return (
+      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 18.5v-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        <path d="M8.5 21h7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.7" />
+        <path d="M7.1 14.2a6.6 6.6 0 0 1 0-8.4M16.9 5.8a6.6 6.6 0 0 1 0 8.4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        <path d="M4.3 17a10.6 10.6 0 0 1 0-14M19.7 3a10.6 10.6 0 0 1 0 14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (icon === "quality") {
+    return (
+      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3.5" y="5" width="17" height="11.5" rx="2.2" stroke="currentColor" strokeWidth="1.7" />
+        <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        <path d="m9 11 2 2 4-4.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  if (icon === "devices") {
+    return (
+      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3" y="5" width="13" height="9" rx="1.8" stroke="currentColor" strokeWidth="1.7" />
+        <rect x="17" y="9" width="4" height="8" rx="1.2" stroke="currentColor" strokeWidth="1.7" />
+        <path d="M7 18h6M10 14v4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (icon === "shield") {
+    return (
+      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 3.5 19 6v5.4c0 4.2-2.7 7.5-7 9.1-4.3-1.6-7-4.9-7-9.1V6l7-2.5Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+        <path d="m8.8 12.1 2.1 2.1 4.4-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5 13.5V12a7 7 0 0 1 14 0v1.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      <path d="M5 13h2.2c.7 0 1.3.6 1.3 1.3v2.4c0 .7-.6 1.3-1.3 1.3H6.5A2.5 2.5 0 0 1 4 15.5v-1A1.5 1.5 0 0 1 5.5 13H5Zm14 0h-2.2c-.7 0-1.3.6-1.3 1.3v2.4c0 .7.6 1.3 1.3 1.3h.7a2.5 2.5 0 0 0 2.5-2.5v-1A1.5 1.5 0 0 0 18.5 13H19Z" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M15.5 18c-.7 1.4-1.9 2-3.5 2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function LogoMarqueeRow({
   logos,
   direction,
@@ -81,19 +142,38 @@ export default function ChannelLogos() {
           </p>
           <h2
             id="channel-logos-heading"
-            className="text-balance text-[1.9rem] font-black leading-[1.02] tracking-[-0.055em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.65rem] lg:text-[3.15rem]"
+            className="text-balance text-[2rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.25rem]"
           >
-            Top Sender für IPTV Kaufen in Deutschland
+            Top Sender für{" "}
+            <span className="bg-gradient-to-r from-[#D8FF8A] via-[#A6FF00] to-[#7CFF6B] bg-clip-text text-transparent">
+              IPTV
+            </span>{" "}
+            Kaufen in{" "}
+            <span className="bg-gradient-to-r from-[#F6FFE8] via-[#A6FF00] to-[#8DFF00] bg-clip-text text-transparent">
+              Deutschland
+            </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[650px] text-[14px] leading-6 text-[#F5F5F5]/78 sm:text-base sm:leading-7">
-            Entdecken Sie beliebte TV-Sender, Sportkanäle und Streaming-Plattformen für IPTV Kaufen in Deutschland –
-            optimiert für alle Geräte.
+          <p className="mx-auto mt-4 max-w-[570px] text-[14px] leading-6 text-[#E6E6E6] sm:text-[15px] sm:leading-7">
+            Entdecken Sie beliebte TV-Sender, Sportkanäle und Streaming-Plattformen für IPTV Kaufen Deutschland,
+            optimiert für ein klares Premium-Erlebnis auf allen Geräten.
           </p>
         </div>
 
         <div className="relative mt-8 space-y-2 py-4 sm:mt-10 sm:space-y-3 sm:py-5">
           <LogoMarqueeRow logos={topLogoRow} direction="left" />
           <LogoMarqueeRow logos={bottomLogoRow} direction="right" />
+        </div>
+
+        <div className="mx-auto mt-5 grid max-w-[1120px] grid-cols-1 gap-2.5 sm:mt-7 sm:grid-cols-5 sm:gap-3">
+          {channelFeatures.map((feature) => (
+            <div
+              key={feature.label}
+              className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#A6FF00]/28 bg-[#0B0B0B] px-4 py-3 text-center text-[13px] font-extrabold text-[#F5F5F5] shadow-[0_12px_28px_rgba(0,0,0,0.28)] sm:min-h-[4.6rem] sm:flex-col sm:gap-2 sm:px-3 sm:text-[13.5px] lg:text-[14px]"
+            >
+              <FeatureIcon icon={feature.icon} />
+              <span>{feature.label}</span>
+            </div>
+          ))}
         </div>
 
         <style>{`
@@ -130,9 +210,7 @@ export default function ChannelLogos() {
           }
 
           .channel-logo-shell img {
-            filter:
-              drop-shadow(0 1px 0 rgba(255, 255, 255, 0.2))
-              drop-shadow(0 12px 18px rgba(0, 0, 0, 0.72));
+            filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.28));
             will-change: transform;
           }
 
