@@ -98,7 +98,7 @@ function LogoMarqueeRow({
   direction: "left" | "right";
 }) {
   return (
-    <div className="channel-marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
+    <div className="channel-marquee overflow-hidden px-5 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] sm:px-7 lg:px-9">
       <div
         className={`channel-marquee-track channel-marquee-track--${direction} flex w-max items-center`}
       >
@@ -111,13 +111,13 @@ function LogoMarqueeRow({
             {logos.map((logo) => (
               <span
                 key={`${setIndex}-${logo.name}`}
-                className="channel-logo-shell relative isolate flex h-16 w-[116px] shrink-0 items-center justify-center sm:h-[4.5rem] sm:w-[132px] lg:h-20 lg:w-40"
+                className="channel-logo-shell relative isolate flex h-[4.4rem] w-[126px] shrink-0 items-center justify-center sm:h-[5.15rem] sm:w-[152px] lg:h-[5.75rem] lg:w-[184px]"
               >
                 <img
                   src={logo.src}
                   alt={`${logo.name} Logo`}
                   loading="lazy"
-                  className="relative z-10 max-h-[3.25rem] w-auto max-w-full object-contain sm:max-h-[3.55rem] lg:max-h-[3.8rem]"
+                  className="relative z-10 max-h-[3.75rem] w-auto max-w-full object-contain sm:max-h-[4.15rem] lg:max-h-[4.45rem]"
                 />
               </span>
             ))}
@@ -159,16 +159,16 @@ export default function ChannelLogos() {
           </p>
         </div>
 
-        <div className="relative mt-8 space-y-2 py-4 sm:mt-10 sm:space-y-3 sm:py-5">
+        <div className="relative mt-8 space-y-2 py-3 sm:mt-10 sm:space-y-2.5 sm:py-4">
           <LogoMarqueeRow logos={topLogoRow} direction="left" />
           <LogoMarqueeRow logos={bottomLogoRow} direction="right" />
         </div>
 
-        <div className="mx-auto mt-5 grid max-w-[1120px] grid-cols-1 gap-2.5 sm:mt-7 sm:grid-cols-5 sm:gap-3">
+        <div className="mx-auto mt-1 grid max-w-[1120px] grid-cols-1 gap-2.5 sm:mt-2 sm:grid-cols-5 sm:gap-3">
           {channelFeatures.map((feature) => (
             <div
               key={feature.label}
-              className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#A6FF00]/28 bg-[#0B0B0B] px-4 py-3 text-center text-[13px] font-extrabold text-[#F5F5F5] shadow-[0_12px_28px_rgba(0,0,0,0.28)] sm:min-h-[4.6rem] sm:flex-col sm:gap-2 sm:px-3 sm:text-[13.5px] lg:text-[14px]"
+              className="channel-feature-card flex items-center justify-center gap-2.5 rounded-2xl border-[0.5px] border-[#A6FF00]/20 bg-[#070707] px-4 py-2.5 text-center text-[13px] font-extrabold text-[#F5F5F5] shadow-[0_8px_18px_rgba(0,0,0,0.24)] transition-[transform,border-color,background-color] duration-300 sm:min-h-[4.25rem] sm:flex-col sm:gap-1.5 sm:px-3 sm:text-[13.5px] lg:text-[14px]"
             >
               <FeatureIcon icon={feature.icon} />
               <span>{feature.label}</span>
@@ -217,6 +217,12 @@ export default function ChannelLogos() {
           @media (hover: hover) and (pointer: fine) {
             .channel-marquee:hover .channel-marquee-track {
               animation-play-state: paused;
+            }
+
+            .channel-feature-card:hover {
+              transform: translate3d(0, -2px, 0);
+              border-color: rgba(166, 255, 0, 0.34);
+              background-color: #0a0a0a;
             }
           }
 
