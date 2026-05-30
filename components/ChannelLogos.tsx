@@ -137,9 +137,6 @@ export default function ChannelLogos() {
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
-          <p className="mb-2.5 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/60 px-2.5 py-1 text-[8.5px] font-bold uppercase tracking-[0.22em] text-[#A6FF00] sm:mb-3 sm:px-3 sm:py-1.5 sm:text-[9.5px]">
-            SENDER & STREAMING
-          </p>
           <h2
             id="channel-logos-heading"
             className="text-balance text-[2rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.25rem]"
@@ -167,7 +164,7 @@ export default function ChannelLogos() {
           {channelFeatures.map((feature) => (
             <div
               key={feature.label}
-              className="channel-feature-card flex items-center justify-center gap-3 px-3 py-2.5 text-center text-[13px] font-semibold text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px]"
+              className="channel-feature-card flex items-center justify-center gap-3 px-3 py-2.5 text-center text-[13px] font-medium text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px]"
             >
               <FeatureIcon icon={feature.icon} />
               <span>{feature.label}</span>
