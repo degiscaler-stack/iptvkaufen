@@ -38,7 +38,7 @@ const channelFeatures = [
 ] as const;
 
 function FeatureIcon({ icon }: { icon: (typeof channelFeatures)[number]["icon"] }) {
-  const iconClass = "h-5 w-5 text-[#A6FF00] sm:h-6 sm:w-6";
+  const iconClass = "h-7 w-7 text-[#A6FF00] sm:h-8 sm:w-8 lg:h-9 lg:w-9";
 
   if (icon === "broadcast") {
     return (
@@ -142,20 +142,19 @@ export default function ChannelLogos() {
           </p>
           <h2
             id="channel-logos-heading"
-            className="text-balance text-[2rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.25rem]"
+            className="text-balance bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-[2rem] font-black leading-[1.02] tracking-[-0.06em] text-transparent [text-shadow:none] sm:text-[2.8rem] lg:text-[3.25rem]"
           >
             Top Sender für{" "}
-            <span className="bg-gradient-to-r from-[#D8FF8A] via-[#A6FF00] to-[#7CFF6B] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#A6FF00] via-[#F6FFE8] to-[#A6FF00] bg-clip-text text-transparent">
               IPTV
             </span>{" "}
             Kaufen in{" "}
-            <span className="bg-gradient-to-r from-[#F6FFE8] via-[#A6FF00] to-[#8DFF00] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F6FFE8] via-[#A6FF00] to-[#D8FF8A] bg-clip-text text-transparent">
               Deutschland
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[570px] text-[14px] leading-6 text-[#E6E6E6] sm:text-[15px] sm:leading-7">
-            Entdecken Sie beliebte TV-Sender, Sportkanäle und Streaming-Plattformen für IPTV Kaufen Deutschland,
-            optimiert für ein klares Premium-Erlebnis auf allen Geräten.
+          <p className="mx-auto mt-4 max-w-[520px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
+            Beliebte Sender und Streaming-Marken für IPTV Kaufen in Deutschland.
           </p>
         </div>
 
@@ -164,11 +163,11 @@ export default function ChannelLogos() {
           <LogoMarqueeRow logos={bottomLogoRow} direction="right" />
         </div>
 
-        <div className="mx-auto mt-1 grid max-w-[1120px] grid-cols-1 gap-2.5 sm:mt-2 sm:grid-cols-5 sm:gap-3">
+        <div className="mx-auto mt-3 grid max-w-[1160px] grid-cols-1 gap-y-3 sm:mt-4 sm:grid-cols-5 sm:gap-x-0 sm:gap-y-0">
           {channelFeatures.map((feature) => (
             <div
               key={feature.label}
-              className="channel-feature-card flex items-center justify-center gap-2.5 rounded-2xl border-[0.5px] border-[#A6FF00]/20 bg-[#070707] px-4 py-2.5 text-center text-[13px] font-extrabold text-[#F5F5F5] shadow-[0_8px_18px_rgba(0,0,0,0.24)] transition-[transform,border-color,background-color] duration-300 sm:min-h-[4.25rem] sm:flex-col sm:gap-1.5 sm:px-3 sm:text-[13.5px] lg:text-[14px]"
+              className="channel-feature-card flex items-center justify-center gap-3 px-3 py-2.5 text-center text-[13px] font-bold text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px]"
             >
               <FeatureIcon icon={feature.icon} />
               <span>{feature.label}</span>
@@ -221,8 +220,6 @@ export default function ChannelLogos() {
 
             .channel-feature-card:hover {
               transform: translate3d(0, -2px, 0);
-              border-color: rgba(166, 255, 0, 0.34);
-              background-color: #0a0a0a;
             }
           }
 
