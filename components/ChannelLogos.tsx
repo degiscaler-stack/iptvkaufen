@@ -38,7 +38,7 @@ const channelFeatures = [
 ] as const;
 
 function FeatureIcon({ icon }: { icon: (typeof channelFeatures)[number]["icon"] }) {
-  const iconClass = "h-7 w-7 text-[#A6FF00] sm:h-8 sm:w-8 lg:h-9 lg:w-9";
+  const iconClass = "h-8 w-8 text-[#A6FF00] sm:h-10 sm:w-10 lg:h-11 lg:w-11";
 
   if (icon === "broadcast") {
     return (
@@ -137,37 +137,37 @@ export default function ChannelLogos() {
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
-          <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/60 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-[#A6FF00] sm:mb-4 sm:px-4 sm:py-2 sm:text-[11px]">
+          <p className="mb-2.5 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/60 px-2.5 py-1 text-[8.5px] font-bold uppercase tracking-[0.22em] text-[#A6FF00] sm:mb-3 sm:px-3 sm:py-1.5 sm:text-[9.5px]">
             SENDER & STREAMING
           </p>
           <h2
             id="channel-logos-heading"
-            className="text-balance bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-[2rem] font-black leading-[1.02] tracking-[-0.06em] text-transparent [text-shadow:none] sm:text-[2.8rem] lg:text-[3.25rem]"
+            className="text-balance text-[2rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.25rem]"
           >
             Top Sender für{" "}
-            <span className="bg-gradient-to-r from-[#A6FF00] via-[#F6FFE8] to-[#A6FF00] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
               IPTV
             </span>{" "}
             Kaufen in{" "}
-            <span className="bg-gradient-to-r from-[#F6FFE8] via-[#A6FF00] to-[#D8FF8A] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
               Deutschland
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[520px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
+          <p className="mx-auto mt-3 max-w-[520px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
             Beliebte Sender und Streaming-Marken für IPTV Kaufen in Deutschland.
           </p>
         </div>
 
-        <div className="relative mt-8 space-y-2 py-3 sm:mt-10 sm:space-y-2.5 sm:py-4">
+        <div className="relative mt-5 space-y-2 py-2 sm:mt-7 sm:space-y-2.5 sm:py-3">
           <LogoMarqueeRow logos={topLogoRow} direction="left" />
           <LogoMarqueeRow logos={bottomLogoRow} direction="right" />
         </div>
 
-        <div className="mx-auto mt-3 grid max-w-[1160px] grid-cols-1 gap-y-3 sm:mt-4 sm:grid-cols-5 sm:gap-x-0 sm:gap-y-0">
+        <div className="mx-auto mt-1 grid max-w-[1160px] grid-cols-1 gap-y-3 sm:mt-2 sm:grid-cols-5 sm:gap-x-0 sm:gap-y-0">
           {channelFeatures.map((feature) => (
             <div
               key={feature.label}
-              className="channel-feature-card flex items-center justify-center gap-3 px-3 py-2.5 text-center text-[13px] font-bold text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px]"
+              className="channel-feature-card flex items-center justify-center gap-3 px-3 py-2.5 text-center text-[13px] font-semibold text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px]"
             >
               <FeatureIcon icon={feature.icon} />
               <span>{feature.label}</span>
