@@ -38,7 +38,7 @@ const channelFeatures = [
 ] as const;
 
 function FeatureIcon({ icon }: { icon: (typeof channelFeatures)[number]["icon"] }) {
-  const iconClass = "h-8 w-8 text-[#A6FF00] sm:h-10 sm:w-10 lg:h-11 lg:w-11";
+  const iconClass = "h-[34px] w-[34px] text-[#A6FF00] sm:h-10 sm:w-10 lg:h-11 lg:w-11";
 
   if (icon === "broadcast") {
     return (
@@ -160,11 +160,15 @@ export default function ChannelLogos() {
           <LogoMarqueeRow logos={bottomLogoRow} direction="right" />
         </div>
 
-        <div className="mx-auto mt-1 grid max-w-[1160px] grid-cols-1 gap-y-3 sm:mt-2 sm:grid-cols-5 sm:gap-x-0 sm:gap-y-0">
-          {channelFeatures.map((feature) => (
+        <div className="mx-auto mt-1 grid max-w-[1160px] grid-cols-2 gap-x-4 gap-y-[18px] sm:mt-2 sm:grid-cols-5 sm:gap-x-0 sm:gap-y-0">
+          {channelFeatures.map((feature, index) => (
             <div
               key={feature.label}
-              className="channel-feature-card flex items-center justify-center gap-3 px-3 py-2.5 text-center text-[13px] font-medium text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px]"
+              className={`channel-feature-card flex min-h-[3.25rem] items-center justify-center gap-2.5 px-2.5 py-2.5 text-center text-[13px] font-medium text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px] ${
+                index === channelFeatures.length - 1
+                  ? "col-span-2 mx-auto w-full max-w-[13rem] sm:col-span-1 sm:mx-0 sm:w-auto sm:max-w-none"
+                  : ""
+              }`}
             >
               <FeatureIcon icon={feature.icon} />
               <span>{feature.label}</span>
