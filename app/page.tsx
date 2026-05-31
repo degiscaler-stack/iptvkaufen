@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ChannelLogos from "@/components/ChannelLogos";
+import MoviesSeriesSlider from "@/components/MoviesSeriesSlider";
 import PremiumExperience from "@/components/PremiumExperience";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <PremiumExperience />
         <ChannelLogos />
+        <MoviesSeriesSlider />
       </main>
     </>
   );

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="360" viewBox="0 0 240 360">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17120b"/><stop offset=".55" stop-color="#050505"/><stop offset="1" stop-color="#1f3108"/></linearGradient></defs>
+<rect width="240" height="360" rx="18" fill="url(#g)"/><rect x="1" y="1" width="238" height="358" rx="17" fill="none" stroke="#A6FF00" stroke-opacity=".55"/>
+<path d="M62 82h116v196H62z" fill="#F5F5F5" opacity=".05"/><path d="M78 278V114M120 278V88M162 278V114" stroke="#A6FF00" stroke-opacity=".42"/>
+<text x="120" y="170" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="900" fill="#F5F5F5">BABYLON</text>
+<text x="120" y="204" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900" fill="#F5F5F5">BERLIN</text>
+<text x="120" y="238" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#A6FF00" letter-spacing="3">SERIE</text>
+</svg>
