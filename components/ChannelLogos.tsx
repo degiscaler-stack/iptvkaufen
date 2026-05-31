@@ -38,7 +38,7 @@ const channelFeatures = [
 ] as const;
 
 function FeatureIcon({ icon }: { icon: (typeof channelFeatures)[number]["icon"] }) {
-  const iconClass = "h-[34px] w-[34px] text-[#A6FF00] sm:h-10 sm:w-10 lg:h-11 lg:w-11";
+  const iconClass = "h-9 w-9 text-[#A6FF00] sm:h-11 sm:w-11 lg:h-12 lg:w-12";
 
   if (icon === "broadcast") {
     return (
@@ -111,13 +111,13 @@ function LogoMarqueeRow({
             {logos.map((logo) => (
               <span
                 key={`${setIndex}-${logo.name}`}
-                className="channel-logo-shell relative isolate flex h-[4.4rem] w-[126px] shrink-0 items-center justify-center sm:h-[5.15rem] sm:w-[152px] lg:h-[5.75rem] lg:w-[184px]"
+                className="channel-logo-shell relative isolate flex h-[4.85rem] w-[140px] shrink-0 items-center justify-center sm:h-[5.65rem] sm:w-[168px] lg:h-[6.3rem] lg:w-[202px]"
               >
                 <img
                   src={logo.src}
                   alt={`${logo.name} Logo`}
                   loading="lazy"
-                  className="relative z-10 max-h-[3.75rem] w-auto max-w-full object-contain sm:max-h-[4.15rem] lg:max-h-[4.45rem]"
+                  className="relative z-10 max-h-[4.05rem] w-auto max-w-full object-contain sm:max-h-[4.55rem] lg:max-h-[4.85rem]"
                 />
               </span>
             ))}
@@ -135,6 +135,7 @@ export default function ChannelLogos() {
       aria-labelledby="channel-logos-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 py-14 sm:px-8 sm:py-16 lg:px-0 lg:py-[4.5rem]"
     >
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_8%,rgba(54,92,18,0.16),transparent_34rem)]" />
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <h2
@@ -164,7 +165,7 @@ export default function ChannelLogos() {
           {channelFeatures.map((feature, index) => (
             <div
               key={feature.label}
-              className={`channel-feature-card flex min-h-[3.25rem] items-center justify-center gap-2.5 px-2.5 py-2.5 text-center text-[13px] font-medium text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5.25rem] sm:flex-col sm:gap-2 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13.5px] first:sm:border-l-0 lg:text-[14px] ${
+              className={`channel-feature-card flex min-h-[3.1rem] items-center justify-center gap-2.5 px-2.5 py-2 text-center text-[13px] font-medium text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5rem] sm:flex-col sm:gap-2.5 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13px] first:sm:border-l-0 lg:text-[13.5px] ${
                 index === channelFeatures.length - 1
                   ? "col-span-2 mx-auto w-full max-w-[13rem] sm:col-span-1 sm:mx-0 sm:w-auto sm:max-w-none"
                   : ""
@@ -202,11 +203,11 @@ export default function ChannelLogos() {
           }
 
           .channel-marquee-track--left {
-            animation: channel-marquee-left 48s linear infinite;
+            animation: channel-marquee-left 68s linear infinite;
           }
 
           .channel-marquee-track--right {
-            animation: channel-marquee-right 54s linear infinite;
+            animation: channel-marquee-right 76s linear infinite;
           }
 
           .channel-logo-shell img {

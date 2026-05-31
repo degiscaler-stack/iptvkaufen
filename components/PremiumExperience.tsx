@@ -30,19 +30,18 @@ export default function PremiumExperience() {
             in Deutschland
           </h2>
 
-          <div className="mt-3 max-w-[610px] space-y-2.5 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:space-y-3.5 sm:text-base sm:leading-7">
+          <div className="mt-3 max-w-[590px] space-y-2 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:space-y-3 sm:text-base sm:leading-7">
             <p>
               Mit IPTV Kaufen genießen Sie Live-TV, Filme, Serien und Fußball in HD, Full HD und 4K.
-              Das Streaming Erlebnis ist schnell, modern und für alle Geräte optimiert.
+              Schnell, modern und für alle Geräte optimiert.
             </p>
             <p>
-              Ob Smart TV, Smartphone, Tablet oder TV Box – Ihre Inhalte sind jederzeit verfügbar, klar
-              strukturiert und einfach zu bedienen.
+              Ob Smart TV, Smartphone oder TV Box – Ihre Inhalte sind klar strukturiert und sofort verfügbar.
             </p>
           </div>
 
           <div className="mt-4 sm:hidden">
-            <div className="relative overflow-hidden rounded-[12px] shadow-[0_16px_42px_rgba(0,0,0,0.36)]">
+            <div className="relative overflow-hidden rounded-[12px] shadow-[0_18px_46px_rgba(0,0,0,0.42)]">
               <img
                 src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
                 alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
@@ -73,7 +72,7 @@ export default function PremiumExperience() {
         </div>
 
         <div className="relative hidden sm:block lg:self-center">
-          <div className="relative overflow-hidden rounded-[14px] shadow-[0_24px_74px_rgba(0,0,0,0.42)]">
+          <div className="relative overflow-hidden rounded-[14px] shadow-[0_28px_80px_rgba(0,0,0,0.48)]">
             <img
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
               alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
