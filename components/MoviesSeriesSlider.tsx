@@ -1,62 +1,62 @@
 const posterItems = [
   {
     title: "Dark",
-    src: "/images/movies-series/dark-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/dark-serie-iptv-kaufen.png",
     alt: "Dark Serie für IPTV Kaufen in Deutschland",
   },
   {
     title: "Babylon Berlin",
-    src: "/images/movies-series/babylon-berlin-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/babylon-berlin-serie-iptv-kaufen.png",
     alt: "Babylon Berlin Serie für IPTV Kaufen",
   },
   {
     title: "Die Kaiserin",
-    src: "/images/movies-series/die-kaiserin-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/die-kaiserin-serie-iptv-kaufen.png",
     alt: "Die Kaiserin Serie für IPTV Kaufen in Deutschland",
   },
   {
     title: "Maxton Hall",
-    src: "/images/movies-series/maxton-hall-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/maxton-hall-serie-iptv-kaufen.png",
     alt: "Maxton Hall Serie für IPTV Kaufen",
   },
   {
     title: "Das Boot",
-    src: "/images/movies-series/das-boot-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/das-boot-serie-iptv-kaufen.png",
     alt: "Das Boot Serie für IPTV Kaufen",
   },
   {
     title: "4 Blocks",
-    src: "/images/movies-series/vier-blocks-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/vier-blocks-serie-iptv-kaufen.png",
     alt: "4 Blocks Serie für IPTV Kaufen in Deutschland",
   },
   {
     title: "Oppenheimer",
-    src: "/images/movies-series/oppenheimer-film-iptv-kaufen.webp",
+    src: "/images/movies-series/oppenheimer-film-iptv-kaufen.png",
     alt: "Oppenheimer Film für IPTV Kaufen",
   },
   {
     title: "The Last of Us",
-    src: "/images/movies-series/the-last-of-us-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/the-last-of-us-serie-iptv-kaufen.png",
     alt: "The Last of Us Serie für IPTV Kaufen",
   },
   {
     title: "Stranger Things",
-    src: "/images/movies-series/stranger-things-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/stranger-things-serie-iptv-kaufen.png",
     alt: "Stranger Things Serie für IPTV Kaufen",
   },
   {
     title: "Spider-Man",
-    src: "/images/movies-series/spider-man-film-iptv-kaufen.webp",
+    src: "/images/movies-series/spider-man-film-iptv-kaufen.png",
     alt: "Spider-Man Film für IPTV Kaufen",
   },
   {
     title: "House of the Dragon",
-    src: "/images/movies-series/house-of-the-dragon-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/house-of-the-dragon-serie-iptv-kaufen.png",
     alt: "House of the Dragon Serie für IPTV Kaufen",
   },
   {
     title: "The Boys",
-    src: "/images/movies-series/the-boys-serie-iptv-kaufen.webp",
+    src: "/images/movies-series/the-boys-serie-iptv-kaufen.png",
     alt: "The Boys Serie für IPTV Kaufen",
   },
 ] as const;
