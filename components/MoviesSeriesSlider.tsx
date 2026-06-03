@@ -1,63 +1,55 @@
+import Image from "next/image";
+
 const posterItems = [
   {
-    title: "Dark",
-    src: "/images/movies-series/dark-serie-iptv-kaufen.png",
-    alt: "Dark Serie für IPTV Kaufen in Deutschland",
+    title: "IPTV Kaufen Poster 1",
+    src: "/images/movies-series/iptv-kaufen-1.webp",
+    alt: "Beliebter Film und Serien Poster für IPTV Kaufen",
   },
   {
-    title: "Babylon Berlin",
-    src: "/images/movies-series/babylon-berlin-serie-iptv-kaufen.png",
-    alt: "Babylon Berlin Serie für IPTV Kaufen",
+    title: "IPTV Kaufen Poster 2",
+    src: "/images/movies-series/iptv-kaufen-2.webp",
+    alt: "Premium Serien Poster für IPTV Kaufen Deutschland",
   },
   {
-    title: "Die Kaiserin",
-    src: "/images/movies-series/die-kaiserin-serie-iptv-kaufen.png",
-    alt: "Die Kaiserin Serie für IPTV Kaufen in Deutschland",
+    title: "IPTV Kaufen Poster 3",
+    src: "/images/movies-series/iptv-kaufen-3.webp",
+    alt: "Blockbuster Poster für IPTV Kaufen in Deutschland",
   },
   {
-    title: "Maxton Hall",
-    src: "/images/movies-series/maxton-hall-serie-iptv-kaufen.png",
-    alt: "Maxton Hall Serie für IPTV Kaufen",
+    title: "IPTV Kaufen Poster 4",
+    src: "/images/movies-series/iptv-kaufen-4.webp",
+    alt: "Film und Serien Auswahl für IPTV Kaufen",
   },
   {
-    title: "Das Boot",
-    src: "/images/movies-series/das-boot-serie-iptv-kaufen.png",
-    alt: "Das Boot Serie für IPTV Kaufen",
+    title: "IPTV Kaufen Poster 6",
+    src: "/images/movies-series/iptv-kaufen-6.webp",
+    alt: "Cinema Poster für IPTV Kaufen Streaming",
   },
   {
-    title: "4 Blocks",
-    src: "/images/movies-series/vier-blocks-serie-iptv-kaufen.png",
-    alt: "4 Blocks Serie für IPTV Kaufen in Deutschland",
+    title: "IPTV Kaufen Poster 7",
+    src: "/images/movies-series/iptv-kaufen-7.webp",
+    alt: "Serien und Filme Poster für IPTV Kaufen",
   },
   {
-    title: "Oppenheimer",
-    src: "/images/movies-series/oppenheimer-film-iptv-kaufen.png",
-    alt: "Oppenheimer Film für IPTV Kaufen",
+    title: "IPTV Kaufen Poster 8",
+    src: "/images/movies-series/iptv-kaufen-8.webp",
+    alt: "Beliebte Inhalte Poster für IPTV Kaufen Deutschland",
   },
   {
-    title: "The Last of Us",
-    src: "/images/movies-series/the-last-of-us-serie-iptv-kaufen.png",
-    alt: "The Last of Us Serie für IPTV Kaufen",
+    title: "IPTV Kaufen Poster 9",
+    src: "/images/movies-series/iptv-kaufen-9.webp",
+    alt: "Premium Film Poster für IPTV Kaufen",
   },
   {
-    title: "Stranger Things",
-    src: "/images/movies-series/stranger-things-serie-iptv-kaufen.png",
-    alt: "Stranger Things Serie für IPTV Kaufen",
+    title: "IPTV Kaufen Poster 10",
+    src: "/images/movies-series/iptv-kaufen-10.webp",
+    alt: "Streaming Poster für IPTV Kaufen in Deutschland",
   },
   {
-    title: "Spider-Man",
-    src: "/images/movies-series/spider-man-film-iptv-kaufen.png",
-    alt: "Spider-Man Film für IPTV Kaufen",
-  },
-  {
-    title: "House of the Dragon",
-    src: "/images/movies-series/house-of-the-dragon-serie-iptv-kaufen.png",
-    alt: "House of the Dragon Serie für IPTV Kaufen",
-  },
-  {
-    title: "The Boys",
-    src: "/images/movies-series/the-boys-serie-iptv-kaufen.png",
-    alt: "The Boys Serie für IPTV Kaufen",
+    title: "IPTV Kaufen Poster 11",
+    src: "/images/movies-series/iptv-kaufen-11.webp",
+    alt: "Film und Serien Highlight für IPTV Kaufen",
   },
 ] as const;
 
@@ -97,15 +89,14 @@ export default function MoviesSeriesSlider() {
                     key={`${setIndex}-${poster.title}`}
                     className="group w-[42vw] max-w-[10rem] shrink-0 sm:w-[11.5rem] sm:max-w-none lg:w-[13.25rem]"
                   >
-                    <div className="overflow-hidden rounded-[14px] border border-[#A6FF00]/42 bg-[#090909] shadow-[0_18px_42px_rgba(0,0,0,0.36)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#A6FF00]/70">
-                      <img
+                    <div className="relative aspect-[2/3] overflow-hidden rounded-[14px] border border-[#A6FF00]/42 bg-[#090909] shadow-[0_18px_42px_rgba(0,0,0,0.36)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#A6FF00]/70">
+                      <Image
                         src={poster.src}
                         alt={poster.alt}
-                        width="240"
-                        height="360"
+                        fill
+                        sizes="(min-width: 1024px) 13.25rem, (min-width: 640px) 11.5rem, 42vw"
                         loading="lazy"
-                        decoding="async"
-                        className="aspect-[2/3] w-full object-cover"
+                        className="object-cover"
                       />
                     </div>
                   </article>
