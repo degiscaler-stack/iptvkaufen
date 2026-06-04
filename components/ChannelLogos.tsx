@@ -1,3 +1,5 @@
+import DraggableMarquee from "./DraggableMarquee";
+
 const topLogoRow = [
   { name: "Netflix", src: "/images/channels/netflix-streaming-logo.svg" },
   { name: "Disney+", src: "/images/channels/disney-plus-logo.svg" },
@@ -98,33 +100,35 @@ function LogoMarqueeRow({
   direction: "left" | "right";
 }) {
   return (
-    <div className="channel-marquee overflow-hidden px-5 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] sm:px-7 lg:px-9">
-      <div
-        className={`channel-marquee-track channel-marquee-track--${direction} flex w-max items-center`}
-      >
-        {[0, 1].map((setIndex) => (
-          <div
-            key={setIndex}
-            aria-hidden={setIndex === 1}
-            className="flex shrink-0 items-center gap-2 pr-2 sm:gap-3 sm:pr-3 lg:gap-3 lg:pr-3"
-          >
-            {logos.map((logo) => (
-              <span
-                key={`${setIndex}-${logo.name}`}
-                className="channel-logo-shell relative isolate flex h-[4.85rem] w-[140px] shrink-0 items-center justify-center sm:h-[5.65rem] sm:w-[168px] lg:h-[6.3rem] lg:w-[202px]"
-              >
-                <img
-                  src={logo.src}
-                  alt={`${logo.name} Logo`}
-                  loading="lazy"
-                  className="relative z-10 max-h-[4.05rem] w-auto max-w-full object-contain sm:max-h-[4.55rem] lg:max-h-[4.85rem]"
-                />
-              </span>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
+    <DraggableMarquee
+      className="channel-marquee overflow-hidden px-5 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] sm:px-7 lg:px-9"
+      direction={direction}
+      speed={direction === "left" ? 41 : 37}
+      trackClassName={`channel-marquee-track channel-marquee-track--${direction} flex w-max items-center`}
+    >
+      {[0, 1].map((setIndex) => (
+        <div
+          key={setIndex}
+          aria-hidden={setIndex === 1}
+          className="flex shrink-0 items-center gap-2 pr-2 sm:gap-3 sm:pr-3 lg:gap-3 lg:pr-3"
+        >
+          {logos.map((logo) => (
+            <span
+              key={`${setIndex}-${logo.name}`}
+              className="channel-logo-shell relative isolate flex h-[4.85rem] w-[140px] shrink-0 items-center justify-center sm:h-[5.65rem] sm:w-[168px] lg:h-[6.3rem] lg:w-[202px]"
+            >
+              <img
+                src={logo.src}
+                alt={`${logo.name} Logo`}
+                draggable={false}
+                loading="lazy"
+                className="relative z-10 max-h-[4.05rem] w-auto max-w-full object-contain sm:max-h-[4.55rem] lg:max-h-[4.85rem]"
+              />
+            </span>
+          ))}
+        </div>
+      ))}
+    </DraggableMarquee>
   );
 }
 
@@ -178,57 +182,13 @@ export default function ChannelLogos() {
         </div>
 
         <style>{`
-          @keyframes channel-marquee-left {
-            from {
-              transform: translate3d(0, 0, 0);
-            }
-
-            to {
-              transform: translate3d(-50%, 0, 0);
-            }
-          }
-
-          @keyframes channel-marquee-right {
-            from {
-              transform: translate3d(-50%, 0, 0);
-            }
-
-            to {
-              transform: translate3d(0, 0, 0);
-            }
-          }
-
           .channel-marquee-track {
             will-change: transform;
           }
 
-          .channel-marquee-track--left {
-            animation: channel-marquee-left 68s linear infinite;
-          }
-
-          .channel-marquee-track--right {
-            animation: channel-marquee-right 76s linear infinite;
-          }
-
-          .channel-logo-shell img {
-            filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.28));
-            will-change: transform;
-          }
-
           @media (hover: hover) and (pointer: fine) {
-            .channel-marquee:hover .channel-marquee-track {
-              animation-play-state: paused;
-            }
-
             .channel-feature-card:hover {
               transform: translate3d(0, -2px, 0);
-            }
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .channel-marquee-track--left,
-            .channel-marquee-track--right {
-              animation-duration: 90s;
             }
           }
         `}</style>

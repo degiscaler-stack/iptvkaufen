@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import DraggableMarquee from "./DraggableMarquee";
+
 const posterItems = [
   {
     title: "IPTV Kaufen Poster 1",
@@ -77,48 +79,41 @@ export default function MoviesSeriesSlider() {
         </div>
 
         <div className="relative mt-8 sm:mt-10">
-          <div className="movies-series-marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]">
-            <div className="movies-series-track flex w-max items-center">
-              {[0, 1].map((setIndex) => (
-                <div
-                  key={setIndex}
-                  aria-hidden={setIndex === 1}
-                  className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
-                >
-                  {posterItems.map((poster) => (
-                    <article
-                      key={`${setIndex}-${poster.title}`}
-                      className="group w-[42vw] max-w-[10rem] shrink-0 sm:w-[11.5rem] sm:max-w-none lg:w-[13.25rem]"
-                    >
-                      <div className="relative aspect-[2/3] box-border overflow-hidden rounded-[14px] border-2 border-[#A6FF00]/65 bg-[#090909] shadow-[0_18px_42px_rgba(0,0,0,0.36)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#A6FF00]/85">
-                        <Image
-                          src={poster.src}
-                          alt={poster.alt}
-                          fill
-                          sizes="(min-width: 1024px) 212px, (min-width: 640px) 184px, 42vw"
-                          loading="lazy"
-                          className="object-cover"
-                        />
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
+          <DraggableMarquee
+            className="movies-series-marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
+            speed={41}
+            trackClassName="movies-series-track flex w-max items-center"
+          >
+            {[0, 1].map((setIndex) => (
+              <div
+                key={setIndex}
+                aria-hidden={setIndex === 1}
+                className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
+              >
+                {posterItems.map((poster) => (
+                  <article
+                    key={`${setIndex}-${poster.title}`}
+                    className="group w-[42vw] max-w-[10rem] shrink-0 sm:w-[11.5rem] sm:max-w-none lg:w-[13.25rem]"
+                  >
+                    <div className="relative aspect-[2/3] box-border overflow-hidden rounded-[14px] border-2 border-[#A6FF00]/65 bg-[#090909] shadow-[0_18px_42px_rgba(0,0,0,0.36)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#A6FF00]/85">
+                      <Image
+                        src={poster.src}
+                        alt={poster.alt}
+                        fill
+                        sizes="(min-width: 1024px) 212px, (min-width: 640px) 184px, 42vw"
+                        draggable={false}
+                        loading="lazy"
+                        className="object-cover"
+                      />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ))}
+          </DraggableMarquee>
         </div>
 
         <style>{`
-          @keyframes movies-series-marquee {
-            from {
-              transform: translate3d(0, 0, 0);
-            }
-
-            to {
-              transform: translate3d(-50%, 0, 0);
-            }
-          }
-
           .movies-series-marquee {
             scrollbar-width: none;
           }
@@ -128,14 +123,7 @@ export default function MoviesSeriesSlider() {
           }
 
           .movies-series-track {
-            animation: movies-series-marquee 56s linear infinite;
             will-change: transform;
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .movies-series-track {
-              animation-duration: 100s;
-            }
           }
         `}</style>
       </div>
