@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+
+const AUTO_SCROLL_PX_PER_SECOND = 42;
 
 const posterItems = [
   {
@@ -54,6 +59,59 @@ const posterItems = [
 ] as const;
 
 export default function MoviesSeriesSlider() {
+  const marqueeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let frameId = 0;
+    let previousTime = 0;
+
+    const scroll = (time: number) => {
+      const marquee = marqueeRef.current;
+
+      if (marquee) {
+        if (previousTime) {
+          const elapsedSeconds = (time - previousTime) / 1000;
+          const loopPoint = marquee.scrollWidth / 2;
+
+          marquee.scrollLeft += elapsedSeconds * AUTO_SCROLL_PX_PER_SECOND;
+
+          if (loopPoint > 0 && marquee.scrollLeft >= loopPoint) {
+            marquee.scrollLeft -= loopPoint;
+          }
+        }
+
+        previousTime = time;
+      }
+
+      frameId = window.requestAnimationFrame(scroll);
+    };
+
+    frameId = window.requestAnimationFrame(scroll);
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  const moveSlider = (direction: -1 | 1) => {
+    const marquee = marqueeRef.current;
+
+    if (!marquee) {
+      return;
+    }
+
+    const loopPoint = marquee.scrollWidth / 2;
+    const posterStep = marquee.querySelector("article")?.clientWidth ?? 180;
+    const gap = window.matchMedia("(min-width: 640px)").matches ? 16 : 12;
+
+    if (direction < 0 && marquee.scrollLeft <= posterStep + gap && loopPoint > 0) {
+      marquee.scrollLeft += loopPoint;
+    }
+
+    marquee.scrollBy({
+      left: direction * (posterStep + gap),
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       aria-labelledby="movies-series-heading"
@@ -76,56 +134,88 @@ export default function MoviesSeriesSlider() {
           </p>
         </div>
 
-        <div className="movies-series-marquee mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] sm:mt-10">
-          <div className="movies-series-track flex w-max items-center gap-3 pr-3 sm:gap-4 sm:pr-4">
-            {[0, 1].map((setIndex) => (
-              <div
-                key={setIndex}
-                aria-hidden={setIndex === 1}
-                className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
-              >
-                {posterItems.map((poster) => (
-                  <article
-                    key={`${setIndex}-${poster.title}`}
-                    className="group w-[42vw] max-w-[10rem] shrink-0 sm:w-[11.5rem] sm:max-w-none lg:w-[13.25rem]"
-                  >
-                    <div className="relative aspect-[2/3] overflow-hidden rounded-[14px] border border-[#A6FF00]/42 bg-[#090909] shadow-[0_18px_42px_rgba(0,0,0,0.36)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#A6FF00]/70">
-                      <Image
-                        src={poster.src}
-                        alt={poster.alt}
-                        fill
-                        sizes="(min-width: 1024px) 13.25rem, (min-width: 640px) 11.5rem, 42vw"
-                        loading="lazy"
-                        className="object-cover"
-                      />
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ))}
+        <div className="relative mt-8 sm:mt-10">
+          <button
+            type="button"
+            aria-label="Poster Slider nach links bewegen"
+            onClick={() => moveSlider(-1)}
+            className="absolute left-1 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/70 bg-[#050505]/88 text-[#A6FF00] shadow-[0_10px_28px_rgba(0,0,0,0.36)] transition duration-300 hover:border-[#A6FF00] hover:bg-[#0B0B0B] hover:shadow-[0_0_18px_rgba(166,255,0,0.18)] sm:flex lg:-left-4"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+
+          <div
+            ref={marqueeRef}
+            className="movies-series-marquee overflow-x-auto [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
+          >
+            <div className="movies-series-track flex w-max items-center gap-3 pr-3 sm:gap-4 sm:pr-4">
+              {[0, 1].map((setIndex) => (
+                <div
+                  key={setIndex}
+                  aria-hidden={setIndex === 1}
+                  className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
+                >
+                  {posterItems.map((poster) => (
+                    <article
+                      key={`${setIndex}-${poster.title}`}
+                      className="group w-[42vw] max-w-[10rem] shrink-0 sm:w-[11.5rem] sm:max-w-none lg:w-[13.25rem]"
+                    >
+                      <div className="relative aspect-[2/3] box-border overflow-hidden rounded-[14px] border-[1.5px] border-[#A6FF00]/60 bg-[#090909] shadow-[0_18px_42px_rgba(0,0,0,0.36)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#A6FF00]/80">
+                        <Image
+                          src={poster.src}
+                          alt={poster.alt}
+                          fill
+                          sizes="(min-width: 1024px) 13.25rem, (min-width: 640px) 11.5rem, 42vw"
+                          loading="lazy"
+                          className="object-cover"
+                        />
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
+
+          <button
+            type="button"
+            aria-label="Poster Slider nach rechts bewegen"
+            onClick={() => moveSlider(1)}
+            className="absolute right-1 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/70 bg-[#050505]/88 text-[#A6FF00] shadow-[0_10px_28px_rgba(0,0,0,0.36)] transition duration-300 hover:border-[#A6FF00] hover:bg-[#0B0B0B] hover:shadow-[0_0_18px_rgba(166,255,0,0.18)] sm:flex lg:-right-4"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
         </div>
 
         <style>{`
-          @keyframes movies-series-marquee {
-            from {
-              transform: translate3d(0, 0, 0);
-            }
-
-            to {
-              transform: translate3d(-50%, 0, 0);
-            }
+          .movies-series-marquee {
+            scrollbar-width: none;
           }
 
-          .movies-series-track {
-            animation: movies-series-marquee 70s linear infinite;
-            will-change: transform;
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .movies-series-track {
-              animation-duration: 120s;
-            }
+          .movies-series-marquee::-webkit-scrollbar {
+            display: none;
           }
         `}</style>
       </div>
