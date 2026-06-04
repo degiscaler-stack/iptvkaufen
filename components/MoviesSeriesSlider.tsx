@@ -1,9 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-
-const AUTO_SCROLL_PX_PER_SECOND = 42;
 
 const posterItems = [
   {
@@ -59,38 +54,6 @@ const posterItems = [
 ] as const;
 
 export default function MoviesSeriesSlider() {
-  const marqueeRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let frameId = 0;
-    let previousTime = 0;
-
-    const scroll = (time: number) => {
-      const marquee = marqueeRef.current;
-
-      if (marquee) {
-        if (previousTime) {
-          const elapsedSeconds = (time - previousTime) / 1000;
-          const loopPoint = marquee.scrollWidth / 2;
-
-          marquee.scrollLeft += elapsedSeconds * AUTO_SCROLL_PX_PER_SECOND;
-
-          if (loopPoint > 0 && marquee.scrollLeft >= loopPoint) {
-            marquee.scrollLeft -= loopPoint;
-          }
-        }
-
-        previousTime = time;
-      }
-
-      frameId = window.requestAnimationFrame(scroll);
-    };
-
-    frameId = window.requestAnimationFrame(scroll);
-
-    return () => window.cancelAnimationFrame(frameId);
-  }, []);
-
   return (
     <section
       aria-labelledby="movies-series-heading"
@@ -114,10 +77,7 @@ export default function MoviesSeriesSlider() {
         </div>
 
         <div className="relative mt-8 sm:mt-10">
-          <div
-            ref={marqueeRef}
-            className="movies-series-marquee overflow-x-auto [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
-          >
+          <div className="movies-series-marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]">
             <div className="movies-series-track flex w-max items-center">
               {[0, 1].map((setIndex) => (
                 <div
@@ -135,7 +95,7 @@ export default function MoviesSeriesSlider() {
                           src={poster.src}
                           alt={poster.alt}
                           fill
-                          sizes="(min-width: 1024px) 13.25rem, (min-width: 640px) 11.5rem, 42vw"
+                          sizes="(min-width: 1024px) 212px, (min-width: 640px) 184px, 42vw"
                           loading="lazy"
                           className="object-cover"
                         />
@@ -149,12 +109,33 @@ export default function MoviesSeriesSlider() {
         </div>
 
         <style>{`
+          @keyframes movies-series-marquee {
+            from {
+              transform: translate3d(0, 0, 0);
+            }
+
+            to {
+              transform: translate3d(-50%, 0, 0);
+            }
+          }
+
           .movies-series-marquee {
             scrollbar-width: none;
           }
 
           .movies-series-marquee::-webkit-scrollbar {
             display: none;
+          }
+
+          .movies-series-track {
+            animation: movies-series-marquee 56s linear infinite;
+            will-change: transform;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .movies-series-track {
+              animation-duration: 100s;
+            }
           }
         `}</style>
       </div>

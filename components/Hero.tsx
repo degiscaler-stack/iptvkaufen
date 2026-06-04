@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -26,9 +27,14 @@ export default function Hero() {
       aria-label="IPTV kaufen in Deutschland"
       className="relative isolate flex min-h-[auto] items-center justify-center overflow-hidden bg-[#000000] px-5 pb-8 pt-28 text-center sm:min-h-[90vh] sm:px-8 sm:pb-20 sm:pt-32 lg:px-10 lg:pb-16 lg:pt-36"
     >
-      <div
-        className="absolute inset-0 -z-30 scale-[1.02] bg-cover bg-no-repeat [background-position:42%_center] sm:[background-position:center_center]"
-        style={{ backgroundImage: "url('/images/iptv-kaufen-hero-football.webp')" }}
+      <Image
+        src="/images/iptv-kaufen-hero-football.webp"
+        alt=""
+        fill
+        preload
+        sizes="100vw"
+        aria-hidden="true"
+        className="absolute inset-0 -z-30 scale-[1.02] object-cover [object-position:42%_center] sm:[object-position:center_center]"
       />
       <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_70%_18%,rgba(30,76,110,0.2),transparent_28rem)]" />

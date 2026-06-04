@@ -24,6 +24,9 @@ export default function Header() {
           <img
             src="/brand/iptv-kaufen-logo.webp"
             alt="IPTV Kaufen Logo"
+            width={520}
+            height={260}
+            decoding="async"
             className="h-auto w-[165px] transition duration-300 group-hover:drop-shadow-[0_0_14px_rgba(166,255,0,0.24)] lg:w-[230px]"
           />
         </Link>

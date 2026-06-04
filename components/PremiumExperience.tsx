@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const highlights = [
@@ -42,9 +43,13 @@ export default function PremiumExperience() {
 
           <div className="mt-4 sm:hidden">
             <div className="relative overflow-hidden rounded-[12px] shadow-[0_18px_46px_rgba(0,0,0,0.42)]">
-              <img
+              <Image
                 src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
                 alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
+                width={1280}
+                height={720}
+                sizes="(max-width: 639px) calc(100vw - 2.5rem), 640px"
+                loading="lazy"
                 className="h-auto w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.36)_0%,rgba(5,5,5,0.05)_28%,transparent_58%),linear-gradient(180deg,transparent_48%,rgba(5,5,5,0.28)_100%)]" />
@@ -73,9 +78,13 @@ export default function PremiumExperience() {
 
         <div className="relative hidden sm:block lg:self-center">
           <div className="relative overflow-hidden rounded-[14px] shadow-[0_28px_80px_rgba(0,0,0,0.48)]">
-            <img
+            <Image
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
               alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
+              width={1280}
+              height={720}
+              sizes="(min-width: 1024px) 620px, calc(100vw - 4rem)"
+              loading="lazy"
               className="h-auto w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.36)_0%,rgba(5,5,5,0.05)_28%,transparent_58%),linear-gradient(180deg,transparent_48%,rgba(5,5,5,0.28)_100%)]" />
