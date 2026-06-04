@@ -80,7 +80,7 @@ export default function MoviesSeriesSlider() {
 
         <div className="relative mt-8 sm:mt-10">
           <DraggableMarquee
-            className="movies-series-marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
+            className="movies-series-marquee -my-2 overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
             speed={41}
             trackClassName="movies-series-track flex w-max items-center"
           >
