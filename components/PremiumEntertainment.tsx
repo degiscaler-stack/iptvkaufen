@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+const premiumStreamingFeatures = [
+  "Live-TV, Filme & Serien",
+  "HD, Full HD & 4K",
+  "Kompatibel mit allen Geräten",
+  "Schneller Zugriff nach Bestellung",
+];
+
 export default function PremiumEntertainment() {
   return (
     <section
@@ -38,6 +45,21 @@ export default function PremiumEntertainment() {
               modernes Streaming-Erlebnis in Deutschland.
             </p>
           </div>
+
+          <ul
+            className="mt-5 grid gap-1.5 sm:mt-6 sm:grid-cols-2 sm:gap-2.5"
+            aria-label="Vorteile von Premium Streaming mit IPTV Kaufen"
+          >
+            {premiumStreamingFeatures.map((feature) => (
+              <li
+                key={feature}
+                className="flex items-center gap-2 rounded-xl border border-[#1F1F1F]/80 bg-[#111111]/42 px-2.5 py-1.5 text-[12px] font-medium leading-snug text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:text-[13px] sm:leading-normal"
+              >
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00] shadow-[0_0_10px_rgba(166,255,0,0.25)]" />
+                {feature}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
