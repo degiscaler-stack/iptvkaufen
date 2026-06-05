@@ -4,10 +4,10 @@ export default function PremiumEntertainment() {
   return (
     <section
       aria-labelledby="premium-entertainment-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 py-14 sm:px-8 sm:py-16 lg:px-0 lg:py-[4.5rem]"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-14 pt-3 sm:px-8 sm:pb-16 sm:pt-8 lg:px-0 lg:pb-[4.5rem] lg:pt-5"
     >
-      <div className="mx-auto grid max-w-[1360px] items-center gap-8 lg:grid-cols-[0.96fr_1.04fr] lg:gap-16 lg:px-12">
-        <div className="relative overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.46)]">
+      <div className="mx-auto grid max-w-[1380px] items-center gap-5 sm:gap-8 lg:max-w-[1360px] lg:grid-cols-[0.95fr_1.05fr] lg:gap-12 lg:px-12">
+        <div className="relative overflow-hidden rounded-[12px] shadow-[0_18px_46px_rgba(0,0,0,0.42)] sm:rounded-[14px] sm:shadow-[0_28px_80px_rgba(0,0,0,0.48)]">
           <Image
             src="/images/iptv-kaufen-premium-streaming.webp"
             alt="Premium Streaming mit IPTV Kaufen auf modernen Streaming Geräten"
@@ -20,7 +20,7 @@ export default function PremiumEntertainment() {
           />
         </div>
 
-        <div className="max-w-[640px] lg:justify-self-end">
+        <div className="max-w-[640px] lg:justify-self-start">
           <h2
             id="premium-entertainment-heading"
             className="text-balance text-[1.66rem] font-black leading-[1.02] tracking-[-0.055em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[3.15rem] lg:leading-[0.97]"
