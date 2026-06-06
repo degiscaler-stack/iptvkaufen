@@ -17,34 +17,32 @@ const benefits = [
 ] as const;
 
 function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
-  const iconClass = "h-8 w-8 text-[#000000] sm:h-9 sm:w-9";
+  const iconClass = "h-10 w-10 text-[#000000] sm:h-11 sm:w-11";
 
   if (icon === "channels") {
     return (
       <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3.5" y="5.5" width="17" height="11" rx="2" stroke="currentColor" strokeWidth="2.85" />
-        <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="2.85" strokeLinecap="round" />
-        <path d="M8 10.7h8" stroke="currentColor" strokeWidth="2.85" strokeLinecap="round" />
+        <rect x="3.5" y="6" width="17" height="10.8" rx="2" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 20h6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     );
   }
 
   if (icon === "media") {
     return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 8h16v10.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 18.5V8Z" stroke="currentColor" strokeWidth="2.75" strokeLinejoin="round" />
-        <path d="M4.6 8 7.2 4h4L8.6 8M12.6 8 15.2 4h4L16.6 8" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="m10.8 10.9 3.9 2.3-3.9 2.3v-4.6Z" fill="currentColor" />
+      <svg className={iconClass} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M8.2 5.4v13.2c0 1.1 1.2 1.8 2.2 1.2l9.4-6.6c.9-.6.9-1.9 0-2.5l-9.4-6.5c-1-.7-2.2 0-2.2 1.2Z" />
       </svg>
     );
   }
 
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3.5" y="5.5" width="17" height="11" rx="2" stroke="currentColor" strokeWidth="2.75" />
-      <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" />
-      <path d="M7.4 11h3.3v4.2M7.4 13h3.6M14 11v4.2M17.1 11 14.2 13l3.1 2.2" stroke="currentColor" strokeWidth="2.45" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <span
+      aria-hidden="true"
+      className="text-[1.35rem] font-black leading-none tracking-[-0.08em] text-[#000000] sm:text-[1.55rem]"
+    >
+      4K
+    </span>
   );
 }
 
