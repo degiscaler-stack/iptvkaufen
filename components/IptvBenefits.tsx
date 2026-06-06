@@ -17,7 +17,7 @@ const benefits = [
 ] as const;
 
 function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
-  const iconClass = "h-6 w-6 text-[#F5F5F5] sm:h-7 sm:w-7";
+  const iconClass = "h-7 w-7 text-[#000000] sm:h-8 sm:w-8";
 
   if (icon === "channels") {
     return (
@@ -74,18 +74,21 @@ export default function IptvBenefits() {
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="group relative flex h-full flex-col items-start overflow-hidden rounded-[16px] border border-[#FFFFFF]/8 bg-[linear-gradient(145deg,rgba(18,18,18,0.72),rgba(6,6,6,0.92))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/24 sm:p-5"
+              className="group relative h-full overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,rgba(166,255,0,0.56),rgba(219,255,86,0.24),rgba(117,255,0,0.48))] p-px shadow-[0_0_20px_rgba(166,255,0,0.035)] transition duration-300 hover:-translate-y-1 hover:bg-[linear-gradient(135deg,rgba(166,255,0,0.86),rgba(219,255,86,0.38),rgba(117,255,0,0.72))] hover:shadow-[0_0_24px_rgba(166,255,0,0.09)]"
             >
-              <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/32 to-transparent" />
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#A6FF00] sm:h-12 sm:w-12">
-                <BenefitIcon icon={benefit.icon} />
+              <div className="relative flex h-full flex-col items-center overflow-hidden rounded-[17px] bg-[linear-gradient(145deg,rgba(18,18,18,0.88),rgba(5,5,5,0.96))] px-4 py-5 text-center sm:px-5 sm:py-6">
+                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/55 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-6 bottom-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/38 to-transparent" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#A6FF00] transition duration-300 group-hover:shadow-[0_0_18px_rgba(166,255,0,0.28)] sm:h-16 sm:w-16">
+                  <BenefitIcon icon={benefit.icon} />
+                </div>
+                <h3 className="mt-3 text-[1rem] font-extrabold leading-tight tracking-[-0.035em] text-[#F5F5F5] sm:text-[1.08rem]">
+                  {benefit.title}
+                </h3>
+                <p className="mt-1.5 max-w-[230px] text-[12.5px] font-medium leading-5 text-[#F5F5F5]/72 sm:text-[13px]">
+                  {benefit.text}
+                </p>
               </div>
-              <h3 className="mt-3 text-[1rem] font-extrabold leading-tight tracking-[-0.035em] text-[#F5F5F5] sm:text-[1.06rem]">
-                {benefit.title}
-              </h3>
-              <p className="mt-1.5 text-[12.5px] font-medium leading-5 text-[#F5F5F5]/70 sm:text-[13px]">
-                {benefit.text}
-              </p>
             </article>
           ))}
         </div>
