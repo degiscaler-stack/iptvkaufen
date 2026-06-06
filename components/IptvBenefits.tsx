@@ -17,14 +17,14 @@ const benefits = [
 ] as const;
 
 function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
-  const iconClass = "h-7 w-7 text-[#000000] sm:h-8 sm:w-8";
+  const iconClass = "h-8 w-8 text-[#000000] sm:h-9 sm:w-9";
 
   if (icon === "channels") {
     return (
       <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3.5" y="5.5" width="17" height="11" rx="2" stroke="currentColor" strokeWidth="2.4" />
-        <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-        <path d="M8 10.7h8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+        <rect x="3.5" y="5.5" width="17" height="11" rx="2" stroke="currentColor" strokeWidth="2.85" />
+        <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="2.85" strokeLinecap="round" />
+        <path d="M8 10.7h8" stroke="currentColor" strokeWidth="2.85" strokeLinecap="round" />
       </svg>
     );
   }
@@ -32,18 +32,18 @@ function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
   if (icon === "media") {
     return (
       <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 8h16v10.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 18.5V8Z" stroke="currentColor" strokeWidth="2.3" strokeLinejoin="round" />
-        <path d="M4.6 8 7.2 4h4L8.6 8M12.6 8 15.2 4h4L16.6 8" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="m11 11.2 3.4 2-3.4 2v-4Z" fill="currentColor" />
+        <path d="M4 8h16v10.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 18.5V8Z" stroke="currentColor" strokeWidth="2.75" strokeLinejoin="round" />
+        <path d="M4.6 8 7.2 4h4L8.6 8M12.6 8 15.2 4h4L16.6 8" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="m10.8 10.9 3.9 2.3-3.9 2.3v-4.6Z" fill="currentColor" />
       </svg>
     );
   }
 
   return (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3.5" y="5.5" width="17" height="11" rx="2" stroke="currentColor" strokeWidth="2.3" />
-      <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" />
-      <path d="M7.6 11.1h3.1v4M7.6 13h3.4M14 11.1v4M17 11.1 14.3 13l2.9 2.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="3.5" y="5.5" width="17" height="11" rx="2" stroke="currentColor" strokeWidth="2.75" />
+      <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" />
+      <path d="M7.4 11h3.3v4.2M7.4 13h3.6M14 11v4.2M17.1 11 14.2 13l3.1 2.2" stroke="currentColor" strokeWidth="2.45" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -71,13 +71,13 @@ export default function IptvBenefits() {
           </p>
         </div>
 
-        <div className="mx-auto mt-7 grid max-w-[1040px] gap-3.5 sm:mt-9 sm:grid-cols-3 lg:gap-4">
+        <div className="mx-auto mt-7 grid max-w-[880px] justify-items-center gap-3.5 sm:mt-9 sm:grid-cols-3 lg:gap-4">
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="group relative h-full overflow-hidden rounded-[18px] border border-[#A6FF00]/28 bg-[#050805] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/48 hover:shadow-[0_0_18px_rgba(166,255,0,0.12)]"
+              className="group relative h-full w-full max-w-[270px] overflow-hidden rounded-[18px] border border-[#A6FF00]/28 bg-[#050805] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/48 hover:shadow-[0_0_18px_rgba(166,255,0,0.12)]"
             >
-              <div className="relative flex h-full min-h-[194px] flex-col items-center rounded-[17px] bg-[linear-gradient(145deg,rgba(13,17,11,0.88),rgba(5,8,5,0.98))] px-4 py-5 text-center sm:min-h-[212px] sm:px-5 sm:py-6">
+              <div className="relative flex h-full min-h-[194px] flex-col items-center rounded-[17px] bg-[linear-gradient(145deg,rgba(13,17,11,0.88),rgba(5,8,5,0.98))] px-3.5 py-5 text-center sm:min-h-[212px] sm:px-4 sm:py-6">
                 <div className="flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#A6FF00] transition duration-300 group-hover:shadow-[0_0_14px_rgba(166,255,0,0.22)] sm:h-[72px] sm:w-[72px]">
                   <BenefitIcon icon={benefit.icon} />
                 </div>
