@@ -14,25 +14,10 @@ const benefits = [
     title: "4K Qualität",
     text: "HD, Full HD und 4K Streaming.",
   },
-  {
-    icon: "devices",
-    title: "Alle Geräte",
-    text: "Smart TV, Android, iOS und PC.",
-  },
-  {
-    icon: "instant",
-    title: "Sofort Aktiv",
-    text: "Schneller Zugriff nach der Bestellung.",
-  },
-  {
-    icon: "stable",
-    title: "Stabil & Sicher",
-    text: "Optimierte Streams mit hoher Verfügbarkeit.",
-  },
 ] as const;
 
 function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
-  const iconClass = "h-9 w-9 text-[#A6FF00] sm:h-10 sm:w-10";
+  const iconClass = "h-6 w-6 text-[#F5F5F5] sm:h-7 sm:w-7";
 
   if (icon === "channels") {
     return (
@@ -54,37 +39,10 @@ function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
     );
   }
 
-  if (icon === "quality") {
-    return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M5 7.5h14v9H5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-        <path d="M8 11.3V9.8h2.7v4.4M8 12h3.1M14 9.8v4.4M16.8 9.8 14 12.5l3 1.7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (icon === "devices") {
-    return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="5" width="12.8" height="9.2" rx="1.8" stroke="currentColor" strokeWidth="1.7" />
-        <rect x="17" y="8.5" width="4" height="8.5" rx="1.2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M7 18h5M9.5 14.2V18" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (icon === "instant") {
-    return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M13 3.8 5.5 13h5.4L10 20.2l8.5-10.4h-5.7L13 3.8Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
   return (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 3.5 19 6v5.4c0 4.2-2.7 7.5-7 9.1-4.3-1.6-7-4.9-7-9.1V6l7-2.5Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-      <path d="m8.7 12.2 2.1 2.1 4.7-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5 7.5h14v9H5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <path d="M8 11.3V9.8h2.7v4.4M8 12h3.1M14 9.8v4.4M16.8 9.8 14 12.5l3 1.7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -112,20 +70,20 @@ export default function IptvBenefits() {
           </p>
         </div>
 
-        <div className="mx-auto mt-7 grid max-w-[1120px] gap-2.5 sm:mt-9 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
+        <div className="mx-auto mt-7 grid max-w-[1030px] gap-3 sm:mt-9 sm:grid-cols-3">
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="group relative overflow-hidden rounded-[15px] border border-[#A6FF00]/14 bg-[linear-gradient(145deg,rgba(17,17,17,0.76),rgba(6,6,6,0.9))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/36 sm:p-5"
+              className="group relative flex h-full flex-col items-start overflow-hidden rounded-[16px] border border-[#FFFFFF]/8 bg-[linear-gradient(145deg,rgba(18,18,18,0.72),rgba(6,6,6,0.92))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/24 sm:p-5"
             >
-              <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/45 to-transparent" />
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#A6FF00]/16 bg-[#A6FF00]/6 sm:h-[3.25rem] sm:w-[3.25rem]">
+              <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/32 to-transparent" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#A6FF00] sm:h-12 sm:w-12">
                 <BenefitIcon icon={benefit.icon} />
               </div>
-              <h3 className="mt-3 text-[1rem] font-extrabold leading-tight tracking-[-0.035em] text-[#F5F5F5] sm:text-[1.08rem]">
+              <h3 className="mt-3 text-[1rem] font-extrabold leading-tight tracking-[-0.035em] text-[#F5F5F5] sm:text-[1.06rem]">
                 {benefit.title}
               </h3>
-              <p className="mt-1.5 text-[12.5px] font-medium leading-5 text-[#F5F5F5]/72 sm:text-[13px]">
+              <p className="mt-1.5 text-[12.5px] font-medium leading-5 text-[#F5F5F5]/70 sm:text-[13px]">
                 {benefit.text}
               </p>
             </article>
