@@ -120,14 +120,14 @@ export default function IptvPricing() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1240px] gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch lg:gap-5">
+        <div className="mx-auto mt-10 grid max-w-[1240px] gap-7 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
           {packages.map((item) => (
             <article
               key={item.duration}
               className={
                 item.highlighted
-                  ? "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-[0.75px] shadow-[0_0_3px_rgba(175,255,0,0.05),0_14px_32px_rgba(0,0,0,0.36)] transition duration-500 ease-out hover:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_38px_rgba(0,0,0,0.4)] sm:p-px sm:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_42px_rgba(0,0,0,0.4)] sm:hover:shadow-[0_0_8px_rgba(175,255,0,0.11),0_22px_52px_rgba(0,0,0,0.44)]"
-                  : "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-[0.75px] shadow-[0_0_2px_rgba(175,255,0,0.025),0_12px_30px_rgba(0,0,0,0.3)] transition duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_3px_rgba(175,255,0,0.04),0_16px_36px_rgba(0,0,0,0.34)] sm:p-px sm:shadow-[0_0_3px_rgba(175,255,0,0.04),0_16px_38px_rgba(0,0,0,0.34)] sm:hover:-translate-y-1 sm:hover:shadow-[0_0_5px_rgba(175,255,0,0.07),0_20px_48px_rgba(0,0,0,0.38)]"
+                  ? "group relative mx-auto h-full w-[calc(100vw-48px)] max-w-[340px] rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-[0.75px] shadow-[0_0_3px_rgba(175,255,0,0.05),0_14px_32px_rgba(0,0,0,0.36)] transition duration-500 ease-out hover:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_38px_rgba(0,0,0,0.4)] sm:w-full sm:max-w-none sm:p-px sm:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_42px_rgba(0,0,0,0.4)] sm:hover:shadow-[0_0_8px_rgba(175,255,0,0.11),0_22px_52px_rgba(0,0,0,0.44)]"
+                  : "group relative mx-auto h-full w-[calc(100vw-48px)] max-w-[340px] rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-[0.75px] shadow-[0_0_2px_rgba(175,255,0,0.025),0_12px_30px_rgba(0,0,0,0.3)] transition duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_3px_rgba(175,255,0,0.04),0_16px_36px_rgba(0,0,0,0.34)] sm:w-full sm:max-w-none sm:p-px sm:shadow-[0_0_3px_rgba(175,255,0,0.04),0_16px_38px_rgba(0,0,0,0.34)] sm:hover:-translate-y-1 sm:hover:shadow-[0_0_5px_rgba(175,255,0,0.07),0_20px_48px_rgba(0,0,0,0.38)]"
               }
             >
               <div
@@ -186,8 +186,8 @@ export default function IptvPricing() {
                   href="#iptv-kaufen"
                   className={
                     item.highlighted
-                      ? "mt-auto inline-flex min-h-9 w-full items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.09)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_6px_rgba(175,255,0,0.14)] sm:min-h-11 sm:px-5 sm:py-3 sm:shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
-                      : "mt-auto inline-flex min-h-9 w-full items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[11.5px] font-semibold uppercase tracking-[0.11em] !text-[#050505] shadow-[0_0_3px_rgba(175,255,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_5px_rgba(175,255,0,0.1)] sm:min-h-11 sm:px-5 sm:py-3 sm:shadow-[0_0_4px_rgba(175,255,0,0.08)] sm:hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]"
+                      ? "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.09)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_6px_rgba(175,255,0,0.14)] sm:min-h-11 sm:max-w-none sm:px-5 sm:py-3 sm:shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
+                      : "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[11.5px] font-semibold uppercase tracking-[0.11em] !text-[#050505] shadow-[0_0_3px_rgba(175,255,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_5px_rgba(175,255,0,0.1)] sm:min-h-11 sm:max-w-none sm:px-5 sm:py-3 sm:shadow-[0_0_4px_rgba(175,255,0,0.08)] sm:hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]"
                   }
                 >
                   {item.buttonLabel}
