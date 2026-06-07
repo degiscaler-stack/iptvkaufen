@@ -139,7 +139,7 @@ export default function IptvPricing() {
               >
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#AFFF00]/45 to-transparent" />
 
-                <div className="mb-1 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]">
+                <div className={item.badge ? "mb-5 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]" : "mb-1 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]"}>
                   {item.badge ? (
                     <span className="inline-flex whitespace-nowrap rounded-full bg-[#AFFF00] px-3.5 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)]">
                       {item.badge}
