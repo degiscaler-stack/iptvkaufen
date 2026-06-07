@@ -17,13 +17,12 @@ const benefits = [
 ] as const;
 
 function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
-  const iconClass = "h-10 w-10 text-[#000000] sm:h-11 sm:w-11";
+  const iconClass = "h-[52px] w-[52px] text-[#000000] sm:h-[58px] sm:w-[58px]";
 
   if (icon === "channels") {
     return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3.5" y="6" width="17" height="10.8" rx="2" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M9 20h6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <svg className={iconClass} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v8.5a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15.25v-8.5A2.25 2.25 0 0 1 5.25 4.5Zm5.25 14.25h3a1.5 1.5 0 0 1 1.5 1.5v.25H9v-.25a1.5 1.5 0 0 1 1.5-1.5Z" />
       </svg>
     );
   }
@@ -31,7 +30,11 @@ function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
   if (icon === "media") {
     return (
       <svg className={iconClass} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M8.2 5.4v13.2c0 1.1 1.2 1.8 2.2 1.2l9.4-6.6c.9-.6.9-1.9 0-2.5l-9.4-6.5c-1-.7-2.2 0-2.2 1.2Z" />
+        <path
+          fillRule="evenodd"
+          d="M5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75A2.75 2.75 0 0 1 5.75 4ZM6 6.4v2.2h2.2V6.4H6Zm0 4.5v2.2h2.2v-2.2H6Zm0 4.5v2.2h2.2v-2.2H6Zm3.95-8.15v9.5h4.1v-9.5h-4.1Zm5.85-.85v2.2H18V6.4h-2.2Zm0 4.5v2.2H18v-2.2h-2.2Zm0 4.5v2.2H18v-2.2h-2.2Z"
+          clipRule="evenodd"
+        />
       </svg>
     );
   }
@@ -39,7 +42,7 @@ function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
   return (
     <span
       aria-hidden="true"
-      className="text-[1.35rem] font-black leading-none tracking-[-0.08em] text-[#000000] sm:text-[1.55rem]"
+      className="text-[1.9rem] font-black leading-none tracking-[-0.09em] text-[#000000] sm:text-[2.1rem]"
     >
       4K
     </span>
@@ -69,21 +72,22 @@ export default function IptvBenefits() {
           </p>
         </div>
 
-        <div className="mx-auto mt-7 grid max-w-[880px] justify-items-center gap-3.5 sm:mt-9 sm:grid-cols-3 lg:gap-4">
+        <div className="mx-auto mt-7 grid max-w-[880px] justify-items-center gap-5 sm:mt-9 sm:grid-cols-3 lg:gap-6">
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="group relative h-full w-full max-w-[270px] overflow-hidden rounded-[18px] border border-[#A6FF00]/28 bg-[#050805] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/48 hover:shadow-[0_0_18px_rgba(166,255,0,0.12)]"
+              className="group relative h-full w-full max-w-[270px] rounded-[22px] bg-[linear-gradient(135deg,#6BFF2A_0%,#A6FF00_42%,#8DFF00_70%,#A6FF00_100%)] p-[2px] shadow-[0_0_18px_rgba(166,255,0,0.16),0_18px_45px_rgba(0,0,0,0.38)] transition-all duration-500 ease-out hover:-translate-y-1 hover:bg-[linear-gradient(135deg,#A6FF00_0%,#8DFF00_38%,#6BFF2A_68%,#A6FF00_100%)] hover:shadow-[0_0_26px_rgba(166,255,0,0.24),0_24px_58px_rgba(0,0,0,0.44)]"
             >
-              <div className="relative flex h-full min-h-[194px] flex-col items-center rounded-[17px] bg-[linear-gradient(145deg,rgba(13,17,11,0.88),rgba(5,8,5,0.98))] px-3.5 py-5 text-center sm:min-h-[212px] sm:px-4 sm:py-6">
-                <div className="flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#A6FF00] transition duration-300 group-hover:shadow-[0_0_14px_rgba(166,255,0,0.22)] sm:h-[72px] sm:w-[72px]">
+              <div className="relative flex h-full min-h-[236px] flex-col items-center justify-center overflow-hidden rounded-[20px] bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.12),transparent_40%),linear-gradient(155deg,rgba(18,27,13,0.98)_0%,rgba(7,12,8,0.99)_50%,rgba(3,7,5,1)_100%)] px-4 py-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-18px_34px_rgba(0,0,0,0.28)] sm:min-h-[252px] sm:px-5 sm:py-8">
+                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/70 to-transparent" />
+                <div className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#A6FF00] shadow-[0_10px_26px_rgba(166,255,0,0.18),inset_0_1px_0_rgba(255,255,255,0.38)] transition duration-300 group-hover:bg-[#8DFF00] group-hover:shadow-[0_0_18px_rgba(166,255,0,0.28),inset_0_1px_0_rgba(255,255,255,0.42)] sm:h-[61px] sm:w-[61px]">
                   <BenefitIcon icon={benefit.icon} />
                 </div>
-                <h3 className="mt-4 text-[1rem] font-extrabold leading-tight tracking-[-0.035em] text-[#F5F5F5] sm:text-[1.12rem]">
+                <h3 className="mt-5 text-[1.08rem] font-extrabold leading-tight tracking-[-0.035em] text-[#F5F5F5] sm:text-[1.22rem]">
                   {benefit.title}
                 </h3>
-                <div className="mt-2.5 h-px w-10 rounded-full bg-[#A6FF00]/80" />
-                <p className="mt-2.5 max-w-[230px] text-[12.5px] font-medium leading-5 text-[#F5F5F5]/72 sm:text-[13px]">
+                <div className="mt-3 h-px w-14 rounded-full bg-gradient-to-r from-transparent via-[#A6FF00] to-transparent" />
+                <p className="mt-3 max-w-[230px] text-[13.5px] font-medium leading-6 text-[#F5F5F5]/78 sm:text-[14px]">
                   {benefit.text}
                 </p>
               </div>
