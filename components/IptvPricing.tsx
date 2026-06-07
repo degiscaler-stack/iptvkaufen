@@ -50,7 +50,7 @@ const packages = [
 
 function CheckIcon() {
   return (
-    <svg className="h-[15px] w-[15px] shrink-0 text-[#A6FF00]" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <svg className="h-3.5 w-3.5 shrink-0 text-[#AFFF00]" viewBox="0 0 20 20" fill="none" aria-hidden="true">
       <path
         d="m4.5 10.3 3.3 3.2 7.7-8"
         stroke="currentColor"
@@ -73,18 +73,18 @@ function CalendarIcon({
     <div
       className={
         highlighted
-          ? "flex h-[66px] w-[66px] items-center justify-center rounded-full border border-[#B8FF4D]/90 bg-[#A6FF00]/9 shadow-[0_0_8px_rgba(166,255,0,0.1)]"
-          : "flex h-[66px] w-[66px] items-center justify-center rounded-full border border-[#A6FF00]/78 bg-[#A6FF00]/5 shadow-[0_0_6px_rgba(166,255,0,0.07)]"
+          ? "flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#AFFF00]/85 bg-[#AFFF00]/8 shadow-[0_0_6px_rgba(175,255,0,0.09)]"
+          : "flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#AFFF00]/68 bg-[#AFFF00]/5 shadow-[0_0_4px_rgba(175,255,0,0.06)]"
       }
     >
-      <svg className="h-9 w-9 text-[#A6FF00]" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <svg className="h-8 w-8 text-[#AFFF00]" viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <rect x="8.5" y="9.5" width="23" height="22" rx="4" stroke="currentColor" strokeWidth="2" />
         <path d="M8.5 16.5h23M14.5 7.5v5M25.5 7.5v5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         <text
           x="20"
           y="26.5"
           textAnchor="middle"
-          className="fill-[#A6FF00] text-[10px] font-bold tracking-[-0.08em]"
+          className="fill-[#AFFF00] text-[10px] font-semibold tracking-[-0.08em]"
         >
           {number}
         </text>
@@ -120,28 +120,28 @@ export default function IptvPricing() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1260px] gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch lg:gap-5">
+        <div className="mx-auto mt-10 grid max-w-[1240px] gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch lg:gap-5">
           {packages.map((item) => (
             <article
               key={item.duration}
               className={
                 item.highlighted
-                  ? "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#7FFF00_0%,#B8FF4D_48%,#7FFF00_100%)] p-[1.4px] shadow-[0_0_7px_rgba(166,255,0,0.09),0_18px_44px_rgba(0,0,0,0.4)] transition duration-500 ease-out hover:shadow-[0_0_11px_rgba(166,255,0,0.13),0_24px_58px_rgba(0,0,0,0.44)]"
-                  : "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#7FFF00_0%,#B8FF4D_48%,#7FFF00_100%)] p-[1.4px] shadow-[0_0_5px_rgba(166,255,0,0.05),0_16px_40px_rgba(0,0,0,0.34)] transition duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_0_8px_rgba(166,255,0,0.08),0_22px_52px_rgba(0,0,0,0.38)]"
+                  ? "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-px shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_42px_rgba(0,0,0,0.4)] transition duration-500 ease-out hover:shadow-[0_0_8px_rgba(175,255,0,0.11),0_22px_52px_rgba(0,0,0,0.44)]"
+                  : "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-px shadow-[0_0_3px_rgba(175,255,0,0.04),0_16px_38px_rgba(0,0,0,0.34)] transition duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_0_5px_rgba(175,255,0,0.07),0_20px_48px_rgba(0,0,0,0.38)]"
               }
             >
               <div
                 className={
                   item.highlighted
-                    ? "relative flex h-full min-h-[545px] flex-col overflow-hidden rounded-[20px] bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.13),transparent_42%),linear-gradient(160deg,rgba(17,29,12,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-5 py-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.09)] lg:px-6"
-                    : "relative flex h-full min-h-[545px] flex-col overflow-hidden rounded-[20px] bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.065),transparent_42%),linear-gradient(160deg,rgba(14,21,11,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-5 py-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] lg:px-6"
+                    ? "relative flex h-full min-h-[512px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.11),transparent_40%),linear-gradient(160deg,rgba(15,26,11,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-5 py-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] lg:px-6"
+                    : "relative flex h-full min-h-[512px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.045),transparent_40%),linear-gradient(160deg,rgba(13,19,10,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-5 py-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] lg:px-6"
                 }
               >
-                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#B8FF4D]/65 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#AFFF00]/45 to-transparent" />
 
-                <div className="mb-3 flex h-[26px] items-center justify-center">
+                <div className="mb-2.5 flex h-[24px] items-center justify-center">
                   {item.badge ? (
-                    <span className="inline-flex whitespace-nowrap rounded-full bg-[#A6FF00] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_8px_rgba(166,255,0,0.14)]">
+                    <span className="inline-flex whitespace-nowrap rounded-full bg-[#AFFF00] px-3.5 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)]">
                       {item.badge}
                     </span>
                   ) : null}
@@ -151,29 +151,29 @@ export default function IptvPricing() {
                   <CalendarIcon number={item.iconNumber} highlighted={item.highlighted} />
                 </div>
 
-                <h3 className="mt-4 text-center text-[1.22rem] font-bold leading-tight tracking-[-0.03em] text-[#F5F5F5] sm:text-[1.34rem]">
+                <h3 className="mt-4 text-center text-[1.18rem] font-semibold leading-tight tracking-[-0.025em] text-[#F5F5F5] sm:text-[1.3rem]">
                   {item.duration}
                 </h3>
 
-                <div className="mx-auto mt-3.5 h-px w-16 rounded-full bg-[#A6FF00] shadow-[0_0_6px_rgba(166,255,0,0.16)]" />
+                <div className="mx-auto mt-3 h-px w-16 rounded-full bg-[#AFFF00]/90 shadow-[0_0_4px_rgba(175,255,0,0.1)]" />
 
-                <p className="mt-5 flex h-[56px] items-end justify-center">
+                <p className="mt-4 flex h-[54px] items-end justify-center">
                   <span
                     className={
                       item.highlighted
-                        ? "text-[2.92rem] font-bold leading-none tracking-[-0.06em] text-[#A6FF00] [text-shadow:0_0_6px_rgba(166,255,0,0.12)] sm:text-[3.08rem]"
-                        : "text-[2.48rem] font-bold leading-none tracking-[-0.05em] text-[#F5F5F5] sm:text-[2.68rem]"
+                        ? "text-[2.88rem] font-semibold leading-none tracking-[-0.055em] text-[#AFFF00] [text-shadow:0_0_4px_rgba(175,255,0,0.1)] sm:text-[3.02rem]"
+                        : "text-[2.48rem] font-semibold leading-none tracking-[-0.045em] text-[#F5F5F5] sm:text-[2.64rem]"
                     }
                   >
                     {item.price}
                   </span>
                 </p>
 
-                <p className="mx-auto mt-4 min-h-[4.85rem] max-w-[192px] text-left text-[13.5px] font-normal leading-[1.78] text-[#F5F5F5]/80 sm:text-[14px]">
+                <p className="mx-auto mt-3.5 h-[4.75rem] w-full max-w-[215px] text-left text-[13.5px] font-normal leading-[1.7] text-[#F5F5F5]/80 sm:text-[14px]">
                   {item.description}
                 </p>
 
-                <ul className="mb-8 mt-4 space-y-3 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88">
+                <ul className="mx-auto mb-9 mt-4 w-full max-w-[215px] space-y-2.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88">
                   {features.map((feature) => (
                     <li key={feature} className="grid grid-cols-[15px_1fr] items-center gap-3">
                       <CheckIcon />
@@ -186,8 +186,8 @@ export default function IptvPricing() {
                   href="#iptv-kaufen"
                   className={
                     item.highlighted
-                      ? "mt-auto inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#A6FF00] px-5 py-3 text-center text-[12.5px] font-bold uppercase tracking-[0.14em] !text-[#050505] shadow-[0_0_8px_rgba(166,255,0,0.16)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_12px_rgba(166,255,0,0.22)]"
-                      : "mt-auto inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#A6FF00] px-5 py-3 text-center text-[12px] font-bold uppercase tracking-[0.12em] !text-[#050505] shadow-[0_0_6px_rgba(166,255,0,0.1)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_10px_rgba(166,255,0,0.16)]"
+                      ? "mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#AFFF00] px-5 py-3 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
+                      : "mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#AFFF00] px-5 py-3 text-center text-[11.5px] font-semibold uppercase tracking-[0.11em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.08)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]"
                   }
                 >
                   {item.buttonLabel}
