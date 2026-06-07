@@ -77,7 +77,7 @@ function CalendarIcon({
           : "flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#AFFF00]/68 bg-[#AFFF00]/5 shadow-[0_0_4px_rgba(175,255,0,0.06)]"
       }
     >
-      <svg className="h-8 w-8 text-[#AFFF00]" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <svg className="h-9 w-9 text-[#AFFF00] sm:h-8 sm:w-8" viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <rect x="8.5" y="9.5" width="23" height="22" rx="4" stroke="currentColor" strokeWidth="2" />
         <path d="M8.5 16.5h23M14.5 7.5v5M25.5 7.5v5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         <text
@@ -133,13 +133,13 @@ export default function IptvPricing() {
               <div
                 className={
                   item.highlighted
-                    ? "relative flex h-full min-h-[512px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.11),transparent_40%),linear-gradient(160deg,rgba(15,26,11,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-5 py-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] lg:px-6"
-                    : "relative flex h-full min-h-[512px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.045),transparent_40%),linear-gradient(160deg,rgba(13,19,10,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-5 py-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] lg:px-6"
+                    ? "relative flex h-full min-h-[520px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.11),transparent_40%),linear-gradient(160deg,rgba(15,26,11,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-5 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[512px] sm:py-6 lg:px-6"
+                    : "relative flex h-full min-h-[520px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.045),transparent_40%),linear-gradient(160deg,rgba(13,19,10,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-5 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] sm:min-h-[512px] sm:py-6 lg:px-6"
                 }
               >
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#AFFF00]/45 to-transparent" />
 
-                <div className="mb-2.5 flex h-[24px] items-center justify-center">
+                <div className="mb-1 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]">
                   {item.badge ? (
                     <span className="inline-flex whitespace-nowrap rounded-full bg-[#AFFF00] px-3.5 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)]">
                       {item.badge}
@@ -151,13 +151,13 @@ export default function IptvPricing() {
                   <CalendarIcon number={item.iconNumber} highlighted={item.highlighted} />
                 </div>
 
-                <h3 className="mt-4 text-center text-[1.18rem] font-semibold leading-tight tracking-[-0.025em] text-[#F5F5F5] sm:text-[1.3rem]">
+                <h3 className="mt-2.5 text-center text-[1.18rem] font-semibold leading-tight tracking-[-0.025em] text-[#F5F5F5] sm:mt-4 sm:text-[1.3rem]">
                   {item.duration}
                 </h3>
 
-                <div className="mx-auto mt-3 h-px w-16 rounded-full bg-[#AFFF00]/90 shadow-[0_0_4px_rgba(175,255,0,0.1)]" />
+                <div className="mx-auto mt-2.5 h-px w-16 rounded-full bg-[#AFFF00]/90 shadow-[0_0_4px_rgba(175,255,0,0.1)] sm:mt-3" />
 
-                <p className="mt-4 flex h-[54px] items-end justify-center">
+                <p className="mt-3 flex h-12 items-end justify-center sm:mt-4 sm:h-[54px]">
                   <span
                     className={
                       item.highlighted
@@ -169,11 +169,11 @@ export default function IptvPricing() {
                   </span>
                 </p>
 
-                <p className="mx-auto mt-3.5 h-[4.75rem] w-full max-w-[215px] text-left text-[13.5px] font-normal leading-[1.7] text-[#F5F5F5]/80 sm:text-[14px]">
+                <p className="mx-auto mt-2.5 h-[4.25rem] w-full max-w-[215px] text-left text-[13.5px] font-normal leading-[1.6] text-[#F5F5F5]/80 sm:mt-3.5 sm:h-[4.75rem] sm:text-[14px] sm:leading-[1.7]">
                   {item.description}
                 </p>
 
-                <ul className="mx-auto mb-9 mt-4 w-full max-w-[215px] space-y-2.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88">
+                <ul className="mx-auto mb-6 mt-2.5 w-full max-w-[215px] space-y-2 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88 sm:mb-9 sm:mt-4 sm:space-y-2.5">
                   {features.map((feature) => (
                     <li key={feature} className="grid grid-cols-[15px_1fr] items-center gap-3">
                       <CheckIcon />
@@ -186,8 +186,8 @@ export default function IptvPricing() {
                   href="#iptv-kaufen"
                   className={
                     item.highlighted
-                      ? "mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#AFFF00] px-5 py-3 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
-                      : "mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#AFFF00] px-5 py-3 text-center text-[11.5px] font-semibold uppercase tracking-[0.11em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.08)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]"
+                      ? "mt-auto inline-flex min-h-10 w-full items-center justify-center rounded-full bg-[#AFFF00] px-5 py-2.5 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_9px_rgba(175,255,0,0.18)] sm:min-h-11 sm:py-3"
+                      : "mt-auto inline-flex min-h-10 w-full items-center justify-center rounded-full bg-[#AFFF00] px-5 py-2.5 text-center text-[11.5px] font-semibold uppercase tracking-[0.11em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.08)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_7px_rgba(175,255,0,0.12)] sm:min-h-11 sm:py-3"
                   }
                 >
                   {item.buttonLabel}
