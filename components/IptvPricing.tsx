@@ -91,57 +91,88 @@ export default function IptvPricing() {
               key={item.duration}
               className={
                 item.highlighted
-                  ? "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[#A6FF00]/65 bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.2),transparent_44%),linear-gradient(155deg,rgba(19,31,12,0.98)_0%,rgba(8,13,8,1)_58%,rgba(3,7,5,1)_100%)] p-5 shadow-[0_0_24px_rgba(166,255,0,0.18),0_24px_58px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.08)] transition duration-500 ease-out hover:-translate-y-1.5 hover:border-[#A6FF00] hover:shadow-[0_0_32px_rgba(166,255,0,0.24),0_30px_70px_rgba(0,0,0,0.48)] lg:-translate-y-3 lg:p-6"
-                  : "group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-[#A6FF00]/24 bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.08),transparent_42%),linear-gradient(155deg,rgba(16,22,12,0.96)_0%,rgba(8,11,8,0.99)_56%,rgba(4,6,5,1)_100%)] p-5 shadow-[0_16px_42px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.055)] transition duration-500 ease-out hover:-translate-y-1.5 hover:border-[#A6FF00]/45 hover:shadow-[0_0_18px_rgba(166,255,0,0.12),0_22px_54px_rgba(0,0,0,0.4)] lg:p-6"
+                  ? "group relative h-full rounded-[24px] bg-[linear-gradient(135deg,rgba(166,255,0,0.94)_0%,rgba(207,255,90,0.9)_44%,rgba(141,255,0,0.82)_100%)] p-px shadow-[0_0_26px_rgba(166,255,0,0.22),0_24px_58px_rgba(0,0,0,0.46)] transition duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_0_34px_rgba(166,255,0,0.28),0_30px_70px_rgba(0,0,0,0.5)] lg:-translate-y-5 lg:hover:-translate-y-6"
+                  : "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,rgba(166,255,0,0.22)_0%,rgba(31,31,31,0.78)_50%,rgba(166,255,0,0.16)_100%)] p-px shadow-[0_16px_42px_rgba(0,0,0,0.34)] transition duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_0_18px_rgba(166,255,0,0.12),0_22px_54px_rgba(0,0,0,0.4)]"
               }
             >
-              {item.highlighted ? (
-                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#CFFF5A]/80 to-transparent" />
-              ) : (
-                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/35 to-transparent" />
-              )}
-
-              {item.badge ? (
-                <span className="mb-4 inline-flex w-fit rounded-full bg-[#A6FF00] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-[#050505] shadow-[0_0_18px_rgba(166,255,0,0.28)]">
-                  {item.badge}
-                </span>
-              ) : (
-                <span className="mb-4 h-[30px]" aria-hidden="true" />
-              )}
-
-              <div>
-                <h3 className="text-[1.25rem] font-black leading-tight tracking-[-0.04em] text-[#F5F5F5] sm:text-[1.35rem]">
-                  {item.duration}
-                </h3>
-                <p className="mt-3 flex items-end gap-1.5">
-                  <span className="text-[2.35rem] font-black leading-none tracking-[-0.06em] text-[#F5F5F5] sm:text-[2.65rem]">
-                    {item.price}
-                  </span>
-                </p>
-                <p className="mt-3 min-h-[3.25rem] text-[13.5px] font-medium leading-6 text-[#F5F5F5]/76 sm:text-[14px]">
-                  {item.description}
-                </p>
-              </div>
-
-              <ul className="mt-5 space-y-2.5 text-[13px] font-medium leading-snug text-[#F5F5F5]/86">
-                {features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2.5">
-                    <CheckIcon />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href="#iptv-kaufen"
+              <div
                 className={
                   item.highlighted
-                    ? "mt-7 inline-flex min-h-11 items-center justify-center rounded-full bg-[#A6FF00] px-5 py-3 text-center text-[12px] font-black uppercase tracking-[0.12em] !text-[#050505] shadow-[0_0_20px_rgba(166,255,0,0.3)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF28] hover:shadow-[0_0_28px_rgba(166,255,0,0.42)]"
-                    : "mt-7 inline-flex min-h-11 items-center justify-center rounded-full bg-[#A6FF00] px-5 py-3 text-center text-[12px] font-black uppercase tracking-[0.12em] !text-[#050505] shadow-[0_0_14px_rgba(166,255,0,0.2)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF28] hover:shadow-[0_0_22px_rgba(166,255,0,0.3)]"
+                    ? "relative flex h-full flex-col overflow-hidden rounded-[23px] bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.24),transparent_43%),linear-gradient(155deg,rgba(22,36,13,0.99)_0%,rgba(8,14,8,1)_55%,rgba(3,7,5,1)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] lg:p-6"
+                    : "relative flex h-full flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.08),transparent_42%),linear-gradient(155deg,rgba(16,22,12,0.96)_0%,rgba(8,11,8,0.99)_56%,rgba(4,6,5,1)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)] lg:p-6"
                 }
               >
-                {item.buttonLabel}
-              </Link>
+                {item.highlighted ? (
+                  <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#CFFF5A]/90 to-transparent" />
+                ) : (
+                  <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/35 to-transparent" />
+                )}
+
+                <div className="mb-4 flex h-[52px] flex-col items-start justify-start">
+                  {item.badge ? (
+                    <>
+                      <span className="inline-flex w-fit rounded-full bg-[#A6FF00] px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-[#050505] shadow-[0_0_18px_rgba(166,255,0,0.3)]">
+                        {item.badge}
+                      </span>
+                      <span className="mt-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#CFFF5A]">
+                        Meistgewählt
+                      </span>
+                    </>
+                  ) : null}
+                </div>
+
+                <div>
+                  <h3 className="text-[1.25rem] font-black leading-tight tracking-[-0.04em] text-[#F5F5F5] sm:text-[1.35rem]">
+                    {item.duration}
+                  </h3>
+                  <p className="mt-3 flex h-[52px] items-end gap-1.5">
+                    <span
+                      className={
+                        item.highlighted
+                          ? "text-[2.6rem] font-black leading-none tracking-[-0.065em] text-[#F5F5F5] [text-shadow:0_0_18px_rgba(166,255,0,0.12)] sm:text-[2.9rem]"
+                          : "text-[2.35rem] font-black leading-none tracking-[-0.06em] text-[#F5F5F5] sm:text-[2.65rem]"
+                      }
+                    >
+                      {item.price}
+                    </span>
+                  </p>
+                  <p
+                    className={
+                      item.highlighted
+                        ? "mt-3 min-h-[3.25rem] text-[13.5px] font-semibold leading-6 text-[#F5F5F5]/88 sm:text-[14px]"
+                        : "mt-3 min-h-[3.25rem] text-[13.5px] font-medium leading-6 text-[#F5F5F5]/76 sm:text-[14px]"
+                    }
+                  >
+                    {item.description}
+                  </p>
+                </div>
+
+                <ul
+                  className={
+                    item.highlighted
+                      ? "mt-5 space-y-2.5 text-[13px] font-semibold leading-snug text-[#F5F5F5]/92"
+                      : "mt-5 space-y-2.5 text-[13px] font-medium leading-snug text-[#F5F5F5]/86"
+                  }
+                >
+                  {features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2.5">
+                      <CheckIcon />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="#iptv-kaufen"
+                  className={
+                    item.highlighted
+                      ? "mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3.5 text-center text-[12.5px] font-black uppercase tracking-[0.14em] !text-[#050505] shadow-[0_0_24px_rgba(166,255,0,0.36)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF28] hover:shadow-[0_0_32px_rgba(166,255,0,0.46)]"
+                      : "mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#A6FF00] px-5 py-3 text-center text-[12px] font-black uppercase tracking-[0.12em] !text-[#050505] shadow-[0_0_14px_rgba(166,255,0,0.2)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF28] hover:shadow-[0_0_22px_rgba(166,255,0,0.3)]"
+                  }
+                >
+                  {item.buttonLabel}
+                </Link>
+              </div>
             </article>
           ))}
         </div>
