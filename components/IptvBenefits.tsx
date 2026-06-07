@@ -17,17 +17,16 @@ const benefits = [
 ] as const;
 
 function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
-  const iconClass =
-    "h-10 w-10 text-[#050505]/90 transition-transform duration-500 ease-out group-hover:scale-105 sm:h-11 sm:w-11";
+  const iconClass = "h-8 w-8 text-[#AFFF00] sm:h-9 sm:w-9";
 
   if (icon === "channels") {
     return (
       <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M5.2 17.8c2.9-2.8 7.7-2.8 10.6 0" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" />
-        <path d="M7.8 15.2a3.85 3.85 0 0 1 5.4 0" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" />
-        <circle cx="10.5" cy="12.6" r="1.15" fill="currentColor" />
-        <path d="M4.6 19.4 10.7 7.2c.35-.7 1.34-.73 1.73-.06l1.15 1.94" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M15.35 5.15 19.9 9.7m-.15-4.38-4.22 4.22" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" />
+        <path d="M12 18.5v-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M8.5 21h7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M7.1 14.2a6.6 6.6 0 0 1 0-8.4M16.9 5.8a6.6 6.6 0 0 1 0 8.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M4.3 17a10.6 10.6 0 0 1 0-14M19.7 3a10.6 10.6 0 0 1 0 14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     );
   }
@@ -35,22 +34,22 @@ function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
   if (icon === "media") {
     return (
       <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4.4 9.7h15.2v8.05A2.15 2.15 0 0 1 17.45 19.9H6.55a2.15 2.15 0 0 1-2.15-2.15V9.7Z" stroke="currentColor" strokeWidth="2.05" strokeLinejoin="round" />
-        <path d="M4.9 6.55 18.65 4.1l.58 3.25L5.48 9.8 4.9 6.55Z" stroke="currentColor" strokeWidth="2.05" strokeLinejoin="round" />
-        <path d="m8.1 6 2.35 3.05m2.2-3.85L15 8.25M7.7 13h8.6" stroke="currentColor" strokeWidth="2.05" strokeLinecap="round" />
+        <path d="M4.4 9.7h15.2v8.05A2.15 2.15 0 0 1 17.45 19.9H6.55a2.15 2.15 0 0 1-2.15-2.15V9.7Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="M4.9 6.55 18.65 4.1l.58 3.25L5.48 9.8 4.9 6.55Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="m8.1 6 2.35 3.05m2.2-3.85L15 8.25M7.7 13h8.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     );
   }
 
   return (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3.8" y="5" width="16.4" height="11.2" rx="2.1" stroke="currentColor" strokeWidth="2.05" />
-      <path d="M9 19.4h6M12 16.2v3.2" stroke="currentColor" strokeWidth="2.05" strokeLinecap="round" />
+      <rect x="3.8" y="5.2" width="16.4" height="11.2" rx="2.2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M9 19.5h6M12 16.4v3.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       <text
         x="12"
         y="12.6"
         textAnchor="middle"
-        className="fill-[#050505] text-[6.5px] font-black tracking-[-0.08em]"
+        className="fill-[#AFFF00] text-[6.5px] font-bold tracking-[-0.08em]"
       >
         4K
       </text>
@@ -89,7 +88,7 @@ export default function IptvBenefits() {
             >
               <div className="relative flex h-full min-h-[182px] flex-col items-center justify-center overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.08),transparent_44%),linear-gradient(155deg,rgba(18,25,13,0.98)_0%,rgba(8,12,9,0.99)_56%,rgba(4,7,5,1)_100%)] px-6 py-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.075),inset_0_-14px_26px_rgba(0,0,0,0.2)] sm:min-h-[190px] sm:px-8 sm:py-6">
                 <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[#CFFF5A]/45 to-transparent" />
-                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#A6FF00] shadow-[0_8px_18px_rgba(166,255,0,0.13),inset_0_1px_0_rgba(255,255,255,0.38)] transition duration-500 ease-out group-hover:bg-[#9DFF18] group-hover:shadow-[0_0_14px_rgba(166,255,0,0.2),inset_0_1px_0_rgba(255,255,255,0.42)] sm:h-[54px] sm:w-[54px]">
+                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full border border-[#AFFF00]/60 bg-[#AFFF00]/5 shadow-[0_0_5px_rgba(175,255,0,0.06)] transition duration-500 group-hover:border-[#AFFF00]/80 group-hover:bg-[#AFFF00]/8 sm:h-[54px] sm:w-[54px]">
                   <BenefitIcon icon={benefit.icon} />
                 </div>
                 <h3 className="mt-4 text-[1.08rem] font-extrabold leading-tight tracking-[-0.035em] text-[#F5F5F5] sm:text-[1.23rem]">
