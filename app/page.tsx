@@ -15,12 +15,12 @@ export default function Home() {
       <main>
         <Hero />
         <PremiumExperience />
-        <ChannelLogos />
-        <MoviesSeriesSlider />
-        <PremiumEntertainment />
         <IptvBenefits />
         <IptvPricing />
         <IptvHowItWorks />
+        <ChannelLogos />
+        <MoviesSeriesSlider />
+        <PremiumEntertainment />
       </main>
     </>
   );

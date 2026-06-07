@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const premiumStreamingFeatures = [
-  "Filme & Serien auf Abruf",
-  "Sport & Live-TV vereint",
-  "4K Streaming-Erlebnis",
-  "Unterhaltung auf allen Geräten",
+  "Smart TV, Smartphone & Tablet",
+  "PC & TV Box kompatibel",
+  "HD, Full HD & 4K Erlebnis",
+  "Komfortables Streaming zuhause",
 ];
 
 export default function PremiumEntertainment() {
@@ -27,9 +27,9 @@ export default function PremiumEntertainment() {
 
           <div className="mt-3 max-w-[590px] text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:text-base sm:leading-7">
             <p>
-              Mit IPTV Kaufen genießen Sie Live-TV, Filme, Serien und Sport in HD, Full HD und 4K
-              auf allen Geräten. Die Plattform ist schnell, stabil und einfach zu nutzen – für ein
-              modernes Streaming-Erlebnis in Deutschland.
+              Mit IPTV Kaufen genießen Sie ein komfortables Streaming-Erlebnis auf Smart TV,
+              Smartphone, Tablet, PC oder TV Box. Inhalte starten schnell, laufen flüssig und wirken in
+              HD, Full HD und 4K besonders klar.
             </p>
           </div>
         </div>
