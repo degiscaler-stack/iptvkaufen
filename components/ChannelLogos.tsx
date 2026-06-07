@@ -31,67 +31,6 @@ const bottomLogoRow = [
   { name: "CNN", src: "/images/channels/cnn-logo.svg" },
 ];
 
-const channelFeatures = [
-  { label: "22.000+ Sender", icon: "broadcast" },
-  { label: "HD, Full HD & 4K", icon: "quality" },
-  { label: "Alle Geräte", icon: "devices" },
-  { label: "Stabil & Sicher", icon: "shield" },
-  { label: "24/7 Support", icon: "support" },
-] as const;
-
-function FeatureIcon({ icon }: { icon: (typeof channelFeatures)[number]["icon"] }) {
-  const iconClass = "h-9 w-9 text-[#A6FF00] sm:h-11 sm:w-11 lg:h-12 lg:w-12";
-
-  if (icon === "broadcast") {
-    return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 18.5v-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <path d="M8.5 21h7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M7.1 14.2a6.6 6.6 0 0 1 0-8.4M16.9 5.8a6.6 6.6 0 0 1 0 8.4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <path d="M4.3 17a10.6 10.6 0 0 1 0-14M19.7 3a10.6 10.6 0 0 1 0 14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (icon === "quality") {
-    return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3.5" y="5" width="17" height="11.5" rx="2.2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M8 20h8M12 16.5V20" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <path d="m9 11 2 2 4-4.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (icon === "devices") {
-    return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="5" width="13" height="9" rx="1.8" stroke="currentColor" strokeWidth="1.7" />
-        <rect x="17" y="9" width="4" height="8" rx="1.2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M7 18h6M10 14v4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (icon === "shield") {
-    return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 3.5 19 6v5.4c0 4.2-2.7 7.5-7 9.1-4.3-1.6-7-4.9-7-9.1V6l7-2.5Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-        <path d="m8.8 12.1 2.1 2.1 4.4-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M5 13.5V12a7 7 0 0 1 14 0v1.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      <path d="M5 13h2.2c.7 0 1.3.6 1.3 1.3v2.4c0 .7-.6 1.3-1.3 1.3H6.5A2.5 2.5 0 0 1 4 15.5v-1A1.5 1.5 0 0 1 5.5 13H5Zm14 0h-2.2c-.7 0-1.3.6-1.3 1.3v2.4c0 .7.6 1.3 1.3 1.3h.7a2.5 2.5 0 0 0 2.5-2.5v-1A1.5 1.5 0 0 0 18.5 13H19Z" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M15.5 18c-.7 1.4-1.9 2-3.5 2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function LogoMarqueeRow({
   logos,
   direction,
@@ -165,31 +104,9 @@ export default function ChannelLogos() {
           <LogoMarqueeRow logos={bottomLogoRow} direction="right" />
         </div>
 
-        <div className="mx-auto mt-1 grid max-w-[1160px] grid-cols-2 gap-x-4 gap-y-[18px] sm:mt-2 sm:grid-cols-5 sm:gap-x-0 sm:gap-y-0">
-          {channelFeatures.map((feature, index) => (
-            <div
-              key={feature.label}
-              className={`channel-feature-card flex min-h-[3.1rem] items-center justify-center gap-2.5 px-2.5 py-2 text-center text-[13px] font-medium text-[#F5F5F5] transition-[transform,color] duration-300 sm:min-h-[5rem] sm:flex-col sm:gap-2.5 sm:border-l sm:border-[#1F1F1F]/85 sm:px-4 sm:text-[13px] first:sm:border-l-0 lg:text-[13.5px] ${
-                index === channelFeatures.length - 1
-                  ? "col-span-2 mx-auto w-full max-w-[13rem] sm:col-span-1 sm:mx-0 sm:w-auto sm:max-w-none"
-                  : ""
-              }`}
-            >
-              <FeatureIcon icon={feature.icon} />
-              <span>{feature.label}</span>
-            </div>
-          ))}
-        </div>
-
         <style>{`
           .channel-marquee-track {
             will-change: transform;
-          }
-
-          @media (hover: hover) and (pointer: fine) {
-            .channel-feature-card:hover {
-              transform: translate3d(0, -2px, 0);
-            }
           }
         `}</style>
       </div>

@@ -7,6 +7,7 @@ import IptvPricing from "@/components/IptvPricing";
 import MoviesSeriesSlider from "@/components/MoviesSeriesSlider";
 import PremiumEntertainment from "@/components/PremiumEntertainment";
 import PremiumExperience from "@/components/PremiumExperience";
+import ServiceHighlightsBar from "@/components/ServiceHighlightsBar";
 
 export default function Home() {
   return (
@@ -16,10 +17,11 @@ export default function Home() {
         <Hero />
         <PremiumExperience />
         <IptvBenefits />
-        <IptvPricing />
-        <IptvHowItWorks />
         <ChannelLogos />
         <MoviesSeriesSlider />
+        <ServiceHighlightsBar />
+        <IptvPricing />
+        <IptvHowItWorks />
         <PremiumEntertainment />
       </main>
     </>
