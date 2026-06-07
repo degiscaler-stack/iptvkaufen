@@ -5,14 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -H 0.0.0.0",
+    "start": "serve out -l tcp://0.0.0.0:${PORT:-3000}",
     "lint": "eslint"
   },
   "dependencies": {
     "framer-motion": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "serve": "^14.2.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",
