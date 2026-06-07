@@ -126,15 +126,10 @@ export default function IptvPricing() {
               key={item.duration}
               className={
                 item.highlighted
-                  ? "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#7FFF00_0%,#B8FF4D_48%,#7FFF00_100%)] p-[1.4px] shadow-[0_0_7px_rgba(166,255,0,0.09),0_18px_44px_rgba(0,0,0,0.4)] transition duration-500 ease-out hover:shadow-[0_0_11px_rgba(166,255,0,0.13),0_24px_58px_rgba(0,0,0,0.44)] lg:-translate-y-5"
+                  ? "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#7FFF00_0%,#B8FF4D_48%,#7FFF00_100%)] p-[1.4px] shadow-[0_0_7px_rgba(166,255,0,0.09),0_18px_44px_rgba(0,0,0,0.4)] transition duration-500 ease-out hover:shadow-[0_0_11px_rgba(166,255,0,0.13),0_24px_58px_rgba(0,0,0,0.44)]"
                   : "group relative h-full rounded-[22px] bg-[linear-gradient(135deg,#7FFF00_0%,#B8FF4D_48%,#7FFF00_100%)] p-[1.4px] shadow-[0_0_5px_rgba(166,255,0,0.05),0_16px_40px_rgba(0,0,0,0.34)] transition duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_0_8px_rgba(166,255,0,0.08),0_22px_52px_rgba(0,0,0,0.38)]"
               }
             >
-              {item.badge ? (
-                <span className="absolute left-1/2 top-0 z-20 inline-flex -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-[#A6FF00] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_8px_rgba(166,255,0,0.14)]">
-                  {item.badge}
-                </span>
-              ) : null}
               <div
                 className={
                   item.highlighted
@@ -144,11 +139,19 @@ export default function IptvPricing() {
               >
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#B8FF4D]/65 to-transparent" />
 
+                <div className="mb-3 flex h-[26px] items-center justify-center">
+                  {item.badge ? (
+                    <span className="inline-flex whitespace-nowrap rounded-full bg-[#A6FF00] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_8px_rgba(166,255,0,0.14)]">
+                      {item.badge}
+                    </span>
+                  ) : null}
+                </div>
+
                 <div className="flex justify-center">
                   <CalendarIcon number={item.iconNumber} highlighted={item.highlighted} />
                 </div>
 
-                <h3 className="mt-5 text-center text-[1.22rem] font-bold leading-tight tracking-[-0.03em] text-[#F5F5F5] sm:text-[1.34rem]">
+                <h3 className="mt-4 text-center text-[1.22rem] font-bold leading-tight tracking-[-0.03em] text-[#F5F5F5] sm:text-[1.34rem]">
                   {item.duration}
                 </h3>
 
