@@ -13,8 +13,8 @@ export default function PremiumEntertainment() {
       aria-labelledby="premium-entertainment-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 pb-6 pt-3 sm:px-8 sm:pb-8 sm:pt-8 lg:px-0 lg:pb-9 lg:pt-5"
     >
-      <div className="mx-auto grid max-w-[1380px] gap-5 sm:gap-8 lg:max-w-[1360px] lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-x-12 lg:gap-y-0 lg:px-12">
-        <div className="max-w-[640px] lg:col-start-2 lg:row-start-1 lg:justify-self-start">
+      <div className="mx-auto grid max-w-[1160px] gap-5 sm:gap-8 lg:grid-cols-[0.94fr_1fr] lg:items-center lg:gap-x-10 lg:gap-y-0">
+        <div className="w-full max-w-[540px] lg:col-start-2 lg:row-start-1 lg:justify-self-start">
           <h2
             id="premium-entertainment-heading"
             className="text-balance text-[1.66rem] font-black leading-[1.02] tracking-[-0.055em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[3.15rem] lg:leading-[0.97]"
@@ -25,7 +25,7 @@ export default function PremiumEntertainment() {
             </span>
           </h2>
 
-          <div className="mt-3 max-w-[590px] text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:text-base sm:leading-7">
+          <div className="mt-3 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:text-base sm:leading-7">
             <p>
               Mit IPTV Kaufen genießen Sie ein komfortables Streaming-Erlebnis auf Smart TV,
               Smartphone, Tablet, PC oder TV Box. Inhalte starten schnell, laufen flüssig und wirken in
@@ -34,7 +34,7 @@ export default function PremiumEntertainment() {
           </div>
         </div>
 
-        <div className="relative aspect-[16/9] overflow-hidden rounded-[12px] bg-[#000000] shadow-[0_18px_46px_rgba(0,0,0,0.36)] sm:rounded-[14px] lg:col-start-1 lg:row-span-2 lg:row-start-1">
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[12px] bg-[#000000] shadow-[0_18px_46px_rgba(0,0,0,0.36)] sm:rounded-[14px] lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:ml-4 lg:max-w-[510px] lg:justify-self-start lg:aspect-[16/10]">
           <Image
             src="/images/iptv-kaufen-premium-streaming.webp"
             alt="Premium Streaming mit IPTV Kaufen auf modernen Streaming Geräten"
@@ -47,7 +47,7 @@ export default function PremiumEntertainment() {
           />
         </div>
 
-        <div className="max-w-[640px] lg:col-start-2 lg:row-start-2 lg:justify-self-start">
+        <div className="w-full max-w-[540px] lg:col-start-2 lg:row-start-2 lg:justify-self-start">
           <ul
             className="grid gap-1.5 sm:grid-cols-2 sm:gap-2.5 lg:mt-6"
             aria-label="Vorteile von Premium Streaming mit IPTV Kaufen"
