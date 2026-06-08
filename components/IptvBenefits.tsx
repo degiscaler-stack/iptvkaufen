@@ -61,7 +61,7 @@ export default function IptvBenefits() {
   return (
     <section
       aria-labelledby="iptv-benefits-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 py-12 sm:px-8 sm:py-14 lg:px-0 lg:py-16"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-9 pt-12 sm:px-8 sm:pb-10 sm:pt-14 lg:px-0 lg:pb-12 lg:pt-16"
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">

@@ -57,9 +57,8 @@ export default function IptvHowItWorks() {
     <section
       id="so-funktioniert-es"
       aria-labelledby="iptv-how-it-works-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 py-12 sm:px-8 sm:py-16 lg:px-0 lg:py-[4.5rem]"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 py-10 sm:px-8 sm:py-12 lg:px-0 lg:py-14"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(166,255,0,0.08),transparent_32rem)]" />
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[820px] text-center">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:mb-4 sm:text-[11px]">

@@ -76,9 +76,8 @@ export default function ChannelLogos() {
     <section
       id="senderliste"
       aria-labelledby="channel-logos-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 py-14 sm:px-8 sm:py-16 lg:px-0 lg:py-[4.5rem]"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-7 pt-10 sm:px-8 sm:pb-8 sm:pt-12 lg:px-0 lg:pb-8 lg:pt-14"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_8%,rgba(54,92,18,0.16),transparent_34rem)]" />
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <h2

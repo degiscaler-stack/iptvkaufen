@@ -59,7 +59,7 @@ export default function MoviesSeriesSlider() {
   return (
     <section
       aria-labelledby="movies-series-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 py-14 sm:px-8 sm:py-16 lg:px-0 lg:py-[4.5rem]"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-8 pt-7 sm:px-8 sm:pb-9 sm:pt-8 lg:px-0 lg:pb-10 lg:pt-8"
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[820px] text-center">
@@ -78,7 +78,7 @@ export default function MoviesSeriesSlider() {
           </p>
         </div>
 
-        <div className="relative mt-8 sm:mt-10">
+        <div className="relative mt-7 sm:mt-8">
           <DraggableMarquee
             className="movies-series-marquee -my-2 overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
             speed={41}

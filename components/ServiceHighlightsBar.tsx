@@ -63,7 +63,7 @@ export default function ServiceHighlightsBar() {
   return (
     <section
       aria-label="IPTV Kaufen Service Highlights"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 py-8 sm:px-8 sm:py-9 lg:px-0 lg:py-10"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 py-5 sm:px-8 sm:py-6 lg:px-0 lg:py-7"
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[1160px] rounded-[22px] border border-[#A6FF00]/18 bg-[#111111]/30 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]">
