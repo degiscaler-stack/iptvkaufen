@@ -11,7 +11,7 @@ export default function PremiumEntertainment() {
   return (
     <section
       aria-labelledby="premium-entertainment-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-14 pt-3 sm:px-8 sm:pb-16 sm:pt-8 lg:px-0 lg:pb-[4.5rem] lg:pt-5"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-6 pt-3 sm:px-8 sm:pb-8 sm:pt-8 lg:px-0 lg:pb-9 lg:pt-5"
     >
       <div className="mx-auto grid max-w-[1380px] gap-5 sm:gap-8 lg:max-w-[1360px] lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-x-12 lg:gap-y-0 lg:px-12">
         <div className="max-w-[640px] lg:col-start-2 lg:row-start-1 lg:justify-self-start">
