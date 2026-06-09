@@ -35,7 +35,7 @@ export default function Hero() {
           preload
           sizes="100vw"
           aria-hidden="true"
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-contain object-center"
         />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
