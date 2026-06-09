@@ -25,54 +25,53 @@ export default function Hero() {
     <section
       id="iptv-kaufen"
       aria-label="IPTV kaufen in Deutschland"
-      className="relative isolate bg-[#000000] px-5 pb-[clamp(1.5rem,3vh,2.5rem)] pt-[clamp(5.5rem,calc(4.5rem+3vh),9rem)] text-center sm:px-8 lg:px-0"
+      className="relative isolate flex min-h-0 items-center justify-center overflow-hidden bg-[#000000] px-5 pb-[clamp(1.5rem,3vh,2.5rem)] pt-[clamp(5.5rem,calc(4.5rem+3vh),9rem)] text-center sm:min-h-[clamp(620px,88vh,900px)] sm:px-8"
     >
-      <div className="relative mx-auto flex min-h-0 w-full max-w-[1360px] items-center justify-center overflow-hidden sm:min-h-[clamp(620px,88vh,900px)] lg:px-12">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <Image
-            src="/images/iptv-kaufen-hero-football.webp"
-            alt=""
-            fill
-            preload
-            sizes="(min-width: 1024px) 1360px, calc(100vw - 2.5rem)"
-            aria-hidden="true"
-            className="h-full w-full object-cover object-[42%_center] sm:object-center"
-          />
-        </div>
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(30,76,110,0.2),transparent_28rem)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.7)_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#000000] to-transparent" />
-        <motion.div
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <Image
+          src="/images/iptv-kaufen-hero-football.webp"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
           aria-hidden="true"
-          initial={{ x: "-35%", opacity: 0 }}
-          animate={{ x: "135%", opacity: [0, 0.16, 0] }}
-          transition={{ duration: 9, repeat: Infinity, repeatDelay: 4, ease: "easeInOut" }}
-          className="pointer-events-none absolute inset-y-0 w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl"
+          className="h-full w-full object-cover object-center"
         />
-        {particles.map((particle) => (
-          <motion.span
-            key={`${particle.left}-${particle.top}`}
-            aria-hidden="true"
-            initial={{ opacity: 0.08, y: 0 }}
-            animate={{ opacity: [0.08, 0.32, 0.08], y: [-6, 8, -6] }}
-            transition={{
-              duration: particle.duration,
-              delay: particle.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="pointer-events-none absolute h-1 w-1 rounded-full bg-[#A6FF00]/60 shadow-[0_0_10px_rgba(166,255,0,0.28)]"
-            style={{ left: particle.left, top: particle.top }}
-          />
-        ))}
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(30,76,110,0.2),transparent_28rem)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.7)_100%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#000000] to-transparent" />
+      <motion.div
+        aria-hidden="true"
+        initial={{ x: "-35%", opacity: 0 }}
+        animate={{ x: "135%", opacity: [0, 0.16, 0] }}
+        transition={{ duration: 9, repeat: Infinity, repeatDelay: 4, ease: "easeInOut" }}
+        className="pointer-events-none absolute inset-y-0 w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl"
+      />
+      {particles.map((particle) => (
+        <motion.span
+          key={`${particle.left}-${particle.top}`}
+          aria-hidden="true"
+          initial={{ opacity: 0.08, y: 0 }}
+          animate={{ opacity: [0.08, 0.32, 0.08], y: [-6, 8, -6] }}
+          transition={{
+            duration: particle.duration,
+            delay: particle.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="pointer-events-none absolute h-1 w-1 rounded-full bg-[#A6FF00]/60 shadow-[0_0_10px_rgba(166,255,0,0.28)]"
+          style={{ left: particle.left, top: particle.top }}
+        />
+      ))}
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
-          className="relative z-10 mx-auto w-full max-w-[950px] py-[clamp(0.25rem,1.5vh,1rem)]"
-        >
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
+        className="relative z-10 mx-auto w-full max-w-[950px] py-[clamp(0.25rem,1.5vh,1rem)]"
+      >
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.65, ease: "easeOut" }}
@@ -136,8 +135,7 @@ export default function Hero() {
             </li>
           ))}
         </motion.ul>
-        </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
