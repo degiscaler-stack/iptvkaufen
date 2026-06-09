@@ -33,15 +33,12 @@ export default function SportsTeamsSlider() {
             </span>{" "}
             erleben
           </h2>
-          <p className="mx-auto mt-3 max-w-[680px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Erleben Sie Fußball, Motorsport, Basketball und internationale Sport-Highlights live in HD, Full HD
-            und 4K – direkt auf Smart TV, Smartphone, Tablet, PC oder TV Box.
-          </p>
         </div>
 
-        <div className="relative mt-7 sm:mt-8">
+        <div className="relative mt-5 sm:mt-6">
           <DraggableMarquee
             className="sports-teams-marquee -my-2 overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
+            direction="right"
             speed={41}
             trackClassName="sports-teams-track flex w-max items-center"
           >
