@@ -25,17 +25,19 @@ export default function Hero() {
     <section
       id="iptv-kaufen"
       aria-label="IPTV kaufen in Deutschland"
-      className="relative isolate flex min-h-[auto] items-center justify-center overflow-hidden bg-[#000000] px-5 pb-8 pt-28 text-center sm:min-h-[90vh] sm:px-8 sm:pb-20 sm:pt-32 lg:px-10 lg:pb-16 lg:pt-36"
+      className="relative isolate flex min-h-0 items-center justify-center overflow-hidden bg-[#000000] px-5 pb-[clamp(1.5rem,3vh,2.5rem)] pt-[clamp(5.5rem,calc(4.5rem+3vh),9rem)] text-center sm:min-h-[clamp(620px,88vh,900px)] sm:px-8 lg:px-10"
     >
-      <Image
-        src="/images/iptv-kaufen-hero-football.webp"
-        alt=""
-        fill
-        preload
-        sizes="100vw"
-        aria-hidden="true"
-        className="absolute inset-0 -z-30 scale-[1.02] object-cover [object-position:42%_center] sm:[object-position:center_center]"
-      />
+      <div className="pointer-events-none absolute inset-0 -z-30 overflow-hidden">
+        <Image
+          src="/images/iptv-kaufen-hero-football.webp"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          aria-hidden="true"
+          className="h-full w-full object-cover object-[42%_center] sm:object-center"
+        />
+      </div>
       <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_70%_18%,rgba(30,76,110,0.2),transparent_28rem)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.7)_100%)]" />
@@ -68,7 +70,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
         transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
-        className="mx-auto max-w-[950px]"
+        className="relative z-10 mx-auto w-full max-w-[950px] py-[clamp(0.25rem,1.5vh,1rem)]"
       >
         <motion.p
           variants={fadeUp}
@@ -81,7 +83,7 @@ export default function Hero() {
         <motion.h1
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="text-balance text-[2.5rem] font-black leading-[0.95] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[3.35rem] md:text-[4.15rem] lg:text-[5.25rem]"
+          className="text-balance text-[clamp(2.25rem,4.2vw+1.1rem,5.25rem)] font-black leading-[0.95] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)]"
         >
           IPTV Kaufen in Deutschland
           <span className="mt-2 block bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none] sm:mt-3">
@@ -92,7 +94,7 @@ export default function Hero() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto mt-5 max-w-[92%] text-pretty text-[15px] leading-[1.55] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:mt-7 sm:max-w-3xl sm:text-xl sm:leading-8"
+          className="mx-auto mt-[clamp(1rem,2.5vh,1.75rem)] max-w-[92%] text-pretty text-[clamp(0.9rem,0.35vw+0.8rem,1.25rem)] leading-[1.55] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:max-w-3xl sm:leading-8"
         >
           Jetzt IPTV kaufen und über 22.000 Live-TV Sender, Filme, Serien und Fußball in HD, Full HD und
           4K auf allen Geräten genießen.
@@ -101,7 +103,7 @@ export default function Hero() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4"
+          className="relative mt-[clamp(1.5rem,3vh,2.5rem)] flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
         >
           <div className="absolute inset-x-8 -inset-y-7 -z-10 rounded-full bg-[#6BFF2A]/12 blur-3xl" />
           <Link
@@ -121,7 +123,7 @@ export default function Hero() {
         <motion.ul
           variants={fadeUp}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto mt-7 grid max-w-[92%] grid-cols-2 gap-2 sm:mt-14 sm:max-w-3xl sm:grid-cols-4 sm:gap-2.5"
+          className="mx-auto mt-[clamp(1.25rem,3.5vh,3.5rem)] grid max-w-[92%] grid-cols-2 gap-2 sm:max-w-3xl sm:grid-cols-4 sm:gap-2.5"
           aria-label="Vorteile von Premium IPTV"
         >
           {trustBadges.map((badge) => (
