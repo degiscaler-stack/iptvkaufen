@@ -6,6 +6,7 @@ import IptvHowItWorks from "@/components/IptvHowItWorks";
 import IptvPricing from "@/components/IptvPricing";
 import MoviesSeriesSlider from "@/components/MoviesSeriesSlider";
 import SportsTeamsSlider from "@/components/SportsTeamsSlider";
+import CompatibleDevicesSlider from "@/components/CompatibleDevicesSlider";
 import PremiumEntertainment from "@/components/PremiumEntertainment";
 import PremiumExperience from "@/components/PremiumExperience";
 import ServiceHighlightsBar from "@/components/ServiceHighlightsBar";
@@ -23,6 +24,7 @@ export default function Home() {
         <SportsTeamsSlider />
         <ServiceHighlightsBar />
         <PremiumEntertainment />
+        <CompatibleDevicesSlider />
         <IptvPricing />
         <IptvHowItWorks />
       </main>
