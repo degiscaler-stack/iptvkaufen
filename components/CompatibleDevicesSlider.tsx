@@ -1,53 +1,5 @@
-import Image from "next/image";
-
 import DraggableMarquee from "./DraggableMarquee";
-
-const deviceItems = [
-  {
-    src: "/images/Operating systems/iptv-kaufen-1.webp",
-    alt: "IPTV Kaufen auf Smart TV",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-2.webp",
-    alt: "IPTV Kaufen auf Android TV",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-3.webp",
-    alt: "IPTV Kaufen auf Fire TV",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-4.webp",
-    alt: "IPTV Kaufen auf MAG Box",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-5.webp",
-    alt: "IPTV Kaufen auf Windows",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-6.webp",
-    alt: "IPTV Kaufen auf Smartphone",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-7.webp",
-    alt: "IPTV Kaufen auf Tablet",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-8.webp",
-    alt: "IPTV Kaufen auf TV Box",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-9.webp",
-    alt: "IPTV Kaufen auf PlayStation",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-10.webp",
-    alt: "IPTV Kaufen auf VLC Media Player",
-  },
-  {
-    src: "/images/Operating systems/iptv-kaufen-11.webp",
-    alt: "IPTV Kaufen auf Roku TV",
-  },
-];
+import { compatibleDeviceItems } from "./compatibleDeviceIcons";
 
 export default function CompatibleDevicesSlider() {
   return (
@@ -89,23 +41,18 @@ export default function CompatibleDevicesSlider() {
                 aria-hidden={setIndex === 1}
                 className="flex shrink-0 items-center gap-2 pr-2"
               >
-                {deviceItems.map((device) => (
+                {compatibleDeviceItems.map((device) => (
                   <article
-                    key={`${setIndex}-${device.src}`}
-                    className="flex aspect-[5/4] w-[calc((100vw-2.5rem-1rem)/3)] shrink-0 items-center justify-center rounded-2xl bg-[#111111]/42 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:w-[calc((100vw-4rem-1rem)/5)] sm:px-2.5 lg:w-[calc((min(100vw,1360px)-6rem-1.5rem)/7)]"
+                    key={`${setIndex}-${device.id}`}
+                    aria-label={device.alt}
+                    className="flex aspect-[4/5] w-[calc((100vw-2.5rem-1rem)/3)] shrink-0 flex-col items-center justify-between rounded-2xl border border-[#A6FF00]/28 bg-[#111111]/55 px-2 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:w-[calc((100vw-4rem-1rem)/5)] sm:px-2.5 sm:py-3.5 lg:w-[calc((min(100vw,1360px)-6rem-1.5rem)/7)]"
                   >
-                    <div className="relative aspect-[4/3] w-[84%]">
-                      <Image
-                        src={device.src}
-                        alt={device.alt}
-                        fill
-                        sizes="(min-width: 1024px) 180px, (min-width: 640px) 128px, 108px"
-                        draggable={false}
-                        loading="lazy"
-                        decoding="async"
-                        className="object-contain object-center"
-                      />
+                    <div className="flex flex-1 items-center justify-center">
+                      <device.Icon />
                     </div>
+                    <p className="mt-2 text-center text-[10px] font-semibold leading-tight text-[#F5F5F5] sm:text-[11px]">
+                      {device.label}
+                    </p>
                   </article>
                 ))}
               </div>
