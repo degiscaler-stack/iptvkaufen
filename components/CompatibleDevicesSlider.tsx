@@ -87,21 +87,22 @@ export default function CompatibleDevicesSlider() {
               <div
                 key={setIndex}
                 aria-hidden={setIndex === 1}
-                className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4 lg:gap-5 lg:pr-5"
+                className="flex shrink-0 items-center gap-2 pr-2"
               >
                 {deviceItems.map((device) => (
                   <article
                     key={`${setIndex}-${device.src}`}
-                    className="flex h-[5.25rem] w-[8.75rem] shrink-0 items-center justify-center rounded-2xl bg-[#111111]/42 px-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:h-[6rem] sm:w-[10.5rem] sm:px-4 lg:h-[6.5rem] lg:w-[11.5rem]"
+                    className="flex aspect-[5/4] w-[calc((100vw-2.5rem-1rem)/3)] shrink-0 items-center justify-center rounded-2xl bg-[#111111]/42 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:w-[calc((100vw-4rem-1rem)/5)] sm:px-2.5 lg:w-[calc((min(100vw,1360px)-6rem-1.5rem)/7)]"
                   >
-                    <div className="relative h-[3.25rem] w-full sm:h-[3.75rem] lg:h-[4rem]">
+                    <div className="relative aspect-[4/3] w-[84%]">
                       <Image
                         src={device.src}
                         alt={device.alt}
                         fill
-                        sizes="(min-width: 1024px) 184px, (min-width: 640px) 168px, 140px"
+                        sizes="(min-width: 1024px) 180px, (min-width: 640px) 128px, 108px"
                         draggable={false}
                         loading="lazy"
+                        decoding="async"
                         className="object-contain object-center"
                       />
                     </div>
