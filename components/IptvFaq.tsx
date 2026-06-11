@@ -63,7 +63,7 @@ function AccordionIcon({ isOpen }: { isOpen: boolean }) {
 
 export default function IptvFaq() {
   const baseId = useId();
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const toggleItem = (index: number) => {
     setOpenIndex((current) => (current === index ? -1 : index));
@@ -114,7 +114,11 @@ export default function IptvFaq() {
                   <button
                     id={buttonId}
                     type="button"
-                    className="flex min-h-[58px] w-full items-center justify-between gap-4 bg-[linear-gradient(135deg,#AFFF00_0%,#A6FF00_100%)] px-4 py-4 text-left transition-[filter] duration-200 hover:brightness-[1.03] sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5"
+                    className={`flex min-h-[58px] w-full items-center justify-between gap-4 bg-[#AFFF00] px-4 py-4 text-left transition-[background-color,box-shadow] duration-300 hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#050505]/35 active:bg-[#AFFF00] sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5 ${
+                      isOpen
+                        ? "shadow-[inset_0_-1px_0_rgba(5,5,5,0.12),0_0_10px_rgba(175,255,0,0.14)]"
+                        : ""
+                    }`}
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggleItem(index)}
