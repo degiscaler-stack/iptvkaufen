@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ChannelLogos from "@/components/ChannelLogos";
 import IptvBenefits from "@/components/IptvBenefits";
 import IptvHowItWorks from "@/components/IptvHowItWorks";
+import IptvFaq from "@/components/IptvFaq";
 import IptvPricing from "@/components/IptvPricing";
 import MoviesSeriesSlider from "@/components/MoviesSeriesSlider";
 import SportsTeamsSlider from "@/components/SportsTeamsSlider";
@@ -27,6 +28,7 @@ export default function Home() {
         <CompatibleDevicesSlider />
         <IptvPricing />
         <IptvHowItWorks />
+        <IptvFaq />
       </main>
     </>
   );
