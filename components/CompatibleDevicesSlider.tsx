@@ -39,18 +39,16 @@ export default function CompatibleDevicesSlider() {
               <div
                 key={setIndex}
                 aria-hidden={setIndex === 1}
-                className="flex shrink-0 items-center gap-2 pr-2 sm:gap-2 sm:pr-2 lg:gap-2.5 lg:pr-2.5"
+                className="flex shrink-0 items-center gap-2 pr-2 sm:gap-2.5 sm:pr-2.5 lg:gap-3 lg:pr-3"
               >
                 {compatibleDeviceItems.map((device) => (
                   <article
                     key={`${setIndex}-${device.id}`}
                     aria-label={device.alt}
-                    className="group flex h-[60px] w-[calc((100vw-2.5rem-1rem)/3)] shrink-0 items-center gap-2.5 rounded-xl border border-[#A6FF00]/22 bg-[#0a0a0a]/88 px-2 shadow-[inset_0_1px_0_rgba(166,255,0,0.06),inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-sm transition-[border-color,box-shadow] duration-200 hover:border-[#A6FF00]/38 hover:shadow-[inset_0_1px_0_rgba(166,255,0,0.1),0_0_14px_rgba(166,255,0,0.09)] sm:h-[66px] sm:w-[calc((100vw-4rem-1.5rem)/5)] sm:gap-3 sm:px-2.5 lg:h-[70px] lg:w-[calc((min(100vw,1360px)-6rem-2.5rem)/7)] lg:gap-3 lg:px-3"
+                    className="group flex h-[54px] w-[calc((100vw-2.5rem-1rem)/3)] shrink-0 items-center gap-2.5 rounded-xl border border-[#A6FF00]/20 bg-[#0a0a0a]/90 px-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] transition-[border-color,box-shadow] duration-200 hover:border-[#A6FF00]/34 hover:shadow-[0_0_10px_rgba(166,255,0,0.08)] sm:h-[58px] sm:w-[calc((100vw-4rem-2rem)/5)] sm:gap-3 sm:px-3 lg:h-[62px] lg:w-[calc((min(100vw,1360px)-6rem-3rem)/7)] lg:px-3.5"
                   >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#A6FF00]/28 bg-[#A6FF00]/[0.07] shadow-[inset_0_1px_0_rgba(166,255,0,0.12)] transition-[border-color,background-color] duration-200 group-hover:border-[#A6FF00]/42 group-hover:bg-[#A6FF00]/[0.1] lg:h-11 lg:w-11">
-                      <device.Icon />
-                    </span>
-                    <p className="min-w-0 flex-1 truncate text-[14px] font-bold leading-tight text-[#F5F5F5] lg:text-[15px]">
+                    <device.Icon />
+                    <p className="min-w-0 flex-1 truncate text-[13px] font-semibold leading-tight text-[#F5F5F5] sm:text-[14px]">
                       {device.label}
                     </p>
                   </article>
