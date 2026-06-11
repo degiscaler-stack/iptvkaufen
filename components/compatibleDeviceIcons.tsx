@@ -4,7 +4,7 @@ type DeviceIconProps = {
   className?: string;
 };
 
-const iconClass = "h-9 w-9 sm:h-10 sm:w-10";
+const iconClass = "h-6 w-6 shrink-0 sm:h-7 sm:w-7";
 
 function DeviceSvg({
   children,

@@ -28,9 +28,9 @@ export default function CompatibleDevicesSlider() {
           </p>
         </div>
 
-        <div className="relative mt-5 sm:mt-6">
+        <div className="relative mt-4 sm:mt-5">
           <DraggableMarquee
-            className="compatible-devices-marquee -my-2 overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
+            className="compatible-devices-marquee -my-1 overflow-hidden py-1 [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]"
             direction="left"
             speed={38}
             trackClassName="compatible-devices-track flex w-max items-center"
@@ -39,18 +39,16 @@ export default function CompatibleDevicesSlider() {
               <div
                 key={setIndex}
                 aria-hidden={setIndex === 1}
-                className="flex shrink-0 items-center gap-2 pr-2"
+                className="flex shrink-0 items-center gap-2 pr-2 sm:gap-2.5 sm:pr-2.5 lg:gap-3.5 lg:pr-3.5"
               >
                 {compatibleDeviceItems.map((device) => (
                   <article
                     key={`${setIndex}-${device.id}`}
                     aria-label={device.alt}
-                    className="flex aspect-[4/5] w-[calc((100vw-2.5rem-1rem)/3)] shrink-0 flex-col items-center justify-between rounded-2xl border border-[#A6FF00]/28 bg-[#111111]/55 px-2 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:w-[calc((100vw-4rem-1rem)/5)] sm:px-2.5 sm:py-3.5 lg:w-[calc((min(100vw,1360px)-6rem-1.5rem)/7)]"
+                    className="group flex h-14 w-[calc((100vw-2.5rem-1rem)/3)] shrink-0 items-center gap-2 rounded-xl border border-[#A6FF00]/20 bg-[#0a0a0a] px-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] transition-[border-color,box-shadow] duration-200 hover:border-[#A6FF00]/35 hover:shadow-[0_0_12px_rgba(166,255,0,0.1)] sm:h-[60px] sm:w-[calc((100vw-4rem-2rem)/5)] sm:gap-2.5 sm:px-3 lg:h-16 lg:w-[calc((min(100vw,1360px)-6rem-3.5rem)/7)] lg:gap-3 lg:px-3.5"
                   >
-                    <div className="flex flex-1 items-center justify-center">
-                      <device.Icon />
-                    </div>
-                    <p className="mt-2 text-center text-[10px] font-semibold leading-tight text-[#F5F5F5] sm:text-[11px]">
+                    <device.Icon />
+                    <p className="min-w-0 flex-1 truncate text-[13px] font-semibold leading-tight text-[#F5F5F5] sm:text-[14px] lg:text-[15px]">
                       {device.label}
                     </p>
                   </article>
