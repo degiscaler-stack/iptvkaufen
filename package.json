@@ -4,13 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "serve out -l tcp://0.0.0.0:${PORT:-3000}",
+    "build": "next build --webpack",
+    "postbuild": "node scripts/verify-static-export.mjs",
+    "start": "serve out -s -l tcp://0.0.0.0:${PORT:-3000}",
     "lint": "eslint"
+  },
+  "engines": {
+    "node": ">=18.18.0"
   },
   "dependencies": {
     "framer-motion": "latest",
-    "next": "latest",
+    "next": "16.2.6",
     "react": "latest",
     "react-dom": "latest",
     "serve": "^14.2.6"
