@@ -4,7 +4,7 @@ type DeviceIconProps = {
   className?: string;
 };
 
-const iconClass = "h-6 w-6 shrink-0 sm:h-7 sm:w-7";
+const iconClass = "h-7 w-7 shrink-0 lg:h-[32px] lg:w-[32px]";
 
 function DeviceSvg({
   children,
@@ -20,7 +20,7 @@ function DeviceSvg({
       aria-hidden="true"
       fill="none"
       stroke="#A6FF00"
-      strokeWidth="1.5"
+      strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
