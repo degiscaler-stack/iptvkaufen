@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/verify-static-export.mjs",
-    "start": "serve out -s -l tcp://0.0.0.0:$PORT"
+    "start": "next start"
   },
   "engines": {
     "node": ">=18.18.0"
@@ -15,8 +14,7 @@
     "framer-motion": "latest",
     "next": "16.2.6",
     "react": "latest",
-    "react-dom": "latest",
-    "serve": "^14.2.6"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",
