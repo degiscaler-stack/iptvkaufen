@@ -49,11 +49,11 @@ function AccordionIcon({ isOpen }: { isOpen: boolean }) {
   return (
     <span
       aria-hidden="true"
-      className="faq-accordion-icon relative flex h-6 w-6 shrink-0 items-center justify-center"
+      className="relative flex h-6 w-6 shrink-0 items-center justify-center text-[#050505]"
     >
-      <span className="absolute h-[2px] w-4 rounded-full bg-[#050505]" />
+      <span className="absolute h-[2px] w-4 rounded-full bg-current" />
       <span
-        className={`absolute h-4 w-[2px] rounded-full bg-[#050505] transition-transform duration-300 ease-out ${
+        className={`absolute h-4 w-[2px] rounded-full bg-current transition-transform duration-300 ease-out ${
           isOpen ? "scale-y-0" : "scale-y-100"
         }`}
       />
@@ -114,8 +114,8 @@ export default function IptvFaq() {
                   <button
                     id={buttonId}
                     type="button"
-                    className="faq-question-button flex min-h-[58px] w-full items-center justify-between gap-4 px-4 py-4 text-left sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5"
-                    style={{ backgroundColor: "#A6FF00", color: "#050505" }}
+                    className="flex min-h-[58px] w-full items-center justify-between gap-4 bg-[#A6FF00] px-4 py-4 text-left text-[#050505] transition-[background-color,box-shadow] duration-300 hover:bg-[#B8FF26] hover:shadow-[0_0_12px_rgba(166,255,0,0.18)] focus:bg-[#A6FF00] focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#050505]/35 active:bg-[#A6FF00] data-[open=true]:bg-[#A6FF00] data-[open=true]:shadow-[inset_0_-1px_0_rgba(5,5,5,0.12),0_0_10px_rgba(166,255,0,0.14)] sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5"
+                    data-open={isOpen}
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggleItem(index)}

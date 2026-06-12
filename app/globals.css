@@ -47,31 +47,3 @@ button {
   background: rgba(166, 255, 0, 0.26);
   color: var(--foreground);
 }
-
-#faq .faq-question-button {
-  background-color: var(--primary-green);
-  color: #050505;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#faq .faq-question-button:hover {
-  background-color: #b8ff4d;
-  box-shadow: 0 0 12px rgba(166, 255, 0, 0.18);
-}
-
-#faq .faq-question-button:focus-visible {
-  outline: 2px solid rgba(5, 5, 5, 0.35);
-  outline-offset: 2px;
-  background-color: var(--primary-green);
-}
-
-#faq .faq-question-button[aria-expanded="true"] {
-  background-color: var(--primary-green);
-  box-shadow: inset 0 -1px 0 rgba(5, 5, 5, 0.12), 0 0 10px rgba(166, 255, 0, 0.14);
-}
-
-#faq .faq-question-button[aria-expanded="true"]:hover {
-  background-color: #b8ff4d;
-}
