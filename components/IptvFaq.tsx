@@ -95,7 +95,7 @@ export default function IptvFaq() {
           </p>
         </div>
 
-        <div className="mt-8 w-full sm:mt-10">
+        <div className="mx-auto mt-8 w-full max-w-[1240px] sm:mt-10">
           {faqItems.map((item, index) => {
             const isOpen = openIndex === index;
             const buttonId = `${baseId}-button-${index}`;
@@ -114,9 +114,8 @@ export default function IptvFaq() {
                   <button
                     id={buttonId}
                     type="button"
-                    className={`faq-question-button flex min-h-[58px] w-full items-center justify-between gap-4 px-4 py-4 text-left sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5 ${
-                      isOpen ? "is-open" : ""
-                    }`}
+                    className="faq-question-button flex min-h-[58px] w-full items-center justify-between gap-4 px-4 py-4 text-left sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5"
+                    style={{ backgroundColor: "#A6FF00", color: "#050505" }}
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggleItem(index)}
@@ -149,36 +148,6 @@ export default function IptvFaq() {
           })}
         </div>
       </div>
-
-      <style>{`
-        .faq-question-button {
-          background-color: #A6FF00;
-          color: #050505;
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .faq-question-button:hover {
-          background-color: #B8FF4D;
-          box-shadow: 0 0 12px rgba(166, 255, 0, 0.18);
-        }
-
-        .faq-question-button:focus-visible {
-          outline: 2px solid rgba(5, 5, 5, 0.35);
-          outline-offset: 2px;
-          background-color: #A6FF00;
-        }
-
-        .faq-question-button.is-open,
-        .faq-question-button[aria-expanded="true"] {
-          background-color: #A6FF00;
-          box-shadow: inset 0 -1px 0 rgba(5, 5, 5, 0.12), 0 0 10px rgba(166, 255, 0, 0.14);
-        }
-
-        .faq-question-button.is-open:hover,
-        .faq-question-button[aria-expanded="true"]:hover {
-          background-color: #B8FF4D;
-        }
-      `}</style>
     </section>
   );
 }
