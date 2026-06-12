@@ -49,7 +49,7 @@ function AccordionIcon({ isOpen }: { isOpen: boolean }) {
   return (
     <span
       aria-hidden="true"
-      className="relative flex h-6 w-6 shrink-0 items-center justify-center text-[#050505]"
+      className="relative flex h-6 w-6 shrink-0 items-center justify-center text-[#A6FF00]"
     >
       <span className="absolute h-[2px] w-4 rounded-full bg-current" />
       <span
@@ -114,13 +114,13 @@ export default function IptvFaq() {
                   <button
                     id={buttonId}
                     type="button"
-                    className="flex min-h-[58px] w-full items-center justify-between gap-4 bg-[#A6FF00] px-4 py-4 text-left text-[#050505] transition-[background-color,box-shadow] duration-300 hover:bg-[#B8FF26] hover:shadow-[0_0_12px_rgba(166,255,0,0.18)] focus:bg-[#A6FF00] focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#050505]/35 active:bg-[#A6FF00] data-[open=true]:bg-[#A6FF00] data-[open=true]:shadow-[inset_0_-1px_0_rgba(5,5,5,0.12),0_0_10px_rgba(166,255,0,0.14)] sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5"
+                    className="flex min-h-[58px] w-full items-center justify-between gap-4 bg-[#111111]/70 px-4 py-4 text-left text-[#F5F5F5] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition-[background-color,box-shadow] duration-300 hover:bg-[#141414]/80 hover:shadow-[0_0_10px_rgba(166,255,0,0.08)] focus:bg-[#111111]/70 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]/55 active:bg-[#111111]/80 data-[open=true]:bg-[#111111]/75 data-[open=true]:shadow-[inset_0_1px_0_rgba(166,255,0,0.08),0_0_10px_rgba(166,255,0,0.08)] sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5"
                     data-open={isOpen}
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggleItem(index)}
                   >
-                    <span className="min-w-0 flex-1 text-[15px] font-bold leading-snug text-[#050505] sm:text-[16px]">
+                    <span className="min-w-0 flex-1 text-[15px] font-semibold leading-snug text-[#F5F5F5] sm:text-[16px]">
                       {item.question}
                     </span>
                     <AccordionIcon isOpen={isOpen} />
