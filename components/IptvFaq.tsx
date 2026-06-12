@@ -49,11 +49,11 @@ function AccordionIcon({ isOpen }: { isOpen: boolean }) {
   return (
     <span
       aria-hidden="true"
-      className="relative flex h-6 w-6 shrink-0 items-center justify-center text-[#0a0a0a]"
+      className="faq-accordion-icon relative flex h-6 w-6 shrink-0 items-center justify-center"
     >
-      <span className="absolute h-[2px] w-4 rounded-full bg-current" />
+      <span className="absolute h-[2px] w-4 rounded-full bg-[#050505]" />
       <span
-        className={`absolute h-4 w-[2px] rounded-full bg-current transition-transform duration-300 ease-out ${
+        className={`absolute h-4 w-[2px] rounded-full bg-[#050505] transition-transform duration-300 ease-out ${
           isOpen ? "scale-y-0" : "scale-y-100"
         }`}
       />
@@ -63,10 +63,10 @@ function AccordionIcon({ isOpen }: { isOpen: boolean }) {
 
 export default function IptvFaq() {
   const baseId = useId();
-  const [openIndex, setOpenIndex] = useState(-1);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
-    setOpenIndex((current) => (current === index ? -1 : index));
+    setOpenIndex((current) => (current === index ? null : index));
   };
 
   return (
@@ -75,7 +75,7 @@ export default function IptvFaq() {
       aria-labelledby="iptv-faq-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 py-10 sm:px-8 sm:py-12 lg:px-0 lg:py-14"
     >
-      <div className="mx-auto max-w-[1360px] lg:px-12">
+      <div className="mx-auto w-full max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[820px] text-center">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:mb-4 sm:text-[11px]">
             FAQ
@@ -95,7 +95,7 @@ export default function IptvFaq() {
           </p>
         </div>
 
-        <div className="mx-auto mt-8 max-w-[1240px] sm:mt-10">
+        <div className="mt-8 w-full sm:mt-10">
           {faqItems.map((item, index) => {
             const isOpen = openIndex === index;
             const buttonId = `${baseId}-button-${index}`;
@@ -104,20 +104,18 @@ export default function IptvFaq() {
             return (
               <div
                 key={item.question}
-                className={`mb-3 overflow-hidden rounded-2xl border border-[#A6FF00]/30 shadow-[0_10px_28px_rgba(0,0,0,0.34)] transition-[border-color,box-shadow] duration-300 last:mb-0 sm:mb-4 ${
+                className={`faq-item mb-3 overflow-hidden rounded-2xl border border-[#A6FF00]/30 shadow-[0_10px_28px_rgba(0,0,0,0.34)] transition-[border-color,box-shadow] duration-300 last:mb-0 sm:mb-4 ${
                   isOpen
                     ? "shadow-[0_0_14px_rgba(166,255,0,0.1),0_12px_32px_rgba(0,0,0,0.38)]"
                     : "hover:border-[#A6FF00]/45 hover:shadow-[0_0_10px_rgba(166,255,0,0.08),0_12px_30px_rgba(0,0,0,0.36)]"
                 }`}
               >
-                <h3>
+                <h3 className="m-0">
                   <button
                     id={buttonId}
                     type="button"
-                    className={`flex min-h-[58px] w-full items-center justify-between gap-4 bg-[#AFFF00] px-4 py-4 text-left transition-[background-color,box-shadow] duration-300 hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#050505]/35 active:bg-[#AFFF00] sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5 ${
-                      isOpen
-                        ? "shadow-[inset_0_-1px_0_rgba(5,5,5,0.12),0_0_10px_rgba(175,255,0,0.14)]"
-                        : ""
+                    className={`faq-question-button flex min-h-[58px] w-full items-center justify-between gap-4 px-4 py-4 text-left sm:min-h-[64px] sm:gap-5 sm:px-6 sm:py-5 ${
+                      isOpen ? "is-open" : ""
                     }`}
                     aria-expanded={isOpen}
                     aria-controls={panelId}
@@ -133,6 +131,7 @@ export default function IptvFaq() {
                   id={panelId}
                   role="region"
                   aria-labelledby={buttonId}
+                  hidden={!isOpen}
                   className={`grid transition-[grid-template-rows] duration-300 ease-out ${
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
@@ -150,6 +149,36 @@ export default function IptvFaq() {
           })}
         </div>
       </div>
+
+      <style>{`
+        .faq-question-button {
+          background-color: #A6FF00;
+          color: #050505;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-question-button:hover {
+          background-color: #B8FF4D;
+          box-shadow: 0 0 12px rgba(166, 255, 0, 0.18);
+        }
+
+        .faq-question-button:focus-visible {
+          outline: 2px solid rgba(5, 5, 5, 0.35);
+          outline-offset: 2px;
+          background-color: #A6FF00;
+        }
+
+        .faq-question-button.is-open,
+        .faq-question-button[aria-expanded="true"] {
+          background-color: #A6FF00;
+          box-shadow: inset 0 -1px 0 rgba(5, 5, 5, 0.12), 0 0 10px rgba(166, 255, 0, 0.14);
+        }
+
+        .faq-question-button.is-open:hover,
+        .faq-question-button[aria-expanded="true"]:hover {
+          background-color: #B8FF4D;
+        }
+      `}</style>
     </section>
   );
 }
