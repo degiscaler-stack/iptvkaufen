@@ -74,13 +74,17 @@ function FooterLink({
 
 export default function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden border-t border-[#1F1F1F]/80 bg-[#000000] px-5 pb-8 pt-12 sm:px-8 sm:pb-9 sm:pt-14 lg:px-0 lg:pt-16">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/28 to-transparent" />
+    <footer className="relative isolate overflow-hidden border-t border-[#A6FF00]/22 bg-[#050806] px-5 pb-8 pt-12 sm:px-8 sm:pb-9 sm:pt-14 lg:px-0 lg:pt-16">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/75 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.12),transparent_62%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#A6FF00]/[0.035] to-transparent" />
 
       <div className="mx-auto max-w-[1360px] lg:px-12">
-        <div className="grid gap-9 border-b border-[#1F1F1F]/80 pb-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.45fr_0.85fr_1fr_0.8fr] lg:gap-12 lg:pb-12">
-          <div className="max-w-[420px]">
-            <Link href="/" aria-label="iptvkaufenX Startseite" className="inline-flex">
+        <div className="relative rounded-[28px] border border-[#1F1F1F]/90 bg-[linear-gradient(180deg,rgba(7,16,6,0.96)_0%,rgba(3,6,4,0.98)_100%)] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-7 lg:p-8">
+          <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/38 to-transparent" />
+          <div className="grid gap-9 border-b border-[#1F1F1F]/80 pb-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.45fr_0.85fr_1fr_0.8fr] lg:gap-12 lg:pb-12">
+          <div className="max-w-[430px] rounded-2xl border border-[#1F1F1F]/78 bg-[#050806]/72 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-6 lg:-ml-1">
+            <Link href="/" aria-label="iptvkaufenX Startseite" className="inline-flex rounded-xl">
               <img
                 src="/brand/iptv-kaufen-logo.webp"
                 alt="IPTV Kaufen Logo"
@@ -104,7 +108,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111]/78 text-[#F5F5F5]/82 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/45 hover:text-[#A6FF00] hover:shadow-[0_0_12px_rgba(166,255,0,0.12)]"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#243024]/75 bg-[#071006] text-[#F5F5F5]/82 shadow-[0_8px_20px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/55 hover:bg-[#0B1408] hover:text-[#A6FF00] hover:shadow-[0_0_12px_rgba(166,255,0,0.12)]"
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -150,7 +154,7 @@ export default function Footer() {
               ))}
             </nav>
           </div>
-        </div>
+          </div>
 
         <div className="flex flex-col gap-4 pt-6 text-[13px] text-[#F5F5F5]/62 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 iptvkaufenX. Alle Rechte vorbehalten.</p>
@@ -167,6 +171,7 @@ export default function Footer() {
               Impressum
             </Link>
           </nav>
+        </div>
         </div>
       </div>
     </footer>
