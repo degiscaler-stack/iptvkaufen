@@ -69,7 +69,7 @@ export default function PremiumExperience() {
           </ul>
 
           <Link
-            href="#iptv-kaufen"
+            href="#preise"
             className="hidden items-center justify-center rounded-full bg-[#A6FF00] text-center font-extrabold leading-none uppercase !text-[#000000] whitespace-nowrap shadow-[0_0_15px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_21px_rgba(166,255,0,0.36)] sm:mt-6 sm:inline-flex sm:px-[22px] sm:py-3 sm:text-[12.5px] sm:tracking-[0.10em]"
           >
             JETZT IPTV KAUFEN

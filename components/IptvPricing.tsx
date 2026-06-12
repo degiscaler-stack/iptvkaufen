@@ -96,9 +96,9 @@ function CalendarIcon({
 export default function IptvPricing() {
   return (
     <section
-      id="iptv-pakete"
+      id="preise"
       aria-labelledby="iptv-pricing-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-12 pt-8 sm:px-8 sm:pb-14 sm:pt-10 lg:px-0 lg:pb-16 lg:pt-11"
+      className="relative isolate scroll-mt-28 overflow-hidden bg-[#000000] px-5 pb-12 pt-8 sm:px-8 sm:pb-14 sm:pt-10 lg:px-0 lg:pb-16 lg:pt-11"
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[820px] text-center">
@@ -182,7 +182,7 @@ export default function IptvPricing() {
                 </ul>
 
                 <Link
-                  href="#iptv-kaufen"
+                  href="#preise"
                   className={
                     item.highlighted
                       ? "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.09)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_6px_rgba(175,255,0,0.14)] sm:min-h-11 sm:max-w-none sm:px-5 sm:py-3 sm:shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
