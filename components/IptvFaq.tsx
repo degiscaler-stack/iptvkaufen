@@ -14,34 +14,19 @@ const faqItems = [
       "IPTV Kaufen funktioniert auf vielen modernen Geräten, zum Beispiel Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet, TV Box und weiteren kompatiblen Geräten.",
   },
   {
-    question: "Wie schnell erhalte ich meinen Zugang?",
+    question: "Wie schnell erhalte ich meinen Zugang nach der Bestellung?",
     answer:
-      "Nach der Bestellung werden die Zugangsdaten schnell bereitgestellt. Anschließend können Sie die Einrichtung auf Ihrem bevorzugten Gerät starten.",
+      "Nach der Bestellung werden Ihre Zugangsdaten schnell bereitgestellt. Danach können Sie die Einrichtung auf Ihrem bevorzugten Gerät starten.",
   },
   {
-    question: "Welche Qualität kann ich erwarten?",
+    question: "Welche Zahlungsmethoden werden unterstützt?",
     answer:
-      "Je nach Gerät, App und Internetverbindung können Inhalte in HD, Full HD und 4K wiedergegeben werden. Für ein stabiles Erlebnis empfehlen wir eine zuverlässige Internetverbindung.",
+      "Sie können Ihre Bestellung über die verfügbaren Zahlungsmethoden auf der Website abschließen. Nach erfolgreicher Zahlung erhalten Sie die nächsten Schritte und Ihre Zugangsdaten.",
   },
   {
-    question: "Ist die Einrichtung einfach?",
+    question: "Gibt es Support bei der Einrichtung?",
     answer:
-      "Ja. Die Einrichtung ist einfach und kann auf den meisten Geräten schnell durchgeführt werden. Sie erhalten die notwendigen Zugangsdaten und können IPTV direkt in einer kompatiblen App nutzen.",
-  },
-  {
-    question: "Gibt es Support bei Problemen?",
-    answer:
-      "Ja. Bei Fragen zur Einrichtung oder Nutzung steht Ihnen Support zur Verfügung, damit Sie den Service schnell und korrekt verwenden können.",
-  },
-  {
-    question: "Kann ich IPTV auf mehreren Geräten nutzen?",
-    answer:
-      "Die Nutzung hängt vom gewählten Paket und den Zugangsdaten ab. Prüfen Sie vor der Nutzung, ob Ihr Paket mehrere Geräte unterstützt.",
-  },
-  {
-    question: "Warum iptvkaufenX wählen?",
-    answer:
-      "iptvkaufenX kombiniert große Inhaltsauswahl, moderne Gerätekompatibilität, schnelle Aktivierung und ein klares Streaming-Erlebnis in einem übersichtlichen Service.",
+      "Ja. Bei Fragen zur Einrichtung oder Nutzung steht Ihnen Support zur Verfügung, damit Sie IPTV schnell und korrekt auf Ihrem Gerät verwenden können.",
   },
 ] as const;
 
@@ -73,9 +58,9 @@ export default function IptvFaq() {
     <section
       id="faq"
       aria-labelledby="iptv-faq-heading"
-      className="relative isolate overflow-hidden bg-[#000000] px-5 py-10 sm:px-8 sm:py-12 lg:px-0 lg:py-14"
+      className="relative isolate overflow-hidden bg-[#000000] px-0 py-10 sm:py-12 lg:py-14"
     >
-      <div className="mx-auto w-full max-w-[1360px] lg:px-12">
+      <div className="mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-12">
         <div className="mx-auto max-w-[820px] text-center">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:mb-4 sm:text-[11px]">
             FAQ
@@ -95,7 +80,7 @@ export default function IptvFaq() {
           </p>
         </div>
 
-        <div className="mx-auto mt-8 w-full max-w-[1240px] sm:mt-10">
+        <div className="mt-8 w-full sm:mt-10">
           {faqItems.map((item, index) => {
             const isOpen = openIndex === index;
             const buttonId = `${baseId}-button-${index}`;
