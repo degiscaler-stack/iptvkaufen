@@ -61,16 +61,26 @@ export default function CustomerReviews() {
   const maxIndex = useMemo(() => Math.max(reviews.length - visibleSlides, 0), [visibleSlides]);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const tabletQuery = window.matchMedia("(min-width: 768px)");
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
 
     const updateVisibleSlides = () => {
-      setVisibleSlides(mediaQuery.matches ? 4 : 1);
+      if (desktopQuery.matches) {
+        setVisibleSlides(4);
+        return;
+      }
+
+      setVisibleSlides(tabletQuery.matches ? 3 : 2);
     };
 
     updateVisibleSlides();
-    mediaQuery.addEventListener("change", updateVisibleSlides);
+    tabletQuery.addEventListener("change", updateVisibleSlides);
+    desktopQuery.addEventListener("change", updateVisibleSlides);
 
-    return () => mediaQuery.removeEventListener("change", updateVisibleSlides);
+    return () => {
+      tabletQuery.removeEventListener("change", updateVisibleSlides);
+      desktopQuery.removeEventListener("change", updateVisibleSlides);
+    };
   }, []);
 
   useEffect(() => {
@@ -179,7 +189,7 @@ export default function CustomerReviews() {
               }}
             >
               {reviews.map((review, index) => (
-                <article key={review.src} className="shrink-0 basis-full px-1.5 sm:px-2 lg:basis-1/4">
+                <article key={review.src} className="shrink-0 basis-1/2 px-1.5 sm:px-2 md:basis-1/3 lg:basis-1/4">
                   <button
                     type="button"
                     onClick={() => {
@@ -189,7 +199,7 @@ export default function CustomerReviews() {
 
                       suppressClickRef.current = false;
                     }}
-                    className="group block w-full overflow-hidden rounded-[18px] border border-[#A6FF00]/65 bg-[#050806] text-left shadow-[0_18px_44px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00]/85 hover:shadow-[0_22px_54px_rgba(0,0,0,0.42),0_0_16px_rgba(166,255,0,0.06)] focus:outline-none focus:ring-2 focus:ring-[#A6FF00]/70"
+                    className="group block w-full overflow-hidden rounded-[20px] border-2 border-[#A6FF00]/85 bg-[#050806] text-left shadow-[0_18px_44px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:shadow-[0_22px_54px_rgba(0,0,0,0.42),0_0_14px_rgba(166,255,0,0.05)] focus:outline-none focus:ring-2 focus:ring-[#A6FF00]/70"
                     aria-label={`${review.alt} fullscreen öffnen`}
                   >
                     <Image
@@ -211,7 +221,7 @@ export default function CustomerReviews() {
           <button
             type="button"
             onClick={goToPrevious}
-            className="absolute left-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#050806]/90 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:left-3 lg:-left-2"
+            className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:left-3 sm:h-11 sm:w-11 lg:-left-2"
             aria-label="Vorherige Kundenbewertung"
           >
             <ArrowIcon direction="previous" />
@@ -219,11 +229,28 @@ export default function CustomerReviews() {
           <button
             type="button"
             onClick={goToNext}
-            className="absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#050806]/90 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:right-3 lg:-right-2"
+            className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:right-3 sm:h-11 sm:w-11 lg:-right-2"
             aria-label="Nächste Kundenbewertung"
           >
             <ArrowIcon direction="next" />
           </button>
+
+          <div className="mt-6 flex items-center justify-center gap-2" aria-label="Kundenbewertungen Pagination">
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`h-2 rounded-full transition duration-300 ${
+                  activeIndex === index
+                    ? "w-7 bg-[#A6FF00]"
+                    : "w-2 bg-[#A6FF00]/28 hover:bg-[#A6FF00]/55"
+                }`}
+                aria-label={`Kundenbewertung Gruppe ${index + 1} anzeigen`}
+                aria-current={activeIndex === index ? "true" : undefined}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
