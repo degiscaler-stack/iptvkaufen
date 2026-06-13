@@ -7,22 +7,32 @@ const reviews = [
   {
     src: "/images/testimonials/iptv-kaufen-1.webp",
     alt: "iptv kaufen kundenbewertung",
+    width: 854,
+    height: 1840,
   },
   {
     src: "/images/testimonials/iptv-kaufen-2.webp",
     alt: "iptv kaufen whatsapp bewertung",
+    width: 858,
+    height: 1834,
   },
   {
     src: "/images/testimonials/iptv-kaufen-3.webp",
     alt: "iptv kaufen kunden erfahrung",
+    width: 688,
+    height: 1488,
   },
   {
     src: "/images/testimonials/iptv-kaufen-4.webp",
     alt: "iptv kaufen kundenbewertung",
+    width: 688,
+    height: 1504,
   },
   {
     src: "/images/testimonials/iptv-kaufen-5.webp",
     alt: "iptv kaufen whatsapp bewertung",
+    width: 856,
+    height: 1836,
   },
 ] as const;
 
@@ -179,20 +189,19 @@ export default function CustomerReviews() {
 
                       suppressClickRef.current = false;
                     }}
-                    className="group block w-full rounded-[22px] border border-[#A6FF00]/28 bg-[#050806] p-2 text-left shadow-[0_18px_44px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00]/55 hover:shadow-[0_22px_54px_rgba(0,0,0,0.42),0_0_20px_rgba(166,255,0,0.08)] focus:outline-none focus:ring-2 focus:ring-[#A6FF00]/70"
+                    className="group block w-full overflow-hidden rounded-[18px] border border-[#A6FF00]/65 bg-[#050806] text-left shadow-[0_18px_44px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00]/85 hover:shadow-[0_22px_54px_rgba(0,0,0,0.42),0_0_16px_rgba(166,255,0,0.06)] focus:outline-none focus:ring-2 focus:ring-[#A6FF00]/70"
                     aria-label={`${review.alt} fullscreen öffnen`}
                   >
-                    <span className="relative block aspect-[9/16] overflow-hidden rounded-[16px] bg-[#080B08]">
-                      <Image
-                        src={review.src}
-                        alt={review.alt}
-                        fill
-                        sizes="(min-width: 1024px) 25vw, 100vw"
-                        loading="lazy"
-                        draggable={false}
-                        className="object-contain transition duration-300 group-hover:scale-[1.015]"
-                      />
-                    </span>
+                    <Image
+                      src={review.src}
+                      alt={review.alt}
+                      width={review.width}
+                      height={review.height}
+                      sizes="(min-width: 1024px) 25vw, 100vw"
+                      loading="lazy"
+                      draggable={false}
+                      className="block h-auto w-full transition duration-300 group-hover:scale-[1.01]"
+                    />
                   </button>
                 </article>
               ))}
@@ -202,7 +211,7 @@ export default function CustomerReviews() {
           <button
             type="button"
             onClick={goToPrevious}
-            className="absolute left-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#050806]/90 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:left-3"
+            className="absolute left-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#050806]/90 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:left-3 lg:-left-2"
             aria-label="Vorherige Kundenbewertung"
           >
             <ArrowIcon direction="previous" />
@@ -210,7 +219,7 @@ export default function CustomerReviews() {
           <button
             type="button"
             onClick={goToNext}
-            className="absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#050806]/90 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:right-3"
+            className="absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#050806]/90 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:right-3 lg:-right-2"
             aria-label="Nächste Kundenbewertung"
           >
             <ArrowIcon direction="next" />
@@ -235,7 +244,7 @@ export default function CustomerReviews() {
             ×
           </button>
           <div
-            className="relative h-[86vh] w-full max-w-[620px] overflow-hidden rounded-[24px] border border-[#A6FF00]/35 bg-[#050806] p-2"
+            className="relative h-[86vh] w-full max-w-[620px] overflow-hidden rounded-[22px] border border-[#A6FF00]/45 bg-[#050806]"
             onClick={(event) => event.stopPropagation()}
           >
             <Image
