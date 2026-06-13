@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const navigation = [
   { label: "Startseite", href: "/", active: true },
   { label: "Preise", href: "/#preise" },
-  { label: "Senderliste", href: "/#senderliste" },
+  { label: "Senderliste", href: "/senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
   { label: "Kontakt", href: "/kontakt" },
