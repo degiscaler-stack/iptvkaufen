@@ -16,7 +16,7 @@ type LegalPageProps = {
 
 export default function LegalPage({ eyebrow, title, updatedAt, intro, sections }: LegalPageProps) {
   return (
-    <main className="min-h-screen bg-[#000000] px-5 pb-14 pt-12 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-14 lg:px-0 lg:pb-20 lg:pt-16">
+    <main className="min-h-screen bg-[#000000] px-5 pb-14 pt-28 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-32 lg:px-0 lg:pb-20 lg:pt-36">
       <section className="mx-auto max-w-[1120px] lg:px-12">
         <div className="rounded-[28px] border border-[#1F1F1F] bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.08),transparent_34%),linear-gradient(180deg,#071006_0%,#030503_100%)] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.42)] sm:p-8 lg:p-10">
           <Link

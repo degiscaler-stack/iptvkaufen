@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const quickLinks = [
@@ -21,22 +21,22 @@ const legalLinks = [
 
 const contactLinks = [
   {
-    label: "WhatsApp",
-    href: "https://wa.me/message/L6KQCBXWOIUTA1",
-    external: true,
+    label: "contact@iptvkaufenx.de",
+    href: "mailto:contact@iptvkaufenx.de",
+    Icon: FaEnvelope,
   },
-  { label: "E-Mail", href: "mailto:support@iptvkaufenx.de" },
   {
-    label: "Support 24/7",
+    label: "+44 7848-102-124",
     href: "https://wa.me/message/L6KQCBXWOIUTA1",
+    Icon: FaWhatsapp,
     external: true,
   },
 ] as const;
 
 const socialLinks = [
-  { label: "Facebook", href: "https://www.facebook.com", Icon: FaFacebookF },
-  { label: "Instagram", href: "https://www.instagram.com", Icon: FaInstagram },
-  { label: "X (Twitter)", href: "https://x.com", Icon: FaXTwitter },
+  { label: "Facebook", href: "https://web.facebook.com/people/VisionHub/61588587400682/", Icon: FaFacebookF },
+  { label: "Instagram", href: "https://www.instagram.com/visionhub.media/", Icon: FaInstagram },
+  { label: "X (Twitter)", href: "https://x.com/cod_jss27918", Icon: FaXTwitter },
   { label: "WhatsApp", href: "https://wa.me/message/L6KQCBXWOIUTA1", Icon: FaWhatsapp },
 ] as const;
 
@@ -55,7 +55,7 @@ function FooterLink({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group inline-flex w-fit items-center text-[14px] font-medium leading-6 text-[#F5F5F5]/72 transition duration-300 hover:text-[#A6FF00]"
+        className="inline-flex w-fit items-center text-[14px] font-normal leading-6 text-[#F5F5F5]/68 transition duration-300 hover:text-[#A6FF00]"
       >
         {children}
       </a>
@@ -65,7 +65,7 @@ function FooterLink({
   return (
     <Link
       href={href}
-      className="group inline-flex w-fit items-center text-[14px] font-medium leading-6 text-[#F5F5F5]/72 transition duration-300 hover:text-[#A6FF00]"
+      className="inline-flex w-fit items-center text-[14px] font-normal leading-6 text-[#F5F5F5]/68 transition duration-300 hover:text-[#A6FF00]"
     >
       {children}
     </Link>
@@ -74,16 +74,11 @@ function FooterLink({
 
 export default function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden border-t border-[#A6FF00]/22 bg-[#050806] px-5 pb-8 pt-12 sm:px-8 sm:pb-9 sm:pt-14 lg:px-0 lg:pt-16">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/75 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_50%_0%,rgba(166,255,0,0.12),transparent_62%)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#A6FF00]/[0.035] to-transparent" />
-
+    <footer className="relative border-t border-[#A6FF00]/30 bg-[#080B08] px-5 pb-8 pt-12 sm:px-8 sm:pb-9 sm:pt-14 lg:px-0 lg:pt-16">
       <div className="mx-auto max-w-[1360px] lg:px-12">
-        <div className="relative rounded-[28px] border border-[#1F1F1F]/90 bg-[linear-gradient(180deg,rgba(7,16,6,0.96)_0%,rgba(3,6,4,0.98)_100%)] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-7 lg:p-8">
-          <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#A6FF00]/38 to-transparent" />
-          <div className="grid gap-9 border-b border-[#1F1F1F]/80 pb-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.45fr_0.85fr_1fr_0.8fr] lg:gap-12 lg:pb-12">
-          <div className="max-w-[430px] rounded-2xl border border-[#1F1F1F]/78 bg-[#050806]/72 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-6 lg:-ml-1">
+        <div className="rounded-[26px] border border-[#1F1F1F]/95 bg-[#0A0F0A] p-5 shadow-[0_22px_60px_rgba(0,0,0,0.34)] sm:p-7 lg:p-8">
+          <div className="grid gap-10 border-b border-[#1F1F1F]/90 pb-10 sm:grid-cols-2 sm:gap-11 lg:grid-cols-[1.45fr_0.85fr_1fr_0.95fr] lg:gap-12 lg:pb-12">
+          <div className="max-w-[430px] rounded-2xl border border-[#1F1F1F]/85 bg-[#080B08] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-6 lg:-ml-1">
             <Link href="/" aria-label="iptvkaufenX Startseite" className="inline-flex rounded-xl">
               <img
                 src="/brand/iptv-kaufen-logo.webp"
@@ -92,7 +87,7 @@ export default function Footer() {
                 height={260}
                 loading="lazy"
                 decoding="async"
-                className="h-auto w-[175px] transition duration-300 hover:drop-shadow-[0_0_14px_rgba(166,255,0,0.22)] sm:w-[205px]"
+                className="h-auto w-[175px] transition duration-300 sm:w-[205px]"
               />
             </Link>
             <p className="mt-5 max-w-[360px] text-[14px] leading-7 text-[#F5F5F5]/76">
@@ -108,7 +103,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#243024]/75 bg-[#071006] text-[#F5F5F5]/82 shadow-[0_8px_20px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/55 hover:bg-[#0B1408] hover:text-[#A6FF00] hover:shadow-[0_0_12px_rgba(166,255,0,0.12)]"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#263026] bg-[#0A0F0A] text-[#F5F5F5]/82 shadow-[0_8px_20px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/60 hover:text-[#A6FF00]"
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -117,7 +112,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#A6FF00]">
+            <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
               Schnellzugriff
             </h2>
             <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Schnellzugriff">
@@ -130,7 +125,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#A6FF00]">
+            <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
               Rechtliches
             </h2>
             <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Rechtliches">
@@ -143,15 +138,44 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#A6FF00]">
+            <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
               Kontakt
             </h2>
-            <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Kontakt">
-              {contactLinks.map((link) => (
-                <FooterLink key={link.label} href={link.href} external={"external" in link}>
-                  {link.label}
-                </FooterLink>
-              ))}
+            <nav className="mt-5 flex flex-col gap-4" aria-label="Footer Kontakt">
+              {contactLinks.map(({ label, href, Icon, ...link }) => {
+                const content = (
+                  <>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#263026] bg-[#080B08] text-[#A6FF00]">
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                    <span>{label}</span>
+                  </>
+                );
+
+                if ("external" in link) {
+                  return (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 text-[14px] font-normal text-[#F5F5F5]/72 transition duration-300 hover:text-[#A6FF00]"
+                    >
+                      {content}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={label}
+                    href={href}
+                    className="inline-flex items-center gap-3 text-[14px] font-normal text-[#F5F5F5]/72 transition duration-300 hover:text-[#A6FF00]"
+                  >
+                    {content}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
           </div>

@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ChannelLogos from "@/components/ChannelLogos";
 import IptvBenefits from "@/components/IptvBenefits";
@@ -14,22 +13,19 @@ import ServiceHighlightsBar from "@/components/ServiceHighlightsBar";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <PremiumExperience />
-        <IptvBenefits />
-        <ChannelLogos />
-        <MoviesSeriesSlider />
-        <SportsTeamsSlider />
-        <ServiceHighlightsBar />
-        <PremiumEntertainment />
-        <CompatibleDevicesSlider />
-        <IptvPricing />
-        <IptvHowItWorks />
-        <IptvFaq />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <PremiumExperience />
+      <IptvBenefits />
+      <ChannelLogos />
+      <MoviesSeriesSlider />
+      <SportsTeamsSlider />
+      <ServiceHighlightsBar />
+      <PremiumEntertainment />
+      <CompatibleDevicesSlider />
+      <IptvPricing />
+      <IptvHowItWorks />
+      <IptvFaq />
+    </main>
   );
 }
