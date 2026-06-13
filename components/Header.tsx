@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 
 const navigation = [
   { label: "Startseite", href: "/", active: true },
-  { label: "Preise", href: "#preise" },
-  { label: "Senderliste", href: "#senderliste" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Preise", href: "/#preise" },
+  { label: "Senderliste", href: "/#senderliste" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 export default function Header() {
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#1F1F1F] bg-[#050505]">
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:h-[88px] lg:max-w-[1360px] lg:px-12">
-        <Link href="#" aria-label="Startseite" className="group relative z-10 flex items-center">
+        <Link href="/" aria-label="Startseite" className="group relative z-10 flex items-center">
           <img
             src="/brand/iptv-kaufen-logo.webp"
             alt="IPTV Kaufen Logo"
@@ -51,7 +51,7 @@ export default function Header() {
 
         <div className="hidden items-center sm:flex">
           <Link
-            href="#preise"
+            href="/#preise"
             className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] lg:px-4 lg:py-2 lg:text-[12px] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
           >
             JETZT IPTV KAUFEN
@@ -106,7 +106,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="#preise"
+              href="/#preise"
               onClick={() => setIsOpen(false)}
               className="mx-auto mt-3 inline-flex min-h-9 w-[calc(100%_-_140px)] max-w-[230px] items-center justify-center rounded-full bg-[#A6FF00] px-3.5 py-[7px] text-center text-[10.5px] font-extrabold leading-none uppercase tracking-[0.09em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
             >

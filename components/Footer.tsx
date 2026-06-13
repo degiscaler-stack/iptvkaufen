@@ -9,7 +9,7 @@ const quickLinks = [
   { label: "Senderliste", href: "/#senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
 const legalLinks = [
