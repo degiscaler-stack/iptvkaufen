@@ -10,6 +10,7 @@ import CompatibleDevicesSlider from "@/components/CompatibleDevicesSlider";
 import PremiumEntertainment from "@/components/PremiumEntertainment";
 import PremiumExperience from "@/components/PremiumExperience";
 import ServiceHighlightsBar from "@/components/ServiceHighlightsBar";
+import CustomerReviews from "@/components/CustomerReviews";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <PremiumEntertainment />
       <CompatibleDevicesSlider />
       <IptvPricing />
+      <CustomerReviews />
       <IptvHowItWorks />
       <IptvFaq />
     </main>
