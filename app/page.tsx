@@ -25,8 +25,8 @@ export default function Home() {
       <PremiumEntertainment />
       <CompatibleDevicesSlider />
       <IptvPricing />
-      <CustomerReviews />
       <IptvHowItWorks />
+      <CustomerReviews />
       <IptvFaq />
     </main>
   );
