@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 const navigation = [
   { label: "Startseite", href: "/", active: true },
@@ -82,39 +81,41 @@ export default function Header() {
         </button>
       </div>
 
-      {isOpen ? (
-        <motion.nav
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -16 }}
-          aria-label="Mobile Navigation"
-          className="border-t border-[#1F1F1F] bg-[#050505] px-5 pb-5 pt-2 lg:hidden"
-        >
-          <div className="mx-auto flex max-w-7xl flex-col gap-0.5">
-            {navigation.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`rounded-md px-3 py-[7px] text-[13px] font-medium leading-[1.15] tracking-[0.01em] transition ${
-                  item.active
-                    ? "bg-[#A6FF00]/5 text-[#A6FF00]"
-                    : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+      <nav
+        aria-label="Mobile Navigation"
+        aria-hidden={!isOpen}
+        className={`overflow-hidden bg-[#050505] px-5 transition-[max-height,opacity,transform,border-color,padding] duration-300 lg:hidden ${
+          isOpen
+            ? "max-h-[420px] translate-y-0 border-t border-[#1F1F1F] pb-5 pt-2 opacity-100"
+            : "max-h-0 -translate-y-2 border-t border-transparent pb-0 pt-0 opacity-0"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl flex-col gap-0.5">
+          {navigation.map((item) => (
             <Link
-              href="/#preise"
+              key={item.label}
+              href={item.href}
+              tabIndex={isOpen ? undefined : -1}
               onClick={() => setIsOpen(false)}
-              className="mx-auto mt-3 inline-flex min-h-9 w-[calc(100%_-_140px)] max-w-[230px] items-center justify-center rounded-full bg-[#A6FF00] px-3.5 py-[7px] text-center text-[10.5px] font-extrabold leading-none uppercase tracking-[0.09em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
+              className={`rounded-md px-3 py-[7px] text-[13px] font-medium leading-[1.15] tracking-[0.01em] transition ${
+                item.active
+                  ? "bg-[#A6FF00]/5 text-[#A6FF00]"
+                  : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
+              }`}
             >
-              JETZT IPTV KAUFEN
+              {item.label}
             </Link>
-          </div>
-        </motion.nav>
-      ) : null}
+          ))}
+          <Link
+            href="/#preise"
+            tabIndex={isOpen ? undefined : -1}
+            onClick={() => setIsOpen(false)}
+            className="mx-auto mt-3 inline-flex min-h-9 w-[calc(100%_-_140px)] max-w-[230px] items-center justify-center rounded-full bg-[#A6FF00] px-3.5 py-[7px] text-center text-[10.5px] font-extrabold leading-none uppercase tracking-[0.09em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
+          >
+            JETZT IPTV KAUFEN
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 }

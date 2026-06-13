@@ -59,8 +59,11 @@ function LogoMarqueeRow({
               <img
                 src={logo.src}
                 alt={`${logo.name} Logo`}
+                width={202}
+                height={78}
                 draggable={false}
                 loading="lazy"
+                decoding="async"
                 className="relative z-10 max-h-[4.05rem] w-auto max-w-full object-contain sm:max-h-[4.55rem] lg:max-h-[4.85rem]"
               />
             </span>

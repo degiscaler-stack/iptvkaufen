@@ -46,6 +46,8 @@ export default function DraggableMarquee({
   const positionRef = useRef(0);
 
   useEffect(() => {
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
     const applyPosition = () => {
       if (trackRef.current) {
         trackRef.current.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
@@ -98,10 +100,15 @@ export default function DraggableMarquee({
     }
 
     window.addEventListener("resize", updateLoopWidth);
-    frameRef.current = window.requestAnimationFrame(tick);
+
+    if (!reducedMotionQuery.matches) {
+      frameRef.current = window.requestAnimationFrame(tick);
+    }
 
     return () => {
-      window.cancelAnimationFrame(frameRef.current);
+      if (frameRef.current) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
       window.removeEventListener("resize", updateLoopWidth);
       resizeObserver?.disconnect();
     };
