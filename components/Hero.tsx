@@ -25,7 +25,7 @@ export default function Hero() {
     <section
       id="iptv-kaufen"
       aria-label="IPTV kaufen in Deutschland"
-      className="relative isolate flex min-h-0 items-center justify-center overflow-hidden bg-[#000000] px-5 pb-[clamp(1.5rem,3vh,2.5rem)] pt-[clamp(5.5rem,calc(4.5rem+3vh),9rem)] text-center sm:min-h-[clamp(620px,88vh,900px)] sm:px-8"
+      className="relative isolate flex min-h-0 items-center justify-center overflow-hidden bg-[#000000] px-5 pb-[clamp(1.5rem,3vh,2.5rem)] pt-[clamp(5.5rem,calc(4.5rem+3vh),9rem)] text-center sm:min-h-[clamp(620px,88vh,900px)] sm:px-8 lg:min-h-[clamp(740px,calc(88vh+110px),1040px)]"
     >
       <div className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
         <Image
@@ -35,7 +35,7 @@ export default function Hero() {
           preload
           sizes="100vw"
           aria-hidden="true"
-          className="h-full w-full scale-[1.02] object-cover object-[42%_center] sm:object-center"
+          className="h-full w-full scale-[1.02] object-cover object-[42%_center] sm:object-center lg:object-[center_58%]"
         />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
