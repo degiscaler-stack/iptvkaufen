@@ -119,6 +119,19 @@ export default function IptvPricing() {
           </p>
         </div>
 
+        <div className="mx-auto mt-7 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-[#A6FF00]/22 bg-[#0A0F0A]/88 px-4 py-2.5 text-center text-[12px] font-semibold leading-5 text-[#F5F5F5] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:mt-8 sm:px-5 sm:text-[13px]">
+          <span className="tracking-[0.08em] text-[#FFD84D]" aria-label="5 Sterne">
+            ★★★★★
+          </span>
+          <span>
+            4,9/5 von{" "}
+            <span className="text-[#A6FF00]">1150+</span>{" "}
+            zufriedenen Kunden •{" "}
+            <span className="text-[#A6FF00]">Sofortiger Zugang</span>{" "}
+            • Sichere Bestellung
+          </span>
+        </div>
+
         <div className="mx-auto mt-10 grid max-w-[1240px] gap-7 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
           {packages.map((item) => (
             <article

@@ -13,9 +13,9 @@ import PremiumExperience from "@/components/PremiumExperience";
 import ServiceHighlightsBar from "@/components/ServiceHighlightsBar";
 import CustomerReviews from "@/components/CustomerReviews";
 
-const seoTitle = "IPTV Kaufen Deutschland | Premium IPTV in HD, Full HD & 4K";
+const seoTitle = "IPTV Kaufen Deutschland – 22.000+ Sender, Filme & Sport in 4K";
 const seoDescription =
-  "IPTV Kaufen in Deutschland mit über 22.000 Live-TV Sendern, Filmen, Serien und Sport in HD, Full HD und 4K. Schnell aktiviert, stabil und auf allen Geräten nutzbar.";
+  "IPTV Kaufen in Deutschland: 22.000+ Live-TV Sender, Filme, Serien und Sport in HD, Full HD & 4K. Sofort aktiviert, stabil auf allen Geräten – ab 9,99€.";
 
 export const metadata: Metadata = {
   title: seoTitle,
@@ -59,6 +59,21 @@ const structuredData = {
       inLanguage: "de-DE",
       publisher: {
         "@id": "https://iptvkaufenx.de/#organization",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "IPTV Kaufen Deutschland",
+      description: seoDescription,
+      image: "https://iptvkaufenx.de/images/iptv-kaufen-hero-football.webp",
+      brand: {
+        "@type": "Brand",
+        name: "iptvkaufenX",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: 4.9,
+        reviewCount: 1150,
       },
     },
   ],
