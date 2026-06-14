@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "IPTV Kaufen Deutschland | Premium IPTV Anbieter",
   description:
     "IPTV kaufen in Deutschland. Über 22.000 Sender, Filme, Serien und Fußball in Ultra HD auf allen Geräten.",
+  verification: {
+    google: "EsW591o2eN7U4ge2cczx0ALhDErtq_qrj0F75xBbky0",
+  },
   icons: {
     icon: "/brand/iptv-kaufen-favicon.webp",
     shortcut: "/brand/iptv-kaufen-favicon.webp",
