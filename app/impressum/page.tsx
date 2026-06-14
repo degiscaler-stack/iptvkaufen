@@ -4,6 +4,10 @@ import LegalPage, { type LegalSection } from "@/components/LegalPage";
 export const metadata: Metadata = {
   title: "Impressum | iptvkaufenX",
   description: "Impressum und Kontaktinformationen von iptvkaufenX.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const sections: LegalSection[] = [

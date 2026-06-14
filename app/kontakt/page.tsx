@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Kontakt | iptvkaufenX",
   description:
     "Kontaktieren Sie iptvkaufenX für Fragen zu IPTV Paketen, Einrichtung, Support und Aktivierung.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const contactItems = [

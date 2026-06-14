@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Senderliste IPTV Kaufen | Deutsche & Internationale IPTV Sender",
   description:
     "Entdecken Sie die iptvkaufenX Senderliste mit deutschen, europäischen, internationalen, Sport-, Film-, Serien-, Kinder- und Nachrichtenkanälen.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function SenderlistePage() {

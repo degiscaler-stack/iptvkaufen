@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Rückerstattungsrichtlinie | iptvkaufenX",
   description:
     "Rückerstattungsrichtlinie von iptvkaufenX für digitale IPTV-Dienste, Aktivierung, Bereitstellung und Supportanfragen.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const sections: LegalSection[] = [

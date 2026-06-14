@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Datenschutzrichtlinie | iptvkaufenX",
   description:
     "Datenschutzrichtlinie von iptvkaufenX: Informationen zur Verarbeitung von Kontakt-, Bestell-, Zahlungs- und Zugriffsdaten.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const sections: LegalSection[] = [

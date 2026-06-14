@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Nutzungsbedingungen | iptvkaufenX",
   description:
     "Nutzungsbedingungen von iptvkaufenX für Nutzung, Zugangsdaten, Gerätekompatibilität, Zahlungen und Support.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const sections: LegalSection[] = [
