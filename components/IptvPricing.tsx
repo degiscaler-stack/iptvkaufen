@@ -119,16 +119,12 @@ export default function IptvPricing() {
           </p>
         </div>
 
-        <div className="mx-auto mt-7 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-[#A6FF00]/22 bg-[#0A0F0A]/88 px-4 py-2.5 text-center text-[12px] font-semibold leading-5 text-[#F5F5F5] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:mt-8 sm:px-5 sm:text-[13px]">
-          <span className="tracking-[0.08em] text-[#FFD84D]" aria-label="5 Sterne">
+        <div className="mx-auto mt-6 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#A6FF00]/20 bg-[#0A0F0A]/82 px-3 py-1.5 text-center text-[11px] font-medium leading-5 text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:mt-7 sm:px-3.5 sm:text-[12px]">
+          <span className="tracking-[0.06em] text-[#FFD84D]" aria-label="5 Sterne">
             ★★★★★
           </span>
           <span>
-            4,9/5 von{" "}
-            <span className="text-[#A6FF00]">1150+</span>{" "}
-            zufriedenen Kunden •{" "}
-            <span className="text-[#A6FF00]">Sofortiger Zugang</span>{" "}
-            • Sichere Bestellung
+            4,9/5 · <span className="text-[#A6FF00]">1150+ Bewertungen</span> · Schnell & sicher
           </span>
         </div>
 
