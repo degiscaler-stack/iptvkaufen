@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
@@ -31,6 +32,30 @@ export default function RootLayout({
         {children}
         <Footer />
         <WhatsAppFloatButton />
+        <Script id="statcounter-config" strategy="afterInteractive">
+          {`
+            var sc_project=13299354;
+            var sc_invisible=1;
+            var sc_security="f3bcb035";
+          `}
+        </Script>
+        <Script
+          id="statcounter-counter"
+          src="https://www.statcounter.com/counter/counter.js"
+          strategy="afterInteractive"
+        />
+        <noscript>
+          <div className="statcounter">
+            <a title="Web Analytics" href="https://statcounter.com/" target="_blank" rel="noopener noreferrer">
+              <img
+                className="statcounter"
+                src="https://c.statcounter.com/13299354/0/f3bcb035/1/"
+                alt="Web Analytics"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </a>
+          </div>
+        </noscript>
       </body>
     </html>
   );
