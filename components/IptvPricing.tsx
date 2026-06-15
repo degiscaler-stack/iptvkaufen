@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const features = [
   "22.000+ Live-TV Sender",
   "Filme & Serien auf Abruf",
@@ -47,6 +45,8 @@ const packages = [
     highlighted: false,
   },
 ] as const;
+
+const whatsappUrl = "https://wa.me/message/L6KQCBXWOIUTA1";
 
 function CheckIcon() {
   return (
@@ -190,8 +190,10 @@ export default function IptvPricing() {
                   ))}
                 </ul>
 
-                <Link
-                  href="#preise"
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={
                     item.highlighted
                       ? "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.09)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_6px_rgba(175,255,0,0.14)] sm:min-h-11 sm:max-w-none sm:px-5 sm:py-3 sm:shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
@@ -199,7 +201,7 @@ export default function IptvPricing() {
                   }
                 >
                   {item.buttonLabel}
-                </Link>
+                </a>
               </div>
             </article>
           ))}
