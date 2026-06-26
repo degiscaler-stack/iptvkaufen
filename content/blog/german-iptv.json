@@ -73,6 +73,7 @@
         "Flexibilität ist der zweite starke Punkt. Sie sind nicht an einen festen Fernseher im Wohnzimmer gebunden. Mit derselben Zugangsberechtigung schauen Sie auf dem Smart-TV, am Tablet oder am Smartphone. Im Urlaub innerhalb Deutschlands oder in der EU funktioniert das oft genauso – vorausgesetzt, die Internetverbindung ist stabil genug. Für Pendler und Familien mit mehreren Bildschirmen ist das praktischer als jede Zweitinstallation.",
         "Kosten spielen ebenfalls eine Rolle. Ein umfassendes Kabel- oder Satellitenabo mit Premium-Sendern kann schnell dreistellig im Jahr werden. German IPTV positioniert sich häufig günstiger, bei vergleichbarer oder größerer Senderauswahl. Transparente [Preise und Pakete](/preise) erleichtern die Planung – ohne versteckte Aktivierungsgebühren oder langfristige Vertragsbindung, je nach Anbieter.",
         "Schließlich die Einrichtung: Kein Technikertermin, keine Kabel durch die Wohnung. Wer ein wenig technisches Grundverständnis mitbringt – oder einen Anbieter mit gutem Support wählt – ist in wenigen Minuten startklar. Updates und neue Sender werden zentral bereitgestellt; Sie müssen keine Receiver-Firmware manuell aktualisieren.",
+        "Darüber hinaus profitieren Vielnutzer von der Portabilität. Ein Zugang gilt für mehrere Geräte – ideal, wenn Kinder auf dem Tablet zeichnen, während im Wohnzimmer ein Spiel läuft. Statt zusätzlicher Receiver verteilen Sie einfach Apps im WLAN. Das senkt Hardwarekosten und reduziert den Wartungsaufwand im Haushalt spürbar.",
         "Wer Wert auf Sport, internationale Nachrichten oder Nischenkanäle legt, findet bei German IPTV oft Inhalte, die im regulären Kabelpaket fehlen oder nur gegen Aufpreis erhältlich sind. Die [Senderliste](/senderliste) eines seriösen Anbieters gibt darüber vorab Klarheit.",
         "Auch die Zeitzonenfrage ist für deutsche Nutzer gelöst: Programmzeiten im EPG orientieren sich an mitteleuropäischer Zeit. Sie müssen nicht rechnen, wann die Tagesschau in einer anderen Region läuft – alles ist auf Ihren Alltag in Deutschland ausgerichtet."
       ]
@@ -109,14 +110,16 @@
           "id": "apple-tv-geraete",
           "heading": "Apple TV und iOS-Geräte",
           "paragraphs": [
-            "Apple TV bietet eine saubere Oberfläche und zuverlässige Performance. IPTV-Apps aus dem App Store verbinden sich mit Ihren Zugangsdaten; auf iPhone und iPad nutzen Sie dieselbe App unterwegs. Details zur Plattform liefert [Apple TV](https://www.apple.com/apple-tv/) auf der Herstellerseite."
+            "Apple TV bietet eine saubere Oberfläche und zuverlässige Performance. IPTV-Apps aus dem App Store verbinden sich mit Ihren Zugangsdaten; auf iPhone und iPad nutzen Sie dieselbe App unterwegs. Details zur Plattform liefert [Apple TV](https://www.apple.com/apple-tv/) auf der Herstellerseite.",
+            "Die Integration in die Apple-Welt ist besonders komfortabel: AirPlay, Siri-Sprachsuche und einheitliche Bedienkonzepte greifen nahtlos ineinander. Wer bereits iPhone und Mac nutzt, findet hier ein konsistentes Erlebnis ohne zusätzliche Lernkurve."
           ]
         },
         {
           "id": "fire-tv-geraete",
           "heading": "Amazon Fire TV Stick und Fire TV",
           "paragraphs": [
-            "Fire-TV-Sticks sind in deutschen Haushalten weit verbreitet – günstig, kompakt und einfach an jeden HDMI-TV anzuschließen. IPTV-Apps lassen sich über den Amazon Appstore oder per Sideload installieren. Technische Hintergründe zur Plattform bietet die [Amazon Fire TV Dokumentation](https://developer.amazon.com/docs/fire-tv/documentation.html)."
+            "Fire-TV-Sticks sind in deutschen Haushalten weit verbreitet – günstig, kompakt und einfach an jeden HDMI-TV anzuschließen. IPTV-Apps lassen sich über den Amazon Appstore oder per Sideload installieren. Technische Hintergründe zur Plattform bietet die [Amazon Fire TV Dokumentation](https://developer.amazon.com/docs/fire-tv/documentation.html).",
+            "Modelle mit 4K-Unterstützung und Ethernet-Adapter eignen sich besonders für dauerhaftes German IPTV im Wohnzimmer. Die Bedienung per Alexa ist optional; für Live-TV reicht die klassische Fernbedienung in den meisten Fällen völlig aus."
           ]
         },
         {
@@ -197,7 +200,7 @@
     },
     {
       "question": "Ist German IPTV in Deutschland legal?",
-      "answer": "IPTV als Technologie ist legal. Entscheidend ist, ob der Anbieter die Rechte zur Weitergabe der Sender besitzt. Seriöse Anbieter arbeiten transparent. Fragwürdige Gratis- oder Extrembillig-Angebote ohne klare Lizenzierung sollten Sie vermeiden."
+      "answer": "IPTV als Technologie ist legal. Entscheidend ist, ob der Anbieter die Rechte zur Weitergabe der Sender besitzt. Seriöse Anbieter arbeiten transparent. Fragwürdige Gratis- oder Extrembillig-Angebote ohne klare Lizenzierung sollten Sie vermeiden. Im Zweifel lohnt ein Blick auf Bewertungen, Support-Erreichbarkeit und die konkrete Senderliste vor der Buchung."
     },
     {
       "question": "Welche Internetgeschwindigkeit brauche ich für German IPTV?",
