@@ -34,7 +34,7 @@ export type BlogPost = {
   publishedAt: string;
   updatedAt: string;
   readingTimeMinutes: number;
-  image: string;
+  image?: string;
   imageAlt: string;
   featured: boolean;
   popular: boolean;

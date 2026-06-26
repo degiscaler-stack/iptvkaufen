@@ -17,6 +17,7 @@ import {
   getRelatedPosts,
 } from "@/lib/blog/posts";
 import { formatGermanDate } from "@/lib/blog/utils";
+import { resolveBlogOgImage } from "@/lib/blog/images";
 import { BLOG_CATEGORIES } from "@/lib/blog/types";
 import {
   buildBreadcrumbSchema,
@@ -50,7 +51,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${post.title} | iptvkaufenX Blog`,
     description: post.description,
     path: `/blog/${post.slug}`,
-    image: post.image,
+    image: resolveBlogOgImage({
+      image: post.image,
+      category: post.category,
+      featured: post.featured,
+    }),
     imageAlt: post.imageAlt,
     type: "article",
     publishedAt: post.publishedAt,
@@ -124,7 +129,12 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </div>
         </header>
 
-        <BlogArticleHeroImage src={post.image} alt={post.imageAlt} />
+        <BlogArticleHeroImage
+          image={post.image}
+          category={post.category}
+          featured={post.featured}
+          alt={post.imageAlt}
+        />
 
         <div className="grid gap-10 lg:grid-cols-[240px_1fr] lg:gap-12">
           <aside className="lg:sticky lg:top-32 lg:self-start">

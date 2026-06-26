@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { BlogFaqItem, BlogPost } from "@/lib/blog/types";
 import { BLOG_CATEGORIES } from "@/lib/blog/types";
+import { resolveBlogOgImage } from "@/lib/blog/images";
 
 const SITE_URL = "https://iptvkaufenx.de";
 const SITE_NAME = "iptvkaufenX";
@@ -72,7 +73,11 @@ export function buildPageMetadata({
 
 export function buildBlogPostingSchema(post: BlogPost) {
   const url = `${SITE_URL}/blog/${post.slug}`;
-  const image = post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`;
+  const image = resolveBlogOgImage({
+    image: post.image,
+    category: post.category,
+    featured: post.featured,
+  });
 
   return {
     "@context": "https://schema.org",

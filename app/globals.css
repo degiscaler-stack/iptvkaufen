@@ -121,3 +121,51 @@ button {
 .blog-prose a:hover {
   color: #c7ff62;
 }
+
+/* Blog cover placeholders */
+.blog-cover-placeholder {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(166, 255, 0, 0.1), transparent 38%),
+    linear-gradient(180deg, #070907 0%, #030303 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-cover-placeholder::before {
+  background: radial-gradient(circle at 50% 42%, rgba(166, 255, 0, 0.16), transparent 52%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.blog-cover-placeholder::after {
+  border: 1px solid rgba(166, 255, 0, 0.14);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 0 48px rgba(166, 255, 0, 0.05),
+    0 0 60px rgba(166, 255, 0, 0.06);
+  content: "";
+  inset: 14% 11% 20%;
+  position: absolute;
+}
+
+.blog-cover-variant-einrichtung::before {
+  background: radial-gradient(circle at 48% 38%, rgba(166, 255, 0, 0.18), transparent 54%);
+}
+
+.blog-cover-variant-geraete::before {
+  background: radial-gradient(circle at 62% 34%, rgba(141, 255, 0, 0.15), transparent 50%);
+}
+
+.blog-cover-variant-sicherheit::before {
+  background: radial-gradient(circle at 40% 46%, rgba(107, 255, 42, 0.14), transparent 52%);
+}
+
+.blog-cover-variant-vergleich::before {
+  background: radial-gradient(circle at 54% 40%, rgba(199, 255, 98, 0.13), transparent 55%);
+}
+
+.blog-cover-variant-streaming::before,
+.blog-cover-variant-sport::before {
+  background: radial-gradient(circle at 50% 42%, rgba(166, 255, 0, 0.16), transparent 52%);
+}
