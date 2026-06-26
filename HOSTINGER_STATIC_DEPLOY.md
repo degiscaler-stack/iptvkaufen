@@ -1,24 +1,23 @@
-# Hostinger Static Deployment
+# Hostinger Next.js Deployment
 
 - Install command: `npm ci`
 - Build command: `npm run build`
-- Output directory: `out`
-- Start command: not needed for static hosting
-- Node version: 20.x or 22.x
-- This project uses Next.js static export (`output: "export"`)
-- Do not use `next start` or `.next` as the deploy output
-- Do not run `verify-static-export.mjs` as a separate deploy step; `npm run build` verifies the export automatically
+- Output directory: `.next`
+- Start command: `npm start` (runs `next start`)
+- Node version: 22.x
+- Framework: Next.js
 
 ## Build pipeline
 
 1. `scripts/generate-feed.mjs` writes `public/feed.xml`
-2. `next build --webpack` generates the static site into `out/`
-3. `scripts/build.mjs` verifies required routes exist in `out/`
+2. `next build` creates the production build in `.next/`
+3. `scripts/verify-static-export.mjs` validates `.next/` and required routes
 
-## Required generated files
+## Verified routes
 
-- `out/index.html` (homepage)
-- `out/blog.html` and `out/blog/*.html` (blog)
-- `out/preise.html`, `out/faq.html`, `out/senderliste.html`, `out/kontakt.html`
-- `out/sitemap.xml`, `out/robots.txt`, `out/feed.xml`
-- `out/.htaccess` (clean URL rewrites for Apache)
+- `/`, `/blog`, `/blog/[slug]`, `/preise`, `/senderliste`, `/faq`, `/kontakt`
+- `/sitemap.xml`, `/robots.txt`, `/feed.xml`
+
+## Apache
+
+`public/.htaccess` is included for clean URL compatibility where Apache is used in front of the app.
