@@ -1,0 +1,61 @@
+{
+  "slug": "android-tv-iptv-guide",
+  "title": "Android TV IPTV Guide: Installation und Optimierung",
+  "description": "IPTV auf Android TV einrichten – von der App-Installation bis zu Profi-Einstellungen für NVIDIA Shield, Xiaomi und Google TV.",
+  "category": "geraete",
+  "tags": ["Android TV", "Google TV", "NVIDIA Shield", "Einrichtung"],
+  "author": { "name": "Marcus Weber", "role": "IPTV Experte" },
+  "publishedAt": "2026-03-10T10:00:00.000Z",
+  "updatedAt": "2026-06-12T10:00:00.000Z",
+  "readingTimeMinutes": 6,
+  "image": "/images/Operating systems/iptv-kaufen-5.webp",
+  "imageAlt": "Android TV IPTV Einrichtung Guide",
+  "featured": false,
+  "popular": false,
+  "sections": [
+    {
+      "id": "geraete",
+      "heading": "Kompatible Android TV Geräte",
+      "level": 2,
+      "paragraphs": [
+        "Android TV und Google TV sind ideale Plattformen für IPTV. Beliebte Geräte sind NVIDIA Shield TV, Xiaomi Mi Box, Chromecast mit Google TV und Sony Android TVs.",
+        "Diese Geräte bieten leistungsstarke Hardware-Decoder und unterstützen 4K HDR-Streaming ohne Ruckler."
+      ]
+    },
+    {
+      "id": "setup",
+      "heading": "Schritt-für-Schritt Installation",
+      "level": 2,
+      "paragraphs": [
+        "Installieren Sie TiviMate aus dem Google Play Store – die beste IPTV-App für Android TV. Alternativ nutzen Sie IPTV Smarters Pro für eine einfachere Oberfläche.",
+        "Fügen Sie Ihre Playlist per Xtream Codes API hinzu und warten Sie, bis die Senderliste vollständig synchronisiert ist."
+      ],
+      "list": [
+        "TiviMate oder IPTV Smarters installieren",
+        "Xtream Codes Zugangsdaten eingeben",
+        "EPG-Quelle aktivieren",
+        "Favoriten und Gruppen anlegen"
+      ]
+    },
+    {
+      "id": "optimierung",
+      "heading": "Performance-Optimierung",
+      "level": 2,
+      "paragraphs": [
+        "Aktivieren Sie den Hardware-Decoder in den App-Einstellungen. Setzen Sie den Puffer auf „Auto“ oder 3–5 Sekunden für Live-TV. Deaktivieren Sie unnötige Hintergrund-Apps.",
+        "Auf dem NVIDIA Shield können Sie die AI-Upscaling-Funktion für SD-Sender nutzen, um die Bildqualität zu verbessern."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ist TiviMate im Play Store verfügbar?",
+      "answer": "TiviMate ist im Google Play Store für Android TV verfügbar. Für Smartphones gibt es eine separate TiviMate-Version."
+    },
+    {
+      "question": "Welches Android TV Box ist am besten für IPTV?",
+      "answer": "Der NVIDIA Shield TV Pro bietet die beste Performance. Für ein gutes Preis-Leistungs-Verhältnis empfehlen wir Chromecast mit Google TV 4K."
+    }
+  ],
+  "relatedSlugs": ["beste-iptv-apps-2026", "iptv-fire-tv-stick-einrichten", "iptv-buffering-beheben"]
+}

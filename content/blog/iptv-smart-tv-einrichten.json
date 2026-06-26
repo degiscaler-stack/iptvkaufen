@@ -1,0 +1,65 @@
+{
+  "slug": "iptv-smart-tv-einrichten",
+  "title": "IPTV auf dem Smart TV einrichten: Komplette Anleitung 2026",
+  "description": "So richten Sie IPTV auf Samsung, LG und Android Smart TV ein – Schritt für Schritt mit den besten Apps, Einstellungen und Tipps für stabiles Streaming.",
+  "category": "einrichtung",
+  "tags": ["Smart TV", "Einrichtung", "IPTV App", "Samsung", "LG"],
+  "author": { "name": "Marcus Weber", "role": "IPTV Experte" },
+  "publishedAt": "2026-01-15T10:00:00.000Z",
+  "updatedAt": "2026-06-20T10:00:00.000Z",
+  "readingTimeMinutes": 8,
+  "image": "/images/iptv-kaufen-premium-streaming-deutschland.webp",
+  "imageAlt": "IPTV Einrichtung auf Smart TV in Deutschland",
+  "featured": true,
+  "popular": true,
+  "sections": [
+    {
+      "id": "voraussetzungen",
+      "heading": "Voraussetzungen für IPTV auf dem Smart TV",
+      "level": 2,
+      "paragraphs": [
+        "Bevor Sie IPTV auf Ihrem Smart TV nutzen, benötigen Sie eine stabile Internetverbindung mit mindestens 25 Mbit/s für HD und 50 Mbit/s für 4K-Inhalte. Ein LAN-Kabel ist ideal, da es weniger Schwankungen als WLAN verursacht.",
+        "Zusätzlich brauchen Sie Ihre IPTV-Zugangsdaten: Server-URL, Benutzername und Passwort. Diese erhalten Sie nach der Bestellung und können sofort verwendet werden."
+      ],
+      "list": [
+        "Stabile Internetverbindung (empfohlen: 25+ Mbit/s)",
+        "Smart TV mit App-Store (Samsung, LG, Android TV)",
+        "IPTV-Zugangsdaten vom Anbieter",
+        "Kompatibler IPTV-Player (z. B. IPTV Smarters, TiviMate)"
+      ]
+    },
+    {
+      "id": "samsung-lg",
+      "heading": "Einrichtung auf Samsung und LG Smart TV",
+      "level": 2,
+      "paragraphs": [
+        "Auf Samsung TVs installieren Sie eine IPTV-App aus dem Samsung App Store. Nach dem Start wählen Sie „Login with Xtream Codes API“ und tragen Server-URL, Benutzername und Passwort ein.",
+        "Auf LG webOS TVs funktioniert der Prozess ähnlich: App installieren, Zugangsdaten eingeben und die Senderliste synchronisieren. Die erste Synchronisation kann je nach Senderanzahl einige Minuten dauern."
+      ]
+    },
+    {
+      "id": "optimierung",
+      "heading": "Optimale Einstellungen für flüssiges Streaming",
+      "level": 2,
+      "paragraphs": [
+        "Aktivieren Sie in den App-Einstellungen den Hardware-Decoder, um die CPU-Last zu reduzieren. Deaktivieren Sie Energiesparmodi während des Streamings, da diese die Verbindung unterbrechen können.",
+        "Für Sport und Live-Events empfehlen wir den EPG (Elektronischer Programmführer), um Sendungen im Voraus zu planen und Favoritenlisten für schnellen Zugriff anzulegen."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Welche IPTV-App eignet sich am besten für Smart TVs?",
+      "answer": "IPTV Smarters Pro und TiviMate sind die beliebtesten Optionen. IPTV Smarters ist auf den meisten Smart TVs verfügbar und einfach zu bedienen."
+    },
+    {
+      "question": "Kann ich IPTV ohne Kabelverbindung nutzen?",
+      "answer": "Ja, WLAN funktioniert bei guter Signalstärke. Für 4K-Streaming und Live-Sport empfehlen wir jedoch eine kabelgebundene Verbindung für maximale Stabilität."
+    },
+    {
+      "question": "Wie lange dauert die Ersteinrichtung?",
+      "answer": "Die Einrichtung dauert in der Regel 5–10 Minuten. Die Senderliste synchronisiert sich automatisch nach Eingabe Ihrer Zugangsdaten."
+    }
+  ],
+  "relatedSlugs": ["iptv-fire-tv-stick-einrichten", "beste-iptv-apps-2026", "iptv-buffering-beheben"]
+}
