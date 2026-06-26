@@ -48,9 +48,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     });
   }
 
+  const pageTitle = post.seoTitle ?? `${post.title} | iptvkaufenX Blog`;
+
   return buildPageMetadata({
-    title: `${post.title} | iptvkaufenX Blog`,
-    description: post.description,
+    title: pageTitle,
+    description: post.seoDescription ?? post.description,
     path: `/blog/${post.slug}`,
     image: resolveBlogOgImage({
       image: post.image,
@@ -143,6 +145,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
           image={post.image}
           category={post.category}
           alt={post.imageAlt}
+          title={post.imageAlt}
         />
 
         <div className={planned ? "max-w-[820px]" : "grid gap-10 lg:grid-cols-[240px_1fr] lg:gap-12"}>

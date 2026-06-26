@@ -2,8 +2,6 @@ import type { BlogCategory } from "@/lib/blog/types";
 
 const SITE_URL = "https://iptvkaufenx.de";
 const BLOG_OG_IMAGE = `${SITE_URL}/brand/iptv-kaufen-logo.webp`;
-const BLOG_IMAGE_PREFIX = "/images/blog/";
-
 type CoverInput = {
   image?: string | null;
   category: BlogCategory;
@@ -14,7 +12,7 @@ export type BlogCover =
   | { type: "placeholder"; variant: BlogCategory };
 
 export function hasCustomBlogImage(image?: string | null): image is string {
-  return Boolean(image && image.startsWith(BLOG_IMAGE_PREFIX));
+  return Boolean(image && image.startsWith("/images/"));
 }
 
 export function resolveBlogCover({ image, category }: CoverInput): BlogCover {

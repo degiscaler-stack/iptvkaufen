@@ -13,12 +13,27 @@ export type BlogAuthor = {
   role: string;
 };
 
+export type BlogSectionImage = {
+  src: string;
+  alt: string;
+  title: string;
+};
+
+export type BlogSubsection = {
+  id: string;
+  heading: string;
+  paragraphs: string[];
+  list?: string[];
+};
+
 export type BlogSection = {
   id: string;
   heading: string;
   level: 2 | 3;
   paragraphs: string[];
   list?: string[];
+  image?: BlogSectionImage;
+  subsections?: BlogSubsection[];
 };
 
 export type BlogFaqItem = {
@@ -29,6 +44,8 @@ export type BlogFaqItem = {
 export type BlogPost = {
   slug: string;
   title: string;
+  seoTitle?: string;
+  seoDescription?: string;
   description: string;
   keyword: string;
   category: BlogCategory;
