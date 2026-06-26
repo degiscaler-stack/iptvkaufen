@@ -3,10 +3,9 @@ import type { BlogCategory } from "@/lib/blog/types";
 import { resolveBlogCover } from "@/lib/blog/images";
 
 type BlogCoverImageProps = {
-  image?: string;
+  image?: string | null;
   category: BlogCategory;
   alt: string;
-  featured?: boolean;
   priority?: boolean;
   sizes?: string;
   className?: string;
@@ -16,12 +15,11 @@ export default function BlogCoverImage({
   image,
   category,
   alt,
-  featured = false,
   priority = false,
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
   className = "",
 }: BlogCoverImageProps) {
-  const cover = resolveBlogCover({ image, category, featured });
+  const cover = resolveBlogCover({ image, category });
 
   if (cover.type === "image") {
     return (
@@ -30,7 +28,7 @@ export default function BlogCoverImage({
         alt={alt}
         fill
         sizes={sizes}
-        className={`object-cover absolute inset-0 ${className}`}
+        className={`absolute inset-0 object-cover ${className}`}
         priority={priority}
         loading={priority ? undefined : "lazy"}
       />

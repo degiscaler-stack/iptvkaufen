@@ -76,7 +76,6 @@ export function buildBlogPostingSchema(post: BlogPost) {
   const image = resolveBlogOgImage({
     image: post.image,
     category: post.category,
-    featured: post.featured,
   });
 
   return {

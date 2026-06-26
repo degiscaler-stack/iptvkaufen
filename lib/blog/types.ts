@@ -1,10 +1,12 @@
 export type BlogCategory =
-  | "einrichtung"
-  | "geraete"
-  | "sport"
-  | "streaming"
-  | "sicherheit"
-  | "vergleich";
+  | "iptv-deutschland"
+  | "iptv-anbieter"
+  | "iptv-geraete"
+  | "iptv-apps"
+  | "iptv-vergleich"
+  | "iptv-test";
+
+export type BlogPostStatus = "planned" | "published";
 
 export type BlogAuthor = {
   name: string;
@@ -28,16 +30,18 @@ export type BlogPost = {
   slug: string;
   title: string;
   description: string;
+  keyword: string;
   category: BlogCategory;
   tags: string[];
   author: BlogAuthor;
   publishedAt: string;
   updatedAt: string;
   readingTimeMinutes: number;
-  image?: string;
+  image?: string | null;
   imageAlt: string;
   featured: boolean;
   popular: boolean;
+  status: BlogPostStatus;
   sections: BlogSection[];
   faq: BlogFaqItem[];
   relatedSlugs: string[];
@@ -48,6 +52,7 @@ export type BlogPostSummary = Pick<
   | "slug"
   | "title"
   | "description"
+  | "keyword"
   | "category"
   | "tags"
   | "author"
@@ -58,36 +63,50 @@ export type BlogPostSummary = Pick<
   | "imageAlt"
   | "featured"
   | "popular"
+  | "status"
 >;
 
 export const BLOG_CATEGORIES: Record<
   BlogCategory,
   { label: string; description: string }
 > = {
-  einrichtung: {
-    label: "Einrichtung",
-    description: "Schritt-für-Schritt Anleitungen zur IPTV Installation",
+  "iptv-deutschland": {
+    label: "IPTV Deutschland",
+    description: "German IPTV, Germany IPTV und Deutschland IPTV im Überblick",
   },
-  geraete: {
-    label: "Geräte",
-    description: "IPTV auf Smart TV, Fire TV, Android und mehr",
+  "iptv-anbieter": {
+    label: "IPTV Anbieter",
+    description: "Seriöse IPTV Anbieter und Auswahlkriterien für Deutschland",
   },
-  sport: {
-    label: "Sport",
-    description: "Bundesliga, Champions League und Live-Sport per IPTV",
+  "iptv-geraete": {
+    label: "IPTV Geräte",
+    description: "IPTV Box, Smart TV und kompatible Hardware",
   },
-  streaming: {
-    label: "Streaming",
-    description: "Filme, Serien und Entertainment in bester Qualität",
+  "iptv-apps": {
+    label: "IPTV Apps",
+    description: "IPTV Player und IPTV Smart Player für alle Geräte",
   },
-  sicherheit: {
-    label: "Sicherheit",
-    description: "Tipps für stabiles und sicheres IPTV Streaming",
+  "iptv-vergleich": {
+    label: "IPTV Vergleich",
+    description: "Best IPTV und IPTV Anbieter Vergleich für Deutschland",
   },
-  vergleich: {
-    label: "Vergleich",
-    description: "IPTV im Vergleich mit Kabel, Satellit und OTT",
+  "iptv-test": {
+    label: "IPTV Test",
+    description: "IPTV Free Trial und risikofreies Testen",
   },
 };
 
-export const POSTS_PER_PAGE = 9;
+export const BLOG_CLUSTER_ORDER: BlogCategory[] = [
+  "iptv-deutschland",
+  "iptv-anbieter",
+  "iptv-geraete",
+  "iptv-apps",
+  "iptv-vergleich",
+  "iptv-test",
+];
+
+export const POSTS_PER_PAGE = 12;
+
+export function isPlannedPost(post: Pick<BlogPost, "status" | "sections">): boolean {
+  return post.status === "planned" || post.sections.length === 0;
+}

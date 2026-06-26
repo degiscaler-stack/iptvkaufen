@@ -21,7 +21,6 @@ export default function BlogFeaturedArticle({ post }: BlogFeaturedArticleProps) 
           <BlogCoverImage
             image={post.image}
             category={post.category}
-            featured
             alt={post.imageAlt}
             sizes="(max-width: 1024px) 100vw, 58vw"
             priority
@@ -34,6 +33,11 @@ export default function BlogFeaturedArticle({ post }: BlogFeaturedArticleProps) 
           <p className="mb-3 inline-flex w-fit rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
             Featured · {category.label}
           </p>
+          {post.status === "planned" ? (
+            <p className="mb-3 inline-flex w-fit rounded-full border border-[#F5F5F5]/12 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#F5F5F5]/58">
+              Geplant
+            </p>
+          ) : null}
 
           <h2 className="text-balance text-[1.55rem] font-black leading-[1.06] tracking-[-0.04em] text-[#F5F5F5] sm:text-[1.9rem] lg:text-[2.15rem]">
             <Link href={`/blog/${post.slug}`} className="transition duration-300 hover:text-[#A6FF00]">

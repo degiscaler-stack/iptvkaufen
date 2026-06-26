@@ -1,0 +1,20 @@
+{
+  "slug": "iptv-player",
+  "title": "IPTV Player: Die besten Player für alle Geräte",
+  "description": "Welcher IPTV Player passt zu Ihrem Gerät? Funktionen, Kompatibilität und Qualität im praxisnahen Überblick.",
+  "keyword": "IPTV Player",
+  "category": "iptv-apps",
+  "tags": ["IPTV Player", "Player", "Apps"],
+  "author": { "name": "iptvkaufenX Redaktion", "role": "IPTV Experten" },
+  "publishedAt": "2026-06-26T10:00:00.000Z",
+  "updatedAt": "2026-06-26T10:00:00.000Z",
+  "readingTimeMinutes": 8,
+  "image": null,
+  "imageAlt": "IPTV Player für alle Geräte",
+  "featured": false,
+  "popular": false,
+  "status": "planned",
+  "sections": [],
+  "faq": [],
+  "relatedSlugs": ["iptv-smart-player", "iptv-box", "best-iptv"]
+}

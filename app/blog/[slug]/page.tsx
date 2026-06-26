@@ -6,6 +6,7 @@ import BlogArticleContent, {
 } from "@/components/blog/BlogArticleContent";
 import BlogCTA from "@/components/blog/BlogCTA";
 import BlogFaq from "@/components/blog/BlogFaq";
+import BlogPlannedNotice from "@/components/blog/BlogPlannedNotice";
 import BlogPostNavigation from "@/components/blog/BlogPostNavigation";
 import BlogRelatedPosts from "@/components/blog/BlogRelatedPosts";
 import BlogShareButtons from "@/components/blog/BlogShareButtons";
@@ -18,7 +19,7 @@ import {
 } from "@/lib/blog/posts";
 import { formatGermanDate } from "@/lib/blog/utils";
 import { resolveBlogOgImage } from "@/lib/blog/images";
-import { BLOG_CATEGORIES } from "@/lib/blog/types";
+import { BLOG_CATEGORIES, isPlannedPost } from "@/lib/blog/types";
 import {
   buildBreadcrumbSchema,
   buildBlogPostingSchema,
@@ -54,7 +55,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     image: resolveBlogOgImage({
       image: post.image,
       category: post.category,
-      featured: post.featured,
     }),
     imageAlt: post.imageAlt,
     type: "article",
@@ -74,6 +74,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const category = BLOG_CATEGORIES[post.category];
   const related = getRelatedPosts(post.relatedSlugs);
   const { previous, next } = getAdjacentPosts(slug);
+  const planned = isPlannedPost(post);
 
   const breadcrumbItems = [
     { name: "Startseite", path: "/" },
@@ -106,9 +107,16 @@ export default async function BlogArticlePage({ params }: PageProps) {
         />
 
         <header className="mb-8 max-w-[820px]">
-          <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
-            {category.label}
-          </p>
+          <div className="mb-3 flex flex-wrap gap-2">
+            <p className="inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
+              {category.label}
+            </p>
+            {planned ? (
+              <p className="inline-flex rounded-full border border-[#F5F5F5]/12 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#F5F5F5]/58">
+                Geplant
+              </p>
+            ) : null}
+          </div>
           <h1 className="text-balance text-[2rem] font-black leading-[1.04] tracking-[-0.05em] text-[#F5F5F5] sm:text-[2.65rem] lg:text-[3rem]">
             {post.title}
           </h1>
@@ -126,25 +134,32 @@ export default async function BlogArticlePage({ params }: PageProps) {
             </time>
             <span aria-hidden="true">·</span>
             <span>{post.readingTimeMinutes} Min. Lesezeit</span>
+            <span aria-hidden="true">·</span>
+            <span className="text-[#A6FF00]/72">{post.keyword}</span>
           </div>
         </header>
 
         <BlogArticleHeroImage
           image={post.image}
           category={post.category}
-          featured={post.featured}
           alt={post.imageAlt}
         />
 
-        <div className="grid gap-10 lg:grid-cols-[240px_1fr] lg:gap-12">
-          <aside className="lg:sticky lg:top-32 lg:self-start">
-            <BlogTableOfContents sections={post.sections} />
-          </aside>
+        <div className={planned ? "max-w-[820px]" : "grid gap-10 lg:grid-cols-[240px_1fr] lg:gap-12"}>
+          {!planned ? (
+            <aside className="lg:sticky lg:top-32 lg:self-start">
+              <BlogTableOfContents sections={post.sections} />
+            </aside>
+          ) : null}
 
           <div>
-            <BlogArticleContent sections={post.sections} />
+            {planned ? (
+              <BlogPlannedNotice />
+            ) : (
+              <BlogArticleContent sections={post.sections} />
+            )}
             <BlogShareButtons title={post.title} slug={post.slug} />
-            <BlogFaq items={post.faq} />
+            {!planned ? <BlogFaq items={post.faq} /> : null}
             <BlogPostNavigation previous={previous} next={next} />
             <div className="mt-12">
               <BlogCTA />

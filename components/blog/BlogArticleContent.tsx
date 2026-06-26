@@ -32,10 +32,9 @@ export default function BlogArticleContent({ sections }: BlogArticleContentProps
 }
 
 type BlogArticleHeroImageProps = {
-  image?: string;
+  image?: string | null;
   category: BlogCategory;
   alt: string;
-  featured?: boolean;
   priority?: boolean;
 };
 
@@ -43,7 +42,6 @@ export function BlogArticleHeroImage({
   image,
   category,
   alt,
-  featured = false,
   priority = true,
 }: BlogArticleHeroImageProps) {
   return (
@@ -51,7 +49,6 @@ export function BlogArticleHeroImage({
       <BlogCoverImage
         image={image}
         category={category}
-        featured={featured}
         alt={alt}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 820px"
         priority={priority}

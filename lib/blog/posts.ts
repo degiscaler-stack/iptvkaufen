@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { BlogCategory, BlogPost, BlogPostSummary } from "./types";
-import { POSTS_PER_PAGE } from "./types";
+import { BLOG_CLUSTER_ORDER, POSTS_PER_PAGE } from "./types";
 
 const CONTENT_DIR = join(process.cwd(), "content", "blog");
 
@@ -10,6 +10,7 @@ function toSummary(post: BlogPost): BlogPostSummary {
     slug,
     title,
     description,
+    keyword,
     category,
     tags,
     author,
@@ -20,11 +21,13 @@ function toSummary(post: BlogPost): BlogPostSummary {
     imageAlt,
     featured,
     popular,
+    status,
   } = post;
   return {
     slug,
     title,
     description,
+    keyword,
     category,
     tags,
     author,
@@ -35,6 +38,7 @@ function toSummary(post: BlogPost): BlogPostSummary {
     imageAlt,
     featured,
     popular,
+    status,
   };
 }
 
@@ -49,9 +53,10 @@ export function getAllPosts(): BlogPost[] {
     return JSON.parse(raw) as BlogPost;
   });
 
-  cachedPosts = posts.sort(
-    (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
-  );
+  cachedPosts = posts.sort((a, b) => {
+    if (a.featured !== b.featured) return a.featured ? -1 : 1;
+    return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+  });
 
   return cachedPosts;
 }
@@ -87,6 +92,20 @@ export function getPostsByCategory(category: BlogCategory): BlogPostSummary[] {
   return getAllPostSummaries().filter((post) => post.category === category);
 }
 
+export function getPostsByCluster(category: BlogCategory): BlogPostSummary[] {
+  return getPostsByCategory(category);
+}
+
+export function getPostsGroupedByCluster(): {
+  category: BlogCategory;
+  posts: BlogPostSummary[];
+}[] {
+  return BLOG_CLUSTER_ORDER.map((category) => ({
+    category,
+    posts: getPostsByCategory(category).filter((post) => !post.featured),
+  })).filter((group) => group.posts.length > 0);
+}
+
 export function getPostsByTag(tag: string): BlogPostSummary[] {
   const normalized = tag.toLowerCase();
   return getAllPostSummaries().filter((post) =>
@@ -102,6 +121,7 @@ export function searchPosts(query: string): BlogPostSummary[] {
     const haystack = [
       post.title,
       post.description,
+      post.keyword,
       post.category,
       ...post.tags,
     ]
@@ -154,7 +174,7 @@ export function getPaginatedPosts(page: number): {
 
 export function getAllCategories(): BlogCategory[] {
   const categories = new Set(getAllPosts().map((post) => post.category));
-  return Array.from(categories);
+  return BLOG_CLUSTER_ORDER.filter((category) => categories.has(category));
 }
 
 export function getAllTags(): string[] {

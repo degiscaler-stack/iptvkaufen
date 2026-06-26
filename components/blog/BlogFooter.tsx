@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { BLOG_CLUSTER_ORDER, BLOG_CATEGORIES } from "@/lib/blog/types";
 
 const blogFooterLinks = [
   { label: "Alle Artikel", href: "/blog" },
-  { label: "Einrichtung", href: "/blog/kategorie/einrichtung" },
-  { label: "Geräte", href: "/blog/kategorie/geraete" },
-  { label: "Sport", href: "/blog/kategorie/sport" },
-  { label: "Streaming", href: "/blog/kategorie/streaming" },
+  ...BLOG_CLUSTER_ORDER.map((slug) => ({
+    label: BLOG_CATEGORIES[slug].label,
+    href: `/blog/kategorie/${slug}`,
+  })),
   { label: "RSS Feed", href: "/feed.xml" },
 ] as const;
 
@@ -21,13 +22,14 @@ export default function BlogFooter() {
             iptvkaufenX Blog
           </h2>
           <p className="mt-3 text-[14px] leading-7 text-[#F5F5F5]/72">
-            Expertenwissen zu IPTV in Deutschland – Einrichtung, Geräte, Sport und Streaming-Tipps.
+            Strukturierte IPTV SEO-Leitfäden für Deutschland – nach Themenclustern sortiert und
+            redaktionell vorbereitet.
           </p>
         </div>
 
         <nav aria-label="Blog Kategorien">
           <h3 className="text-[13px] font-bold uppercase tracking-[0.14em] text-[#F5F5F5]/55">
-            Entdecken
+            Themencluster
           </h3>
           <ul className="mt-3 grid gap-2">
             {blogFooterLinks.map((link) => (

@@ -28,6 +28,11 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
         <span className="absolute left-4 top-4 rounded-full border border-[#A6FF00]/28 bg-[#050505]/82 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#A6FF00] backdrop-blur-sm">
           {category.label}
         </span>
+        {post.status === "planned" ? (
+          <span className="absolute right-4 top-4 rounded-full border border-[#F5F5F5]/12 bg-[#050505]/78 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#F5F5F5]/62 backdrop-blur-sm">
+            Geplant
+          </span>
+        ) : null}
       </Link>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
