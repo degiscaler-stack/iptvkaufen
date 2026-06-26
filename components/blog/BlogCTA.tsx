@@ -24,7 +24,7 @@ export default function BlogCTA() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/"
-            className="inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-[#050505] transition duration-300 hover:bg-[#C7FF62]"
+            className="inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-[#000000] transition duration-300 hover:bg-[#C7FF62] hover:text-[#000000] focus:text-[#000000] active:text-[#000000]"
           >
             Jetzt IPTV kaufen
           </Link>
