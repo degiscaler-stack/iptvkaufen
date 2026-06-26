@@ -12,9 +12,9 @@
   "image": null,
   "imageAlt": "German IPTV Leitfaden für Deutschland",
   "featured": false,
-  "popular": false,
+  "popular": true,
   "status": "planned",
   "sections": [],
   "faq": [],
-  "relatedSlugs": []
+  "relatedSlugs": ["germany-iptv", "iptv-free-trial", "iptv-box"]
 }
