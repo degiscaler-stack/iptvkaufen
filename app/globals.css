@@ -133,6 +133,115 @@ button {
   color: #c7ff62;
 }
 
+/* Blog article callouts */
+.blog-summary-box {
+  background: linear-gradient(135deg, #0a1008 0%, #050806 100%);
+  border: 1px solid rgba(166, 255, 0, 0.22);
+  border-radius: 22px;
+  padding: 1.35rem 1.5rem;
+}
+
+.blog-summary-box-title {
+  color: #a6ff00;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.blog-summary-box-list {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-summary-box-list li {
+  color: rgba(230, 230, 230, 0.88);
+  display: flex;
+  font-size: 14px;
+  gap: 0.75rem;
+  line-height: 1.65;
+}
+
+.blog-summary-box-list li::before {
+  background: #a6ff00;
+  border-radius: 9999px;
+  content: "";
+  flex-shrink: 0;
+  height: 0.45rem;
+  margin-top: 0.55rem;
+  width: 0.45rem;
+}
+
+.blog-comparison-table th {
+  background: #0f140f;
+  border-bottom: 1px solid #1f1f1f;
+  color: #a6ff00;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1rem;
+  text-transform: uppercase;
+}
+
+.blog-comparison-table td {
+  border-bottom: 1px solid #1a1a1a;
+  color: rgba(230, 230, 230, 0.86);
+  padding: 0.9rem 1rem;
+  vertical-align: top;
+}
+
+.blog-comparison-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.blog-comparison-table tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.blog-tip-box {
+  background: linear-gradient(135deg, rgba(166, 255, 0, 0.1) 0%, rgba(10, 16, 8, 0.95) 100%);
+  border: 1px solid rgba(166, 255, 0, 0.32);
+  border-radius: 20px;
+  padding: 1.25rem 1.4rem;
+}
+
+.blog-info-box {
+  background: linear-gradient(135deg, #0b0f12 0%, #050608 100%);
+  border: 1px solid rgba(245, 245, 245, 0.12);
+  border-radius: 20px;
+  padding: 1.25rem 1.4rem;
+}
+
+.blog-callout-label {
+  color: #a6ff00;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.65rem;
+  text-transform: uppercase;
+}
+
+.blog-info-box .blog-callout-label {
+  color: #f5f5f5;
+}
+
+.blog-tip-box p:not(.blog-callout-label),
+.blog-info-box p:not(.blog-callout-label) {
+  color: rgba(230, 230, 230, 0.86);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 0.65rem;
+}
+
+.blog-tip-box p:last-child,
+.blog-info-box p:last-child {
+  margin-bottom: 0;
+}
+
 /* Blog cover placeholders */
 .blog-cover-placeholder {
   background:

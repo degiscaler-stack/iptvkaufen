@@ -17,7 +17,21 @@ export type BlogSectionImage = {
   src: string;
   alt: string;
   title: string;
+  width?: number;
+  height?: number;
+  caption?: string;
 };
+
+export type BlogContentBlock =
+  | { type: "summary"; title: string; items: string[] }
+  | {
+      type: "comparison-table";
+      caption?: string;
+      headers: string[];
+      rows: string[][];
+    }
+  | { type: "tip"; title: string; paragraphs: string[] }
+  | { type: "info"; title: string; paragraphs: string[] };
 
 export type BlogSubsection = {
   id: string;
@@ -32,6 +46,7 @@ export type BlogSection = {
   level: 2 | 3;
   paragraphs: string[];
   list?: string[];
+  blocks?: BlogContentBlock[];
   image?: BlogSectionImage;
   subsections?: BlogSubsection[];
 };

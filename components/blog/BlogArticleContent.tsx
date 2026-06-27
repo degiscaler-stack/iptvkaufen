@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { BlogSection, BlogCategory } from "@/lib/blog/types";
+import type { BlogContentBlock, BlogSection, BlogCategory } from "@/lib/blog/types";
 import BlogCoverImage from "@/components/blog/BlogCoverImage";
 import { renderInlineContent } from "@/lib/blog/inline-content";
 
@@ -11,10 +11,12 @@ function BlogInlineImage({
   src,
   alt,
   title,
+  caption,
 }: {
   src: string;
   alt: string;
   title: string;
+  caption?: string;
 }) {
   return (
     <figure className="my-8 overflow-hidden rounded-[22px] border border-[#1F1F1F] bg-[#050505]">
@@ -30,7 +32,7 @@ function BlogInlineImage({
         />
       </div>
       <figcaption className="border-t border-[#1F1F1F]/80 px-4 py-3 text-[12px] text-[#F5F5F5]/48">
-        {title}
+        {caption ?? title}
       </figcaption>
     </figure>
   );
@@ -63,6 +65,99 @@ function SectionBody({
   );
 }
 
+function BlogContentBlocks({ blocks }: { blocks: BlogContentBlock[] }) {
+  return (
+    <>
+      {blocks.map((block) => {
+        if (block.type === "summary") {
+          return (
+            <aside
+              key={`summary-${block.title}`}
+              aria-labelledby={`summary-${block.title}`}
+              className="blog-summary-box my-8"
+            >
+              <h3 id={`summary-${block.title}`} className="blog-summary-box-title">
+                {block.title}
+              </h3>
+              <ul className="blog-summary-box-list">
+                {block.items.map((item) => (
+                  <li key={item}>{renderInlineContent(item)}</li>
+                ))}
+              </ul>
+            </aside>
+          );
+        }
+
+        if (block.type === "comparison-table") {
+          return (
+            <figure key={`table-${block.headers.join("-")}`} className="blog-table-wrap my-8">
+              <div className="overflow-x-auto rounded-[18px] border border-[#1F1F1F]">
+                <table className="blog-comparison-table w-full min-w-[520px] text-left text-[14px]">
+                  <thead>
+                    <tr>
+                      {block.headers.map((header) => (
+                        <th key={header} scope="col">
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {block.rows.map((row) => (
+                      <tr key={row.join("-")}>
+                        {row.map((cell) => (
+                          <td key={cell}>{renderInlineContent(cell)}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {block.caption ? (
+                <figcaption className="mt-3 text-[12px] text-[#F5F5F5]/48">
+                  {block.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+          );
+        }
+
+        if (block.type === "tip") {
+          return (
+            <aside
+              key={`tip-${block.title}`}
+              aria-labelledby={`tip-${block.title}`}
+              className="blog-tip-box my-8"
+            >
+              <p id={`tip-${block.title}`} className="blog-callout-label">
+                {block.title}
+              </p>
+              {block.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{renderInlineContent(paragraph)}</p>
+              ))}
+            </aside>
+          );
+        }
+
+        return (
+          <aside
+            key={`info-${block.title}`}
+            aria-labelledby={`info-${block.title}`}
+            className="blog-info-box my-8"
+          >
+            <p id={`info-${block.title}`} className="blog-callout-label">
+              {block.title}
+            </p>
+            {block.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{renderInlineContent(paragraph)}</p>
+            ))}
+          </aside>
+        );
+      })}
+    </>
+  );
+}
+
 export default function BlogArticleContent({ sections }: BlogArticleContentProps) {
   return (
     <div className="blog-prose">
@@ -73,11 +168,13 @@ export default function BlogArticleContent({ sections }: BlogArticleContentProps
           <section key={section.id} id={section.id} className="scroll-mt-32">
             <HeadingTag>{section.heading}</HeadingTag>
             <SectionBody paragraphs={section.paragraphs} list={section.list} />
+            {section.blocks ? <BlogContentBlocks blocks={section.blocks} /> : null}
             {section.image ? (
               <BlogInlineImage
                 src={section.image.src}
                 alt={section.image.alt}
                 title={section.image.title}
+                caption={section.image.caption}
               />
             ) : null}
             {section.subsections?.map((subsection) => (
