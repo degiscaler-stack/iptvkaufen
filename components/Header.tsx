@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navigation = [
-  { label: "Startseite", href: "/", active: true },
+  { label: "Startseite", href: "/" },
   { label: "Preise", href: "/#preise" },
   { label: "Senderliste", href: "/senderliste" },
   { label: "FAQ", href: "/#faq" },
@@ -12,7 +13,27 @@ const navigation = [
   { label: "Kontakt", href: "/kontakt" },
 ];
 
+function isNavItemActive(pathname: string, label: string): boolean {
+  switch (label) {
+    case "Startseite":
+      return pathname === "/";
+    case "Preise":
+      return pathname.startsWith("/preise");
+    case "Senderliste":
+      return pathname.startsWith("/senderliste");
+    case "FAQ":
+      return pathname.startsWith("/faq");
+    case "Blog":
+      return pathname.startsWith("/blog");
+    case "Kontakt":
+      return pathname.startsWith("/kontakt");
+    default:
+      return false;
+  }
+}
+
 export default function Header() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,22 +51,26 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-7 lg:flex lg:gap-8">
-          {navigation.map((item) => (
+          {navigation.map((item) => {
+            const active = isNavItemActive(pathname, item.label);
+
+            return (
             <Link
               key={item.label}
               href={item.href}
               className={`group relative text-sm font-medium tracking-wide transition duration-300 ${
-                item.active ? "text-[#A6FF00]" : "text-[#B8B8B8] hover:text-[#F5F5F5]"
+                active ? "text-[#A6FF00]" : "text-[#B8B8B8] hover:text-[#F5F5F5]"
               }`}
             >
               {item.label}
               <span
                 className={`absolute -bottom-2 left-0 h-px rounded-full bg-[#A6FF00] shadow-[0_0_12px_rgba(166,255,0,0.8)] transition-all duration-300 ${
-                  item.active ? "w-full" : "w-0 group-hover:w-full"
+                  active ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
             </Link>
-          ))}
+            );
+          })}
         </nav>
 
         <div className="hidden items-center sm:flex">
@@ -91,21 +116,25 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl flex-col gap-0.5">
-          {navigation.map((item) => (
+          {navigation.map((item) => {
+            const active = isNavItemActive(pathname, item.label);
+
+            return (
             <Link
               key={item.label}
               href={item.href}
               tabIndex={isOpen ? undefined : -1}
               onClick={() => setIsOpen(false)}
               className={`rounded-md px-3 py-[7px] text-[13px] font-medium leading-[1.15] tracking-[0.01em] transition ${
-                item.active
+                active
                   ? "bg-[#A6FF00]/5 text-[#A6FF00]"
                   : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
               }`}
             >
               {item.label}
             </Link>
-          ))}
+            );
+          })}
           <Link
             href="/#preise"
             tabIndex={isOpen ? undefined : -1}
