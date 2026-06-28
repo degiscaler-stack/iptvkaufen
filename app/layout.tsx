@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import RecentPurchaseNotification from "@/components/RecentPurchaseNotification";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <RecentPurchaseNotification />
         <WhatsAppFloatButton />
         <Script id="statcounter-config" strategy="afterInteractive">
           {`
