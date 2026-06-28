@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${category.label} – IPTV Blog | iptvkaufenX`,
     description: category.description,
     path: `/blog/kategorie/${slug}`,
+    noIndex: true,
   });
 }
 
