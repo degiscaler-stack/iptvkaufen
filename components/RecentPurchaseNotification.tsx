@@ -8,25 +8,25 @@ const PACKAGES = [
     label: "1 Monat",
     src: "/images/packages/iptv-kaufen-1-monat.webp",
     alt: "1 Monat IPTV Paket von iptvkaufenX",
-    title: "1 Monat IPTV Paket",
+    title: "1 Monat IPTV Paket – iptvkaufenX",
   },
   {
     label: "3 Monate",
     src: "/images/packages/iptv-kaufen-3-monate.webp",
     alt: "3 Monate IPTV Paket von iptvkaufenX",
-    title: "3 Monate IPTV Paket",
+    title: "3 Monate IPTV Paket – iptvkaufenX",
   },
   {
     label: "6 Monate",
     src: "/images/packages/iptv-kaufen-6-monate.webp",
     alt: "6 Monate IPTV Paket von iptvkaufenX",
-    title: "6 Monate IPTV Paket",
+    title: "6 Monate IPTV Paket – iptvkaufenX",
   },
   {
     label: "12 Monate",
     src: "/images/packages/iptv-kaufen-12-monate.webp",
     alt: "12 Monate IPTV Paket von iptvkaufenX",
-    title: "12 Monate IPTV Paket",
+    title: "12 Monate IPTV Paket – iptvkaufenX",
   },
 ] as const;
 
@@ -34,29 +34,23 @@ const CITIES = [
   "Berlin",
   "Hamburg",
   "München",
-  "Frankfurt",
   "Köln",
+  "Frankfurt",
   "Stuttgart",
   "Düsseldorf",
+  "Dortmund",
   "Leipzig",
-  "Dresden",
+  "Bremen",
   "Hannover",
   "Nürnberg",
-  "Bremen",
   "Essen",
-  "Dortmund",
-  "Mannheim",
-  "Augsburg",
+  "Dresden",
   "Bonn",
-  "Münster",
-  "Karlsruhe",
-  "Wiesbaden",
 ] as const;
 
-const INITIAL_DELAY_MS = 8000;
-const VISIBLE_MS = 5000;
-const INTERVAL_MIN_MS = 15000;
-const INTERVAL_MAX_MS = 35000;
+const GAP_AFTER_PRELOAD_MS = 5000;
+const VISIBLE_MS = 8000;
+const GAP_BETWEEN_MS = 10000;
 const EXIT_ANIMATION_MS = 500;
 
 type NotificationState = {
@@ -68,30 +62,30 @@ function randomBetween(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function pickPackageIndex(excludeIndex: number | null): number {
-  if (PACKAGES.length <= 1) {
-    return 0;
-  }
-
-  let index = randomBetween(0, PACKAGES.length - 1);
-
-  while (index === excludeIndex) {
-    index = randomBetween(0, PACKAGES.length - 1);
-  }
-
-  return index;
-}
-
 function pickCity(): (typeof CITIES)[number] {
   return CITIES[randomBetween(0, CITIES.length - 1)];
 }
 
+function preloadPackageImages(): Promise<void> {
+  return Promise.all(
+    PACKAGES.map(
+      (pkg) =>
+        new Promise<void>((resolve, reject) => {
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error(`Failed to preload ${pkg.src}`));
+          img.src = pkg.src;
+        }),
+    ),
+  ).then(() => undefined);
+}
+
 export default function RecentPurchaseNotification() {
   const [mounted, setMounted] = useState(false);
+  const [imagesReady, setImagesReady] = useState(false);
   const [display, setDisplay] = useState<NotificationState | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const lastPackageIndex = useRef<number | null>(null);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const nextTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const exitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -104,58 +98,58 @@ export default function RecentPurchaseNotification() {
     }
   };
 
-  const hideNotification = useCallback(() => {
-    setIsVisible(false);
-    clearTimer(exitTimer);
-    exitTimer.current = setTimeout(() => {
-      setDisplay(null);
-    }, EXIT_ANIMATION_MS);
-  }, []);
-
   const scheduleNext = useCallback(() => {
     clearTimer(nextTimer);
     nextTimer.current = setTimeout(() => {
-      const packageIndex = pickPackageIndex(lastPackageIndex.current);
+      const packageIndex = randomBetween(0, PACKAGES.length - 1);
       const city = pickCity();
 
-      lastPackageIndex.current = packageIndex;
       setDisplay({ packageIndex, city });
-
       requestAnimationFrame(() => {
         setIsVisible(true);
       });
 
       clearTimer(hideTimer);
       hideTimer.current = setTimeout(() => {
-        hideNotification();
-        scheduleNext();
+        setIsVisible(false);
+        clearTimer(exitTimer);
+        exitTimer.current = setTimeout(() => {
+          setDisplay(null);
+          scheduleNext();
+        }, EXIT_ANIMATION_MS);
       }, VISIBLE_MS);
-    }, randomBetween(INTERVAL_MIN_MS, INTERVAL_MAX_MS));
-  }, [hideNotification]);
+    }, GAP_BETWEEN_MS);
+  }, []);
 
   const presentNotification = useCallback(() => {
-    const packageIndex = pickPackageIndex(lastPackageIndex.current);
+    const packageIndex = randomBetween(0, PACKAGES.length - 1);
     const city = pickCity();
 
-    lastPackageIndex.current = packageIndex;
     setDisplay({ packageIndex, city });
-
     requestAnimationFrame(() => {
       setIsVisible(true);
     });
 
     clearTimer(hideTimer);
     hideTimer.current = setTimeout(() => {
-      hideNotification();
-      scheduleNext();
+      setIsVisible(false);
+      clearTimer(exitTimer);
+      exitTimer.current = setTimeout(() => {
+        setDisplay(null);
+        scheduleNext();
+      }, EXIT_ANIMATION_MS);
     }, VISIBLE_MS);
-  }, [hideNotification, scheduleNext]);
+  }, [scheduleNext]);
 
   const handleDismiss = useCallback(() => {
     clearTimer(hideTimer);
-    hideNotification();
-    scheduleNext();
-  }, [hideNotification, scheduleNext]);
+    setIsVisible(false);
+    clearTimer(exitTimer);
+    exitTimer.current = setTimeout(() => {
+      setDisplay(null);
+      scheduleNext();
+    }, EXIT_ANIMATION_MS);
+  }, [scheduleNext]);
 
   useEffect(() => {
     setMounted(true);
@@ -166,11 +160,33 @@ export default function RecentPurchaseNotification() {
       return;
     }
 
-    initialTimer.current = setTimeout(() => {
-      presentNotification();
-    }, INITIAL_DELAY_MS);
+    let cancelled = false;
+
+    const startPreload = () => {
+      preloadPackageImages()
+        .then(() => {
+          if (cancelled) {
+            return;
+          }
+
+          setImagesReady(true);
+          initialTimer.current = setTimeout(() => {
+            if (!cancelled) {
+              presentNotification();
+            }
+          }, GAP_AFTER_PRELOAD_MS);
+        })
+        .catch(() => {
+          if (!cancelled) {
+            startPreload();
+          }
+        });
+    };
+
+    startPreload();
 
     return () => {
+      cancelled = true;
       clearTimer(initialTimer);
       clearTimer(hideTimer);
       clearTimer(nextTimer);
@@ -178,7 +194,7 @@ export default function RecentPurchaseNotification() {
     };
   }, [mounted, presentNotification]);
 
-  if (!mounted || !display) {
+  if (!mounted || !imagesReady || !display) {
     return null;
   }
 
@@ -203,15 +219,15 @@ export default function RecentPurchaseNotification() {
         />
 
         <div className="relative flex items-center gap-3 p-3 pr-10 sm:gap-3.5 sm:p-3.5 sm:pr-11">
-          <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-[10px] border border-[#A6FF00]/20 bg-[#0a0a0a]">
+          <div className="relative flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border border-[#A6FF00]/20 bg-[#0a0a0a]">
             <Image
               src={currentPackage.src}
               alt={currentPackage.alt}
               title={currentPackage.title}
               width={72}
               height={72}
-              loading="lazy"
-              className="h-[72px] w-[72px] object-cover"
+              priority
+              className="h-[72px] w-[72px] object-contain"
             />
           </div>
 

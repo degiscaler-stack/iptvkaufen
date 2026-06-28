@@ -28,6 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
+      <head>
+        <link rel="preload" href="/images/packages/iptv-kaufen-1-monat.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/packages/iptv-kaufen-3-monate.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/packages/iptv-kaufen-6-monate.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/packages/iptv-kaufen-12-monate.webp" as="image" type="image/webp" />
+      </head>
       <body>
         <Header />
         {children}
