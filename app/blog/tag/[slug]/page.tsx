@@ -11,6 +11,7 @@ import BlogSearchBox from "@/components/blog/BlogSearchBox";
 import { getAllTags, getPopularPosts, getPostsByTag } from "@/lib/blog/posts";
 import { slugToTag, tagToSlug } from "@/lib/blog/utils";
 import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
+import { getBlogTagTitle, SEO_TITLES } from "@/lib/seo-titles";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!tag) {
     return buildPageMetadata({
-      title: "Tag nicht gefunden | iptvkaufenX Blog",
+      title: SEO_TITLES.blogTagNotFound,
       description: "Der gesuchte Blog-Tag wurde nicht gefunden.",
       path: `/blog/tag/${slug}`,
       noIndex: true,
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return buildPageMetadata({
-    title: `${tag} – IPTV Blog | iptvkaufenX`,
+    title: getBlogTagTitle(tag),
     description: `Alle iptvkaufenX Blog-Artikel zum Thema ${tag}.`,
     path: `/blog/tag/${slug}`,
     noIndex: true,

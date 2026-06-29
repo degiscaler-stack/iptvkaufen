@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
+import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
-export const metadata: Metadata = {
-  title: "Datenschutzrichtlinie | iptvkaufenX",
+export const metadata: Metadata = buildPageMetadata({
+  title: SEO_TITLES.datenschutz,
   description:
     "Datenschutzrichtlinie von iptvkaufenX: Informationen zur Verarbeitung von Kontakt-, Bestell-, Zahlungs- und Zugriffsdaten.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+  path: "/datenschutz",
+  noIndex: true,
+});
 
 const sections: LegalSection[] = [
   {

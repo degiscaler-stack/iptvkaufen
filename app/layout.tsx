@@ -4,11 +4,12 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import RecentPurchaseNotification from "@/components/RecentPurchaseNotification";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
+import { SEO_TITLES } from "@/lib/seo-titles";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iptvkaufenx.de"),
-  title: "IPTV Kaufen Deutschland | Premium IPTV Anbieter",
+  title: SEO_TITLES.siteDefault,
   description:
     "IPTV kaufen in Deutschland. Über 22.000 Sender, Filme, Serien und Fußball in Ultra HD auf allen Geräten.",
   verification: {

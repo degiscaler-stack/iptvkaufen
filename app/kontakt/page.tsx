@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { FaEnvelope, FaFacebookF, FaHeadset, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
-export const metadata: Metadata = {
-  title: "Kontakt | iptvkaufenX",
+export const metadata: Metadata = buildPageMetadata({
+  title: SEO_TITLES.kontakt,
   description:
     "Kontaktieren Sie iptvkaufenX für Fragen zu IPTV Paketen, Einrichtung, Support und Aktivierung.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+  path: "/kontakt",
+  noIndex: true,
+});
 
 const contactItems = [
   {

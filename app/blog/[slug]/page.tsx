@@ -26,6 +26,7 @@ import {
   buildFaqSchema,
   buildPageMetadata,
 } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -41,14 +42,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!post) {
     return buildPageMetadata({
-      title: "Artikel nicht gefunden | iptvkaufenX Blog",
+      title: SEO_TITLES.blogArticleNotFound,
       description: "Der gesuchte Blog-Artikel wurde nicht gefunden.",
       path: `/blog/${slug}`,
       noIndex: true,
     });
   }
 
-  const pageTitle = post.seoTitle ?? `${post.title} | iptvkaufenX Blog`;
+  const pageTitle =
+    SEO_TITLES.articles[post.slug as keyof typeof SEO_TITLES.articles] ??
+    post.seoTitle ??
+    `${post.title} | iptvkaufenX`;
 
   return buildPageMetadata({
     title: pageTitle,

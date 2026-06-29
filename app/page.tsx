@@ -12,8 +12,9 @@ import PremiumEntertainment from "@/components/PremiumEntertainment";
 import PremiumExperience from "@/components/PremiumExperience";
 import ServiceHighlightsBar from "@/components/ServiceHighlightsBar";
 import CustomerReviews from "@/components/CustomerReviews";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
-const seoTitle = "IPTV Kaufen Deutschland – 22.000+ Sender, Filme & Sport in 4K";
+const seoTitle = SEO_TITLES.home;
 const seoDescription =
   "IPTV Kaufen in Deutschland: 22.000+ Live-TV Sender, Filme, Serien und Sport in HD, Full HD & 4K. Sofort aktiviert, stabil und kompatibel mit allen Geräten.";
 const productDescription =

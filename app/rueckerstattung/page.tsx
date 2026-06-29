@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
+import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
-export const metadata: Metadata = {
-  title: "Rückerstattungsrichtlinie | iptvkaufenX",
+export const metadata: Metadata = buildPageMetadata({
+  title: SEO_TITLES.rueckerstattung,
   description:
     "Rückerstattungsrichtlinie von iptvkaufenX für digitale IPTV-Dienste, Aktivierung, Bereitstellung und Supportanfragen.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+  path: "/rueckerstattung",
+  noIndex: true,
+});
 
 const sections: LegalSection[] = [
   {

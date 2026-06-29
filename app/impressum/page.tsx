@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
+import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
-export const metadata: Metadata = {
-  title: "Impressum | iptvkaufenX",
+export const metadata: Metadata = buildPageMetadata({
+  title: SEO_TITLES.impressum,
   description: "Impressum und Kontaktinformationen von iptvkaufenX.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+  path: "/impressum",
+  noIndex: true,
+});
 
 const sections: LegalSection[] = [
   {

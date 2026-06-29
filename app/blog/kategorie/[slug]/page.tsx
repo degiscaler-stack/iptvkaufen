@@ -11,6 +11,7 @@ import BlogSearchBox from "@/components/blog/BlogSearchBox";
 import { getPopularPosts, getPostsByCategory } from "@/lib/blog/posts";
 import { BLOG_CATEGORIES, type BlogCategory } from "@/lib/blog/types";
 import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
+import { getBlogCategoryTitle, SEO_TITLES } from "@/lib/seo-titles";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!category) {
     return buildPageMetadata({
-      title: "Kategorie nicht gefunden | iptvkaufenX Blog",
+      title: SEO_TITLES.blogCategoryNotFound,
       description: "Die gesuchte Blog-Kategorie wurde nicht gefunden.",
       path: `/blog/kategorie/${slug}`,
       noIndex: true,
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return buildPageMetadata({
-    title: `${category.label} – IPTV Blog | iptvkaufenX`,
+    title: getBlogCategoryTitle(slug as BlogCategory),
     description: category.description,
     path: `/blog/kategorie/${slug}`,
     noIndex: true,

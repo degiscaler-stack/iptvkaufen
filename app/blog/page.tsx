@@ -4,9 +4,10 @@ import BlogArticleCard from "@/components/blog/BlogArticleCard";
 import BlogSearchBox from "@/components/blog/BlogSearchBox";
 import { getAllPostSummaries } from "@/lib/blog/posts";
 import { buildBlogSchema, buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "IPTV Blog | Ratgeber & Leitfäden – iptvkaufenX",
+  title: SEO_TITLES.blog,
   description:
     "Der iptvkaufenX Blog mit klaren IPTV-Leitfäden für Deutschland – German IPTV, Tests, Geräte und Premium Live-TV.",
   path: "/blog",

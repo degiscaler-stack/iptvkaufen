@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
+import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
-export const metadata: Metadata = {
-  title: "Nutzungsbedingungen | iptvkaufenX",
+export const metadata: Metadata = buildPageMetadata({
+  title: SEO_TITLES.nutzungsbedingungen,
   description:
     "Nutzungsbedingungen von iptvkaufenX für Nutzung, Zugangsdaten, Gerätekompatibilität, Zahlungen und Support.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+  path: "/nutzungsbedingungen",
+  noIndex: true,
+});
 
 const sections: LegalSection[] = [
   {

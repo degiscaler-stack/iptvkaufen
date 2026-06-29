@@ -10,9 +10,10 @@ import BlogSearchBox from "@/components/blog/BlogSearchBox";
 import BlogSearchResults from "@/components/blog/BlogSearchResults";
 import { getAllPostSummaries, getPopularPosts } from "@/lib/blog/posts";
 import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Blog Suche | iptvkaufenX",
+  title: SEO_TITLES.blogSuche,
   description: "Durchsuchen Sie den iptvkaufenX Blog nach IPTV Guides, Tipps und Anleitungen.",
   path: "/blog/suche",
   noIndex: true,

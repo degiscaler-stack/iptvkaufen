@@ -9,6 +9,7 @@ import BlogPopularArticles from "@/components/blog/BlogPopularArticles";
 import BlogSearchBox from "@/components/blog/BlogSearchBox";
 import { getPaginatedPosts, getPopularPosts, getTotalPages } from "@/lib/blog/posts";
 import { buildPageMetadata } from "@/lib/seo";
+import { getBlogPaginationTitle } from "@/lib/seo-titles";
 
 type PageProps = {
   params: Promise<{ page: string }>;
@@ -26,9 +27,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const pageNum = Number(page);
 
   return buildPageMetadata({
-    title: `IPTV Blog – Seite ${pageNum} | iptvkaufenX`,
+    title: getBlogPaginationTitle(pageNum),
     description: `IPTV Guides und Streaming-Tipps – Seite ${pageNum} des iptvkaufenX Blogs.`,
     path: `/blog/seite/${page}`,
+    noIndex: true,
   });
 }
 

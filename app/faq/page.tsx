@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import AnchorRedirect from "@/components/AnchorRedirect";
 import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "IPTV FAQ | iptvkaufenX",
+  title: SEO_TITLES.faq,
   description:
     "Antworten auf häufige Fragen zu IPTV Kaufen: Geräte, Aktivierung, Zahlung und Support.",
   path: "/faq",

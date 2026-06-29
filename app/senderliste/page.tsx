@@ -1,16 +1,16 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import SenderlisteExplorer from "@/components/SenderlisteExplorer";
+import { buildPageMetadata } from "@/lib/seo";
+import { SEO_TITLES } from "@/lib/seo-titles";
 
-export const metadata: Metadata = {
-  title: "Senderliste IPTV Kaufen | Deutsche & Internationale IPTV Sender",
+export const metadata: Metadata = buildPageMetadata({
+  title: SEO_TITLES.senderliste,
   description:
     "Entdecken Sie die iptvkaufenX Senderliste mit deutschen, europäischen, internationalen, Sport-, Film-, Serien-, Kinder- und Nachrichtenkanälen.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+  path: "/senderliste",
+  noIndex: true,
+});
 
 export default function SenderlistePage() {
   return (
