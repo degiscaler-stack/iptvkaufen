@@ -23,8 +23,8 @@
   "status": "published",
   "relatedSlugs": [
     "german-iptv",
-    "iptv-free-trial",
-    "iptv-anbieter"
+    "iptv-anbieter",
+    "iptv-abo"
   ],
   "faq": [
     {
@@ -93,7 +93,7 @@
         "Eine IPTV Box ist ein dediziertes Endgerät, das Internet-TV auf Ihren Bildschirm bringt. Statt Signale über Antenne oder Kabel zu empfangen, lädt die Box Live-Streams von einem IPTV-Anbieter und gibt sie per HDMI aus. Sie denken in Apps, Netzwerk und Medienwiedergabe – nicht in Tunern und Koaxialkabeln.",
         "Der Begriff ist nicht streng geschützt. Umgangssprachlich meinen viele Nutzer jede Hardware, mit der IPTV läuft: klassische Android-TV-Boxen, Fire-TV-Geräte oder kleine Player mit vorinstallierter Software. Entscheidend ist die Funktion: IPTV-Zugangsdaten eingeben, Senderliste laden, fernsehen.",
         "Für deutsche Haushalte ist die IPTV Box besonders interessant, wenn der vorhandene TV kein brauchbares Smart-Interface bietet. Ein schlichter 4K-Fernseher plus gute Box kostet oft weniger als ein Premium-Smart-TV – bei vergleichbarem Streaming-Komfort.",
-        "Die Box ersetzt nicht Ihren IPTV-Anbieter. Sie ist die Bühne; Inhalte und Sender liefert Ihr Abo. Deshalb lohnt vor dem Hardware-Kauf ein Blick auf [Preise](/preise), [Senderliste](/senderliste) und [FAQ](/faq) des Dienstes, den Sie nutzen möchten.",
+        "Die Box ersetzt nicht Ihren IPTV-Anbieter. Sie ist die Bühne; Inhalte und Sender liefert Ihr [IPTV Abo](/blog/iptv-abo). Deshalb lohnt vor dem Hardware-Kauf ein Blick auf [Preise](/preise), [Senderliste](/senderliste) und [FAQ](/faq) des Dienstes, den Sie nutzen möchten.",
         "Im Alltag unterscheidet sich die Nutzung kaum vom gewohnten TV: Sender wählen, Lautstärke regeln, Programmzeiten im EPG nachschlagen. Der Unterschied liegt in der Vielfalt – internationale Kanäle, Sportpakete und Mediatheken-Inhalte lassen sich oft in einer Oberfläche bündeln, wenn Ihr Anbieter das unterstützt."
       ],
       "image": {

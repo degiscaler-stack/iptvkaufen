@@ -1,6 +1,7 @@
 export type BlogCategory =
   | "iptv-deutschland"
   | "iptv-anbieter"
+  | "iptv-abonnement"
   | "iptv-geraete"
   | "iptv-apps"
   | "iptv-vergleich"
@@ -110,6 +111,10 @@ export const BLOG_CATEGORIES: Record<
     label: "IPTV Anbieter",
     description: "Seriöse IPTV Anbieter und Auswahlkriterien für Deutschland",
   },
+  "iptv-abonnement": {
+    label: "IPTV Abonnement",
+    description: "IPTV Abo und Abonnements für Deutschland im Vergleich",
+  },
   "iptv-geraete": {
     label: "IPTV Geräte",
     description: "IPTV Box, Smart TV und kompatible Hardware",
@@ -131,6 +136,7 @@ export const BLOG_CATEGORIES: Record<
 export const BLOG_CLUSTER_ORDER: BlogCategory[] = [
   "iptv-deutschland",
   "iptv-anbieter",
+  "iptv-abonnement",
   "iptv-geraete",
   "iptv-apps",
   "iptv-vergleich",
