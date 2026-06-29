@@ -1,8 +1,6 @@
-"use client";
-
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const trustBadges = ["22.000+ Sender", "Ultra HD & 4K", "Fußball Live", "Sofortiger Zugang"];
 
@@ -14,11 +12,6 @@ const particles = [
   { left: "46%", top: "18%", delay: 2.2, duration: 7.4 },
   { left: "58%", top: "78%", delay: 0.4, duration: 8 },
 ];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0 },
-};
 
 export default function Hero() {
   return (
@@ -32,7 +25,7 @@ export default function Hero() {
           src="/images/iptv-kaufen-hero-football.webp"
           alt=""
           fill
-          preload
+          priority
           sizes="100vw"
           aria-hidden="true"
           className="h-full w-full scale-[1.02] object-cover object-[42%_center] sm:object-center lg:object-[center_58%]"
@@ -42,69 +35,44 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(30,76,110,0.2),transparent_28rem)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.7)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#000000] to-transparent" />
-      <motion.div
+      <div
         aria-hidden="true"
-        initial={{ x: "-35%", opacity: 0 }}
-        animate={{ x: "135%", opacity: [0, 0.16, 0] }}
-        transition={{ duration: 9, repeat: Infinity, repeatDelay: 4, ease: "easeInOut" }}
-        className="pointer-events-none absolute inset-y-0 w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl"
+        className="hero-shine pointer-events-none absolute inset-y-0 w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl"
       />
       {particles.map((particle) => (
-        <motion.span
+        <span
           key={`${particle.left}-${particle.top}`}
           aria-hidden="true"
-          initial={{ opacity: 0.08, y: 0 }}
-          animate={{ opacity: [0.08, 0.32, 0.08], y: [-6, 8, -6] }}
-          transition={{
-            duration: particle.duration,
-            delay: particle.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="pointer-events-none absolute h-1 w-1 rounded-full bg-[#A6FF00]/60 shadow-[0_0_10px_rgba(166,255,0,0.28)]"
-          style={{ left: particle.left, top: particle.top }}
+          className="hero-particle pointer-events-none absolute h-1 w-1 rounded-full bg-[#A6FF00]/60 shadow-[0_0_10px_rgba(166,255,0,0.28)]"
+          style={
+            {
+              left: particle.left,
+              top: particle.top,
+              "--hero-particle-delay": `${particle.delay}s`,
+              "--hero-particle-duration": `${particle.duration}s`,
+            } as CSSProperties
+          }
         />
       ))}
 
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
-        className="relative z-10 mx-auto w-full max-w-[950px] py-[clamp(0.25rem,1.5vh,1rem)]"
-      >
-        <motion.p
-          variants={fadeUp}
-          transition={{ duration: 0.65, ease: "easeOut" }}
-          className="mx-auto mb-[18px] inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-[9px] text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)] sm:mb-5 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.28em]"
-        >
+      <div className="relative z-10 mx-auto w-full max-w-[950px] py-[clamp(0.25rem,1.5vh,1rem)]">
+        <p className="hero-fade-up hero-fade-up-1 mx-auto mb-[18px] inline-flex rounded-full border border-[#A6FF00]/30 bg-[#111111]/70 px-4 py-[9px] text-[11px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] [text-shadow:0_2px_20px_rgba(0,0,0,0.45)] sm:mb-5 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.28em]">
           Premium IPTV Deutschland
-        </motion.p>
+        </p>
 
-        <motion.h1
-          variants={fadeUp}
-          transition={{ duration: 0.75, ease: "easeOut" }}
-          className="text-balance text-[clamp(2.25rem,4.2vw+1.1rem,5.25rem)] font-black leading-[0.95] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)]"
-        >
+        <h1 className="hero-fade-up hero-fade-up-2 text-balance text-[clamp(2.25rem,4.2vw+1.1rem,5.25rem)] font-black leading-[0.95] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)]">
           IPTV Kaufen in Deutschland
           <span className="mt-2 block bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none] sm:mt-3">
             Premium Streaming in Ultra HD
           </span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          variants={fadeUp}
-          transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto mt-[clamp(1rem,2.5vh,1.75rem)] max-w-[92%] text-pretty text-[clamp(0.9rem,0.35vw+0.8rem,1.25rem)] leading-[1.55] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:max-w-3xl sm:leading-8"
-        >
+        <p className="hero-fade-up hero-fade-up-3 mx-auto mt-[clamp(1rem,2.5vh,1.75rem)] max-w-[92%] text-pretty text-[clamp(0.9rem,0.35vw+0.8rem,1.25rem)] leading-[1.55] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:max-w-3xl sm:leading-8">
           Jetzt IPTV kaufen und über 22.000 Live-TV Sender, Filme, Serien und Fußball in HD, Full HD und
           4K auf allen Geräten genießen.
-        </motion.p>
+        </p>
 
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 0.75, ease: "easeOut" }}
-          className="relative mt-[clamp(1.5rem,3vh,2.5rem)] flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
-        >
+        <div className="hero-fade-up hero-fade-up-4 relative mt-[clamp(1.5rem,3vh,2.5rem)] flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <div className="absolute inset-x-8 -inset-y-7 -z-10 rounded-full bg-[#6BFF2A]/12 blur-3xl" />
           <Link
             href="/#preise"
@@ -118,12 +86,10 @@ export default function Hero() {
           >
             Senderliste Ansehen
           </Link>
-        </motion.div>
+        </div>
 
-        <motion.ul
-          variants={fadeUp}
-          transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto mt-[clamp(1.25rem,3.5vh,3.5rem)] grid max-w-[92%] grid-cols-2 gap-2 sm:max-w-3xl sm:grid-cols-4 sm:gap-2.5"
+        <ul
+          className="hero-fade-up hero-fade-up-5 mx-auto mt-[clamp(1.25rem,3.5vh,3.5rem)] grid max-w-[92%] grid-cols-2 gap-2 sm:max-w-3xl sm:grid-cols-4 sm:gap-2.5"
           aria-label="Vorteile von Premium IPTV"
         >
           {trustBadges.map((badge) => (
@@ -134,8 +100,8 @@ export default function Hero() {
               {badge}
             </li>
           ))}
-        </motion.ul>
-      </motion.div>
+        </ul>
+      </div>
     </section>
   );
 }

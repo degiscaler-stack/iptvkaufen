@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
@@ -80,13 +81,13 @@ export default function Footer() {
           <div className="grid gap-10 border-b border-[#1F1F1F]/90 pb-10 sm:grid-cols-2 sm:gap-11 lg:grid-cols-[1.45fr_0.85fr_1fr_0.95fr] lg:gap-12 lg:pb-12">
           <div className="max-w-[430px] rounded-2xl border border-[#1F1F1F]/85 bg-[#080B08] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-6 lg:-ml-1">
             <Link href="/" aria-label="iptvkaufenX Startseite" className="inline-flex rounded-xl">
-              <img
+              <Image
                 src="/brand/iptv-kaufen-logo.webp"
                 alt="IPTV Kaufen Logo"
                 width={520}
                 height={260}
                 loading="lazy"
-                decoding="async"
+                sizes="(max-width: 639px) 175px, 205px"
                 className="h-auto w-[175px] transition duration-300 sm:w-[205px]"
               />
             </Link>

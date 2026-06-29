@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import ChannelLogos from "@/components/ChannelLogos";
-import IptvBenefits from "@/components/IptvBenefits";
-import IptvHowItWorks from "@/components/IptvHowItWorks";
-import IptvFaq from "@/components/IptvFaq";
-import IptvPricing from "@/components/IptvPricing";
-import MoviesSeriesSlider from "@/components/MoviesSeriesSlider";
-import SportsTeamsSlider from "@/components/SportsTeamsSlider";
-import CompatibleDevicesSlider from "@/components/CompatibleDevicesSlider";
-import PremiumEntertainment from "@/components/PremiumEntertainment";
+import HeroImagePreload from "@/components/preloads/HeroImagePreload";
 import PremiumExperience from "@/components/PremiumExperience";
-import ServiceHighlightsBar from "@/components/ServiceHighlightsBar";
-import CustomerReviews from "@/components/CustomerReviews";
 import { SEO_TITLES } from "@/lib/seo-titles";
+
+const ChannelLogos = dynamic(() => import("@/components/ChannelLogos"));
+const IptvBenefits = dynamic(() => import("@/components/IptvBenefits"));
+const IptvHowItWorks = dynamic(() => import("@/components/IptvHowItWorks"));
+const IptvFaq = dynamic(() => import("@/components/IptvFaq"));
+const IptvPricing = dynamic(() => import("@/components/IptvPricing"));
+const MoviesSeriesSlider = dynamic(() => import("@/components/MoviesSeriesSlider"));
+const SportsTeamsSlider = dynamic(() => import("@/components/SportsTeamsSlider"));
+const CompatibleDevicesSlider = dynamic(() => import("@/components/CompatibleDevicesSlider"));
+const PremiumEntertainment = dynamic(() => import("@/components/PremiumEntertainment"));
+const ServiceHighlightsBar = dynamic(() => import("@/components/ServiceHighlightsBar"));
+const CustomerReviews = dynamic(() => import("@/components/CustomerReviews"));
 
 const seoTitle = SEO_TITLES.home;
 const seoDescription =
@@ -132,6 +135,7 @@ const structuredData = {
 export default function Home() {
   return (
     <main>
+      <HeroImagePreload />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

@@ -29,8 +29,7 @@ body {
     radial-gradient(circle at top center, rgba(166, 255, 0, 0.08), transparent 34rem),
     var(--background);
   color: var(--foreground);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 }
 
@@ -291,4 +290,97 @@ button {
 
 .blog-cover-variant-iptv-test::before {
   background: radial-gradient(circle at 50% 42%, rgba(166, 255, 0, 0.16), transparent 52%);
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-shine {
+  0% {
+    opacity: 0;
+    transform: translate3d(-35%, 0, 0) rotate(12deg);
+  }
+
+  35% {
+    opacity: 0.16;
+  }
+
+  70% {
+    opacity: 0;
+    transform: translate3d(135%, 0, 0) rotate(12deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(135%, 0, 0) rotate(12deg);
+  }
+}
+
+@keyframes hero-particle {
+  0%,
+  100% {
+    opacity: 0.08;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.32;
+    transform: translate3d(0, 8px, 0);
+  }
+}
+
+.hero-fade-up {
+  animation: hero-fade-up 0.75s ease-out forwards;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.hero-fade-up-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-fade-up-2 {
+  animation-delay: 0.22s;
+}
+
+.hero-fade-up-3 {
+  animation-delay: 0.34s;
+}
+
+.hero-fade-up-4 {
+  animation-delay: 0.46s;
+}
+
+.hero-fade-up-5 {
+  animation-delay: 0.58s;
+}
+
+.hero-shine {
+  animation: hero-shine 9s ease-in-out 4s infinite;
+  will-change: transform, opacity;
+}
+
+.hero-particle {
+  animation: hero-particle var(--hero-particle-duration, 7s) ease-in-out var(--hero-particle-delay, 0s)
+    infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-up,
+  .hero-shine,
+  .hero-particle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

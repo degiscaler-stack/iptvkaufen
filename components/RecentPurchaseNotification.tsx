@@ -226,7 +226,7 @@ export default function RecentPurchaseNotification() {
               title={currentPackage.title}
               width={72}
               height={72}
-              priority
+              loading="lazy"
               className="h-[72px] w-[72px] object-contain"
             />
           </div>

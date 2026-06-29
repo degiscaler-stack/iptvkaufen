@@ -44,7 +44,7 @@ export default function BlogHomePage() {
 
         <section aria-label="Blog Artikel" id="alle-artikel" className="grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {posts.map((post, index) => (
-            <BlogArticleCard key={post.slug} post={post} priority={index < 4} />
+            <BlogArticleCard key={post.slug} post={post} priority={index < 2} />
           ))}
         </section>
 

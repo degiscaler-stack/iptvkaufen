@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import Script from "next/script";
+import DeferredRecentPurchaseNotification from "@/components/DeferredRecentPurchaseNotification";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import RecentPurchaseNotification from "@/components/RecentPurchaseNotification";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 import { SEO_TITLES } from "@/lib/seo-titles";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iptvkaufenx.de"),
@@ -28,20 +36,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
-      <head>
-        <link rel="preload" href="/images/packages/iptv-kaufen-1-monat.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/images/packages/iptv-kaufen-3-monate.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/images/packages/iptv-kaufen-6-monate.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/images/packages/iptv-kaufen-12-monate.webp" as="image" type="image/webp" />
-      </head>
-      <body>
+    <html lang="de" className={inter.variable}>
+      <body className={inter.className}>
         <Header />
         {children}
         <Footer />
-        <RecentPurchaseNotification />
+        <DeferredRecentPurchaseNotification />
         <WhatsAppFloatButton />
-        <Script id="statcounter-config" strategy="afterInteractive">
+        <Script id="statcounter-config" strategy="lazyOnload">
           {`
             var sc_project=13299354;
             var sc_invisible=1;
@@ -51,7 +53,7 @@ export default function RootLayout({
         <Script
           id="statcounter-counter"
           src="https://www.statcounter.com/counter/counter.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <noscript>
           <div className="statcounter">
