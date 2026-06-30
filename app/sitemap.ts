@@ -12,6 +12,7 @@ const ALLOWED_SITEMAP_URLS = [
   `${SITE_URL}/blog/iptv-box`,
   `${SITE_URL}/blog/iptv-free-trial`,
   `${SITE_URL}/blog/iptv-abo`,
+  `${SITE_URL}/blog/iptv-receiver`,
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

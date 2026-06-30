@@ -24,7 +24,8 @@
   "relatedSlugs": [
     "german-iptv",
     "iptv-anbieter",
-    "iptv-abo"
+    "iptv-abo",
+    "iptv-receiver"
   ],
   "faq": [
     {
@@ -231,7 +232,7 @@
       "heading": "Kompatible Geräte für den IPTV Free Trial",
       "level": 2,
       "paragraphs": [
-        "Ein IPTV Free Trial lebt von der passenden Hardware. Die gute Nachricht: Die meisten modernen Geräte in deutschen Haushalten sind geeignet. Entscheidend ist, dass eine stabile Media-Player-App verfügbar ist und Ihr Gerät die nötige Leistung für flüssiges Video Streaming mitbringt.",
+        "Ein IPTV Free Trial lebt von der passenden Hardware. Die gute Nachricht: Die meisten modernen Geräte in deutschen Haushalten sind geeignet – vom Smart TV über den [IPTV Receiver](/blog/iptv-receiver) bis zum Fire TV Stick. Entscheidend ist, dass eine stabile Media-Player-App verfügbar ist und Ihr Gerät die nötige Leistung für flüssiges Video Streaming mitbringt.",
         "Planen Sie beim Test ein, welches Gerät Ihren Alltag am stärksten prägt. Viele Haushalte starten mit Fire TV oder Android TV im Wohnzimmer und erweitern später auf Tablets. Der Free Trial ist der richtige Zeitpunkt, diese Reihenfolge bewusst festzulegen."
       ],
       "subsections": [

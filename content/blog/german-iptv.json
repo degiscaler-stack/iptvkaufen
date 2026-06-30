@@ -126,7 +126,7 @@
           "id": "weitere-geraete",
           "heading": "Chromecast, PCs und IPTV-Boxen",
           "paragraphs": [
-            "Google Chromecast mit Google TV kombiniert Streaming-Apps und Cast-Funktionen. Am PC oder Mac nutzen Sie Desktop-Player; dedizierte IPTV-Boxen mit Fernbedienung sind ideal fürs Wohnzimmer, wenn Ihr TV selbst kein Smart-TV ist. Informationen zu [Google Chromecast](https://support.google.com/chromecast) helfen bei der Geräteauswahl.",
+            "Google Chromecast mit Google TV kombiniert Streaming-Apps und Cast-Funktionen. Am PC oder Mac nutzen Sie Desktop-Player; dedizierte IPTV-Boxen und [IPTV Receiver](/blog/iptv-receiver) mit Fernbedienung sind ideal fürs Wohnzimmer, wenn Ihr TV selbst kein Smart-TV ist. Informationen zu [Google Chromecast](https://support.google.com/chromecast) helfen bei der Geräteauswahl.",
             "Wer unsicher ist, welches Setup passt, findet auf der [Startseite von iptvkaufenX](/) Hinweise zu unterstützten Geräten und zur schnellen Einrichtung – inklusive persönlicher Unterstützung bei den ersten Schritten."
           ]
         }
@@ -224,8 +224,8 @@
     },
     {
       "question": "Brauche ich eine IPTV-Box oder reicht ein Fire-TV-Stick?",
-      "answer": "Eine dedizierte IPTV-Box ist optional. Fire-TV-Sticks, Smart-TVs und Apple TV eignen sich für die meisten Nutzer vollkommen. Boxen lohnen sich, wenn Ihr Fernseher kein Smart-TV ist und Sie eine feste Fernbedienungslösung wollen."
+      "answer": "Eine dedizierte IPTV-Box oder ein [IPTV Receiver](/blog/iptv-receiver) ist optional. Fire-TV-Sticks, Smart-TVs und Apple TV eignen sich für die meisten Nutzer vollkommen. Boxen lohnen sich, wenn Ihr Fernseher kein Smart-TV ist und Sie eine feste Fernbedienungslösung wollen."
     }
   ],
-  "relatedSlugs": ["iptv-free-trial", "iptv-box", "iptv-anbieter", "iptv-abo"]
+  "relatedSlugs": ["iptv-free-trial", "iptv-box", "iptv-anbieter", "iptv-abo", "iptv-receiver"]
 }
