@@ -25,7 +25,8 @@
     "german-iptv",
     "iptv-anbieter",
     "iptv-abo",
-    "iptv-receiver"
+    "iptv-receiver",
+    "iptv-provider"
   ],
   "faq": [
     {
@@ -171,7 +172,7 @@
         "Ein guter IPTV Free Trial folgt einem klaren Ablauf. Zuerst wählen Sie einen Anbieter mit nachvollziehbarem Webauftritt und aktivieren den Test offiziell – per Formular oder Bestellprozess. Nach der Freischaltung installieren Sie auf Ihrem Zielgerät eine empfohlene oder bewährte Media-Player-App.",
         "Tragen Sie die Zugangsdaten exakt ein; schon ein Tippfehler im Passwort führt zu Fehlermeldungen, die unnötig Zeit kosten. Aktualisieren Sie anschließend die Senderliste und das EPG. Starten Sie mit einem bekannten deutschen Sender in HD und prüfen Sie Bild und Ton über mindestens zehn bis fünfzehn Minuten.",
         "Wiederholen Sie den Test zu unterschiedlichen Tageszeiten – morgens, abends und idealerweise während eines Sportevents. So erkennen Sie, ob die Streaming Qualität nur außerhalb der Stoßzeiten stimmt. Notieren Sie Auffälligkeiten: Ruckler, Tonversatz, fehlende Sender, falsche Programmzeiten.",
-        "Vergleichen Sie abschließend mit Ihren Kriterien: Senderumfang, Preis nach dem Test, Gerätekompatibilität und Support. Ein Free Trial ist dann erfolgreich, wenn Sie eine informierte Entscheidung treffen können – egal ob Sie buchen oder weiter suchen.",
+        "Vergleichen Sie abschließend mit Ihren Kriterien: Senderumfang, Preis nach dem Test, Gerätekompatibilität und Support. Ein Free Trial ist dann erfolgreich, wenn Sie eine informierte Entscheidung treffen können – egal ob Sie bei einem [IPTV Provider](/blog/iptv-provider) buchen oder weiter suchen.",
         "Legen Sie vor dem Test eine kurze Checkliste an: Welche Sender müssen laufen? Welches Gerät ist Pflicht? Wie viele parallele Streams brauchen Sie? Mit solchen Kriterien wird aus dem IPTV Free Trial ein strukturiertes Experiment statt eines beliebigen Durchzappers.",
         "Dokumentieren Sie Screenshots oder Notizen nur für sich selbst – etwa zu Ladezeiten beim Senderwechsel oder zur Darstellung des EPG. Diese Details verblassen schnell, sind aber beim Vergleich mehrerer Anbieter Gold wert."
       ],

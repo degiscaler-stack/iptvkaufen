@@ -25,7 +25,8 @@
     "iptv-box",
     "german-iptv",
     "iptv-abo",
-    "iptv-anbieter"
+    "iptv-anbieter",
+    "iptv-provider"
   ],
   "faq": [
     {
@@ -305,7 +306,7 @@
       "paragraphs": [
         "Nicht jeder IPTV Receiver passt zu jedem Anbieter. Die meisten seriösen Dienste in Deutschland unterstützen gängige Apps auf Smart TV, Android TV, Fire TV und Mobilgeräten. Vor dem Hardware-Kauf sollten Sie klären, welche Login-Methode Ihr Paket nutzt – M3U-URL, Xtream Codes oder ein Portal.",
         "Ein Premium-IPTV-Abo liefert Zugangsdaten per E-Mail. Diese tragen Sie in die App auf Ihrem Receiver ein. Funktioniert der Stream auf einem Gerät, lässt er sich meist auf weitere Geräte übertragen – sofern Ihr Paket parallele Verbindungen erlaubt.",
-        "Prüfen Sie die [Senderliste](/senderliste) und die Geräteempfehlung Ihres Anbieters. Seriöse [IPTV Anbieter](/blog/iptv-anbieter) nennen unterstützte Plattformen offen und helfen bei der Ersteinrichtung. Wer unsicher ist, fragt vor der Buchung nach – oder nutzt einen [IPTV Free Trial](/blog/iptv-free-trial) auf dem geplanten Receiver.",
+        "Prüfen Sie die [Senderliste](/senderliste) und die Geräteempfehlung Ihres Anbieters. Seriöse [IPTV Anbieter](/blog/iptv-anbieter) und [IPTV Provider](/blog/iptv-provider) nennen unterstützte Plattformen offen und helfen bei der Ersteinrichtung. Wer unsicher ist, fragt vor der Buchung nach – oder nutzt einen [IPTV Free Trial](/blog/iptv-free-trial) auf dem geplanten Receiver.",
         "Achten Sie auf die Anzahl paralleler Streams. Ein Account mit einem Stream reicht für Singles; Familien brauchen oft zwei oder drei gleichzeitige Verbindungen. Das ist eine Abo-Frage, keine Hardware-Frage – aber sie bestimmt, wie viele Receiver gleichzeitig laufen dürfen.",
         "Bei [iptvkaufenX](https://iptvkaufenx.de/) erhalten Sie Unterstützung bei der Einrichtung auf gängigen Geräten. So vermeiden Sie teure Fehlkäufe und starten mit einem Setup, das zu Ihrem Abo passt."
       ],

@@ -23,6 +23,7 @@ export const SEO_TITLES = {
     "iptv-free-trial": "IPTV Free Trial Deutschland | iptvkaufenX",
     "iptv-abo": "IPTV Abo (2026): Bestes Abonnement | iptvkaufenX",
     "iptv-receiver": "IPTV Receiver: Beste Geräte (2026) | iptvkaufenX",
+    "iptv-provider": "IPTV Provider (2026): Besten finden | iptvkaufenX",
   },
 } as const;
 
@@ -43,6 +44,7 @@ const TAG_TITLES: Record<string, string> = {
   "IPTV Free Trial": "IPTV Free Trial: Blog Tag | iptvkaufenX",
   "IPTV Abo": "IPTV Abo: Blog Tag | iptvkaufenX",
   "IPTV Receiver": "IPTV Receiver: Blog Tag | iptvkaufenX",
+  "IPTV Provider": "IPTV Provider: Blog Tag | iptvkaufenX",
 };
 
 export function getBlogCategoryTitle(slug: BlogCategory): string {
