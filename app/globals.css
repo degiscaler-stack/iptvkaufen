@@ -384,22 +384,98 @@ button {
     transform: none;
   }
 
-  .pricing-cta--featured {
-    animation: none;
+  .cta-vibrate,
+  .cta-vibrate-featured {
+    animation: none !important;
     transform: none;
   }
 }
 
-@keyframes pricing-cta-pulse {
+@keyframes ctaVibrate {
   0%,
+  78%,
   100% {
-    transform: scale(1);
-    box-shadow: 0 0 6px rgba(166, 255, 0, 0.14);
+    transform: translateX(0) rotate(0deg) scale(1);
+    box-shadow: 0 0 6px rgba(166, 255, 0, 0.12);
   }
 
-  50% {
-    transform: scale(1.025);
-    box-shadow: 0 0 14px rgba(166, 255, 0, 0.28);
+  80% {
+    transform: translateX(-3px) rotate(-0.5deg) scale(1.01);
+    box-shadow: 0 0 8px rgba(166, 255, 0, 0.18);
+  }
+
+  82% {
+    transform: translateX(3px) rotate(0.5deg) scale(1.01);
+    box-shadow: 0 0 8px rgba(166, 255, 0, 0.18);
+  }
+
+  84% {
+    transform: translateX(-2px) rotate(-0.35deg) scale(1.01);
+    box-shadow: 0 0 8px rgba(166, 255, 0, 0.18);
+  }
+
+  86% {
+    transform: translateX(2px) rotate(0.35deg) scale(1.01);
+    box-shadow: 0 0 8px rgba(166, 255, 0, 0.18);
+  }
+
+  88% {
+    transform: translateX(-1px) rotate(-0.2deg) scale(1.005);
+    box-shadow: 0 0 7px rgba(166, 255, 0, 0.16);
+  }
+
+  90% {
+    transform: translateX(1px) rotate(0.2deg) scale(1.005);
+    box-shadow: 0 0 7px rgba(166, 255, 0, 0.16);
+  }
+
+  92% {
+    transform: translateX(0) rotate(0deg) scale(1);
+    box-shadow: 0 0 6px rgba(166, 255, 0, 0.12);
+  }
+}
+
+@keyframes ctaVibrateFeatured {
+  0%,
+  78%,
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+    box-shadow: 0 0 8px rgba(166, 255, 0, 0.16);
+  }
+
+  80% {
+    transform: translateX(-4px) rotate(-0.6deg) scale(1.02);
+    box-shadow: 0 0 16px rgba(166, 255, 0, 0.34);
+  }
+
+  82% {
+    transform: translateX(4px) rotate(0.6deg) scale(1.02);
+    box-shadow: 0 0 16px rgba(166, 255, 0, 0.34);
+  }
+
+  84% {
+    transform: translateX(-3px) rotate(-0.4deg) scale(1.02);
+    box-shadow: 0 0 14px rgba(166, 255, 0, 0.3);
+  }
+
+  86% {
+    transform: translateX(3px) rotate(0.4deg) scale(1.02);
+    box-shadow: 0 0 14px rgba(166, 255, 0, 0.3);
+  }
+
+  88% {
+    transform: translateX(-2px) rotate(-0.25deg) scale(1.01);
+    box-shadow: 0 0 12px rgba(166, 255, 0, 0.26);
+  }
+
+  90% {
+    transform: translateX(2px) rotate(0.25deg) scale(1.01);
+    box-shadow: 0 0 12px rgba(166, 255, 0, 0.26);
+  }
+
+  92% {
+    transform: translateX(0) rotate(0deg) scale(1);
+    box-shadow: 0 0 8px rgba(166, 255, 0, 0.16);
   }
 }
 
@@ -408,13 +484,35 @@ button {
   letter-spacing: 0.06em;
 }
 
-.pricing-cta--featured {
-  animation: pricing-cta-pulse 2.25s ease-in-out infinite;
-  will-change: transform, box-shadow;
+.cta-vibrate {
+  animation-name: ctaVibrate;
+  animation-duration: 4.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: var(--vibrate-delay, 0s);
+  transform-origin: center;
+  will-change: transform;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pricing-cta--featured:hover,
-.pricing-cta--featured:focus-visible {
+.cta-vibrate-featured {
+  animation-name: ctaVibrateFeatured;
+  animation-duration: 4.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: var(--vibrate-delay, 0s);
+  transform-origin: center;
+  will-change: transform, box-shadow;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-vibrate:hover,
+.cta-vibrate:focus-visible,
+.cta-vibrate:active,
+.cta-vibrate-featured:hover,
+.cta-vibrate-featured:focus-visible,
+.cta-vibrate-featured:active {
   animation-play-state: paused;
-  transform: scale(1.03);
 }
