@@ -50,3 +50,11 @@ export function trackEvent(
 export function getGaMeasurementId(): string | undefined {
   return process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 }
+
+export function trackCheckoutError(params?: AnalyticsParams): void {
+  trackEvent(ANALYTICS_EVENTS.checkoutError, params);
+}
+
+export function trackPurchaseComplete(params?: AnalyticsParams): void {
+  trackEvent(ANALYTICS_EVENTS.purchaseComplete, params);
+}

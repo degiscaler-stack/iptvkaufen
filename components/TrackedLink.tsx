@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ComponentProps, MouseEvent, ReactNode } from "react";
-import { trackEvent, type AnalyticsEventName } from "@/lib/analytics";
+import { trackEvent, ANALYTICS_EVENTS, type AnalyticsEventName } from "@/lib/analytics";
 
 type TrackedLinkProps = Omit<ComponentProps<typeof Link>, "onClick"> & {
   analyticsEvent: AnalyticsEventName;
@@ -45,7 +45,7 @@ export function TrackedAnchor({
     trackEvent(analyticsEvent, analyticsParams);
 
     if (alsoTrackCheckout) {
-      trackEvent("checkout_open", {
+      trackEvent(ANALYTICS_EVENTS.checkoutOpen, {
         source: analyticsEvent,
         ...(analyticsParams ?? {}),
       });

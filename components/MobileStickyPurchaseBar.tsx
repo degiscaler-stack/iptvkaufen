@@ -28,11 +28,12 @@ export default function MobileStickyPurchaseBar() {
           href="/#preise"
           data-analytics="sticky_buy_click"
           className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-[#A6FF00] px-4 text-center text-[11px] font-extrabold uppercase tracking-[0.12em] !text-[#000000] shadow-[0_0_12px_rgba(166,255,0,0.2)] transition duration-300 hover:bg-[#B8FF4D]"
+          aria-label="Jetzt kaufen"
           onClick={() => {
             trackEvent(ANALYTICS_EVENTS.heroBuyClick, { source: "mobile_sticky_bar" });
           }}
         >
-          Jetzt Kaufen
+          Jetzt kaufen
         </Link>
         <a
           href={buildWhatsAppUrl(WHATSAPP_MESSAGES.packageHelp)}

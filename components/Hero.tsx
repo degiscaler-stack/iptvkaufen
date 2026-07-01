@@ -1,8 +1,9 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import TrackedLink from "@/components/TrackedLink";
+import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
 
 const trustBadges = ["22.000+ Sender", "Ultra HD & 4K", "Fußball Live", "Sofortiger Zugang"];
 
@@ -92,6 +93,20 @@ export default function Hero() {
             Senderliste Ansehen
           </Link>
         </div>
+
+        <p className="hero-fade-up hero-fade-up-4 mt-3">
+          <TrackedAnchor
+            href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
+            target="_blank"
+            rel="noopener noreferrer"
+            analyticsEvent={ANALYTICS_EVENTS.heroTrialClick}
+            alsoTrackCheckout
+            data-analytics="hero_trial_click"
+            className="text-[11px] font-semibold text-[#A6FF00] underline decoration-[#A6FF00]/35 underline-offset-4 transition duration-300 hover:text-[#B8FF4D] sm:text-xs"
+          >
+            24-Stunden-Test für 3€
+          </TrackedAnchor>
+        </p>
 
         <ul
           className="hero-fade-up hero-fade-up-5 mx-auto mt-[clamp(1.25rem,3.5vh,3.5rem)] grid max-w-[92%] grid-cols-2 gap-2 sm:max-w-3xl sm:grid-cols-4 sm:gap-2.5"
