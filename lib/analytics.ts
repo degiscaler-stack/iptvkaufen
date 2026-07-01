@@ -1,15 +1,21 @@
 export const ANALYTICS_EVENTS = {
   heroBuyClick: "hero_buy_click",
   heroTrialClick: "hero_trial_click",
-  pricingSectionView: "pricing_section_view",
+  viewItemList: "view_item_list",
+  selectItem: "select_item",
   package1MonthClick: "package_1_month_click",
   package3MonthClick: "package_3_month_click",
   package6MonthClick: "package_6_month_click",
   package12MonthClick: "package_12_month_click",
+  trialClick: "trial_click",
   trial3EuroClick: "trial_3_euro_click",
   whatsappClick: "whatsapp_click",
+  beginCheckout: "begin_checkout",
   checkoutOpen: "checkout_open",
   checkoutError: "checkout_error",
+  refundPolicyClick: "refund_policy_click",
+  senderlisteClick: "senderliste_click",
+  purchase: "purchase",
   purchaseComplete: "purchase_complete",
 } as const;
 

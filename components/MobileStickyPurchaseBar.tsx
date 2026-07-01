@@ -30,10 +30,13 @@ export default function MobileStickyPurchaseBar() {
           className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-[#A6FF00] px-4 text-center text-[11px] font-extrabold uppercase tracking-[0.12em] !text-[#000000] shadow-[0_0_12px_rgba(166,255,0,0.2)] transition duration-300 hover:bg-[#B8FF4D]"
           aria-label="Jetzt kaufen"
           onClick={() => {
-            trackEvent(ANALYTICS_EVENTS.heroBuyClick, { source: "mobile_sticky_bar" });
+            trackEvent(ANALYTICS_EVENTS.heroBuyClick, {
+              source: "mobile_sticky_bar",
+              button_location: "mobile_sticky",
+            });
           }}
         >
-          Jetzt kaufen
+          JETZT KAUFEN
         </Link>
         <a
           href={buildWhatsAppUrl(WHATSAPP_MESSAGES.packageHelp)}
@@ -42,11 +45,14 @@ export default function MobileStickyPurchaseBar() {
           data-analytics="sticky_whatsapp_click"
           className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-[#25D366]/45 bg-[#0A0F0A] px-4 text-center text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#F5F5F5] transition duration-300 hover:border-[#25D366] hover:text-[#25D366]"
           onClick={() => {
-            trackEvent(ANALYTICS_EVENTS.whatsappClick, { source: "mobile_sticky_bar" });
+            trackEvent(ANALYTICS_EVENTS.whatsappClick, {
+              source: "mobile_sticky_bar",
+              button_location: "mobile_sticky",
+            });
           }}
         >
           <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
-          WhatsApp
+          WHATSAPP
         </a>
       </div>
     </div>

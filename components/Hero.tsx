@@ -1,6 +1,5 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
@@ -80,32 +79,41 @@ export default function Hero() {
           <TrackedLink
             href="/#preise"
             analyticsEvent={ANALYTICS_EVENTS.heroBuyClick}
-            analyticsParams={{ source: "hero_primary" }}
+            analyticsParams={{ source: "hero_primary", button_location: "hero" }}
             data-analytics="hero_buy_click"
             className="inline-flex min-h-11 w-[calc(100%_-_88px)] max-w-[285px] items-center justify-center rounded-full bg-[#A6FF00] px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] !text-[#000000] whitespace-nowrap shadow-[0_0_14px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_22px_rgba(166,255,0,0.38)] sm:w-auto sm:min-h-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]"
           >
-            Jetzt IPTV Kaufen
+            JETZT IPTV KAUFEN
           </TrackedLink>
-          <Link
-            href="#senderliste"
-            className="inline-flex min-h-11 w-[calc(100%_-_88px)] max-w-[285px] items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] text-[#F5F5F5] whitespace-nowrap backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_22px_rgba(107,255,42,0.16)] sm:w-auto sm:min-h-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em] [&_*]:flex [&_*]:items-center [&_*]:justify-center"
-          >
-            Senderliste Ansehen
-          </Link>
-        </div>
-
-        <p className="hero-fade-up hero-fade-up-4 mt-3">
           <TrackedAnchor
             href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
             target="_blank"
             rel="noopener noreferrer"
             analyticsEvent={ANALYTICS_EVENTS.heroTrialClick}
+            analyticsParams={{ source: "hero_secondary", button_location: "hero" }}
             alsoTrackCheckout
+            alsoTrackTrial
             data-analytics="hero_trial_click"
-            className="text-[11px] font-semibold text-[#A6FF00] underline decoration-[#A6FF00]/35 underline-offset-4 transition duration-300 hover:text-[#B8FF4D] sm:text-xs"
+            className="inline-flex min-h-11 w-[calc(100%_-_88px)] max-w-[285px] items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] text-[#F5F5F5] whitespace-nowrap backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:text-[#A6FF00] hover:shadow-[0_0_22px_rgba(107,255,42,0.16)] sm:w-auto sm:min-h-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em]"
           >
-            24-Stunden-Test für 3€
+            24H-TEST FÜR 3€ STARTEN
           </TrackedAnchor>
+        </div>
+
+        <p className="hero-fade-up hero-fade-up-4 mt-3">
+          <TrackedLink
+            href="/senderliste"
+            analyticsEvent={ANALYTICS_EVENTS.senderlisteClick}
+            analyticsParams={{ source: "hero", button_location: "hero" }}
+            data-analytics="senderliste_click"
+            className="text-[11px] font-medium text-[#F5F5F5]/72 underline decoration-[#F5F5F5]/25 underline-offset-4 transition duration-300 hover:text-[#A6FF00] hover:decoration-[#A6FF00]/35 sm:text-xs"
+          >
+            Senderliste ansehen
+          </TrackedLink>
+        </p>
+
+        <p className="hero-fade-up hero-fade-up-4 mt-3 text-[11px] font-medium tracking-[0.02em] text-[#F5F5F5]/78 sm:text-xs">
+          Ab 9,99€ · 24h-Test für 3€ · 30 Tage Geld-zurück
         </p>
 
         <ul

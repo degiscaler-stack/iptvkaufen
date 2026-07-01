@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { TrackedAnchor } from "@/components/TrackedLink";
+import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import {
   buildWhatsAppUrl,
@@ -11,7 +10,12 @@ import {
   WHATSAPP_PHONE_DISPLAY,
   WHATSAPP_SUPPORT_LABEL,
 } from "@/lib/contact";
-import { IPTV_PACKAGE_FEATURES, IPTV_PACKAGES } from "@/lib/pricing";
+import {
+  COMPARISON_PRICE_LABEL,
+  IPTV_PACKAGE_FEATURES,
+  IPTV_PACKAGES,
+  PRICE_COMPARISON_NOTE,
+} from "@/lib/pricing";
 
 function CheckIcon() {
   return (
@@ -82,9 +86,14 @@ export default function IptvPricing() {
         const [entry] = entries;
 
         if (entry?.isIntersecting) {
-          trackEvent(ANALYTICS_EVENTS.pricingSectionView, undefined, {
-            onceKey: "pricing_section_view",
-          });
+          trackEvent(
+            ANALYTICS_EVENTS.viewItemList,
+            {
+              item_list_name: "iptv_packages",
+              page_path: "/",
+            },
+            { onceKey: "view_item_list_pricing" },
+          );
           observer.disconnect();
         }
       },
@@ -125,12 +134,7 @@ export default function IptvPricing() {
         </div>
 
         <div className="mx-auto mt-6 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#A6FF00]/20 bg-[#0A0F0A]/82 px-3 py-1.5 text-center text-[11px] font-medium leading-5 text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:mt-7 sm:px-3.5 sm:text-[12px]">
-          <span className="tracking-[0.06em] text-[#FFD84D]" aria-label="5 Sterne">
-            ★★★★★
-          </span>
-          <span>
-            4,9/5 · <span className="text-[#A6FF00]">1150+ Bewertungen</span> · Schnell & sicher
-          </span>
+          <span>Schnelle Aktivierung · Persönlicher Support · Sicher bestellen</span>
         </div>
 
         <div className="mx-auto mt-10 grid max-w-[1240px] gap-7 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
@@ -147,13 +151,13 @@ export default function IptvPricing() {
               <div
                 className={
                   item.highlighted
-                    ? "relative flex h-full min-h-[500px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.11),transparent_40%),linear-gradient(160deg,rgba(15,26,11,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[512px] sm:px-5 sm:py-6 lg:px-6"
-                    : "relative flex h-full min-h-[500px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.045),transparent_40%),linear-gradient(160deg,rgba(13,19,10,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] sm:min-h-[512px] sm:px-5 sm:py-6 lg:px-6"
+                    ? "relative flex h-full min-h-[540px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.11),transparent_40%),linear-gradient(160deg,rgba(15,26,11,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[560px] sm:px-5 sm:py-6 lg:px-6"
+                    : "relative flex h-full min-h-[540px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.045),transparent_40%),linear-gradient(160deg,rgba(13,19,10,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] sm:min-h-[560px] sm:px-5 sm:py-6 lg:px-6"
                 }
               >
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#AFFF00]/45 to-transparent" />
 
-                <div className={item.badge ? "mb-5 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]" : "mb-1 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]"}>
+                <div className={item.badge ? "mb-3 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]" : "mb-1 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]"}>
                   {item.badge ? (
                     <span className="inline-flex whitespace-nowrap rounded-full bg-[#AFFF00] px-3.5 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)]">
                       {item.badge}
@@ -165,29 +169,60 @@ export default function IptvPricing() {
                   <CalendarIcon number={item.iconNumber} highlighted={item.highlighted} />
                 </div>
 
-                <h3 className="mt-2.5 text-center text-[1.18rem] font-semibold leading-tight tracking-[-0.025em] text-[#F5F5F5] sm:mt-4 sm:text-[1.3rem]">
+                <h3 className="mt-2.5 text-center text-[1.18rem] font-semibold leading-tight tracking-[-0.025em] text-[#F5F5F5] sm:mt-3 sm:text-[1.3rem]">
                   {item.duration}
                 </h3>
 
                 <div className="mx-auto mt-2.5 h-px w-16 rounded-full bg-[#AFFF00]/90 shadow-[0_0_4px_rgba(175,255,0,0.1)] sm:mt-3" />
 
-                <p className="mt-3 flex h-12 items-end justify-center sm:mt-4 sm:h-[54px]">
-                  <span
-                    className={
-                      item.highlighted
-                        ? "text-[2.88rem] font-semibold leading-none tracking-[-0.055em] text-[#AFFF00] [text-shadow:0_0_4px_rgba(175,255,0,0.1)] sm:text-[3.02rem]"
-                        : "text-[2.48rem] font-semibold leading-none tracking-[-0.045em] text-[#F5F5F5] sm:text-[2.64rem]"
-                    }
-                  >
-                    {item.price}
-                  </span>
-                </p>
+                <div className="mt-3 flex min-h-[7.5rem] flex-col items-center justify-end sm:mt-4 sm:min-h-[8rem]">
+                  {item.comparisonPrice ? (
+                    <>
+                      <p className="text-[10px] font-medium leading-tight text-[#F5F5F5]/55 sm:text-[11px]">
+                        {COMPARISON_PRICE_LABEL}
+                      </p>
+                      <p className="mt-1 text-[1.15rem] font-medium leading-none tracking-[-0.02em] text-[#888888] line-through decoration-[#888888]/80 sm:text-[1.25rem]">
+                        {item.comparisonPrice}
+                      </p>
+                    </>
+                  ) : (
+                    <span className="block h-[2.35rem]" aria-hidden="true" />
+                  )}
 
-                <p className="mx-auto mt-2.5 h-[3.85rem] w-full max-w-[250px] text-left text-[13.5px] font-normal leading-[1.55] text-[#F5F5F5]/80 sm:mt-3.5 sm:h-[4.75rem] sm:max-w-[215px] sm:text-[14px] sm:leading-[1.7]">
-                  {item.description}
-                </p>
+                  <p className="mt-2 flex items-end justify-center">
+                    <span
+                      className={
+                        item.highlighted
+                          ? "text-[2.65rem] font-semibold leading-none tracking-[-0.055em] text-[#AFFF00] [text-shadow:0_0_4px_rgba(175,255,0,0.1)] sm:text-[2.88rem]"
+                          : "text-[2.35rem] font-semibold leading-none tracking-[-0.045em] text-[#F5F5F5] sm:text-[2.55rem]"
+                      }
+                    >
+                      {item.priceLabel}
+                    </span>
+                  </p>
 
-                <ul className="mx-auto mb-5 mt-1.5 w-full max-w-[250px] space-y-1.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88 sm:mb-9 sm:mt-4 sm:max-w-[215px] sm:space-y-2.5">
+                  <p className="mt-1.5 text-[13px] font-medium leading-snug text-[#F5F5F5]/82 sm:text-[14px]">
+                    {item.monthlyEquivalent}
+                  </p>
+
+                  {item.savingsAmount ? (
+                    <div className="mt-2.5 flex flex-col items-center gap-1.5">
+                      <p className="text-[12px] font-medium text-[#F5F5F5]/75 sm:text-[13px]">{item.savingsAmount}</p>
+                      {item.savingsBadge ? (
+                        <span className="inline-flex rounded-full border border-[#A6FF00]/35 bg-[#A6FF00]/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#A6FF00] sm:text-[9.5px]">
+                          {item.savingsBadge}
+                        </span>
+                      ) : null}
+                      {item.savingsPercentage ? (
+                        <p className="text-[11px] font-semibold text-[#A6FF00]/90 sm:text-[12px]">
+                          {item.savingsPercentage}
+                        </p>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </div>
+
+                <ul className="mx-auto mb-5 mt-3 w-full max-w-[250px] space-y-1.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88 sm:mb-6 sm:mt-4 sm:max-w-[215px] sm:space-y-2.5">
                   {IPTV_PACKAGE_FEATURES.map((feature) => (
                     <li key={feature} className="grid grid-cols-[15px_1fr] items-center gap-2.5 sm:gap-3">
                       <CheckIcon />
@@ -201,8 +236,16 @@ export default function IptvPricing() {
                   target="_blank"
                   rel="noopener noreferrer"
                   analyticsEvent={item.analyticsEvent}
-                  analyticsParams={{ package: item.id }}
+                  analyticsParams={{
+                    item_name: item.duration,
+                    package_duration: item.duration,
+                    price: item.priceNumeric,
+                    currency: "EUR",
+                    page_path: "/",
+                    button_location: "pricing_card",
+                  }}
                   alsoTrackCheckout
+                  alsoTrackSelectItem
                   data-analytics={item.analyticsEvent}
                   data-package={item.id}
                   className={
@@ -218,6 +261,14 @@ export default function IptvPricing() {
           ))}
         </div>
 
+        <p className="mx-auto mt-6 max-w-[820px] text-center text-[12px] leading-5 text-[#F5F5F5]/58 sm:text-[13px] sm:leading-6">
+          {PRICE_COMPARISON_NOTE}
+        </p>
+
+        <p className="mx-auto mt-4 max-w-[820px] text-center text-[12px] font-medium leading-5 text-[#F5F5F5]/72 sm:text-[13px]">
+          Sichere Zahlung · Schnelle Aktivierung · Support auf Deutsch
+        </p>
+
         <div className="mx-auto mt-8 max-w-[820px] rounded-[20px] border border-[#A6FF00]/18 bg-[#0A0F0A]/82 p-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:mt-10 sm:p-5">
           <p className="text-[15px] font-semibold text-[#F5F5F5] sm:text-[16px]">Noch unsicher?</p>
           <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
@@ -229,11 +280,15 @@ export default function IptvPricing() {
             rel="noopener noreferrer"
             analyticsEvent={ANALYTICS_EVENTS.trial3EuroClick}
             alsoTrackCheckout
+            alsoTrackTrial
             data-analytics="trial_3_euro_click"
             className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.14em] !text-[#000000] shadow-[0_0_12px_rgba(166,255,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#B8FF4D] sm:px-6 sm:text-[12px]"
           >
             24H-TEST FÜR 3€ STARTEN
           </TrackedAnchor>
+          <p className="mt-3 text-[12px] leading-5 text-[#F5F5F5]/62 sm:text-[13px]">
+            Ideal zum unverbindlichen Testen vor der Auswahl eines längeren Pakets.
+          </p>
         </div>
 
         <div className="mx-auto mt-6 max-w-[920px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 sm:mt-8 sm:p-5">
@@ -257,14 +312,17 @@ export default function IptvPricing() {
           <h3 className="text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">30 Tage Geld-zurück-Garantie</h3>
           <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
             Wenn Sie mit dem Service nicht zufrieden sind, können Sie innerhalb von 30 Tagen nach dem Kauf eine
-            Rückerstattung beantragen – gemäß unserer Rückerstattungsrichtlinie.
+            Rückerstattung gemäß unserer Rückerstattungsrichtlinie beantragen.
           </p>
-          <Link
+          <TrackedLink
             href="/rueckerstattung"
+            analyticsEvent={ANALYTICS_EVENTS.refundPolicyClick}
+            analyticsParams={{ source: "pricing_section", page_path: "/" }}
+            data-analytics="refund_policy_click"
             className="mt-3 inline-flex text-[13px] font-semibold text-[#A6FF00] underline decoration-[#A6FF00]/35 underline-offset-4 transition duration-300 hover:text-[#B8FF4D] sm:text-[14px]"
           >
             Rückerstattungsrichtlinie ansehen
-          </Link>
+          </TrackedLink>
         </div>
 
         <div className="mx-auto mt-6 max-w-[820px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 text-center sm:mt-8 sm:p-5">
@@ -277,13 +335,13 @@ export default function IptvPricing() {
             target="_blank"
             rel="noopener noreferrer"
             analyticsEvent={ANALYTICS_EVENTS.whatsappClick}
-            analyticsParams={{ source: "pricing_support_cta" }}
+            analyticsParams={{ source: "pricing_support_cta", page_path: "/" }}
             data-analytics="whatsapp_click"
             data-analytics-source="pricing_support_cta"
             className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-[#0A0F0A] px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#F5F5F5] transition duration-300 hover:border-[#25D366] hover:text-[#25D366] sm:text-[13px]"
           >
             <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
-            Auf WhatsApp schreiben
+            AUF WHATSAPP SCHREIBEN
           </TrackedAnchor>
         </div>
       </div>

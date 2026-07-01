@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import HeroImagePreload from "@/components/preloads/HeroImagePreload";
 import CompactTrustStrip from "@/components/CompactTrustStrip";
+import { IPTV_PACKAGES } from "@/lib/pricing";
 import { SEO_TITLES } from "@/lib/seo-titles";
 
 const ChannelLogos = dynamic(() => import("@/components/ChannelLogos"));
@@ -21,7 +22,7 @@ const MobileStickyPurchaseBar = dynamic(() => import("@/components/MobileStickyP
 
 const seoTitle = SEO_TITLES.home;
 const seoDescription =
-  "IPTV Kaufen in Deutschland: 22.000+ Live-TV Sender, Filme, Serien und Sport in HD, Full HD & 4K. Sofort aktiviert, stabil und kompatibel mit allen Geräten.";
+  "IPTV kaufen in Deutschland: 22.000+ Sender, Filme, Serien und Sport in HD, Full HD und 4K. 24-Stunden-Test für 3€ und 30 Tage Geld-zurück.";
 const productDescription =
   "Premium IPTV Zugang mit Live-TV Sendern, Filmen, Serien, Sport und internationaler Senderliste in HD, Full HD und 4K.";
 
@@ -117,13 +118,14 @@ const structuredData = {
         "@type": "Brand",
         name: "iptvkaufenX",
       },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: 4.9,
-        reviewCount: 1150,
-        bestRating: 5,
-        worstRating: 1,
-      },
+      offers: IPTV_PACKAGES.map((pkg) => ({
+        "@type": "Offer",
+        name: pkg.duration,
+        price: pkg.priceNumeric.toFixed(2),
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: "https://iptvkaufenx.de/#preise",
+      })),
     },
     {
       "@type": "FAQPage",

@@ -31,6 +31,8 @@ type TrackedAnchorProps = Omit<ComponentProps<"a">, "onClick"> & {
   analyticsEvent: AnalyticsEventName;
   analyticsParams?: Record<string, string | number | boolean>;
   alsoTrackCheckout?: boolean;
+  alsoTrackSelectItem?: boolean;
+  alsoTrackTrial?: boolean;
   children: ReactNode;
 };
 
@@ -38,17 +40,30 @@ export function TrackedAnchor({
   analyticsEvent,
   analyticsParams,
   alsoTrackCheckout = false,
+  alsoTrackSelectItem = false,
+  alsoTrackTrial = false,
   children,
   ...props
 }: TrackedAnchorProps) {
   const handleClick = (_event: MouseEvent<HTMLAnchorElement>) => {
     trackEvent(analyticsEvent, analyticsParams);
 
+    if (alsoTrackSelectItem) {
+      trackEvent(ANALYTICS_EVENTS.selectItem, analyticsParams);
+    }
+
+    if (alsoTrackTrial) {
+      trackEvent(ANALYTICS_EVENTS.trialClick, analyticsParams);
+    }
+
     if (alsoTrackCheckout) {
-      trackEvent(ANALYTICS_EVENTS.checkoutOpen, {
+      const checkoutParams = {
         source: analyticsEvent,
         ...(analyticsParams ?? {}),
-      });
+      };
+
+      trackEvent(ANALYTICS_EVENTS.beginCheckout, checkoutParams);
+      trackEvent(ANALYTICS_EVENTS.checkoutOpen, checkoutParams);
     }
   };
 
