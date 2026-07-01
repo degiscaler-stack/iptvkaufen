@@ -17,6 +17,11 @@ import {
   IPTV_PACKAGES,
   PRICE_COMPARISON_NOTE,
 } from "@/lib/pricing";
+import {
+  CTA_MOTION_DELAYS,
+  ctaMotionFeaturedClass,
+  ctaMotionStandardClass,
+} from "@/lib/cta-motion";
 
 function CheckIcon() {
   return (
@@ -72,21 +77,14 @@ const reassurancePoints = [
   "30 Tage Geld-zurück-Garantie",
 ] as const;
 
-const VIBRATE_DELAYS: Record<(typeof IPTV_PACKAGES)[number]["id"] | "trial", string> = {
-  "1-month": "0s",
-  "3-months": "0.8s",
-  "6-months": "1.6s",
-  "12-months": "2.4s",
-  trial: "3.2s",
-};
-
 const packageCtaBaseClass =
-  "pricing-cta cta-vibrate mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase !text-[#050505] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px] shadow-[0_0_3px_rgba(175,255,0,0.06)] sm:shadow-[0_0_4px_rgba(175,255,0,0.08)]";
+  `pricing-cta ${ctaMotionStandardClass} mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase !text-[#050505] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px]`;
 
-const packageCtaFeaturedClass = `${packageCtaBaseClass} cta-vibrate-featured shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:shadow-[0_0_6px_rgba(175,255,0,0.12)]`;
+const packageCtaFeaturedClass =
+  `pricing-cta ${ctaMotionFeaturedClass} mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase !text-[#050505] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px]`;
 
 const trialCtaClass =
-  "pricing-cta cta-vibrate cta-vibrate-featured inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] uppercase !text-[#000000] shadow-[0_0_10px_rgba(166,255,0,0.18)] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:w-auto sm:px-6 sm:text-[12px]";
+  `pricing-cta ${ctaMotionFeaturedClass} inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] uppercase !text-[#000000] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:w-auto sm:px-6 sm:text-[12px]`;
 
 export default function IptvPricing() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -178,7 +176,7 @@ export default function IptvPricing() {
             alsoTrackTrial
             data-analytics="trial_3_euro_click"
             className={`${trialCtaClass} mt-4 shrink-0 lg:mt-0`}
-            style={{ "--vibrate-delay": VIBRATE_DELAYS.trial } as CSSProperties}
+            style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.trialBanner } as CSSProperties}
           >
             24H-TEST FÜR 3€ STARTEN
           </TrackedAnchor>
@@ -296,7 +294,7 @@ export default function IptvPricing() {
                   data-analytics={item.analyticsEvent}
                   data-package={item.id}
                   className={item.highlighted ? packageCtaFeaturedClass : packageCtaBaseClass}
-                  style={{ "--vibrate-delay": VIBRATE_DELAYS[item.id] } as CSSProperties}
+                  style={{ "--cta-motion-delay": CTA_MOTION_DELAYS[item.id] } as CSSProperties}
                 >
                   {item.buttonLabel}
                 </TrackedAnchor>

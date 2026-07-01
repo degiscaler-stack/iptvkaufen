@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
+import { CTA_MOTION_DELAYS, ctaMotionStandardClass } from "@/lib/cta-motion";
 
 const highlights = [
   "Live-TV, Filme, Serien und Fußball",
@@ -70,7 +72,8 @@ export default function PremiumExperience() {
 
           <Link
             href="/#preise"
-            className="hidden items-center justify-center rounded-full bg-[#A6FF00] text-center font-extrabold leading-none uppercase !text-[#000000] whitespace-nowrap shadow-[0_0_15px_rgba(166,255,0,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_21px_rgba(166,255,0,0.36)] sm:mt-6 sm:inline-flex sm:px-[22px] sm:py-3 sm:text-[12.5px] sm:tracking-[0.10em]"
+            className={`${ctaMotionStandardClass} hidden items-center justify-center rounded-full bg-[#A6FF00] text-center font-extrabold leading-none uppercase !text-[#000000] whitespace-nowrap sm:mt-6 sm:inline-flex sm:px-[22px] sm:py-3 sm:text-[12.5px] sm:tracking-[0.10em]`}
+            style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.premiumExperience } as CSSProperties}
           >
             JETZT IPTV KAUFEN
           </Link>
