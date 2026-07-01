@@ -206,7 +206,7 @@ export default function RecentPurchaseNotification() {
       role="status"
       aria-live="polite"
       aria-atomic="true"
-      className={`fixed bottom-4 left-4 z-[9998] w-[min(100%,calc(100vw-2rem))] max-w-[340px] transition-all duration-500 ease-out sm:bottom-6 sm:left-6 ${
+      className={`recent-purchase-notification fixed bottom-[calc(1rem+var(--sticky-purchase-offset,0px))] left-4 z-[9998] w-[min(100%,calc(100vw-2rem))] max-w-[340px] transition-all duration-500 ease-out sm:left-6 lg:bottom-6 ${
         isVisible
           ? "pointer-events-auto translate-x-0 translate-y-0 opacity-100"
           : "pointer-events-none -translate-x-3 translate-y-2 opacity-0"

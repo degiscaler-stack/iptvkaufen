@@ -28,6 +28,11 @@ const faqItems = [
     answer:
       "Ja. Bei Fragen zur Einrichtung oder Nutzung steht Ihnen Support zur Verfügung, damit Sie IPTV schnell und korrekt auf Ihrem Gerät verwenden können.",
   },
+  {
+    question: "Gibt es eine Geld-zurück-Garantie?",
+    answer:
+      "Ja. Sie können innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn Sie mit dem Service nicht zufrieden sind – gemäß unserer Rückerstattungsrichtlinie.",
+  },
 ] as const;
 
 function AccordionIcon({ isOpen }: { isOpen: boolean }) {

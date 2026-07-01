@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import DeferredRecentPurchaseNotification from "@/components/DeferredRecentPurchaseNotification";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/Header";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 import { SEO_TITLES } from "@/lib/seo-titles";
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="de" className={inter.variable}>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <Header />
         {children}
         <Footer />

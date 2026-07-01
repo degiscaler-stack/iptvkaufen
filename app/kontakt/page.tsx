@@ -3,6 +3,11 @@ import { FaEnvelope, FaFacebookF, FaHeadset, FaInstagram, FaWhatsapp } from "rea
 import { FaXTwitter } from "react-icons/fa6";
 import { buildPageMetadata } from "@/lib/seo";
 import { SEO_TITLES } from "@/lib/seo-titles";
+import {
+  WHATSAPP_CHAT_URL,
+  WHATSAPP_PHONE_DISPLAY,
+  WHATSAPP_SUPPORT_LABEL,
+} from "@/lib/contact";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.kontakt,
@@ -21,15 +26,16 @@ const contactItems = [
   },
   {
     label: "WhatsApp",
-    value: "+44 7848-102-124",
-    href: "https://wa.me/message/L6KQCBXWOIUTA1",
+    value: WHATSAPP_PHONE_DISPLAY,
+    sublabel: WHATSAPP_SUPPORT_LABEL,
+    href: WHATSAPP_CHAT_URL,
     Icon: FaWhatsapp,
     external: true,
   },
   {
     label: "Support",
     value: "24/7 verfügbar",
-    href: "https://wa.me/message/L6KQCBXWOIUTA1",
+    href: WHATSAPP_CHAT_URL,
     Icon: FaHeadset,
     external: true,
   },
@@ -39,7 +45,7 @@ const socialLinks = [
   { label: "Facebook", href: "https://web.facebook.com/people/VisionHub/61588587400682/", Icon: FaFacebookF },
   { label: "Instagram", href: "https://www.instagram.com/visionhub.media/", Icon: FaInstagram },
   { label: "X/Twitter", href: "https://x.com/cod_jss27918", Icon: FaXTwitter },
-  { label: "WhatsApp", href: "https://wa.me/message/L6KQCBXWOIUTA1", Icon: FaWhatsapp },
+  { label: "WhatsApp", href: WHATSAPP_CHAT_URL, Icon: FaWhatsapp },
 ] as const;
 
 function ContactInput({
@@ -139,6 +145,9 @@ export default function KontaktPage() {
                         {label}
                       </span>
                       <span className="mt-1 block text-[14px] font-medium text-[#F5F5F5]/84">{value}</span>
+                      {"sublabel" in item && item.sublabel ? (
+                        <span className="mt-1 block text-[12px] text-[#F5F5F5]/56">{item.sublabel}</span>
+                      ) : null}
                     </span>
                   </>
                 );
@@ -190,7 +199,7 @@ export default function KontaktPage() {
             </div>
 
             <a
-              href="https://wa.me/message/L6KQCBXWOIUTA1"
+              href={WHATSAPP_CHAT_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#A6FF00]/45 bg-[#A6FF00]/10 px-5 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-[#A6FF00] transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00]/15"

@@ -3,6 +3,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import {
+  WHATSAPP_CHAT_URL,
+  WHATSAPP_PHONE_DISPLAY,
+  WHATSAPP_SUPPORT_LABEL,
+} from "@/lib/contact";
 
 const quickLinks = [
   { label: "Startseite", href: "/" },
@@ -27,8 +32,9 @@ const contactLinks = [
     Icon: FaEnvelope,
   },
   {
-    label: "+44 7848-102-124",
-    href: "https://wa.me/message/L6KQCBXWOIUTA1",
+    label: WHATSAPP_PHONE_DISPLAY,
+    sublabel: WHATSAPP_SUPPORT_LABEL,
+    href: WHATSAPP_CHAT_URL,
     Icon: FaWhatsapp,
     external: true,
   },
@@ -38,7 +44,7 @@ const socialLinks = [
   { label: "Facebook", href: "https://web.facebook.com/people/VisionHub/61588587400682/", Icon: FaFacebookF },
   { label: "Instagram", href: "https://www.instagram.com/visionhub.media/", Icon: FaInstagram },
   { label: "X (Twitter)", href: "https://x.com/cod_jss27918", Icon: FaXTwitter },
-  { label: "WhatsApp", href: "https://wa.me/message/L6KQCBXWOIUTA1", Icon: FaWhatsapp },
+  { label: "WhatsApp", href: WHATSAPP_CHAT_URL, Icon: FaWhatsapp },
 ] as const;
 
 function FooterLink({
@@ -149,7 +155,12 @@ export default function Footer() {
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#263026] bg-[#080B08] text-[#A6FF00]">
                       <Icon className="h-4 w-4" aria-hidden="true" />
                     </span>
-                    <span>{label}</span>
+                    <span className="flex flex-col">
+                      <span>{label}</span>
+                      {"sublabel" in link && link.sublabel ? (
+                        <span className="text-[12px] font-normal text-[#F5F5F5]/52">{link.sublabel}</span>
+                      ) : null}
+                    </span>
                   </>
                 );
 

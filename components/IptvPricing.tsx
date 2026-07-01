@@ -1,52 +1,17 @@
-const features = [
-  "22.000+ Live-TV Sender",
-  "Filme & Serien auf Abruf",
-  "HD, Full HD & 4K Qualität",
-  "Alle Geräte kompatibel",
-  "Schnelle Aktivierung",
-  "24/7 Support",
-] as const;
+"use client";
 
-const packages = [
-  {
-    duration: "1 Monat",
-    iconNumber: "1",
-    price: "€9.99",
-    description: "Perfekt zum Testen unseres IPTV Services.",
-    buttonLabel: "JETZT AUSWÄHLEN",
-    badge: undefined,
-    highlighted: false,
-  },
-  {
-    duration: "3 Monate",
-    iconNumber: "3",
-    price: "€19.99",
-    description: "Mehr Streaming zum besten Preis-Leistungs-Verhältnis.",
-    buttonLabel: "JETZT AUSWÄHLEN",
-    badge: undefined,
-    highlighted: false,
-  },
-  {
-    duration: "12 Monate",
-    iconNumber: "12",
-    price: "€49.99",
-    description: "Die beste Wahl für maximale Ersparnis und 12 Monate Premium IPTV Zugang.",
-    badge: "★ BESTES ANGEBOT",
-    buttonLabel: "JETZT SPAREN",
-    highlighted: true,
-  },
-  {
-    duration: "6 Monate",
-    iconNumber: "6",
-    price: "€29.99",
-    description: "Ideal für regelmäßiges Streaming über mehrere Monate.",
-    buttonLabel: "JETZT AUSWÄHLEN",
-    badge: undefined,
-    highlighted: false,
-  },
-] as const;
-
-const whatsappUrl = "https://wa.me/message/L6KQCBXWOIUTA1";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { TrackedAnchor } from "@/components/TrackedLink";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
+import {
+  buildWhatsAppUrl,
+  WHATSAPP_MESSAGES,
+  WHATSAPP_PHONE_DISPLAY,
+  WHATSAPP_SUPPORT_LABEL,
+} from "@/lib/contact";
+import { IPTV_PACKAGE_FEATURES, IPTV_PACKAGES } from "@/lib/pricing";
 
 function CheckIcon() {
   return (
@@ -93,12 +58,52 @@ function CalendarIcon({
   );
 }
 
+const reassurancePoints = [
+  "Sichere Bestellung",
+  "Zugangsdaten per E-Mail oder WhatsApp",
+  "Schnelle Aktivierung nach Zahlungseingang",
+  "Hilfe bei der Einrichtung",
+  "Deutschsprachiger Support",
+  "30 Tage Geld-zurück-Garantie",
+] as const;
+
 export default function IptvPricing() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+
+        if (entry?.isIntersecting) {
+          trackEvent(ANALYTICS_EVENTS.pricingSectionView, undefined, {
+            onceKey: "pricing_section_view",
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="preise"
       aria-labelledby="iptv-pricing-heading"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-[#000000] px-5 pb-12 pt-8 sm:px-8 sm:pb-14 sm:pt-10 lg:px-0 lg:pb-16 lg:pt-11"
+      className="relative isolate scroll-mt-28 overflow-hidden bg-[#000000] px-5 pb-12 pt-4 sm:px-8 sm:pb-14 sm:pt-5 lg:px-0 lg:pb-16 lg:pt-6"
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[820px] text-center">
@@ -129,9 +134,10 @@ export default function IptvPricing() {
         </div>
 
         <div className="mx-auto mt-10 grid max-w-[1240px] gap-7 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
-          {packages.map((item) => (
+          {IPTV_PACKAGES.map((item) => (
             <article
-              key={item.duration}
+              key={item.id}
+              data-package={item.id}
               className={
                 item.highlighted
                   ? "group relative mx-auto h-full w-[calc(100vw-48px)] max-w-[340px] rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-[0.75px] shadow-[0_0_3px_rgba(175,255,0,0.05),0_14px_32px_rgba(0,0,0,0.36)] transition duration-500 ease-out hover:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_38px_rgba(0,0,0,0.4)] sm:w-full sm:max-w-none sm:p-px sm:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_42px_rgba(0,0,0,0.4)] sm:hover:shadow-[0_0_8px_rgba(175,255,0,0.11),0_22px_52px_rgba(0,0,0,0.44)]"
@@ -182,7 +188,7 @@ export default function IptvPricing() {
                 </p>
 
                 <ul className="mx-auto mb-5 mt-1.5 w-full max-w-[250px] space-y-1.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88 sm:mb-9 sm:mt-4 sm:max-w-[215px] sm:space-y-2.5">
-                  {features.map((feature) => (
+                  {IPTV_PACKAGE_FEATURES.map((feature) => (
                     <li key={feature} className="grid grid-cols-[15px_1fr] items-center gap-2.5 sm:gap-3">
                       <CheckIcon />
                       <span>{feature}</span>
@@ -190,21 +196,95 @@ export default function IptvPricing() {
                   ))}
                 </ul>
 
-                <a
-                  href={whatsappUrl}
+                <TrackedAnchor
+                  href={buildWhatsAppUrl(item.whatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  analyticsEvent={item.analyticsEvent}
+                  analyticsParams={{ package: item.id }}
+                  alsoTrackCheckout
+                  data-analytics={item.analyticsEvent}
+                  data-package={item.id}
                   className={
                     item.highlighted
-                      ? "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[12px] font-semibold uppercase tracking-[0.13em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.09)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_6px_rgba(175,255,0,0.14)] sm:min-h-11 sm:max-w-none sm:px-5 sm:py-3 sm:shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
-                      : "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-4 py-2 text-center text-[11.5px] font-semibold uppercase tracking-[0.11em] !text-[#050505] shadow-[0_0_3px_rgba(175,255,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_5px_rgba(175,255,0,0.1)] sm:min-h-11 sm:max-w-none sm:px-5 sm:py-3 sm:shadow-[0_0_4px_rgba(175,255,0,0.08)] sm:hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]"
+                      ? "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.08em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.09)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_6px_rgba(175,255,0,0.14)] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px] sm:tracking-[0.1em] sm:shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
+                      : "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.08em] !text-[#050505] shadow-[0_0_3px_rgba(175,255,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_5px_rgba(175,255,0,0.1)] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px] sm:tracking-[0.1em] sm:shadow-[0_0_4px_rgba(175,255,0,0.08)] sm:hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]"
                   }
                 >
                   {item.buttonLabel}
-                </a>
+                </TrackedAnchor>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mx-auto mt-8 max-w-[820px] rounded-[20px] border border-[#A6FF00]/18 bg-[#0A0F0A]/82 p-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:mt-10 sm:p-5">
+          <p className="text-[15px] font-semibold text-[#F5F5F5] sm:text-[16px]">Noch unsicher?</p>
+          <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
+            Testen Sie unseren IPTV-Service 24 Stunden für nur 3€.
+          </p>
+          <TrackedAnchor
+            href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
+            target="_blank"
+            rel="noopener noreferrer"
+            analyticsEvent={ANALYTICS_EVENTS.trial3EuroClick}
+            alsoTrackCheckout
+            data-analytics="trial_3_euro_click"
+            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.14em] !text-[#000000] shadow-[0_0_12px_rgba(166,255,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#B8FF4D] sm:px-6 sm:text-[12px]"
+          >
+            24H-TEST FÜR 3€ STARTEN
+          </TrackedAnchor>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-[920px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 sm:mt-8 sm:p-5">
+          <h3 className="text-center text-[14px] font-bold uppercase tracking-[0.14em] text-[#A6FF00] sm:text-[15px]">
+            So geht es nach der Bestellung weiter
+          </h3>
+          <ul className="mt-4 grid gap-2.5 sm:grid-cols-2 sm:gap-3">
+            {reassurancePoints.map((point) => (
+              <li
+                key={point}
+                className="flex items-start gap-2.5 rounded-[14px] border border-[#1F1F1F]/80 bg-[#080808]/70 px-3 py-2.5 text-left text-[13px] leading-5 text-[#F5F5F5]/88 sm:text-[14px]"
+              >
+                <CheckIcon />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-[820px] rounded-[20px] border border-[#A6FF00]/16 bg-[#0A0F0A]/78 p-4 text-center sm:mt-8 sm:p-5">
+          <h3 className="text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">30 Tage Geld-zurück-Garantie</h3>
+          <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
+            Wenn Sie mit dem Service nicht zufrieden sind, können Sie innerhalb von 30 Tagen nach dem Kauf eine
+            Rückerstattung beantragen – gemäß unserer Rückerstattungsrichtlinie.
+          </p>
+          <Link
+            href="/rueckerstattung"
+            className="mt-3 inline-flex text-[13px] font-semibold text-[#A6FF00] underline decoration-[#A6FF00]/35 underline-offset-4 transition duration-300 hover:text-[#B8FF4D] sm:text-[14px]"
+          >
+            Rückerstattungsrichtlinie ansehen
+          </Link>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-[820px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 text-center sm:mt-8 sm:p-5">
+          <p className="text-[14px] font-semibold text-[#F5F5F5] sm:text-[15px]">Fragen vor dem Kauf?</p>
+          <p className="mt-1 text-[12px] text-[#F5F5F5]/62 sm:text-[13px]">
+            {WHATSAPP_PHONE_DISPLAY} · {WHATSAPP_SUPPORT_LABEL}
+          </p>
+          <TrackedAnchor
+            href={buildWhatsAppUrl(WHATSAPP_MESSAGES.packageHelp)}
+            target="_blank"
+            rel="noopener noreferrer"
+            analyticsEvent={ANALYTICS_EVENTS.whatsappClick}
+            analyticsParams={{ source: "pricing_support_cta" }}
+            data-analytics="whatsapp_click"
+            data-analytics-source="pricing_support_cta"
+            className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-[#0A0F0A] px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#F5F5F5] transition duration-300 hover:border-[#25D366] hover:text-[#25D366] sm:text-[13px]"
+          >
+            <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
+            Auf WhatsApp schreiben
+          </TrackedAnchor>
         </div>
       </div>
     </section>

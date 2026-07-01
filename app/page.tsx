@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import HeroImagePreload from "@/components/preloads/HeroImagePreload";
-import PremiumExperience from "@/components/PremiumExperience";
+import CompactTrustStrip from "@/components/CompactTrustStrip";
 import { SEO_TITLES } from "@/lib/seo-titles";
 
 const ChannelLogos = dynamic(() => import("@/components/ChannelLogos"));
@@ -14,8 +14,10 @@ const MoviesSeriesSlider = dynamic(() => import("@/components/MoviesSeriesSlider
 const SportsTeamsSlider = dynamic(() => import("@/components/SportsTeamsSlider"));
 const CompatibleDevicesSlider = dynamic(() => import("@/components/CompatibleDevicesSlider"));
 const PremiumEntertainment = dynamic(() => import("@/components/PremiumEntertainment"));
+const PremiumExperience = dynamic(() => import("@/components/PremiumExperience"));
 const ServiceHighlightsBar = dynamic(() => import("@/components/ServiceHighlightsBar"));
 const CustomerReviews = dynamic(() => import("@/components/CustomerReviews"));
+const MobileStickyPurchaseBar = dynamic(() => import("@/components/MobileStickyPurchaseBar"));
 
 const seoTitle = SEO_TITLES.home;
 const seoDescription =
@@ -48,6 +50,11 @@ const faqSchemaItems = [
     question: "Gibt es Support bei der Einrichtung?",
     answer:
       "Ja. Bei Fragen zur Einrichtung oder Nutzung steht Ihnen Support zur Verfügung, damit Sie IPTV schnell und korrekt auf Ihrem Gerät verwenden können.",
+  },
+  {
+    question: "Gibt es eine Geld-zurück-Garantie?",
+    answer:
+      "Ja. Sie können innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn Sie mit dem Service nicht zufrieden sind – gemäß unserer Rückerstattungsrichtlinie.",
   },
 ] as const;
 
@@ -134,13 +141,15 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
       <HeroImagePreload />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <Hero />
+      <CompactTrustStrip />
+      <IptvPricing />
       <PremiumExperience />
       <IptvBenefits />
       <ChannelLogos />
@@ -149,10 +158,10 @@ export default function Home() {
       <ServiceHighlightsBar />
       <PremiumEntertainment />
       <CompatibleDevicesSlider />
-      <IptvPricing />
       <IptvHowItWorks />
       <CustomerReviews />
       <IptvFaq />
+      <MobileStickyPurchaseBar />
     </main>
   );
 }

@@ -13,6 +13,14 @@ export const metadata: Metadata = buildPageMetadata({
 
 const sections: LegalSection[] = [
   {
+    title: "30 Tage Geld-zurück-Garantie",
+    paragraphs: [
+      "Wenn Sie mit dem Service nicht zufrieden sind, können Sie innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen.",
+      "Die Anfrage muss nachvollziehbar gestellt werden. Bitte geben Sie nach Möglichkeit Bestellinformationen, Zahlungsdatum, verwendetes Gerät und eine kurze Beschreibung Ihres Anliegens an.",
+      "Jede Rückerstattungsanfrage wird einzeln geprüft. Die Entscheidung richtet sich nach den unten beschriebenen Bedingungen für digitale Dienste.",
+    ],
+  },
+  {
     title: "Digitale Dienstleistung",
     paragraphs: [
       "iptvkaufenX stellt einen digitalen Dienst bereit. Nach der Bereitstellung von Zugangsdaten, Aktivierung oder technischen Nutzungsinformationen beginnt die Leistungserbringung.",
@@ -71,8 +79,8 @@ export default function RueckerstattungPage() {
     <LegalPage
       eyebrow="Rückerstattung"
       title="Rückerstattungsrichtlinie"
-      updatedAt="13. Juni 2026"
-      intro="Diese Richtlinie beschreibt, wie Rückerstattungsanfragen bei iptvkaufenX geprüft werden und welche Besonderheiten für digitale Dienste gelten."
+      updatedAt="30. Juni 2026"
+      intro="Diese Richtlinie beschreibt die 30-Tage-Geld-zurück-Garantie von iptvkaufenX sowie die Prüfung von Rückerstattungsanfragen für digitale IPTV-Dienste."
       sections={sections}
     />
   );
