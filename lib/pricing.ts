@@ -44,7 +44,6 @@ export const IPTV_PACKAGES: IptvPackage[] = [
     priceNumeric: 9.99,
     monthlyEquivalent: "9,99€ pro Monat",
     buttonLabel: "1 MONAT WÄHLEN",
-    badge: "FLEXIBEL TESTEN",
     highlighted: false,
     analyticsEvent: ANALYTICS_EVENTS.package1MonthClick,
     whatsappMessage: WHATSAPP_MESSAGES.package1Month,

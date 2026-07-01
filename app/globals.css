@@ -383,4 +383,38 @@ button {
     opacity: 1;
     transform: none;
   }
+
+  .pricing-cta--featured {
+    animation: none;
+    transform: none;
+  }
+}
+
+@keyframes pricing-cta-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(166, 255, 0, 0.14);
+  }
+
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 0 14px rgba(166, 255, 0, 0.28);
+  }
+}
+
+.pricing-cta {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.pricing-cta--featured {
+  animation: pricing-cta-pulse 2.25s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.pricing-cta--featured:hover,
+.pricing-cta--featured:focus-visible {
+  animation-play-state: paused;
+  transform: scale(1.03);
 }

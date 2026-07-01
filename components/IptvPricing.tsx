@@ -71,6 +71,16 @@ const reassurancePoints = [
   "30 Tage Geld-zurück-Garantie",
 ] as const;
 
+const packageCtaBaseClass =
+  "pricing-cta mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase !text-[#050505] transition duration-300 hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px]";
+
+const packageCtaClass = `${packageCtaBaseClass} shadow-[0_0_3px_rgba(175,255,0,0.06)] hover:-translate-y-1 hover:shadow-[0_0_5px_rgba(175,255,0,0.1)] sm:shadow-[0_0_4px_rgba(175,255,0,0.08)] sm:hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]`;
+
+const packageCtaFeaturedClass = `${packageCtaBaseClass} pricing-cta--featured shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:shadow-[0_0_6px_rgba(175,255,0,0.12)]`;
+
+const trialCtaClass =
+  "pricing-cta pricing-cta--featured inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] uppercase !text-[#000000] shadow-[0_0_10px_rgba(166,255,0,0.18)] transition duration-300 hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:w-auto sm:px-6 sm:text-[12px]";
+
 export default function IptvPricing() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -137,7 +147,36 @@ export default function IptvPricing() {
           <span>Schnelle Aktivierung · Persönlicher Support · Sicher bestellen</span>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1240px] gap-7 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
+        <div className="mx-auto mt-8 max-w-[1240px] overflow-hidden rounded-[22px] border border-[#A6FF00]/22 bg-[radial-gradient(circle_at_18%_0%,rgba(166,255,0,0.07),transparent_42%),linear-gradient(160deg,rgba(10,15,10,0.98)_0%,rgba(5,8,5,1)_100%)] p-4 shadow-[0_12px_28px_rgba(0,0,0,0.28)] sm:mt-10 sm:p-5 lg:flex lg:items-center lg:justify-between lg:gap-8">
+          <div className="text-left">
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#A6FF00] sm:text-[11px]">
+              24-STUNDEN-TEST
+            </p>
+            <p className="mt-2 text-[16px] font-bold text-[#F5F5F5] sm:text-[17px]">Noch unsicher?</p>
+            <p className="mt-1.5 text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px]">
+              Testen Sie unseren IPTV-Service 24 Stunden für nur{" "}
+              <strong className="font-extrabold text-[#A6FF00]">3€</strong>.
+            </p>
+            <p className="mt-2 max-w-[640px] text-[12px] leading-5 text-[#F5F5F5]/62 sm:text-[13px] sm:leading-6">
+              Ideal, um Qualität, Stabilität und Gerätekompatibilität vor der Auswahl eines längeren Pakets zu
+              testen.
+            </p>
+          </div>
+          <TrackedAnchor
+            href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
+            target="_blank"
+            rel="noopener noreferrer"
+            analyticsEvent={ANALYTICS_EVENTS.trial3EuroClick}
+            alsoTrackCheckout
+            alsoTrackTrial
+            data-analytics="trial_3_euro_click"
+            className={`${trialCtaClass} mt-4 shrink-0 lg:mt-0`}
+          >
+            24H-TEST FÜR 3€ STARTEN
+          </TrackedAnchor>
+        </div>
+
+        <div className="mx-auto mt-8 grid max-w-[1240px] gap-7 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
           {IPTV_PACKAGES.map((item) => (
             <article
               key={item.id}
@@ -157,13 +196,13 @@ export default function IptvPricing() {
               >
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#AFFF00]/45 to-transparent" />
 
-                <div className={item.badge ? "mb-3 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]" : "mb-1 flex h-5 items-center justify-center sm:mb-2.5 sm:h-[24px]"}>
-                  {item.badge ? (
+                {item.badge ? (
+                  <div className="mb-3 flex h-[24px] items-center justify-center sm:mb-2.5">
                     <span className="inline-flex whitespace-nowrap rounded-full bg-[#AFFF00] px-3.5 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-[#050505] shadow-[0_0_6px_rgba(175,255,0,0.12)]">
                       {item.badge}
                     </span>
-                  ) : null}
-                </div>
+                  </div>
+                ) : null}
 
                 <div className="flex justify-center">
                   <CalendarIcon number={item.iconNumber} highlighted={item.highlighted} />
@@ -248,11 +287,7 @@ export default function IptvPricing() {
                   alsoTrackSelectItem
                   data-analytics={item.analyticsEvent}
                   data-package={item.id}
-                  className={
-                    item.highlighted
-                      ? "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.08em] !text-[#050505] shadow-[0_0_4px_rgba(175,255,0,0.09)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_6px_rgba(175,255,0,0.14)] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px] sm:tracking-[0.1em] sm:shadow-[0_0_6px_rgba(175,255,0,0.12)] sm:hover:shadow-[0_0_9px_rgba(175,255,0,0.18)]"
-                      : "mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.08em] !text-[#050505] shadow-[0_0_3px_rgba(175,255,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#B8FF4D] hover:shadow-[0_0_5px_rgba(175,255,0,0.1)] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px] sm:tracking-[0.1em] sm:shadow-[0_0_4px_rgba(175,255,0,0.08)] sm:hover:shadow-[0_0_7px_rgba(175,255,0,0.12)]"
-                  }
+                  className={item.highlighted ? packageCtaFeaturedClass : packageCtaClass}
                 >
                   {item.buttonLabel}
                 </TrackedAnchor>
@@ -268,28 +303,6 @@ export default function IptvPricing() {
         <p className="mx-auto mt-4 max-w-[820px] text-center text-[12px] font-medium leading-5 text-[#F5F5F5]/72 sm:text-[13px]">
           Sichere Zahlung · Schnelle Aktivierung · Support auf Deutsch
         </p>
-
-        <div className="mx-auto mt-8 max-w-[820px] rounded-[20px] border border-[#A6FF00]/18 bg-[#0A0F0A]/82 p-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:mt-10 sm:p-5">
-          <p className="text-[15px] font-semibold text-[#F5F5F5] sm:text-[16px]">Noch unsicher?</p>
-          <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
-            Testen Sie unseren IPTV-Service 24 Stunden für nur 3€.
-          </p>
-          <TrackedAnchor
-            href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
-            target="_blank"
-            rel="noopener noreferrer"
-            analyticsEvent={ANALYTICS_EVENTS.trial3EuroClick}
-            alsoTrackCheckout
-            alsoTrackTrial
-            data-analytics="trial_3_euro_click"
-            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.14em] !text-[#000000] shadow-[0_0_12px_rgba(166,255,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#B8FF4D] sm:px-6 sm:text-[12px]"
-          >
-            24H-TEST FÜR 3€ STARTEN
-          </TrackedAnchor>
-          <p className="mt-3 text-[12px] leading-5 text-[#F5F5F5]/62 sm:text-[13px]">
-            Ideal zum unverbindlichen Testen vor der Auswahl eines längeren Pakets.
-          </p>
-        </div>
 
         <div className="mx-auto mt-6 max-w-[920px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 sm:mt-8 sm:p-5">
           <h3 className="text-center text-[14px] font-bold uppercase tracking-[0.14em] text-[#A6FF00] sm:text-[15px]">
