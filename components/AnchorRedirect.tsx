@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { useEffect } from "react";
-import { CTA_MOTION_DELAYS, ctaMotionStandardClass } from "@/lib/cta-motion";
+import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 type AnchorRedirectProps = {
   href: string;
@@ -32,7 +32,7 @@ export default function AnchorRedirect({
         <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/82">{description}</p>
         <Link
           href={href}
-          className={`${ctaMotionStandardClass} mt-7 inline-flex rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-[#050505] hover:bg-[#C7FF62]`}
+          className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} mt-7 inline-flex rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
           style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.anchorRedirect } as CSSProperties}
         >
           {linkLabel}

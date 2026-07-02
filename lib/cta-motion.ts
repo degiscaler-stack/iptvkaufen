@@ -18,3 +18,7 @@ export const CTA_MOTION_DELAYS = {
 
 export const ctaMotionStandardClass = "cta-continuous-motion";
 export const ctaMotionFeaturedClass = "cta-continuous-motion cta-continuous-motion--featured";
+
+/** Black text on solid neon-green buttons in every interaction state. */
+export const ctaSolidGreenClass =
+  "cta-solid-green !text-[#000000] hover:!text-[#000000] focus:!text-[#000000] focus-visible:!text-[#000000] active:!text-[#000000] visited:!text-[#000000] [&_svg]:!text-[#000000]";

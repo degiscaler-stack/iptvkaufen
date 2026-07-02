@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { CTA_MOTION_DELAYS, ctaMotionStandardClass } from "@/lib/cta-motion";
+import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 export default function BlogCTA() {
   return (
@@ -26,7 +26,7 @@ export default function BlogCTA() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/"
-            className={`${ctaMotionStandardClass} inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] !text-[#000000] hover:bg-[#C7FF62] hover:!text-[#000000] focus:!text-[#000000] focus-visible:!text-[#000000] active:!text-[#000000] visited:!text-[#000000] [&_svg]:!text-[#000000]`}
+            className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.blogPrimary } as CSSProperties}
           >
             Jetzt IPTV kaufen

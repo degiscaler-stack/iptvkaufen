@@ -470,6 +470,29 @@ button {
   letter-spacing: 0.06em;
 }
 
+.pricing-cta,
+.cta-solid-green {
+  color: #000000;
+}
+
+.pricing-cta:hover,
+.pricing-cta:focus,
+.pricing-cta:focus-visible,
+.pricing-cta:active,
+.pricing-cta:visited,
+.cta-solid-green:hover,
+.cta-solid-green:focus,
+.cta-solid-green:focus-visible,
+.cta-solid-green:active,
+.cta-solid-green:visited {
+  color: #000000;
+}
+
+.pricing-cta svg,
+.cta-solid-green svg {
+  color: #000000;
+}
+
 .cta-continuous-motion {
   animation-name: ctaContinuousMotion;
   animation-duration: 1.8s;

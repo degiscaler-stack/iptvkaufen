@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { useEffect, useMemo, useState } from "react";
-import { CTA_MOTION_DELAYS, ctaMotionStandardClass } from "@/lib/cta-motion";
+import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 type SenderCategory = {
   region: string;
@@ -323,7 +323,7 @@ export default function SenderlisteExplorer() {
           </p>
           <Link
             href="/#preise"
-            className={`${ctaMotionStandardClass} mt-6 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-extrabold uppercase tracking-[0.13em] text-[#050505] hover:bg-[#B8FF4D]`}
+            className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} mt-6 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-extrabold uppercase tracking-[0.13em] hover:bg-[#B8FF4D]`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.senderliste } as CSSProperties}
           >
             Jetzt IPTV Kaufen

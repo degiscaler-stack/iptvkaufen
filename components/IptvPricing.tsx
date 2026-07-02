@@ -21,6 +21,7 @@ import {
   CTA_MOTION_DELAYS,
   ctaMotionFeaturedClass,
   ctaMotionStandardClass,
+  ctaSolidGreenClass,
 } from "@/lib/cta-motion";
 
 function CheckIcon() {
@@ -78,13 +79,13 @@ const reassurancePoints = [
 ] as const;
 
 const packageCtaBaseClass =
-  `pricing-cta ${ctaMotionStandardClass} mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase !text-[#050505] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px]`;
+  `pricing-cta ${ctaSolidGreenClass} ${ctaMotionStandardClass} mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px]`;
 
 const packageCtaFeaturedClass =
-  `pricing-cta ${ctaMotionFeaturedClass} mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase !text-[#050505] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px]`;
+  `pricing-cta ${ctaSolidGreenClass} ${ctaMotionFeaturedClass} mx-auto mt-auto inline-flex min-h-9 w-full max-w-[270px] items-center justify-center rounded-full bg-[#AFFF00] px-3 py-2 text-center text-[10.5px] uppercase hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-11 sm:max-w-none sm:px-4 sm:text-[11px]`;
 
 const trialCtaClass =
-  `pricing-cta ${ctaMotionFeaturedClass} inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] uppercase !text-[#000000] hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:w-auto sm:px-6 sm:text-[12px]`;
+  `pricing-cta ${ctaSolidGreenClass} ${ctaMotionFeaturedClass} inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] uppercase hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:w-auto sm:px-6 sm:text-[12px]`;
 
 export default function IptvPricing() {
   const sectionRef = useRef<HTMLElement>(null);

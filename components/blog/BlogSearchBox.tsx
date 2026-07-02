@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 type BlogSearchBoxProps = {
   defaultQuery?: string;
@@ -37,7 +38,7 @@ export default function BlogSearchBox({
       />
       <button
         type="submit"
-        className="absolute right-1.5 top-1.5 rounded-full bg-[#A6FF00] px-5 py-2 text-[12px] font-bold uppercase tracking-[0.1em] text-[#050505] transition duration-300 hover:bg-[#C7FF62]"
+        className={`${ctaSolidGreenClass} absolute right-1.5 top-1.5 rounded-full bg-[#A6FF00] px-5 py-2 text-[12px] font-bold uppercase tracking-[0.1em] transition duration-300 hover:bg-[#C7FF62]`}
       >
         Suchen
       </button>

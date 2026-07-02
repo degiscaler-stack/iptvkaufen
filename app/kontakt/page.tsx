@@ -8,6 +8,7 @@ import {
   WHATSAPP_PHONE_DISPLAY,
   WHATSAPP_SUPPORT_LABEL,
 } from "@/lib/contact";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.kontakt,
@@ -118,7 +119,7 @@ export default function KontaktPage() {
 
             <button
               type="button"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-extrabold uppercase tracking-[0.13em] text-[#050505] transition duration-300 hover:-translate-y-0.5 hover:bg-[#B8FF4D] sm:w-auto"
+              className={`${ctaSolidGreenClass} mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-extrabold uppercase tracking-[0.13em] transition duration-300 hover:-translate-y-0.5 hover:bg-[#B8FF4D] sm:w-auto`}
             >
               Nachricht senden
             </button>

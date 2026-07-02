@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
-import { CTA_MOTION_DELAYS, ctaMotionStandardClass } from "@/lib/cta-motion";
+import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 const STICKY_OFFSET = "5.75rem";
 
@@ -29,7 +29,7 @@ export default function MobileStickyPurchaseBar() {
         <Link
           href="/#preise"
           data-analytics="sticky_buy_click"
-          className={`${ctaMotionStandardClass} inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-[#A6FF00] px-4 text-center text-[11px] font-extrabold uppercase tracking-[0.12em] !text-[#000000] hover:bg-[#B8FF4D]`}
+          className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-[#A6FF00] px-4 text-center text-[11px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D]`}
           style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.mobileSticky } as CSSProperties}
           aria-label="Jetzt kaufen"
           onClick={() => {

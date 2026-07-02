@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { CTA_MOTION_DELAYS, ctaMotionFeaturedClass } from "@/lib/cta-motion";
+import { CTA_MOTION_DELAYS, ctaMotionFeaturedClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 const navigation = [
   { label: "Startseite", href: "/" },
@@ -80,7 +80,7 @@ export default function Header() {
         <div className="hidden items-center sm:flex">
           <Link
             href="/#preise"
-            className={`${ctaMotionFeaturedClass} inline-flex items-center justify-center rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] !text-[#000000] whitespace-nowrap lg:px-4 lg:py-2 lg:text-[12px] [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]`}
+            className={`${ctaMotionFeaturedClass} ${ctaSolidGreenClass} inline-flex items-center justify-center rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] whitespace-nowrap lg:px-4 lg:py-2 lg:text-[12px] [&_*]:flex [&_*]:items-center [&_*]:justify-center`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.header } as CSSProperties}
           >
             JETZT IPTV KAUFEN
@@ -144,7 +144,7 @@ export default function Header() {
             href="/#preise"
             tabIndex={isOpen ? undefined : -1}
             onClick={() => setIsOpen(false)}
-            className={`${ctaMotionFeaturedClass} mx-auto mt-3 inline-flex min-h-9 w-[calc(100%_-_140px)] max-w-[230px] items-center justify-center rounded-full bg-[#A6FF00] px-3.5 py-[7px] text-center text-[10.5px] font-extrabold leading-none uppercase tracking-[0.09em] !text-[#000000] whitespace-nowrap [&_*]:flex [&_*]:items-center [&_*]:justify-center [&_*]:!text-[#000000]`}
+            className={`${ctaMotionFeaturedClass} ${ctaSolidGreenClass} mx-auto mt-3 inline-flex min-h-9 w-[calc(100%_-_140px)] max-w-[230px] items-center justify-center rounded-full bg-[#A6FF00] px-3.5 py-[7px] text-center text-[10.5px] font-extrabold leading-none uppercase tracking-[0.09em] whitespace-nowrap [&_*]:flex [&_*]:items-center [&_*]:justify-center`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.headerMobile } as CSSProperties}
           >
             JETZT IPTV KAUFEN

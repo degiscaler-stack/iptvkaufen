@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
+import { WHATSAPP_CHAT_URL } from "@/lib/contact";
 import { buildPageMetadata } from "@/lib/seo";
 import { SEO_TITLES } from "@/lib/seo-titles";
 
@@ -24,9 +25,14 @@ const sections: LegalSection[] = [
   },
   {
     title: "Kontakt",
-    paragraphs: [
-      "E-Mail: support@iptvkaufenx.de",
-      "WhatsApp: https://wa.me/message/L6KQCBXWOIUTA1",
+    paragraphs: ["E-Mail: support@iptvkaufenx.de"],
+    contactLinks: [
+      {
+        prefix: "WhatsApp",
+        href: WHATSAPP_CHAT_URL,
+        label: "Über WhatsApp kontaktieren",
+        ariaLabel: "Über WhatsApp kontaktieren",
+      },
     ],
   },
   {

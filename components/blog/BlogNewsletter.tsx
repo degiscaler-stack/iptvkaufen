@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 export default function BlogNewsletter() {
   const [submitted, setSubmitted] = useState(false);
@@ -47,7 +48,7 @@ export default function BlogNewsletter() {
           />
           <button
             type="submit"
-            className="rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.1em] text-[#050505] transition duration-300 hover:bg-[#C7FF62]"
+            className={`${ctaSolidGreenClass} rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.1em] transition duration-300 hover:bg-[#C7FF62]`}
           >
             Anmelden
           </button>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 export default function BlogNotFound() {
   return (
@@ -16,7 +17,7 @@ export default function BlogNotFound() {
         </p>
         <Link
           href="/blog"
-          className="mt-7 inline-flex rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-[#050505] transition duration-300 hover:bg-[#C7FF62]"
+          className={`${ctaSolidGreenClass} mt-7 inline-flex rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] transition duration-300 hover:bg-[#C7FF62]`}
         >
           Zum Blog
         </Link>

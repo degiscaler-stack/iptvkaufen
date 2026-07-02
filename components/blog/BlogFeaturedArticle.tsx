@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 import BlogCoverImage from "@/components/blog/BlogCoverImage";
 import { BLOG_CATEGORIES } from "@/lib/blog/types";
 import type { BlogPostSummary } from "@/lib/blog/types";
@@ -59,7 +60,7 @@ export default function BlogFeaturedArticle({ post }: BlogFeaturedArticleProps) 
 
           <Link
             href={`/blog/${post.slug}`}
-            className="mt-7 inline-flex w-fit rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-[#050505] transition duration-300 hover:bg-[#C7FF62]"
+            className={`${ctaSolidGreenClass} mt-7 inline-flex w-fit rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] transition duration-300 hover:bg-[#C7FF62]`}
           >
             Artikel lesen
           </Link>

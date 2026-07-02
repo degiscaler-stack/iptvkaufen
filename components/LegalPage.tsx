@@ -1,8 +1,18 @@
 import Link from "next/link";
+import { WHATSAPP_CHAT_URL } from "@/lib/contact";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
+
+export type LegalContactLink = {
+  prefix: string;
+  href: string;
+  label: string;
+  ariaLabel?: string;
+};
 
 export type LegalSection = {
   title: string;
   paragraphs?: string[];
+  contactLinks?: LegalContactLink[];
   items?: string[];
 };
 
@@ -55,6 +65,23 @@ export default function LegalPage({ eyebrow, title, updatedAt, intro, sections }
                     {paragraph}
                   </p>
                 ))}
+                {section.contactLinks?.map((contactLink) => (
+                  <p
+                    key={`${contactLink.prefix}-${contactLink.label}`}
+                    className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px]"
+                  >
+                    {contactLink.prefix}:{" "}
+                    <a
+                      href={contactLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={contactLink.ariaLabel ?? contactLink.label}
+                      className="font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]"
+                    >
+                      {contactLink.label}
+                    </a>
+                  </p>
+                ))}
                 {section.items ? (
                   <ul className="mt-4 grid gap-2.5 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px]">
                     {section.items.map((item) => (
@@ -77,10 +104,10 @@ export default function LegalPage({ eyebrow, title, updatedAt, intro, sections }
             </p>
             <div className="mt-4 flex flex-col gap-3 text-[14px] font-semibold sm:flex-row sm:flex-wrap">
               <a
-                href="https://wa.me/message/L6KQCBXWOIUTA1"
+                href={WHATSAPP_CHAT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit rounded-full bg-[#A6FF00] px-4 py-2 text-[#050505] transition duration-300 hover:bg-[#C7FF62]"
+                className={`${ctaSolidGreenClass} inline-flex w-fit rounded-full bg-[#A6FF00] px-4 py-2 transition duration-300 hover:bg-[#C7FF62]`}
               >
                 WhatsApp Kontakt
               </a>
