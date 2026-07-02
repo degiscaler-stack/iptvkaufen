@@ -68,15 +68,15 @@ export default function LegalPage({ eyebrow, title, updatedAt, intro, sections }
                 {section.contactLinks?.map((contactLink) => (
                   <p
                     key={`${contactLink.prefix}-${contactLink.label}`}
-                    className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px]"
+                    className="mt-3 text-[14px] leading-7 sm:text-[15px]"
                   >
-                    {contactLink.prefix}:{" "}
+                    <span className="text-[#E6E6E6]/82">{contactLink.prefix}:</span>{" "}
                     <a
                       href={contactLink.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={contactLink.ariaLabel ?? contactLink.label}
-                      className="font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]"
+                      className="font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#A6FF00] hover:underline focus:text-[#A6FF00] focus-visible:text-[#A6FF00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] active:text-[#A6FF00] visited:text-[#A6FF00]"
                     >
                       {contactLink.label}
                     </a>
