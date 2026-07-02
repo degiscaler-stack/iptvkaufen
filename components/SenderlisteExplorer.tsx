@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import type { CSSProperties } from "react";
-import { useEffect, useMemo, useState } from "react";
+import type { CSSProperties, KeyboardEvent } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
+import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
 import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 type SenderCategory = {
@@ -121,105 +123,39 @@ const senderCategories: SenderCategory[] = [
   { region: "Entertainment", title: "Religion", channels: ["Quran TV HD", "Sunnah TV HD", "Bibel TV HD", "Religious TV HD", "Peace TV HD"] },
 ];
 
-const featuredChannelExpansions: Record<string, string[]> = {
-  Deutschland: ["Das Erste HD", "ZDF HD", "RTL HD", "SAT.1 HD", "ProSieben HD", "VOX HD", "Kabel Eins HD", "RTL Zwei HD", "Sport1 HD", "Welt HD", "NTV HD", "Phoenix HD", "Arte HD", "3sat HD", "KiKA HD", "Super RTL HD", "Nitro HD", "DMAX HD", "Tele 5 HD", "Sixx HD", "ProSieben Maxx HD", "Kabel Eins Doku HD", "ZDFneo HD", "ZDFinfo HD", "One HD", "Tagesschau24 HD", "MDR HD", "WDR HD", "NDR HD", "BR HD", "SWR HD", "HR HD", "RBB HD", "SR HD", "Radio Bremen TV", "Sky Sport HD", "Sky Bundesliga HD", "DAZN 1 HD", "DAZN 2 HD", "Eurosport HD"],
-  Frankreich: ["TF1 HD", "France 2 HD", "France 3 HD", "France 4 HD", "France 5 HD", "M6 HD", "W9 HD", "TMC HD", "TFX HD", "Canal+ HD", "C8 HD", "CStar HD", "BFM TV HD", "CNews HD", "LCI HD", "Franceinfo HD", "Arte FR HD", "Gulli HD", "NRJ12 HD", "RMC Story HD", "RMC Découverte HD", "Chérie 25 HD", "L'Équipe HD", "TF1 Séries Films HD", "6ter HD", "Paris Première HD", "Téva HD", "Canal+ Sport HD", "beIN Sports France HD", "Eurosport France HD", "OCS HD", "Ciné+ HD", "Disney Channel FR HD", "Nickelodeon FR HD", "National Geographic FR HD", "Discovery FR HD", "Planète+ HD", "France 24 HD", "TV5 Monde HD", "MCM HD"],
-  Spanien: ["La 1 HD", "La 2 HD", "Antena 3 HD", "Cuatro HD", "Telecinco HD", "La Sexta HD", "24h HD", "Clan HD", "Neox HD", "Nova HD", "Mega HD", "Atreseries HD", "FDF HD", "Energy HD", "Divinity HD", "Be Mad HD", "DMAX Spain HD", "Paramount Network Spain HD", "Movistar Plus+ HD", "Movistar Deportes HD", "Movistar LaLiga HD", "DAZN LaLiga HD", "Gol Play HD", "Teledeporte HD", "Canal Sur HD", "TV3 HD", "Telemadrid HD", "ETB HD", "Galicia TV HD", "À Punt HD", "Aragón TV HD", "CMM TV HD", "7RM HD", "IB3 HD", "TV Canaria HD", "Eurosport Spain HD", "National Geographic Spain HD", "Disney Channel Spain HD", "Nickelodeon Spain HD", "MTV Spain HD"],
-  UK: ["BBC One HD", "BBC Two HD", "BBC Three HD", "BBC Four HD", "ITV1 HD", "ITV2 HD", "ITV3 HD", "ITV4 HD", "Channel 4 HD", "Channel 5 HD", "E4 HD", "More4 HD", "Film4 HD", "Dave HD", "Quest HD", "Sky Showcase HD", "Sky Atlantic HD", "Sky Max HD", "Sky Witness HD", "Sky Comedy HD", "Sky Crime HD", "Sky Sports Main Event HD", "Sky Sports Premier League HD", "Sky Sports Football HD", "Sky Sports F1 HD", "TNT Sports 1 HD", "TNT Sports 2 HD", "Eurosport UK HD", "BBC News HD", "Sky News HD", "GB News HD", "CNN UK HD", "Discovery UK HD", "National Geographic UK HD", "History UK HD", "Nickelodeon UK HD", "Cartoon Network UK HD", "Disney Channel UK HD", "MTV UK HD", "Box Hits HD"],
-  USA: ["ABC HD", "NBC HD", "CBS HD", "FOX HD", "PBS HD", "The CW HD", "CNN HD", "Fox News HD", "MSNBC HD", "CNBC HD", "ESPN HD", "ESPN2 HD", "Fox Sports 1 HD", "Fox Sports 2 HD", "NBC Sports HD", "CBS Sports HD", "NFL Network HD", "NBA TV HD", "MLB Network HD", "NHL Network HD", "HBO HD", "Showtime HD", "Starz HD", "Cinemax HD", "AMC HD", "FX HD", "FXX HD", "USA Network HD", "TNT HD", "TBS HD", "Bravo HD", "E! HD", "Discovery HD", "National Geographic HD", "History HD", "TLC HD", "Food Network HD", "HGTV HD", "Nickelodeon HD", "Cartoon Network HD"],
-  Kanada: ["CBC HD", "CTV HD", "Global TV HD", "Citytv HD", "TVA HD", "Télé-Québec HD", "Noovo HD", "CP24 HD", "CBC News HD", "CTV News HD", "Global News HD", "TSN 1 HD", "TSN 2 HD", "TSN 3 HD", "TSN 4 HD", "TSN 5 HD", "Sportsnet Ontario HD", "Sportsnet One HD", "Sportsnet 360 HD", "TVA Sports HD", "RDS HD", "Super Écran HD", "Crave HD", "Showcase HD", "W Network HD", "Slice HD", "YTV HD", "Teletoon HD", "Treehouse HD", "Discovery Canada HD", "National Geographic Canada HD", "History Canada HD", "Food Network Canada HD", "HGTV Canada HD", "CMT Canada HD", "Much HD", "OMNI HD", "TFO HD", "Canal D HD", "Canal Vie HD"],
-  Australien: ["ABC TV HD", "ABC Kids HD", "ABC News HD", "SBS HD", "SBS Viceland HD", "Seven HD", "7mate HD", "7two HD", "7flix HD", "Nine HD", "9Gem HD", "9Go HD", "9Life HD", "10 HD", "10 Bold HD", "10 Peach HD", "Sky News Australia HD", "Fox Sports Australia HD", "ESPN Australia HD", "Optus Sport HD", "Stan Sport HD", "Fox Cricket HD", "Fox League HD", "Fox Footy HD", "Discovery Australia HD", "National Geographic Australia HD", "History Australia HD", "BBC Earth Australia HD", "Nickelodeon Australia HD", "Cartoon Network Australia HD", "Disney Channel Australia HD", "MTV Australia HD", "Arena HD", "Lifestyle HD", "Food Network Australia HD", "HGTV Australia HD", "Movie Hits HD", "Foxtel Movies HD", "SBS World Movies HD", "NITV HD"],
-  Marokko: ["Al Aoula HD", "2M Maroc HD", "Arryadia HD", "Al Maghribia HD", "Assadissa HD", "Tamazight HD", "Medi 1 TV HD", "Télé Maroc HD", "Chada TV HD", "M24 HD", "SNRT News HD", "Al Aoula International", "2M Monde", "Arryadia Live", "Maroc Sport HD", "Maroc News HD", "Maroc Movies HD", "Maroc Series HD", "Maroc Kids HD", "Maroc Music HD", "Maroc Documentary HD", "Maroc Culture HD", "Maroc Regional HD", "Casablanca TV HD", "Rabat TV HD", "Tanger TV HD", "Fes TV HD", "Marrakech TV HD", "Agadir TV HD", "Rif TV HD", "Atlas TV HD", "Sahara TV HD", "Moroccan Cinema HD", "Moroccan Drama HD", "Moroccan Comedy HD", "Moroccan Family HD", "Moroccan Entertainment HD", "Moroccan Lifestyle HD", "Moroccan Premium HD", "Moroccan Local HD"],
-  Algerien: ["ENTV HD", "Canal Algérie HD", "A3 HD", "Echourouk TV HD", "Echourouk News HD", "El Bilad TV HD", "Dzair TV HD", "Samira TV HD", "El Heddaf TV HD", "Numidia TV HD", "Bahia TV HD", "Beur TV HD", "El Djazairia One HD", "TV Tamazight HD", "Algeria News HD", "Algeria Sports HD", "Algeria Movies HD", "Algeria Series HD", "Algeria Kids HD", "Algeria Music HD", "Algeria Documentary HD", "Algeria Culture HD", "Algeria Regional HD", "Algiers TV HD", "Oran TV HD", "Constantine TV HD", "Annaba TV HD", "Setif TV HD", "Tizi Ouzou TV HD", "Sahara Algeria HD", "Algerian Cinema HD", "Algerian Drama HD", "Algerian Comedy HD", "Algerian Family HD", "Algerian Entertainment HD", "Algerian Lifestyle HD", "Algerian Premium HD", "Algerian Local HD", "Algeria National HD", "Algeria Live HD"],
-  Türkei: ["TRT 1 HD", "Kanal D HD", "Show TV HD", "ATV HD", "Star TV HD", "Fox Türkiye HD", "TV8 HD", "TRT Spor HD", "beIN Sports Türkiye HD", "A Haber HD", "CNN Türk HD", "Habertürk HD", "NTV Türkiye HD", "TGRT Haber HD", "Kanal 7 HD", "Beyaz TV HD", "Teve2 HD", "DMax Türkiye HD", "TLC Türkiye HD", "TRT Haber HD", "TRT Çocuk HD", "TRT Belgesel HD", "TRT Müzik HD", "TRT Türk HD", "TRT Avaz HD", "TRT World HD", "beIN Sports 1 TR HD", "beIN Sports 2 TR HD", "beIN Sports 3 TR HD", "S Sport HD", "S Sport 2 HD", "TV100 HD", "Flash Haber HD", "Ulusal Kanal HD", "Dream Türk HD", "Power Türk HD", "Kral Pop HD", "Sinema TV HD", "Dizi TV HD", "Yeşilçam HD"],
-  "Arabische Sender": ["Al Jazeera HD", "Al Arabiya HD", "Sky News Arabia HD", "Al Mayadeen HD", "Rotana Cinema", "Rotana Drama", "Rotana Comedy", "Rotana Classic", "Rotana Khalijia", "Rotana Music", "Al Hadath HD", "Alhurra HD", "BBC Arabic HD", "France 24 Arabic HD", "DW Arabic HD", "TRT Arabic HD", "CNBC Arabia HD", "Asharq News HD", "Al Ghad HD", "Al Qahera News HD", "Dubai TV HD", "Abu Dhabi TV HD", "Sama Dubai HD", "Al Kass HD", "Qatar TV HD", "Kuwait TV HD", "Saudi TV HD", "SSC Sports HD", "Shahid Drama HD", "Arabic Movies HD", "Arabic Series HD", "Arabic Kids HD", "Arabic Music HD", "Arabic Documentary HD", "Arabic Culture HD", "Arabic News HD", "Arabic Sports HD", "Arabic Family HD", "Arabic Premium HD", "Arabic Entertainment HD"],
-  MBC: ["MBC 1 HD", "MBC 2 HD", "MBC 3 HD", "MBC 4 HD", "MBC Action HD", "MBC Drama HD", "MBC Bollywood HD", "MBC Masr HD", "MBC Masr 2 HD", "MBC Iraq HD", "MBC Persia HD", "MBC Variety HD", "MBC Max HD", "MBC+ Drama HD", "MBC Shahid HD", "Shahid VIP Kategorien", "MBC Movies HD", "MBC Series HD", "MBC Kids HD", "MBC Comedy HD", "MBC Family HD", "MBC Gulf HD", "MBC Egypt HD", "MBC Levant HD", "MBC Maghreb HD", "MBC News HD", "MBC Music HD", "MBC Documentary HD", "MBC Lifestyle HD", "MBC Premium HD", "MBC Cinema HD", "MBC Action Plus HD", "MBC Drama Plus HD", "MBC Bollywood Plus HD", "MBC Sports HD", "MBC Ramadan HD", "MBC Classic HD", "MBC Entertainment HD", "MBC Culture HD", "MBC Live HD"],
-  "beIN Arab": ["beIN Sports 1 HD", "beIN Sports 2 HD", "beIN Sports 3 HD", "beIN Sports 4 HD", "beIN Sports 5 HD", "beIN Sports 6 HD", "beIN Sports 7 HD", "beIN Sports Premium 1 HD", "beIN Sports Premium 2 HD", "beIN Sports Premium 3 HD", "beIN Sports News HD", "beIN Movies HD", "beIN Series HD", "beIN Drama HD", "beIN Gourmet HD", "beIN Junior HD", "beIN Sports AFC HD", "beIN NBA HD", "beIN Tennis HD", "beIN F1 HD", "beIN LaLiga HD", "beIN Premier League HD", "beIN Champions League HD", "beIN Ligue 1 HD", "beIN Serie A HD", "beIN Bundesliga HD", "beIN Max 1 HD", "beIN Max 2 HD", "beIN Max 3 HD", "beIN Max 4 HD", "beIN Cinema HD", "beIN Action HD", "beIN Family HD", "beIN Documentary HD", "beIN Entertainment HD", "beIN Kids HD", "beIN News HD", "beIN Premium HD", "beIN Sports Extra HD", "beIN Live HD"],
-  Sport: ["Sky Sport HD", "DAZN HD", "Eurosport HD", "beIN Sports HD", "ESPN HD", "Fox Sports HD", "Sportdigital HD", "Sky Sport News HD", "Sky Sport F1 HD", "Sky Sport Tennis HD", "Sky Sport Golf HD", "DAZN 1 HD", "DAZN 2 HD", "Eurosport 1 HD", "Eurosport 2 HD", "Sport1 HD", "Sport1+ HD", "TNT Sports HD", "CBS Sports HD", "NBC Sports HD", "TSN HD", "Sportsnet HD", "SuperSport HD", "Arena Sport HD", "Eleven Sports HD", "Canal+ Sport HD", "Movistar Deportes HD", "Sky Sports Main Event HD", "Sky Sports Football HD", "Sky Sports Premier League HD", "Sky Sports F1 HD", "ESPN2 HD", "NFL Network HD", "NBA TV HD", "MLB Network HD", "NHL Network HD", "UFC Fight Pass HD", "Fight Sports HD", "Motorsport TV HD", "Tennis Channel HD"],
-  Filme: ["Sky Cinema HD", "Warner TV Film HD", "Paramount Movies HD", "AMC HD", "FilmBox HD", "Canal+ Cinema HD", "HBO Movies HD", "Cinemax HD", "Showtime HD", "Starz HD", "TCM HD", "Sony Movies HD", "MGM HD", "Ciné+ Premier HD", "OCS Max HD", "Movie Hits HD", "Foxtel Movies HD", "SBS World Movies HD", "Film4 HD", "Cinema One HD", "Action Movies HD", "Drama Movies HD", "Comedy Movies HD", "Family Movies HD", "Classic Movies HD", "Thriller Movies HD", "Sci-Fi Movies HD", "Adventure Movies HD", "Romance Movies HD", "Cinema HD", "Premium Cinema HD", "World Cinema HD", "European Cinema HD", "Arabic Cinema HD", "Turkish Cinema HD", "Indian Cinema HD", "Kids Movies HD", "Documentary Movies HD", "Hollywood HD", "Blockbuster HD"],
-  Serien: ["Warner TV Serie HD", "AXN HD", "Syfy HD", "13th Street HD", "Universal TV HD", "Fox Series HD", "HBO Series HD", "Showtime Series HD", "Starz Series HD", "AMC Series HD", "Sky Atlantic HD", "Sky Witness HD", "Sky Comedy HD", "Sky Crime HD", "Paramount Network HD", "TNT Serie HD", "RTL Passion HD", "Sony Channel HD", "TVNOW Serien HD", "Canal+ Series HD", "OCS Series HD", "Drama Series HD", "Comedy Series HD", "Action Series HD", "Crime Series HD", "Family Series HD", "Premium Series HD", "European Series HD", "Turkish Series HD", "Arabic Series HD", "Indian Series HD", "Korean Series HD", "Classic Series HD", "New Series HD", "Series Plus HD", "Series Max HD", "Series World HD", "Series Entertainment HD", "Series Drama Plus HD", "Series Live HD"],
-  Kinder: ["Super RTL HD", "KiKA HD", "Nickelodeon HD", "Cartoon Network HD", "Disney Channel HD", "Boomerang HD", "Nick Jr. HD", "Disney Junior HD", "Disney XD HD", "Cartoonito HD", "Baby TV HD", "PBS Kids HD", "CBBC HD", "CBeebies HD", "Gulli HD", "MBC 3 HD", "Spacetoon HD", "Jeem TV HD", "Baraem HD", "Kids Movies HD", "Kids Series HD", "Kids Music HD", "Kids Learning HD", "Kids Adventure HD", "Kids Comedy HD", "Kids Family HD", "Kids Animation HD", "Kids Premium HD", "Kids International HD", "Kids Arabic HD", "Kids English HD", "Kids French HD", "Kids German HD", "Kids Spanish HD", "Kids Turkish HD", "Kids Educational HD", "Kids Cinema HD", "Kids Stories HD", "Kids Fun HD", "Kids Live HD"],
-};
-
-const genericChannelSuffixes = [
-  "National TV HD",
-  "News HD",
-  "Sports HD",
-  "Movies HD",
-  "Series HD",
-  "Kids HD",
-  "Music HD",
-  "Documentary HD",
-  "Entertainment HD",
-  "Local TV HD",
-  "Regional TV HD",
-  "Premium Sport HD",
-  "Cinema HD",
-  "Family HD",
-  "Culture HD",
-  "Lifestyle HD",
-  "Travel HD",
-  "History HD",
-  "Food HD",
-  "Comedy HD",
-  "Drama HD",
-  "Action HD",
-  "Classic HD",
-  "Live HD",
-  "Premium HD",
-  "World HD",
-  "International HD",
-  "Business HD",
-  "Nature HD",
-  "Education HD",
-  "Community HD",
-  "Metro TV HD",
-  "Capital TV HD",
-  "Plus HD",
-  "Extra HD",
-  "Max HD",
-  "Select HD",
-  "Prime HD",
-  "Cinema Plus HD",
-  "Sport Plus HD",
-  "News 24 HD",
-  "Family Plus HD",
-  "Documentary Plus HD",
-  "Music Hits HD",
-  "Kids Plus HD",
-];
-
-function uniqueChannels(channels: string[]) {
-  return Array.from(new Set(channels));
-}
-
-function expandChannels(category: SenderCategory) {
-  const featured = featuredChannelExpansions[category.title] ?? [];
-  const generic = genericChannelSuffixes.map((suffix) => `${category.title} ${suffix}`);
-  return uniqueChannels([...category.channels, ...featured, ...generic]).slice(0, 48);
-}
-
-const expandedSenderCategories = senderCategories.map((category) => ({
-  ...category,
-  channels: expandChannels(category),
-}));
-
 function normalize(value: string) {
   return value.toLocaleLowerCase("de-DE");
 }
 
+function formatCategoryCount(count: number) {
+  if (count === 1) {
+    return "1 Kategorie gefunden";
+  }
+
+  return `${count} Kategorien gefunden`;
+}
+
+const MID_BANNER_AFTER = 32;
+const EXAMPLE_CHANNEL_LIMIT = 6;
+
+const whatsappLinkClass =
+  "font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#A6FF00] hover:underline focus:text-[#A6FF00] focus-visible:text-[#A6FF00] active:text-[#A6FF00] visited:text-[#A6FF00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]";
+
 export default function SenderlisteExplorer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const whatsappInquiryUrl = buildWhatsAppUrl(WHATSAPP_MESSAGES.senderlisteInquiry);
+  const noResultsTrackedRef = useRef(false);
+  const searchTrackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const filteredCategories = useMemo(() => {
     const query = normalize(searchTerm.trim());
 
     if (!query) {
-      return expandedSenderCategories.map((category, index) => ({ category, index }));
+      return senderCategories.map((category, index) => ({ category, index }));
     }
 
-    return expandedSenderCategories
+    return senderCategories
       .map((category, index) => ({ category, index }))
       .filter(({ category }) =>
         normalize(`${category.region} ${category.title} ${category.channels.join(" ")}`).includes(query),
@@ -232,123 +168,305 @@ export default function SenderlisteExplorer() {
     }
   }, [filteredCategories, openIndex]);
 
+  useEffect(() => {
+    const query = searchTerm.trim();
+
+    if (searchTrackTimeoutRef.current) {
+      clearTimeout(searchTrackTimeoutRef.current);
+    }
+
+    if (!query) {
+      noResultsTrackedRef.current = false;
+      return;
+    }
+
+    searchTrackTimeoutRef.current = setTimeout(() => {
+      trackEvent(ANALYTICS_EVENTS.senderlisteSearch, {
+        search_term_length: query.length,
+        page_path: "/senderliste",
+        button_location: "senderliste_search",
+      });
+    }, 500);
+
+    return () => {
+      if (searchTrackTimeoutRef.current) {
+        clearTimeout(searchTrackTimeoutRef.current);
+      }
+    };
+  }, [searchTerm]);
+
+  useEffect(() => {
+    const query = searchTerm.trim();
+    const hasResults = filteredCategories.length > 0;
+
+    if (query && !hasResults && !noResultsTrackedRef.current) {
+      noResultsTrackedRef.current = true;
+      trackEvent(ANALYTICS_EVENTS.senderlisteNoResults, {
+        search_term_length: query.length,
+        page_path: "/senderliste",
+        button_location: "senderliste_search",
+      });
+    }
+
+    if (hasResults || !query) {
+      noResultsTrackedRef.current = false;
+    }
+  }, [filteredCategories.length, searchTerm]);
+
+  const handleWhatsAppClick = (buttonLocation: string) => {
+    trackEvent(ANALYTICS_EVENTS.senderlisteWhatsappClick, {
+      page_path: "/senderliste",
+      button_location: buttonLocation,
+    });
+  };
+
+  const toggleCategory = (index: number, category: SenderCategory) => {
+    setOpenIndex((current) => {
+      const next = current === index ? null : index;
+
+      if (next === index) {
+        trackEvent(ANALYTICS_EVENTS.senderlisteCategoryOpen, {
+          category_name: category.title,
+          category_group: category.region,
+          page_path: "/senderliste",
+          button_location: "senderliste_category",
+        });
+      }
+
+      return next;
+    });
+  };
+
+  const handleCategoryKeyDown = (
+    event: KeyboardEvent<HTMLElement>,
+    index: number,
+    category: SenderCategory,
+  ) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleCategory(index, category);
+    }
+  };
+
+  const renderMidBanner = () => (
+    <div
+      key="senderliste-mid-banner"
+      className="col-span-full my-3 rounded-[24px] border border-[#A6FF00]/28 bg-[linear-gradient(180deg,#071006_0%,#030503_100%)] p-6 text-center shadow-[0_20px_56px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-8"
+    >
+      <h2 className="text-[1.35rem] font-black leading-tight tracking-[-0.04em] text-[#F5F5F5] sm:text-[1.75rem]">
+        Über 22.000 Sender, Filme und Serien verfügbar
+      </h2>
+      <p className="mx-auto mt-3 max-w-[680px] text-[14px] leading-7 text-[#E6E6E6]/84 sm:text-[15px]">
+        Wählen Sie jetzt das passende IPTV-Paket und genießen Sie Ihre Lieblingsinhalte auf allen
+        kompatiblen Geräten.
+      </p>
+      <Link
+        href="/#preise"
+        className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} mt-5 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
+        style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.senderlisteMid } as CSSProperties}
+        onClick={() => {
+          trackEvent(ANALYTICS_EVENTS.senderlisteMidCtaClick, {
+            page_path: "/senderliste",
+            button_location: "senderliste_mid_banner",
+          });
+        }}
+      >
+        JETZT IPTV PAKET WÄHLEN
+      </Link>
+      <p className="mt-4 text-[13px] leading-6 text-[#E6E6E6]/78 sm:text-[14px]">
+        Sie suchen einen bestimmten Sender?{" "}
+        <a
+          href={whatsappInquiryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={whatsappLinkClass}
+          onClick={() => handleWhatsAppClick("senderliste_mid_banner_whatsapp")}
+        >
+          Über WhatsApp nachfragen
+        </a>
+      </p>
+    </div>
+  );
+
   return (
-    <section className="bg-[#000000] px-5 pb-14 pt-6 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-8 lg:px-0 lg:pb-20">
+    <section className="bg-[#000000] px-5 pb-14 pt-4 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-5 lg:px-0 lg:pb-20">
       <div className="mx-auto max-w-[1360px] lg:px-12">
-        <div className="mx-auto max-w-[760px]">
-          <label htmlFor="senderliste-search" className="sr-only">
-            Land oder Kategorie suchen
-          </label>
-          <input
-            id="senderliste-search"
-            type="search"
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-            placeholder="Land oder Kategorie suchen…"
-            className="h-14 w-full rounded-2xl border border-[#A6FF00]/28 bg-[#050806] px-5 text-[15px] font-medium text-[#F5F5F5] outline-none shadow-[0_18px_42px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 placeholder:text-[#F5F5F5]/42 focus:border-[#A6FF00]/70"
-          />
-          <p className="mt-3 text-center text-[12px] font-medium uppercase tracking-[0.16em] text-[#F5F5F5]/46">
-            {filteredCategories.length} Kategorien gefunden
-          </p>
-        </div>
-
-        <div className="mt-8 grid items-start gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {filteredCategories.map(({ category, index }) => {
-            const isOpen = openIndex === index;
-            const panelId = `sender-category-${index}`;
-
-            return (
-              <article
-                key={`${category.region}-${category.title}`}
-                className="overflow-hidden rounded-[22px] border border-[#A6FF00]/20 bg-[#050806] shadow-[0_18px_48px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:border-[#A6FF00]/48"
-              >
+        <div className="sticky top-[76px] z-40 -mx-5 border-b border-[#1F1F1F]/80 bg-[#000000]/96 px-5 pb-4 pt-2 backdrop-blur-sm sm:-mx-8 sm:px-8 lg:static lg:mx-0 lg:border-0 lg:bg-transparent lg:px-0 lg:pb-0 lg:pt-0 lg:backdrop-blur-none">
+          <div className="mx-auto max-w-[760px]">
+            <label htmlFor="senderliste-search" className="sr-only">
+              Land, Sender oder Kategorie suchen
+            </label>
+            <div className="relative">
+              <input
+                id="senderliste-search"
+                type="search"
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                placeholder="Land, Sender oder Kategorie suchen..."
+                className="h-14 w-full rounded-2xl border border-[#A6FF00]/28 bg-[#050806] px-5 pr-12 text-[15px] font-medium text-[#F5F5F5] outline-none shadow-[0_18px_42px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 placeholder:text-[#F5F5F5]/42 focus:border-[#A6FF00]/70"
+              />
+              {searchTerm ? (
                 <button
                   type="button"
-                  aria-expanded={isOpen}
-                  aria-controls={panelId}
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left sm:px-5"
+                  aria-label="Suche löschen"
+                  onClick={() => setSearchTerm("")}
+                  className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-[18px] leading-none text-[#F5F5F5]/62 transition duration-300 hover:bg-[#111111] hover:text-[#A6FF00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]"
                 >
-                  <span className="min-w-0">
-                    <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-[#A6FF00]/78">
-                      {category.region}
-                    </span>
-                    <span className="block truncate text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">
-                      {category.title}
-                    </span>
-                  </span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#A6FF00]/28 bg-[#A6FF00]/8 text-[20px] font-light leading-none text-[#A6FF00]">
-                    {isOpen ? "−" : "+"}
-                  </span>
+                  ×
                 </button>
-
-                <div
-                  id={panelId}
-                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    {isOpen ? (
-                      <ul className="senderliste-scroll grid max-h-[420px] gap-2 overflow-y-auto border-t border-[#1F1F1F] px-4 pb-5 pt-4 sm:px-5">
-                        {category.channels.map((channel) => (
-                          <li key={channel} className="flex gap-2.5 text-[13px] leading-6 text-[#E6E6E6]/82">
-                            <span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00]" />
-                            <span>{channel}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+              ) : null}
+            </div>
+            <p className="mt-3 text-center text-[13px] leading-6 text-[#E6E6E6]/78 sm:text-[14px]">
+              Die Senderliste wird regelmäßig aktualisiert. Sie suchen einen bestimmten Sender?{" "}
+              <a
+                href={whatsappInquiryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={whatsappLinkClass}
+                onClick={() => handleWhatsAppClick("senderliste_search_whatsapp")}
+              >
+                Über WhatsApp nachfragen
+              </a>
+            </p>
+            <p className="mt-2 text-center text-[12px] font-medium uppercase tracking-[0.14em] text-[#F5F5F5]/52">
+              {formatCategoryCount(filteredCategories.length)}
+            </p>
+          </div>
         </div>
 
-        {filteredCategories.length === 0 ? (
-          <div className="mt-8 rounded-[22px] border border-[#A6FF00]/20 bg-[#050806] p-6 text-center text-[#E6E6E6]/82">
-            Keine passende Kategorie gefunden. Versuchen Sie ein anderes Land, eine Region oder eine
-            Senderkategorie.
-          </div>
-        ) : null}
+        {filteredCategories.length > 0 ? (
+          <div className="mt-6 grid items-start gap-3 md:grid-cols-2 md:gap-3.5 lg:grid-cols-4 lg:gap-3.5">
+            {filteredCategories.map(({ category, index }, listIndex) => {
+              const isOpen = openIndex === index;
+              const panelId = `sender-category-${index}`;
+              const exampleChannels = category.channels.slice(0, EXAMPLE_CHANNEL_LIMIT);
 
-        <div className="mx-auto mt-12 max-w-[920px] rounded-[28px] border border-[#A6FF00]/28 bg-[linear-gradient(180deg,#071006_0%,#030503_100%)] p-6 text-center shadow-[0_24px_70px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-8 lg:p-10">
+              return (
+                <Fragment key={`${category.region}-${category.title}`}>
+                  {listIndex === MID_BANNER_AFTER ? renderMidBanner() : null}
+                  <article
+                    className={`overflow-hidden rounded-[22px] border bg-[#050806] shadow-[0_18px_48px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 ${
+                      isOpen
+                        ? "border-[#A6FF00]/52 bg-[#060a07]"
+                        : "border-[#A6FF00]/20 hover:border-[#A6FF00]/42 hover:bg-[#060907]"
+                    }`}
+                  >
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
+                      onClick={() => toggleCategory(index, category)}
+                      onKeyDown={(event) => handleCategoryKeyDown(event, index, category)}
+                      className="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3.5 text-left sm:px-5 sm:py-4"
+                    >
+                      <span className="min-w-0">
+                        <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-[#A6FF00]/78">
+                          {category.region}
+                        </span>
+                        <span className="block truncate text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">
+                          {category.title}
+                        </span>
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#A6FF00]/28 bg-[#A6FF00]/8 text-[20px] font-light leading-none text-[#A6FF00] transition-transform duration-300 ${
+                          isOpen ? "rotate-45" : ""
+                        }`}
+                      >
+                        +
+                      </span>
+                    </div>
+
+                    <div
+                      id={panelId}
+                      className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                        isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        {isOpen ? (
+                          <div className="border-t border-[#1F1F1F] px-4 pb-4 pt-3 sm:px-5 sm:pb-5">
+                            <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00]/88">
+                              Beispiele aus dieser Kategorie:
+                            </p>
+                            <ul className="mt-2.5 grid gap-1.5">
+                              {exampleChannels.map((channel) => (
+                                <li
+                                  key={channel}
+                                  className="flex gap-2.5 text-[13px] leading-6 text-[#E6E6E6]/82"
+                                >
+                                  <span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00]" />
+                                  <span>{channel}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
+                  </article>
+                </Fragment>
+              );
+            })}
+            {filteredCategories.length <= MID_BANNER_AFTER ? renderMidBanner() : null}
+          </div>
+        ) : (
+          <div className="mt-8 rounded-[22px] border border-[#A6FF00]/20 bg-[#050806] p-6 text-center sm:p-8">
+            <p className="text-[16px] font-bold text-[#F5F5F5]">Keine passende Kategorie gefunden.</p>
+            <p className="mx-auto mt-3 max-w-[560px] text-[14px] leading-7 text-[#E6E6E6]/82">
+              Fragen Sie uns über WhatsApp, ob Ihr gewünschter Sender verfügbar ist.
+            </p>
+            <a
+              href={whatsappInquiryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${whatsappLinkClass} mt-4 inline-block text-[14px]`}
+              onClick={() => handleWhatsAppClick("senderliste_no_results")}
+            >
+              Sender über WhatsApp anfragen
+            </a>
+          </div>
+        )}
+
+        <p className="mx-auto mt-10 max-w-[920px] text-center text-[12px] font-medium tracking-[0.02em] text-[#F5F5F5]/62 sm:text-[13px]">
+          22.000+ Sender · Regelmäßig aktualisiert · Alle Geräte · Support auf Deutsch
+        </p>
+
+        <div className="mx-auto mt-6 max-w-[920px] rounded-[28px] border border-[#A6FF00]/28 bg-[linear-gradient(180deg,#071006_0%,#030503_100%)] p-6 text-center shadow-[0_24px_70px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-8 lg:p-10">
           <h2 className="text-[1.75rem] font-black leading-tight tracking-[-0.045em] text-[#F5F5F5] sm:text-[2.35rem]">
             Nicht gefunden, was Sie suchen?
           </h2>
           <p className="mx-auto mt-4 max-w-[720px] text-[14px] leading-7 text-[#E6E6E6]/84 sm:text-[15px]">
-            Unsere vollständige IPTV Kaufen Senderliste umfasst tausende internationale Kanäle und wird
-            regelmäßig erweitert. Kontaktieren Sie uns, wenn Sie eine bestimmte Kategorie suchen.
+            Unsere IPTV Senderliste umfasst zahlreiche internationale Sender und wird regelmäßig
+            aktualisiert. Fragen Sie uns über WhatsApp nach einem bestimmten Sender oder wählen Sie
+            direkt ein passendes Paket.
           </p>
-          <Link
-            href="/#preise"
-            className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} mt-6 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-extrabold uppercase tracking-[0.13em] hover:bg-[#B8FF4D]`}
-            style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.senderliste } as CSSProperties}
-          >
-            Jetzt IPTV Kaufen
-          </Link>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <Link
+              href="/#preise"
+              className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
+              style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.senderlisteBottom } as CSSProperties}
+              onClick={() => {
+                trackEvent(ANALYTICS_EVENTS.senderlisteBottomCtaClick, {
+                  page_path: "/senderliste",
+                  button_location: "senderliste_bottom_cta",
+                });
+              }}
+            >
+              JETZT PAKET AUSWÄHLEN
+            </Link>
+            <a
+              href={whatsappInquiryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/35 px-6 py-3 text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#A6FF00] transition duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 sm:text-[12px]"
+              onClick={() => handleWhatsAppClick("senderliste_bottom_whatsapp")}
+            >
+              SENDER ÜBER WHATSAPP ANFRAGEN
+            </a>
+          </div>
         </div>
-
-        <style>{`
-          .senderliste-scroll {
-            scrollbar-color: rgba(166, 255, 0, 0.5) rgba(5, 8, 6, 0.82);
-            scrollbar-width: thin;
-          }
-
-          .senderliste-scroll::-webkit-scrollbar {
-            width: 6px;
-          }
-
-          .senderliste-scroll::-webkit-scrollbar-track {
-            background: rgba(5, 8, 6, 0.82);
-          }
-
-          .senderliste-scroll::-webkit-scrollbar-thumb {
-            background: rgba(166, 255, 0, 0.46);
-            border-radius: 999px;
-          }
-        `}</style>
       </div>
     </section>
   );

@@ -15,6 +15,12 @@ export const ANALYTICS_EVENTS = {
   checkoutError: "checkout_error",
   refundPolicyClick: "refund_policy_click",
   senderlisteClick: "senderliste_click",
+  senderlisteSearch: "senderliste_search",
+  senderlisteCategoryOpen: "senderliste_category_open",
+  senderlisteWhatsappClick: "senderliste_whatsapp_click",
+  senderlisteMidCtaClick: "senderliste_mid_cta_click",
+  senderlisteBottomCtaClick: "senderliste_bottom_cta_click",
+  senderlisteNoResults: "senderliste_no_results",
   purchase: "purchase",
   purchaseComplete: "purchase_complete",
 } as const;

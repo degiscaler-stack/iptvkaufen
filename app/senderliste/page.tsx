@@ -17,7 +17,7 @@ export default function SenderlistePage() {
     <main className="min-h-screen bg-[#000000] text-[#F5F5F5]">
       <section
         aria-labelledby="senderliste-heading"
-        className="relative isolate flex min-h-[620px] items-center justify-center overflow-hidden px-5 pb-16 pt-32 text-center sm:px-8 sm:pt-36 lg:min-h-[720px] lg:px-0 lg:pt-40"
+        className="relative isolate flex min-h-[496px] items-center justify-center overflow-hidden px-5 pb-12 pt-28 text-center sm:px-8 sm:pt-28 lg:min-h-[576px] lg:px-0 lg:pt-32"
       >
         <Image
           src="/images/iptv-kaufen-senderliste-hero.webp"
@@ -39,16 +39,13 @@ export default function SenderlistePage() {
           </p>
           <h1
             id="senderliste-heading"
-            className="text-balance text-[2.45rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.58)] sm:text-[3.65rem] lg:text-[5rem]"
+            className="text-balance text-[2.1rem] font-black leading-[1.04] tracking-[-0.05em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.58)] sm:text-[3.1rem] lg:text-[4.2rem]"
           >
-            Senderliste{" "}
-            <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              IPTV Kaufen
-            </span>
+            IPTV Senderliste – Sender, Sport, Filme &amp; Serien
           </h1>
-          <p className="mx-auto mt-5 max-w-[840px] text-[15px] leading-7 text-[#F5F5F5]/88 [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:text-[18px] sm:leading-8">
-            Entdecken Sie eine große Auswahl an deutschen, europäischen, internationalen, Sport-, Film-,
-            Serien- und Kinderkanälen – optimiert für Ihr IPTV Kaufen Erlebnis.
+          <p className="mx-auto mt-4 max-w-[840px] text-[15px] leading-7 text-[#F5F5F5]/88 [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:mt-5 sm:text-[17px] sm:leading-8">
+            Entdecken Sie unsere umfangreiche Auswahl an deutschen, europäischen und internationalen
+            Senderkategorien sowie Sport, Filme, Serien und Kinderinhalte.
           </p>
         </div>
       </section>

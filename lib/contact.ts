@@ -12,6 +12,8 @@ export const WHATSAPP_MESSAGES = {
   package3Months: "Hallo, ich möchte das 3-Monate-IPTV-Paket für 19,99€ bestellen.",
   package6Months: "Hallo, ich möchte das 6-Monate-IPTV-Paket für 29,99€ bestellen.",
   package12Months: "Hallo, ich möchte das 12-Monate-IPTV-Paket für 49,99€ bestellen.",
+  senderlisteInquiry:
+    "Hallo, ich möchte wissen, ob ein bestimmter Sender in Ihrem IPTV-Angebot verfügbar ist.",
 } as const;
 
 export function buildWhatsAppUrl(message?: string): string {

@@ -13,6 +13,8 @@ export const CTA_MOTION_DELAYS = {
   blogPrimary: "-0.35s",
   blogPricing: "-0.55s",
   senderliste: "-0.45s",
+  senderlisteMid: "-0.55s",
+  senderlisteBottom: "-0.65s",
   anchorRedirect: "-0.3s",
 } as const;
 
