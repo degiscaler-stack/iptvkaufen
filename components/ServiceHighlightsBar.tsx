@@ -1,7 +1,7 @@
 const serviceHighlights = [
   { label: "22.000+ Sender", icon: "broadcast" },
   { label: "HD, Full HD & 4K", icon: "quality" },
-  { label: "Alle Geräte", icon: "devices" },
+  { label: "Mehrere Geräte gleichzeitig", icon: "devices" },
   { label: "Stabil & Sicher", icon: "shield" },
   { label: "24/7 Support", icon: "support" },
 ] as const;

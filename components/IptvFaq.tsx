@@ -1,39 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-
-const faqItems = [
-  {
-    question: "Was ist bei IPTV Kaufen enthalten?",
-    answer:
-      "Sie erhalten Zugriff auf Live-TV Sender, Filme, Serien, Sport und weitere Inhalte. Die Nutzung ist auf verschiedenen Geräten möglich, darunter Smart TV, Android TV, Fire TV, Smartphone, Tablet, PC und TV Box.",
-  },
-  {
-    question: "Auf welchen Geräten kann ich IPTV nutzen?",
-    answer:
-      "IPTV Kaufen funktioniert auf vielen modernen Geräten, zum Beispiel Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet, TV Box und weiteren kompatiblen Geräten.",
-  },
-  {
-    question: "Wie schnell erhalte ich meinen Zugang nach der Bestellung?",
-    answer:
-      "Nach der Bestellung werden Ihre Zugangsdaten schnell bereitgestellt. Danach können Sie die Einrichtung auf Ihrem bevorzugten Gerät starten.",
-  },
-  {
-    question: "Welche Zahlungsmethoden werden unterstützt?",
-    answer:
-      "Sie können Ihre Bestellung über die verfügbaren Zahlungsmethoden auf der Website abschließen. Nach erfolgreicher Zahlung erhalten Sie die nächsten Schritte und Ihre Zugangsdaten.",
-  },
-  {
-    question: "Gibt es Support bei der Einrichtung?",
-    answer:
-      "Ja. Bei Fragen zur Einrichtung oder Nutzung steht Ihnen Support zur Verfügung, damit Sie IPTV schnell und korrekt auf Ihrem Gerät verwenden können.",
-  },
-  {
-    question: "Gibt es eine Geld-zurück-Garantie?",
-    answer:
-      "Ja. Sie können innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn Sie mit dem Service nicht zufrieden sind – gemäß unserer Rückerstattungsrichtlinie.",
-  },
-] as const;
+import { FAQ_ITEMS } from "@/lib/faq";
 
 function AccordionIcon({ isOpen }: { isOpen: boolean }) {
   return (
@@ -86,7 +54,7 @@ export default function IptvFaq() {
         </div>
 
         <div className="mt-8 w-full sm:mt-10">
-          {faqItems.map((item, index) => {
+          {FAQ_ITEMS.map((item, index) => {
             const isOpen = openIndex === index;
             const buttonId = `${baseId}-button-${index}`;
             const panelId = `${baseId}-panel-${index}`;

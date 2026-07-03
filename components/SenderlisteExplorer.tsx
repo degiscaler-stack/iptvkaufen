@@ -717,7 +717,7 @@ export default function SenderlisteExplorer() {
         ) : null}
 
         <p className="mx-auto mt-10 max-w-[920px] text-center text-[12px] font-medium tracking-[0.02em] text-[#F5F5F5]/62 sm:text-[13px]">
-          22.000+ Sender · Regelmäßig aktualisiert · Alle Geräte · Support auf Deutsch
+          22.000+ Sender · Regelmäßig aktualisiert · Mehrere Geräte gleichzeitig · Support auf Deutsch
         </p>
 
         <div className="mx-auto mt-6 max-w-[920px] rounded-[28px] border border-[#A6FF00]/28 bg-[linear-gradient(180deg,#071006_0%,#030503_100%)] p-6 text-center shadow-[0_24px_70px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-8 lg:p-10">

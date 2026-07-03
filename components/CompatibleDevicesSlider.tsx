@@ -16,15 +16,15 @@ export default function CompatibleDevicesSlider() {
             id="compatible-devices-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.2rem]"
           >
-            IPTV Kaufen auf allen{" "}
+            Auf mehreren Geräten{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              Geräten
+              gleichzeitig
             </span>{" "}
-            nutzen
+            streamen
           </h2>
           <p className="mx-auto mt-3 max-w-[640px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:mt-4 sm:text-[15px] sm:leading-7">
-            Streamen Sie IPTV Kaufen auf Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone,
-            Tablet, TV Box und weiteren modernen Geräten.
+            Genießen Sie Ihren IPTV-Zugang gleichzeitig auf mehreren kompatiblen Geräten – zum
+            Beispiel Smart TV, Smartphone, Tablet, Computer oder TV Box.
           </p>
         </div>
 

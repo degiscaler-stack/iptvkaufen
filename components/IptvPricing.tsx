@@ -15,6 +15,9 @@ import {
   COMPARISON_PRICE_LABEL,
   IPTV_PACKAGE_FEATURES,
   IPTV_PACKAGES,
+  MULTI_DEVICE_BADGE_SUPPORT,
+  MULTI_DEVICE_BADGE_TEXT,
+  MULTI_DEVICE_FEATURE,
   ORDER_PROCESS_HEADING,
   ORDER_PROCESS_STEPS,
   PAYMENT_METHODS_HEADING,
@@ -22,6 +25,7 @@ import {
   PAYMENT_METHODS_PRIMARY,
   PAYMENT_METHODS_SUPPORTING,
   PRICE_COMPARISON_NOTE,
+  PRICING_TRUST_LINE,
   TRIAL_PRICE_NUMERIC,
   TRIAL_REASSURANCE_TEXT,
   TRIAL_SUPPORTING_TEXT,
@@ -33,9 +37,9 @@ import {
   ctaSolidGreenClass,
 } from "@/lib/cta-motion";
 
-function CheckIcon() {
+function CheckIcon({ className = "h-3.5 w-3.5 shrink-0 text-[#AFFF00]" }: { className?: string }) {
   return (
-    <svg className="h-3.5 w-3.5 shrink-0 text-[#AFFF00]" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <svg className={className} viewBox="0 0 20 20" fill="none" aria-hidden="true">
       <path
         d="m4.5 10.3 3.3 3.2 7.7-8"
         stroke="currentColor"
@@ -43,6 +47,16 @@ function CheckIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+function MultiDeviceIcon({ className = "h-3.5 w-3.5 shrink-0" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="5" width="13" height="9" rx="1.8" stroke="currentColor" strokeWidth="1.8" />
+      <rect x="17" y="9" width="4" height="8" rx="1.2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M7 18h6M10 14v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }
@@ -154,7 +168,7 @@ export default function IptvPricing() {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Flexible IPTV Pakete für jeden Bedarf – sofort aktiv, stabil und kompatibel mit allen Geräten.
+            Flexible IPTV Pakete für jeden Bedarf – sofort aktiv, stabil und auf mehreren Geräten gleichzeitig nutzbar.
           </p>
         </div>
 
@@ -210,8 +224,8 @@ export default function IptvPricing() {
               <div
                 className={
                   item.highlighted
-                    ? "relative flex h-full min-h-[540px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.11),transparent_40%),linear-gradient(160deg,rgba(15,26,11,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[560px] sm:px-5 sm:py-6 lg:px-6"
-                    : "relative flex h-full min-h-[540px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.045),transparent_40%),linear-gradient(160deg,rgba(13,19,10,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] sm:min-h-[560px] sm:px-5 sm:py-6 lg:px-6"
+                    ? "relative flex h-full min-h-[580px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.11),transparent_40%),linear-gradient(160deg,rgba(15,26,11,0.98)_0%,rgba(8,13,8,1)_54%,rgba(3,7,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[600px] sm:px-5 sm:py-6 lg:px-6"
+                    : "relative flex h-full min-h-[580px] flex-col overflow-hidden rounded-[21px] bg-[radial-gradient(circle_at_50%_0%,rgba(175,255,0,0.045),transparent_40%),linear-gradient(160deg,rgba(13,19,10,0.98)_0%,rgba(7,11,8,1)_56%,rgba(3,6,5,1)_100%)] px-4 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] sm:min-h-[600px] sm:px-5 sm:py-6 lg:px-6"
                 }
               >
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#AFFF00]/45 to-transparent" />
@@ -281,13 +295,42 @@ export default function IptvPricing() {
                   ) : null}
                 </div>
 
-                <ul className="mx-auto mb-5 mt-3 w-full max-w-[250px] space-y-1.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88 sm:mb-6 sm:mt-4 sm:max-w-[215px] sm:space-y-2.5">
-                  {IPTV_PACKAGE_FEATURES.map((feature) => (
-                    <li key={feature} className="grid grid-cols-[15px_1fr] items-center gap-2.5 sm:gap-3">
-                      <CheckIcon />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
+                <div className="mx-auto mt-3 w-full max-w-[250px] sm:mt-4 sm:max-w-[215px]">
+                  <div className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#AFFF00] px-2.5 py-1.5 text-[10px] font-extrabold uppercase leading-tight tracking-[0.04em] text-[#050505] sm:px-3 sm:text-[10.5px]">
+                    <MultiDeviceIcon className="h-3.5 w-3.5 shrink-0 text-[#050505]" />
+                    <span>{MULTI_DEVICE_BADGE_TEXT}</span>
+                  </div>
+                  <p className="mt-1.5 text-center text-[11px] font-medium leading-snug text-[#E6E6E6]/82 sm:text-[11.5px]">
+                    {MULTI_DEVICE_BADGE_SUPPORT}
+                  </p>
+                </div>
+
+                <ul className="mx-auto mb-5 mt-3 w-full max-w-[250px] space-y-1.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88 sm:mb-6 sm:mt-3.5 sm:max-w-[215px] sm:space-y-2.5">
+                  {IPTV_PACKAGE_FEATURES.map((feature) => {
+                    const isMultiDevice = feature === MULTI_DEVICE_FEATURE;
+
+                    return (
+                      <li
+                        key={feature}
+                        className={
+                          isMultiDevice
+                            ? "grid grid-cols-[15px_1fr] items-center gap-2.5 rounded-lg bg-[#AFFF00]/10 px-1.5 py-1 sm:gap-3"
+                            : "grid grid-cols-[15px_1fr] items-center gap-2.5 sm:gap-3"
+                        }
+                      >
+                        <CheckIcon />
+                        <span
+                          className={
+                            isMultiDevice
+                              ? "font-semibold text-[#AFFF00]"
+                              : undefined
+                          }
+                        >
+                          {feature}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <TrackedAnchor
@@ -317,7 +360,11 @@ export default function IptvPricing() {
           ))}
         </div>
 
-        <p className="mx-auto mt-6 max-w-[820px] text-center text-[12px] leading-5 text-[#F5F5F5]/58 sm:text-[13px] sm:leading-6">
+        <p className="mx-auto mt-5 max-w-[920px] text-center text-[11px] font-medium leading-5 text-[#F5F5F5]/82 sm:mt-6 sm:text-[12px] sm:leading-6">
+          {PRICING_TRUST_LINE}
+        </p>
+
+        <p className="mx-auto mt-4 max-w-[820px] text-center text-[12px] leading-5 text-[#F5F5F5]/58 sm:text-[13px] sm:leading-6">
           {PRICE_COMPARISON_NOTE}
         </p>
 

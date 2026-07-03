@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import HeroImagePreload from "@/components/preloads/HeroImagePreload";
 import CompactTrustStrip from "@/components/CompactTrustStrip";
+import { FAQ_ITEMS } from "@/lib/faq";
 import { IPTV_PACKAGES } from "@/lib/pricing";
 import { SEO_TITLES } from "@/lib/seo-titles";
 
@@ -25,39 +26,6 @@ const seoDescription =
   "IPTV kaufen in Deutschland: 22.000+ Sender, Filme, Serien und Sport in HD, Full HD und 4K. 24-Stunden-Test für 3€ und 30 Tage Geld-zurück.";
 const productDescription =
   "Premium IPTV Zugang mit Live-TV Sendern, Filmen, Serien, Sport und internationaler Senderliste in HD, Full HD und 4K.";
-
-const faqSchemaItems = [
-  {
-    question: "Was ist bei IPTV Kaufen enthalten?",
-    answer:
-      "Sie erhalten Zugriff auf Live-TV Sender, Filme, Serien, Sport und weitere Inhalte. Die Nutzung ist auf verschiedenen Geräten möglich, darunter Smart TV, Android TV, Fire TV, Smartphone, Tablet, PC und TV Box.",
-  },
-  {
-    question: "Auf welchen Geräten kann ich IPTV nutzen?",
-    answer:
-      "IPTV Kaufen funktioniert auf vielen modernen Geräten, zum Beispiel Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet, TV Box und weiteren kompatiblen Geräten.",
-  },
-  {
-    question: "Wie schnell erhalte ich meinen Zugang nach der Bestellung?",
-    answer:
-      "Nach der Bestellung werden Ihre Zugangsdaten schnell bereitgestellt. Danach können Sie die Einrichtung auf Ihrem bevorzugten Gerät starten.",
-  },
-  {
-    question: "Welche Zahlungsmethoden werden unterstützt?",
-    answer:
-      "Nach Bestätigung Ihrer Bestellung über WhatsApp erhalten Sie die verfügbaren Zahlungsinformationen. PayPal, Visa, Mastercard und weitere gängige Zahlungsarten stehen zur Verfügung. Keine Zahlungsdaten werden direkt auf dieser Website eingegeben.",
-  },
-  {
-    question: "Gibt es Support bei der Einrichtung?",
-    answer:
-      "Ja. Bei Fragen zur Einrichtung oder Nutzung steht Ihnen Support zur Verfügung, damit Sie IPTV schnell und korrekt auf Ihrem Gerät verwenden können.",
-  },
-  {
-    question: "Gibt es eine Geld-zurück-Garantie?",
-    answer:
-      "Ja. Sie können innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn Sie mit dem Service nicht zufrieden sind – gemäß unserer Rückerstattungsrichtlinie.",
-  },
-] as const;
 
 export const metadata: Metadata = {
   title: seoTitle,
@@ -129,7 +97,7 @@ const structuredData = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: faqSchemaItems.map((item) => ({
+      mainEntity: FAQ_ITEMS.map((item) => ({
         "@type": "Question",
         name: item.question,
         acceptedAnswer: {
