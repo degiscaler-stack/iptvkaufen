@@ -10,25 +10,29 @@ import {
   WHATSAPP_MESSAGES,
 } from "@/lib/contact";
 import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
-import { COUNTRIES_META } from "@/lib/senderliste/generated/countries-meta";
-import { SENDER_SEARCH_INDEX } from "@/lib/senderliste/generated/search-index";
-import type {
-  FilterChipId,
-  SenderCountryData,
-  SenderCountryMeta,
-} from "@/lib/senderliste/types";
-import { PREVIEW_CHANNEL_LIMIT } from "@/lib/senderliste/types";
 import {
-  buildChannelPreview,
-  countryMatchesQuery,
-  filterChannelsByChip,
-  formatFilteredSenderCount,
+  getCachedCountryChannels,
+  loadCatalogIndex,
+  loadCountryChannels,
+  loadPageSearchIndex,
+} from "@/lib/senderliste/loader";
+import { TOPIC_CATEGORIES } from "@/lib/senderliste/topics";
+import type {
+  CatalogChannel,
+  CatalogCountryFile,
+  PageSearchIndex,
+  SenderCard,
+  TopicChannel,
+} from "@/lib/senderliste/types";
+import { CHANNEL_BATCH_SIZE, INITIAL_CHANNEL_BATCH } from "@/lib/senderliste/types";
+import {
+  buildSenderCards,
+  cardMatchesPageSearch,
+  filterChannels,
+  formatMatchCount,
   formatSenderCount,
-  formatShowAllLabel,
-  getAvailableFilterChips,
   getMatchingChannelNames,
   groupChannelsByCategory,
-  loadCountryData,
   normalizeSearchValue,
 } from "@/lib/senderliste/utils";
 
@@ -38,120 +42,131 @@ const whatsappLinkClass =
   "font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#A6FF00] hover:underline focus:text-[#A6FF00] focus-visible:text-[#A6FF00] active:text-[#A6FF00] visited:text-[#A6FF00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]";
 
 function formatCategoryCount(count: number) {
-  if (count === 1) {
-    return "1 Kategorie gefunden";
-  }
-
-  return `${count} Kategorien gefunden`;
+  return count === 1 ? "1 Kategorie gefunden" : `${count} Kategorien gefunden`;
 }
 
-type CountryPanelProps = {
-  meta: SenderCountryMeta;
-  data: SenderCountryData | null;
+type ChannelListItem = CatalogChannel | TopicChannel;
+
+type OpenPanelProps = {
+  card: SenderCard;
+  channels: ChannelListItem[] | null;
   isLoading: boolean;
   loadError: boolean;
-  searchQuery: string;
+  pageQuery: string;
   panelId: string;
   onRetry: () => void;
 };
 
-function CountryPanel({
-  meta,
-  data,
+function OpenCountryPanel({
+  card,
+  channels,
   isLoading,
   loadError,
-  searchQuery,
+  pageQuery,
   panelId,
   onRetry,
-}: CountryPanelProps) {
-  const [showAll, setShowAll] = useState(false);
-  const [activeFilter, setActiveFilter] = useState<FilterChipId>("alle");
+}: OpenPanelProps) {
+  const [localQuery, setLocalQuery] = useState(pageQuery);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_CHANNEL_BATCH);
   const panelTopRef = useRef<HTMLDivElement | null>(null);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+  const localSearchTrackedRef = useRef(false);
 
   useEffect(() => {
-    setShowAll(false);
-    setActiveFilter("alle");
-  }, [meta.id]);
+    setLocalQuery(pageQuery);
+    setVisibleCount(INITIAL_CHANNEL_BATCH);
+    localSearchTrackedRef.current = false;
+  }, [card.id, pageQuery]);
 
-  const channels = data?.channels ?? [];
+  const allChannels = channels ?? [];
   const filteredChannels = useMemo(
-    () => filterChannelsByChip(channels, activeFilter),
-    [activeFilter, channels],
+    () => filterChannels(allChannels, localQuery),
+    [allChannels, localQuery],
   );
-  const previewChannels = useMemo(
-    () => buildChannelPreview(filteredChannels, PREVIEW_CHANNEL_LIMIT),
-    [filteredChannels],
-  );
-  const visibleChannels = showAll ? filteredChannels : previewChannels;
+  const visibleChannels = filteredChannels.slice(0, visibleCount);
   const groupedChannels = useMemo(
     () => groupChannelsByCategory(visibleChannels),
     [visibleChannels],
   );
-  const availableFilters = useMemo(
-    () => getAvailableFilterChips(meta.categories),
-    [meta.categories],
+  const matchingNames = useMemo(
+    () => getMatchingChannelNames(filteredChannels, localQuery || pageQuery),
+    [filteredChannels, localQuery, pageQuery],
   );
-  const matchingNames = useMemo(() => {
-    if (!searchQuery || !data) {
-      return new Set<string>();
-    }
 
-    return getMatchingChannelNames(
-      data.channels.map((channel) => channel.name),
-      searchQuery,
-    );
-  }, [data, searchQuery]);
+  useEffect(() => {
+    setVisibleCount(INITIAL_CHANNEL_BATCH);
+  }, [localQuery]);
 
-  const totalCount = channels.length;
-  const canExpand = filteredChannels.length > PREVIEW_CHANNEL_LIMIT;
-  const countryWhatsAppUrl = buildWhatsAppUrl(buildSenderlisteCountryInquiryMessage(meta.name));
-
-  const handleShowAllToggle = () => {
-    if (showAll) {
-      setShowAll(false);
-      trackEvent(ANALYTICS_EVENTS.senderlisteShowLessChannels, {
-        country_name: meta.name,
-        region: meta.region,
-        channel_count: totalCount,
-        page_path: "/senderliste",
-        button_location: "senderliste_show_less",
-      });
-      panelTopRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel || filteredChannels.length <= visibleCount) {
       return;
     }
 
-    setShowAll(true);
-    trackEvent(ANALYTICS_EVENTS.senderlisteShowAllChannels, {
-      country_name: meta.name,
-      region: meta.region,
-      channel_count: totalCount,
-      page_path: "/senderliste",
-      button_location: "senderliste_show_all",
-    });
-  };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setVisibleCount((current) =>
+            Math.min(current + CHANNEL_BATCH_SIZE, filteredChannels.length),
+          );
+        }
+      },
+      { rootMargin: "240px 0px" },
+    );
 
-  const handleFilterChange = (filterId: FilterChipId) => {
-    setActiveFilter(filterId);
-    setShowAll(filterId === "alle" ? false : true);
-    trackEvent(ANALYTICS_EVENTS.senderlisteCategoryFilter, {
-      country_name: meta.name,
-      region: meta.region,
-      category_name: filterId,
-      channel_count: filterChannelsByChip(channels, filterId).length,
-      page_path: "/senderliste",
-      button_location: "senderliste_category_filter",
-    });
-  };
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [filteredChannels.length, visibleCount, card.id, localQuery]);
 
-  const handleCountryWhatsAppClick = (buttonLocation: string) => {
+  useEffect(() => {
+    const query = localQuery.trim();
+    if (!query || localSearchTrackedRef.current) {
+      return;
+    }
+
+    localSearchTrackedRef.current = true;
+    trackEvent(ANALYTICS_EVENTS.senderlisteCountrySearch, {
+      country_code: card.countryCode ?? card.id,
+      country_name: card.name,
+      channel_count: card.channelCount,
+      results_count: filteredChannels.length,
+      search_term_length: query.length,
+      page_path: "/senderliste",
+    });
+    trackEvent(ANALYTICS_EVENTS.senderlisteChannelResults, {
+      country_code: card.countryCode ?? card.id,
+      country_name: card.name,
+      channel_count: card.channelCount,
+      results_count: filteredChannels.length,
+      search_term_length: query.length,
+      page_path: "/senderliste",
+    });
+  }, [card.channelCount, card.countryCode, card.id, card.name, filteredChannels.length, localQuery]);
+
+  const countryWhatsAppUrl = buildWhatsAppUrl(
+    buildSenderlisteCountryInquiryMessage(card.name),
+  );
+
+  const handleWhatsAppRequest = (buttonLocation: string) => {
+    trackEvent(ANALYTICS_EVENTS.senderlisteWhatsappRequest, {
+      country_code: card.countryCode ?? card.id,
+      country_name: card.name,
+      channel_count: card.channelCount,
+      page_path: "/senderliste",
+      button_location: buttonLocation,
+    });
     trackEvent(ANALYTICS_EVENTS.senderlisteChannelWhatsappClick, {
-      country_name: meta.name,
-      region: meta.region,
-      channel_count: totalCount,
+      country_name: card.name,
+      region: card.region,
+      channel_count: card.channelCount,
       page_path: "/senderliste",
       button_location: buttonLocation,
     });
   };
+
+  const resultLabel = localQuery.trim()
+    ? formatMatchCount(filteredChannels.length)
+    : formatSenderCount(card.channelCount);
 
   return (
     <div
@@ -160,21 +175,47 @@ function CountryPanel({
       className="border-t border-[#1F1F1F] px-4 pb-4 pt-3 sm:px-5 sm:pb-5"
     >
       <h3 className="text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">
-        Sender aus {meta.name}
+        Sender aus {card.name}
       </h3>
       <p className="mt-1 text-[13px] leading-6 text-[#E6E6E6]/78">
-        Eine Auswahl wichtiger Sender aus verschiedenen Bereichen.
+        Senderkatalog für {card.name}
       </p>
       <p className="mt-2 text-[12px] font-medium uppercase tracking-[0.12em] text-[#A6FF00]/80">
-        {showAll || activeFilter !== "alle"
-          ? formatFilteredSenderCount(filteredChannels.length, activeFilter)
-          : totalCount === 100
-            ? "100 Sender aus verschiedenen Bereichen"
-            : formatSenderCount(totalCount)}
+        {resultLabel}
       </p>
 
+      <div className="relative mt-4">
+        <label htmlFor={`senderliste-country-search-${card.id}`} className="sr-only">
+          Sender in {card.name} suchen
+        </label>
+        <input
+          id={`senderliste-country-search-${card.id}`}
+          type="search"
+          value={localQuery}
+          onChange={(event) => {
+            localSearchTrackedRef.current = false;
+            setLocalQuery(event.target.value);
+          }}
+          placeholder={`Sender in ${card.name} suchen...`}
+          className="h-11 w-full rounded-xl border border-[#A6FF00]/24 bg-[#050806] px-4 pr-12 text-[14px] font-medium text-[#F5F5F5] outline-none transition duration-300 placeholder:text-[#F5F5F5]/42 focus:border-[#A6FF00]/70"
+        />
+        {localQuery ? (
+          <button
+            type="button"
+            aria-label="Suche löschen"
+            onClick={() => {
+              setLocalQuery("");
+              panelTopRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full px-2 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-[#A6FF00] transition duration-300 hover:bg-[#A6FF00]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]"
+          >
+            Suche löschen
+          </button>
+        ) : null}
+      </div>
+
       {isLoading ? (
-        <p className="mt-4 text-[13px] text-[#E6E6E6]/72">Sender werden geladen…</p>
+        <p className="mt-4 text-[13px] text-[#E6E6E6]/72">Senderkatalog wird geladen…</p>
       ) : null}
 
       {loadError ? (
@@ -192,33 +233,10 @@ function CountryPanel({
         </div>
       ) : null}
 
-      {data ? (
+      {channels ? (
         <>
-          {showAll && availableFilters.length > 1 ? (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {availableFilters.map((chip) => {
-                const isActive = activeFilter === chip.id;
-
-                return (
-                  <button
-                    key={chip.id}
-                    type="button"
-                    onClick={() => handleFilterChange(chip.id)}
-                    className={`rounded-full border px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] ${
-                      isActive
-                        ? "border-[#A6FF00] bg-[#A6FF00] text-[#041004]"
-                        : "border-[#A6FF00]/28 bg-transparent text-[#A6FF00] hover:border-[#A6FF00]/55 hover:bg-[#A6FF00]/8"
-                    }`}
-                  >
-                    {chip.label}
-                  </button>
-                );
-              })}
-            </div>
-          ) : null}
-
           {groupedChannels.length > 0 ? (
-            <div className="mt-4 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {groupedChannels.map((group) => (
                 <section key={group.category} className="min-w-0">
                   <h4 className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]/88">
@@ -227,16 +245,20 @@ function CountryPanel({
                   <ul className="mt-2.5 grid gap-1.5">
                     {group.channels.map((channel) => {
                       const isMatch = matchingNames.has(channel.name);
+                      const key =
+                        "id" in channel ? channel.id : `${card.id}-${channel.name}`;
 
                       return (
                         <li
-                          key={`${meta.id}-${channel.name}`}
+                          key={key}
                           className="flex min-w-0 gap-2.5 text-[13px] leading-6 text-[#E6E6E6]/82"
                         >
                           <span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00]" />
                           <span
                             className={`min-w-0 break-words ${
-                              isMatch ? "rounded-sm bg-[#A6FF00]/16 px-1 font-semibold text-[#F5F5F5]" : ""
+                              isMatch
+                                ? "rounded-sm bg-[#A6FF00]/16 px-1 font-semibold text-[#F5F5F5]"
+                                : ""
                             }`}
                           >
                             {channel.name}
@@ -249,32 +271,29 @@ function CountryPanel({
               ))}
             </div>
           ) : (
-            <p className="mt-4 text-[13px] text-[#E6E6E6]/72">
-              Keine Sender in dieser Kategorie.
-            </p>
+            <p className="mt-4 text-[13px] text-[#E6E6E6]/72">Keine passenden Sender gefunden.</p>
           )}
 
-          {canExpand || showAll ? (
-            <div className="mt-5">
-              <button
-                type="button"
-                onClick={handleShowAllToggle}
-                className="inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-5 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.12em] text-[#041004] transition duration-300 hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:text-[12px]"
-              >
-                {showAll ? "WENIGER ANZEIGEN" : formatShowAllLabel(filteredChannels.length)}
-              </button>
-            </div>
+          {visibleCount < filteredChannels.length ? (
+            <div ref={sentinelRef} className="mt-4 h-8" aria-hidden="true" />
+          ) : null}
+
+          {filteredChannels.length > INITIAL_CHANNEL_BATCH ? (
+            <p className="mt-3 text-[12px] text-[#E6E6E6]/58">
+              {Math.min(visibleCount, filteredChannels.length)} von {filteredChannels.length}{" "}
+              Sendern geladen
+            </p>
           ) : null}
 
           <p className="mt-5 text-[12px] leading-6 text-[#E6E6E6]/68">
-            Die Senderauswahl kann je nach Paket, Region und technischer Verfügbarkeit variieren.
-            Fragen Sie uns bei einem bestimmten Sender{" "}
+            Die Senderauswahl kann je nach Paket, Region und technischer Aktualisierung variieren.
+            Sie suchen einen bestimmten Sender? Fragen Sie uns{" "}
             <a
               href={countryWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={whatsappLinkClass}
-              onClick={() => handleCountryWhatsAppClick("senderliste_availability_notice")}
+              onClick={() => handleWhatsAppRequest("senderliste_availability_notice")}
             >
               über WhatsApp
             </a>
@@ -288,7 +307,7 @@ function CountryPanel({
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-flex items-center justify-center rounded-full border border-[#A6FF00]/35 px-5 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#A6FF00] transition duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:text-[12px]"
-              onClick={() => handleCountryWhatsAppClick("senderliste_country_whatsapp")}
+              onClick={() => handleWhatsAppRequest("senderliste_country_whatsapp")}
             >
               SENDER ÜBER WHATSAPP ANFRAGEN
             </a>
@@ -300,72 +319,92 @@ function CountryPanel({
 }
 
 export default function SenderlisteExplorer() {
+  const [cards, setCards] = useState<SenderCard[]>([]);
+  const [pageSearchIndex, setPageSearchIndex] = useState<PageSearchIndex | null>(null);
+  const [indexError, setIndexError] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [openId, setOpenId] = useState<string | null>(null);
-  const [countryDataMap, setCountryDataMap] = useState<Record<string, SenderCountryData>>({});
+  const [countryDataMap, setCountryDataMap] = useState<Record<string, CatalogCountryFile>>({});
   const [loadingIds, setLoadingIds] = useState<Record<string, boolean>>({});
   const [errorIds, setErrorIds] = useState<Record<string, boolean>>({});
   const whatsappInquiryUrl = buildWhatsAppUrl(WHATSAPP_MESSAGES.senderlisteInquiry);
   const noResultsTrackedRef = useRef(false);
-  const searchTrackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const globalSearchTrackedLengthRef = useRef(0);
+
+  useEffect(() => {
+    let active = true;
+
+    Promise.all([loadCatalogIndex(), loadPageSearchIndex()])
+      .then(([index, searchIndex]) => {
+        if (!active) {
+          return;
+        }
+
+        setCards(buildSenderCards(index));
+        setPageSearchIndex(searchIndex);
+      })
+      .catch(() => {
+        if (active) {
+          setIndexError(true);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const searchQuery = normalizeSearchValue(searchTerm.trim());
 
-  const filteredCategories = useMemo(() => {
-    const metaById = new Map(COUNTRIES_META.map((item) => [item.id, item]));
-
-    return SENDER_SEARCH_INDEX.countries
-      .filter((entry) => countryMatchesQuery(entry, searchQuery))
-      .flatMap((entry) => {
-        const meta = metaById.get(entry.id);
-        return meta ? [{ meta, entry }] : [];
-      });
-  }, [searchQuery]);
+  const filteredCards = useMemo(() => {
+    return cards
+      .map((card) => {
+        const result = cardMatchesPageSearch(card, searchTerm, pageSearchIndex);
+        return { card, ...result };
+      })
+      .filter((item) => item.matches);
+  }, [cards, pageSearchIndex, searchTerm]);
 
   useEffect(() => {
-    if (openId !== null && !filteredCategories.some(({ meta }) => meta.id === openId)) {
+    if (openId !== null && !filteredCards.some(({ card }) => card.id === openId)) {
       setOpenId(null);
     }
-  }, [filteredCategories, openId]);
+  }, [filteredCards, openId]);
 
   useEffect(() => {
     const query = searchTerm.trim();
 
-    if (searchTrackTimeoutRef.current) {
-      clearTimeout(searchTrackTimeoutRef.current);
-    }
-
     if (!query) {
       noResultsTrackedRef.current = false;
+      globalSearchTrackedLengthRef.current = 0;
       return;
     }
 
-    searchTrackTimeoutRef.current = setTimeout(() => {
-      trackEvent(ANALYTICS_EVENTS.senderlisteChannelSearch, {
+    if (globalSearchTrackedLengthRef.current !== query.length) {
+      globalSearchTrackedLengthRef.current = query.length;
+      trackEvent(ANALYTICS_EVENTS.senderlisteGlobalSearch, {
         search_term_length: query.length,
+        results_count: filteredCards.length,
         page_path: "/senderliste",
-        button_location: "senderliste_search",
       });
       trackEvent(ANALYTICS_EVENTS.senderlisteSearch, {
         search_term_length: query.length,
         page_path: "/senderliste",
         button_location: "senderliste_search",
       });
-    }, 500);
-
-    return () => {
-      if (searchTrackTimeoutRef.current) {
-        clearTimeout(searchTrackTimeoutRef.current);
-      }
-    };
-  }, [searchTerm]);
+    }
+  }, [filteredCards.length, searchTerm]);
 
   useEffect(() => {
     const query = searchTerm.trim();
-    const hasResults = filteredCategories.length > 0;
+    const hasResults = filteredCards.length > 0;
 
     if (query && !hasResults && !noResultsTrackedRef.current) {
       noResultsTrackedRef.current = true;
+      trackEvent(ANALYTICS_EVENTS.senderlisteZeroResults, {
+        search_term_length: query.length,
+        page_path: "/senderliste",
+      });
       trackEvent(ANALYTICS_EVENTS.senderlisteNoResults, {
         search_term_length: query.length,
         page_path: "/senderliste",
@@ -376,23 +415,25 @@ export default function SenderlisteExplorer() {
     if (hasResults || !query) {
       noResultsTrackedRef.current = false;
     }
-  }, [filteredCategories.length, searchTerm]);
+  }, [filteredCards.length, searchTerm]);
 
-  const loadCountry = async (id: string, options?: { force?: boolean }) => {
-    if (!options?.force && (countryDataMap[id] || loadingIds[id])) {
+  const loadCountry = async (code: string, options?: { force?: boolean }) => {
+    const normalized = code.toLowerCase();
+
+    if (!options?.force && (countryDataMap[normalized] || loadingIds[normalized])) {
       return;
     }
 
-    setLoadingIds((current) => ({ ...current, [id]: true }));
-    setErrorIds((current) => ({ ...current, [id]: false }));
+    setLoadingIds((current) => ({ ...current, [normalized]: true }));
+    setErrorIds((current) => ({ ...current, [normalized]: false }));
 
     try {
-      const data = await loadCountryData(id);
-      setCountryDataMap((current) => ({ ...current, [id]: data }));
+      const data = await loadCountryChannels(normalized);
+      setCountryDataMap((current) => ({ ...current, [normalized]: data }));
     } catch {
-      setErrorIds((current) => ({ ...current, [id]: true }));
+      setErrorIds((current) => ({ ...current, [normalized]: true }));
     } finally {
-      setLoadingIds((current) => ({ ...current, [id]: false }));
+      setLoadingIds((current) => ({ ...current, [normalized]: false }));
     }
   };
 
@@ -403,13 +444,13 @@ export default function SenderlisteExplorer() {
     });
   };
 
-  const toggleCategory = (meta: SenderCountryMeta) => {
+  const toggleCard = (card: SenderCard) => {
     setOpenId((current) => {
-      if (current === meta.id) {
+      if (current === card.id) {
         trackEvent(ANALYTICS_EVENTS.senderlisteCountryClose, {
-          country_name: meta.name,
-          region: meta.region,
-          channel_count: meta.channelCount,
+          country_code: card.countryCode ?? card.id,
+          country_name: card.name,
+          channel_count: card.channelCount,
           page_path: "/senderliste",
           button_location: "senderliste_category",
         });
@@ -417,11 +458,11 @@ export default function SenderlisteExplorer() {
       }
 
       if (current) {
-        const previous = COUNTRIES_META.find((item) => item.id === current);
+        const previous = cards.find((item) => item.id === current);
         if (previous) {
           trackEvent(ANALYTICS_EVENTS.senderlisteCountryClose, {
+            country_code: previous.countryCode ?? previous.id,
             country_name: previous.name,
-            region: previous.region,
             channel_count: previous.channelCount,
             page_path: "/senderliste",
             button_location: "senderliste_category",
@@ -430,32 +471,42 @@ export default function SenderlisteExplorer() {
       }
 
       trackEvent(ANALYTICS_EVENTS.senderlisteCountryOpen, {
-        country_name: meta.name,
-        region: meta.region,
-        channel_count: meta.channelCount,
+        country_code: card.countryCode ?? card.id,
+        country_name: card.name,
+        channel_count: card.channelCount,
         page_path: "/senderliste",
         button_location: "senderliste_category",
       });
       trackEvent(ANALYTICS_EVENTS.senderlisteCategoryOpen, {
-        category_name: meta.name,
-        category_group: meta.region,
+        category_name: card.name,
+        category_group: card.region,
         page_path: "/senderliste",
         button_location: "senderliste_category",
       });
 
-      void loadCountry(meta.id);
-      return meta.id;
+      if (card.kind === "country" && card.countryCode) {
+        void loadCountry(card.countryCode);
+      }
+
+      return card.id;
     });
   };
 
-  const handleCategoryKeyDown = (
-    event: KeyboardEvent<HTMLElement>,
-    meta: SenderCountryMeta,
-  ) => {
+  const handleCardKeyDown = (event: KeyboardEvent<HTMLElement>, card: SenderCard) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      toggleCategory(meta);
+      toggleCard(card);
     }
+  };
+
+  const getOpenChannels = (card: SenderCard): ChannelListItem[] | null => {
+    if (card.kind === "topic") {
+      const topic = TOPIC_CATEGORIES.find((item) => item.id === card.id);
+      return topic?.channels ?? [];
+    }
+
+    const code = card.countryCode ?? card.id;
+    return countryDataMap[code]?.channels ?? getCachedCountryChannels(code)?.channels ?? null;
   };
 
   const renderMidBanner = () => (
@@ -539,19 +590,32 @@ export default function SenderlisteExplorer() {
               </a>
             </p>
             <p className="mt-2 text-center text-[12px] font-medium uppercase tracking-[0.14em] text-[#F5F5F5]/52">
-              {formatCategoryCount(filteredCategories.length)}
+              {formatCategoryCount(filteredCards.length)}
             </p>
           </div>
         </div>
 
-        {filteredCategories.length > 0 ? (
+        {indexError ? (
+          <div className="mt-8 rounded-[22px] border border-[#A6FF00]/20 bg-[#050806] p-6 text-center sm:p-8">
+            <p className="text-[16px] font-bold text-[#F5F5F5]">
+              Der Senderkatalog konnte nicht geladen werden.
+            </p>
+          </div>
+        ) : null}
+
+        {!indexError && cards.length === 0 ? (
+          <p className="mt-8 text-center text-[14px] text-[#E6E6E6]/72">Senderkatalog wird geladen…</p>
+        ) : null}
+
+        {filteredCards.length > 0 ? (
           <div className="mt-6 grid items-start gap-3 md:grid-cols-2 md:gap-3.5 lg:grid-cols-4 lg:gap-3.5">
-            {filteredCategories.map(({ meta }, listIndex) => {
-              const isOpen = openId === meta.id;
-              const panelId = `sender-category-${meta.id}`;
+            {filteredCards.map(({ card, matchCount }, listIndex) => {
+              const isOpen = openId === card.id;
+              const panelId = `sender-category-${card.id}`;
+              const showMatchCount = Boolean(searchQuery) && matchCount !== card.channelCount;
 
               return (
-                <Fragment key={meta.id}>
+                <Fragment key={card.id}>
                   {listIndex === MID_BANNER_AFTER ? renderMidBanner() : null}
                   <article
                     className={`overflow-hidden rounded-[22px] border bg-[#050806] shadow-[0_18px_48px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 ${
@@ -565,21 +629,26 @@ export default function SenderlisteExplorer() {
                       tabIndex={0}
                       aria-expanded={isOpen}
                       aria-controls={panelId}
-                      onClick={() => toggleCategory(meta)}
-                      onKeyDown={(event) => handleCategoryKeyDown(event, meta)}
+                      onClick={() => toggleCard(card)}
+                      onKeyDown={(event) => handleCardKeyDown(event, card)}
                       className="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3.5 text-left sm:px-5 sm:py-4"
                     >
                       <span className="min-w-0">
                         <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-[#A6FF00]/78">
-                          {meta.region}
+                          {card.region}
                         </span>
-                        <span className="flex min-w-0 items-baseline gap-2">
+                        <span className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
                           <span className="truncate text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">
-                            {meta.name}
+                            {card.name}
                           </span>
                           <span className="shrink-0 text-[11px] font-medium text-[#F5F5F5]/48">
-                            {formatSenderCount(meta.channelCount)}
+                            {formatSenderCount(card.channelCount)}
                           </span>
+                          {showMatchCount ? (
+                            <span className="shrink-0 text-[11px] font-medium text-[#A6FF00]/75">
+                              {matchCount} Treffer
+                            </span>
+                          ) : null}
                         </span>
                       </span>
                       <span
@@ -599,15 +668,25 @@ export default function SenderlisteExplorer() {
                     >
                       <div className="overflow-hidden">
                         {isOpen ? (
-                          <CountryPanel
-                            meta={meta}
-                            data={countryDataMap[meta.id] ?? null}
-                            isLoading={Boolean(loadingIds[meta.id])}
-                            loadError={Boolean(errorIds[meta.id])}
-                            searchQuery={searchQuery}
+                          <OpenCountryPanel
+                            card={card}
+                            channels={getOpenChannels(card)}
+                            isLoading={Boolean(
+                              card.kind === "country" &&
+                                card.countryCode &&
+                                loadingIds[card.countryCode],
+                            )}
+                            loadError={Boolean(
+                              card.kind === "country" &&
+                                card.countryCode &&
+                                errorIds[card.countryCode],
+                            )}
+                            pageQuery={searchTerm}
                             panelId={panelId}
                             onRetry={() => {
-                              void loadCountry(meta.id, { force: true });
+                              if (card.countryCode) {
+                                void loadCountry(card.countryCode, { force: true });
+                              }
                             }}
                           />
                         ) : null}
@@ -617,9 +696,9 @@ export default function SenderlisteExplorer() {
                 </Fragment>
               );
             })}
-            {filteredCategories.length <= MID_BANNER_AFTER ? renderMidBanner() : null}
+            {filteredCards.length <= MID_BANNER_AFTER ? renderMidBanner() : null}
           </div>
-        ) : (
+        ) : cards.length > 0 ? (
           <div className="mt-8 rounded-[22px] border border-[#A6FF00]/20 bg-[#050806] p-6 text-center sm:p-8">
             <p className="text-[16px] font-bold text-[#F5F5F5]">Keine passende Kategorie gefunden.</p>
             <p className="mx-auto mt-3 max-w-[560px] text-[14px] leading-7 text-[#E6E6E6]/82">
@@ -635,7 +714,7 @@ export default function SenderlisteExplorer() {
               Sender über WhatsApp anfragen
             </a>
           </div>
-        )}
+        ) : null}
 
         <p className="mx-auto mt-10 max-w-[920px] text-center text-[12px] font-medium tracking-[0.02em] text-[#F5F5F5]/62 sm:text-[13px]">
           22.000+ Sender · Regelmäßig aktualisiert · Alle Geräte · Support auf Deutsch

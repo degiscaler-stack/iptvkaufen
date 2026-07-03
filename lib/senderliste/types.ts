@@ -1,81 +1,96 @@
-export const CHANNEL_CATEGORIES = [
-  "Öffentlich-rechtliche Sender",
-  "Allgemeine Sender",
+export type CatalogChannel = {
+  id: string;
+  name: string;
+  alt_names: string[];
+  network: string | null;
+  categories: string[];
+  categories_de: string[];
+};
+
+export type CatalogCountryFile = {
+  country_code: string;
+  country_name_de: string;
+  country_name_en: string;
+  channel_count_exported: number;
+  recommended_initial_display_count: number;
+  channels: CatalogChannel[];
+};
+
+export type CatalogIndexCountry = {
+  country_code: string;
+  country_name_de: string;
+  country_name_en: string;
+  channels_exported: number;
+  recommended_initial_display_count: number;
+  file: string;
+};
+
+export type CatalogIndex = {
+  country_count: number;
+  total_channels_exported: number;
+  max_channels_per_country: number;
+  countries: CatalogIndexCountry[];
+};
+
+export type SenderCardKind = "country" | "topic";
+
+export type SenderCard = {
+  id: string;
+  kind: SenderCardKind;
+  name: string;
+  region: string;
+  /** ISO-like country code for catalogue countries. */
+  countryCode?: string;
+  channelCount: number;
+};
+
+export type TopicChannel = {
+  name: string;
+  category: string;
+};
+
+export type TopicCategory = {
+  id: string;
+  name: string;
+  region: string;
+  channels: TopicChannel[];
+};
+
+export type PageSearchChannel = {
+  n: string;
+  q: string;
+};
+
+export type PageSearchCountry = {
+  code: string;
+  name: string;
+  region: string;
+  count: number;
+  channels: PageSearchChannel[];
+};
+
+export type PageSearchIndex = {
+  countries: PageSearchCountry[];
+};
+
+export const CATALOG_CATEGORY_ORDER = [
+  "Allgemein",
   "Nachrichten",
   "Sport",
-  "Filme & Serien",
+  "Filme",
+  "Serien",
   "Unterhaltung",
   "Kinder",
-  "Dokumentationen",
-  "Musik",
-  "Regional",
-  "Lifestyle",
-  "Kultur",
+  "Dokumentation",
   "Wirtschaft",
+  "Kultur",
+  "Musik",
+  "Bildung",
+  "Reisen",
+  "Lifestyle",
+  "Regional",
   "Religion",
 ] as const;
 
-export type ChannelCategory = (typeof CHANNEL_CATEGORIES)[number];
-
-export type SenderChannel = {
-  name: string;
-  category: ChannelCategory;
-  verified: true;
-  language?: string;
-};
-
-export type SenderCountryData = {
-  id: string;
-  name: string;
-  region: string;
-  channels: SenderChannel[];
-};
-
-export type SenderCountryMeta = {
-  id: string;
-  name: string;
-  region: string;
-  channelCount: number;
-  categories: ChannelCategory[];
-};
-
-export type SenderSearchIndexEntry = {
-  id: string;
-  name: string;
-  region: string;
-  channelCount: number;
-  categories: ChannelCategory[];
-  channels: string[];
-};
-
-export type SenderSearchIndex = {
-  countries: SenderSearchIndexEntry[];
-};
-
-export const FILTER_CHIPS = [
-  { id: "alle", label: "Alle", categories: null },
-  {
-    id: "allgemein",
-    label: "Allgemein",
-    categories: ["Öffentlich-rechtliche Sender", "Allgemeine Sender"] as ChannelCategory[],
-  },
-  { id: "nachrichten", label: "Nachrichten", categories: ["Nachrichten"] as ChannelCategory[] },
-  { id: "sport", label: "Sport", categories: ["Sport"] as ChannelCategory[] },
-  {
-    id: "filme-serien",
-    label: "Filme & Serien",
-    categories: ["Filme & Serien"] as ChannelCategory[],
-  },
-  { id: "kinder", label: "Kinder", categories: ["Kinder"] as ChannelCategory[] },
-  {
-    id: "dokumentation",
-    label: "Dokumentation",
-    categories: ["Dokumentationen"] as ChannelCategory[],
-  },
-  { id: "musik", label: "Musik", categories: ["Musik"] as ChannelCategory[] },
-  { id: "regional", label: "Regional", categories: ["Regional"] as ChannelCategory[] },
-] as const;
-
-export type FilterChipId = (typeof FILTER_CHIPS)[number]["id"];
-
-export const PREVIEW_CHANNEL_LIMIT = 12;
+export const INITIAL_CHANNEL_BATCH = 200;
+export const CHANNEL_BATCH_SIZE = 100;
