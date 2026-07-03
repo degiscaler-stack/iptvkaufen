@@ -1,0 +1,27 @@
+{
+  "id": "tennis",
+  "name": "Tennis",
+  "region": "Sport Categories",
+  "channels": [
+    {
+      "name": "beIN Tennis HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Eurosport Tennis HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Sky Tennis HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Tennis Channel HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

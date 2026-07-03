@@ -1,0 +1,32 @@
+{
+  "id": "tunesien",
+  "name": "Tunesien",
+  "region": "Africa",
+  "channels": [
+    {
+      "name": "Wataniya 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Wataniya 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "El Hiwar Ettounsi",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Hannibal TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Nessma TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    }
+  ]
+}

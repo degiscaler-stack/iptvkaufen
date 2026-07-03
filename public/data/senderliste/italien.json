@@ -1,0 +1,52 @@
+{
+  "id": "italien",
+  "name": "Italien",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "Rai 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Rai 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Rai 3 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Canale 5 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Italia 1 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "La7 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Mediaset Extra",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Rete 4 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Sky Italia HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    }
+  ]
+}

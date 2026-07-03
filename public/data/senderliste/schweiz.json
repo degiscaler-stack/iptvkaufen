@@ -1,0 +1,47 @@
+{
+  "id": "schweiz",
+  "name": "Schweiz",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "RSI La 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "RTS 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "RTS 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "SRF 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "SRF Zwei HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "3+ HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "TV24",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Tele Züri",
+      "category": "Regional",
+      "verified": true
+    }
+  ]
+}

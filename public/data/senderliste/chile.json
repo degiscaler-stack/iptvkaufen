@@ -1,0 +1,37 @@
+{
+  "id": "chile",
+  "name": "Chile",
+  "region": "South America",
+  "channels": [
+    {
+      "name": "Canal 13 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Chilevisión HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Mega HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "TVN HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "ESPN Chile HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "TNT Sports Chile HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

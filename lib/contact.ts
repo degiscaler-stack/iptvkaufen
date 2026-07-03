@@ -16,6 +16,10 @@ export const WHATSAPP_MESSAGES = {
     "Hallo, ich möchte wissen, ob ein bestimmter Sender in Ihrem IPTV-Angebot verfügbar ist.",
 } as const;
 
+export function buildSenderlisteCountryInquiryMessage(countryName: string) {
+  return `Hallo, ich möchte wissen, ob ein bestimmter Sender aus ${countryName} verfügbar ist.`;
+}
+
 export function buildWhatsAppUrl(message?: string): string {
   if (!message) {
     return WHATSAPP_CHAT_URL;

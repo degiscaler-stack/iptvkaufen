@@ -1,0 +1,32 @@
+{
+  "id": "lifestyle",
+  "name": "Lifestyle",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "Fashion TV HD",
+      "category": "Lifestyle",
+      "verified": true
+    },
+    {
+      "name": "Food Network HD",
+      "category": "Lifestyle",
+      "verified": true
+    },
+    {
+      "name": "HGTV HD",
+      "category": "Lifestyle",
+      "verified": true
+    },
+    {
+      "name": "TLC HD",
+      "category": "Lifestyle",
+      "verified": true
+    },
+    {
+      "name": "Travel XP HD",
+      "category": "Lifestyle",
+      "verified": true
+    }
+  ]
+}

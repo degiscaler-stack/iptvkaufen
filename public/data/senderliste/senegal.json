@@ -1,0 +1,32 @@
+{
+  "id": "senegal",
+  "name": "Senegal",
+  "region": "Africa",
+  "channels": [
+    {
+      "name": "RTS 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "2STV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Sen TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "TFM HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Sports HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

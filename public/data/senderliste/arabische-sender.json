@@ -1,0 +1,37 @@
+{
+  "id": "arabische-sender",
+  "name": "Arabische Sender",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "Al Arabiya HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Al Jazeera HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Al Mayadeen HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Sky News Arabia HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Rotana Cinema",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Rotana Drama",
+      "category": "Filme & Serien",
+      "verified": true
+    }
+  ]
+}

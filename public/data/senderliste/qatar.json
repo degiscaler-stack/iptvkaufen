@@ -1,0 +1,27 @@
+{
+  "id": "qatar",
+  "name": "Qatar",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "Qatar TV HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Qatar News HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Al Kass Sports HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "beIN Sports Qatar HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "china",
+  "name": "China",
+  "region": "Asia",
+  "channels": [
+    {
+      "name": "CCTV 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Dragon TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Hunan TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "CCTV News HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "CCTV Sports HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

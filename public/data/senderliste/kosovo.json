@@ -1,0 +1,32 @@
+{
+  "id": "kosovo",
+  "name": "Kosovo",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "RTK 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Klan Kosova HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "KTV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "T7 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Art Motion HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

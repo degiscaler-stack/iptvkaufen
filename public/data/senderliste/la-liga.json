@@ -1,0 +1,22 @@
+{
+  "id": "la-liga",
+  "name": "La Liga",
+  "region": "Sport Categories",
+  "channels": [
+    {
+      "name": "DAZN LaLiga HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "LaLiga TV Bar HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Movistar LaLiga HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

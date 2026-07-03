@@ -1,0 +1,42 @@
+{
+  "id": "mexiko",
+  "name": "Mexiko",
+  "region": "North America",
+  "channels": [
+    {
+      "name": "Azteca Uno HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Canal 5 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Imagen TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Las Estrellas HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "ESPN México HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Fox Sports México HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "TUDN HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

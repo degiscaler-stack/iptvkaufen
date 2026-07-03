@@ -1,0 +1,52 @@
+{
+  "id": "tuerkei",
+  "name": "Türkei",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "TRT 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "ATV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Fox Türkiye HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Kanal D HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Show TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Star TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "TV8 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "beIN Sports Türkiye HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "TRT Spor HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

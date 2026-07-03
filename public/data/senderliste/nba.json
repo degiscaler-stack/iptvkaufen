@@ -1,0 +1,27 @@
+{
+  "id": "nba",
+  "name": "NBA",
+  "region": "Sport Categories",
+  "channels": [
+    {
+      "name": "ESPN NBA HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "NBA TV HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Sky Sports NBA HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "TNT Sports NBA HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

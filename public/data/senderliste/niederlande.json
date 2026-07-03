@@ -1,0 +1,47 @@
+{
+  "id": "niederlande",
+  "name": "Niederlande",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "NPO 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "NPO 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "NPO 3 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "RTL 4 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "RTL 5 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "SBS6 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Veronica HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Ziggo Sport HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

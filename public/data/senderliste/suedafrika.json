@@ -1,0 +1,37 @@
+{
+  "id": "suedafrika",
+  "name": "Südafrika",
+  "region": "Africa",
+  "channels": [
+    {
+      "name": "SABC 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "SABC 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "SABC 3 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "e.tv HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "SuperSport HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "M-Net HD",
+      "category": "Filme & Serien",
+      "verified": true
+    }
+  ]
+}

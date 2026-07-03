@@ -1,0 +1,32 @@
+{
+  "id": "cote-divoire",
+  "name": "Côte d'Ivoire",
+  "region": "Africa",
+  "channels": [
+    {
+      "name": "RTI 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "RTI 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Life TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "News HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Sports HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

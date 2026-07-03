@@ -1,0 +1,32 @@
+{
+  "id": "slowenien",
+  "name": "Slowenien",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "RTV SLO 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "RTV SLO 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Kanal A HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "POP TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Sport Klub HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

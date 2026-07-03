@@ -1,0 +1,42 @@
+{
+  "id": "brasilien",
+  "name": "Brasilien",
+  "region": "South America",
+  "channels": [
+    {
+      "name": "Band HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Globo HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Record TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "SBT HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "ESPN Brasil HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Premiere FC HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "SporTV HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

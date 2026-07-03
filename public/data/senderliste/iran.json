@@ -1,0 +1,32 @@
+{
+  "id": "iran",
+  "name": "Iran",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "IRIB TV1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "IRIB TV2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "IRIB TV3 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Press TV HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Varzesh TV HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

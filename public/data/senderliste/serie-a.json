@@ -1,0 +1,22 @@
+{
+  "id": "serie-a",
+  "name": "Serie A",
+  "region": "Sport Categories",
+  "channels": [
+    {
+      "name": "Sky Calcio HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Sport Italia HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "DAZN Serie A HD",
+      "category": "Filme & Serien",
+      "verified": true
+    }
+  ]
+}

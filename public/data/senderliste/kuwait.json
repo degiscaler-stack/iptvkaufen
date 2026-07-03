@@ -1,0 +1,27 @@
+{
+  "id": "kuwait",
+  "name": "Kuwait",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "KTV 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "KTV 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Al Rai TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "KTV Sport HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bulgarien",
+  "name": "Bulgarien",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "BNT 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "bTV HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Bulgaria ON AIR",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Nova TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "TV7",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Diema Sport HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

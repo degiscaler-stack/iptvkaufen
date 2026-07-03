@@ -1,0 +1,37 @@
+{
+  "id": "netflix-kategorien",
+  "name": "Netflix Kategorien",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "Netflix Action",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Netflix Comedy",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Netflix Drama",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Netflix Serien",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Netflix Kids",
+      "category": "Kinder",
+      "verified": true
+    },
+    {
+      "name": "Netflix Dokumentation",
+      "category": "Dokumentationen",
+      "verified": true
+    }
+  ]
+}

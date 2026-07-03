@@ -1,0 +1,37 @@
+{
+  "id": "korea",
+  "name": "Korea",
+  "region": "Asia",
+  "channels": [
+    {
+      "name": "KBS HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "SBS HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "JTBC HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "MBC Korea HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "tvN HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "SPOTV HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

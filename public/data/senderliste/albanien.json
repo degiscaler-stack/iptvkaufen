@@ -1,0 +1,37 @@
+{
+  "id": "albanien",
+  "name": "Albanien",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "RTSH HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "DigitAlb HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Klan TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Top Channel HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Vizion Plus HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "SuperSport Albania HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

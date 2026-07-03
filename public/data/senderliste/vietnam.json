@@ -1,0 +1,32 @@
+{
+  "id": "vietnam",
+  "name": "Vietnam",
+  "region": "Asia",
+  "channels": [
+    {
+      "name": "VTV1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "VTV3 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "HTV7 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "HTV9 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "VTC HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "kolumbien",
+  "name": "Kolumbien",
+  "region": "South America",
+  "channels": [
+    {
+      "name": "Canal Uno HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Caracol TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "RCN HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "NTN24 HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "ESPN Colombia HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Win Sports HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

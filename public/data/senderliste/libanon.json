@@ -1,0 +1,27 @@
+{
+  "id": "libanon",
+  "name": "Libanon",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "Al Jadeed HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "LBCI HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "OTV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "MTV Lebanon HD",
+      "category": "Musik",
+      "verified": true
+    }
+  ]
+}

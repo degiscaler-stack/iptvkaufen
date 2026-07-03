@@ -1,0 +1,37 @@
+{
+  "id": "disney-kategorien",
+  "name": "Disney+ Kategorien",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "Disney+ Filme",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Disney+ Serien",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Marvel",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Star Wars",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Disney+ Kids",
+      "category": "Kinder",
+      "verified": true
+    },
+    {
+      "name": "National Geographic Disney+",
+      "category": "Dokumentationen",
+      "verified": true
+    }
+  ]
+}

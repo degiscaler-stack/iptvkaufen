@@ -1,0 +1,32 @@
+{
+  "id": "hbo-kategorien",
+  "name": "HBO Kategorien",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "HBO Comedy",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "HBO Drama",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "HBO Max Originals",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "HBO Movies",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "HBO Series",
+      "category": "Filme & Serien",
+      "verified": true
+    }
+  ]
+}

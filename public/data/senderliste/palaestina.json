@@ -1,0 +1,22 @@
+{
+  "id": "palaestina",
+  "name": "Palästina",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "Palestine TV HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Al Quds TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Ma'an TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    }
+  ]
+}

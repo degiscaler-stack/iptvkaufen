@@ -1,0 +1,37 @@
+{
+  "id": "dokumentation",
+  "name": "Dokumentation",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "Animal Planet HD",
+      "category": "Dokumentationen",
+      "verified": true
+    },
+    {
+      "name": "Arte Doku HD",
+      "category": "Dokumentationen",
+      "verified": true
+    },
+    {
+      "name": "Discovery HD",
+      "category": "Dokumentationen",
+      "verified": true
+    },
+    {
+      "name": "History HD",
+      "category": "Dokumentationen",
+      "verified": true
+    },
+    {
+      "name": "National Geographic HD",
+      "category": "Dokumentationen",
+      "verified": true
+    },
+    {
+      "name": "Travel Channel HD",
+      "category": "Dokumentationen",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "osn",
+  "name": "OSN",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "OSN Yahala HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "OSN Sports HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "OSN Movies HD",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "OSN Series HD",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "OSN Kids HD",
+      "category": "Kinder",
+      "verified": true
+    }
+  ]
+}

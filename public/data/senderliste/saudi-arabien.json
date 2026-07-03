@@ -1,0 +1,32 @@
+{
+  "id": "saudi-arabien",
+  "name": "Saudi-Arabien",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "Saudi TV HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Rotana Khalijia HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Al Ekhbariya HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "SSC Sports HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Quran TV HD",
+      "category": "Religion",
+      "verified": true
+    }
+  ]
+}

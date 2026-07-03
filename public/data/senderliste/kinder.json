@@ -1,0 +1,37 @@
+{
+  "id": "kinder",
+  "name": "Kinder",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "Boomerang HD",
+      "category": "Kinder",
+      "verified": true
+    },
+    {
+      "name": "Cartoon Network HD",
+      "category": "Kinder",
+      "verified": true
+    },
+    {
+      "name": "Disney Channel HD",
+      "category": "Kinder",
+      "verified": true
+    },
+    {
+      "name": "KiKA HD",
+      "category": "Kinder",
+      "verified": true
+    },
+    {
+      "name": "Nickelodeon HD",
+      "category": "Kinder",
+      "verified": true
+    },
+    {
+      "name": "Super RTL HD",
+      "category": "Kinder",
+      "verified": true
+    }
+  ]
+}

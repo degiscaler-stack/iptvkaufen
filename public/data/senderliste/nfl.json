@@ -1,0 +1,27 @@
+{
+  "id": "nfl",
+  "name": "NFL",
+  "region": "Sport Categories",
+  "channels": [
+    {
+      "name": "CBS Sports HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "ESPN NFL HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Fox NFL HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "NFL Network HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

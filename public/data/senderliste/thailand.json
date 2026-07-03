@@ -1,0 +1,32 @@
+{
+  "id": "thailand",
+  "name": "Thailand",
+  "region": "Asia",
+  "channels": [
+    {
+      "name": "Thai PBS HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Channel 3 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Channel 7 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Workpoint TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "True Sports HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

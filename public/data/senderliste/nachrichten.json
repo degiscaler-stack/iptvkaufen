@@ -1,0 +1,42 @@
+{
+  "id": "nachrichten",
+  "name": "Nachrichten",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "Al Jazeera HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "BBC News HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "CNN HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Euronews HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "NTV HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Sky News HD",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Welt HD",
+      "category": "Nachrichten",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "filme",
+  "name": "Filme",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "AMC HD",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Canal+ Cinema HD",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "FilmBox HD",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Paramount Movies HD",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Sky Cinema HD",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Warner TV Film HD",
+      "category": "Filme & Serien",
+      "verified": true
+    }
+  ]
+}

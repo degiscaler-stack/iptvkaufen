@@ -1,0 +1,22 @@
+{
+  "id": "syrien",
+  "name": "Syrien",
+  "region": "Middle East / Arabic",
+  "channels": [
+    {
+      "name": "Lana TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Sama TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Syria TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    }
+  ]
+}

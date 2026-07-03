@@ -1,0 +1,47 @@
+{
+  "id": "portugal",
+  "name": "Portugal",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "RTP 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "RTP 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Benfica TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "SIC HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "TVI HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "CNN Portugal",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "Sport TV HD",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Porto Canal",
+      "category": "Regional",
+      "verified": true
+    }
+  ]
+}

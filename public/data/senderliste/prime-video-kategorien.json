@@ -1,0 +1,32 @@
+{
+  "id": "prime-video-kategorien",
+  "name": "Prime Video Kategorien",
+  "region": "Entertainment",
+  "channels": [
+    {
+      "name": "Prime Video Sport",
+      "category": "Sport",
+      "verified": true
+    },
+    {
+      "name": "Prime Video Action",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Prime Video Filme",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Prime Video Serien",
+      "category": "Filme & Serien",
+      "verified": true
+    },
+    {
+      "name": "Prime Video Kids",
+      "category": "Kinder",
+      "verified": true
+    }
+  ]
+}

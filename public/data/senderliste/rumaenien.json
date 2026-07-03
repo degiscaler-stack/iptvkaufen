@@ -1,0 +1,42 @@
+{
+  "id": "rumaenien",
+  "name": "Rumänien",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "TVR 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Antena 1 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Kanal D Romania HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Prima TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Pro TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Romania TV",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Digi Sport HD",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

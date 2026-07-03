@@ -1,0 +1,47 @@
+{
+  "id": "oesterreich",
+  "name": "Österreich",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "ORF 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "ORF 2 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "ATV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Krone TV",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Puls 4 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "ServusTV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "OE24 TV",
+      "category": "Nachrichten",
+      "verified": true
+    },
+    {
+      "name": "ORF Sport+",
+      "category": "Sport",
+      "verified": true
+    }
+  ]
+}

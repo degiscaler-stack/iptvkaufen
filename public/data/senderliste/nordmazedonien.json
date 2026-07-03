@@ -1,0 +1,32 @@
+{
+  "id": "nordmazedonien",
+  "name": "Nordmazedonien",
+  "region": "Europe",
+  "channels": [
+    {
+      "name": "MRT 1 HD",
+      "category": "Öffentlich-rechtliche Sender",
+      "verified": true
+    },
+    {
+      "name": "Alsat M HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Kanal 5 HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Sitel HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Telma HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    }
+  ]
+}

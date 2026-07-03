@@ -1,0 +1,32 @@
+{
+  "id": "peru",
+  "name": "Peru",
+  "region": "South America",
+  "channels": [
+    {
+      "name": "América TV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "ATV HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Latina HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Movistar Deportes HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    },
+    {
+      "name": "Panamericana HD",
+      "category": "Allgemeine Sender",
+      "verified": true
+    }
+  ]
+}
