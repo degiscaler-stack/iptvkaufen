@@ -421,16 +421,99 @@ button {
   color: #000000;
 }
 
+@keyframes ctaAttentionShake {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  12% {
+    transform: translate3d(-1.6px, 0.6px, 0) rotate(-0.45deg);
+  }
+
+  24% {
+    transform: translate3d(1.6px, -0.6px, 0) rotate(0.45deg);
+  }
+
+  36% {
+    transform: translate3d(-1.2px, 0.4px, 0) rotate(-0.35deg);
+  }
+
+  48% {
+    transform: translate3d(1.2px, -0.4px, 0) rotate(0.35deg);
+  }
+
+  60% {
+    transform: translate3d(-0.8px, 0.3px, 0) rotate(-0.25deg);
+  }
+
+  72% {
+    transform: translate3d(0.8px, -0.3px, 0) rotate(0.25deg);
+  }
+
+  84% {
+    transform: translate3d(-0.5px, 0.2px, 0) rotate(-0.15deg);
+  }
+}
+
+@keyframes ctaAttentionShakeFeatured {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+
+  12% {
+    transform: translate3d(-1.8px, 0.7px, 0) rotate(-0.5deg) scale(1.01);
+  }
+
+  24% {
+    transform: translate3d(1.8px, -0.7px, 0) rotate(0.5deg) scale(1.012);
+  }
+
+  36% {
+    transform: translate3d(-1.4px, 0.5px, 0) rotate(-0.4deg) scale(1.01);
+  }
+
+  48% {
+    transform: translate3d(1.4px, -0.5px, 0) rotate(0.4deg) scale(1.012);
+  }
+
+  60% {
+    transform: translate3d(-0.9px, 0.35px, 0) rotate(-0.28deg) scale(1.008);
+  }
+
+  72% {
+    transform: translate3d(0.9px, -0.35px, 0) rotate(0.28deg) scale(1.01);
+  }
+
+  84% {
+    transform: translate3d(-0.55px, 0.2px, 0) rotate(-0.16deg) scale(1.006);
+  }
+}
+
 .cta-static-motion,
 .cta-continuous-motion {
-  animation: none;
-  transform: none;
   transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
   transition:
     background-color 0.3s ease,
     filter 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.15s ease;
+    box-shadow 0.3s ease;
+}
+
+.cta-continuous-motion {
+  animation-name: ctaAttentionShake;
+  animation-duration: 0.58s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: var(--cta-motion-delay, 0s);
+}
+
+.cta-continuous-motion--featured {
+  animation-name: ctaAttentionShakeFeatured;
+  animation-duration: 0.52s;
 }
 
 .cta-static-motion:hover,
@@ -449,6 +532,7 @@ button {
 .cta-static-motion--featured:active,
 .cta-continuous-motion:active,
 .cta-continuous-motion--featured:active {
+  animation-play-state: paused;
   transform: scale(0.98);
   filter: brightness(0.98);
 }

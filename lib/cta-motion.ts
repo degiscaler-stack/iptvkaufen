@@ -18,9 +18,12 @@ export const CTA_MOTION_DELAYS = {
   anchorRedirect: "-0.3s",
 } as const;
 
-/** Static CTAs: hover/focus only, no continuous idle motion. */
-export const ctaMotionStandardClass = "cta-static-motion";
-export const ctaMotionFeaturedClass = "cta-static-motion cta-static-motion--featured";
+/**
+ * Continuous attention-grabbing motion for major homepage/pricing CTAs only.
+ * Do not apply to utility links, blog CTAs, or secondary page buttons.
+ */
+export const ctaMotionStandardClass = "cta-continuous-motion";
+export const ctaMotionFeaturedClass = "cta-continuous-motion cta-continuous-motion--featured";
 
 /** Black text on solid neon-green buttons in every interaction state. */
 export const ctaSolidGreenClass =

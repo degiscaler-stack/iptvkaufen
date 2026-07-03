@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { CSSProperties, KeyboardEvent } from "react";
+import type { KeyboardEvent } from "react";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import {
@@ -9,7 +9,7 @@ import {
   buildWhatsAppUrl,
   WHATSAPP_MESSAGES,
 } from "@/lib/contact";
-import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 import {
   getCachedCountryChannels,
   loadCatalogIndex,
@@ -518,13 +518,12 @@ export default function SenderlisteExplorer() {
         Über 22.000 Sender, Filme und Serien verfügbar
       </h2>
       <p className="mx-auto mt-3 max-w-[680px] text-[14px] leading-7 text-[#E6E6E6]/84 sm:text-[15px]">
-        Wählen Sie jetzt das passende IPTV-Paket und genießen Sie Ihre Lieblingsinhalte auf allen
-        kompatiblen Geräten.
+        Wählen Sie jetzt das passende IPTV-Paket und genießen Sie Ihre Lieblingsinhalte auf bis zu
+        2 Geräten gleichzeitig.
       </p>
       <Link
         href="/#preise"
-        className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} mt-5 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
-        style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.senderlisteMid } as CSSProperties}
+        className={`${ctaSolidGreenClass} mt-5 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
         onClick={() => {
           trackEvent(ANALYTICS_EVENTS.senderlisteMidCtaClick, {
             page_path: "/senderliste",
@@ -717,7 +716,7 @@ export default function SenderlisteExplorer() {
         ) : null}
 
         <p className="mx-auto mt-10 max-w-[920px] text-center text-[12px] font-medium tracking-[0.02em] text-[#F5F5F5]/62 sm:text-[13px]">
-          22.000+ Sender · Regelmäßig aktualisiert · Mehrere Geräte gleichzeitig · Support auf Deutsch
+          22.000+ Sender · Regelmäßig aktualisiert · 2 Geräte gleichzeitig · Support auf Deutsch
         </p>
 
         <div className="mx-auto mt-6 max-w-[920px] rounded-[28px] border border-[#A6FF00]/28 bg-[linear-gradient(180deg,#071006_0%,#030503_100%)] p-6 text-center shadow-[0_24px_70px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-8 lg:p-10">
@@ -732,8 +731,7 @@ export default function SenderlisteExplorer() {
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               href="/#preise"
-              className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
-              style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.senderlisteBottom } as CSSProperties}
+              className={`${ctaSolidGreenClass} inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
               onClick={() => {
                 trackEvent(ANALYTICS_EVENTS.senderlisteBottomCtaClick, {
                   page_path: "/senderliste",

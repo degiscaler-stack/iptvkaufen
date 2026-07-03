@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import type { CSSProperties } from "react";
 import { useEffect } from "react";
-import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 type AnchorRedirectProps = {
   href: string;
@@ -23,8 +22,8 @@ export default function AnchorRedirect({
   }, [href]);
 
   return (
-    <main className="min-h-screen bg-[#000000] px-5 pb-14 pt-28 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-32 lg:px-0 lg:pb-20 lg:pt-36">
-      <div className="mx-auto max-w-[640px] text-center lg:px-12">
+    <main className="flex min-h-[60vh] items-center justify-center bg-[#000000] px-5 py-16 text-[#F5F5F5]">
+      <div className="mx-auto max-w-[560px] text-center">
         <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
           Weiterleitung
         </p>
@@ -32,8 +31,7 @@ export default function AnchorRedirect({
         <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/82">{description}</p>
         <Link
           href={href}
-          className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} mt-7 inline-flex rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
-          style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.anchorRedirect } as CSSProperties}
+          className={`${ctaSolidGreenClass} mt-7 inline-flex rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
         >
           {linkLabel}
         </Link>

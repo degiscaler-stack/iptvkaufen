@@ -17,7 +17,6 @@ import {
   IPTV_PACKAGES,
   MULTI_DEVICE_BADGE_SUPPORT,
   MULTI_DEVICE_BADGE_TEXT,
-  MULTI_DEVICE_FEATURE,
   ORDER_PROCESS_HEADING,
   ORDER_PROCESS_STEPS,
   PAYMENT_METHODS_HEADING,
@@ -168,7 +167,7 @@ export default function IptvPricing() {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Flexible IPTV Pakete für jeden Bedarf – sofort aktiv, stabil und auf mehreren Geräten gleichzeitig nutzbar.
+            Flexible IPTV Pakete für jeden Bedarf – sofort aktiv, stabil und auf bis zu 2 Geräten gleichzeitig nutzbar.
           </p>
         </div>
 
@@ -306,31 +305,12 @@ export default function IptvPricing() {
                 </div>
 
                 <ul className="mx-auto mb-5 mt-3 w-full max-w-[250px] space-y-1.5 text-left text-[13px] font-normal leading-snug text-[#F5F5F5]/88 sm:mb-6 sm:mt-3.5 sm:max-w-[215px] sm:space-y-2.5">
-                  {IPTV_PACKAGE_FEATURES.map((feature) => {
-                    const isMultiDevice = feature === MULTI_DEVICE_FEATURE;
-
-                    return (
-                      <li
-                        key={feature}
-                        className={
-                          isMultiDevice
-                            ? "grid grid-cols-[15px_1fr] items-center gap-2.5 rounded-lg bg-[#AFFF00]/10 px-1.5 py-1 sm:gap-3"
-                            : "grid grid-cols-[15px_1fr] items-center gap-2.5 sm:gap-3"
-                        }
-                      >
-                        <CheckIcon />
-                        <span
-                          className={
-                            isMultiDevice
-                              ? "font-semibold text-[#AFFF00]"
-                              : undefined
-                          }
-                        >
-                          {feature}
-                        </span>
-                      </li>
-                    );
-                  })}
+                  {IPTV_PACKAGE_FEATURES.map((feature) => (
+                    <li key={feature} className="grid grid-cols-[15px_1fr] items-center gap-2.5 sm:gap-3">
+                      <CheckIcon />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <TrackedAnchor

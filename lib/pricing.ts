@@ -1,22 +1,18 @@
 import { WHATSAPP_MESSAGES } from "@/lib/contact";
 import { ANALYTICS_EVENTS, type AnalyticsEventName } from "@/lib/analytics";
 
-export const MULTI_DEVICE_FEATURE =
-  "Auf mehreren Geräten gleichzeitig nutzbar" as const;
-
-export const MULTI_DEVICE_BADGE_TEXT = "MEHRERE GERÄTE GLEICHZEITIG";
+export const MULTI_DEVICE_BADGE_TEXT = "2 GERÄTE GLEICHZEITIG";
 
 export const MULTI_DEVICE_BADGE_SUPPORT =
-  "Gleichzeitig auf TV, Smartphone & Tablet streamen";
+  "Gleichzeitig auf TV, Smartphone oder Tablet streamen";
 
 export const PRICING_TRUST_LINE =
-  "Mehrere Geräte gleichzeitig · 22.000+ Sender · HD, Full HD & 4K · Support auf Deutsch";
+  "2 Geräte gleichzeitig · 22.000+ Sender · HD, Full HD & 4K · Support auf Deutsch";
 
 export const IPTV_PACKAGE_FEATURES = [
   "22.000+ Live-TV Sender",
   "Filme & Serien auf Abruf",
   "HD, Full HD & 4K Qualität",
-  MULTI_DEVICE_FEATURE,
   "Schnelle Aktivierung",
   "24/7 Support",
 ] as const;

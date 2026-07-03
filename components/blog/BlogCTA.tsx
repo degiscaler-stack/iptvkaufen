@@ -1,6 +1,5 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
-import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 export default function BlogCTA() {
   return (
@@ -20,21 +19,19 @@ export default function BlogCTA() {
           Bereit für über 22.000 Sender in HD &amp; 4K?
         </h2>
         <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/82">
-          Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf allen Geräten und mit
-          persönlichem Support bei der Einrichtung.
+          Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 2 Geräten
+          gleichzeitig und mit persönlichem Support bei der Einrichtung.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/"
-            className={`${ctaMotionStandardClass} ${ctaSolidGreenClass} inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
-            style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.blogPrimary } as CSSProperties}
+            className={`${ctaSolidGreenClass} inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
           >
             Jetzt IPTV kaufen
           </Link>
           <Link
             href="/#preise"
-            className={`${ctaMotionStandardClass} inline-flex w-fit items-center justify-center rounded-full border border-[#A6FF00]/30 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00] transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 hover:text-[#C7FF62]`}
-            style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.blogPricing } as CSSProperties}
+            className="inline-flex w-fit items-center justify-center rounded-full border border-[#A6FF00]/30 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00] transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 hover:text-[#C7FF62]"
           >
             Preise ansehen
           </Link>
