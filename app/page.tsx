@@ -45,7 +45,7 @@ const faqSchemaItems = [
   {
     question: "Welche Zahlungsmethoden werden unterstützt?",
     answer:
-      "Sie können Ihre Bestellung über die verfügbaren Zahlungsmethoden auf der Website abschließen. Nach erfolgreicher Zahlung erhalten Sie die nächsten Schritte und Ihre Zugangsdaten.",
+      "Nach Bestätigung Ihrer Bestellung über WhatsApp erhalten Sie die verfügbaren Zahlungsinformationen. PayPal, Visa, Mastercard und weitere gängige Zahlungsarten stehen zur Verfügung. Keine Zahlungsdaten werden direkt auf dieser Website eingegeben.",
   },
   {
     question: "Gibt es Support bei der Einrichtung?",

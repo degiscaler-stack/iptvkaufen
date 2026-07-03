@@ -15,7 +15,16 @@ import {
   COMPARISON_PRICE_LABEL,
   IPTV_PACKAGE_FEATURES,
   IPTV_PACKAGES,
+  ORDER_PROCESS_HEADING,
+  ORDER_PROCESS_STEPS,
+  PAYMENT_METHODS_HEADING,
+  PAYMENT_METHODS_NO_DATA_ON_SITE,
+  PAYMENT_METHODS_PRIMARY,
+  PAYMENT_METHODS_SUPPORTING,
   PRICE_COMPARISON_NOTE,
+  TRIAL_PRICE_NUMERIC,
+  TRIAL_REASSURANCE_TEXT,
+  TRIAL_SUPPORTING_TEXT,
 } from "@/lib/pricing";
 import {
   CTA_MOTION_DELAYS,
@@ -160,12 +169,10 @@ export default function IptvPricing() {
             </p>
             <p className="mt-2 text-[16px] font-bold text-[#F5F5F5] sm:text-[17px]">Noch unsicher?</p>
             <p className="mt-1.5 text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px]">
-              Testen Sie unseren IPTV-Service 24 Stunden für nur{" "}
-              <strong className="font-extrabold text-[#A6FF00]">3€</strong>.
+              {TRIAL_SUPPORTING_TEXT}
             </p>
             <p className="mt-2 max-w-[640px] text-[12px] leading-5 text-[#F5F5F5]/62 sm:text-[13px] sm:leading-6">
-              Ideal, um Qualität, Stabilität und Gerätekompatibilität vor der Auswahl eines längeren Pakets zu
-              testen.
+              {TRIAL_REASSURANCE_TEXT}
             </p>
           </div>
           <TrackedAnchor
@@ -173,6 +180,12 @@ export default function IptvPricing() {
             target="_blank"
             rel="noopener noreferrer"
             analyticsEvent={ANALYTICS_EVENTS.trial3EuroClick}
+            analyticsParams={{
+              price: TRIAL_PRICE_NUMERIC,
+              currency: "EUR",
+              page_path: "/",
+              button_location: "pricing_trial_banner",
+            }}
             alsoTrackCheckout
             alsoTrackTrial
             data-analytics="trial_3_euro_click"
@@ -311,6 +324,57 @@ export default function IptvPricing() {
         <p className="mx-auto mt-4 max-w-[820px] text-center text-[12px] font-medium leading-5 text-[#F5F5F5]/72 sm:text-[13px]">
           Sichere Zahlung · Schnelle Aktivierung · Support auf Deutsch
         </p>
+
+        <div className="mx-auto mt-6 max-w-[920px] rounded-[20px] border border-[#A6FF00]/18 bg-[#0A0F0A]/78 p-4 text-center sm:mt-8 sm:p-5">
+          <h3 className="text-[14px] font-bold uppercase tracking-[0.14em] text-[#A6FF00] sm:text-[15px]">
+            {PAYMENT_METHODS_HEADING}
+          </h3>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+            {["PayPal", "Visa", "Mastercard"].map((method) => (
+              <span
+                key={method}
+                aria-label={method}
+                className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/28 bg-[#050806] px-3.5 py-1.5 text-[12px] font-semibold tracking-[0.04em] text-[#F5F5F5] sm:text-[13px]"
+              >
+                {method}
+              </span>
+            ))}
+            <span className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/18 bg-[#050806]/80 px-3.5 py-1.5 text-[12px] font-medium text-[#F5F5F5]/82 sm:text-[13px]">
+              Weitere gängige Zahlungsarten
+            </span>
+          </div>
+          <p className="mt-3 text-[13px] font-medium leading-6 text-[#F5F5F5]/88 sm:text-[14px]">
+            {PAYMENT_METHODS_PRIMARY}
+          </p>
+          <p className="mt-2 text-[12px] leading-5 text-[#E6E6E6]/78 sm:text-[13px] sm:leading-6">
+            {PAYMENT_METHODS_SUPPORTING}
+          </p>
+          <p className="mt-2 text-[12px] leading-5 text-[#F5F5F5]/62 sm:text-[13px]">
+            {PAYMENT_METHODS_NO_DATA_ON_SITE}
+          </p>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-[920px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 sm:mt-8 sm:p-5">
+          <h3 className="text-center text-[14px] font-bold uppercase tracking-[0.14em] text-[#A6FF00] sm:text-[15px]">
+            {ORDER_PROCESS_HEADING}
+          </h3>
+          <ol className="mt-4 grid gap-2.5 sm:grid-cols-2 sm:gap-3">
+            {ORDER_PROCESS_STEPS.map((step, index) => (
+              <li
+                key={step.title}
+                className="rounded-[14px] border border-[#1F1F1F]/80 bg-[#080808]/70 px-3 py-2.5 text-left sm:px-3.5 sm:py-3"
+              >
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#A6FF00]/90">
+                  Schritt {index + 1}
+                </p>
+                <p className="mt-1 text-[13px] font-semibold text-[#F5F5F5] sm:text-[14px]">{step.title}</p>
+                <p className="mt-1 text-[12px] leading-5 text-[#E6E6E6]/82 sm:text-[13px]">
+                  {step.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
 
         <div className="mx-auto mt-6 max-w-[920px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 sm:mt-8 sm:p-5">
           <h3 className="text-center text-[14px] font-bold uppercase tracking-[0.14em] text-[#A6FF00] sm:text-[15px]">

@@ -384,84 +384,12 @@ button {
     transform: none;
   }
 
+  .cta-static-motion,
+  .cta-static-motion--featured,
   .cta-continuous-motion,
   .cta-continuous-motion--featured {
     animation: none !important;
     transform: none;
-  }
-}
-
-@keyframes ctaContinuousMotion {
-  0% {
-    transform: translate3d(-1px, 0, 0) scale(1);
-    box-shadow:
-      0 0 8px rgba(157, 255, 0, 0.22),
-      0 0 16px rgba(157, 255, 0, 0.08);
-  }
-
-  25% {
-    transform: translate3d(0, -1px, 0) scale(1.008);
-    box-shadow:
-      0 0 12px rgba(157, 255, 0, 0.3),
-      0 0 22px rgba(157, 255, 0, 0.12);
-  }
-
-  50% {
-    transform: translate3d(1px, 0, 0) scale(1.01);
-    box-shadow:
-      0 0 16px rgba(157, 255, 0, 0.38),
-      0 0 28px rgba(157, 255, 0, 0.16);
-  }
-
-  75% {
-    transform: translate3d(0, 1px, 0) scale(1.008);
-    box-shadow:
-      0 0 12px rgba(157, 255, 0, 0.3),
-      0 0 22px rgba(157, 255, 0, 0.12);
-  }
-
-  100% {
-    transform: translate3d(-1px, 0, 0) scale(1);
-    box-shadow:
-      0 0 8px rgba(157, 255, 0, 0.22),
-      0 0 16px rgba(157, 255, 0, 0.08);
-  }
-}
-
-@keyframes ctaContinuousMotionFeatured {
-  0% {
-    transform: translate3d(-1.5px, 0, 0) scale(1.006);
-    box-shadow:
-      0 0 10px rgba(157, 255, 0, 0.28),
-      0 0 20px rgba(157, 255, 0, 0.12);
-  }
-
-  25% {
-    transform: translate3d(0, -1px, 0) scale(1.01);
-    box-shadow:
-      0 0 14px rgba(157, 255, 0, 0.36),
-      0 0 26px rgba(157, 255, 0, 0.16);
-  }
-
-  50% {
-    transform: translate3d(1.5px, 0, 0) scale(1.015);
-    box-shadow:
-      0 0 18px rgba(157, 255, 0, 0.44),
-      0 0 32px rgba(157, 255, 0, 0.2);
-  }
-
-  75% {
-    transform: translate3d(0, 1px, 0) scale(1.01);
-    box-shadow:
-      0 0 14px rgba(157, 255, 0, 0.36),
-      0 0 26px rgba(157, 255, 0, 0.16);
-  }
-
-  100% {
-    transform: translate3d(-1.5px, 0, 0) scale(1.006);
-    box-shadow:
-      0 0 10px rgba(157, 255, 0, 0.28),
-      0 0 20px rgba(157, 255, 0, 0.12);
   }
 }
 
@@ -493,28 +421,34 @@ button {
   color: #000000;
 }
 
+.cta-static-motion,
 .cta-continuous-motion {
-  animation-name: ctaContinuousMotion;
-  animation-duration: 1.8s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  animation-play-state: running;
-  animation-delay: var(--cta-motion-delay, 0s);
+  animation: none;
+  transform: none;
   transform-origin: center;
-  will-change: transform, box-shadow;
-  backface-visibility: hidden;
-  transition: background-color 0.3s ease, filter 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    filter 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.15s ease;
 }
 
-.cta-continuous-motion--featured {
-  animation-name: ctaContinuousMotionFeatured;
-  animation-duration: 1.6s;
-}
-
+.cta-static-motion:hover,
+.cta-static-motion:focus-visible,
+.cta-static-motion--featured:hover,
+.cta-static-motion--featured:focus-visible,
 .cta-continuous-motion:hover,
 .cta-continuous-motion:focus-visible,
 .cta-continuous-motion--featured:hover,
 .cta-continuous-motion--featured:focus-visible {
   filter: brightness(1.05);
+  box-shadow: 0 0 14px rgba(157, 255, 0, 0.28);
+}
+
+.cta-static-motion:active,
+.cta-static-motion--featured:active,
+.cta-continuous-motion:active,
+.cta-continuous-motion--featured:active {
+  transform: scale(0.98);
+  filter: brightness(0.98);
 }

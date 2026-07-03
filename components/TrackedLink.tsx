@@ -54,6 +54,26 @@ export function TrackedAnchor({
 
     if (alsoTrackTrial) {
       trackEvent(ANALYTICS_EVENTS.trialClick, analyticsParams);
+      trackEvent(ANALYTICS_EVENTS.trialWhatsappClick, {
+        price: analyticsParams?.price ?? 3,
+        currency: analyticsParams?.currency ?? "EUR",
+        page_path: analyticsParams?.page_path ?? "/",
+        button_location: analyticsParams?.button_location ?? "trial",
+      });
+    }
+
+    if (
+      alsoTrackCheckout &&
+      typeof analyticsParams?.package_duration === "string" &&
+      typeof analyticsParams?.price === "number"
+    ) {
+      trackEvent(ANALYTICS_EVENTS.packageWhatsappClick, {
+        package_duration: analyticsParams.package_duration,
+        price: analyticsParams.price,
+        currency: analyticsParams.currency ?? "EUR",
+        button_location: analyticsParams.button_location ?? "pricing_card",
+        page_path: analyticsParams.page_path ?? "/",
+      });
     }
 
     if (alsoTrackCheckout) {
