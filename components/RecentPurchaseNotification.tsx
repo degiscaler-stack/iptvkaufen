@@ -9,29 +9,26 @@ type AllowedDuration = (typeof ALLOWED_DURATIONS)[number];
 
 type NotificationPackage = {
   durationMonths: AllowedDuration;
-  label: "6 Monate" | "12 Monate";
+  packageName: "6-Monats-Paket" | "12-Monats-Paket";
   src: string;
   alt: string;
   title: string;
-  message: string;
 };
 
 const ALL_PACKAGES: NotificationPackage[] = [
   {
     durationMonths: 6,
-    label: "6 Monate",
+    packageName: "6-Monats-Paket",
     src: "/images/packages/iptv-kaufen-6-monate.webp",
     alt: "6 Monate IPTV Paket von iptvkaufenX",
     title: "6 Monate IPTV Paket – iptvkaufenX",
-    message: "Beliebtes Paket: 6 Monate",
   },
   {
     durationMonths: 12,
-    label: "12 Monate",
+    packageName: "12-Monats-Paket",
     src: "/images/packages/iptv-kaufen-12-monate.webp",
     alt: "12 Monate IPTV Paket von iptvkaufenX",
     title: "12 Monate IPTV Paket – iptvkaufenX",
-    message: "Besonders beliebt: 12 Monate",
   },
 ];
 
@@ -39,37 +36,58 @@ const PACKAGES = ALL_PACKAGES.filter((pkg) =>
   (ALLOWED_DURATIONS as readonly number[]).includes(pkg.durationMonths),
 );
 
+const CITIES = [
+  "Berlin",
+  "Hamburg",
+  "München",
+  "Köln",
+  "Frankfurt",
+  "Stuttgart",
+  "Düsseldorf",
+  "Dortmund",
+  "Hannover",
+  "Bremen",
+  "Leipzig",
+  "Dresden",
+  "Nürnberg",
+  "Essen",
+  "Bonn",
+] as const;
+
 const GAP_AFTER_PRELOAD_MS = 5000;
 const VISIBLE_MS = 8000;
 const GAP_BETWEEN_MS = 10000;
 const EXIT_ANIMATION_MS = 500;
-const MAX_IDENTICAL_IN_A_ROW = 2;
 
 type NotificationState = {
   packageIndex: number;
+  city: (typeof CITIES)[number];
 };
 
 function randomBetween(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function pickPackageIndex(
-  previousIndex: number | null,
-  consecutiveCount: number,
-): number {
-  if (PACKAGES.length === 0) {
+function pickPackageIndex(previousIndex: number | null): number {
+  if (PACKAGES.length <= 1) {
     return 0;
   }
 
-  if (PACKAGES.length === 1) {
-    return 0;
+  if (previousIndex === null) {
+    return randomBetween(0, PACKAGES.length - 1);
   }
 
-  if (previousIndex !== null && consecutiveCount >= MAX_IDENTICAL_IN_A_ROW) {
-    return previousIndex === 0 ? 1 : 0;
+  return previousIndex === 0 ? 1 : 0;
+}
+
+function pickCity(previousCity: (typeof CITIES)[number] | null): (typeof CITIES)[number] {
+  let city = CITIES[randomBetween(0, CITIES.length - 1)];
+
+  while (previousCity !== null && city === previousCity) {
+    city = CITIES[randomBetween(0, CITIES.length - 1)];
   }
 
-  return randomBetween(0, PACKAGES.length - 1);
+  return city;
 }
 
 function preloadPackageImages(): Promise<void> {
@@ -97,7 +115,7 @@ export default function RecentPurchaseNotification() {
   const exitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const initialTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const previousPackageIndex = useRef<number | null>(null);
-  const consecutiveCount = useRef(0);
+  const previousCity = useRef<(typeof CITIES)[number] | null>(null);
 
   const clearTimer = (timerRef: { current: ReturnType<typeof setTimeout> | null }) => {
     if (timerRef.current) {
@@ -107,19 +125,13 @@ export default function RecentPurchaseNotification() {
   };
 
   const createNotificationState = useCallback((): NotificationState => {
-    const packageIndex = pickPackageIndex(
-      previousPackageIndex.current,
-      consecutiveCount.current,
-    );
-
-    if (previousPackageIndex.current === packageIndex) {
-      consecutiveCount.current += 1;
-    } else {
-      consecutiveCount.current = 1;
-    }
+    const packageIndex = pickPackageIndex(previousPackageIndex.current);
+    const city = pickCity(previousCity.current);
 
     previousPackageIndex.current = packageIndex;
-    return { packageIndex };
+    previousCity.current = city;
+
+    return { packageIndex, city };
   }, []);
 
   const scheduleNext = useCallback(() => {
@@ -222,6 +234,8 @@ export default function RecentPurchaseNotification() {
     return null;
   }
 
+  const message = `Ein Kunde aus ${display.city} hat gerade das ${currentPackage.packageName} gekauft.`;
+
   return (
     <div
       role="status"
@@ -253,7 +267,7 @@ export default function RecentPurchaseNotification() {
           </div>
 
           <p className="text-[13px] font-medium leading-snug tracking-[0.01em] text-[#F0F0F0] sm:text-sm">
-            {currentPackage.message}
+            {message}
           </p>
 
           <button
