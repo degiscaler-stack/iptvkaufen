@@ -3,67 +3,73 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const PACKAGES = [
+const ALLOWED_DURATIONS = [6, 12] as const;
+
+type AllowedDuration = (typeof ALLOWED_DURATIONS)[number];
+
+type NotificationPackage = {
+  durationMonths: AllowedDuration;
+  label: "6 Monate" | "12 Monate";
+  src: string;
+  alt: string;
+  title: string;
+  message: string;
+};
+
+const ALL_PACKAGES: NotificationPackage[] = [
   {
-    label: "1 Monat",
-    src: "/images/packages/iptv-kaufen-1-monat.webp",
-    alt: "1 Monat IPTV Paket von iptvkaufenX",
-    title: "1 Monat IPTV Paket – iptvkaufenX",
-  },
-  {
-    label: "3 Monate",
-    src: "/images/packages/iptv-kaufen-3-monate.webp",
-    alt: "3 Monate IPTV Paket von iptvkaufenX",
-    title: "3 Monate IPTV Paket – iptvkaufenX",
-  },
-  {
+    durationMonths: 6,
     label: "6 Monate",
     src: "/images/packages/iptv-kaufen-6-monate.webp",
     alt: "6 Monate IPTV Paket von iptvkaufenX",
     title: "6 Monate IPTV Paket – iptvkaufenX",
+    message: "Beliebtes Paket: 6 Monate",
   },
   {
+    durationMonths: 12,
     label: "12 Monate",
     src: "/images/packages/iptv-kaufen-12-monate.webp",
     alt: "12 Monate IPTV Paket von iptvkaufenX",
     title: "12 Monate IPTV Paket – iptvkaufenX",
+    message: "Besonders beliebt: 12 Monate",
   },
-] as const;
+];
 
-const CITIES = [
-  "Berlin",
-  "Hamburg",
-  "München",
-  "Köln",
-  "Frankfurt",
-  "Stuttgart",
-  "Düsseldorf",
-  "Dortmund",
-  "Leipzig",
-  "Bremen",
-  "Hannover",
-  "Nürnberg",
-  "Essen",
-  "Dresden",
-  "Bonn",
-] as const;
+const PACKAGES = ALL_PACKAGES.filter((pkg) =>
+  (ALLOWED_DURATIONS as readonly number[]).includes(pkg.durationMonths),
+);
 
 const GAP_AFTER_PRELOAD_MS = 5000;
 const VISIBLE_MS = 8000;
 const GAP_BETWEEN_MS = 10000;
 const EXIT_ANIMATION_MS = 500;
+const MAX_IDENTICAL_IN_A_ROW = 2;
 
 type NotificationState = {
   packageIndex: number;
-  city: (typeof CITIES)[number];
 };
 
 function randomBetween(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function pickCity(): (typeof CITIES)[number] {
-  return CITIES[randomBetween(0, CITIES.length - 1)];
+function pickPackageIndex(
+  previousIndex: number | null,
+  consecutiveCount: number,
+): number {
+  if (PACKAGES.length === 0) {
+    return 0;
+  }
+
+  if (PACKAGES.length === 1) {
+    return 0;
+  }
+
+  if (previousIndex !== null && consecutiveCount >= MAX_IDENTICAL_IN_A_ROW) {
+    return previousIndex === 0 ? 1 : 0;
+  }
+
+  return randomBetween(0, PACKAGES.length - 1);
 }
 
 function preloadPackageImages(): Promise<void> {
@@ -90,6 +96,8 @@ export default function RecentPurchaseNotification() {
   const nextTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const exitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const initialTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const previousPackageIndex = useRef<number | null>(null);
+  const consecutiveCount = useRef(0);
 
   const clearTimer = (timerRef: { current: ReturnType<typeof setTimeout> | null }) => {
     if (timerRef.current) {
@@ -98,13 +106,26 @@ export default function RecentPurchaseNotification() {
     }
   };
 
+  const createNotificationState = useCallback((): NotificationState => {
+    const packageIndex = pickPackageIndex(
+      previousPackageIndex.current,
+      consecutiveCount.current,
+    );
+
+    if (previousPackageIndex.current === packageIndex) {
+      consecutiveCount.current += 1;
+    } else {
+      consecutiveCount.current = 1;
+    }
+
+    previousPackageIndex.current = packageIndex;
+    return { packageIndex };
+  }, []);
+
   const scheduleNext = useCallback(() => {
     clearTimer(nextTimer);
     nextTimer.current = setTimeout(() => {
-      const packageIndex = randomBetween(0, PACKAGES.length - 1);
-      const city = pickCity();
-
-      setDisplay({ packageIndex, city });
+      setDisplay(createNotificationState());
       requestAnimationFrame(() => {
         setIsVisible(true);
       });
@@ -119,13 +140,10 @@ export default function RecentPurchaseNotification() {
         }, EXIT_ANIMATION_MS);
       }, VISIBLE_MS);
     }, GAP_BETWEEN_MS);
-  }, []);
+  }, [createNotificationState]);
 
   const presentNotification = useCallback(() => {
-    const packageIndex = randomBetween(0, PACKAGES.length - 1);
-    const city = pickCity();
-
-    setDisplay({ packageIndex, city });
+    setDisplay(createNotificationState());
     requestAnimationFrame(() => {
       setIsVisible(true);
     });
@@ -139,7 +157,7 @@ export default function RecentPurchaseNotification() {
         scheduleNext();
       }, EXIT_ANIMATION_MS);
     }, VISIBLE_MS);
-  }, [scheduleNext]);
+  }, [createNotificationState, scheduleNext]);
 
   const handleDismiss = useCallback(() => {
     clearTimer(hideTimer);
@@ -199,7 +217,10 @@ export default function RecentPurchaseNotification() {
   }
 
   const currentPackage = PACKAGES[display.packageIndex];
-  const message = `Ein Kunde aus ${display.city} hat gerade das ${currentPackage.label} Paket gekauft.`;
+
+  if (!currentPackage || !(ALLOWED_DURATIONS as readonly number[]).includes(currentPackage.durationMonths)) {
+    return null;
+  }
 
   return (
     <div
@@ -232,7 +253,7 @@ export default function RecentPurchaseNotification() {
           </div>
 
           <p className="text-[13px] font-medium leading-snug tracking-[0.01em] text-[#F0F0F0] sm:text-sm">
-            {message}
+            {currentPackage.message}
           </p>
 
           <button
