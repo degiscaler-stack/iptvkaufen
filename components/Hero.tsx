@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
+import PricingScrollLink from "@/components/PricingScrollLink";
 import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
@@ -77,16 +78,16 @@ export default function Hero() {
 
         <div className="hero-fade-up hero-fade-up-4 relative mt-[clamp(1.5rem,3vh,2.5rem)] flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <div className="absolute inset-x-8 -inset-y-7 -z-10 rounded-full bg-[#6BFF2A]/12 blur-3xl" />
-          <TrackedLink
-            href="/#preise"
-            analyticsEvent={ANALYTICS_EVENTS.heroBuyClick}
-            analyticsParams={{ source: "hero_primary", button_location: "hero" }}
-            data-analytics="hero_buy_click"
+          <PricingScrollLink
+            buttonLocation="hero"
+            pagePath="/"
+            data-analytics="pricing_scroll_click"
+            data-analytics-source="hero"
             className={`${ctaMotionFeaturedClass} ${ctaSolidGreenClass} inline-flex min-h-11 w-[calc(100%_-_88px)] max-w-[285px] items-center justify-center rounded-full bg-[#A6FF00] px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] whitespace-nowrap sm:w-auto sm:min-h-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em] [&_*]:flex [&_*]:items-center [&_*]:justify-center`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.heroBuy } as CSSProperties}
           >
             JETZT IPTV KAUFEN
-          </TrackedLink>
+          </PricingScrollLink>
           <TrackedAnchor
             href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
             target="_blank"

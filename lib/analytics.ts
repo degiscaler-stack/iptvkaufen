@@ -1,5 +1,6 @@
 export const ANALYTICS_EVENTS = {
   heroBuyClick: "hero_buy_click",
+  pricingScrollClick: "pricing_scroll_click",
   heroTrialClick: "hero_trial_click",
   viewItemList: "view_item_list",
   selectItem: "select_item",

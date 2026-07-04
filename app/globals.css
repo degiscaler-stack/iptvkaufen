@@ -21,6 +21,26 @@ html {
   background: var(--background);
 }
 
+#preise {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 768px) {
+  #preise {
+    scroll-margin-top: 76px;
+  }
+
+  .recent-purchase-notification {
+    bottom: calc(5.75rem + 1.25rem + env(safe-area-inset-bottom, 0px));
+    z-index: 9990;
+  }
+
+  .mobile-sticky-purchase-bar {
+    z-index: 9997;
+    pointer-events: auto;
+  }
+}
+
 body {
   min-height: 100vh;
   margin: 0;
