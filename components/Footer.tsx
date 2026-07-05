@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import PricingScrollLink from "@/components/PricingScrollLink";
 import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import {
@@ -11,7 +12,7 @@ import {
 
 const quickLinks = [
   { label: "Startseite", href: "/" },
-  { label: "Preise", href: "/#preise" },
+  { label: "Preise", href: "/#pakete-start", scrollTarget: true },
   { label: "Senderliste", href: "/#senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
@@ -123,11 +124,21 @@ export default function Footer() {
               Schnellzugriff
             </h2>
             <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Schnellzugriff">
-              {quickLinks.map((link) => (
-                <FooterLink key={link.label} href={link.href}>
-                  {link.label}
-                </FooterLink>
-              ))}
+              {quickLinks.map((link) =>
+                "scrollTarget" in link && link.scrollTarget ? (
+                  <PricingScrollLink
+                    key={link.label}
+                    buttonLocation="footer_preise"
+                    className="inline-flex w-fit items-center text-[14px] font-normal leading-6 text-[#F5F5F5]/68 transition duration-300 hover:text-[#A6FF00]"
+                  >
+                    {link.label}
+                  </PricingScrollLink>
+                ) : (
+                  <FooterLink key={link.label} href={link.href}>
+                    {link.label}
+                  </FooterLink>
+                ),
+              )}
             </nav>
           </div>
 

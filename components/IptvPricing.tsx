@@ -6,6 +6,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import {
+  PACKAGE_SELECTION_ID,
+  scrollToPackages,
+} from "@/lib/scroll-to-pricing";
+import {
   buildWhatsAppUrl,
   WHATSAPP_MESSAGES,
   WHATSAPP_PHONE_DISPLAY,
@@ -113,6 +117,25 @@ export default function IptvPricing() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+
+    if (hash !== PACKAGE_SELECTION_ID && hash !== "preise") {
+      return;
+    }
+
+    const alignToPackages = () => {
+      scrollToPackages();
+    };
+
+    requestAnimationFrame(alignToPackages);
+    const timer = window.setTimeout(alignToPackages, 150);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
     const section = sectionRef.current;
 
     if (!section) {
@@ -150,7 +173,7 @@ export default function IptvPricing() {
       ref={sectionRef}
       id="preise"
       aria-labelledby="iptv-pricing-heading"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-[#000000] px-5 pb-12 pt-4 sm:px-8 sm:pb-14 sm:pt-5 lg:px-0 lg:pb-16 lg:pt-6"
+      className="relative isolate overflow-hidden bg-[#000000] px-5 pb-12 pt-4 sm:px-8 sm:pb-14 sm:pt-5 lg:px-0 lg:pb-16 lg:pt-6"
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="mx-auto max-w-[820px] text-center">
@@ -174,6 +197,12 @@ export default function IptvPricing() {
         <div className="mx-auto mt-6 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#A6FF00]/20 bg-[#0A0F0A]/82 px-3 py-1.5 text-center text-[11px] font-medium leading-5 text-[#F5F5F5]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:mt-7 sm:px-3.5 sm:text-[12px]">
           <span>Schnelle Aktivierung · Persönlicher Support · Sicher bestellen</span>
         </div>
+
+        <div
+          id="pakete-start"
+          className="package-scroll-anchor scroll-mt-[90px] max-md:scroll-mt-[72px]"
+          aria-hidden="true"
+        />
 
         <div className="mx-auto mt-8 max-w-[1240px] overflow-hidden rounded-[22px] border border-[#A6FF00]/22 bg-[radial-gradient(circle_at_18%_0%,rgba(166,255,0,0.07),transparent_42%),linear-gradient(160deg,rgba(10,15,10,0.98)_0%,rgba(5,8,5,1)_100%)] p-4 shadow-[0_12px_28px_rgba(0,0,0,0.28)] sm:mt-10 sm:p-5 lg:flex lg:items-center lg:justify-between lg:gap-8">
           <div className="text-left">

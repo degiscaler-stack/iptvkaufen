@@ -14,7 +14,7 @@ export const metadata: Metadata = buildPageMetadata({
 export default function PreisePage() {
   return (
     <AnchorRedirect
-      href="/#preise"
+      href="/#pakete-start"
       title="IPTV Preise"
       description="Sie werden zu unseren IPTV Paketen auf der Startseite weitergeleitet."
       linkLabel="Zu den Preisen"

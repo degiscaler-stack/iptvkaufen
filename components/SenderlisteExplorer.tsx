@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { KeyboardEvent } from "react";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import PricingScrollLink from "@/components/PricingScrollLink";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import {
   buildSenderlisteCountryInquiryMessage,
@@ -521,18 +522,19 @@ export default function SenderlisteExplorer() {
         Wählen Sie jetzt das passende IPTV-Paket und genießen Sie Ihre Lieblingsinhalte auf bis zu
         2 Geräten gleichzeitig.
       </p>
-      <Link
-        href="/#preise"
-        className={`${ctaSolidGreenClass} mt-5 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
-        onClick={() => {
+      <PricingScrollLink
+        buttonLocation="senderliste_mid_banner"
+        pagePath="/senderliste"
+        onNavigate={() => {
           trackEvent(ANALYTICS_EVENTS.senderlisteMidCtaClick, {
             page_path: "/senderliste",
             button_location: "senderliste_mid_banner",
           });
         }}
+        className={`${ctaSolidGreenClass} mt-5 inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
       >
         JETZT IPTV PAKET WÄHLEN
-      </Link>
+      </PricingScrollLink>
       <p className="mt-4 text-[13px] leading-6 text-[#E6E6E6]/78 sm:text-[14px]">
         Sie suchen einen bestimmten Sender?{" "}
         <a
@@ -729,18 +731,19 @@ export default function SenderlisteExplorer() {
             direkt ein passendes Paket.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Link
-              href="/#preise"
-              className={`${ctaSolidGreenClass} inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
-              onClick={() => {
+            <PricingScrollLink
+              buttonLocation="senderliste_bottom_cta"
+              pagePath="/senderliste"
+              onNavigate={() => {
                 trackEvent(ANALYTICS_EVENTS.senderlisteBottomCtaClick, {
                   page_path: "/senderliste",
                   button_location: "senderliste_bottom_cta",
                 });
               }}
+              className={`${ctaSolidGreenClass} inline-flex items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[12px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D] sm:text-[13px]`}
             >
               JETZT PAKET AUSWÄHLEN
-            </Link>
+            </PricingScrollLink>
             <a
               href={whatsappInquiryUrl}
               target="_blank"

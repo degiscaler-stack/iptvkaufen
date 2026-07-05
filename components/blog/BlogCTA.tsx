@@ -1,4 +1,4 @@
-import Link from "next/link";
+import PricingScrollLink from "@/components/PricingScrollLink";
 import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 export default function BlogCTA() {
@@ -23,18 +23,18 @@ export default function BlogCTA() {
           gleichzeitig und mit persönlichem Support bei der Einrichtung.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <Link
-            href="/"
+          <PricingScrollLink
+            buttonLocation="blog_cta_primary"
             className={`${ctaSolidGreenClass} inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
           >
             Jetzt IPTV kaufen
-          </Link>
-          <Link
-            href="/#preise"
+          </PricingScrollLink>
+          <PricingScrollLink
+            buttonLocation="blog_cta_preise"
             className="inline-flex w-fit items-center justify-center rounded-full border border-[#A6FF00]/30 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00] transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 hover:text-[#C7FF62]"
           >
             Preise ansehen
-          </Link>
+          </PricingScrollLink>
         </div>
       </div>
     </section>

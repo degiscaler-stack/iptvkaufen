@@ -25,9 +25,17 @@ html {
   scroll-margin-top: 90px;
 }
 
+.package-scroll-anchor {
+  scroll-margin-top: 90px;
+}
+
 @media (max-width: 768px) {
   #preise {
     scroll-margin-top: 76px;
+  }
+
+  .package-scroll-anchor {
+    scroll-margin-top: 72px;
   }
 
   .recent-purchase-notification {

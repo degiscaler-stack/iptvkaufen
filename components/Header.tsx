@@ -5,16 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import PricingScrollLink from "@/components/PricingScrollLink";
 import { CTA_MOTION_DELAYS, ctaMotionFeaturedClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 const navigation = [
   { label: "Startseite", href: "/" },
-  { label: "Preise", href: "/#preise" },
+  { label: "Preise", href: "/#pakete-start", scrollTarget: true },
   { label: "Senderliste", href: "/senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
   { label: "Kontakt", href: "/kontakt" },
-];
+] as const;
 
 function isNavItemActive(pathname: string, label: string): boolean {
   switch (label) {
@@ -57,14 +58,32 @@ export default function Header() {
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-7 lg:flex lg:gap-8">
           {navigation.map((item) => {
             const active = isNavItemActive(pathname, item.label);
+            const linkClassName = `group relative text-sm font-medium tracking-wide transition duration-300 ${
+              active ? "text-[#A6FF00]" : "text-[#B8B8B8] hover:text-[#F5F5F5]"
+            }`;
+
+            if ("scrollTarget" in item && item.scrollTarget) {
+              return (
+                <PricingScrollLink
+                  key={item.label}
+                  buttonLocation="header_nav_preise"
+                  className={linkClassName}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-2 left-0 h-px rounded-full bg-[#A6FF00] shadow-[0_0_12px_rgba(166,255,0,0.8)] transition-all duration-300 ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </PricingScrollLink>
+              );
+            }
 
             return (
             <Link
               key={item.label}
               href={item.href}
-              className={`group relative text-sm font-medium tracking-wide transition duration-300 ${
-                active ? "text-[#A6FF00]" : "text-[#B8B8B8] hover:text-[#F5F5F5]"
-              }`}
+              className={linkClassName}
             >
               {item.label}
               <span
@@ -78,13 +97,13 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center sm:flex">
-          <Link
-            href="/#preise"
+          <PricingScrollLink
+            buttonLocation="header_desktop"
             className={`${ctaMotionFeaturedClass} ${ctaSolidGreenClass} inline-flex items-center justify-center rounded-full border border-[#A6FF00]/40 bg-[#A6FF00] px-[18px] py-2.5 text-center text-[13px] font-extrabold leading-none uppercase tracking-[0.08em] whitespace-nowrap lg:px-4 lg:py-2 lg:text-[12px] [&_*]:flex [&_*]:items-center [&_*]:justify-center`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.header } as CSSProperties}
           >
             JETZT IPTV KAUFEN
-          </Link>
+          </PricingScrollLink>
         </div>
 
         <button
@@ -123,6 +142,25 @@ export default function Header() {
         <div className="mx-auto flex max-w-7xl flex-col gap-0.5">
           {navigation.map((item) => {
             const active = isNavItemActive(pathname, item.label);
+            const mobileLinkClassName = `rounded-md px-3 py-[7px] text-[13px] font-medium leading-[1.15] tracking-[0.01em] transition ${
+              active
+                ? "bg-[#A6FF00]/5 text-[#A6FF00]"
+                : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
+            }`;
+
+            if ("scrollTarget" in item && item.scrollTarget) {
+              return (
+                <PricingScrollLink
+                  key={item.label}
+                  buttonLocation="header_mobile_nav_preise"
+                  tabIndex={isOpen ? undefined : -1}
+                  onNavigate={() => setIsOpen(false)}
+                  className={mobileLinkClassName}
+                >
+                  {item.label}
+                </PricingScrollLink>
+              );
+            }
 
             return (
             <Link
@@ -130,25 +168,21 @@ export default function Header() {
               href={item.href}
               tabIndex={isOpen ? undefined : -1}
               onClick={() => setIsOpen(false)}
-              className={`rounded-md px-3 py-[7px] text-[13px] font-medium leading-[1.15] tracking-[0.01em] transition ${
-                active
-                  ? "bg-[#A6FF00]/5 text-[#A6FF00]"
-                  : "text-[#B8B8B8] hover:bg-[#111111] hover:text-[#F5F5F5]"
-              }`}
+              className={mobileLinkClassName}
             >
               {item.label}
             </Link>
             );
           })}
-          <Link
-            href="/#preise"
+          <PricingScrollLink
+            buttonLocation="header_mobile"
             tabIndex={isOpen ? undefined : -1}
-            onClick={() => setIsOpen(false)}
+            onNavigate={() => setIsOpen(false)}
             className={`${ctaMotionFeaturedClass} ${ctaSolidGreenClass} mx-auto mt-3 inline-flex min-h-9 w-[calc(100%_-_140px)] max-w-[230px] items-center justify-center rounded-full bg-[#A6FF00] px-3.5 py-[7px] text-center text-[10.5px] font-extrabold leading-none uppercase tracking-[0.09em] whitespace-nowrap [&_*]:flex [&_*]:items-center [&_*]:justify-center`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.headerMobile } as CSSProperties}
           >
             JETZT IPTV KAUFEN
-          </Link>
+          </PricingScrollLink>
         </div>
       </nav>
     </header>
