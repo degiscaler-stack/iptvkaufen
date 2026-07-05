@@ -9,13 +9,13 @@ export const WHATSAPP_MESSAGES = {
   packageHelp:
     "Hallo, ich interessiere mich für ein IPTV-Paket und benötige Hilfe bei der Auswahl.",
   package1Month:
-    "Hallo, ich möchte das 1-Monats-Paket für 12,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
+    "Hallo, ich möchte das 1-Monats-Paket für 9,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
   package3Months:
-    "Hallo, ich möchte das 3-Monats-Paket für 24,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
+    "Hallo, ich möchte das 3-Monats-Paket für 19,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
   package6Months:
-    "Hallo, ich möchte das 6-Monats-Paket für 39,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
+    "Hallo, ich möchte das 6-Monats-Paket für 29,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
   package12Months:
-    "Hallo, ich möchte das 12-Monats-Paket für 59,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
+    "Hallo, ich möchte das 12-Monats-Paket für 49,99€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
   senderlisteInquiry:
     "Hallo, ich möchte wissen, ob ein bestimmter Sender in Ihrem IPTV-Angebot verfügbar ist.",
 } as const;

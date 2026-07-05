@@ -123,7 +123,7 @@ export default function Hero() {
         </p>
 
         <p className="hero-fade-up hero-fade-up-4 mt-3 text-[11px] font-medium tracking-[0.02em] text-[#F5F5F5]/78 sm:text-xs">
-          Ab 12,99€ · 24h-Test für 3€ · 30 Tage Geld-zurück
+          Ab 9,99€ · 24h-Test für 3€ · 30 Tage Geld-zurück
         </p>
 
         <ul
