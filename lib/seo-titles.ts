@@ -6,7 +6,7 @@ export const SEO_TITLES = {
   blog: "IPTV Blog: Ratgeber & Guides (2026) | iptvkaufenX",
   preise: "IPTV Preise: Pakete ab 9,99 € | iptvkaufenX",
   faq: "IPTV FAQ: Häufige Fragen beantwortet | iptvkaufenX",
-  senderliste: "IPTV Senderliste: DE & International | iptvkaufenX",
+  senderliste: "IPTV Senderliste: 22.000+ Kanäle | iptvkaufenX",
   kontakt: "IPTV Kontakt: Support & Beratung | iptvkaufenX",
   datenschutz: "Datenschutz & DSGVO | iptvkaufenX",
   impressum: "Impressum & Anbieterkennzeichnung | iptvkaufenX",
