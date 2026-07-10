@@ -59,7 +59,7 @@ export default function BlogArticleCard({ post, priority = false }: BlogArticleC
 
           <div className="mt-3 flex items-center gap-2 text-[12px] text-[#F5F5F5]/52">
             <CalendarIcon />
-            <time dateTime={post.updatedAt}>{formatGermanDate(post.updatedAt)}</time>
+            <time dateTime={post.publishedAt}>{formatGermanDate(post.publishedAt)}</time>
           </div>
         </div>
       </Link>

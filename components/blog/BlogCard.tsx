@@ -37,7 +37,7 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] text-[#F5F5F5]/52">
-          <time dateTime={post.updatedAt}>{formatGermanDate(post.updatedAt)}</time>
+          <time dateTime={post.publishedAt}>{formatGermanDate(post.publishedAt)}</time>
           <span aria-hidden="true">·</span>
           <span>{post.readingTimeMinutes} Min. Lesezeit</span>
         </div>

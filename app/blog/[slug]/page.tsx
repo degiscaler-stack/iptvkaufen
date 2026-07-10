@@ -135,6 +135,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
               {post.author.role ? ` · ${post.author.role}` : ""}
             </span>
             <span aria-hidden="true">·</span>
+            <time dateTime={post.publishedAt}>
+              Veröffentlicht: {formatGermanDate(post.publishedAt)}
+            </time>
+            <span aria-hidden="true">·</span>
             <time dateTime={post.updatedAt}>
               Aktualisiert: {formatGermanDate(post.updatedAt)}
             </time>

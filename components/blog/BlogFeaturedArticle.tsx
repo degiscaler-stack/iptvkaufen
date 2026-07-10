@@ -53,7 +53,7 @@ export default function BlogFeaturedArticle({ post }: BlogFeaturedArticleProps) 
           <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-[#F5F5F5]/55">
             <span>{post.author.name}</span>
             <span aria-hidden="true">·</span>
-            <time dateTime={post.updatedAt}>{formatGermanDate(post.updatedAt)}</time>
+            <time dateTime={post.publishedAt}>{formatGermanDate(post.publishedAt)}</time>
             <span aria-hidden="true">·</span>
             <span>{post.readingTimeMinutes} Min.</span>
           </div>

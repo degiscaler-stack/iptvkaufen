@@ -32,7 +32,7 @@ export default function BlogPopularArticles({ posts }: BlogPopularArticlesProps)
                   {post.title}
                 </p>
                 <p className="mt-1 text-[12px] text-[#F5F5F5]/48">
-                  {formatGermanDate(post.updatedAt)} · {post.readingTimeMinutes} Min.
+                  {formatGermanDate(post.publishedAt)} · {post.readingTimeMinutes} Min.
                 </p>
               </div>
             </Link>

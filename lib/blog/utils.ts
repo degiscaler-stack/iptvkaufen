@@ -3,6 +3,7 @@ export function formatGermanDate(dateString: string): string {
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "Europe/Berlin",
   }).format(new Date(dateString));
 }
 
