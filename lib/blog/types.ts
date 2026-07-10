@@ -5,7 +5,10 @@ export type BlogCategory =
   | "iptv-geraete"
   | "iptv-apps"
   | "iptv-vergleich"
-  | "iptv-test";
+  | "iptv-test"
+  | "iptv-premium"
+  | "iptv-senderliste"
+  | "iptv-einrichtung";
 
 export type BlogPostStatus = "planned" | "published";
 
@@ -131,6 +134,18 @@ export const BLOG_CATEGORIES: Record<
     label: "IPTV Test",
     description: "IPTV Free Trial und risikofreies Testen",
   },
+  "iptv-premium": {
+    label: "IPTV Premium",
+    description: "Premium IPTV mit HD- und 4K-Qualität für Deutschland",
+  },
+  "iptv-senderliste": {
+    label: "Senderliste",
+    description: "IPTV Senderlisten, Kanalübersicht und Programmauswahl",
+  },
+  "iptv-einrichtung": {
+    label: "IPTV Einrichtung",
+    description: "IPTV einrichten mit M3U, Apps und Zugangsdaten",
+  },
 };
 
 export const BLOG_CLUSTER_ORDER: BlogCategory[] = [
@@ -141,6 +156,9 @@ export const BLOG_CLUSTER_ORDER: BlogCategory[] = [
   "iptv-apps",
   "iptv-vergleich",
   "iptv-test",
+  "iptv-premium",
+  "iptv-senderliste",
+  "iptv-einrichtung",
 ];
 
 export const POSTS_PER_PAGE = 12;

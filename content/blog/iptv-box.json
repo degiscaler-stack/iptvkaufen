@@ -23,9 +23,10 @@
   "status": "published",
   "relatedSlugs": [
     "german-iptv",
-    "iptv-anbieter",
-    "iptv-abo",
+    "iptv-smarters-pro",
+    "tivimate-iptv",
     "iptv-receiver",
+    "iptv-m3u",
     "iptv-provider"
   ],
   "faq": [
@@ -111,7 +112,7 @@
       "level": 2,
       "paragraphs": [
         "Die Technik dahinter ist überschaubar. Nach dem Einschalten verbindet sich die IPTV Box mit Ihrem WLAN oder per Ethernet mit dem Router. Sie installieren eine kompatible Player-App – oder nutzen eine vorinstallierte Lösung – und tragen die Zugangsdaten Ihres Anbieters ein.",
-        "Die App lädt eine Senderliste, oft als M3U-Playlist oder über die Xtream-API. Wählen Sie einen Kanal, baut die App eine Verbindung zum Stream-Server auf und decodiert das Bild in Echtzeit. Bei stabiler Leitung entsteht der Eindruck klassischen TV; der Unterschied liegt in der Datenquelle: Internet statt Kabel.",
+        "Die App lädt eine Senderliste, oft als [M3U-Playlist](/blog/iptv-m3u) oder über die Xtream-API. Wählen Sie einen Kanal, baut die App eine Verbindung zum Stream-Server auf und decodiert das Bild in Echtzeit. Bei stabiler Leitung entsteht der Eindruck klassischen TV; der Unterschied liegt in der Datenquelle: Internet statt Kabel.",
         "Viele Boxen speichern EPG-Daten, Favoriten und zuletzt gesehene Sender. Hochwertige Modelle unterstützen 4K, HDR und Dolby-Audio-Passthrough – vorausgesetzt, TV und Stream liefern die passende Qualität.",
         "Updates laufen über das Betriebssystem der Box. Android-TV-Geräte erhalten regelmäßige Sicherheits- und App-Updates; bei No-Name-Hardware kann das Update-Management dünner sein. Für Langzeitnutzer ist das ein unterschätzter Kaufgrund.",
         "Manche Nutzer kombinieren die IPTV Box mit externer Festplatte oder NAS für Aufnahmen – je nach App und Anbieter. Das ist kein Muss, zeigt aber, wie flexibel ein offenes System wie Android TV gegenüber geschlossenen TV-Receivern sein kann."
@@ -154,7 +155,7 @@
       "level": 2,
       "paragraphs": [
         "Die ehrliche Antwort: Die beste IPTV Box hängt von Ihrem TV, Ihrer Internetleitung und Ihren Gewohnheiten ab. Es gibt kein universelles Modell für alle deutschen Haushalte. Sinnvolle Kriterien sind Performance, offizielle App-Unterstützung, LAN-Option, 4K-Fähigkeit und langfristige Software-Pflege.",
-        "Für Einsteiger empfehlen sich bewährte Plattformen wie Android TV oder Amazon Fire TV – breite App-Auswahl, vertraute Bedienung, regelmäßige Updates. Enthusiasten mit 4K-Heimkino greifen zu Boxen mit stärkerem Prozessor und Ethernet.",
+        "Für Einsteiger empfehlen sich bewährte Plattformen wie Android TV oder Amazon Fire TV – breite App-Auswahl mit [IPTV Smarters Pro](/blog/iptv-smarters-pro) oder [TiviMate](/blog/tivimate-iptv), vertraute Bedienung, regelmäßige Updates. Enthusiasten mit 4K-Heimkino greifen zu Boxen mit stärkerem Prozessor und Ethernet.",
         "Vermeiden Sie unbekannte No-Name-Boxen mit vorinstallierten „Gratis“-Listen. Sie wirken verlockend, liefern aber selten stabile Sender, Support oder Updates. Investieren Sie lieber in seriöse Hardware und einen seriösen IPTV-Dienst.",
         "Achten Sie beim Kauf auf offizielle Händler und Rückgaberecht. So testen Sie die IPTV Box in Ihrer Wohnung mit Ihrer Leitung – die aussagekräftigste Prüfung, die kein Prospekt ersetzen kann."
       ],

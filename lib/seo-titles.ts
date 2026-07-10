@@ -24,6 +24,11 @@ export const SEO_TITLES = {
     "iptv-abo": "IPTV Abo (2026): Bestes Abonnement | iptvkaufenX",
     "iptv-receiver": "IPTV Receiver: Beste Geräte (2026) | iptvkaufenX",
     "iptv-provider": "IPTV Provider (2026): Besten finden | iptvkaufenX",
+    "iptv-premium-4k": "IPTV Premium 4K (2026): Guide | iptvkaufenX",
+    "iptv-alle-sender": "IPTV Alle Sender: Übersicht (2026) | iptvkaufenX",
+    "iptv-smarters-pro": "IPTV Smarters Pro Setup (2026) | iptvkaufenX",
+    "tivimate-iptv": "TiviMate IPTV Guide (2026) | iptvkaufenX",
+    "iptv-m3u": "IPTV M3U Playlist (2026) | iptvkaufenX",
   },
 } as const;
 
@@ -35,6 +40,9 @@ const CATEGORY_TITLES: Record<BlogCategory, string> = {
   "iptv-apps": "IPTV Apps: Blog Kategorie | iptvkaufenX",
   "iptv-vergleich": "IPTV Vergleich: Blog Artikel | iptvkaufenX",
   "iptv-test": "IPTV Test: Blog Kategorie | iptvkaufenX",
+  "iptv-premium": "IPTV Premium: Blog Kategorie | iptvkaufenX",
+  "iptv-senderliste": "Senderliste: Blog Kategorie | iptvkaufenX",
+  "iptv-einrichtung": "IPTV Einrichtung: Blog Kategorie | iptvkaufenX",
 };
 
 const TAG_TITLES: Record<string, string> = {
@@ -45,6 +53,11 @@ const TAG_TITLES: Record<string, string> = {
   "IPTV Abo": "IPTV Abo: Blog Tag | iptvkaufenX",
   "IPTV Receiver": "IPTV Receiver: Blog Tag | iptvkaufenX",
   "IPTV Provider": "IPTV Provider: Blog Tag | iptvkaufenX",
+  "IPTV Premium 4K": "IPTV Premium 4K: Blog Tag | iptvkaufenX",
+  "IPTV Alle Sender": "IPTV Alle Sender: Blog Tag | iptvkaufenX",
+  "IPTV Smarters Pro": "IPTV Smarters Pro: Blog Tag | iptvkaufenX",
+  "TiviMate IPTV": "TiviMate IPTV: Blog Tag | iptvkaufenX",
+  "IPTV M3U": "IPTV M3U: Blog Tag | iptvkaufenX",
 };
 
 export function getBlogCategoryTitle(slug: BlogCategory): string {

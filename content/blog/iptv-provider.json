@@ -23,10 +23,10 @@
   "status": "published",
   "relatedSlugs": [
     "iptv-anbieter",
-    "german-iptv",
+    "iptv-premium-4k",
     "iptv-abo",
-    "iptv-free-trial",
-    "iptv-receiver",
+    "iptv-alle-sender",
+    "iptv-m3u",
     "iptv-box"
   ],
   "faq": [
@@ -150,7 +150,7 @@
       "level": 2,
       "paragraphs": [
         "Premium IPTV ist kein Marketing-Schlagwort ohne Inhalt. Es beschreibt Anbieter, die Stabilität, Bildqualität und Service ernst nehmen – nicht nur einen niedrigen Preis in großer Schrift.",
-        "Zu den Merkmalen gehören stabile Full-HD- und 4K-Streams zur Hauptsendezeit, ein gepflegtes elektronisches Programmheft (EPG), schnelle Server und deutschsprachiger Support. Premium-Provider aktualisieren Senderlisten zentral, statt Nutzer bei jedem Ausfall selbst suchen zu lassen.",
+        "Zu den Merkmalen gehören stabile Full-HD- und [4K-Streams](/blog/iptv-premium-4k) zur Hauptsendezeit, ein gepflegtes elektronisches Programmheft (EPG), schnelle Server und deutschsprachiger Support. Premium-Provider aktualisieren Senderlisten zentral, statt Nutzer bei jedem Ausfall selbst suchen zu lassen.",
         "Auch die Einrichtung zählt: Schritt-für-Schritt-Anleitungen für Smart TV, Android TV und Fire TV Stick, hilfreiche [FAQ](/faq) und erreichbarer [Kontakt](/kontakt) bei Problemen. Wer erstmals von Kabel wechselt, braucht diese Begleitung – technikaffine Nutzer unterschätzen das oft.",
         "Transparente Laufzeiten und klare [Preise](/preise) ohne versteckte Aktivierungsgebühren sind weiteres Qualitätsmerkmal. Ein Premium IPTV Provider muss nicht der teuerste sein – aber der Gesamtumfang sollte zum Preis passen.",
         "Vergleichen Sie Premium-Angebote anhand derselben Checkliste: dieselben Sender, dieselbe Uhrzeit, dasselbe Gerät. Nur so erkennen Sie echte Unterschiede zwischen Providern, die ähnlich klingen, sich im Alltag aber deutlich unterscheiden."
@@ -253,7 +253,7 @@
           "id": "android-tv-provider",
           "heading": "Android TV",
           "paragraphs": [
-            "Android TV bietet die größte App-Auswahl für IPTV. Provider empfehlen häufig Player wie TiviMate oder IPTV Smarters. Google-zertifizierte Boxen mit ausreichend RAM liefern flüssiges Streaming in HD und 4K.",
+            "Android TV bietet die größte App-Auswahl für IPTV. Provider empfehlen häufig Player wie [TiviMate](/blog/tivimate-iptv) oder [IPTV Smarters Pro](/blog/iptv-smarters-pro). Google-zertifizierte Boxen mit ausreichend RAM liefern flüssiges Streaming in HD und 4K.",
             "Für technikaffine Haushalte ist Android TV oft die stabilste Plattform – besonders mit LAN-Anschluss am TV-Möbel."
           ]
         },

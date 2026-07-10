@@ -103,7 +103,7 @@
           "heading": "Smart-TV und Android TV",
           "paragraphs": [
             "Moderne Smart-TVs mit Android TV oder Google TV eignen sich hervorragend. Sie installieren eine IPTV-App direkt aus dem Play Store oder laden eine kompatible Player-App nach. Die Bedienung erfolgt über die Fernbedienung; viele Apps unterstützen die Integration in die TV-Startseite. Offizielle Informationen zur Plattform finden Sie in der [Android-TV-Dokumentation](https://developer.android.com/training/tv).",
-            "Achten Sie bei der App-Auswahl auf regelmäßige Updates und gute Bewertungen. Veraltete Player können EPG-Fehler oder Abstürze verursachen – ein kurzer Blick in die Release Notes spart Ärger."
+            "Achten Sie bei der App-Auswahl auf regelmäßige Updates und gute Bewertungen – etwa bei [TiviMate](/blog/tivimate-iptv) oder [IPTV Smarters Pro](/blog/iptv-smarters-pro). Veraltete Player können EPG-Fehler oder Abstürze verursachen – ein kurzer Blick in die Release Notes spart Ärger."
           ]
         },
         {
@@ -137,7 +137,7 @@
       "heading": "Installation und Einrichtung",
       "level": 2,
       "paragraphs": [
-        "Die Einrichtung von German IPTV folgt einem wiederkehrenden Muster. Zuerst wählen Sie einen Anbieter und ein passendes Paket. Nach der Buchung erhalten Sie Zugangsdaten per E-Mail – in der Regel innerhalb weniger Minuten. Notieren Sie URL, Benutzername und Passwort sicher; Sie benötigen sie nur einmal pro Gerät.",
+        "Die Einrichtung von German IPTV folgt einem wiederkehrenden Muster. Zuerst wählen Sie einen Anbieter und ein passendes Paket. Nach der Buchung erhalten Sie Zugangsdaten per E-Mail – in der Regel innerhalb weniger Minuten. Notieren Sie URL, Benutzername und Passwort sicher; Sie benötigen sie nur einmal pro Gerät. Details zur Playlist-Einrichtung finden Sie im [IPTV-M3U-Ratgeber](/blog/iptv-m3u).",
         "Als Nächstes installieren Sie auf Ihrem Wunschgerät eine IPTV-App. Beliebte Optionen heißen je nach Plattform unterschiedlich; entscheidend ist die Unterstützung von M3U-Playlists oder Xtream Codes API. Öffnen Sie die App, wählen Sie „Login mit Xtream“ oder „Playlist hinzufügen“ und tragen Sie Ihre Daten ein.",
         "Nach dem Verbindungsaufbau lädt die App die Senderliste. Das kann je nach Umfang einige Sekunden dauern. Anschließend sollten Sie das EPG aktualisieren, Favoriten anlegen und die Bildqualität testen. Starten Sie mit einem bekannten Sender in HD – etwa einem öffentlich-rechtlichen Hauptprogramm – und prüfen Sie, ob Bild und Ton stabil laufen.",
         "Für Haushalte mit mehreren TVs wiederholen Sie den Vorgang auf jedem Gerät oder nutzen – sofern Ihr Anbieter es erlaubt – parallele Streams. Achten Sie auf die im Paket enthaltene Anzahl gleichzeitiger Verbindungen. Bei Problemen lohnt ein Blick in die [FAQ](/faq) oder eine Nachricht an den Support, bevor Sie an der Konfiguration herumdoktern.",
@@ -227,5 +227,5 @@
       "answer": "Eine dedizierte IPTV-Box oder ein [IPTV Receiver](/blog/iptv-receiver) ist optional. Fire-TV-Sticks, Smart-TVs und Apple TV eignen sich für die meisten Nutzer vollkommen. Boxen lohnen sich, wenn Ihr Fernseher kein Smart-TV ist und Sie eine feste Fernbedienungslösung wollen."
     }
   ],
-  "relatedSlugs": ["iptv-free-trial", "iptv-box", "iptv-anbieter", "iptv-abo", "iptv-receiver", "iptv-provider"]
+  "relatedSlugs": ["iptv-free-trial", "iptv-box", "iptv-anbieter", "iptv-premium-4k", "iptv-alle-sender", "iptv-provider"]
 }

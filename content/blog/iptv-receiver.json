@@ -23,10 +23,11 @@
   "status": "published",
   "relatedSlugs": [
     "iptv-box",
-    "german-iptv",
-    "iptv-abo",
-    "iptv-anbieter",
-    "iptv-provider"
+    "tivimate-iptv",
+    "iptv-smarters-pro",
+    "iptv-m3u",
+    "iptv-provider",
+    "iptv-premium-4k"
   ],
   "faq": [
     {
@@ -157,8 +158,8 @@
       "heading": "Wie funktioniert ein IPTV Receiver?",
       "level": 2,
       "paragraphs": [
-        "Die Technik dahinter ist überschaubar. Nach dem Einschalten verbindet sich der IPTV Receiver mit Ihrem WLAN oder per Ethernet mit dem Router. Sie installieren eine kompatible Player-App – oder nutzen eine vorinstallierte Lösung – und tragen die Zugangsdaten Ihres Anbieters ein.",
-        "Die App lädt eine Senderliste, oft als M3U-Playlist oder über die Xtream-API. Wählen Sie einen Kanal, baut die App eine Verbindung zum Stream-Server auf und decodiert das Bild in Echtzeit. Bei stabiler Leitung entsteht der Eindruck klassischen Fernsehempfangs; der Unterschied liegt in der Datenquelle.",
+        "Die Technik dahinter ist überschaubar. Nach dem Einschalten verbindet sich der IPTV Receiver mit Ihrem WLAN oder per Ethernet mit dem Router. Sie installieren eine kompatible Player-App – etwa [TiviMate](/blog/tivimate-iptv) oder [IPTV Smarters Pro](/blog/iptv-smarters-pro) – oder nutzen eine vorinstallierte Lösung – und tragen die Zugangsdaten Ihres Anbieters ein.",
+        "Die App lädt eine Senderliste, oft als [M3U-Playlist](/blog/iptv-m3u) oder über die Xtream-API. Wählen Sie einen Kanal, baut die App eine Verbindung zum Stream-Server auf und decodiert das Bild in Echtzeit. Bei stabiler Leitung entsteht der Eindruck klassischen Fernsehempfangs; der Unterschied liegt in der Datenquelle.",
         "Viele Receiver speichern EPG-Daten, Favoriten und zuletzt gesehene Sender. Hochwertige Modelle unterstützen 4K IPTV, HDR und Dolby-Audio-Passthrough – vorausgesetzt, TV und Stream liefern die passende Qualität.",
         "Updates laufen über das Betriebssystem des Geräts. Android-TV-Receiver erhalten regelmäßige Sicherheits- und App-Updates; bei No-Name-Hardware kann das Update-Management dünner sein. Für Langzeitnutzer ist das ein unterschätzter Kaufgrund.",
         "Manche Nutzer kombinieren den Receiver mit externer Festplatte oder NAS für Aufnahmen – je nach App und Anbieter. Das ist kein Muss, zeigt aber, wie flexibel ein offenes System wie Android TV gegenüber geschlossenen TV-Receivern sein kann."

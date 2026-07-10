@@ -25,7 +25,8 @@
     "german-iptv",
     "iptv-anbieter",
     "iptv-abo",
-    "iptv-receiver",
+    "iptv-m3u",
+    "iptv-premium-4k",
     "iptv-provider"
   ],
   "faq": [
