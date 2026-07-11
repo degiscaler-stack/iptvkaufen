@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 
 const LINK_PATTERN = /\[([^\]]+)\]\(([^)]+)\)/g;
 
+export const CONTEXTUAL_LINK_CLASS = "contextual-link";
+
 function isExternalHref(href: string): boolean {
   return href.startsWith("http://") || href.startsWith("https://");
 }
@@ -30,13 +32,14 @@ export function renderInlineContent(text: string): ReactNode[] {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
+          className={CONTEXTUAL_LINK_CLASS}
         >
           {label}
         </a>,
       );
     } else {
       nodes.push(
-        <Link key={`link-${key++}`} href={href}>
+        <Link key={`link-${key++}`} href={href} className={CONTEXTUAL_LINK_CLASS}>
           {label}
         </Link>,
       );

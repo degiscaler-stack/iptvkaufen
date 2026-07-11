@@ -3,6 +3,7 @@ import Link from "next/link";
 import BlogArticleCard from "@/components/blog/BlogArticleCard";
 import BlogSearchBox from "@/components/blog/BlogSearchBox";
 import { getAllPostSummaries } from "@/lib/blog/posts";
+import { CONTEXTUAL_LINK_CLASS } from "@/lib/blog/inline-content";
 import { buildBlogSchema, buildPageMetadata } from "@/lib/seo";
 import { SEO_TITLES } from "@/lib/seo-titles";
 
@@ -36,11 +37,11 @@ export default function BlogHomePage() {
           </h1>
           <p className="mx-auto mt-5 max-w-[640px] text-[15px] leading-7 text-[#E6E6E6]/82 sm:text-[16px]">
             Klare Leitfäden und praxisnahe Informationen rund um IPTV in Deutschland – von der{" "}
-            <Link href="/autor" className="font-medium text-[#A6FF00] underline-offset-4 hover:underline">
+            <Link href="/autor" className={CONTEXTUAL_LINK_CLASS}>
               iptvkaufenX Redaktion
             </Link>
             . Sender prüfen Sie in der{" "}
-            <Link href="/senderliste" className="font-medium text-[#A6FF00] underline-offset-4 hover:underline">
+            <Link href="/senderliste" className={CONTEXTUAL_LINK_CLASS}>
               IPTV Senderliste
             </Link>
             .

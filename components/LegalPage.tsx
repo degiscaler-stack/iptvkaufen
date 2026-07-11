@@ -70,7 +70,7 @@ export default function LegalPage({ eyebrow, title, updatedAt, intro, sections }
                 {section.paragraphs?.map((paragraph) => (
                   <p
                     key={paragraph}
-                    className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px] [&_a]:font-medium [&_a]:text-[#A6FF00] [&_a]:underline-offset-4 hover:[&_a]:underline"
+                    className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px] [&_a]:font-medium"
                   >
                     {renderInlineContent(paragraph)}
                   </p>
@@ -93,7 +93,7 @@ export default function LegalPage({ eyebrow, title, updatedAt, intro, sections }
                   </p>
                 ))}
                 {section.items ? (
-                  <ul className="mt-4 grid gap-2.5 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px] [&_a]:font-medium [&_a]:text-[#A6FF00] [&_a]:underline-offset-4 hover:[&_a]:underline">
+                  <ul className="mt-4 grid gap-2.5 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px] [&_a]:font-medium">
                     {section.items.map((item) => (
                       <li key={item} className="flex gap-3">
                         <span className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#A6FF00]" />

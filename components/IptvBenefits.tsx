@@ -60,6 +60,7 @@ function BenefitIcon({ icon }: { icon: (typeof benefits)[number]["icon"] }) {
 export default function IptvBenefits() {
   return (
     <section
+      id="warum-iptvkaufenx"
       aria-labelledby="iptv-benefits-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 pb-9 pt-12 sm:px-8 sm:pb-10 sm:pt-14 lg:px-0 lg:pb-12 lg:pt-16"
     >

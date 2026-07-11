@@ -66,6 +66,28 @@ a {
   text-decoration: none;
 }
 
+/* Contextual editorial internal links (homepage SEO, Senderliste, blog prose) */
+a.contextual-link {
+  color: #a6ff00;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(166, 255, 0, 0.3);
+  text-underline-offset: 4px;
+  transition:
+    color 0.3s,
+    text-decoration-color 0.3s;
+}
+
+a.contextual-link:hover {
+  color: #c7ff62;
+  text-decoration-color: rgba(166, 255, 0, 0.7);
+}
+
+a.contextual-link:focus-visible {
+  outline: 2px solid rgba(166, 255, 0, 0.7);
+  outline-offset: 2px;
+}
+
 button {
   font: inherit;
 }
@@ -151,13 +173,23 @@ button {
 
 .blog-prose a {
   color: #a6ff00;
+  font-weight: 500;
   text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.3s;
+  text-decoration-color: rgba(166, 255, 0, 0.3);
+  text-underline-offset: 4px;
+  transition:
+    color 0.3s,
+    text-decoration-color 0.3s;
 }
 
 .blog-prose a:hover {
   color: #c7ff62;
+  text-decoration-color: rgba(166, 255, 0, 0.7);
+}
+
+.blog-prose a:focus-visible {
+  outline: 2px solid rgba(166, 255, 0, 0.7);
+  outline-offset: 2px;
 }
 
 /* Blog article callouts */

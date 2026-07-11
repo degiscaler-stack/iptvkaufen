@@ -20,6 +20,7 @@ import {
 } from "@/lib/blog/posts";
 import { formatGermanDate } from "@/lib/blog/utils";
 import { resolveBlogOgImage } from "@/lib/blog/images";
+import { CONTEXTUAL_LINK_CLASS } from "@/lib/blog/inline-content";
 import { BLOG_CATEGORIES, isPlannedPost } from "@/lib/blog/types";
 import {
   buildBreadcrumbSchema,
@@ -135,7 +136,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
               Von{" "}
               <Link
                 href="/autor"
-                className="font-semibold text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#C7FF62] hover:underline"
+                className={CONTEXTUAL_LINK_CLASS}
               >
                 {post.author.name}
               </Link>

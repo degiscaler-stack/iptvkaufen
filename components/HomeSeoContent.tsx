@@ -1,7 +1,5 @@
 import Link from "next/link";
-
-const linkClass =
-  "font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#C7FF62] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]";
+import { CONTEXTUAL_LINK_CLASS } from "@/lib/blog/inline-content";
 
 export const HOME_SEO_FAQ = [
   {
@@ -27,8 +25,7 @@ const cards = [
     eyebrow: "IPTV DEUTSCHLAND",
     title: (
       <>
-        IPTV Kaufen in{" "}
-        <span className="text-[#A6FF00]">Deutschland</span>
+        IPTV Kaufen in <span className="text-[#A6FF00]">Deutschland</span>
       </>
     ),
     paragraphs: [
@@ -37,28 +34,24 @@ const cards = [
         ohne Satellitenschüssel. Sie erhalten Zugangsdaten, installieren eine Player-App und
         streamen Live-TV auf dem Gerät, das Sie bereits nutzen. Für Haushalte in Deutschland zählen
         vor allem Stabilität zur Hauptsendezeit, transparente Pakete und erreichbarer Support auf
-        Deutsch. Genau diese Punkte entscheiden, ob IPTV im Alltag Freude macht oder frustriert –
-        unabhängig davon, wie lang die Senderliste auf dem Papier wirkt.
+        Deutsch.
       </>,
       <>
         Der Unterschied zu fragwürdigen Billigangeboten zeigt sich im Alltag: gepflegte Sender,
         nachvollziehbare Leistungen und Hilfe bei der Ersteinrichtung. Wer IPTV Deutschland ernst
-        nimmt, vergleicht nicht nur den Monatspreis, sondern die Gesamtleistung – inklusive
-        paralleler Nutzung, EPG und Bildqualität. Seriöse Anbieter erklären Geräteanforderungen
-        offen und drängen nicht zur Sofortzahlung ohne klare Leistungsbeschreibung.
+        nimmt, vergleicht Gesamtleistung statt nur den Monatspreis – inklusive paralleler Nutzung,
+        EPG und Bildqualität.
       </>,
       <>
-        Vor dem Kauf lohnt der Blick auf den tatsächlichen Senderumfang und die Support-Erreichbarkeit.
-        Prüfen Sie Kanäle in der{" "}
-        <Link href="/senderliste" className={linkClass}>
+        Vor dem Kauf prüfen Sie Kanäle in der{" "}
+        <Link href="/senderliste" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Senderliste
         </Link>{" "}
-        und lesen Sie Auswahlkriterien im{" "}
-        <Link href="/blog/iptv-provider" className={linkClass}>
+        und lesen Auswahlkriterien im{" "}
+        <Link href="/blog/iptv-provider" className={CONTEXTUAL_LINK_CLASS}>
           IPTV-Provider-Ratgeber
         </Link>
-        . So entscheiden Sie nach Leistung statt nach leeren Versprechen – und starten mit realistischen
-        Erwartungen an Leitung und Gerät.
+        . So starten Sie mit realistischen Erwartungen an Leitung und Gerät.
       </>,
     ],
   },
@@ -67,35 +60,35 @@ const cards = [
     eyebrow: "INHALTE & SPORT",
     title: (
       <>
-        Live-TV, Sport,{" "}
-        <span className="text-[#A6FF00]">Filme &amp; Serien</span>
+        Live-TV, Sport, <span className="text-[#A6FF00]">Filme &amp; Serien</span>
       </>
     ),
     paragraphs: [
       <>
         Starkes IPTV bündelt lineares Live-TV mit Unterhaltung on demand. Deutsche und
         internationale Sender, Nachrichten und Sport gehören ebenso dazu wie Filme und Serien –
-        ergänzend zu Plattformen wie Netflix, Prime Video oder Disney+. Viele Haushalte nutzen IPTV
-        genau deshalb: Live-Programm und Mediathek-Feeling in einem Zugang, ohne zwischen mehreren
-        Apps hin- und herzuwechseln.
+        ergänzend zu Plattformen wie Netflix, Prime Video oder Disney+. Viele Haushalte nutzen genau
+        diesen Mix in einem Zugang.
       </>,
       <>
-        Bei Sport zählt Stabilität mehr als Marketing. Große Spiele und Events belasten Server und
-        Leitung gleichzeitig – genau dann muss der Stream halten. Wer HD oder 4K erwartet, sollte
-        Internetgeschwindigkeit und Gerät mitdenken, nicht nur die Senderanzahl. Ein kurzer Test
-        zur Hauptsendezeit sagt oft mehr aus als jede Feature-Liste auf der Startseite.
-      </>,
-      <>
-        Orientierung zu Ultra-HD finden Sie unter{" "}
-        <Link href="/blog/iptv-premium-4k" className={linkClass}>
+        Bei Sport zählt Stabilität mehr als Marketing. Große Events belasten Server und Leitung
+        gleichzeitig – genau dann muss der Stream halten. Wer HD oder{" "}
+        <Link href="/blog/iptv-premium-4k" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Premium 4K
-        </Link>
-        . Weitere Tipps und Vergleiche bietet der{" "}
-        <Link href="/blog" className={linkClass}>
+        </Link>{" "}
+        erwartet, sollte Internetgeschwindigkeit und Gerät mitdenken.
+      </>,
+      <>
+        Wer{" "}
+        <Link href="/senderliste" className={CONTEXTUAL_LINK_CLASS}>
+          Sender gezielt suchen
+        </Link>{" "}
+        möchte, spart Zeit und enttäuscht sich nicht an unrealistischen „alle Sender“-Versprechen.
+        Weitere Tipps bietet der{" "}
+        <Link href="/blog" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Blog
         </Link>
-        – praxisnah und ohne Keyword-Listen. Wer Sender gezielt sucht, spart Zeit und enttäuscht
-        sich nicht an unrealistischen „alle Sender“-Versprechen.
+        .
       </>,
     ],
   },
@@ -104,36 +97,37 @@ const cards = [
     eyebrow: "GERÄTE",
     title: (
       <>
-        IPTV auf{" "}
-        <span className="text-[#A6FF00]">allen Geräten</span>
+        IPTV auf <span className="text-[#A6FF00]">allen Geräten</span>
       </>
     ),
     paragraphs: [
       <>
         Die meisten Nutzer starten auf dem Smart TV – etwa Samsung TV oder LG TV – oder setzen Fire
         TV und Android TV im Wohnzimmer ein. Apple TV, Smartphone und Tablet eignen sich für
-        unterwegs oder als Zweitgerät. Entscheidend ist weniger die Marke als eine stabile
-        Verbindung und eine App, die zu Ihrem Setup passt. Wer unsicher ist, startet mit dem
-        Hauptgerät und erweitert später.
+        unterwegs oder als Zweitgerät. Entscheidend ist eine stabile Verbindung und eine passende
+        App.
       </>,
       <>
-        Ältere Fernseher ohne brauchbare Smart-Oberfläche profitieren oft von einer externen Box
-        oder einem Stick. Im Wohnzimmer lohnt LAN statt schwachem WLAN, besonders bei 4K und
-        parallelen Streams. So trennen Sie Geräteprobleme von Anbieterproblemen und vermeiden
-        Fehlkäufe, die nur am Heimnetz scheitern. Ein Fire-TV-Stick im Schlafzimmer und Android TV
-        im Wohnzimmer sind in deutschen Haushalten eine häufige Kombination.
+        Ältere Fernseher ohne brauchbare Smart-Oberfläche profitieren oft von einer{" "}
+        <Link href="/blog/iptv-box" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Box
+        </Link>{" "}
+        oder einem dedizierten{" "}
+        <Link href="/blog/iptv-receiver" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Receiver
+        </Link>
+        . Im Wohnzimmer lohnt LAN statt schwachem WLAN, besonders bei 4K und parallelen Streams.
       </>,
       <>
-        Testen Sie IPTV auf dem Gerät, das Sie täglich nutzen – nicht nur am PC mittags, wenn das
-        Netz leer ist. Pakete und Laufzeiten finden Sie unter den{" "}
-        <Link href="/#pakete-start" className={linkClass}>
+        Testen Sie IPTV auf dem Gerät, das Sie täglich nutzen. Pakete finden Sie unter den{" "}
+        <Link href="/#pakete-start" className={CONTEXTUAL_LINK_CLASS}>
           Preisen
         </Link>
-        ; bei Einrichtungsfragen hilft der{" "}
-        <Link href="/kontakt" className={linkClass}>
+        ; bei Fragen hilft der{" "}
+        <Link href="/kontakt" className={CONTEXTUAL_LINK_CLASS}>
           Kontakt
         </Link>
-        . So vermeiden Sie Überraschungen nach der Aktivierung.
+        .
       </>,
     ],
   },
@@ -142,42 +136,37 @@ const cards = [
     eyebrow: "EINRICHTUNG",
     title: (
       <>
-        Einfache{" "}
-        <span className="text-[#A6FF00]">IPTV Einrichtung</span>
+        Einfache <span className="text-[#A6FF00]">IPTV Einrichtung</span>
       </>
     ),
     paragraphs: [
       <>
         Nach dem Kauf tragen Sie Ihre Zugangsdaten in einer IPTV-App ein – häufig per Xtream Codes
-        oder als M3U-Playlist. Beliebte Player sind IPTV Smarters Pro und TiviMate. Die Einrichtung
-        dauert meist nur wenige Minuten; Senderliste und EPG laden anschließend automatisch. Danach
-        fühlt sich IPTV an wie gewohntes Fernsehen – nur flexibler.
-      </>,
-      <>
-        Kommen Login-Fehler oder leere Listen vor, helfen App-Update, korrekte Server-URL und ein
-        Neustart von Router und Gerät oft weiter. Guter Support erklärt die Schritte für Ihr
-        konkretes Gerät – statt pauschaler Standardantworten. Notieren Sie sich App-Name und
-        Zugangsart (M3U oder Xtream Codes), dann geht die Einrichtung auf einem zweiten Gerät
-        deutlich schneller.
-      </>,
-      <>
-        Anleitungen finden Sie zu{" "}
-        <Link href="/blog/iptv-smarters-pro" className={linkClass}>
-          IPTV Smarters Pro
-        </Link>
-        ,{" "}
-        <Link href="/blog/tivimate-iptv" className={linkClass}>
-          TiviMate
-        </Link>{" "}
-        und{" "}
-        <Link href="/blog/iptv-m3u" className={linkClass}>
+        oder als{" "}
+        <Link href="/blog/iptv-m3u" className={CONTEXTUAL_LINK_CLASS}>
           IPTV M3U
         </Link>
-        . Kurze Antworten zu Aktivierung, Geräten und Zahlung stehen auch in den{" "}
-        <Link href="/#faq" className={linkClass}>
+        -Playlist. Die Einrichtung dauert meist nur wenige Minuten; Senderliste und EPG laden
+        anschließend automatisch.
+      </>,
+      <>
+        Als Einstiegsplayer eignet sich oft{" "}
+        <Link href="/blog/iptv-smarters-pro" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Smarters Pro
+        </Link>
+        . Wer auf Android TV Feintuning und EPG-Komfort sucht, greift häufig zu{" "}
+        <Link href="/blog/tivimate-iptv" className={CONTEXTUAL_LINK_CLASS}>
+          TiviMate
+        </Link>
+        . Notieren Sie App-Name und Zugangsart – dann geht ein zweites Gerät schneller.
+      </>,
+      <>
+        Kommen Login-Fehler vor, helfen App-Update, korrekte Server-URL und Neustart von Router und
+        Gerät. Kurze Antworten stehen in den{" "}
+        <Link href="/#faq" className={CONTEXTUAL_LINK_CLASS}>
           FAQ
         </Link>
-        – ideal, bevor Sie den Support kontaktieren.
+        .
       </>,
     ],
   },
@@ -190,7 +179,7 @@ export default function HomeSeoContent() {
       className="relative isolate overflow-hidden bg-[#000000] px-5 py-10 text-[#F5F5F5] sm:px-8 sm:py-12 lg:px-0 lg:py-14"
     >
       <div className="mx-auto max-w-[1360px] lg:px-12">
-        <div className="mx-auto max-w-[820px] text-center">
+        <header className="mx-auto max-w-[820px] text-center">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:mb-4 sm:text-[11px]">
             IPTV RATGEBER
           </p>
@@ -206,10 +195,9 @@ export default function HomeSeoContent() {
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
             Kompakte Orientierung zu Inhalten, Geräten und Einrichtung – damit Sie IPTV in
             Deutschland sicher und ohne Umwege starten. Die folgenden Punkte ergänzen die Abschnitte
-            oben und beantworten die Fragen, die vor dem Kauf am häufigsten bleiben: Was ist
-            enthalten, worauf Geräte ankommen und wie die Einrichtung abläuft.
+            oben und beantworten die Fragen, die vor dem Kauf am häufigsten bleiben.
           </p>
-        </div>
+        </header>
 
         <div className="mx-auto mt-8 grid max-w-[1180px] gap-5 sm:mt-10 md:grid-cols-2 md:gap-6">
           {cards.map((card) => (

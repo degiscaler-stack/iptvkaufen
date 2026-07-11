@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { CONTEXTUAL_LINK_CLASS } from "@/lib/blog/inline-content";
 
-const linkClass =
-  "font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#C7FF62] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]";
+const linkClass = CONTEXTUAL_LINK_CLASS;
 
 export const SENDERLISTE_FAQ = [
   {

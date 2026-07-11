@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTEXTUAL_LINK_CLASS } from "@/lib/blog/inline-content";
 import DraggableMarquee from "./DraggableMarquee";
 
 const topLogoRow = [
@@ -101,7 +102,7 @@ export default function ChannelLogos() {
             Beliebte Sender und Streaming-Marken – die vollständige Übersicht finden Sie in der{" "}
             <Link
               href="/senderliste"
-              className="font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:underline"
+              className={CONTEXTUAL_LINK_CLASS}
             >
               IPTV Senderliste
             </Link>
