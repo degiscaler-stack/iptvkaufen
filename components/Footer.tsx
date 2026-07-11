@@ -13,9 +13,10 @@ import {
 const quickLinks = [
   { label: "Startseite", href: "/" },
   { label: "Preise", href: "/#pakete-start", scrollTarget: true },
-  { label: "Senderliste", href: "/#senderliste" },
+  { label: "Senderliste", href: "/senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
+  { label: "Über uns", href: "/ueber-uns" },
   { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
@@ -24,6 +25,9 @@ const legalLinks = [
   { label: "Rückerstattungsrichtlinie", href: "/rueckerstattung" },
   { label: "Nutzungsbedingungen", href: "/nutzungsbedingungen" },
   { label: "Impressum", href: "/impressum" },
+  { label: "Redaktionelle Richtlinien", href: "/redaktionelle-richtlinien" },
+  { label: "Inhaltsrichtlinien", href: "/inhaltsrichtlinien" },
+  { label: "Autor", href: "/autor" },
 ] as const;
 
 const contactLinks = [

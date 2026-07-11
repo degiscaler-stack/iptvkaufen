@@ -1,7 +1,9 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import SenderlisteExplorer from "@/components/SenderlisteExplorer";
-import SenderlisteSeoContent from "@/components/SenderlisteSeoContent";
+import SenderlisteSeoContent, {
+  SENDERLISTE_FAQ,
+} from "@/components/SenderlisteSeoContent";
 import {
   buildBreadcrumbSchema,
   buildFaqSchema,
@@ -11,30 +13,7 @@ import {
 import { SEO_TITLES } from "@/lib/seo-titles";
 
 const SENDERLISTE_DESCRIPTION =
-  "IPTV Senderliste mit deutschen & internationalen Kanälen, Sport, Filmen und Serien. IPTV Kanäle durchsuchen – regelmäßig aktualisiert bei iptvkaufenX.";
-
-const SENDERLISTE_FAQ = [
-  {
-    question: "Was steht in der IPTV Senderliste?",
-    answer:
-      "Die IPTV Senderliste zeigt verfügbare Live-TV-Kanäle und Themenkategorien – von deutschen Programmen über internationale IPTV Sender bis zu Sport, Filmen und Serien.",
-  },
-  {
-    question: "Werden deutsche und internationale Sender angeboten?",
-    answer:
-      "Ja. Deutsche IPTV Sender gehören zum Kernangebot; ergänzend finden Sie internationale IPTV Sender aus vielen Ländern. Prüfen Sie gewünschte Kanäle direkt in der Suche.",
-  },
-  {
-    question: "Wie oft wird die Senderliste aktualisiert?",
-    answer:
-      "Die Liste wird regelmäßig gepflegt. Neue Kanäle, geänderte Bezeichnungen und thematische IPTV Kategorien fließen laufend ein.",
-  },
-  {
-    question: "Auf welchen Geräten kann ich die Sender nutzen?",
-    answer:
-      "Die Kanäle lassen sich auf Smart TV, Fire TV, Android TV, Smartphone, Tablet und PC streamen – je nach App und Paket.",
-  },
-];
+  "IPTV Senderliste: deutsche & internationale Kanäle, Sport und Filme durchsuchen. Regelmäßig aktualisiert – jetzt bei iptvkaufenX prüfen.";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.senderliste,

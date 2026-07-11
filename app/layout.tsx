@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://iptvkaufenx.de"),
   title: SEO_TITLES.siteDefault,
   description:
-    "IPTV kaufen in Deutschland. Über 22.000 Sender, Filme, Serien und Fußball in Ultra HD auf allen Geräten.",
+    "IPTV kaufen in Deutschland. Über 22.000 Sender, Filme, Serien und Sport in Ultra HD – auf Smart TV, Fire TV und mehr.",
   verification: {
     google: "EsW591o2eN7U4ge2cczx0ALhDErtq_qrj0F75xBbky0",
   },

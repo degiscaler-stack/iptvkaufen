@@ -6,31 +6,31 @@ import { type PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 const reviews = [
   {
     src: "/images/testimonials/iptv-kaufen-1.webp",
-    alt: "iptv kaufen kundenbewertung",
+    alt: "Kundenbewertung zu iptvkaufenX per Chat-Screenshot",
     width: 854,
     height: 1840,
   },
   {
     src: "/images/testimonials/iptv-kaufen-2.webp",
-    alt: "iptv kaufen whatsapp bewertung",
+    alt: "WhatsApp-Kundenfeedback zur IPTV-Einrichtung",
     width: 858,
     height: 1834,
   },
   {
     src: "/images/testimonials/iptv-kaufen-3.webp",
-    alt: "iptv kaufen kunden erfahrung",
+    alt: "Positive Kundenerfahrung mit Live-TV Streaming",
     width: 688,
     height: 1488,
   },
   {
     src: "/images/testimonials/iptv-kaufen-4.webp",
-    alt: "iptv kaufen kundenbewertung",
+    alt: "Kundenbewertung zu Bildqualität und Support",
     width: 688,
     height: 1504,
   },
   {
     src: "/images/testimonials/iptv-kaufen-5.webp",
-    alt: "iptv kaufen whatsapp bewertung",
+    alt: "WhatsApp-Bewertung zur schnellen Aktivierung",
     width: 856,
     height: 1836,
   },

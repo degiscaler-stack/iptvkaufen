@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import BlogBreadcrumb from "@/components/blog/BlogBreadcrumb";
 import BlogArticleContent, {
@@ -131,7 +132,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-[#F5F5F5]/58">
             <span>
-              Von <strong className="font-semibold text-[#F5F5F5]/82">{post.author.name}</strong>
+              Von{" "}
+              <Link
+                href="/autor"
+                className="font-semibold text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#C7FF62] hover:underline"
+              >
+                {post.author.name}
+              </Link>
               {post.author.role ? ` · ${post.author.role}` : ""}
             </span>
             <span aria-hidden="true">·</span>

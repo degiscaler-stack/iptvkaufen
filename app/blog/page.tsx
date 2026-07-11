@@ -9,7 +9,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.blog,
   description:
-    "Der iptvkaufenX Blog mit klaren IPTV-Leitfäden für Deutschland – German IPTV, Tests, Geräte und Premium Live-TV.",
+    "IPTV-Ratgeber für Deutschland: Geräte, Apps, Anbieter, Abo und Einrichtung – praxisnah von der iptvkaufenX Redaktion.",
   path: "/blog",
 });
 
@@ -35,7 +35,15 @@ export default function BlogHomePage() {
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-[640px] text-[15px] leading-7 text-[#E6E6E6]/82 sm:text-[16px]">
-            Klare Leitfäden und praxisnahe Informationen rund um IPTV in Deutschland.
+            Klare Leitfäden und praxisnahe Informationen rund um IPTV in Deutschland – von der{" "}
+            <Link href="/autor" className="font-medium text-[#A6FF00] underline-offset-4 hover:underline">
+              iptvkaufenX Redaktion
+            </Link>
+            . Sender prüfen Sie in der{" "}
+            <Link href="/senderliste" className="font-medium text-[#A6FF00] underline-offset-4 hover:underline">
+              IPTV Senderliste
+            </Link>
+            .
           </p>
           <div className="mx-auto mt-8 max-w-[520px]">
             <BlogSearchBox />

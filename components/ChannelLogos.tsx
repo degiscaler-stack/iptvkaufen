@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DraggableMarquee from "./DraggableMarquee";
 
 const topLogoRow = [
@@ -97,7 +98,14 @@ export default function ChannelLogos() {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[520px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Beliebte Sender und Streaming-Marken für IPTV Kaufen in Deutschland.
+            Beliebte Sender und Streaming-Marken – die vollständige Übersicht finden Sie in der{" "}
+            <Link
+              href="/senderliste"
+              className="font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:underline"
+            >
+              IPTV Senderliste
+            </Link>
+            .
           </p>
         </div>
 

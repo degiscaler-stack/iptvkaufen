@@ -46,7 +46,8 @@ export default function Header() {
         <Link href="/" aria-label="Startseite" className="group relative z-10 flex items-center">
           <Image
             src="/brand/iptv-kaufen-logo.webp"
-            alt="IPTV Kaufen Logo"
+              alt="IPTV Kaufen Logo"
+              title="iptvkaufenX"
             width={520}
             height={260}
             priority

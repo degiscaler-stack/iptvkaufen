@@ -48,7 +48,7 @@ export default function PremiumExperience() {
             <div className="relative overflow-hidden rounded-[12px] shadow-[0_18px_46px_rgba(0,0,0,0.42)]">
               <Image
                 src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
-                alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
+                alt="Premium IPTV Streaming auf dem Fernseher im Wohnzimmer"
                 width={1280}
                 height={720}
                 sizes="(max-width: 639px) calc(100vw - 2.5rem), 640px"
@@ -84,7 +84,7 @@ export default function PremiumExperience() {
           <div className="relative overflow-hidden rounded-[14px] shadow-[0_28px_80px_rgba(0,0,0,0.48)]">
             <Image
               src="/images/iptv-kaufen-premium-streaming-deutschland.webp"
-              alt="IPTV Kaufen Premium Streaming Erlebnis in Deutschland"
+              alt="Premium IPTV Streaming Erlebnis auf dem Smart TV"
               width={1280}
               height={720}
               sizes="(min-width: 1024px) 620px, calc(100vw - 4rem)"

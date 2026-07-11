@@ -8,7 +8,7 @@ const sportsPosterItems = Array.from({ length: 16 }, (_, index) => {
   return {
     title: `Live Sport Poster ${number}`,
     src: `/images/Sports teams/iptv-kaufen-${number}.webp`,
-    alt: `Live Sport mit IPTV Kaufen – Sport Poster ${number}`,
+    alt: `Live-Sport-Motiv ${number} aus dem IPTV-Sportangebot`,
   };
 });
 

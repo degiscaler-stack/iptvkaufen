@@ -3,7 +3,7 @@ import Link from "next/link";
 const linkClass =
   "font-medium text-[#A6FF00] underline-offset-4 transition duration-300 hover:text-[#C7FF62] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]";
 
-const SENDERLISTE_FAQ = [
+export const SENDERLISTE_FAQ = [
   {
     question: "Was steht in der IPTV Senderliste?",
     answer:
@@ -23,6 +23,16 @@ const SENDERLISTE_FAQ = [
     question: "Auf welchen Geräten kann ich die Sender nutzen?",
     answer:
       "Die Kanäle lassen sich auf Smart TV, Fire TV, Android TV, Smartphone, Tablet und PC streamen – je nach App und Paket. Tipps zur Hardware finden Sie in unseren Ratgebern zu IPTV Box und IPTV Receiver.",
+  },
+  {
+    question: "Wie finde ich IPTV Sportsender oder Filmsender?",
+    answer:
+      "Nutzen Sie die Suche oder öffnen Sie die thematischen IPTV Kategorien im Katalog. Sportsender, Filmsender und Serienbereiche sind dort getrennt auffindbar – ergänzend zur klassischen Länderübersicht.",
+  },
+  {
+    question: "Unterscheidet sich die Senderliste vom Kauf auf der Startseite?",
+    answer:
+      "Ja. Die Startseite fokussiert IPTV kaufen und Pakete. Diese Seite ist die IPTV Channel List zur Prüfung von Kanälen. Beides gehört zusammen: erst Sender prüfen, dann Paket wählen.",
   },
 ];
 
@@ -276,6 +286,14 @@ export default function SenderlisteSeoContent() {
             Weitere Tipps und Vergleiche finden Sie im{" "}
             <Link href="/blog" className={linkClass}>
               Blog
+            </Link>
+            . Wer wir sind und wie Inhalte entstehen, erklären{" "}
+            <Link href="/ueber-uns" className={linkClass}>
+              Über uns
+            </Link>{" "}
+            und die{" "}
+            <Link href="/autor" className={linkClass}>
+              Redaktion
             </Link>
             . Wenn Sie bereit sind, starten Sie über die{" "}
             <Link href="/" className={linkClass}>

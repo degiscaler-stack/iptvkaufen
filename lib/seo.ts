@@ -95,6 +95,8 @@ export function buildBlogPostingSchema(post: BlogPost) {
     author: {
       "@type": "Person",
       name: post.author.name,
+      url: `${SITE_URL}/autor`,
+      jobTitle: post.author.role,
     },
     publisher: {
       "@type": "Organization",

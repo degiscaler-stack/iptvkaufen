@@ -4,54 +4,54 @@ import DraggableMarquee from "./DraggableMarquee";
 
 const posterItems = [
   {
-    title: "IPTV Kaufen Poster 1",
+    title: "Film- und Serienposter 1",
     src: "/images/movies-series/iptv-kaufen-1.webp",
-    alt: "Beliebter Film und Serien Poster für IPTV Kaufen",
+    alt: "Film- und Seriencover aus dem IPTV-Unterhaltungsangebot",
   },
   {
-    title: "IPTV Kaufen Poster 2",
+    title: "Film- und Serienposter 2",
     src: "/images/movies-series/iptv-kaufen-2.webp",
-    alt: "Premium Serien Poster für IPTV Kaufen Deutschland",
+    alt: "Serienposter aus der Premium-Streaming-Auswahl",
   },
   {
-    title: "IPTV Kaufen Poster 3",
+    title: "Film- und Serienposter 3",
     src: "/images/movies-series/iptv-kaufen-3.webp",
-    alt: "Blockbuster Poster für IPTV Kaufen in Deutschland",
+    alt: "Blockbuster-Poster aus dem Filmangebot",
   },
   {
-    title: "IPTV Kaufen Poster 4",
+    title: "Film- und Serienposter 4",
     src: "/images/movies-series/iptv-kaufen-4.webp",
-    alt: "Film und Serien Auswahl für IPTV Kaufen",
+    alt: "Auswahl an Film- und Serienpostern",
   },
   {
-    title: "IPTV Kaufen Poster 6",
+    title: "Film- und Serienposter 6",
     src: "/images/movies-series/iptv-kaufen-6.webp",
-    alt: "Cinema Poster für IPTV Kaufen Streaming",
+    alt: "Kino-Poster aus dem Streaming-Katalog",
   },
   {
-    title: "IPTV Kaufen Poster 7",
+    title: "Film- und Serienposter 7",
     src: "/images/movies-series/iptv-kaufen-7.webp",
-    alt: "Serien und Filme Poster für IPTV Kaufen",
+    alt: "Serien- und Filmcover für On-Demand-Inhalte",
   },
   {
-    title: "IPTV Kaufen Poster 8",
+    title: "Film- und Serienposter 8",
     src: "/images/movies-series/iptv-kaufen-8.webp",
-    alt: "Beliebte Inhalte Poster für IPTV Kaufen Deutschland",
+    alt: "Beliebte Unterhaltungstitel als Poster",
   },
   {
-    title: "IPTV Kaufen Poster 9",
+    title: "Film- und Serienposter 9",
     src: "/images/movies-series/iptv-kaufen-9.webp",
-    alt: "Premium Film Poster für IPTV Kaufen",
+    alt: "Premium-Filmcover aus dem Katalog",
   },
   {
-    title: "IPTV Kaufen Poster 10",
+    title: "Film- und Serienposter 10",
     src: "/images/movies-series/iptv-kaufen-10.webp",
-    alt: "Streaming Poster für IPTV Kaufen in Deutschland",
+    alt: "Streaming-Poster aus der Film- und Serienauswahl",
   },
   {
-    title: "IPTV Kaufen Poster 11",
+    title: "Film- und Serienposter 11",
     src: "/images/movies-series/iptv-kaufen-11.webp",
-    alt: "Film und Serien Highlight für IPTV Kaufen",
+    alt: "Highlight-Poster für Filme und Serien",
   },
 ] as const;
 
