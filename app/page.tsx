@@ -126,7 +126,7 @@ const structuredData = {
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/#preise`,
         shippingDetails: buildDigitalOfferShippingDetails(),
-        hasMerchantReturnPolicy: buildMerchantReturnPolicy(),
+        hasMerchantReturnPolicy: buildMerchantReturnPolicyRef(),
       })),
     },
     {

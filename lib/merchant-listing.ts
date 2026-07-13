@@ -34,13 +34,27 @@ export function buildDigitalOfferShippingDetails() {
   };
 }
 
+/**
+ * Canonical MerchantReturnPolicy for the digitally delivered IPTV service.
+ *
+ * Intentionally omits returnMethod: Google Merchant Listing only documents
+ * ReturnByMail / ReturnInStore / ReturnAtKiosk, which would falsely imply
+ * a physical-product return workflow.
+ *
+ * returnFees FreeReturn is used because the customer incurs no return /
+ * cancellation shipping fee when a digital refund/cancellation is processed.
+ */
 export function buildMerchantReturnPolicy() {
   return {
     "@type": "MerchantReturnPolicy" as const,
     "@id": MERCHANT_RETURN_POLICY_ID,
-    applicableCountry: "DE",
+    applicableCountry: {
+      "@type": "Country" as const,
+      name: "DE",
+    },
     returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
     merchantReturnDays: 30,
+    returnFees: "https://schema.org/FreeReturn",
     merchantReturnLink: REFUND_POLICY_URL,
   };
 }
