@@ -5,6 +5,10 @@ import PackageHashScroll from "@/components/PackageHashScroll";
 import HeroImagePreload from "@/components/preloads/HeroImagePreload";
 import CompactTrustStrip from "@/components/CompactTrustStrip";
 import HomeSeoContent, { HOME_SEO_FAQ } from "@/components/HomeSeoContent";
+import {
+  buildProductAggregateRating,
+  buildProductReviews,
+} from "@/lib/customer-reviews";
 import { FAQ_ITEMS } from "@/lib/faq";
 import { IPTV_PACKAGES } from "@/lib/pricing";
 import {
@@ -105,6 +109,8 @@ const structuredData = {
         "@type": "Brand",
         name: "iptvkaufenX",
       },
+      aggregateRating: buildProductAggregateRating(),
+      review: buildProductReviews(),
       offers: IPTV_PACKAGES.map((pkg) => ({
         "@type": "Offer",
         name: pkg.duration,

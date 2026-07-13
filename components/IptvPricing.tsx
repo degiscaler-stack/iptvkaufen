@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 import { useEffect, useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import AggregateRatingLine from "@/components/AggregateRatingLine";
 import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import {
@@ -238,7 +239,9 @@ export default function IptvPricing() {
           </TrackedAnchor>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-[1240px] gap-7 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
+        <AggregateRatingLine />
+
+        <div className="mx-auto mt-6 grid max-w-[1240px] gap-7 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
           {IPTV_PACKAGES.map((item) => (
             <article
               key={item.id}

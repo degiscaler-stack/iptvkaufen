@@ -1,40 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { type PointerEvent, useEffect, useMemo, useRef, useState } from "react";
-
-const reviews = [
-  {
-    src: "/images/testimonials/iptv-kaufen-1.webp",
-    alt: "Kundenbewertung zu iptvkaufenX per Chat-Screenshot",
-    width: 854,
-    height: 1840,
-  },
-  {
-    src: "/images/testimonials/iptv-kaufen-2.webp",
-    alt: "WhatsApp-Kundenfeedback zur IPTV-Einrichtung",
-    width: 858,
-    height: 1834,
-  },
-  {
-    src: "/images/testimonials/iptv-kaufen-3.webp",
-    alt: "Positive Kundenerfahrung mit Live-TV Streaming",
-    width: 688,
-    height: 1488,
-  },
-  {
-    src: "/images/testimonials/iptv-kaufen-4.webp",
-    alt: "Kundenbewertung zu Bildqualität und Support",
-    width: 688,
-    height: 1504,
-  },
-  {
-    src: "/images/testimonials/iptv-kaufen-5.webp",
-    alt: "WhatsApp-Bewertung zur schnellen Aktivierung",
-    width: 856,
-    height: 1836,
-  },
-] as const;
+import {
+  CUSTOMER_REVIEWS,
+  PUBLIC_AUTHOR_DISPLAY,
+  VERIFIED_REVIEW_BADGE,
+  formatGermanRating,
+  formatGermanRatingValue,
+} from "@/lib/customer-reviews";
 
 function ArrowIcon({ direction }: { direction: "previous" | "next" }) {
   return (
@@ -50,15 +23,46 @@ function ArrowIcon({ direction }: { direction: "previous" | "next" }) {
   );
 }
 
+function GoldStars({ className = "h-3.5 w-3.5" }: { className?: string }) {
+  return (
+    <span className="inline-flex items-center gap-0.5 text-[#F5C542]" aria-hidden="true">
+      {Array.from({ length: 5 }).map((_, index) => (
+        <svg key={index} className={className} viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 1.8 12.4 7l5.6.5-4.3 3.7 1.3 5.4L10 13.8 4.9 16.6l1.3-5.4L1.9 7.5 7.6 7 10 1.8Z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
+
+function VerifiedBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#A6FF00]/90">
+      <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.25" stroke="currentColor" strokeWidth="1.6" />
+        <path
+          d="m6.4 10.2 2.2 2.2 5-5"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      {VERIFIED_REVIEW_BADGE}
+    </span>
+  );
+}
+
 export default function CustomerReviews() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [visibleSlides, setVisibleSlides] = useState(1);
   const dragStartRef = useRef<number | null>(null);
   const dragDeltaRef = useRef(0);
-  const suppressClickRef = useRef(false);
 
-  const maxIndex = useMemo(() => Math.max(reviews.length - visibleSlides, 0), [visibleSlides]);
+  const maxIndex = useMemo(
+    () => Math.max(CUSTOMER_REVIEWS.length - visibleSlides, 0),
+    [visibleSlides],
+  );
 
   useEffect(() => {
     const tabletQuery = window.matchMedia("(min-width: 768px)");
@@ -66,11 +70,11 @@ export default function CustomerReviews() {
 
     const updateVisibleSlides = () => {
       if (desktopQuery.matches) {
-        setVisibleSlides(4);
+        setVisibleSlides(3);
         return;
       }
 
-      setVisibleSlides(tabletQuery.matches ? 3 : 2);
+      setVisibleSlides(tabletQuery.matches ? 2 : 1);
     };
 
     updateVisibleSlides();
@@ -87,26 +91,6 @@ export default function CustomerReviews() {
     setActiveIndex((current) => Math.min(current, maxIndex));
   }, [maxIndex]);
 
-  useEffect(() => {
-    if (lightboxIndex === null) {
-      return;
-    }
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setLightboxIndex(null);
-      }
-    };
-
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [lightboxIndex]);
-
   const goToPrevious = () => {
     setActiveIndex((current) => (current <= 0 ? maxIndex : current - 1));
   };
@@ -118,7 +102,6 @@ export default function CustomerReviews() {
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     dragStartRef.current = event.clientX;
     dragDeltaRef.current = 0;
-    suppressClickRef.current = false;
     event.currentTarget.setPointerCapture(event.pointerId);
   };
 
@@ -136,7 +119,6 @@ export default function CustomerReviews() {
     }
 
     const dragDistance = dragDeltaRef.current;
-    suppressClickRef.current = Math.abs(dragDistance) > 8;
 
     if (Math.abs(dragDistance) > 48) {
       if (dragDistance < 0) {
@@ -164,12 +146,15 @@ export default function CustomerReviews() {
             id="customer-reviews-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.2rem]"
           >
-            WAS UNSERE{" "}
+            Was unsere{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              KUNDEN
+              Kunden
             </span>{" "}
-            SAGEN
+            sagen
           </h2>
+          <p className="mx-auto mt-3 max-w-[640px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
+            Anonyme und verifizierte Rückmeldungen von Kunden aus Deutschland.
+          </p>
         </div>
 
         <div className="relative mt-8 sm:mt-10">
@@ -185,34 +170,38 @@ export default function CustomerReviews() {
             <div
               className="flex transition-transform duration-500 ease-out"
               style={{
-                transform: `translate3d(-${activeIndex * (100 / reviews.length)}%, 0, 0)`,
+                width: `${(CUSTOMER_REVIEWS.length / visibleSlides) * 100}%`,
+                transform: `translate3d(-${(activeIndex / CUSTOMER_REVIEWS.length) * 100}%, 0, 0)`,
               }}
             >
-              {reviews.map((review, index) => (
-                <article key={review.src} className="shrink-0 basis-1/2 px-1.5 sm:px-2 md:basis-1/3 lg:basis-1/4">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (!suppressClickRef.current) {
-                        setLightboxIndex(index);
-                      }
+              {CUSTOMER_REVIEWS.map((review) => (
+                <article
+                  key={review.id}
+                  className="shrink-0 px-1.5 sm:px-2"
+                  style={{ width: `${100 / CUSTOMER_REVIEWS.length}%` }}
+                >
+                  <div className="flex h-full min-h-[220px] flex-col rounded-[20px] border border-[#A6FF00]/45 bg-[#050806] p-5 shadow-[0_14px_34px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.035)] sm:min-h-[236px] sm:p-6">
+                    <div
+                      className="flex flex-wrap items-center gap-x-2 gap-y-1"
+                      aria-label={`${formatGermanRatingValue(review.rating)} von 5 Sternen`}
+                    >
+                      <GoldStars />
+                      <span className="text-[13px] font-bold text-[#F5F5F5] sm:text-[14px]">
+                        {formatGermanRating(review.rating)}
+                      </span>
+                    </div>
 
-                      suppressClickRef.current = false;
-                    }}
-                    className="group block w-full overflow-hidden rounded-[20px] border-2 border-[#A6FF00]/85 bg-[#050806] text-left shadow-[0_18px_44px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-1 hover:border-[#A6FF00] hover:shadow-[0_22px_54px_rgba(0,0,0,0.42),0_0_14px_rgba(166,255,0,0.05)] focus:outline-none focus:ring-2 focus:ring-[#A6FF00]/70"
-                    aria-label={`${review.alt} fullscreen öffnen`}
-                  >
-                    <Image
-                      src={review.src}
-                      alt={review.alt}
-                      width={review.width}
-                      height={review.height}
-                      sizes="(min-width: 1024px) 25vw, 100vw"
-                      loading="lazy"
-                      draggable={false}
-                      className="block h-auto w-full transition duration-300 group-hover:scale-[1.01]"
-                    />
-                  </button>
+                    <blockquote className="mt-4 flex-1 text-[14px] leading-6 text-[#EDEDED]/92 sm:text-[15px] sm:leading-7">
+                      <p>„{review.reviewBody}“</p>
+                    </blockquote>
+
+                    <footer className="mt-5 space-y-1.5 border-t border-[#A6FF00]/15 pt-4">
+                      <p className="text-[13px] font-semibold text-[#F5F5F5]">
+                        {PUBLIC_AUTHOR_DISPLAY}
+                      </p>
+                      <VerifiedBadge />
+                    </footer>
+                  </div>
                 </article>
               ))}
             </div>
@@ -221,7 +210,7 @@ export default function CustomerReviews() {
           <button
             type="button"
             onClick={goToPrevious}
-            className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:left-3 sm:h-11 sm:w-11 lg:-left-2"
+            className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:left-3 sm:h-11 sm:w-11 lg:-left-2"
             aria-label="Vorherige Kundenbewertung"
           >
             <ArrowIcon direction="previous" />
@@ -229,19 +218,22 @@ export default function CustomerReviews() {
           <button
             type="button"
             onClick={goToNext}
-            className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] sm:right-3 sm:h-11 sm:w-11 lg:-right-2"
+            className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:right-3 sm:h-11 sm:w-11 lg:-right-2"
             aria-label="Nächste Kundenbewertung"
           >
             <ArrowIcon direction="next" />
           </button>
 
-          <div className="mt-6 flex items-center justify-center gap-2" aria-label="Kundenbewertungen Pagination">
+          <div
+            className="mt-6 flex items-center justify-center gap-2"
+            aria-label="Kundenbewertungen Pagination"
+          >
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`h-2 rounded-full transition duration-300 ${
+                className={`h-2 rounded-full transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] ${
                   activeIndex === index
                     ? "w-7 bg-[#A6FF00]"
                     : "w-2 bg-[#A6FF00]/28 hover:bg-[#A6FF00]/55"
@@ -253,37 +245,6 @@ export default function CustomerReviews() {
           </div>
         </div>
       </div>
-
-      {lightboxIndex !== null ? (
-        <div
-          className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#000000]/92 px-4 py-6 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Kundenbewertung fullscreen"
-          onClick={() => setLightboxIndex(null)}
-        >
-          <button
-            type="button"
-            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806] text-2xl leading-none text-[#A6FF00] transition duration-300 hover:bg-[#A6FF00] hover:text-[#050505]"
-            onClick={() => setLightboxIndex(null)}
-            aria-label="Lightbox schließen"
-          >
-            ×
-          </button>
-          <div
-            className="relative h-[86vh] w-full max-w-[620px] overflow-hidden rounded-[22px] border border-[#A6FF00]/45 bg-[#050806]"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <Image
-              src={reviews[lightboxIndex].src}
-              alt={reviews[lightboxIndex].alt}
-              fill
-              sizes="100vw"
-              className="object-contain"
-            />
-          </div>
-        </div>
-      ) : null}
     </section>
   );
 }
