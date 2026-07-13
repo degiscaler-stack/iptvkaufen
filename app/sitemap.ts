@@ -24,6 +24,16 @@ const ALLOWED_SITEMAP_URLS = [
   `${SITE_URL}/blog/iptv-smarters-pro`,
   `${SITE_URL}/blog/tivimate-iptv`,
   `${SITE_URL}/blog/iptv-m3u`,
+  `${SITE_URL}/blog/flix-iptv`,
+  `${SITE_URL}/blog/smartone-iptv`,
+  `${SITE_URL}/blog/ss-iptv`,
+  `${SITE_URL}/blog/iptv-extreme`,
+  `${SITE_URL}/blog/iptv-player`,
+  `${SITE_URL}/blog/iptv-stick`,
+  `${SITE_URL}/blog/beste-iptv-app-fuer-fire-stick`,
+  `${SITE_URL}/blog/beste-iptv-app-fuer-samsung-fernseher`,
+  `${SITE_URL}/blog/iptv-sport`,
+  `${SITE_URL}/blog/iptv-tuerkische-sender`,
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

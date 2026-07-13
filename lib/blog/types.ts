@@ -8,7 +8,8 @@ export type BlogCategory =
   | "iptv-test"
   | "iptv-premium"
   | "iptv-senderliste"
-  | "iptv-einrichtung";
+  | "iptv-einrichtung"
+  | "iptv-sport";
 
 export type BlogPostStatus = "planned" | "published";
 
@@ -146,6 +147,10 @@ export const BLOG_CATEGORIES: Record<
     label: "IPTV Einrichtung",
     description: "IPTV einrichten mit M3U, Apps und Zugangsdaten",
   },
+  "iptv-sport": {
+    label: "IPTV Sport",
+    description: "Live-Sport über IPTV stabil streamen",
+  },
 };
 
 export const BLOG_CLUSTER_ORDER: BlogCategory[] = [
@@ -159,6 +164,7 @@ export const BLOG_CLUSTER_ORDER: BlogCategory[] = [
   "iptv-premium",
   "iptv-senderliste",
   "iptv-einrichtung",
+  "iptv-sport",
 ];
 
 export const POSTS_PER_PAGE = 12;

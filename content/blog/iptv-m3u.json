@@ -24,9 +24,9 @@
   "relatedSlugs": [
     "iptv-smarters-pro",
     "tivimate-iptv",
-    "iptv-provider",
+    "iptv-player",
+    "flix-iptv",
     "iptv-box",
-    "iptv-free-trial",
     "iptv-abo"
   ],
   "faq": [
@@ -72,7 +72,7 @@
         "Wer IPTV in Deutschland einrichten will, stößt schnell auf den Begriff IPTV M3U. Gemeint ist die Playlist, mit der Ihre App weiß, welche Sender verfügbar sind und unter welcher Adresse der Stream liegt. Ohne diese Liste bleibt der Player leer – mit einer gepflegten Playlist startet Live-TV in wenigen Minuten.",
         "Viele Einsteiger laden wahllos Free-M3U-Dateien aus Foren oder Messenger-Gruppen. Das Ergebnis: tote Links, ruckelnde Streams und Sicherheitsrisiken. Eine IPTV M3U Playlist ist nur so gut wie die Quelle dahinter. Deshalb lohnt der Blick auf seriöse Anbieter statt auf anonyme Listen ohne Support.",
         "Dieser Ratgeber erklärt, was M3U und M3U8 bedeuten, wie eine Playlist aufgebaut ist und wie Sie sie in gängigen Apps einrichten. Sie erfahren den Unterschied zu Xtream Codes, die Vor- und Nachteile der Methode sowie typische Fehler und Sicherheitsregeln für den Alltag in Deutschland.",
-        "Ergänzend helfen unsere Guides zu [IPTV Smarters Pro](/blog/iptv-smarters-pro), [TiviMate IPTV](/blog/tivimate-iptv) und dem [IPTV-Provider-Vergleich](/blog/iptv-provider). Hardware-Fragen klärt der [IPTV-Box-Ratgeber](/blog/iptv-box); zum Testen eignet sich ein [IPTV Free Trial](/blog/iptv-free-trial), zur Laufzeitwahl der [IPTV-Abo-Leitfaden](/blog/iptv-abo).",
+        "Ergänzend helfen unsere Guides zu [IPTV Smarters Pro](/blog/iptv-smarters-pro), [TiviMate IPTV](/blog/tivimate-iptv) und dem Überblick zum [IPTV Player](/blog/iptv-player). Hardware-Fragen klärt der [IPTV-Box-Ratgeber](/blog/iptv-box); zum Testen eignet sich ein [IPTV Free Trial](/blog/iptv-free-trial), zur Laufzeitwahl der [IPTV-Abo-Leitfaden](/blog/iptv-abo).",
         "Am Ende wissen Sie, wie IPTV M3U funktioniert – und warum eine stabile Playlist von einem verlässlichen Dienst wie [iptvkaufenX](/) langfristig besser ist als jede zufällige Free-Liste aus dem Internet.",
         "Die folgenden Kapitel sind praxisnah geschrieben: wenig Fachjargon ohne Erklärung, konkrete Schritte für Apps und klare Kaufkriterien. Ob Sie gerade wechseln oder erstmals IPTV nutzen – die Playlist ist der Schlüssel zur Einrichtung."
       ],

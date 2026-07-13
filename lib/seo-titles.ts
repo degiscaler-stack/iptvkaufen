@@ -33,6 +33,16 @@ export const SEO_TITLES = {
     "iptv-smarters-pro": "IPTV Smarters Pro Setup (2026) | iptvkaufenX",
     "tivimate-iptv": "TiviMate IPTV Guide (2026) | iptvkaufenX",
     "iptv-m3u": "IPTV M3U Playlist (2026) | iptvkaufenX",
+    "flix-iptv": "Flix IPTV Setup (2026) | iptvkaufenX",
+    "smartone-iptv": "SmartOne IPTV Guide (2026) | iptvkaufenX",
+    "ss-iptv": "SS IPTV Einrichtung (2026) | iptvkaufenX",
+    "iptv-extreme": "IPTV Extreme Setup (2026) | iptvkaufenX",
+    "iptv-player": "IPTV Player Vergleich (2026) | iptvkaufenX",
+    "iptv-stick": "IPTV Stick Guide (2026) | iptvkaufenX",
+    "beste-iptv-app-fuer-fire-stick": "Beste IPTV App Fire Stick (2026) | iptvkaufenX",
+    "beste-iptv-app-fuer-samsung-fernseher": "Beste IPTV App Samsung TV (2026) | iptvkaufenX",
+    "iptv-sport": "IPTV Sport Live streamen (2026) | iptvkaufenX",
+    "iptv-tuerkische-sender": "IPTV Türkische Sender (2026) | iptvkaufenX",
   },
 } as const;
 
@@ -47,6 +57,7 @@ const CATEGORY_TITLES: Record<BlogCategory, string> = {
   "iptv-premium": "IPTV Premium: Blog Kategorie | iptvkaufenX",
   "iptv-senderliste": "Senderliste: Blog Kategorie | iptvkaufenX",
   "iptv-einrichtung": "IPTV Einrichtung: Blog Kategorie | iptvkaufenX",
+  "iptv-sport": "IPTV Sport: Blog Kategorie | iptvkaufenX",
 };
 
 const TAG_TITLES: Record<string, string> = {
@@ -62,6 +73,16 @@ const TAG_TITLES: Record<string, string> = {
   "IPTV Smarters Pro": "IPTV Smarters Pro: Blog Tag | iptvkaufenX",
   "TiviMate IPTV": "TiviMate IPTV: Blog Tag | iptvkaufenX",
   "IPTV M3U": "IPTV M3U: Blog Tag | iptvkaufenX",
+  "Flix IPTV": "Flix IPTV: Blog Tag | iptvkaufenX",
+  "SmartOne IPTV": "SmartOne IPTV: Blog Tag | iptvkaufenX",
+  "SS IPTV": "SS IPTV: Blog Tag | iptvkaufenX",
+  "IPTV Extreme": "IPTV Extreme: Blog Tag | iptvkaufenX",
+  "IPTV Player": "IPTV Player: Blog Tag | iptvkaufenX",
+  "IPTV Stick": "IPTV Stick: Blog Tag | iptvkaufenX",
+  "Beste IPTV App für Fire Stick": "Beste IPTV App Fire Stick Tag | iptvkaufenX",
+  "Beste IPTV App für Samsung Fernseher": "Beste IPTV App Samsung Tag | iptvkaufenX",
+  "IPTV Sport": "IPTV Sport: Blog Tag | iptvkaufenX",
+  "IPTV Türkische Sender": "IPTV Türkische Sender: Blog Tag | iptvkaufenX",
 };
 
 export function getBlogCategoryTitle(slug: BlogCategory): string {
