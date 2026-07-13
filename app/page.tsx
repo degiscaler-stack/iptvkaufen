@@ -10,6 +10,11 @@ import {
   buildProductReviews,
 } from "@/lib/customer-reviews";
 import { FAQ_ITEMS } from "@/lib/faq";
+import {
+  buildDigitalOfferShippingDetails,
+  buildMerchantReturnPolicy,
+  buildMerchantReturnPolicyRef,
+} from "@/lib/merchant-listing";
 import { IPTV_PACKAGES } from "@/lib/pricing";
 import {
   SITE_URL,
@@ -72,7 +77,9 @@ const structuredData = {
         "https://www.instagram.com/visionhub.media/",
         "https://x.com/cod_jss27918",
       ],
+      hasMerchantReturnPolicy: buildMerchantReturnPolicyRef(),
     },
+    buildMerchantReturnPolicy(),
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
@@ -118,6 +125,8 @@ const structuredData = {
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/#preise`,
+        shippingDetails: buildDigitalOfferShippingDetails(),
+        hasMerchantReturnPolicy: buildMerchantReturnPolicy(),
       })),
     },
     {

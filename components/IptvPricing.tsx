@@ -453,6 +453,16 @@ export default function IptvPricing() {
         </div>
 
         <div className="mx-auto mt-6 max-w-[820px] rounded-[20px] border border-[#A6FF00]/16 bg-[#0A0F0A]/78 p-4 text-center sm:mt-8 sm:p-5">
+          <h3 className="text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">
+            Digitale Lieferung per E-Mail
+          </h3>
+          <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
+            Die Zugangsdaten und Aktivierungsinformationen werden nach erfolgreicher Bestellung per E-Mail
+            bereitgestellt. Es erfolgt kein physischer Versand.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-[820px] rounded-[20px] border border-[#A6FF00]/16 bg-[#0A0F0A]/78 p-4 text-center sm:mt-8 sm:p-5">
           <h3 className="text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">30 Tage Geld-zurück-Garantie</h3>
           <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
             Wenn Sie mit dem Service nicht zufrieden sind, können Sie innerhalb von 30 Tagen nach dem Kauf eine
@@ -465,7 +475,7 @@ export default function IptvPricing() {
             data-analytics="refund_policy_click"
             className="mt-3 inline-flex text-[13px] font-semibold text-[#A6FF00] underline decoration-[#A6FF00]/35 underline-offset-4 transition duration-300 hover:text-[#B8FF4D] sm:text-[14px]"
           >
-            Rückerstattungsrichtlinie ansehen
+            Details zur Rückerstattungsrichtlinie
           </TrackedLink>
         </div>
 
