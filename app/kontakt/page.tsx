@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FaEnvelope, FaFacebookF, FaHeadset, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import ContactForm from "@/components/ContactForm";
 import { buildPageMetadata } from "@/lib/seo";
 import { SEO_TITLES } from "@/lib/seo-titles";
 import {
@@ -8,7 +9,6 @@ import {
   WHATSAPP_PHONE_DISPLAY,
   WHATSAPP_SUPPORT_LABEL,
 } from "@/lib/contact";
-import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.kontakt,
@@ -49,33 +49,6 @@ const socialLinks = [
   { label: "WhatsApp", href: WHATSAPP_CHAT_URL, Icon: FaWhatsapp },
 ] as const;
 
-function ContactInput({
-  id,
-  label,
-  type = "text",
-  required = false,
-}: {
-  id: string;
-  label: string;
-  type?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label htmlFor={id} className="text-[14px] font-semibold text-[#F5F5F5]">
-        {label}
-      </label>
-      <input
-        id={id}
-        name={id}
-        type={type}
-        required={required}
-        className="mt-2 h-12 w-full rounded-xl border border-[#1F1F1F] bg-[#080B08] px-4 text-[14px] text-[#F5F5F5] outline-none transition duration-300 placeholder:text-[#B8B8B8]/45 focus:border-[#A6FF00]/70 focus:bg-[#0A0F0A]"
-      />
-    </div>
-  );
-}
-
 export default function KontaktPage() {
   return (
     <main className="min-h-screen bg-[#000000] px-5 pb-14 pt-28 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-32 lg:px-0 lg:pb-20 lg:pt-36">
@@ -94,36 +67,7 @@ export default function KontaktPage() {
         </div>
 
         <div className="mx-auto mt-9 grid max-w-[1180px] gap-6 lg:mt-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
-          <form className="rounded-[26px] border border-[#1F1F1F] bg-[#050806] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-7 lg:p-8">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <ContactInput id="name" label="Vollständiger Name *" required />
-              <ContactInput id="email" label="E-Mail-Adresse *" type="email" required />
-            </div>
-
-            <div className="mt-5">
-              <ContactInput id="subject" label="Betreff" />
-            </div>
-
-            <div className="mt-5">
-              <label htmlFor="message" className="text-[14px] font-semibold text-[#F5F5F5]">
-                Nachricht *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={8}
-                className="mt-2 w-full resize-y rounded-xl border border-[#1F1F1F] bg-[#080B08] px-4 py-3 text-[14px] leading-7 text-[#F5F5F5] outline-none transition duration-300 placeholder:text-[#B8B8B8]/45 focus:border-[#A6FF00]/70 focus:bg-[#0A0F0A]"
-              />
-            </div>
-
-            <button
-              type="button"
-              className={`${ctaSolidGreenClass} mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-extrabold uppercase tracking-[0.13em] transition duration-300 hover:-translate-y-0.5 hover:bg-[#B8FF4D] sm:w-auto`}
-            >
-              Nachricht senden
-            </button>
-          </form>
+          <ContactForm />
 
           <aside className="rounded-[26px] border border-[#1F1F1F] bg-[#0A0F0A] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-7 lg:p-8">
             <h2 className="text-[1.55rem] font-black tracking-[-0.045em] text-[#F5F5F5]">

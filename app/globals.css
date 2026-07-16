@@ -596,3 +596,13 @@ button {
   transform: scale(0.98);
   filter: brightness(0.98);
 }
+
+/* Contact form: keep Chrome autofill text readable on dark fields */
+.contact-form-field:-webkit-autofill,
+.contact-form-field:-webkit-autofill:hover,
+.contact-form-field:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f5f5f5;
+  caret-color: #f5f5f5;
+  box-shadow: 0 0 0 1000px #0a0e0a inset;
+  transition: background-color 99999s ease-in-out 0s;
+}
