@@ -20,9 +20,9 @@ export default function PremiumEntertainment() {
               id="premium-entertainment-heading"
               className="text-balance text-[1.66rem] font-black leading-[1.02] tracking-[-0.055em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[3.15rem] lg:leading-[0.97]"
             >
-              Premium Streaming mit{" "}
+              Premium Streaming auf{" "}
               <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-                IPTV Kaufen
+                allen Geräten
               </span>
             </h2>
 

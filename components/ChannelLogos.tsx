@@ -89,14 +89,11 @@ export default function ChannelLogos() {
             id="channel-logos-heading"
             className="text-balance text-[2rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.25rem]"
           >
-            Top Sender für{" "}
+            Beliebte deutsche und{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              IPTV
+              internationale
             </span>{" "}
-            Kaufen in{" "}
-            <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              Deutschland
-            </span>
+            Sender
           </h2>
           <p className="mx-auto mt-3 max-w-[520px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
             Beliebte Sender und Streaming-Marken – die vollständige Übersicht finden Sie in der{" "}

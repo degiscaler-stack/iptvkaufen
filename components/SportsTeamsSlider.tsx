@@ -27,9 +27,9 @@ export default function SportsTeamsSlider() {
             id="sports-teams-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.2rem]"
           >
-            Live Sport mit{" "}
+            Live-Sport in{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              IPTV Kaufen
+              HD und 4K
             </span>{" "}
             erleben
           </h2>

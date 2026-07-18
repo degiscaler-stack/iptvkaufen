@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog/posts";
 
 export const dynamic = "force-static";
 
 const SITE_URL = "https://iptvkaufenx.de";
 
-const ALLOWED_SITEMAP_URLS = [
+/** Indexable static routes intentionally included in the sitemap. */
+const STATIC_SITEMAP_URLS = [
   `${SITE_URL}/`,
   `${SITE_URL}/senderliste`,
   `${SITE_URL}/blog`,
@@ -12,34 +14,18 @@ const ALLOWED_SITEMAP_URLS = [
   `${SITE_URL}/autor`,
   `${SITE_URL}/redaktionelle-richtlinien`,
   `${SITE_URL}/inhaltsrichtlinien`,
-  `${SITE_URL}/blog/german-iptv`,
-  `${SITE_URL}/blog/iptv-anbieter`,
-  `${SITE_URL}/blog/iptv-box`,
-  `${SITE_URL}/blog/iptv-free-trial`,
-  `${SITE_URL}/blog/iptv-abo`,
-  `${SITE_URL}/blog/iptv-receiver`,
-  `${SITE_URL}/blog/iptv-provider`,
-  `${SITE_URL}/blog/iptv-premium-4k`,
-  `${SITE_URL}/blog/iptv-alle-sender`,
-  `${SITE_URL}/blog/iptv-smarters-pro`,
-  `${SITE_URL}/blog/tivimate-iptv`,
-  `${SITE_URL}/blog/iptv-m3u`,
-  `${SITE_URL}/blog/flix-iptv`,
-  `${SITE_URL}/blog/smartone-iptv`,
-  `${SITE_URL}/blog/ss-iptv`,
-  `${SITE_URL}/blog/iptv-extreme`,
-  `${SITE_URL}/blog/iptv-player`,
-  `${SITE_URL}/blog/iptv-stick`,
-  `${SITE_URL}/blog/beste-iptv-app-fuer-fire-stick`,
-  `${SITE_URL}/blog/beste-iptv-app-fuer-samsung-fernseher`,
-  `${SITE_URL}/blog/iptv-sport`,
-  `${SITE_URL}/blog/iptv-tuerkische-sender`,
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return ALLOWED_SITEMAP_URLS.map((url) => {
+  const publishedArticleUrls = getAllPosts()
+    .filter((post) => post.status === "published")
+    .map((post) => `${SITE_URL}/blog/${post.slug}`);
+
+  const urls = Array.from(new Set<string>([...STATIC_SITEMAP_URLS, ...publishedArticleUrls]));
+
+  return urls.map((url) => {
     const isHome = url === `${SITE_URL}/`;
     const isHub =
       url === `${SITE_URL}/blog` ||
