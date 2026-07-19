@@ -1,5 +1,7 @@
 import {
   AGGREGATE_RATING_ACCESSIBLE_LABEL,
+  PUBLIC_RATING_VALUE,
+  PUBLIC_REVIEW_COUNT_DISPLAY,
   formatGermanRatingValue,
 } from "@/lib/customer-reviews";
 
@@ -22,8 +24,8 @@ export default function AggregateRatingLine() {
       aria-label={AGGREGATE_RATING_ACCESSIBLE_LABEL}
     >
       <GoldStars />
-      <span className="font-bold text-[#F5F5F5]">{formatGermanRatingValue(4.9)}/5</span>
-      <span className="text-[#F5F5F5]/72">– Basierend auf 249 Kundenbewertungen</span>
+      <span className="font-bold text-[#F5F5F5]">{formatGermanRatingValue(PUBLIC_RATING_VALUE)}/5</span>
+      <span className="text-[#F5F5F5]/72">– {PUBLIC_REVIEW_COUNT_DISPLAY}</span>
       <span
         className="inline-flex items-center gap-1 rounded-full border border-[#A6FF00]/35 bg-[#A6FF00]/8 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00]"
         aria-hidden="true"

@@ -74,7 +74,7 @@ export default function IptvHowItWorks() {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Wählen Sie Ihr Paket, erhalten Sie Ihre Zugangsdaten und genießen Sie IPTV auf bis zu 2 Geräten gleichzeitig – TV, Smartphone oder Tablet.
+            Wählen Sie Ihr Paket, erhalten Sie Ihre Zugangsdaten und genießen Sie IPTV auf bis zu 4 Geräten gleichzeitig – TV, Smartphone oder Tablet.
           </p>
         </div>
 

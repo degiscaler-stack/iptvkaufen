@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import AggregateRatingLine from "@/components/AggregateRatingLine";
 import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
@@ -18,10 +18,13 @@ import {
 } from "@/lib/contact";
 import {
   COMPARISON_PRICE_LABEL,
+  DEFAULT_DEVICE_COUNT,
+  DEVICE_COUNTS,
+  type DeviceCount,
+  getDeviceCountLabel,
+  getMultiDeviceSavingsPercent,
+  getPackagesForDevices,
   IPTV_PACKAGE_FEATURES,
-  IPTV_PACKAGES,
-  MULTI_DEVICE_BADGE_SUPPORT,
-  MULTI_DEVICE_BADGE_TEXT,
   ORDER_PROCESS_HEADING,
   ORDER_PROCESS_STEPS,
   PAYMENT_METHODS_HEADING,
@@ -116,6 +119,8 @@ const trialCtaClass =
 
 export default function IptvPricing() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [deviceCount, setDeviceCount] = useState<DeviceCount>(DEFAULT_DEVICE_COUNT);
+  const packages = useMemo(() => getPackagesForDevices(deviceCount), [deviceCount]);
 
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
@@ -191,7 +196,8 @@ export default function IptvPricing() {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Flexible IPTV Pakete für jeden Bedarf – sofort aktiv, stabil und auf bis zu 2 Geräten gleichzeitig nutzbar.
+            Flexible IPTV Pakete für jeden Bedarf – sofort aktiv und stabil. Wählen Sie zwischen 1 und 4
+            gleichzeitigen Verbindungen.
           </p>
         </div>
 
@@ -241,11 +247,63 @@ export default function IptvPricing() {
 
         <AggregateRatingLine />
 
+        <div className="mx-auto mt-6 max-w-[720px] sm:mt-8">
+          <p className="mb-3 text-center text-[12px] font-medium text-[#F5F5F5]/75 sm:text-[13px]">
+            Anzahl gleichzeitiger Verbindungen
+          </p>
+          <div
+            role="group"
+            aria-label="Geräteanzahl auswählen"
+            className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3"
+          >
+            {DEVICE_COUNTS.map((count) => {
+              const selected = deviceCount === count;
+              const savingsPercent = getMultiDeviceSavingsPercent(count);
+
+              return (
+                <button
+                  key={count}
+                  type="button"
+                  aria-pressed={selected}
+                  onClick={() => setDeviceCount(count)}
+                  className={
+                    selected
+                      ? "flex min-h-[64px] flex-col items-center justify-center rounded-[14px] border border-[#A6FF00] bg-[#A6FF00] px-2 py-2.5 text-center shadow-[0_0_12px_rgba(166,255,0,0.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-[72px]"
+                      : "flex min-h-[64px] flex-col items-center justify-center rounded-[14px] border border-[#A6FF00]/28 bg-[#0A0F0A]/90 px-2 py-2.5 text-center transition duration-300 hover:border-[#A6FF00]/55 hover:bg-[#111111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:min-h-[72px]"
+                  }
+                >
+                  <span
+                    className={
+                      selected
+                        ? "text-[13px] font-bold leading-tight text-[#050505] sm:text-[14px]"
+                        : "text-[13px] font-bold leading-tight text-[#F5F5F5] sm:text-[14px]"
+                    }
+                  >
+                    {getDeviceCountLabel(count)}
+                  </span>
+                  {savingsPercent !== null ? (
+                    <span
+                      className={
+                        selected
+                          ? "mt-1 text-[10px] font-semibold tracking-[0.04em] text-[#050505]/80 sm:text-[11px]"
+                          : "mt-1 text-[10px] font-semibold tracking-[0.04em] text-[#A6FF00] sm:text-[11px]"
+                      }
+                    >
+                      -{savingsPercent} %
+                    </span>
+                  ) : null}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         <div className="mx-auto mt-6 grid max-w-[1240px] gap-7 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
-          {IPTV_PACKAGES.map((item) => (
+          {packages.map((item) => (
             <article
-              key={item.id}
+              key={`${item.id}-${item.deviceCount}`}
               data-package={item.id}
+              data-devices={item.deviceCount}
               className={
                 item.highlighted
                   ? "group relative mx-auto h-full w-[calc(100vw-48px)] max-w-[340px] rounded-[22px] bg-[linear-gradient(135deg,#AFFF00_0%,#7DFF00_100%)] p-[0.75px] shadow-[0_0_3px_rgba(175,255,0,0.05),0_14px_32px_rgba(0,0,0,0.36)] transition duration-500 ease-out hover:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_38px_rgba(0,0,0,0.4)] sm:w-full sm:max-w-none sm:p-px sm:shadow-[0_0_5px_rgba(175,255,0,0.08),0_18px_42px_rgba(0,0,0,0.4)] sm:hover:shadow-[0_0_8px_rgba(175,255,0,0.11),0_22px_52px_rgba(0,0,0,0.44)]"
@@ -329,10 +387,10 @@ export default function IptvPricing() {
                 <div className="mx-auto mt-3 w-full max-w-[250px] sm:mt-4 sm:max-w-[215px]">
                   <div className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#AFFF00] px-2.5 py-1.5 text-[10px] font-extrabold uppercase leading-tight tracking-[0.04em] text-[#050505] sm:px-3 sm:text-[10.5px]">
                     <MultiDeviceIcon className="h-3.5 w-3.5 shrink-0 text-[#050505]" />
-                    <span>{MULTI_DEVICE_BADGE_TEXT}</span>
+                    <span>{item.deviceBadgeText}</span>
                   </div>
                   <p className="mt-1.5 text-center text-[11px] font-medium leading-snug text-[#E6E6E6]/82 sm:text-[11.5px]">
-                    {MULTI_DEVICE_BADGE_SUPPORT}
+                    {item.deviceSupportText}
                   </p>
                 </div>
 
@@ -357,11 +415,13 @@ export default function IptvPricing() {
                     currency: "EUR",
                     page_path: "/",
                     button_location: "pricing_card",
+                    device_count: item.deviceCount,
                   }}
                   alsoTrackCheckout
                   alsoTrackSelectItem
                   data-analytics={item.analyticsEvent}
                   data-package={item.id}
+                  data-devices={item.deviceCount}
                   className={item.highlighted ? packageCtaFeaturedClass : packageCtaBaseClass}
                   style={{ "--cta-motion-delay": CTA_MOTION_DELAYS[item.id] } as CSSProperties}
                 >

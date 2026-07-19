@@ -15,7 +15,10 @@ import {
   buildMerchantReturnPolicy,
   buildMerchantReturnPolicyRef,
 } from "@/lib/merchant-listing";
-import { IPTV_PACKAGES } from "@/lib/pricing";
+import {
+  getAllProductOffers,
+  getSimultaneousDevicesLabel,
+} from "@/lib/pricing";
 import {
   SITE_URL,
   buildPageMetadata,
@@ -118,9 +121,9 @@ const structuredData = {
       },
       aggregateRating: buildProductAggregateRating(),
       review: buildProductReviews(),
-      offers: IPTV_PACKAGES.map((pkg) => ({
+      offers: getAllProductOffers().map((pkg) => ({
         "@type": "Offer",
-        name: pkg.duration,
+        name: `${pkg.duration} – ${getSimultaneousDevicesLabel(pkg.deviceCount)}`,
         price: pkg.priceNumeric.toFixed(2),
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",

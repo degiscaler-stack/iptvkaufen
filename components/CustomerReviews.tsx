@@ -1,33 +1,41 @@
-"use client";
-
-import { type PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
-  CUSTOMER_REVIEWS,
-  PUBLIC_AUTHOR_DISPLAY,
+  FEATURED_CUSTOMER_REVIEWS,
+  PUBLIC_RATING_SUPPORTING,
+  PUBLIC_RATING_VALUE,
+  PUBLIC_REVIEW_COUNT_DISPLAY,
+  PUBLIC_TRUST_LINE,
   VERIFIED_REVIEW_BADGE,
-  formatGermanRating,
+  formatCustomerSince,
   formatGermanRatingValue,
+  getCountryFlag,
 } from "@/lib/customer-reviews";
 
-function ArrowIcon({ direction }: { direction: "previous" | "next" }) {
-  return (
-    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d={direction === "previous" ? "m15 18-6-6 6-6" : "m9 6 6 6-6 6"}
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+const TRUST_CHIPS = [
+  "Deutscher Support",
+  "Verifizierte Kundenbewertungen",
+  "Kunden aus Deutschland und Europa",
+] as const;
 
-function GoldStars({ className = "h-3.5 w-3.5" }: { className?: string }) {
+function GoldStars({
+  rating = 5,
+  className = "h-3.5 w-3.5",
+}: {
+  rating?: number;
+  className?: string;
+}) {
+  const filled = Math.round(Math.min(Math.max(rating, 0), 5));
+
   return (
     <span className="inline-flex items-center gap-0.5 text-[#F5C542]" aria-hidden="true">
       {Array.from({ length: 5 }).map((_, index) => (
-        <svg key={index} className={className} viewBox="0 0 20 20" fill="currentColor">
+        <svg
+          key={index}
+          className={className}
+          viewBox="0 0 20 20"
+          fill={index < filled ? "currentColor" : "none"}
+          stroke="currentColor"
+          strokeWidth={index < filled ? 0 : 1.4}
+        >
           <path d="M10 1.8 12.4 7l5.6.5-4.3 3.7 1.3 5.4L10 13.8 4.9 16.6l1.3-5.4L1.9 7.5 7.6 7 10 1.8Z" />
         </svg>
       ))}
@@ -37,7 +45,7 @@ function GoldStars({ className = "h-3.5 w-3.5" }: { className?: string }) {
 
 function VerifiedBadge() {
   return (
-    <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#A6FF00]/90">
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#A6FF00]/35 bg-[#A6FF00]/10 px-2 py-0.5 text-[11px] font-semibold text-[#A6FF00]">
       <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <circle cx="10" cy="10" r="8.25" stroke="currentColor" strokeWidth="1.6" />
         <path
@@ -54,83 +62,7 @@ function VerifiedBadge() {
 }
 
 export default function CustomerReviews() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [visibleSlides, setVisibleSlides] = useState(1);
-  const dragStartRef = useRef<number | null>(null);
-  const dragDeltaRef = useRef(0);
-
-  const maxIndex = useMemo(
-    () => Math.max(CUSTOMER_REVIEWS.length - visibleSlides, 0),
-    [visibleSlides],
-  );
-
-  useEffect(() => {
-    const tabletQuery = window.matchMedia("(min-width: 768px)");
-    const desktopQuery = window.matchMedia("(min-width: 1024px)");
-
-    const updateVisibleSlides = () => {
-      if (desktopQuery.matches) {
-        setVisibleSlides(3);
-        return;
-      }
-
-      setVisibleSlides(tabletQuery.matches ? 2 : 1);
-    };
-
-    updateVisibleSlides();
-    tabletQuery.addEventListener("change", updateVisibleSlides);
-    desktopQuery.addEventListener("change", updateVisibleSlides);
-
-    return () => {
-      tabletQuery.removeEventListener("change", updateVisibleSlides);
-      desktopQuery.removeEventListener("change", updateVisibleSlides);
-    };
-  }, []);
-
-  useEffect(() => {
-    setActiveIndex((current) => Math.min(current, maxIndex));
-  }, [maxIndex]);
-
-  const goToPrevious = () => {
-    setActiveIndex((current) => (current <= 0 ? maxIndex : current - 1));
-  };
-
-  const goToNext = () => {
-    setActiveIndex((current) => (current >= maxIndex ? 0 : current + 1));
-  };
-
-  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    dragStartRef.current = event.clientX;
-    dragDeltaRef.current = 0;
-    event.currentTarget.setPointerCapture(event.pointerId);
-  };
-
-  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
-    if (dragStartRef.current === null) {
-      return;
-    }
-
-    dragDeltaRef.current = event.clientX - dragStartRef.current;
-  };
-
-  const handlePointerEnd = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-    }
-
-    const dragDistance = dragDeltaRef.current;
-
-    if (Math.abs(dragDistance) > 48) {
-      if (dragDistance < 0) {
-        goToNext();
-      } else {
-        goToPrevious();
-      }
-    }
-
-    dragStartRef.current = null;
-    dragDeltaRef.current = 0;
-  };
+  const ratingDisplay = formatGermanRatingValue(PUBLIC_RATING_VALUE);
 
   return (
     <section
@@ -146,103 +78,91 @@ export default function CustomerReviews() {
             id="customer-reviews-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.8rem] lg:text-[3.2rem]"
           >
-            Was unsere{" "}
+            Was unsere Kunden über{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              Kunden
+              iptvkaufenX
             </span>{" "}
             sagen
           </h2>
           <p className="mx-auto mt-3 max-w-[640px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Anonyme und verifizierte Rückmeldungen von Kunden aus Deutschland.
+            Verifizierte Kundenbewertungen aus Deutschland und Europa.
           </p>
         </div>
 
-        <div className="relative mt-8 sm:mt-10">
-          <div
-            className="overflow-hidden"
-            onPointerCancel={handlePointerEnd}
-            onPointerDown={handlePointerDown}
-            onPointerMove={handlePointerMove}
-            onPointerUp={handlePointerEnd}
-            onLostPointerCapture={handlePointerEnd}
-            style={{ touchAction: "pan-y" }}
-          >
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{
-                width: `${(CUSTOMER_REVIEWS.length / visibleSlides) * 100}%`,
-                transform: `translate3d(-${(activeIndex / CUSTOMER_REVIEWS.length) * 100}%, 0, 0)`,
-              }}
-            >
-              {CUSTOMER_REVIEWS.map((review) => (
-                <article
-                  key={review.id}
-                  className="shrink-0 px-1.5 sm:px-2"
-                  style={{ width: `${100 / CUSTOMER_REVIEWS.length}%` }}
-                >
-                  <div className="flex h-full min-h-[220px] flex-col rounded-[20px] border border-[#A6FF00]/45 bg-[#050806] p-5 shadow-[0_14px_34px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.035)] sm:min-h-[236px] sm:p-6">
-                    <div
-                      className="flex flex-wrap items-center gap-x-2 gap-y-1"
-                      aria-label={`${formatGermanRatingValue(review.rating)} von 5 Sternen`}
-                    >
-                      <GoldStars />
-                      <span className="text-[13px] font-bold text-[#F5F5F5] sm:text-[14px]">
-                        {formatGermanRating(review.rating)}
-                      </span>
-                    </div>
-
-                    <blockquote className="mt-4 flex-1 text-[14px] leading-6 text-[#EDEDED]/92 sm:text-[15px] sm:leading-7">
-                      <p>„{review.reviewBody}“</p>
-                    </blockquote>
-
-                    <footer className="mt-5 space-y-1.5 border-t border-[#A6FF00]/15 pt-4">
-                      <p className="text-[13px] font-semibold text-[#F5F5F5]">
-                        {PUBLIC_AUTHOR_DISPLAY}
-                      </p>
-                      <VerifiedBadge />
-                    </footer>
-                  </div>
-                </article>
-              ))}
+        <div className="mx-auto mt-8 flex max-w-[980px] flex-col items-center gap-6 rounded-[22px] border border-[#A6FF00]/20 bg-[radial-gradient(circle_at_18%_0%,rgba(166,255,0,0.07),transparent_42%),linear-gradient(160deg,rgba(10,15,10,0.98)_0%,rgba(5,8,5,1)_100%)] p-5 sm:mt-10 sm:flex-row sm:items-stretch sm:justify-between sm:gap-8 sm:p-6">
+          <div className="text-center sm:text-left">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:justify-start">
+              <span className="text-[3rem] font-black leading-none tracking-[-0.06em] text-[#F5F5F5] sm:text-[3.4rem]">
+                {ratingDisplay}
+              </span>
+              <GoldStars rating={PUBLIC_RATING_VALUE} className="h-5 w-5" />
             </div>
+            <p className="mt-3 text-[15px] font-semibold text-[#F5F5F5] sm:text-[16px]">
+              {PUBLIC_REVIEW_COUNT_DISPLAY}
+            </p>
+            <p className="mt-1.5 text-[13px] leading-6 text-[#E6E6E6]/82 sm:text-[14px]">
+              {PUBLIC_RATING_SUPPORTING}
+            </p>
+            <p className="mt-1 text-[13px] leading-6 text-[#F5F5F5]/70 sm:text-[14px]">
+              {PUBLIC_TRUST_LINE}
+            </p>
           </div>
 
-          <button
-            type="button"
-            onClick={goToPrevious}
-            className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:left-3 sm:h-11 sm:w-11 lg:-left-2"
-            aria-label="Vorherige Kundenbewertung"
-          >
-            <ArrowIcon direction="previous" />
-          </button>
-          <button
-            type="button"
-            onClick={goToNext}
-            className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#A6FF00]/45 bg-[#050806]/92 text-[#A6FF00] shadow-[0_14px_34px_rgba(0,0,0,0.38)] backdrop-blur transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00] hover:text-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] sm:right-3 sm:h-11 sm:w-11 lg:-right-2"
-            aria-label="Nächste Kundenbewertung"
-          >
-            <ArrowIcon direction="next" />
-          </button>
-
-          <div
-            className="mt-6 flex items-center justify-center gap-2"
-            aria-label="Kundenbewertungen Pagination"
-          >
-            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`h-2 rounded-full transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] ${
-                  activeIndex === index
-                    ? "w-7 bg-[#A6FF00]"
-                    : "w-2 bg-[#A6FF00]/28 hover:bg-[#A6FF00]/55"
-                }`}
-                aria-label={`Kundenbewertung Gruppe ${index + 1} anzeigen`}
-                aria-current={activeIndex === index ? "true" : undefined}
-              />
+          <div className="flex flex-col justify-center gap-2.5 sm:min-w-[240px] sm:items-end">
+            {TRUST_CHIPS.map((chip) => (
+              <span
+                key={chip}
+                className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/28 bg-[#050806] px-3.5 py-2 text-[12px] font-semibold text-[#F5F5F5] sm:text-[13px]"
+              >
+                {chip}
+              </span>
             ))}
           </div>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:mt-10 lg:grid-cols-3 lg:gap-5">
+          {FEATURED_CUSTOMER_REVIEWS.map((review) => (
+            <article
+              key={review.id}
+              className="flex h-full min-h-[240px] flex-col rounded-[20px] border border-[#A6FF00]/35 bg-[#050806] p-5 shadow-[0_14px_34px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.035)] sm:min-h-[260px] sm:p-6"
+            >
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
+                <div
+                  className="flex flex-wrap items-center gap-x-2 gap-y-1"
+                  aria-label={`${formatGermanRatingValue(review.rating)} von 5 Sternen`}
+                >
+                  <GoldStars rating={review.rating} />
+                  <span className="text-[13px] font-bold text-[#F5F5F5] sm:text-[14px]">
+                    {formatGermanRatingValue(review.rating)}/5
+                  </span>
+                </div>
+                {review.verified ? <VerifiedBadge /> : null}
+              </div>
+
+              <blockquote className="mt-4 flex-1 text-[14px] leading-6 text-[#EDEDED]/92 sm:text-[15px] sm:leading-7">
+                <p lang={review.language}>„{review.text}“</p>
+              </blockquote>
+
+              <footer className="mt-5 flex items-center gap-3 border-t border-[#A6FF00]/15 pt-4">
+                <span
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#A6FF00]/12 text-[12px] font-bold tracking-[0.04em] text-[#A6FF00]"
+                  aria-hidden="true"
+                >
+                  {review.initials}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[13px] font-semibold text-[#F5F5F5] sm:text-[14px]">{review.name}</p>
+                  <p className="mt-0.5 text-[12px] text-[#E6E6E6]/78 sm:text-[13px]">
+                    <span aria-hidden="true">{getCountryFlag(review.countryCode)} </span>
+                    {review.city}
+                  </p>
+                  <p className="mt-0.5 text-[11px] text-[#F5F5F5]/55 sm:text-[12px]">
+                    {formatCustomerSince(review.customerSinceMonths)}
+                  </p>
+                </div>
+              </footer>
+            </article>
+          ))}
         </div>
       </div>
     </section>

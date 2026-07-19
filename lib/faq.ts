@@ -10,9 +10,9 @@ export const FAQ_ITEMS = [
       "IPTV Kaufen funktioniert auf vielen modernen Geräten, zum Beispiel Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet, TV Box und weiteren kompatiblen Geräten.",
   },
   {
-    question: "Kann ich IPTV auf 2 Geräten gleichzeitig nutzen?",
+    question: "Kann ich IPTV auf mehreren Geräten gleichzeitig nutzen?",
     answer:
-      "Ja. Der Zugang kann gleichzeitig auf bis zu 2 kompatiblen Geräten genutzt werden, zum Beispiel auf Smart TV, Smartphone, Tablet, Computer oder TV Box.",
+      "Ja. Je nach gewähltem Paket können Sie IPTV gleichzeitig auf bis zu 4 kompatiblen Geräten nutzen, zum Beispiel auf Smart TV, Smartphone, Tablet, Computer oder TV Box.",
   },
   {
     question: "Wie schnell erhalte ich meinen Zugang nach der Bestellung?",

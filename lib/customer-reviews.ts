@@ -1,136 +1,125 @@
-export const AGGREGATE_RATING = {
-  ratingValue: "4.9",
-  bestRating: "5",
-  worstRating: "1",
-  ratingCount: "249",
-} as const;
-
-export const AGGREGATE_RATING_VISIBLE =
-  "★★★★★ 4,9/5 – Basierend auf 249 Kundenbewertungen";
-
-export const AGGREGATE_RATING_ACCESSIBLE_LABEL =
-  "4,9 von 5 Sternen, basierend auf 249 Kundenbewertungen";
-
-export const PUBLIC_AUTHOR_LABEL = "Anonymer Kunde";
-export const PUBLIC_AUTHOR_COUNTRY = "Deutschland";
-export const PUBLIC_AUTHOR_DISPLAY = "Anonymer Kunde – Deutschland";
-export const VERIFIED_REVIEW_BADGE = "Verifizierte Bewertung";
+import reviewsData from "@/lib/customer-reviews-data.json";
 
 export type CustomerReview = {
   id: string;
-  publicAuthorLabel: string;
+  name: string;
+  initials: string;
+  city: string;
   country: string;
+  countryCode: string;
+  language: string;
+  customerSinceMonths: number;
+  package: string;
+  source: string;
   rating: number;
-  reviewBody: string;
+  verified: boolean;
+  text: string;
 };
 
-export const CUSTOMER_REVIEWS: readonly CustomerReview[] = [
-  {
-    id: "review-01",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 5,
-    reviewBody:
-      "Die Aktivierung war sehr schnell und alles funktionierte direkt. Der Support hat mir bei der Einrichtung sofort geholfen.",
-  },
-  {
-    id: "review-02",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 5,
-    reviewBody:
-      "Sehr gute Bildqualität und eine große Auswahl an deutschen und internationalen Sendern. Bisher läuft alles stabil.",
-  },
-  {
-    id: "review-03",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 5,
-    reviewBody:
-      "Ich nutze den Service auf meinem Smart-TV und Smartphone. Die Einrichtung war einfach und die Verbindung ist zuverlässig.",
-  },
-  {
-    id: "review-04",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 5,
-    reviewBody:
-      "Der Kundenservice antwortet schnell und erklärt die Einrichtung verständlich. Mit dem Gesamtpaket bin ich sehr zufrieden.",
-  },
-  {
-    id: "review-05",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 4.8,
-    reviewBody:
-      "Viele Sender, Filme und Serien in guter Qualität. Auch bei Live-Sport läuft der Stream bei mir meistens ohne Probleme.",
-  },
-  {
-    id: "review-06",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 5,
-    reviewBody:
-      "Nach der Bestellung habe ich meine Zugangsdaten sehr schnell erhalten. Die Installation war einfacher als erwartet.",
-  },
-  {
-    id: "review-07",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 4.9,
-    reviewBody:
-      "Der Service funktioniert auf mehreren Geräten problemlos. Besonders positiv finde ich die schnelle Unterstützung über WhatsApp.",
-  },
-  {
-    id: "review-08",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 5,
-    reviewBody:
-      "Die Sender wechseln schnell und das Bild bleibt stabil. Für mich ein sehr gutes Preis-Leistungs-Verhältnis.",
-  },
-  {
-    id: "review-09",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 4.9,
-    reviewBody:
-      "Ich hatte zuerst Fragen zur App, aber der Support hat mir Schritt für Schritt geholfen. Danach lief alles einwandfrei.",
-  },
-  {
-    id: "review-10",
-    publicAuthorLabel: PUBLIC_AUTHOR_LABEL,
-    country: PUBLIC_AUTHOR_COUNTRY,
-    rating: 5,
-    reviewBody:
-      "Seit der Aktivierung funktioniert der Zugang zuverlässig. Große Auswahl, gute Qualität und freundlicher Kundenservice.",
-  },
-] as const;
+type ReviewsFile = {
+  publicSummary: {
+    ratingValue: number;
+    reviewCountDisplay: string;
+    reviewCountExact: number | null;
+    distribution: null;
+  };
+  featuredReviewIds: string[];
+  reviews: CustomerReview[];
+};
 
-export function formatGermanRating(rating: number): string {
-  return `${rating.toFixed(1).replace(".", ",")}/5`;
+const data = reviewsData as ReviewsFile;
+
+export const CUSTOMER_REVIEWS: readonly CustomerReview[] = data.reviews;
+
+export const FEATURED_REVIEW_IDS: readonly string[] = data.featuredReviewIds;
+
+export const FEATURED_CUSTOMER_REVIEWS: readonly CustomerReview[] =
+  FEATURED_REVIEW_IDS.map((id) => {
+    const review = CUSTOMER_REVIEWS.find((item) => item.id === id);
+    if (!review) {
+      throw new Error(`Missing featured customer review: ${id}`);
+    }
+    return review;
+  });
+
+/** Public marketing summary — not derived from the 30 featured examples. */
+export const PUBLIC_RATING_VALUE = data.publicSummary.ratingValue;
+export const PUBLIC_REVIEW_COUNT_DISPLAY = "Über 5.000 Kundenbewertungen";
+export const PUBLIC_REVIEW_COUNT_EXACT = data.publicSummary.reviewCountExact;
+export const PUBLIC_RATING_SUPPORTING =
+  "Basierend auf über 5.000 Kundenbewertungen";
+export const PUBLIC_TRUST_LINE = "Über 5.000 Kunden vertrauen iptvkaufenX";
+
+export const AGGREGATE_RATING = {
+  ratingValue: String(PUBLIC_RATING_VALUE),
+  bestRating: "5",
+  worstRating: "1",
+} as const;
+
+export const VERIFIED_REVIEW_BADGE = "Verifiziert";
+
+const FLAG_BY_COUNTRY_CODE: Record<string, string> = {
+  DE: "🇩🇪",
+  FR: "🇫🇷",
+  ES: "🇪🇸",
+  IT: "🇮🇹",
+  AT: "🇦🇹",
+  BE: "🇧🇪",
+  NL: "🇳🇱",
+  PT: "🇵🇹",
+  CH: "🇨🇭",
+};
+
+export function getCountryFlag(countryCode: string): string {
+  return FLAG_BY_COUNTRY_CODE[countryCode.toUpperCase()] ?? "";
+}
+
+export function formatCustomerSince(months: number): string {
+  if (months === 1) return "Kunde seit 1 Monat";
+  return `Kunde seit ${months} Monaten`;
 }
 
 export function formatGermanRatingValue(rating: number): string {
   return rating.toFixed(1).replace(".", ",");
 }
 
+export function formatGermanRating(rating: number): string {
+  return `${formatGermanRatingValue(rating)}/5`;
+}
+
+export const AGGREGATE_RATING_VISIBLE = `★★★★★ ${formatGermanRatingValue(PUBLIC_RATING_VALUE)}/5 – ${PUBLIC_RATING_SUPPORTING}`;
+
+export const AGGREGATE_RATING_ACCESSIBLE_LABEL =
+  "4,9 von 5 Sternen, basierend auf über 5.000 Kundenbewertungen";
+
 export function buildProductAggregateRating() {
-  return {
-    "@type": "AggregateRating" as const,
+  const aggregate: {
+    "@type": "AggregateRating";
+    ratingValue: string;
+    bestRating: string;
+    worstRating: string;
+    ratingCount?: string;
+  } = {
+    "@type": "AggregateRating",
     ratingValue: AGGREGATE_RATING.ratingValue,
     bestRating: AGGREGATE_RATING.bestRating,
     worstRating: AGGREGATE_RATING.worstRating,
-    ratingCount: AGGREGATE_RATING.ratingCount,
   };
+
+  // Only emit ratingCount when an exact verified numeric count exists.
+  if (PUBLIC_REVIEW_COUNT_EXACT !== null) {
+    aggregate.ratingCount = String(PUBLIC_REVIEW_COUNT_EXACT);
+  }
+
+  return aggregate;
 }
 
 export function buildProductReviews() {
-  return CUSTOMER_REVIEWS.map((review) => ({
+  return FEATURED_CUSTOMER_REVIEWS.map((review) => ({
     "@type": "Review" as const,
     author: {
       "@type": "Person" as const,
-      name: review.publicAuthorLabel,
+      name: review.name,
     },
     reviewRating: {
       "@type": "Rating" as const,
@@ -138,6 +127,6 @@ export function buildProductReviews() {
       bestRating: "5",
       worstRating: "1",
     },
-    reviewBody: review.reviewBody,
+    reviewBody: review.text,
   }));
 }
