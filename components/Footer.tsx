@@ -2,7 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import PricingScrollLink from "@/components/PricingScrollLink";
-import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import {
+  FaBitcoin,
+  FaCreditCard,
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaPaypal,
+  FaUniversity,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import {
   WHATSAPP_CHAT_URL,
@@ -52,6 +61,13 @@ const socialLinks = [
   { label: "WhatsApp", href: WHATSAPP_CHAT_URL, Icon: FaWhatsapp },
 ] as const;
 
+const paymentMethods = [
+  { label: "Banküberweisung", Icon: FaUniversity },
+  { label: "PayPal", Icon: FaPaypal },
+  { label: "Kreditkarte", Icon: FaCreditCard },
+  { label: "Kryptowährungen", Icon: FaBitcoin },
+] as const;
+
 function FooterLink({
   href,
   children,
@@ -89,7 +105,7 @@ export default function Footer() {
     <footer className="relative border-t border-[#A6FF00]/30 bg-[#080B08] px-5 pb-8 pt-12 sm:px-8 sm:pb-9 sm:pt-14 lg:px-0 lg:pt-16">
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="rounded-[26px] border border-[#1F1F1F]/95 bg-[#0A0F0A] p-5 shadow-[0_22px_60px_rgba(0,0,0,0.34)] sm:p-7 lg:p-8">
-          <div className="grid gap-10 border-b border-[#1F1F1F]/90 pb-10 sm:grid-cols-2 sm:gap-11 lg:grid-cols-[1.45fr_0.85fr_1fr_0.95fr] lg:gap-12 lg:pb-12">
+          <div className="grid gap-10 border-b border-[#1F1F1F]/90 pb-10 sm:grid-cols-2 sm:gap-11 lg:grid-cols-[1.35fr_0.75fr_0.9fr_0.85fr_0.9fr] lg:gap-10 lg:pb-12 xl:gap-12">
           <div className="max-w-[430px] rounded-2xl border border-[#1F1F1F]/85 bg-[#080B08] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-6 lg:-ml-1">
             <Link href="/" aria-label="iptvkaufenX Startseite" className="inline-flex rounded-xl">
               <Image
@@ -204,6 +220,25 @@ export default function Footer() {
                 );
               })}
             </nav>
+          </div>
+
+          <div>
+            <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
+              Zahlungsmethoden
+            </h2>
+            <ul className="mt-5 flex flex-col gap-3" aria-label="Footer Zahlungsmethoden">
+              {paymentMethods.map(({ label, Icon }) => (
+                <li
+                  key={label}
+                  className="inline-flex items-center gap-3 text-[14px] font-normal text-[#F5F5F5]/72"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#263026] bg-[#080B08] text-[#A6FF00]">
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                  <span>{label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           </div>
 
