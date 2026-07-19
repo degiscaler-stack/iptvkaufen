@@ -164,6 +164,19 @@ export default function Footer() {
 
           <div>
             <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
+              Rechtliches
+            </h2>
+            <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Rechtliches">
+              {legalLinks.map((link) => (
+                <FooterLink key={link.label} href={link.href}>
+                  {link.label}
+                </FooterLink>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
               Zahlungsmethoden
             </h2>
             <ul className="mt-5 flex flex-col gap-3" aria-label="Footer Zahlungsmethoden">
@@ -225,19 +238,6 @@ export default function Footer() {
                   </Link>
                 );
               })}
-            </nav>
-          </div>
-
-          <div>
-            <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
-              Rechtliches
-            </h2>
-            <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Rechtliches">
-              {legalLinks.map((link) => (
-                <FooterLink key={link.label} href={link.href}>
-                  {link.label}
-                </FooterLink>
-              ))}
             </nav>
           </div>
           </div>
