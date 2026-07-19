@@ -16,12 +16,18 @@ export type CustomerReview = {
   text: string;
 };
 
+export type RatingDistributionRow = {
+  stars: number;
+  count: number;
+  percent: number;
+};
+
 type ReviewsFile = {
   publicSummary: {
     ratingValue: number;
     reviewCountDisplay: string;
     reviewCountExact: number | null;
-    distribution: null;
+    distribution: RatingDistributionRow[] | null;
   };
   featuredReviewIds: string[];
   reviews: CustomerReview[];
@@ -44,11 +50,13 @@ export const FEATURED_CUSTOMER_REVIEWS: readonly CustomerReview[] =
 
 /** Public marketing summary — not derived from the 30 featured examples. */
 export const PUBLIC_RATING_VALUE = data.publicSummary.ratingValue;
-export const PUBLIC_REVIEW_COUNT_DISPLAY = "Über 5.000 Kundenbewertungen";
 export const PUBLIC_REVIEW_COUNT_EXACT = data.publicSummary.reviewCountExact;
-export const PUBLIC_RATING_SUPPORTING =
-  "Basierend auf über 5.000 Kundenbewertungen";
-export const PUBLIC_TRUST_LINE = "Über 5.000 Kunden vertrauen iptvkaufenX";
+export const PUBLIC_REVIEW_COUNT_DISPLAY = "5.000 Kundenbewertungen";
+export const PUBLIC_RATING_SUPPORTING = "Basierend auf 5.000 Kundenbewertungen";
+export const PUBLIC_TRUST_LINE = "5.000 Kunden vertrauen iptvkaufenX";
+
+export const RATING_DISTRIBUTION: readonly RatingDistributionRow[] =
+  data.publicSummary.distribution ?? [];
 
 export const AGGREGATE_RATING = {
   ratingValue: String(PUBLIC_RATING_VALUE),
@@ -58,26 +66,28 @@ export const AGGREGATE_RATING = {
 
 export const VERIFIED_REVIEW_BADGE = "Verifiziert";
 
-/**
- * Convert ISO 3166-1 alpha-2 country codes into Unicode regional-indicator flag emoji.
- * Example: "DE" → 🇩🇪
- */
-export function countryCodeToFlag(countryCode: string): string {
-  const code = countryCode.trim().toUpperCase();
-  if (!/^[A-Z]{2}$/.test(code)) {
-    return "";
-  }
+const FLAG_META: Record<
+  string,
+  { src: string; alt: string }
+> = {
+  DE: { src: "/flags/de.svg", alt: "Flagge Deutschland" },
+  FR: { src: "/flags/fr.svg", alt: "Flagge Frankreich" },
+  ES: { src: "/flags/es.svg", alt: "Flagge Spanien" },
+  IT: { src: "/flags/it.svg", alt: "Flagge Italien" },
+  AT: { src: "/flags/at.svg", alt: "Flagge Österreich" },
+  BE: { src: "/flags/be.svg", alt: "Flagge Belgien" },
+  NL: { src: "/flags/nl.svg", alt: "Flagge Niederlande" },
+  PT: { src: "/flags/pt.svg", alt: "Flagge Portugal" },
+  CH: { src: "/flags/ch.svg", alt: "Flagge Schweiz" },
+};
 
-  const A = 0x1f1e6;
-  const base = "A".charCodeAt(0);
-  return String.fromCodePoint(
-    A + (code.charCodeAt(0) - base),
-    A + (code.charCodeAt(1) - base),
-  );
+export function getCountryFlagAsset(countryCode: string) {
+  return FLAG_META[countryCode.trim().toUpperCase()] ?? null;
 }
 
+/** @deprecated Prefer getCountryFlagAsset for visible UI. */
 export function getCountryFlag(countryCode: string): string {
-  return countryCodeToFlag(countryCode);
+  return getCountryFlagAsset(countryCode)?.src ?? "";
 }
 
 export const AVATAR_PALETTE = [
@@ -90,7 +100,6 @@ export const AVATAR_PALETTE = [
 ] as const;
 
 export function getAvatarStyleForReview(_reviewId: string, index: number) {
-  // Featured cards use stable palette order so the first six colors stay distinct.
   return AVATAR_PALETTE[index % AVATAR_PALETTE.length];
 }
 
@@ -110,11 +119,9 @@ export function formatGermanRating(rating: number): string {
 export const AGGREGATE_RATING_VISIBLE = `★★★★★ ${formatGermanRatingValue(PUBLIC_RATING_VALUE)}/5 – ${PUBLIC_RATING_SUPPORTING}`;
 
 export const AGGREGATE_RATING_ACCESSIBLE_LABEL =
-  "4,9 von 5 Sternen, basierend auf über 5.000 Kundenbewertungen";
+  "4,9 von 5 Sternen, basierend auf 5.000 Kundenbewertungen";
 
 export function buildProductAggregateRating() {
-  // Google requires reviewCount or ratingCount. We only emit AggregateRating
-  // when an exact verified numeric archive count exists — never invent values.
   if (PUBLIC_REVIEW_COUNT_EXACT === null) {
     return null;
   }

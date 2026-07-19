@@ -1,16 +1,15 @@
+import Image from "next/image";
 import {
   FEATURED_CUSTOMER_REVIEWS,
   PUBLIC_RATING_SUPPORTING,
   PUBLIC_RATING_VALUE,
+  RATING_DISTRIBUTION,
   VERIFIED_REVIEW_BADGE,
   formatCustomerSince,
   formatGermanRatingValue,
   getAvatarStyleForReview,
-  getCountryFlag,
+  getCountryFlagAsset,
 } from "@/lib/customer-reviews";
-
-const FLAG_EMOJI_FONT =
-  '"Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';
 
 function GoldStars({
   rating = 5,
@@ -57,6 +56,22 @@ function VerifiedBadge() {
   );
 }
 
+function CountryFlag({ countryCode }: { countryCode: string }) {
+  const asset = getCountryFlagAsset(countryCode);
+  if (!asset) return null;
+
+  return (
+    <Image
+      src={asset.src}
+      alt={asset.alt}
+      width={18}
+      height={12}
+      unoptimized
+      className="inline-block h-[12px] w-[18px] shrink-0 rounded-[2px] object-cover"
+    />
+  );
+}
+
 export default function CustomerReviews() {
   const ratingDisplay = formatGermanRatingValue(PUBLIC_RATING_VALUE);
 
@@ -85,7 +100,7 @@ export default function CustomerReviews() {
           </p>
         </div>
 
-        <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center justify-center gap-5 sm:mt-10 sm:flex-row sm:items-center sm:gap-8">
+        <div className="mx-auto mt-8 flex max-w-[720px] flex-col items-center justify-center gap-6 sm:mt-10 sm:flex-row sm:items-center sm:gap-8">
           <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
             <span className="text-[56px] font-black leading-none tracking-[-0.06em] text-white sm:text-[64px]">
               {ratingDisplay}
@@ -93,17 +108,39 @@ export default function CustomerReviews() {
             <div className="mt-2.5">
               <GoldStars rating={PUBLIC_RATING_VALUE} className="h-5 w-5" />
             </div>
+            <p className="mt-3 max-w-[260px] text-[14px] leading-6 text-[#9CA3AF] sm:text-[15px]">
+              {PUBLIC_RATING_SUPPORTING}
+            </p>
           </div>
 
           <div
-            className="hidden h-16 w-px shrink-0 bg-[#2A2A2A] sm:block"
+            className="hidden h-[88px] w-px shrink-0 bg-[#2A2A2A] sm:block"
             aria-hidden="true"
           />
 
-          <div className="text-center sm:text-left">
-            <p className="max-w-[280px] text-[14px] leading-6 text-[#9CA3AF] sm:text-[15px] sm:leading-7">
-              {PUBLIC_RATING_SUPPORTING}
-            </p>
+          <div
+            className="w-full max-w-[280px] space-y-2.5"
+            aria-label="Bewertungsverteilung"
+          >
+            {RATING_DISTRIBUTION.map((row) => (
+              <div key={row.stars} className="grid grid-cols-[52px_1fr_36px] items-center gap-2.5">
+                <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#FBBF24]">
+                  {row.stars}
+                  <svg className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M10 1.8 12.4 7l5.6.5-4.3 3.7 1.3 5.4L10 13.8 4.9 16.6l1.3-5.4L1.9 7.5 7.6 7 10 1.8Z" />
+                  </svg>
+                </span>
+                <div className="h-2 overflow-hidden rounded-full bg-[#1F1F1F]">
+                  <div
+                    className="h-full rounded-full bg-[#FBBF24]"
+                    style={{ width: `${row.percent}%` }}
+                  />
+                </div>
+                <span className="text-right text-[12px] font-semibold text-[#D1D5DB]">
+                  {row.percent}%
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -114,7 +151,6 @@ export default function CustomerReviews() {
             const avatar = isFeaturedHighlight
               ? { background: "#A6FF00", color: "#050505" }
               : paletteAvatar;
-            const flag = getCountryFlag(review.countryCode);
 
             return (
               <article
@@ -153,14 +189,7 @@ export default function CustomerReviews() {
                   <div className="min-w-0">
                     <p className="text-[14px] font-bold leading-tight text-white">{review.name}</p>
                     <p className="mt-1 flex flex-wrap items-center gap-x-1.5 text-[12px] leading-5 text-[#9CA3AF] sm:text-[13px]">
-                      <span
-                        className="inline-block min-w-[1.15em] text-[16px] leading-none"
-                        style={{ fontFamily: FLAG_EMOJI_FONT }}
-                        aria-label={review.country}
-                        role="img"
-                      >
-                        {flag}
-                      </span>
+                      <CountryFlag countryCode={review.countryCode} />
                       <span>
                         {review.city} · {formatCustomerSince(review.customerSinceMonths)}
                       </span>
