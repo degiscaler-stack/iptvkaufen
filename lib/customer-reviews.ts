@@ -113,28 +113,22 @@ export const AGGREGATE_RATING_ACCESSIBLE_LABEL =
   "4,9 von 5 Sternen, basierend auf über 5.000 Kundenbewertungen";
 
 export function buildProductAggregateRating() {
-  const aggregate: {
-    "@type": "AggregateRating";
-    ratingValue: string;
-    bestRating: string;
-    worstRating: string;
-    ratingCount?: string;
-  } = {
-    "@type": "AggregateRating",
-    ratingValue: AGGREGATE_RATING.ratingValue,
-    bestRating: AGGREGATE_RATING.bestRating,
-    worstRating: AGGREGATE_RATING.worstRating,
-  };
-
-  // Only emit ratingCount when an exact verified numeric count exists.
-  if (PUBLIC_REVIEW_COUNT_EXACT !== null) {
-    aggregate.ratingCount = String(PUBLIC_REVIEW_COUNT_EXACT);
+  // Google requires reviewCount or ratingCount. We only emit AggregateRating
+  // when an exact verified numeric archive count exists — never invent values.
+  if (PUBLIC_REVIEW_COUNT_EXACT === null) {
+    return null;
   }
 
-  return aggregate;
+  return {
+    "@type": "AggregateRating" as const,
+    ratingValue: PUBLIC_RATING_VALUE,
+    bestRating: 5,
+    worstRating: 1,
+    reviewCount: PUBLIC_REVIEW_COUNT_EXACT,
+  };
 }
 
-export function buildProductReviews() {
+export function buildProductReviews(productId?: string) {
   return FEATURED_CUSTOMER_REVIEWS.map((review) => ({
     "@type": "Review" as const,
     author: {
@@ -143,10 +137,17 @@ export function buildProductReviews() {
     },
     reviewRating: {
       "@type": "Rating" as const,
-      ratingValue: String(review.rating),
-      bestRating: "5",
-      worstRating: "1",
+      ratingValue: review.rating,
+      bestRating: 5,
+      worstRating: 1,
     },
     reviewBody: review.text,
+    ...(productId
+      ? {
+          itemReviewed: {
+            "@id": productId,
+          },
+        }
+      : {}),
   }));
 }

@@ -17,7 +17,8 @@ import {
 } from "@/lib/merchant-listing";
 import {
   getAllProductOffers,
-  getSimultaneousDevicesLabel,
+  getOfferSchemaId,
+  getOfferSchemaName,
 } from "@/lib/pricing";
 import {
   SITE_URL,
@@ -52,6 +53,9 @@ export const metadata: Metadata = buildPageMetadata({
 
 const productDescription =
   "Premium IPTV Zugang mit Live-TV Sendern, Filmen, Serien, Sport und internationaler Senderliste in HD, Full HD und 4K.";
+
+const PRODUCT_ID = `${SITE_URL}/#product`;
+const productAggregateRating = buildProductAggregateRating();
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -112,22 +116,26 @@ const structuredData = {
     },
     {
       "@type": "Product",
+      "@id": PRODUCT_ID,
       name: "IPTV Kaufen Deutschland",
       description: productDescription,
       image: `${SITE_URL}/images/iptv-kaufen-hero-football.webp`,
+      url: `${SITE_URL}/`,
       brand: {
         "@type": "Brand",
         name: "iptvkaufenX",
       },
-      aggregateRating: buildProductAggregateRating(),
-      review: buildProductReviews(),
+      ...(productAggregateRating ? { aggregateRating: productAggregateRating } : {}),
+      review: buildProductReviews(PRODUCT_ID),
       offers: getAllProductOffers().map((pkg) => ({
         "@type": "Offer",
-        name: `${pkg.duration} – ${getSimultaneousDevicesLabel(pkg.deviceCount)}`,
-        price: pkg.priceNumeric.toFixed(2),
+        "@id": `${SITE_URL}/#${getOfferSchemaId(pkg)}`,
+        name: getOfferSchemaName(pkg),
+        price: Number(pkg.priceNumeric.toFixed(2)),
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/#preise`,
+        itemOffered: { "@id": PRODUCT_ID },
         shippingDetails: buildDigitalOfferShippingDetails(),
         hasMerchantReturnPolicy: buildMerchantReturnPolicyRef(),
       })),

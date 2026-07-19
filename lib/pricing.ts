@@ -222,6 +222,26 @@ export function getAllProductOffers(): IptvPackage[] {
   return DEVICE_COUNTS.flatMap((deviceCount) => getPackagesForDevices(deviceCount));
 }
 
+const OFFER_DURATION_SLUG: Record<PackageId, string> = {
+  "1-month": "1m",
+  "3-months": "3m",
+  "6-months": "6m",
+  "12-months": "12m",
+};
+
+/** Stable Offer @id fragment, e.g. offer-12m-4d */
+export function getOfferSchemaId(pkg: IptvPackage): string {
+  return `offer-${OFFER_DURATION_SLUG[pkg.id]}-${pkg.deviceCount}d`;
+}
+
+/**
+ * Canonical Offer name: duration first, then simultaneous devices.
+ * Example: "12 Monate – 3 Geräte gleichzeitig"
+ */
+export function getOfferSchemaName(pkg: IptvPackage): string {
+  return `${pkg.duration} – ${getSimultaneousDevicesLabel(pkg.deviceCount)}`;
+}
+
 export const MULTI_DEVICE_BADGE_TEXT = getDeviceBadgeText(1);
 export const MULTI_DEVICE_BADGE_SUPPORT = getDeviceSupportText(1);
 
