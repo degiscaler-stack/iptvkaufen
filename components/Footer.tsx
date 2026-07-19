@@ -164,15 +164,21 @@ export default function Footer() {
 
           <div>
             <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
-              Rechtliches
+              Zahlungsmethoden
             </h2>
-            <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Rechtliches">
-              {legalLinks.map((link) => (
-                <FooterLink key={link.label} href={link.href}>
-                  {link.label}
-                </FooterLink>
+            <ul className="mt-5 flex flex-col gap-3" aria-label="Footer Zahlungsmethoden">
+              {paymentMethods.map(({ label, Icon }) => (
+                <li
+                  key={label}
+                  className="inline-flex items-center gap-3 text-[14px] font-normal text-[#F5F5F5]/72"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#263026] bg-[#080B08] text-[#A6FF00]">
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                  <span>{label}</span>
+                </li>
               ))}
-            </nav>
+            </ul>
           </div>
 
           <div>
@@ -224,21 +230,15 @@ export default function Footer() {
 
           <div>
             <h2 className="text-[15px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]">
-              Zahlungsmethoden
+              Rechtliches
             </h2>
-            <ul className="mt-5 flex flex-col gap-3" aria-label="Footer Zahlungsmethoden">
-              {paymentMethods.map(({ label, Icon }) => (
-                <li
-                  key={label}
-                  className="inline-flex items-center gap-3 text-[14px] font-normal text-[#F5F5F5]/72"
-                >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#263026] bg-[#080B08] text-[#A6FF00]">
-                    <Icon className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                  <span>{label}</span>
-                </li>
+            <nav className="mt-5 flex flex-col gap-2" aria-label="Footer Rechtliches">
+              {legalLinks.map((link) => (
+                <FooterLink key={link.label} href={link.href}>
+                  {link.label}
+                </FooterLink>
               ))}
-            </ul>
+            </nav>
           </div>
           </div>
 
