@@ -2,19 +2,15 @@ import {
   FEATURED_CUSTOMER_REVIEWS,
   PUBLIC_RATING_SUPPORTING,
   PUBLIC_RATING_VALUE,
-  PUBLIC_REVIEW_COUNT_DISPLAY,
-  PUBLIC_TRUST_LINE,
   VERIFIED_REVIEW_BADGE,
   formatCustomerSince,
   formatGermanRatingValue,
+  getAvatarStyleForReview,
   getCountryFlag,
 } from "@/lib/customer-reviews";
 
-const TRUST_CHIPS = [
-  "Deutscher Support",
-  "Verifizierte Kundenbewertungen",
-  "Kunden aus Deutschland und Europa",
-] as const;
+const FLAG_EMOJI_FONT =
+  '"Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';
 
 function GoldStars({
   rating = 5,
@@ -26,7 +22,7 @@ function GoldStars({
   const filled = Math.round(Math.min(Math.max(rating, 0), 5));
 
   return (
-    <span className="inline-flex items-center gap-0.5 text-[#F5C542]" aria-hidden="true">
+    <span className="inline-flex items-center gap-0.5 text-[#FBBF24]" aria-hidden="true">
       {Array.from({ length: 5 }).map((_, index) => (
         <svg
           key={index}
@@ -45,8 +41,8 @@ function GoldStars({
 
 function VerifiedBadge() {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#A6FF00]/35 bg-[#A6FF00]/10 px-2 py-0.5 text-[11px] font-semibold text-[#A6FF00]">
-      <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[#A6FF00]/30 bg-[rgba(34,181,115,0.14)] px-2 py-0.5 text-[10px] font-semibold tracking-[0.02em] text-[#A6FF00] sm:text-[11px]">
+      <svg className="h-3 w-3 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <circle cx="10" cy="10" r="8.25" stroke="currentColor" strokeWidth="1.6" />
         <path
           d="m6.4 10.2 2.2 2.2 5-5"
@@ -69,7 +65,7 @@ export default function CustomerReviews() {
       aria-labelledby="customer-reviews-heading"
       className="relative isolate overflow-hidden bg-[#000000] px-5 py-12 sm:px-8 sm:py-14 lg:px-0 lg:py-16"
     >
-      <div className="mx-auto max-w-[1360px] lg:px-12">
+      <div className="mx-auto max-w-[1120px] lg:px-4">
         <div className="mx-auto max-w-[820px] text-center">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:mb-4 sm:text-[11px]">
             KUNDENBEWERTUNGEN
@@ -89,80 +85,89 @@ export default function CustomerReviews() {
           </p>
         </div>
 
-        <div className="mx-auto mt-8 flex max-w-[980px] flex-col items-center gap-6 rounded-[22px] border border-[#A6FF00]/20 bg-[radial-gradient(circle_at_18%_0%,rgba(166,255,0,0.07),transparent_42%),linear-gradient(160deg,rgba(10,15,10,0.98)_0%,rgba(5,8,5,1)_100%)] p-5 sm:mt-10 sm:flex-row sm:items-stretch sm:justify-between sm:gap-8 sm:p-6">
-          <div className="text-center sm:text-left">
-            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:justify-start">
-              <span className="text-[3rem] font-black leading-none tracking-[-0.06em] text-[#F5F5F5] sm:text-[3.4rem]">
-                {ratingDisplay}
-              </span>
+        <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center justify-center gap-5 sm:mt-10 sm:flex-row sm:items-center sm:gap-8">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+            <span className="text-[56px] font-black leading-none tracking-[-0.06em] text-white sm:text-[64px]">
+              {ratingDisplay}
+            </span>
+            <div className="mt-2.5">
               <GoldStars rating={PUBLIC_RATING_VALUE} className="h-5 w-5" />
             </div>
-            <p className="mt-3 text-[15px] font-semibold text-[#F5F5F5] sm:text-[16px]">
-              {PUBLIC_REVIEW_COUNT_DISPLAY}
-            </p>
-            <p className="mt-1.5 text-[13px] leading-6 text-[#E6E6E6]/82 sm:text-[14px]">
-              {PUBLIC_RATING_SUPPORTING}
-            </p>
-            <p className="mt-1 text-[13px] leading-6 text-[#F5F5F5]/70 sm:text-[14px]">
-              {PUBLIC_TRUST_LINE}
-            </p>
           </div>
 
-          <div className="flex flex-col justify-center gap-2.5 sm:min-w-[240px] sm:items-end">
-            {TRUST_CHIPS.map((chip) => (
-              <span
-                key={chip}
-                className="inline-flex items-center justify-center rounded-full border border-[#A6FF00]/28 bg-[#050806] px-3.5 py-2 text-[12px] font-semibold text-[#F5F5F5] sm:text-[13px]"
-              >
-                {chip}
-              </span>
-            ))}
+          <div
+            className="hidden h-16 w-px shrink-0 bg-[#2A2A2A] sm:block"
+            aria-hidden="true"
+          />
+
+          <div className="text-center sm:text-left">
+            <p className="max-w-[280px] text-[14px] leading-6 text-[#9CA3AF] sm:text-[15px] sm:leading-7">
+              {PUBLIC_RATING_SUPPORTING}
+            </p>
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:mt-10 lg:grid-cols-3 lg:gap-5">
-          {FEATURED_CUSTOMER_REVIEWS.map((review) => (
-            <article
-              key={review.id}
-              className="flex h-full min-h-[240px] flex-col rounded-[20px] border border-[#A6FF00]/35 bg-[#050806] p-5 shadow-[0_14px_34px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.035)] sm:min-h-[260px] sm:p-6"
-            >
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
-                <div
-                  className="flex flex-wrap items-center gap-x-2 gap-y-1"
-                  aria-label={`${formatGermanRatingValue(review.rating)} von 5 Sternen`}
-                >
-                  <GoldStars rating={review.rating} />
-                  <span className="text-[13px] font-bold text-[#F5F5F5] sm:text-[14px]">
-                    {formatGermanRatingValue(review.rating)}/5
+        <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-5 lg:mt-11 lg:grid-cols-3 lg:gap-6">
+          {FEATURED_CUSTOMER_REVIEWS.map((review, index) => {
+            const avatar = getAvatarStyleForReview(review.id, index);
+            const flag = getCountryFlag(review.countryCode);
+            const isFeaturedHighlight = index === 0;
+
+            return (
+              <article
+                key={review.id}
+                className={`flex h-full min-h-[280px] flex-col rounded-2xl bg-[#0D0D0D] p-6 transition duration-300 hover:border-[#3A3A3A] sm:min-h-[300px] sm:p-7 ${
+                  isFeaturedHighlight
+                    ? "border border-[#EF233C]"
+                    : "border border-[#272727]"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div
+                    className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1"
+                    aria-label={`${formatGermanRatingValue(review.rating)} von 5 Sternen`}
+                  >
+                    <GoldStars rating={review.rating} className="h-3.5 w-3.5" />
+                    <span className="text-[13px] font-bold text-white sm:text-[14px]">
+                      {formatGermanRatingValue(review.rating)}/5
+                    </span>
+                  </div>
+                  {review.verified ? <VerifiedBadge /> : null}
+                </div>
+
+                <blockquote className="mt-4 flex-1 text-[14px] italic leading-7 text-[#E5E7EB] sm:text-[15px] sm:leading-7">
+                  <p lang={review.language}>„{review.text}“</p>
+                </blockquote>
+
+                <footer className="mt-5 flex items-center gap-3 border-t border-[#272727] pt-4">
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[12px] font-bold tracking-[0.04em]"
+                    style={{ backgroundColor: avatar.background, color: avatar.color }}
+                    aria-hidden="true"
+                  >
+                    {review.initials}
                   </span>
-                </div>
-                {review.verified ? <VerifiedBadge /> : null}
-              </div>
-
-              <blockquote className="mt-4 flex-1 text-[14px] leading-6 text-[#EDEDED]/92 sm:text-[15px] sm:leading-7">
-                <p lang={review.language}>„{review.text}“</p>
-              </blockquote>
-
-              <footer className="mt-5 flex items-center gap-3 border-t border-[#A6FF00]/15 pt-4">
-                <span
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#A6FF00]/12 text-[12px] font-bold tracking-[0.04em] text-[#A6FF00]"
-                  aria-hidden="true"
-                >
-                  {review.initials}
-                </span>
-                <div className="min-w-0">
-                  <p className="text-[13px] font-semibold text-[#F5F5F5] sm:text-[14px]">{review.name}</p>
-                  <p className="mt-0.5 text-[12px] text-[#E6E6E6]/78 sm:text-[13px]">
-                    <span aria-hidden="true">{getCountryFlag(review.countryCode)} </span>
-                    {review.city}
-                  </p>
-                  <p className="mt-0.5 text-[11px] text-[#F5F5F5]/55 sm:text-[12px]">
-                    {formatCustomerSince(review.customerSinceMonths)}
-                  </p>
-                </div>
-              </footer>
-            </article>
-          ))}
+                  <div className="min-w-0">
+                    <p className="text-[14px] font-bold leading-tight text-white">{review.name}</p>
+                    <p className="mt-1 flex flex-wrap items-center gap-x-1.5 text-[12px] leading-5 text-[#9CA3AF] sm:text-[13px]">
+                      {flag ? (
+                        <span
+                          className="inline-block text-[15px] leading-none"
+                          style={{ fontFamily: FLAG_EMOJI_FONT }}
+                          aria-hidden="true"
+                        >
+                          {flag}
+                        </span>
+                      ) : null}
+                      <span>
+                        {review.city} · {formatCustomerSince(review.customerSinceMonths)}
+                      </span>
+                    </p>
+                  </div>
+                </footer>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

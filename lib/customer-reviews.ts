@@ -58,20 +58,40 @@ export const AGGREGATE_RATING = {
 
 export const VERIFIED_REVIEW_BADGE = "Verifiziert";
 
-const FLAG_BY_COUNTRY_CODE: Record<string, string> = {
-  DE: "🇩🇪",
-  FR: "🇫🇷",
-  ES: "🇪🇸",
-  IT: "🇮🇹",
-  AT: "🇦🇹",
-  BE: "🇧🇪",
-  NL: "🇳🇱",
-  PT: "🇵🇹",
-  CH: "🇨🇭",
-};
+/**
+ * Convert ISO 3166-1 alpha-2 country codes into Unicode regional-indicator flag emoji.
+ * Example: "DE" → 🇩🇪
+ */
+export function countryCodeToFlag(countryCode: string): string {
+  const code = countryCode.trim().toUpperCase();
+  if (!/^[A-Z]{2}$/.test(code)) {
+    return "";
+  }
+
+  const A = 0x1f1e6;
+  const base = "A".charCodeAt(0);
+  return String.fromCodePoint(
+    A + (code.charCodeAt(0) - base),
+    A + (code.charCodeAt(1) - base),
+  );
+}
 
 export function getCountryFlag(countryCode: string): string {
-  return FLAG_BY_COUNTRY_CODE[countryCode.toUpperCase()] ?? "";
+  return countryCodeToFlag(countryCode);
+}
+
+export const AVATAR_PALETTE = [
+  { background: "#F43F4E", color: "#FFFFFF" },
+  { background: "#FACC15", color: "#111111" },
+  { background: "#2563EB", color: "#FFFFFF" },
+  { background: "#22B573", color: "#FFFFFF" },
+  { background: "#B84ACB", color: "#FFFFFF" },
+  { background: "#20A966", color: "#FFFFFF" },
+] as const;
+
+export function getAvatarStyleForReview(_reviewId: string, index: number) {
+  // Featured cards use stable palette order so the first six colors stay distinct.
+  return AVATAR_PALETTE[index % AVATAR_PALETTE.length];
 }
 
 export function formatCustomerSince(months: number): string {
