@@ -109,16 +109,19 @@ export default function CustomerReviews() {
 
         <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-5 lg:mt-11 lg:grid-cols-3 lg:gap-6">
           {FEATURED_CUSTOMER_REVIEWS.map((review, index) => {
-            const avatar = getAvatarStyleForReview(review.id, index);
-            const flag = getCountryFlag(review.countryCode);
             const isFeaturedHighlight = index === 0;
+            const paletteAvatar = getAvatarStyleForReview(review.id, index);
+            const avatar = isFeaturedHighlight
+              ? { background: "#A6FF00", color: "#050505" }
+              : paletteAvatar;
+            const flag = getCountryFlag(review.countryCode);
 
             return (
               <article
                 key={review.id}
                 className={`flex h-full min-h-[280px] flex-col rounded-2xl bg-[#0D0D0D] p-6 transition duration-300 hover:border-[#3A3A3A] sm:min-h-[300px] sm:p-7 ${
                   isFeaturedHighlight
-                    ? "border border-[#EF233C]"
+                    ? "border border-[#A6FF00]"
                     : "border border-[#272727]"
                 }`}
               >
@@ -150,15 +153,14 @@ export default function CustomerReviews() {
                   <div className="min-w-0">
                     <p className="text-[14px] font-bold leading-tight text-white">{review.name}</p>
                     <p className="mt-1 flex flex-wrap items-center gap-x-1.5 text-[12px] leading-5 text-[#9CA3AF] sm:text-[13px]">
-                      {flag ? (
-                        <span
-                          className="inline-block text-[15px] leading-none"
-                          style={{ fontFamily: FLAG_EMOJI_FONT }}
-                          aria-hidden="true"
-                        >
-                          {flag}
-                        </span>
-                      ) : null}
+                      <span
+                        className="inline-block min-w-[1.15em] text-[16px] leading-none"
+                        style={{ fontFamily: FLAG_EMOJI_FONT }}
+                        aria-label={review.country}
+                        role="img"
+                      >
+                        {flag}
+                      </span>
                       <span>
                         {review.city} · {formatCustomerSince(review.customerSinceMonths)}
                       </span>
