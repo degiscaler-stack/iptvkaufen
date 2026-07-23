@@ -44,6 +44,7 @@ export const SEO_TITLES = {
     "iptv-sport": "IPTV Sport Live streamen (2026) | iptvkaufenX",
     "iptv-tuerkische-sender": "IPTV Türkische Sender (2026) | iptvkaufenX",
     "iptv-line-kaufen": "IPTV Line kaufen – Zugang aktivieren | iptvkaufenX",
+    "iptv-balkan": "IPTV Balkan – Sender in Deutschland | iptvkaufenX",
   },
 } as const;
 
@@ -84,6 +85,9 @@ const TAG_TITLES: Record<string, string> = {
   "Beste IPTV App für Samsung Fernseher": "Beste IPTV App Samsung Tag | iptvkaufenX",
   "IPTV Sport": "IPTV Sport: Blog Tag | iptvkaufenX",
   "IPTV Türkische Sender": "IPTV Türkische Sender: Blog Tag | iptvkaufenX",
+  "IPTV Balkan": "IPTV Balkan: Blog Tag | iptvkaufenX",
+  "Balkan Sender": "Balkan Sender: Blog Tag | iptvkaufenX",
+  "Balkan TV": "Balkan TV: Blog Tag | iptvkaufenX",
 };
 
 export function getBlogCategoryTitle(slug: BlogCategory): string {
