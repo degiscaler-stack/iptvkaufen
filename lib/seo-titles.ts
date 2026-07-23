@@ -43,6 +43,7 @@ export const SEO_TITLES = {
     "beste-iptv-app-fuer-samsung-fernseher": "Beste IPTV App Samsung TV (2026) | iptvkaufenX",
     "iptv-sport": "IPTV Sport Live streamen (2026) | iptvkaufenX",
     "iptv-tuerkische-sender": "IPTV Türkische Sender (2026) | iptvkaufenX",
+    "iptv-line-kaufen": "IPTV Line kaufen – Zugang aktivieren | iptvkaufenX",
   },
 } as const;
 
