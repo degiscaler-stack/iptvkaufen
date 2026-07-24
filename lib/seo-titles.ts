@@ -46,6 +46,7 @@ export const SEO_TITLES = {
     "iptv-line-kaufen": "IPTV Line kaufen – Zugang aktivieren | iptvkaufenX",
     "iptv-balkan": "IPTV Balkan – Sender in Deutschland | iptvkaufenX",
     "iptv-greek": "IPTV Greek – Griechisches Fernsehen | iptvkaufenX",
+    "polish-iptv": "Polish IPTV – Polnisches Fernsehen | iptvkaufenX",
   },
 } as const;
 
@@ -92,6 +93,10 @@ const TAG_TITLES: Record<string, string> = {
   "IPTV Greek": "IPTV Greek: Blog Tag | iptvkaufenX",
   "Griechische Sender": "Griechische Sender: Blog Tag | iptvkaufenX",
   "Griechisches Fernsehen": "Griechisches Fernsehen Tag | iptvkaufenX",
+  "Polish IPTV": "Polish IPTV: Blog Tag | iptvkaufenX",
+  "Poland IPTV": "Poland IPTV: Blog Tag | iptvkaufenX",
+  "Polnische Sender": "Polnische Sender: Blog Tag | iptvkaufenX",
+  "Polnisches Fernsehen": "Polnisches Fernsehen Tag | iptvkaufenX",
 };
 
 export function getBlogCategoryTitle(slug: BlogCategory): string {
