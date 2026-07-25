@@ -23,6 +23,5 @@ function run(label, args) {
 console.log("Starting Next.js production build for Hostinger...\n");
 
 run("Generate RSS feed", [join(root, "scripts", "generate-feed.mjs")]);
-// Use webpack on Hostinger: more stable under limited build memory than Turbopack.
-run("Next.js production build", [nextBin, "build", "--webpack"]);
+run("Next.js production build", [nextBin, "build"]);
 run("Verify production build", [verifyScript]);
