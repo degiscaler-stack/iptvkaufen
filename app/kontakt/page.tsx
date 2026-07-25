@@ -15,7 +15,6 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "Kontaktieren Sie iptvkaufenX für Fragen zu IPTV Paketen, Einrichtung, Support und Aktivierung.",
   path: "/kontakt",
-  noIndex: true,
 });
 
 const contactItems = [

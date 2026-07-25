@@ -10,6 +10,7 @@ const STATIC_SITEMAP_URLS = [
   `${SITE_URL}/`,
   `${SITE_URL}/senderliste`,
   `${SITE_URL}/blog`,
+  `${SITE_URL}/kontakt`,
   `${SITE_URL}/ueber-uns`,
   `${SITE_URL}/autor`,
   `${SITE_URL}/redaktionelle-richtlinien`,
