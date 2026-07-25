@@ -47,7 +47,6 @@ export const SEO_TITLES = {
     "iptv-balkan": "IPTV Balkan – Sender in Deutschland | iptvkaufenX",
     "iptv-greek": "IPTV Greek – Griechisches Fernsehen | iptvkaufenX",
     "polish-iptv": "Polish IPTV – Polnisches Fernsehen | iptvkaufenX",
-    "iptv-arab": "IPTV Arab – Arabisches Fernsehen | iptvkaufenX",
   },
 } as const;
 
@@ -98,9 +97,6 @@ const TAG_TITLES: Record<string, string> = {
   "Poland IPTV": "Poland IPTV: Blog Tag | iptvkaufenX",
   "Polnische Sender": "Polnische Sender: Blog Tag | iptvkaufenX",
   "Polnisches Fernsehen": "Polnisches Fernsehen Tag | iptvkaufenX",
-  "IPTV Arab": "IPTV Arab: Blog Tag | iptvkaufenX",
-  "Arabische Sender": "Arabische Sender: Blog Tag | iptvkaufenX",
-  "Arabisches Fernsehen": "Arabisches Fernsehen Tag | iptvkaufenX",
 };
 
 export function getBlogCategoryTitle(slug: BlogCategory): string {
