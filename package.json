@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "node scripts/build.mjs",
     "verify:build": "node scripts/verify-static-export.mjs",
-    "start": "next start"
+    "start": "node scripts/start.mjs"
   },
   "engines": {
     "node": ">=18.18.0"

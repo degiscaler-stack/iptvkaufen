@@ -1,6 +1,12 @@
-Hostinger static deployment settings:
+Hostinger Node.js deployment settings:
 Install command: npm ci
 Build command: npm run build
-Output directory: out
-Start command: not needed for static hosting
-Environment variables: none required
+Output directory: .next
+Start command: npm start
+Node version: 22.x
+Environment variables: SMTP_* and CONTACT_EMAIL_* for the contact form only
+
+Important:
+- This project is a Next.js Node app (not a static `out/` export).
+- `npm start` binds to 0.0.0.0 and uses process.env.PORT.
+- Do not set the Hostinger output directory to `out`.
