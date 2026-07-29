@@ -12,6 +12,7 @@ import {
 } from "@/lib/scroll-to-pricing";
 import {
   buildWhatsAppUrl,
+  PHONE_TEL_HREF,
   WHATSAPP_MESSAGES,
   WHATSAPP_PHONE_DISPLAY,
   WHATSAPP_SUPPORT_LABEL,
@@ -542,7 +543,10 @@ export default function IptvPricing() {
         <div className="mx-auto mt-6 max-w-[820px] rounded-[20px] border border-[#1F1F1F]/90 bg-[#090909]/55 p-4 text-center sm:mt-8 sm:p-5">
           <p className="text-[14px] font-semibold text-[#F5F5F5] sm:text-[15px]">Fragen vor dem Kauf?</p>
           <p className="mt-1 text-[12px] text-[#F5F5F5]/62 sm:text-[13px]">
-            {WHATSAPP_PHONE_DISPLAY} · {WHATSAPP_SUPPORT_LABEL}
+            <a href={PHONE_TEL_HREF} className="transition duration-300 hover:text-[#A6FF00]">
+              {WHATSAPP_PHONE_DISPLAY}
+            </a>{" "}
+            · {WHATSAPP_SUPPORT_LABEL}
           </p>
           <TrackedAnchor
             href={buildWhatsAppUrl(WHATSAPP_MESSAGES.packageHelp)}

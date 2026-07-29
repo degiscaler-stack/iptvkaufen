@@ -28,7 +28,7 @@ const sections: LegalSection[] = [
   {
     title: "Support",
     paragraphs: [
-      "Bei Fragen zu Bestellung, Aktivierung, Einrichtung oder Nutzung erreichen Sie uns digital. Unser internationaler WhatsApp-Support steht auf Deutsch unter +44 7848-102-124 zur Verfügung.",
+      "Bei Fragen zu Bestellung, Aktivierung, Einrichtung oder Nutzung erreichen Sie uns digital. Unser internationaler WhatsApp-Support steht auf Deutsch unter +44 7832 620735 zur Verfügung.",
       "Per E-Mail erreichen Sie uns unter support@iptvkaufenx.de und contact@iptvkaufenx.de. Weitere Wege und Hinweise finden Sie auf der Seite [Kontakt](/kontakt).",
     ],
   },

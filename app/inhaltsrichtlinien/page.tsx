@@ -36,7 +36,7 @@ const sections: LegalSection[] = [
     title: "Hinweise zur sicheren Nutzung",
     paragraphs: [
       "Schützen Sie Zugangsdaten und geben Sie sie nicht unbefugt weiter. Nutzen Sie den Dienst nur im Rahmen des gewählten Pakets und der [Nutzungsbedingungen](/nutzungsbedingungen).",
-      "Prüfen Sie vor einer längeren Buchung idealerweise den 24-Stunden-Test und die für Sie relevanten Sender. Bei Problemen wenden Sie sich an den Support über [Kontakt](/kontakt), WhatsApp (+44 7848-102-124) oder die E-Mail-Adressen support@iptvkaufenx.de und contact@iptvkaufenx.de.",
+      "Prüfen Sie vor einer längeren Buchung idealerweise den 24-Stunden-Test und die für Sie relevanten Sender. Bei Problemen wenden Sie sich an den Support über [Kontakt](/kontakt), WhatsApp (+44 7832 620735) oder die E-Mail-Adressen support@iptvkaufenx.de und contact@iptvkaufenx.de.",
     ],
   },
   {

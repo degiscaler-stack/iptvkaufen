@@ -41,7 +41,7 @@ const sections: LegalSection[] = [
   {
     title: "Korrekturen",
     paragraphs: [
-      "Stellen Sie einen sachlichen Fehler in einem Blog-Beitrag fest, melden Sie ihn bitte über [Kontakt](/kontakt), per E-Mail an support@iptvkaufenx.de oder contact@iptvkaufenx.de beziehungsweise über WhatsApp (+44 7848-102-124, internationaler Support auf Deutsch).",
+      "Stellen Sie einen sachlichen Fehler in einem Blog-Beitrag fest, melden Sie ihn bitte über [Kontakt](/kontakt), per E-Mail an support@iptvkaufenx.de oder contact@iptvkaufenx.de beziehungsweise über WhatsApp (+44 7832 620735, internationaler Support auf Deutsch).",
       "Bestätigte Fehler korrigieren wir zeitnah und aktualisieren den Beitrag entsprechend.",
     ],
   },

@@ -1,6 +1,7 @@
-export const WHATSAPP_CHAT_URL = "https://wa.me/message/L6KQCBXWOIUTA1";
-export const WHATSAPP_PHONE_DISPLAY = "+44 7848-102-124";
-export const WHATSAPP_PHONE_E164 = "447848102124";
+export const WHATSAPP_CHAT_URL = "https://wa.me/message/E43FQNWDL46AE1";
+export const WHATSAPP_PHONE_DISPLAY = "+44 7832 620735";
+export const WHATSAPP_PHONE_E164 = "447832620735";
+export const PHONE_TEL_HREF = "tel:+447832620735";
 export const WHATSAPP_SUPPORT_LABEL = "Internationaler WhatsApp-Support auf Deutsch";
 
 export const WHATSAPP_MESSAGES = {
@@ -16,10 +17,6 @@ export function buildSenderlisteCountryInquiryMessage(countryName: string) {
   return `Hallo, ich möchte wissen, ob ein bestimmter Sender aus ${countryName} verfügbar ist.`;
 }
 
-export function buildWhatsAppUrl(message?: string): string {
-  if (!message) {
-    return WHATSAPP_CHAT_URL;
-  }
-
-  return `https://wa.me/${WHATSAPP_PHONE_E164}?text=${encodeURIComponent(message)}`;
+export function buildWhatsAppUrl(_message?: string): string {
+  return WHATSAPP_CHAT_URL;
 }

@@ -74,6 +74,7 @@ const structuredData = {
         {
           "@type": "ContactPoint",
           contactType: "customer support",
+          telephone: "+447832620735",
           email: "support@iptvkaufenx.de",
           availableLanguage: ["German", "de"],
           url: `${SITE_URL}/kontakt`,

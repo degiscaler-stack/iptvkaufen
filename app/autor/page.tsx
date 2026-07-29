@@ -42,7 +42,7 @@ const sections: LegalSection[] = [
   {
     title: "Artikel und Kontakt",
     paragraphs: [
-      "Alle veröffentlichten Beiträge der Redaktion finden Sie im [Blog](/blog). Bei Fragen zu Inhalten, Korrekturhinweisen oder zum IPTV-Service erreichen Sie iptvkaufenX über [Kontakt](/kontakt), per E-Mail an support@iptvkaufenx.de oder contact@iptvkaufenx.de sowie über WhatsApp (+44 7848-102-124, internationaler Support auf Deutsch).",
+      "Alle veröffentlichten Beiträge der Redaktion finden Sie im [Blog](/blog). Bei Fragen zu Inhalten, Korrekturhinweisen oder zum IPTV-Service erreichen Sie iptvkaufenX über [Kontakt](/kontakt), per E-Mail an support@iptvkaufenx.de oder contact@iptvkaufenx.de sowie über WhatsApp (+44 7832 620735, internationaler Support auf Deutsch).",
       "Mehr zur Marke und zum Angebot: [Über uns](/ueber-uns).",
     ],
   },

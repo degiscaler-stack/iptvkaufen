@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import {
+  PHONE_TEL_HREF,
   WHATSAPP_CHAT_URL,
   WHATSAPP_PHONE_DISPLAY,
   WHATSAPP_SUPPORT_LABEL,
@@ -48,9 +49,8 @@ const contactLinks = [
   {
     label: WHATSAPP_PHONE_DISPLAY,
     sublabel: WHATSAPP_SUPPORT_LABEL,
-    href: WHATSAPP_CHAT_URL,
+    href: PHONE_TEL_HREF,
     Icon: FaWhatsapp,
-    external: true,
   },
 ] as const;
 
@@ -221,6 +221,18 @@ export default function Footer() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 text-[14px] font-normal text-[#F5F5F5]/72 transition duration-300 hover:text-[#A6FF00]"
+                    >
+                      {content}
+                    </a>
+                  );
+                }
+
+                if (href.startsWith("tel:") || href.startsWith("mailto:")) {
+                  return (
+                    <a
+                      key={label}
+                      href={href}
                       className="inline-flex items-center gap-3 text-[14px] font-normal text-[#F5F5F5]/72 transition duration-300 hover:text-[#A6FF00]"
                     >
                       {content}
