@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "IPTV kaufen in Deutschland. Über 22.000 Sender, Filme, Serien und Sport in Ultra HD – auf Smart TV, Fire TV und mehr.",
   verification: {
     google: "EsW591o2eN7U4ge2cczx0ALhDErtq_qrj0F75xBbky0",
+    other: {
+      "p:domain_verify": "7d01ab8f433912538f06aea343555cea",
+    },
   },
   icons: {
     icon: "/brand/iptv-kaufen-favicon.webp",
