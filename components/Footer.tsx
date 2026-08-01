@@ -9,10 +9,12 @@ import {
   FaFacebookF,
   FaInstagram,
   FaPaypal,
+  FaPinterestP,
   FaUniversity,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import {
   PHONE_TEL_HREF,
   WHATSAPP_CHAT_URL,
@@ -55,10 +57,41 @@ const contactLinks = [
 ] as const;
 
 const socialLinks = [
-  { label: "Facebook", href: "https://web.facebook.com/people/VisionHub/61588587400682/", Icon: FaFacebookF },
-  { label: "Instagram", href: "https://www.instagram.com/visionhub.media/", Icon: FaInstagram },
-  { label: "X (Twitter)", href: "https://x.com/cod_jss27918", Icon: FaXTwitter },
-  { label: "WhatsApp", href: WHATSAPP_CHAT_URL, Icon: FaWhatsapp },
+  {
+    label: "Facebook von iptvkaufenX öffnen",
+    href: "https://web.facebook.com/IptvkaufenX/",
+    Icon: FaFacebookF,
+  },
+  {
+    label: "Instagram von iptvkaufenX öffnen",
+    href: "https://www.instagram.com/ptvkaufenx/",
+    Icon: FaInstagram,
+  },
+  {
+    label: "TikTok von iptvkaufenX öffnen",
+    href: "https://www.tiktok.com/@iptvkaufenx",
+    Icon: FaTiktok,
+  },
+  {
+    label: "X von iptvkaufenX öffnen",
+    href: "https://x.com/iptvkaufenx",
+    Icon: FaXTwitter,
+  },
+  {
+    label: "Pinterest von iptvkaufenX öffnen",
+    href: "https://www.pinterest.com/iptvkaufenx/",
+    Icon: FaPinterestP,
+  },
+  {
+    label: "YouTube von iptvkaufenX öffnen",
+    href: "https://www.youtube.com/@iptvkaufenx",
+    Icon: FaYoutube,
+  },
+  {
+    label: "WhatsApp-Support von iptvkaufenX öffnen",
+    href: WHATSAPP_CHAT_URL,
+    Icon: FaWhatsapp,
+  },
 ] as const;
 
 const paymentMethods = [
@@ -123,7 +156,7 @@ export default function Footer() {
               HD, Full HD und 4K.
             </p>
 
-            <div className="mt-6 flex items-center gap-3" aria-label="Social Media Links">
+            <div className="mt-6 flex flex-wrap items-center gap-3" aria-label="Social Media Links">
               {socialLinks.map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -131,7 +164,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#263026] bg-[#0A0F0A] text-[#F5F5F5]/82 shadow-[0_8px_20px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/60 hover:text-[#A6FF00]"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#263026] bg-[#0A0F0A] text-[#F5F5F5]/82 shadow-[0_8px_20px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A6FF00]/60 hover:text-[#A6FF00]"
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>

@@ -37,7 +37,7 @@ const sections: LegalSection[] = [
     paragraphs: [
       "Die Inhalte dieser Website werden mit Sorgfalt erstellt und regelmäßig geprüft. Dennoch kann keine Gewähr für Vollständigkeit, Aktualität und Richtigkeit aller Angaben übernommen werden – wie im [Impressum](/impressum) beschrieben.",
       "Fachbeiträge und Ratgeber erscheinen im [Blog](/blog) unter dem Autorenhinweis [iptvkaufenX Redaktion](/autor). Redaktionelle und inhaltliche Standards sind in den [redaktionellen Richtlinien](/redaktionelle-richtlinien) und den [Inhaltsrichtlinien](/inhaltsrichtlinien) dargelegt.",
-      "Auf der Website sind zudem veröffentlichte Kontaktkanäle zu Facebook (VisionHub), Instagram (visionhub.media) und X hinterlegt. Diese dienen der Erreichbarkeit; nähere Angaben dazu finden Sie unter [Kontakt](/kontakt).",
+      "Auf der Website sind zudem veröffentlichte Kontaktkanäle zu Facebook, Instagram, TikTok, X, Pinterest und YouTube hinterlegt. Diese dienen der Erreichbarkeit; nähere Angaben dazu finden Sie unter [Kontakt](/kontakt).",
     ],
   },
   {

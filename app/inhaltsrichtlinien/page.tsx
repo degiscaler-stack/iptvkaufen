@@ -29,7 +29,7 @@ const sections: LegalSection[] = [
     title: "Keine erfundenen Angaben",
     paragraphs: [
       "Wir erfinden keine Firmenadresse, Rechtsform, Erfahrungsjahre, Auszeichnungen, Zertifikate oder Mitarbeiternamen. Wo solche Angaben fehlen, bleiben sie bewusst ungenannt.",
-      "Soziale Kanäle (Facebook VisionHub, Instagram visionhub.media, X), die auf der Website als Kontaktwege veröffentlicht sind, werden als solche genannt – ohne darüber hinausgehende Eigentums- oder Partnerschaftsbehauptungen.",
+      "Soziale Kanäle (Facebook, Instagram, TikTok, X, Pinterest und YouTube), die auf der Website als Kontaktwege veröffentlicht sind, werden als solche genannt – ohne darüber hinausgehende Eigentums- oder Partnerschaftsbehauptungen.",
     ],
   },
   {

@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
-import { FaEnvelope, FaFacebookF, FaHeadset, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaHeadset,
+  FaInstagram,
+  FaPinterestP,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import ContactForm from "@/components/ContactForm";
 import { buildPageMetadata } from "@/lib/seo";
 import { SEO_TITLES } from "@/lib/seo-titles";
@@ -42,10 +50,41 @@ const contactItems = [
 ] as const;
 
 const socialLinks = [
-  { label: "Facebook", href: "https://web.facebook.com/people/VisionHub/61588587400682/", Icon: FaFacebookF },
-  { label: "Instagram", href: "https://www.instagram.com/visionhub.media/", Icon: FaInstagram },
-  { label: "X/Twitter", href: "https://x.com/cod_jss27918", Icon: FaXTwitter },
-  { label: "WhatsApp", href: WHATSAPP_CHAT_URL, Icon: FaWhatsapp },
+  {
+    label: "Facebook von iptvkaufenX öffnen",
+    href: "https://web.facebook.com/IptvkaufenX/",
+    Icon: FaFacebookF,
+  },
+  {
+    label: "Instagram von iptvkaufenX öffnen",
+    href: "https://www.instagram.com/ptvkaufenx/",
+    Icon: FaInstagram,
+  },
+  {
+    label: "TikTok von iptvkaufenX öffnen",
+    href: "https://www.tiktok.com/@iptvkaufenx",
+    Icon: FaTiktok,
+  },
+  {
+    label: "X von iptvkaufenX öffnen",
+    href: "https://x.com/iptvkaufenx",
+    Icon: FaXTwitter,
+  },
+  {
+    label: "Pinterest von iptvkaufenX öffnen",
+    href: "https://www.pinterest.com/iptvkaufenx/",
+    Icon: FaPinterestP,
+  },
+  {
+    label: "YouTube von iptvkaufenX öffnen",
+    href: "https://www.youtube.com/@iptvkaufenx",
+    Icon: FaYoutube,
+  },
+  {
+    label: "WhatsApp-Support von iptvkaufenX öffnen",
+    href: WHATSAPP_CHAT_URL,
+    Icon: FaWhatsapp,
+  },
 ] as const;
 
 export default function KontaktPage() {
