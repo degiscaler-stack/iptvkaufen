@@ -5,6 +5,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.iptvkaufenx.de" }],
+        destination: "https://iptvkaufenx.de/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
