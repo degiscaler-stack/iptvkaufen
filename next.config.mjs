@@ -13,6 +13,16 @@ const nextConfig = {
         destination: "https://iptvkaufenx.de/:path*",
         permanent: true,
       },
+      {
+        source: "/preise",
+        destination: "/#pakete-start",
+        permanent: true,
+      },
+      {
+        source: "/faq",
+        destination: "/#faq",
+        permanent: true,
+      },
     ];
   },
   async headers() {
