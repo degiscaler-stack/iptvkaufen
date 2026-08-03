@@ -76,7 +76,7 @@ export default function IptvBenefits() {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[690px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Alles, was Sie für ein modernes IPTV Kaufen Erlebnis brauchen – schnell, stabil und auf
+            Alles, was Sie für ein modernes Streaming-Erlebnis brauchen – schnell, stabil und auf
             allen Geräten verfügbar.
           </p>
         </div>

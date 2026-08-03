@@ -19,18 +19,17 @@ export default function PremiumExperience() {
       <div className="mx-auto grid max-w-[1380px] items-center gap-5 sm:gap-8 lg:max-w-[1360px] lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-12">
         <div className="max-w-[640px]">
           <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/20 bg-[#111111]/45 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#A6FF00]/90 [text-shadow:none] sm:mb-4 sm:border-[#A6FF00]/30 sm:bg-[#111111]/70 sm:px-4 sm:py-[9px] sm:text-[11px] sm:font-bold sm:tracking-[0.24em] sm:text-[#A6FF00] sm:[text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
-            IPTV KAUFEN ERLEBNIS
+            PREMIUM STREAMING
           </p>
 
           <h2
             id="premium-experience-heading"
             className="text-balance text-[1.66rem] font-black leading-[1.02] tracking-[-0.055em] text-[#F5F5F5] [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-[2.4rem] lg:text-[3.15rem] lg:leading-[0.97]"
           >
-            IPTV Kaufen für{" "}
+            Premium Streaming{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              Premium Streaming
-            </span>{" "}
-            in Deutschland
+              in Deutschland
+            </span>
           </h2>
 
           <div className="mt-3 max-w-[590px] space-y-2 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:space-y-3 sm:text-base sm:leading-7">
@@ -59,7 +58,7 @@ export default function PremiumExperience() {
             </div>
           </div>
 
-          <ul className="mt-5 grid gap-1.5 sm:mt-6 sm:grid-cols-2 sm:gap-2.5" aria-label="Vorteile des IPTV Kaufen Erlebnisses">
+          <ul className="mt-5 grid gap-1.5 sm:mt-6 sm:grid-cols-2 sm:gap-2.5" aria-label="Vorteile des Streaming-Erlebnisses">
             {highlights.map((highlight) => (
               <li
                 key={highlight}

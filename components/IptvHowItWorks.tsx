@@ -68,9 +68,9 @@ export default function IptvHowItWorks() {
             id="iptv-how-it-works-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.65rem] lg:text-[3rem]"
           >
-            IPTV Kaufen in{" "}
+            In 3 einfachen Schritten{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              3 einfachen Schritten
+              starten
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">

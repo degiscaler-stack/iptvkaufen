@@ -28,9 +28,9 @@ export default function PremiumEntertainment() {
 
             <div className="mt-3 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:text-base sm:leading-7">
               <p>
-                Mit IPTV Kaufen genießen Sie ein komfortables Streaming-Erlebnis auf Smart TV,
-                Smartphone, Tablet, PC oder TV Box. Inhalte starten schnell, laufen flüssig und wirken in
-                HD, Full HD und 4K besonders klar.
+                Auf Smart TV, Smartphone, Tablet, PC oder TV Box starten Inhalte schnell, laufen flüssig
+                und wirken in HD, Full HD und 4K besonders klar – für ein komfortables Streaming-Erlebnis
+                zu Hause.
               </p>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function PremiumEntertainment() {
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[12px] bg-[#000000] shadow-[0_18px_46px_rgba(0,0,0,0.36)] sm:rounded-[14px] lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:ml-4 lg:max-w-[570px] lg:justify-self-start lg:aspect-[16/10]">
             <Image
               src="/images/iptv-kaufen-premium-streaming.webp"
-              alt="Premium Streaming mit IPTV Kaufen auf modernen Streaming Geräten"
+              alt="Premium Streaming auf modernen Streaming-Geräten"
               width={1280}
               height={853}
               priority={false}
@@ -51,7 +51,7 @@ export default function PremiumEntertainment() {
           <div className="w-full max-w-[580px] lg:col-start-2 lg:row-start-2 lg:justify-self-start">
             <ul
               className="grid gap-1.5 sm:grid-cols-2 sm:gap-2.5 lg:mt-6"
-              aria-label="Vorteile von Premium Streaming mit IPTV Kaufen"
+              aria-label="Vorteile von Premium Streaming"
             >
               {premiumStreamingFeatures.map((feature) => (
                 <li

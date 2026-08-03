@@ -74,7 +74,7 @@ export default function MoviesSeriesSlider() {
           </h2>
           <p className="mx-auto mt-3 max-w-[680px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
             Entdecken Sie beliebte Filme, Serien und Blockbuster aus Deutschland und weltweit – optimiert
-            für ein modernes IPTV Kaufen Erlebnis auf allen Geräten.
+            für ein modernes IPTV-Erlebnis auf allen Geräten.
           </p>
         </div>
 

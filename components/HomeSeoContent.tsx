@@ -25,7 +25,8 @@ const cards = [
     eyebrow: "IPTV DEUTSCHLAND",
     title: (
       <>
-        IPTV Kaufen in <span className="text-[#A6FF00]">Deutschland</span>
+        Live-TV per Internet in{" "}
+        <span className="text-[#A6FF00]">Deutschland</span>
       </>
     ),
     paragraphs: [
@@ -187,9 +188,9 @@ export default function HomeSeoContent() {
             id="home-seo-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.65rem] lg:text-[3rem]"
           >
-            IPTV Kaufen –{" "}
+            Alles Wichtige{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              klar erklärt
+              auf einen Blick
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">

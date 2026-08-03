@@ -1,13 +1,13 @@
 export const FAQ_ITEMS = [
   {
-    question: "Was ist bei IPTV Kaufen enthalten?",
+    question: "Was ist im IPTV-Paket enthalten?",
     answer:
       "Sie erhalten Zugriff auf Live-TV Sender, Filme, Serien, Sport und weitere Inhalte. Die Nutzung ist auf verschiedenen Geräten möglich, darunter Smart TV, Android TV, Fire TV, Smartphone, Tablet, PC und TV Box.",
   },
   {
     question: "Auf welchen Geräten kann ich IPTV nutzen?",
     answer:
-      "IPTV Kaufen funktioniert auf vielen modernen Geräten, zum Beispiel Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet, TV Box und weiteren kompatiblen Geräten.",
+      "Der IPTV-Zugang funktioniert auf vielen modernen Geräten, zum Beispiel Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet, TV Box und weiteren kompatiblen Geräten.",
   },
   {
     question: "Kann ich IPTV auf mehreren Geräten gleichzeitig nutzen?",
