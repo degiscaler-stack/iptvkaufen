@@ -27,7 +27,7 @@ export default function BlogCTA({
           Bereit für über 22.000 Sender in HD &amp; 4K?
         </h2>
         <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/82">
-          Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 2 Geräten
+          Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 4 Geräten
           gleichzeitig und mit persönlichem Support bei der Einrichtung.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
