@@ -61,6 +61,11 @@ export type BlogFaqItem = {
   answer: string;
 };
 
+export type BlogCtaConfig = {
+  primaryLabel?: string;
+  secondaryLabel?: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -82,6 +87,8 @@ export type BlogPost = {
   sections: BlogSection[];
   faq: BlogFaqItem[];
   relatedSlugs: string[];
+  /** Optional per-article CTA labels; BlogCTA keeps global defaults when omitted. */
+  cta?: BlogCtaConfig;
 };
 
 export type BlogPostSummary = Pick<

@@ -181,7 +181,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
             {!planned ? <BlogFaq items={post.faq} /> : null}
             <BlogPostNavigation previous={previous} next={next} />
             <div className="mt-12">
-              <BlogCTA />
+              <BlogCTA
+                primaryLabel={post.cta?.primaryLabel}
+                secondaryLabel={post.cta?.secondaryLabel}
+              />
             </div>
             <BlogRelatedPosts posts={related} />
           </div>
