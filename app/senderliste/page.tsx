@@ -4,6 +4,7 @@ import SenderlisteExplorer from "@/components/SenderlisteExplorer";
 import SenderlisteSeoContent, {
   SENDERLISTE_FAQ,
 } from "@/components/SenderlisteSeoContent";
+import { getSenderlisteInitialData } from "@/lib/senderliste/server-data";
 import {
   buildBreadcrumbSchema,
   buildFaqSchema,
@@ -36,7 +37,9 @@ const structuredData = [
   buildFaqSchema(SENDERLISTE_FAQ),
 ].filter(Boolean);
 
-export default function SenderlistePage() {
+export default async function SenderlistePage() {
+  const { initialCards, initialPageSearchIndex } = await getSenderlisteInitialData();
+
   return (
     <main className="min-h-screen bg-[#000000] text-[#F5F5F5]">
       <script
@@ -80,7 +83,10 @@ export default function SenderlistePage() {
         </div>
       </section>
 
-      <SenderlisteExplorer />
+      <SenderlisteExplorer
+        initialCards={initialCards}
+        initialPageSearchIndex={initialPageSearchIndex}
+      />
       <SenderlisteSeoContent />
     </main>
   );

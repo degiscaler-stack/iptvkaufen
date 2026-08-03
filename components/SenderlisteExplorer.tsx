@@ -11,12 +11,7 @@ import {
   WHATSAPP_MESSAGES,
 } from "@/lib/contact";
 import { ctaSolidGreenClass } from "@/lib/cta-motion";
-import {
-  getCachedCountryChannels,
-  loadCatalogIndex,
-  loadCountryChannels,
-  loadPageSearchIndex,
-} from "@/lib/senderliste/loader";
+import { getCachedCountryChannels, loadCountryChannels } from "@/lib/senderliste/loader";
 import { TOPIC_CATEGORIES } from "@/lib/senderliste/topics";
 import type {
   CatalogChannel,
@@ -27,7 +22,6 @@ import type {
 } from "@/lib/senderliste/types";
 import { CHANNEL_BATCH_SIZE, INITIAL_CHANNEL_BATCH } from "@/lib/senderliste/types";
 import {
-  buildSenderCards,
   cardMatchesPageSearch,
   filterChannels,
   formatMatchCount,
@@ -319,10 +313,17 @@ function OpenCountryPanel({
   );
 }
 
-export default function SenderlisteExplorer() {
-  const [cards, setCards] = useState<SenderCard[]>([]);
-  const [pageSearchIndex, setPageSearchIndex] = useState<PageSearchIndex | null>(null);
-  const [indexError, setIndexError] = useState(false);
+type SenderlisteExplorerProps = {
+  initialCards: SenderCard[];
+  initialPageSearchIndex: PageSearchIndex;
+};
+
+export default function SenderlisteExplorer({
+  initialCards,
+  initialPageSearchIndex,
+}: SenderlisteExplorerProps) {
+  const [cards] = useState<SenderCard[]>(initialCards);
+  const [pageSearchIndex] = useState<PageSearchIndex>(initialPageSearchIndex);
   const [searchTerm, setSearchTerm] = useState("");
   const [openId, setOpenId] = useState<string | null>(null);
   const [countryDataMap, setCountryDataMap] = useState<Record<string, CatalogCountryFile>>({});
@@ -331,29 +332,6 @@ export default function SenderlisteExplorer() {
   const whatsappInquiryUrl = buildWhatsAppUrl(WHATSAPP_MESSAGES.senderlisteInquiry);
   const noResultsTrackedRef = useRef(false);
   const globalSearchTrackedLengthRef = useRef(0);
-
-  useEffect(() => {
-    let active = true;
-
-    Promise.all([loadCatalogIndex(), loadPageSearchIndex()])
-      .then(([index, searchIndex]) => {
-        if (!active) {
-          return;
-        }
-
-        setCards(buildSenderCards(index));
-        setPageSearchIndex(searchIndex);
-      })
-      .catch(() => {
-        if (active) {
-          setIndexError(true);
-        }
-      });
-
-    return () => {
-      active = false;
-    };
-  }, []);
 
   const searchQuery = normalizeSearchValue(searchTerm.trim());
 
@@ -520,7 +498,7 @@ export default function SenderlisteExplorer() {
       </h2>
       <p className="mx-auto mt-3 max-w-[680px] text-[14px] leading-7 text-[#E6E6E6]/84 sm:text-[15px]">
         Wählen Sie jetzt das passende IPTV-Paket und genießen Sie Ihre Lieblingsinhalte auf bis zu
-        2 Geräten gleichzeitig.
+        4 Geräten gleichzeitig.
       </p>
       <PricingScrollLink
         buttonLocation="senderliste_mid_banner"
@@ -596,16 +574,12 @@ export default function SenderlisteExplorer() {
           </div>
         </div>
 
-        {indexError ? (
+        {cards.length === 0 ? (
           <div className="mt-8 rounded-[22px] border border-[#A6FF00]/20 bg-[#050806] p-6 text-center sm:p-8">
             <p className="text-[16px] font-bold text-[#F5F5F5]">
               Der Senderkatalog konnte nicht geladen werden.
             </p>
           </div>
-        ) : null}
-
-        {!indexError && cards.length === 0 ? (
-          <p className="mt-8 text-center text-[14px] text-[#E6E6E6]/72">Senderkatalog wird geladen…</p>
         ) : null}
 
         {filteredCards.length > 0 ? (
@@ -718,7 +692,7 @@ export default function SenderlisteExplorer() {
         ) : null}
 
         <p className="mx-auto mt-10 max-w-[920px] text-center text-[12px] font-medium tracking-[0.02em] text-[#F5F5F5]/62 sm:text-[13px]">
-          22.000+ Sender · Regelmäßig aktualisiert · 2 Geräte gleichzeitig · Support auf Deutsch
+          22.000+ Sender · Regelmäßig aktualisiert · 4 Geräte gleichzeitig · Support auf Deutsch
         </p>
 
         <div className="mx-auto mt-6 max-w-[920px] rounded-[28px] border border-[#A6FF00]/28 bg-[linear-gradient(180deg,#071006_0%,#030503_100%)] p-6 text-center shadow-[0_24px_70px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-8 lg:p-10">
