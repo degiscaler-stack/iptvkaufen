@@ -28,6 +28,7 @@ const quickLinks = [
   { label: "Senderliste", href: "/senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
+  { label: "Reseller", href: "/reseller" },
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Kontakt", href: "/kontakt" },
 ] as const;

@@ -14,6 +14,7 @@ const navigation = [
   { label: "Senderliste", href: "/senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
+  { label: "Reseller", href: "/reseller" },
   { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
@@ -29,6 +30,8 @@ function isNavItemActive(pathname: string, label: string): boolean {
       return pathname.startsWith("/faq");
     case "Blog":
       return pathname.startsWith("/blog");
+    case "Reseller":
+      return pathname.startsWith("/reseller");
     case "Kontakt":
       return pathname.startsWith("/kontakt");
     default:
@@ -136,7 +139,7 @@ export default function Header() {
         aria-hidden={!isOpen}
         className={`overflow-hidden bg-[#050505] px-5 transition-[max-height,opacity,transform,border-color,padding] duration-300 lg:hidden ${
           isOpen
-            ? "max-h-[420px] translate-y-0 border-t border-[#1F1F1F] pb-5 pt-2 opacity-100"
+            ? "max-h-[480px] translate-y-0 border-t border-[#1F1F1F] pb-5 pt-2 opacity-100"
             : "max-h-0 -translate-y-2 border-t border-transparent pb-0 pt-0 opacity-0"
         }`}
       >
