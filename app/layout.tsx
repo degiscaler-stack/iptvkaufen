@@ -50,9 +50,9 @@ export default function RootLayout({
         <WhatsAppFloatButton />
         <Script id="statcounter-config" strategy="lazyOnload">
           {`
-            var sc_project=13336494;
+            var sc_project=13342730;
             var sc_invisible=1;
-            var sc_security="820ce796";
+            var sc_security="8375ed00";
           `}
         </Script>
         <Script
@@ -65,7 +65,7 @@ export default function RootLayout({
             <a title="Web Analytics" href="https://statcounter.com/" target="_blank" rel="noopener noreferrer">
               <img
                 className="statcounter"
-                src="https://c.statcounter.com/13336494/0/820ce796/1/"
+                src="https://c.statcounter.com/13342730/0/8375ed00/1/"
                 alt="Web Analytics"
                 referrerPolicy="no-referrer-when-downgrade"
               />
