@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "node scripts/build.mjs",
     "verify:build": "node scripts/verify-static-export.mjs",
-    "start": "next start"
+    "start": "next start",
+    "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "engines": {
     "node": ">=18.18.0"
