@@ -38,7 +38,7 @@ const structuredData = [
 ].filter(Boolean);
 
 export default async function SenderlistePage() {
-  const { initialCards, initialPageSearchIndex } = await getSenderlisteInitialData();
+  const { initialCards } = await getSenderlisteInitialData();
 
   return (
     <main className="min-h-screen bg-[#000000] text-[#F5F5F5]">
@@ -83,10 +83,7 @@ export default async function SenderlistePage() {
         </div>
       </section>
 
-      <SenderlisteExplorer
-        initialCards={initialCards}
-        initialPageSearchIndex={initialPageSearchIndex}
-      />
+      <SenderlisteExplorer initialCards={initialCards} />
       <SenderlisteSeoContent />
     </main>
   );

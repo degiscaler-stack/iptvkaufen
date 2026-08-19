@@ -11,7 +11,11 @@ import {
   WHATSAPP_MESSAGES,
 } from "@/lib/contact";
 import { ctaSolidGreenClass } from "@/lib/cta-motion";
-import { getCachedCountryChannels, loadCountryChannels } from "@/lib/senderliste/loader";
+import {
+  getCachedCountryChannels,
+  loadCountryChannels,
+  loadPageSearchIndex,
+} from "@/lib/senderliste/loader";
 import { TOPIC_CATEGORIES } from "@/lib/senderliste/topics";
 import type {
   CatalogChannel,
@@ -315,15 +319,11 @@ function OpenCountryPanel({
 
 type SenderlisteExplorerProps = {
   initialCards: SenderCard[];
-  initialPageSearchIndex: PageSearchIndex;
 };
 
-export default function SenderlisteExplorer({
-  initialCards,
-  initialPageSearchIndex,
-}: SenderlisteExplorerProps) {
+export default function SenderlisteExplorer({ initialCards }: SenderlisteExplorerProps) {
   const [cards] = useState<SenderCard[]>(initialCards);
-  const [pageSearchIndex] = useState<PageSearchIndex>(initialPageSearchIndex);
+  const [pageSearchIndex, setPageSearchIndex] = useState<PageSearchIndex | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [openId, setOpenId] = useState<string | null>(null);
   const [countryDataMap, setCountryDataMap] = useState<Record<string, CatalogCountryFile>>({});
@@ -334,6 +334,24 @@ export default function SenderlisteExplorer({
   const globalSearchTrackedLengthRef = useRef(0);
 
   const searchQuery = normalizeSearchValue(searchTerm.trim());
+
+  useEffect(() => {
+    let cancelled = false;
+
+    void loadPageSearchIndex()
+      .then((index) => {
+        if (!cancelled) {
+          setPageSearchIndex(index);
+        }
+      })
+      .catch(() => {
+        // Search falls back to card name/region matching until retry on next mount.
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const filteredCards = useMemo(() => {
     return cards
