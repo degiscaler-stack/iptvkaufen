@@ -36,7 +36,9 @@ export type BlogContentBlock =
       rows: string[][];
     }
   | { type: "tip"; title: string; paragraphs: string[] }
-  | { type: "info"; title: string; paragraphs: string[] };
+  | { type: "info"; title: string; paragraphs: string[] }
+  | { type: "process"; title: string; steps: string[] }
+  | { type: "code"; caption?: string; content: string };
 
 export type BlogSubsection = {
   id: string;

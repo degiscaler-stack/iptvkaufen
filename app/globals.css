@@ -301,6 +301,88 @@ button {
   margin-bottom: 0;
 }
 
+.blog-process-box {
+  background: linear-gradient(135deg, #0a1008 0%, #050806 100%);
+  border: 1px solid rgba(166, 255, 0, 0.18);
+  border-radius: 20px;
+  padding: 1.25rem 1.4rem;
+}
+
+.blog-process {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+}
+
+.blog-prose .blog-process li {
+  display: grid;
+  grid-template-columns: 2.15rem minmax(0, 1fr);
+  align-items: start;
+  gap: 0.85rem;
+  padding: 0.55rem 0 0.85rem;
+  position: relative;
+}
+
+.blog-prose .blog-process li::before {
+  display: none;
+}
+
+.blog-prose .blog-process-item:not(:last-child)::after {
+  background: rgba(166, 255, 0, 0.28);
+  bottom: 0;
+  content: "";
+  height: 0.85rem;
+  left: 1.02rem;
+  position: absolute;
+  width: 1px;
+}
+
+.blog-process-index {
+  align-items: center;
+  background: rgba(166, 255, 0, 0.12);
+  border: 1px solid rgba(166, 255, 0, 0.35);
+  border-radius: 9999px;
+  color: #a6ff00;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 800;
+  height: 2.15rem;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  width: 2.15rem;
+}
+
+.blog-process-text {
+  color: rgba(230, 230, 230, 0.88);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-top: 0.35rem;
+}
+
+.blog-code {
+  margin: 1.5rem 0;
+}
+
+.blog-code pre {
+  background: #070907;
+  border: 1px solid #1f1f1f;
+  border-radius: 18px;
+  color: rgba(230, 230, 230, 0.9);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 12.5px;
+  line-height: 1.7;
+  margin: 0;
+  overflow-x: auto;
+  padding: 1.1rem 1.2rem;
+  white-space: pre;
+}
+
+.blog-code code {
+  font-family: inherit;
+}
+
 /* Blog cover placeholders */
 .blog-cover-placeholder {
   background:

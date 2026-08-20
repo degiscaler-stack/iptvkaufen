@@ -116,6 +116,10 @@ export function buildBlogPostingSchema(post: BlogPost) {
   };
 }
 
+function stripMarkdownLinks(text: string): string {
+  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1");
+}
+
 export function buildFaqSchema(faq: BlogFaqItem[]) {
   if (!faq.length) return null;
 
@@ -127,7 +131,7 @@ export function buildFaqSchema(faq: BlogFaqItem[]) {
       name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: stripMarkdownLinks(item.answer),
       },
     })),
   };

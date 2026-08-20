@@ -139,6 +139,45 @@ function BlogContentBlocks({ blocks }: { blocks: BlogContentBlock[] }) {
           );
         }
 
+        if (block.type === "process") {
+          return (
+            <aside
+              key={`process-${block.title}`}
+              aria-labelledby={`process-${block.title}`}
+              className="blog-process-box my-8"
+            >
+              <p id={`process-${block.title}`} className="blog-callout-label">
+                {block.title}
+              </p>
+              <ol className="blog-process">
+                {block.steps.map((step, index) => (
+                  <li key={`process-${block.title}-${index}`} className="blog-process-item">
+                    <span className="blog-process-index" aria-hidden="true">
+                      {index + 1}
+                    </span>
+                    <span className="blog-process-text">{renderInlineContent(step)}</span>
+                  </li>
+                ))}
+              </ol>
+            </aside>
+          );
+        }
+
+        if (block.type === "code") {
+          return (
+            <figure key={`code-${block.caption ?? block.content.slice(0, 32)}`} className="blog-code my-8">
+              <pre>
+                <code>{block.content}</code>
+              </pre>
+              {block.caption ? (
+                <figcaption className="mt-3 text-[12px] text-[#F5F5F5]/48">
+                  {block.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+          );
+        }
+
         return (
           <aside
             key={`info-${block.title}`}

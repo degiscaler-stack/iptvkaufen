@@ -1,4 +1,5 @@
 import type { BlogFaqItem } from "@/lib/blog/types";
+import { renderInlineContent } from "@/lib/blog/inline-content";
 
 type BlogFaqProps = {
   items: BlogFaqItem[];
@@ -32,7 +33,9 @@ export default function BlogFaq({ items }: BlogFaqProps) {
                 </span>
               </span>
             </summary>
-            <p className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/82">{item.answer}</p>
+            <p className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/82">
+              {renderInlineContent(item.answer)}
+            </p>
           </details>
         ))}
       </div>
