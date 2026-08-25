@@ -64,8 +64,11 @@ export type BlogFaqItem = {
 };
 
 export type BlogCtaConfig = {
+  heading?: string;
+  description?: string;
   primaryLabel?: string;
   secondaryLabel?: string;
+  secondaryAction?: "pricing" | "whatsapp";
 };
 
 export type BlogPost = {
@@ -89,7 +92,7 @@ export type BlogPost = {
   sections: BlogSection[];
   faq: BlogFaqItem[];
   relatedSlugs: string[];
-  /** Optional per-article CTA labels; BlogCTA keeps global defaults when omitted. */
+  /** Optional per-article CTA copy; BlogCTA keeps global defaults when omitted. */
   cta?: BlogCtaConfig;
 };
 

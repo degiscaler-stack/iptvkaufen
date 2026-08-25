@@ -182,8 +182,11 @@ export default async function BlogArticlePage({ params }: PageProps) {
             <BlogPostNavigation previous={previous} next={next} />
             <div className="mt-12">
               <BlogCTA
+                heading={post.cta?.heading}
+                description={post.cta?.description}
                 primaryLabel={post.cta?.primaryLabel}
                 secondaryLabel={post.cta?.secondaryLabel}
+                secondaryAction={post.cta?.secondaryAction}
               />
             </div>
             <BlogRelatedPosts posts={related} />

@@ -29,6 +29,13 @@
     "iptv-m3u",
     "iptv-provider"
   ],
+  "cta": {
+    "heading": "Passendes IPTV-Paket auswählen",
+    "description": "Sie haben Einrichtung, Player oder Technik geprüft? Vergleichen Sie jetzt die verfügbaren Pakete und wählen Sie die passende Laufzeit und Geräteanzahl.",
+    "primaryLabel": "IPTV-Pakete ansehen",
+    "secondaryLabel": "WhatsApp-Support",
+    "secondaryAction": "whatsapp"
+  },
   "faq": [
     {
       "question": "Was ist eine IPTV Box?",

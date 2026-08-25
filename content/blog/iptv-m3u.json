@@ -30,8 +30,11 @@
     "iptv-abo"
   ],
   "cta": {
-    "primaryLabel": "Zugang einrichten",
-    "secondaryLabel": "Preise ansehen"
+    "heading": "Passendes IPTV-Paket auswählen",
+    "description": "Sie haben Einrichtung, Player oder Technik geprüft? Vergleichen Sie jetzt die verfügbaren Pakete und wählen Sie die passende Laufzeit und Geräteanzahl.",
+    "primaryLabel": "IPTV-Pakete ansehen",
+    "secondaryLabel": "WhatsApp-Support",
+    "secondaryAction": "whatsapp"
   },
   "faq": [
     {

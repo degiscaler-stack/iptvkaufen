@@ -1,15 +1,29 @@
 import PricingScrollLink from "@/components/PricingScrollLink";
+import { TrackedAnchor } from "@/components/TrackedLink";
+import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
 import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 type BlogCTAProps = {
+  heading?: string;
+  description?: string;
   primaryLabel?: string;
   secondaryLabel?: string;
+  secondaryAction?: "pricing" | "whatsapp";
 };
 
+const secondaryButtonClass =
+  "inline-flex w-fit items-center justify-center rounded-full border border-[#A6FF00]/30 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00] transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 hover:text-[#C7FF62]";
+
 export default function BlogCTA({
+  heading = "Bereit für über 22.000 Sender in HD & 4K?",
+  description = "Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 4 Geräten gleichzeitig und mit persönlichem Support bei der Einrichtung.",
   primaryLabel = "Jetzt IPTV kaufen",
   secondaryLabel = "Preise ansehen",
+  secondaryAction = "pricing",
 }: BlogCTAProps) {
+  const whatsappSecondary = secondaryAction === "whatsapp";
+
   return (
     <section
       aria-labelledby="blog-cta-heading"
@@ -24,12 +38,9 @@ export default function BlogCTA({
           id="blog-cta-heading"
           className="text-balance text-[1.65rem] font-black leading-[1.05] tracking-[-0.04em] text-[#F5F5F5] sm:text-[2rem]"
         >
-          Bereit für über 22.000 Sender in HD &amp; 4K?
+          {heading}
         </h2>
-        <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/82">
-          Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 4 Geräten
-          gleichzeitig und mit persönlichem Support bei der Einrichtung.
-        </p>
+        <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/82">{description}</p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <PricingScrollLink
             buttonLocation="blog_cta_primary"
@@ -37,12 +48,27 @@ export default function BlogCTA({
           >
             {primaryLabel}
           </PricingScrollLink>
-          <PricingScrollLink
-            buttonLocation="blog_cta_preise"
-            className="inline-flex w-fit items-center justify-center rounded-full border border-[#A6FF00]/30 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00] transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 hover:text-[#C7FF62]"
-          >
-            {secondaryLabel}
-          </PricingScrollLink>
+          {whatsappSecondary ? (
+            <TrackedAnchor
+              href={buildWhatsAppUrl(WHATSAPP_MESSAGES.packageHelp)}
+              target="_blank"
+              rel="noopener noreferrer"
+              analyticsEvent={ANALYTICS_EVENTS.whatsappClick}
+              analyticsParams={{ source: "blog_cta_whatsapp" }}
+              data-analytics="whatsapp_click"
+              data-analytics-source="blog_cta_whatsapp"
+              className={secondaryButtonClass}
+            >
+              {secondaryLabel}
+            </TrackedAnchor>
+          ) : (
+            <PricingScrollLink
+              buttonLocation="blog_cta_preise"
+              className={secondaryButtonClass}
+            >
+              {secondaryLabel}
+            </PricingScrollLink>
+          )}
         </div>
       </div>
     </section>
