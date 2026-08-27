@@ -37,7 +37,7 @@ const CustomerReviews = dynamic(() => import("@/components/CustomerReviews"));
 const MobileStickyPurchaseBar = dynamic(() => import("@/components/MobileStickyPurchaseBar"));
 
 const seoDescription =
-  "IPTV kaufen in DE: Live-TV, Sport & Filme in HD/4K. Test für 3€, 30 Tage Geld-zurück – jetzt bei iptvkaufenX.";
+  "IPTV kaufen in Deutschland mit großer Senderauswahl, flexiblen Paketen, einfacher Einrichtung und deutschsprachigem Support bei iptvkaufenX.";
 
 const HOME_OG_IMAGE = "/images/iptv-kaufen-premium-streaming-deutschland.webp";
 
