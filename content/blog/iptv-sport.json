@@ -32,11 +32,11 @@
   "faq": [
     {
       "question": "Was bedeutet IPTV Sport genau?",
-      "answer": "IPTV Sport bezeichnet das Streamen von Sportübertragungen über eine Internetverbindung statt über klassisches Kabel- oder Satellitenfernsehen. Welche Sportkanäle konkret enthalten sind, unterscheidet sich je nach Anbieter und Paket – prüfen Sie das immer in der jeweiligen [Senderliste](/senderliste)."
+      "answer": "IPTV Sport bezeichnet das Streamen von Sportübertragungen über eine Internetverbindung statt über klassisches Kabel- oder Satellitenfernsehen. Welche Sportkanäle konkret enthalten sind, unterscheidet sich je nach Anbieter und Paket – prüfen Sie das immer in der jeweiligen Senderliste."
     },
     {
       "question": "Sind bei IPTV Sport bestimmte Ligen oder Spiele garantiert enthalten?",
-      "answer": "Nein, das lässt sich pauschal nicht zusichern. Welche Ligen, Wettbewerbe oder einzelnen Übertragungen tatsächlich verfügbar sind, hängt vom jeweiligen Sender und dessen Programmplanung ab. Verlassen Sie sich nicht auf Werbeversprechen, sondern prüfen Sie konkrete Sender in der [Senderliste](/senderliste)."
+      "answer": "Nein, das lässt sich pauschal nicht zusichern. Welche Ligen, Wettbewerbe oder einzelnen Übertragungen tatsächlich verfügbar sind, hängt vom jeweiligen Sender und dessen Programmplanung ab. Verlassen Sie sich nicht auf Werbeversprechen, sondern prüfen Sie konkrete Sender in der Senderliste."
     },
     {
       "question": "Welche Internetgeschwindigkeit brauche ich für IPTV Sport?",
@@ -82,7 +82,7 @@
           "title": "Kurz erklärt",
           "items": [
             "IPTV Sport meint Live-Sport-Streaming über eine Internetverbindung statt Kabel oder Satellit.",
-            "Welche Ligen und Sender enthalten sind, ist nie pauschal garantiert – die [Senderliste](/senderliste) zeigt den echten Stand.",
+            "Welche Ligen und Sender enthalten sind, ist nie pauschal garantiert – die Senderliste zeigt den echten Stand.",
             "Stabile Bandbreite, LAN wo möglich und ein aktuelles Gerät sind die wichtigsten Erfolgsfaktoren.",
             "4K und Full-HD hängen vom jeweiligen Sender und Gerät ab, nicht allein vom Anbieter.",
             "IPTV als Technologie ist legal – entscheidend ist ein seriöser, transparenter Anbieter."
@@ -99,7 +99,7 @@
         "Technisch unterscheidet sich ein Sportkanal über IPTV nicht grundlegend von einem Nachrichten- oder Filmkanal: Beide werden als Stream innerhalb einer Playlist oder eines Xtream-Zugangs bereitgestellt. Der Unterschied liegt in den Anforderungen an Stabilität, da Sport-Zuschauer besonders sensibel auf Aussetzer reagieren.",
         "Wichtig ist die Unterscheidung zwischen Technologie und Inhalt: IPTV ist der Übertragungsweg. Was auf einem bestimmten Sportkanal läuft, welche Wettbewerbe gezeigt werden und mit welcher Kommentierung, entscheidet ausschließlich der jeweilige Sender – nicht Ihre App oder der IPTV-Anbieter.",
         "Deshalb ist Vorsicht bei Formulierungen wie „alle Sportarten inklusive“ oder „garantiert jede Liga verfügbar“ angebracht. Solche pauschalen Aussagen lassen sich in der Praxis kaum einlösen, weil sich Sportrechte, Programmpläne und Senderangebote laufend ändern können.",
-        "Für Sie als Nutzer bedeutet IPTV Sport in der Praxis: ein oder mehrere Sportkanäle innerhalb Ihrer Senderliste, die Sie wie jeden anderen Kanal über Ihre IPTV-App abrufen. Die konkrete Zusammensetzung prüfen Sie am zuverlässigsten direkt in der [Senderliste](/senderliste) Ihres Anbieters.",
+        "Für Sie als Nutzer bedeutet IPTV Sport in der Praxis: ein oder mehrere Sportkanäle innerhalb Ihrer Senderliste, die Sie wie jeden anderen Kanal über Ihre IPTV-App abrufen. Die konkrete Zusammensetzung prüfen Sie am zuverlässigsten direkt in der Senderliste Ihres Anbieters.",
         "Mehr Hintergrund zu Senderlisten und Werbeversprechen rund um Kanalzahlen liefert der Artikel [IPTV Alle Sender](/blog/iptv-alle-sender) – ein hilfreicher Begleiter, wenn Sie Angebote zu IPTV Sport realistisch einschätzen möchten."
       ]
     },
@@ -123,7 +123,7 @@
         "IPTV-Angebote gruppieren Sportinhalte häufig in eigenen Kategorien innerhalb der Senderliste – etwa allgemeine Sportkanäle, Fußball-Spartensender oder Kanäle mit Fokus auf Motorsport, Tennis oder Kampfsport. Diese Struktur erleichtert das Auffinden relevanter Programme erheblich gegenüber einer unsortierten Gesamtliste.",
         "Wie fein die Kategorien unterteilt sind, unterscheidet sich von Anbieter zu Anbieter. Manche Listen bündeln alle Sportkanäle in einer einzigen Kategorie, andere unterteilen zusätzlich nach Sprache oder Region. Für internationale Haushalte kann das relevant sein, etwa wenn Kommentierung in einer bestimmten Sprache gewünscht ist.",
         "Innerhalb der Sportkategorien finden sich üblicherweise sowohl Free-TV-ähnliche Sender mit allgemeiner Sportberichterstattung als auch spezialisiertere Kanäle. Welche konkreten Inhalte auf welchem Kanal laufen, ändert sich je nach Programmplanung des jeweiligen Senders.",
-        "Statt sich an der reinen Anzahl der Sportkanäle zu orientieren, lohnt sich ein Blick auf die konkreten Namen in der [Senderliste](/senderliste). Fünf Sender, die Sie tatsächlich regelmäßig nutzen, sind wertvoller als zwanzig Kanäle, die für Ihre bevorzugten Sportarten irrelevant sind.",
+        "Statt sich an der reinen Anzahl der Sportkanäle zu orientieren, lohnt sich ein Blick auf die konkreten Namen in der Senderliste. Fünf Sender, die Sie tatsächlich regelmäßig nutzen, sind wertvoller als zwanzig Kanäle, die für Ihre bevorzugten Sportarten irrelevant sind.",
         "Nutzen Sie in Ihrer IPTV-App die Favoritenfunktion, um Ihre wichtigsten Sportkanäle unabhängig von der Kategorienstruktur schnell erreichbar zu machen. Das spart bei kurzfristigen Programmänderungen oder spontanem Umschalten wertvolle Zeit."
       ]
     },
@@ -132,7 +132,7 @@
       "heading": "Senderliste prüfen statt Versprechen vertrauen",
       "level": 2,
       "paragraphs": [
-        "Der wichtigste Schritt vor jeder Kaufentscheidung rund um IPTV Sport ist die Prüfung der tatsächlichen [Senderliste](/senderliste). Werbeaussagen wie „komplettes Sportpaket“ oder „alle großen Ligen“ sind Marketingformulierungen, keine verbindlichen Zusicherungen einzelner Übertragungen.",
+        "Der wichtigste Schritt vor jeder Kaufentscheidung rund um IPTV Sport ist die Prüfung der tatsächlichen Senderliste. Werbeaussagen wie „komplettes Sportpaket“ oder „alle großen Ligen“ sind Marketingformulierungen, keine verbindlichen Zusicherungen einzelner Übertragungen.",
         "Öffnen Sie die Senderliste und suchen Sie gezielt nach den Sportkanälen, die für Sie relevant sind. Notieren Sie sich, welche Namen tatsächlich gelistet sind, und vergleichen Sie das mit Ihren persönlichen Erwartungen, bevor Sie sich langfristig binden.",
         "Bedenken Sie, dass Senderlisten sich im Zeitverlauf ändern können. Ein Kanal, der heute gelistet ist, kann morgen durch Rechteänderungen beim Sender selbst wegfallen oder durch einen anderen ersetzt werden – das liegt außerhalb der Kontrolle einzelner IPTV-Anbieter.",
         "Ein realistischer Praxistest zur Hauptsendezeit oder während eines laufenden Sportereignisses zeigt zusätzlich, wie stabil die relevanten Kanäle tatsächlich unter Last funktionieren. Das ist aussagekräftiger als jede Beschreibung auf einer Landingpage.",
@@ -143,7 +143,7 @@
           "type": "info",
           "title": "Hinweis",
           "paragraphs": [
-            "Kein seriöser Anbieter kann bestimmte Ligen, Spiele oder Übertragungen dauerhaft garantieren, da dies von den Rechteinhabern und Sendern selbst abhängt. Prüfen Sie deshalb immer die aktuelle [Senderliste](/senderliste), statt sich auf pauschale Zusagen zu verlassen."
+            "Kein seriöser Anbieter kann bestimmte Ligen, Spiele oder Übertragungen dauerhaft garantieren, da dies von den Rechteinhabern und Sendern selbst abhängt. Prüfen Sie deshalb immer die aktuelle Senderliste, statt sich auf pauschale Zusagen zu verlassen."
           ]
         }
       ]
@@ -309,7 +309,7 @@
       "heading": "Fazit",
       "level": 2,
       "paragraphs": [
-        "IPTV Sport kann Live-Übertragungen komfortabel auf viele Geräte bringen – vorausgesetzt, die technischen Voraussetzungen stimmen und Sie prüfen die tatsächliche [Senderliste](/senderliste), statt pauschalen Werbeversprechen zu vertrauen.",
+        "IPTV Sport kann Live-Übertragungen komfortabel auf viele Geräte bringen – vorausgesetzt, die technischen Voraussetzungen stimmen und Sie prüfen die tatsächliche Senderliste, statt pauschalen Werbeversprechen zu vertrauen.",
         "Eine stabile Internetverbindung, idealerweise per LAN, ein passendes Wiedergabegerät und eine übersichtliche App bilden die technische Grundlage für ruckelfreies Sport-Streaming. Details zur Bildqualität liefert [IPTV Premium 4K](/blog/iptv-premium-4k), Hintergründe zu Senderzahlen [IPTV Alle Sender](/blog/iptv-alle-sender).",
         "Verlassen Sie sich nie auf Zusicherungen einzelner Ligen oder Spiele – prüfen Sie stattdessen konkrete Sendernamen und testen Sie unter realistischen Bedingungen zur Anstoßzeit. Ein seriöser Anbieter mit transparenter Geschäftspraxis ist die Basis für eine rechtssichere und langfristig zufriedenstellende Nutzung.",
         "Wer die genannten Grundlagen beachtet – Netzwerk, Gerät, App und geprüfte Senderliste – kann IPTV Sport als praktische Ergänzung oder Alternative zum klassischen Fernsehen nutzen, ohne von falschen Erwartungen enttäuscht zu werden.",

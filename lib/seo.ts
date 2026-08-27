@@ -5,7 +5,7 @@ import { resolveBlogOgImage } from "@/lib/blog/images";
 
 const SITE_URL = "https://iptvkaufenx.de";
 const SITE_NAME = "iptvkaufenX";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/iptv-kaufen-hero-football.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/iptv-kaufen-premium-streaming-deutschland.webp`;
 
 type PageMetadataInput = {
   title: string;
@@ -149,42 +149,6 @@ export function buildBreadcrumbSchema(
       name: item.name,
       item: `${SITE_URL}${item.path}`,
     })),
-  };
-}
-
-export function buildWebPageSchema({
-  title,
-  description,
-  path,
-}: {
-  title: string;
-  description: string;
-  path: string;
-}) {
-  const url = `${SITE_URL}${path}`;
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${url}#webpage`,
-    url,
-    name: title,
-    description,
-    inLanguage: "de-DE",
-    isPartOf: {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      name: SITE_NAME,
-      url: `${SITE_URL}/`,
-    },
-    about: {
-      "@type": "Thing",
-      name: "IPTV Senderliste",
-    },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: `${SITE_URL}/images/iptv-kaufen-senderliste-hero.webp`,
-    },
   };
 }
 

@@ -40,10 +40,6 @@ export default function BlogHomePage() {
             <Link href="/autor" className={CONTEXTUAL_LINK_CLASS}>
               iptvkaufenX Redaktion
             </Link>
-            . Sender prüfen Sie in der{" "}
-            <Link href="/senderliste" className={CONTEXTUAL_LINK_CLASS}>
-              IPTV Senderliste
-            </Link>
             .
           </p>
           <div className="mx-auto mt-8 max-w-[520px]">

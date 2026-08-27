@@ -15,7 +15,7 @@
 
 ## Verified routes
 
-- `/`, `/blog`, `/blog/[slug]`, `/preise`, `/senderliste`, `/faq`, `/kontakt`
+- `/`, `/blog`, `/blog/[slug]`, `/preise`, `/faq`, `/kontakt`
 - `/sitemap.xml`, `/robots.txt`, `/feed.xml`
 
 ## Apache

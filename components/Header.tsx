@@ -11,7 +11,6 @@ import { CTA_MOTION_DELAYS, ctaMotionFeaturedClass, ctaSolidGreenClass } from "@
 const navigation = [
   { label: "Startseite", href: "/" },
   { label: "Preise", href: "/#pakete-start", scrollTarget: true },
-  { label: "Senderliste", href: "/senderliste" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
   { label: "Reseller", href: "/reseller" },
@@ -24,8 +23,6 @@ function isNavItemActive(pathname: string, label: string): boolean {
       return pathname === "/";
     case "Preise":
       return pathname.startsWith("/preise");
-    case "Senderliste":
-      return pathname.startsWith("/senderliste");
     case "FAQ":
       return pathname.startsWith("/faq");
     case "Blog":

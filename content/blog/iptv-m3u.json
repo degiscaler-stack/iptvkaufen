@@ -192,7 +192,7 @@
         "Eine IPTV-Senderliste beginnt typischerweise mit #EXTM3U. Danach folgen Einträge: oft #EXTINF mit Dauer oder -1, einem Anzeigenamen und – in der Praxis – Zusatzfeldern wie tvg-id, tvg-logo und group-title. In der nächsten Zeile steht die Stream-URL. So weiß der Player, wie der Sender heißt und wohin die nächste Anfrage geht.",
         "group-title sortiert Kanäle in Kategorien. tvg-logo verweist auf Senderlogos. tvg-id wird häufig genutzt, um den Eintrag mit EPG-Daten zu verknüpfen. Fehlen diese Felder, kann Streaming trotzdem funktionieren – nur Optik, Gruppen und Programmheft leiden oft.",
         "Sie müssen die Datei nicht von Hand schreiben. Seriöse Anbieter generieren die Playlist und liefern Ihnen den Link. Wer neugierig ist, kann eine .m3u-Datei in einem Texteditor öffnen. Ändern sollten Sie sie nur, wenn Sie genau wissen, was Sie tun – und niemals echte Zugangs-URLs öffentlich zeigen.",
-        "Prüfen Sie vor der Buchung die [Senderliste](/senderliste) des Anbieters. Die Playlist sollte Ihre Must-have-Kanäle enthalten; die reine Anzahl an Einträgen sagt wenig über Qualität aus."
+        "Prüfen Sie vor der Buchung die Senderliste des Anbieters. Die Playlist sollte Ihre Must-have-Kanäle enthalten; die reine Anzahl an Einträgen sagt wenig über Qualität aus."
       ],
       "blocks": [
         {
@@ -233,7 +233,7 @@
         "Eine Remote-URL erlaubt dem Provider oder Server, die unter derselben Adresse ausgelieferte Playlist zu ändern. Der Player muss diese URL jedoch erneut abrufen oder aktualisieren, bevor Änderungen sichtbar werden. Eine Remote-URL garantiert nicht in jedem Player sofortige automatische Updates.",
         "Für den Dauerbetrieb ist die URL trotzdem meist praktischer als eine einmal gespeicherte Free-Datei. Die Datei eignet sich als Backup, für Offline-Analysen oder wenn Sie bewusst eine Momentaufnahme behalten wollen.",
         "Manche Nutzer kombinieren beides: URL im Alltag, Datei-Export als Sicherung. Wichtig ist, die Datei nicht monatelang als einzige Quelle zu nutzen – sonst wundern Sie sich über plötzlich tote Kanäle.",
-        "Prüfen Sie in der App-Dokumentation, ob HTTPS-URLs unterstützt werden. Details zu Paketen finden Sie unter [Preise](/preise) und in der [Senderliste](/senderliste)."
+        "Prüfen Sie in der App-Dokumentation, ob HTTPS-URLs unterstützt werden. Details zu Paketen finden Sie unter [Preise](/preise)."
       ],
       "blocks": [
         {
@@ -484,7 +484,7 @@
       "paragraphs": [
         "IPTV M3U selbst ist nur Text. Das Risiko steckt in der Quelle und in der URL. Eine Playlist-URL kann Zugangstoken oder kontobezogene Parameter enthalten. Behandeln Sie die vollständige URL in solchen Fällen wie Login-Daten.",
         "Veröffentlichen Sie sie nicht in Screenshots, Foren oder öffentlichen Support-Posts. Dieser Artikel zeigt bewusst keine Struktur echter privater Zugangs-URLs.",
-        "Seriöse Anbieter kennzeichnen sich durch Impressum, transparente [Preise](/preise), nachvollziehbare Leistungsbeschreibung und erreichbaren Support. Die [Senderliste](/senderliste) ist einsehbar, die Aktivierung dokumentiert.",
+        "Seriöse Anbieter kennzeichnen sich durch Impressum, transparente [Preise](/preise), nachvollziehbare Leistungsbeschreibung und erreichbaren Support. Die Senderliste ist einsehbar, die Aktivierung dokumentiert.",
         "Laden Sie keine Player-APKs von unbekannten Seiten, nur weil „die Playlist sonst nicht geht“. Nutzen Sie offizielle Stores oder die vom Anbieter empfohlene App – etwa [IPTV Smarters Pro](/blog/iptv-smarters-pro) oder [TiviMate IPTV](/blog/tivimate-iptv) aus vertrauenswürdigen Quellen.",
         "Rechtlich und verbraucherfreundlich gilt: IPTV als Technologie ist nicht dasselbe wie ein konkretes Angebot. Meiden Sie Angebote ohne Kontaktmöglichkeit. Weitere Orientierung bieten der [Blog](/blog), die [FAQ](/faq) und der [Kontakt](/kontakt)."
       ],
@@ -503,7 +503,7 @@
       "heading": "Praxis-Anleitung: IPTV M3U Schritt für Schritt",
       "level": 2,
       "paragraphs": [
-        "Schritt 1: Wählen Sie einen seriösen Anbieter und ein passendes Paket. Prüfen Sie [Preise](/preise), [Senderliste](/senderliste) und Gerätekompatibilität. Ein [IPTV Free Trial](/blog/iptv-free-trial) reduziert das Risiko.",
+        "Schritt 1: Wählen Sie einen seriösen Anbieter und ein passendes Paket. Prüfen Sie [Preise](/preise), Senderliste und Gerätekompatibilität. Ein [IPTV Free Trial](/blog/iptv-free-trial) reduziert das Risiko.",
         "Schritt 2: Installieren Sie eine kompatible App – etwa [IPTV Smarters Pro](/blog/iptv-smarters-pro) oder [TiviMate IPTV](/blog/tivimate-iptv) auf Android oder Fire TV, alternativ VLC zum Kurztest am PC. Bei älteren Fernsehern hilft eine [IPTV Box](/blog/iptv-box).",
         "Schritt 3: Kopieren Sie die IPTV M3U URL aus dem Kundenbereich oder der Willkommensmail. Fügen Sie sie in der App unter M3U Playlist ein. Vergeben Sie einen klaren Namen.",
         "Schritt 4: Tragen Sie optional die EPG-URL ein und starten Sie den ersten Sync. Warten Sie, bis Sender und Programmheft geladen sind.",

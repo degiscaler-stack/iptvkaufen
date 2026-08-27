@@ -37,7 +37,7 @@
   "faq": [
     {
       "question": "Was bedeutet IPTV Arab?",
-      "answer": "IPTV Arab ist ein gängiger Suchbegriff für den Empfang arabischsprachiger Fernsehinhalte über einen kompatiblen IPTV-Zugang und Player. Es ist keine genormte Produktkategorie mit festem Senderumfang – entscheidend ist die aktuelle [IPTV Senderliste](/senderliste)."
+      "answer": "IPTV Arab ist ein gängiger Suchbegriff für den Empfang arabischsprachiger Fernsehinhalte über einen kompatiblen IPTV-Zugang und Player. Es ist keine genormte Produktkategorie mit festem Senderumfang – entscheidend ist die aktuelle IPTV Senderliste."
     },
     {
       "question": "Kann ich arabische Sender in Deutschland empfangen?",
@@ -49,7 +49,7 @@
     },
     {
       "question": "Wie prüfe ich die aktuelle arabische Senderliste?",
-      "answer": "Öffnen Sie die [aktuelle IPTV Senderliste](/senderliste) und suchen Sie nach arabischsprachigen Kategorien sowie regionalen Untergruppen. Achten Sie zusätzlich auf EPG-Hinweise, HD-Optionen und Paketbedingungen."
+      "answer": "Öffnen Sie die aktuelle IPTV Senderliste und suchen Sie nach arabischsprachigen Kategorien sowie regionalen Untergruppen. Achten Sie zusätzlich auf EPG-Hinweise, HD-Optionen und Paketbedingungen."
     },
     {
       "question": "Welche Geräte eignen sich für IPTV Arab?",
@@ -88,7 +88,7 @@
           "title": "Kurz erklärt",
           "items": [
             "„IPTV Arab“ ist ein Suchbegriff – kein festes, genormtes Senderpaket.",
-            "Arabische Angebote können mehrere Regionen umfassen – die [aktuelle IPTV Senderliste](/senderliste) entscheidet.",
+            "Arabische Angebote können mehrere Regionen umfassen – die aktuelle IPTV Senderliste entscheidet.",
             "Favoriten, Regionen und korrekte arabische Textdarstellung erleichtern den Alltag.",
             "EPG-Vollständigkeit und Schriftqualität hängen von Anbieter und Player ab.",
             "Nur rechtmäßige Dienste nutzen; Zugangsdaten privat halten."
@@ -128,7 +128,7 @@
         "Arabischsprachiges Fernsehen ist regional vielfältig. Anbieter gruppieren Kanäle unterschiedlich – manche nach Land, manche nach Großregion, manche nur unter einer Sammelkategorie „Arabisch“.",
         "Mögliche Gruppierungen können Maghreb, Ägypten, Levante, Golfregion, Irak, panarabische Inhalte oder arabische internationale Programme umfassen. Das ist eine Orientierungshilfe, keine Garantieliste.",
         "Geografische und sprachliche Definitionen decken sich nicht immer. Was ein Anbieter unter „Arab“ führt, kann enger oder weiter gefasst sein als Ihre persönliche Erwartung.",
-        "Prüfen Sie deshalb regionale Untergruppen in der [aktuellen IPTV Senderliste](/senderliste), statt anzunehmen, dass jedes arabische Angebot denselben regionalen Umfang hat."
+        "Prüfen Sie deshalb regionale Untergruppen in der aktuellen IPTV Senderliste, statt anzunehmen, dass jedes arabische Angebot denselben regionalen Umfang hat."
       ],
       "list": [
         "Maghreb – sofern gelistet",
@@ -157,7 +157,7 @@
         "Typische Interessen liegen bei Nachrichten, Unterhaltung, Serien, Filmen und Sport. Dazu kommen je nach Haushalt Kinderprogramme, Musik, Kultur, Dokumentationen, gesellschaftliche Formate oder regionale Inhalte – stets abhängig von der jeweiligen Liste.",
         "Welche konkreten Programme in diesen Kategorien stehen, lässt sich nur listenbasiert klären. Dieser Ratgeber nennt bewusst keine einzelnen Sender als „garantiert enthalten“, weil Verfügbarkeit sich ändern kann.",
         "Sinnvoll ist eine private Checkliste: Welche Nachrichtenregionen brauchen Sie? Welche Unterhaltung? Welcher Sport? Kinderinhalte – ja oder nein? Mit dieser Liste vergleichen Sie Angebote schneller.",
-        "Die tatsächliche Auswahl hängt von der aktuellen [Senderliste](/senderliste) und dem gebuchten Paket ab – nicht vom Suchbegriff IPTV Arab allein."
+        "Die tatsächliche Auswahl hängt von der aktuellen Senderliste und dem gebuchten Paket ab – nicht vom Suchbegriff IPTV Arab allein."
       ],
       "list": [
         "Nachrichten und Informationsprogramme",
@@ -186,7 +186,7 @@
           "title": "Kurz erklärt",
           "items": [
             "Must-have-Programme und Wunschregionen vorab notieren",
-            "[Aktuelle IPTV Senderliste](/senderliste) nach arabischsprachigen und regionalen Einträgen durchsuchen",
+            "Aktuelle IPTV Senderliste nach arabischsprachigen und regionalen Einträgen durchsuchen",
             "Nachrichten, Unterhaltung, Sport und Kinderinhalte abhaken",
             "EPG, HD-/Full-HD-Hinweise und Laufzeit prüfen",
             "Gerätekompatibilität, Verbindungslimits und Support lesen",
@@ -382,7 +382,7 @@
       "heading": "Häufige Probleme und Lösungen",
       "level": 2,
       "paragraphs": [
-        "Arabische Kategorie fehlt: Liste aktualisieren und in der [Senderliste](/senderliste) prüfen, ob sie geliefert wird.",
+        "Arabische Kategorie fehlt: Liste aktualisieren und in der Senderliste prüfen, ob sie geliefert wird.",
         "Regionalordner fehlt: Unter anderen Bezeichnungen suchen; Gruppierungen unterscheiden sich je nach Anbieter.",
         "Playlist lädt nicht: Internet, DNS und App-Berechtigungen prüfen, App neu starten, Zugangsdaten erneut kopieren.",
         "Login abgelehnt: Anmeldemethode, Leerzeichen und Groß-/Kleinschreibung kontrollieren.",
@@ -432,7 +432,7 @@
       "paragraphs": [
         "IPTV Arab ist für viele Haushalte in Deutschland der praktische Weg zu arabischsprachigem Fernsehen – aber nur, wenn aktuelle Senderverfügbarkeit, Regionen, Kategorien, Geräte, arabische Textdarstellung und EPG vor dem Kauf geprüft werden. Das Label allein ersetzt keine Liste.",
         "Die geeignete Lösung hängt von arabischsprachiger Verfügbarkeit, regionalen Kategorien, Inhaltsauswahl, Gerätekompatibilität, Schrift- und EPG-Qualität, Stabilität, Bildqualität, Support und transparenten Anbieterinformationen ab.",
-        "Prüfen Sie die [aktuelle IPTV Senderliste](/senderliste), wählen Sie passende Geräte über den [IPTV-Player-Überblick](/blog/iptv-player) und starten Sie bei Bedarf über [iptvkaufenX](/). So wird aus dem Suchbegriff IPTV Arab eine nachvollziehbare Entscheidung.",
+        "Prüfen Sie die aktuelle IPTV Senderliste, wählen Sie passende Geräte über den [IPTV-Player-Überblick](/blog/iptv-player) und starten Sie bei Bedarf über [iptvkaufenX](/). So wird aus dem Suchbegriff IPTV Arab eine nachvollziehbare Entscheidung.",
         "Wer Regionen, arabische Schrift, Favoriten und Geräte von Anfang an mitdenkt, spart Support-Schleifen und Fehlkäufe. IPTV Arab funktioniert in Deutschland am besten als strukturiertes Setup – nicht als blindes Vertrauen in einen Produktnamen."
       ]
     }

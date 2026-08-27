@@ -1,12 +1,11 @@
 import type { CSSProperties } from "react";
-import Image from "next/image";
 import PricingScrollLink from "@/components/PricingScrollLink";
-import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
+import { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
 import { CTA_MOTION_DELAYS, ctaMotionFeaturedClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
-const trustBadges = ["22.000+ Sender", "Ultra HD & 4K", "Fußball Live", "Sofortiger Zugang"];
+const trustBadges = ["Live-TV", "Ultra HD & 4K", "Fußball Live", "Sofortiger Zugang"];
 
 const particles = [
   { left: "12%", top: "28%", delay: 0, duration: 6.8 },
@@ -24,19 +23,10 @@ export default function Hero() {
       aria-label="IPTV kaufen in Deutschland"
       className="relative isolate flex min-h-0 items-center justify-center overflow-hidden bg-[#000000] px-5 pb-[clamp(1.5rem,3vh,2.5rem)] pt-[clamp(5.5rem,calc(4.5rem+3vh),9rem)] text-center sm:min-h-[clamp(620px,88vh,900px)] sm:px-8 lg:min-h-[clamp(740px,calc(88vh+110px),1040px)]"
     >
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
-        <Image
-          src="/images/iptv-kaufen-hero-football.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          aria-hidden="true"
-          className="h-full w-full scale-[1.02] object-cover object-[42%_center] sm:object-center lg:object-[center_58%]"
-        />
-      </div>
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.26)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(30,76,110,0.2),transparent_28rem)]" />
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#050505]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(166,255,0,0.16),transparent_28rem)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(30,76,110,0.22),transparent_28rem)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.18)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.7)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#000000] to-transparent" />
       <div
@@ -72,8 +62,8 @@ export default function Hero() {
         </h1>
 
         <p className="hero-fade-up hero-fade-up-3 mx-auto mt-[clamp(1rem,2.5vh,1.75rem)] max-w-[92%] text-pretty text-[clamp(0.9rem,0.35vw+0.8rem,1.25rem)] leading-[1.55] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.55)] sm:max-w-3xl sm:leading-8">
-          Jetzt IPTV kaufen und über 22.000 Live-TV Sender, Filme, Serien und Fußball in HD, Full HD und
-          4K auf bis zu 4 Geräten gleichzeitig genießen.
+          Jetzt IPTV kaufen und Live-TV, Filme, Serien und Fußball in HD, Full HD und 4K auf bis zu 4
+          Geräten gleichzeitig genießen.
         </p>
 
         <div className="hero-fade-up hero-fade-up-4 relative mt-[clamp(1.5rem,3vh,2.5rem)] flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
@@ -109,18 +99,6 @@ export default function Hero() {
             24H-TEST FÜR 3€ STARTEN
           </TrackedAnchor>
         </div>
-
-        <p className="hero-fade-up hero-fade-up-4 mt-3">
-          <TrackedLink
-            href="/senderliste"
-            analyticsEvent={ANALYTICS_EVENTS.senderlisteClick}
-            analyticsParams={{ source: "hero", button_location: "hero" }}
-            data-analytics="senderliste_click"
-            className="text-[11px] font-medium text-[#F5F5F5]/72 underline decoration-[#F5F5F5]/25 underline-offset-4 transition duration-300 hover:text-[#A6FF00] hover:decoration-[#A6FF00]/35 sm:text-xs"
-          >
-            Senderliste ansehen
-          </TrackedLink>
-        </p>
 
         <p className="hero-fade-up hero-fade-up-4 mt-3 text-[11px] font-medium tracking-[0.02em] text-[#F5F5F5]/78 sm:text-xs">
           Ab 9,99€ · 24h-Test für 3€ · 30 Tage Geld-zurück

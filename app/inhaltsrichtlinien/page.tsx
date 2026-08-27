@@ -14,14 +14,14 @@ const sections: LegalSection[] = [
   {
     title: "Welche Inhalte wir veröffentlichen",
     paragraphs: [
-      "Auf iptvkaufenx.de veröffentlichen wir Informationen zum digitalen IPTV-Service von iptvkaufenX sowie redaktionelle Beiträge im [Blog](/blog). Dazu gehören Produktseiten (unter anderem [Preise](/preise) und [Senderliste](/senderliste)), Support- und Kontaktinformationen sowie rechtliche Hinweise wie [Impressum](/impressum), Datenschutz und Nutzungsbedingungen.",
+      "Auf iptvkaufenx.de veröffentlichen wir Informationen zum digitalen IPTV-Service von iptvkaufenX sowie redaktionelle Beiträge im [Blog](/blog). Dazu gehören Produktseiten (unter anderem [Preise](/preise)), Support- und Kontaktinformationen sowie rechtliche Hinweise wie [Impressum](/impressum), Datenschutz und Nutzungsbedingungen.",
       "Blog-Themen decken unter anderem IPTV in Deutschland, Anbieter und Abonnements, Geräte und Apps, Einrichtung, Tests, Premium-Qualität und Senderlisten ab. Autorin der Beiträge ist die [iptvkaufenX Redaktion](/autor).",
     ],
   },
   {
     title: "Genauigkeitsstandards",
     paragraphs: [
-      "Inhalte werden mit Sorgfalt erstellt und regelmäßig geprüft. Leistungsangaben zum Service – etwa über 22.000 Sender, HD/4K, Filme, Serien und Sport, Nutzung auf zwei Geräten, 24-Stunden-Test für 3 € sowie 30-Tage-Geld-zurück-Garantie – orientieren sich an den auf der Website ausgewiesenen Informationen.",
+      "Inhalte werden mit Sorgfalt erstellt und regelmäßig geprüft. Leistungsangaben zum Service – etwa HD/4K, Filme, Serien und Sport, Nutzung auf zwei Geräten, 24-Stunden-Test für 3 € sowie 30-Tage-Geld-zurück-Garantie – orientieren sich an den auf der Website ausgewiesenen Informationen.",
       "Technische Tipps in Blog-Beiträgen beschreiben typische Setups und Vorgehensweisen. Die tatsächliche Funktion hängt von Gerät, App, Internetverbindung und korrekter Einrichtung ab.",
     ],
   },

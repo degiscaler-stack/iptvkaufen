@@ -60,7 +60,7 @@
     },
     {
       "question": "Welche Geräte eignen sich am besten für TiviMate IPTV?",
-      "answer": "Ideal sind Android TV und Google TV Boxen mit ausreichend RAM und LAN-Anschluss. Fire TV Stick funktioniert per Sideload gut als Zweitgerät. Ältere Fernseher ohne App-Store profitieren von einer externen [IPTV Box](/blog/iptv-box) oder einem [IPTV Receiver](/blog/iptv-receiver). Senderauswahl prüfen Sie in der [Senderliste](/senderliste)."
+      "answer": "Ideal sind Android TV und Google TV Boxen mit ausreichend RAM und LAN-Anschluss. Fire TV Stick funktioniert per Sideload gut als Zweitgerät. Ältere Fernseher ohne App-Store profitieren von einer externen [IPTV Box](/blog/iptv-box) oder einem [IPTV Receiver](/blog/iptv-receiver). Senderauswahl prüfen Sie in der Senderliste."
     }
   ],
   "sections": [
@@ -72,7 +72,7 @@
         "Wer auf Android TV, Google TV oder dem Fire TV Stick ein professionelles Live-TV-Erlebnis sucht, stößt schnell auf TiviMate IPTV. Die App gilt in vielen Haushalten als Referenz-Player: klare Oberfläche, starkes EPG, Favoriten und Aufnahmen – bedienbar mit der Fernbedienung, ohne Smartphone-Umwege.",
         "Wichtig vorab: TiviMate IPTV ist kein Senderanbieter. Die App spielt Playlists und Xtream-Zugänge ab, die Sie von einem seriösen Dienst erhalten. Ohne stabile Streams und gepflegte Listen hilft auch die beste Oberfläche wenig – deshalb gehören Player und [IPTV Provider](/blog/iptv-provider) immer zusammen gedacht.",
         "Dieser Guide führt Sie durch Installation, Playlist-Einrichtung, EPG, Favoriten, Aufnahmen und den Vergleich mit [IPTV Smarters Pro](/blog/iptv-smarters-pro). Fokus liegt auf dem Alltag in Deutschland: Android TV Box im Wohnzimmer, Google TV am Smart-TV und Sideload auf dem Fire TV Stick. Für Fire-TV-Nutzer lohnt ergänzend der Ratgeber zur [besten IPTV App für Fire Stick](/blog/beste-iptv-app-fuer-fire-stick).",
-        "Ergänzend lohnen der [M3U-Ratgeber](/blog/iptv-m3u), der Überblick zu [IPTV Box](/blog/iptv-box) und [IPTV Receiver](/blog/iptv-receiver) sowie Hinweise zu [IPTV Premium 4K](/blog/iptv-premium-4k). Aktuelle Pakete und [Preise](/preise) sowie die [Senderliste](/senderliste) finden Sie direkt auf [iptvkaufenX](/).",
+        "Ergänzend lohnen der [M3U-Ratgeber](/blog/iptv-m3u), der Überblick zu [IPTV Box](/blog/iptv-box) und [IPTV Receiver](/blog/iptv-receiver) sowie Hinweise zu [IPTV Premium 4K](/blog/iptv-premium-4k). Aktuelle Pakete und [Preise](/preise) finden Sie direkt auf [iptvkaufenX](/).",
         "Am Ende wissen Sie, wie Sie TiviMate IPTV sauber einrichten, typische Fehler vermeiden und ob Premium für Ihren Haushalt sinnvoll ist – praxisnah, ohne Marketingfloskeln.",
         "Ob Sie neu einsteigen oder von einer anderen App wechseln: Nehmen Sie sich für die erste Einrichtung 15 bis 20 Minuten Zeit. Ein korrekt hinterlegtes EPG und saubere Favoriten sparen später jeden Abend Suchaufwand – und machen aus einer technischen Playlist ein echtes Fernseherlebnis."
       ],
@@ -208,7 +208,7 @@
         "Wenn Zeiten verschoben sind, stimmt meist die Zeitzone oder die EPG-Quelle. Wenn gar keine Daten erscheinen, fehlt die URL, der Sync ist unvollständig oder der Anbieter liefert kein EPG. In dem Fall hilft Support über den [Kontakt](/kontakt) oder ein Blick in die [FAQ](/faq).",
         "Favoriten machen aus hunderten Sendern eine persönliche Liste. Legen Sie Gruppen für Nachrichten, Sport, Kinder und Filme an. Auf Android TV springen Sie so in Sekunden zum relevanten Inhalt – besonders nützlich, wenn mehrere Personen dasselbe Gerät teilen.",
         "Aufnahmen benötigen externen Speicher und ausreichend Platz. Schließen Sie USB-Festplatte oder Stick an, wählen Sie in TiviMate IPTV den Speicherort und testen Sie eine kurze Aufnahme, bevor Sie ein Fußballspiel mitschneiden. Manche Streams sind DRM- oder serverseitig eingeschränkt – dann schlägt die Aufnahme fehl, obwohl Live funktioniert.",
-        "Catch-up und Timeshift hängen vom Anbieter ab. TiviMate IPTV zeigt die Funktionen an, wenn die Playlist sie unterstützt. Erwarten Sie nicht, dass jede Senderkategorie Replay bietet; prüfen Sie das in der [Senderliste](/senderliste) und in den Paketdetails Ihres Dienstes.",
+        "Catch-up und Timeshift hängen vom Anbieter ab. TiviMate IPTV zeigt die Funktionen an, wenn die Playlist sie unterstützt. Erwarten Sie nicht, dass jede Senderkategorie Replay bietet; prüfen Sie das in der Senderliste und in den Paketdetails Ihres Dienstes.",
         "Wer [IPTV Premium 4K](/blog/iptv-premium-4k) nutzt, sollte EPG und Favoriten besonders sauber halten: Bei hoher Bitrate und vielen UHD-Sendern hilft Struktur, damit die Fernbedienung nicht zur Suchmaschine wird. Eine aufgeräumte Favoritenliste ist oft wertvoller als noch eine zusätzliche Kategorie.",
         "Regelmäßige Updates der Playlist halten Logos und Reihenfolgen aktuell. Planen Sie einmal pro Woche einen kurzen Sync ein – idealerweise außerhalb der Prime Time. So starten Sie den Abend mit frischen Daten, ohne mitten in der Lieblingssendung zu aktualisieren."
       ]
@@ -338,7 +338,7 @@
           "type": "info",
           "title": "Hinweis",
           "paragraphs": [
-            "TiviMate Premium betrifft nur die App-Funktionen. Sender, Stabilität und 4K-Qualität kommen von Ihrem [IPTV Provider](/blog/iptv-provider). Prüfen Sie parallel [Senderliste](/senderliste), [Preise](/preise) und bei Bedarf [IPTV Premium 4K](/blog/iptv-premium-4k), bevor Sie langfristig binden."
+            "TiviMate Premium betrifft nur die App-Funktionen. Sender, Stabilität und 4K-Qualität kommen von Ihrem [IPTV Provider](/blog/iptv-provider). Prüfen Sie parallel Senderliste, [Preise](/preise) und bei Bedarf [IPTV Premium 4K](/blog/iptv-premium-4k), bevor Sie langfristig binden."
           ]
         }
       ]
@@ -352,7 +352,7 @@
         "„Kein EPG“: EPG-URL fehlt, Sync unvollständig oder Zeitzone falsch. Europe/Berlin einstellen, EPG aktualisieren, App neu starten. Manchmal hilft das Entfernen und erneute Hinzufügen nur der EPG-Quelle, ohne die gesamte Playlist zu löschen.",
         "„Ruckeln und Aussetzer“: Zuerst WLAN vs. LAN prüfen, andere Downloads stoppen und zur Hauptsendezeit testen. Liegt das Problem nur bei einzelnen Sendern, ist oft die Stream-Quelle betroffen. Liegt es bei allen Sendern, sind Netz oder Gerät wahrscheinlicher als TiviMate IPTV.",
         "„App stürzt ab“: Cache leeren, auf Updates prüfen, Hintergrund-Apps schließen. Auf schwachen Sticks weniger parallele Apps und niedrigere Buffer-Experimente. Bleibt der Crash nach Neuinstallation, notieren Sie Android-Version und Gerätetyp für den Support.",
-        "„Sender fehlen nach Update“: Playlist aktualisieren und Kategorien neu laden. Manchmal sortiert der Provider Listen um. Favoriten bleiben oft erhalten, absolute Positionen in der Gesamtliste nicht. Vergleichen Sie mit der aktuellen [Senderliste](/senderliste).",
+        "„Sender fehlen nach Update“: Playlist aktualisieren und Kategorien neu laden. Manchmal sortiert der Provider Listen um. Favoriten bleiben oft erhalten, absolute Positionen in der Gesamtliste nicht. Vergleichen Sie mit der aktuellen Senderliste.",
         "„Fire TV findet TiviMate nicht“: Das ist normal, wenn die App nicht im Amazon Store liegt. Sideload über Downloader nutzen, unbekannte Quellen korrekt setzen und nur aktuelle APKs aus vertrauenswürdiger Quelle laden. Hilfe dazu finden Sie im [Blog](/blog) und über [Kontakt](/kontakt).",
         "Dokumentieren Sie Änderungen: Welche Playlist, welches Gerät, welche Uhrzeit. Bei Support-Anfragen an iptvkaufenX oder Ihren Provider beschleunigt das die Diagnose enorm – und verhindert, dass Sie dieselben Schritte dreimal wiederholen."
       ]
@@ -365,7 +365,7 @@
         "Ein bewährter Ablauf für TiviMate IPTV in deutschen Haushalten sieht so aus: Gerät per LAN verbinden, App installieren, Playlist eintragen, einen Testsender prüfen, EPG syncen, Favoriten anlegen, optional Aufnahmen testen. In dieser Reihenfolge sparen Sie Fehlersuche.",
         "Schritt 1–2: Box oder Stick starten, Netzwerk prüfen (Speedtest grob für HD/4K), TiviMate IPTV installieren. Schritt 3: M3U oder Xtream eintragen – Daten aus der Anbieter-Mail, nicht aus Foren-Screenshots. Schritt 4: Bekannten Sender starten und fünf Minuten beobachten.",
         "Schritt 5: EPG laden und Zeitzone setzen. Schritt 6: Favoritengruppen bauen – maximal so viele, wie Sie wirklich nutzen. Schritt 7: Bei Bedarf USB-Speicher für Aufnahmen einrichten und eine Kurzaufnahme testen. Schritt 8: Zweitgerät (z. B. Fire TV) erst einrichten, wenn das Hauptgerät stabil läuft.",
-        "Kombinieren Sie die App mit einem nachvollziehbaren Angebot: transparente [Preise](/preise), einsehbare [Senderliste](/senderliste) und erreichbarer Support. Auf [iptvkaufenX](/) finden Sie Einstiegspunkte; vertiefende Themen liegen im [Blog](/blog) – von [M3U](/blog/iptv-m3u) bis [IPTV Provider](/blog/iptv-provider).",
+        "Kombinieren Sie die App mit einem nachvollziehbaren Angebot: transparente [Preise](/preise), einsehbare Senderliste und erreichbarer Support. Auf [iptvkaufenX](/) finden Sie Einstiegspunkte; vertiefende Themen liegen im [Blog](/blog) – von [M3U](/blog/iptv-m3u) bis [IPTV Provider](/blog/iptv-provider).",
         "Für 4K-Haushalte gilt zusätzlich: Gerät und Leitung müssen zur Bitrate passen. Lesen Sie dazu [IPTV Premium 4K](/blog/iptv-premium-4k) und wählen Sie Hardware bewusst – siehe [IPTV Box](/blog/iptv-box). TiviMate IPTV zeigt 4K an, wenn der Stream und der Decoder mitspielen.",
         "Nach einer Woche Feintuning: Buffer nur ändern, wenn nötig; Favoriten bereinigen; ungenutzte Playlists entfernen. Ein schlankes Setup ist stabiler und übersichtlicher. Bei offenen Fragen helfen [FAQ](/faq) und [Kontakt](/kontakt).",
         "Zielbild: Abends die Fernbedienung greifen, TiviMate IPTV öffnen, Favorit wählen, fertig. Wenn Sie dieses Gefühl erreichen, ist die technische Einrichtung gelungen – unabhängig davon, wie viele Menüpunkte die App theoretisch bietet."
@@ -386,7 +386,7 @@
       "paragraphs": [
         "TiviMate IPTV ist für Android TV, Google TV und per Sideload auch für Fire TV eine der stärksten Player-Lösungen im Wohnzimmer. Klare UI, EPG, Favoriten und Aufnahmen machen aus einer technischen Playlist ein bedienbares Fernseherlebnis – vorausgesetzt, Zugang und Netz stimmen.",
         "Installieren Sie sauber, tragen Sie M3U oder Xtream korrekt ein, setzen Sie EPG und Zeitzone, und bauen Sie Favoriten mit Augenmaß. Vergleichen Sie bei Bedarf mit [IPTV Smarters Pro](/blog/iptv-smarters-pro), wählen Sie passende Hardware über [IPTV Box](/blog/iptv-box) bzw. [IPTV Receiver](/blog/iptv-receiver) und achten Sie auf einen seriösen [IPTV Provider](/blog/iptv-provider).",
-        "Vertiefung zu Listen bietet [IPTV M3U](/blog/iptv-m3u), zu Bildqualität [IPTV Premium 4K](/blog/iptv-premium-4k). Aktuelle [Preise](/preise), die [Senderliste](/senderliste), [FAQ](/faq) und [Kontakt](/kontakt) sowie weitere Ratgeber im [Blog](/blog) unterstützen Sie bei der Umsetzung.",
+        "Vertiefung zu Listen bietet [IPTV M3U](/blog/iptv-m3u), zu Bildqualität [IPTV Premium 4K](/blog/iptv-premium-4k). Aktuelle [Preise](/preise), die Senderliste, [FAQ](/faq) und [Kontakt](/kontakt) sowie weitere Ratgeber im [Blog](/blog) unterstützen Sie bei der Umsetzung.",
         "Wenn Sie Live-TV über Internet mit einer App nutzen wollen, die sich wie ein moderner Receiver anfühlt, ist TiviMate IPTV 2026 eine klare Empfehlung für Android-basierte Setups – getestet auf dem Gerät, das Sie wirklich jeden Abend einschalten.",
         "Starten Sie mit einem stabilen Zugang auf [iptvkaufenX](/), richten Sie TiviMate IPTV einmal gründlich ein und genießen Sie danach das, worum es geht: Fernsehen ohne ständige Technikbaustellen."
       ]

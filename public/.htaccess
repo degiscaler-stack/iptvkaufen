@@ -34,6 +34,11 @@ Options -Indexes
   RewriteEngine On
   RewriteBase /
 
+  # Permanently retired Senderliste — genuine HTTP 410, do not rewrite to homepage
+  RewriteRule ^senderliste/?$ - [G,L]
+  RewriteRule ^senderliste/ - [G,L]
+  RewriteRule ^senderliste\.html$ - [G,L]
+
   # Serve clean URLs from exported .html files
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

@@ -154,7 +154,7 @@
         "Eine aktuelle Firmware-Version Ihres Fernsehers erleichtert die Nutzung: Ältere, nicht mehr aktualisierte TV-Software kann dazu führen, dass Apps im Store nicht mehr angezeigt oder nicht mehr korrekt ausgeführt werden.",
         "Planen Sie ausreichend Bandbreite für die gewünschte Bildqualität ein, besonders wenn mehrere Geräte im Haushalt gleichzeitig streamen. Halten Sie Zugangsdaten und Playlist-URL griffbereit, bevor Sie die App zum ersten Mal öffnen.",
         "Wer bereits andere IPTV-Player wie [SS IPTV](/blog/ss-iptv) genutzt hat, kann in der Regel dieselben Zugangsdaten übernehmen, sofern der Anbieter dies unterstützt.",
-        "Klären Sie im Vorfeld auch, ob Ihr gewünschtes Paket zu Ihren Sehgewohnheiten passt: Wer hauptsächlich deutsche Programme sehen möchte, achtet auf eine entsprechende [Senderliste](/senderliste); wer internationale Inhalte bevorzugt, prüft die Länderauswahl beim Anbieter."
+        "Klären Sie im Vorfeld auch, ob Ihr gewünschtes Paket zu Ihren Sehgewohnheiten passt: Wer hauptsächlich deutsche Programme sehen möchte, achtet auf eine entsprechende Senderliste; wer internationale Inhalte bevorzugt, prüft die Länderauswahl beim Anbieter."
       ]
     },
     {
@@ -180,7 +180,7 @@
         "Tragen Sie die Daten sorgfältig ein. Ein einzelner Tippfehler in der URL ist die häufigste Ursache dafür, dass die Playlist nicht lädt. Kopieren Sie Zugangsdaten wenn möglich, statt lange Zeichenketten mit der Fernbedienung einzutippen.",
         "Nach dem Speichern lädt die App die Senderliste und ordnet Kanäle in Kategorien. Je nach Listengröße kann das einige Sekunden bis wenige Minuten dauern. Testen Sie danach einen bekannten Sender, bevor Sie weitere Einstellungen vornehmen.",
         "Funktioniert der erste Test nicht, prüfen Sie zunächst Internetverbindung und Zugangsdaten. Erst wenn beides stimmt, sollten Sie von einem Problem beim Anbieter oder der App ausgehen.",
-        "Mehr zur Struktur von Playlists und zum Aufbau einer M3U-Datei erklärt unser Artikel [IPTV M3U](/blog/iptv-m3u). Aktuelle Pakete und die [Senderliste](/senderliste) finden Sie auf iptvkaufenX."
+        "Mehr zur Struktur von Playlists und zum Aufbau einer M3U-Datei erklärt unser Artikel [IPTV M3U](/blog/iptv-m3u). Aktuelle Pakete finden Sie auf [iptvkaufenX](/)."
       ],
       "image": {
         "src": "/images/post 14/smartone-iptv-2.webp",
@@ -306,7 +306,7 @@
         "SmartOne IPTV ist nicht der einzige Player für Smart TVs. [SS IPTV](/blog/ss-iptv) verfolgt einen ähnlichen Ansatz und ist auf mehreren TV-Plattformen verbreitet. [Flix IPTV](/blog/flix-iptv) ist ebenfalls stark auf Smart-TV-Nutzung ausgerichtet.",
         "Wer stattdessen auf einer Android-TV-Box unterwegs ist, findet mit [TiviMate](/blog/tivimate-iptv) häufig ein ausgeprägteres EPG und Aufnahmefunktionen. [IPTV Smarters Pro](/blog/iptv-smarters-pro) deckt eine besonders breite Gerätepalette ab, von Smartphones bis Fire TV Stick.",
         "Eine pauschale „beste App“ gibt es nicht. Entscheidend sind Ihr konkretes Gerät, die Store-Verfügbarkeit darauf und Ihre persönlichen Bedienvorlieben. Bei Unsicherheit lohnt es sich, zwei Player mit derselben Playlist zu testen.",
-        "Unabhängig vom gewählten Player bleibt die Playlist-Qualität der entscheidende Faktor für ein gutes Fernseherlebnis. Ein seriöser Anbieter mit gepflegter [Senderliste](/senderliste) macht sich in jeder App bemerkbar.",
+        "Unabhängig vom gewählten Player bleibt die Playlist-Qualität der entscheidende Faktor für ein gutes Fernseherlebnis. Ein seriöser Anbieter mit gepflegter Senderliste macht sich in jeder App bemerkbar.",
         "Wenn Sie sich unsicher sind, welcher Player zu Ihrem Haushalt passt, hilft ein einfacher Praxistest: Richten Sie dieselbe Playlist in zwei Apps ein und vergleichen Sie nach ein paar Tagen Alltagsnutzung Aspekte wie Übersichtlichkeit, Ladezeiten und die Reaktionsgeschwindigkeit der Fernbedienung."
       ],
       "blocks": [
@@ -365,7 +365,7 @@
           "type": "info",
           "title": "Hinweis",
           "paragraphs": [
-            "SmartOne IPTV ist ein Player – die rechtliche und technische Qualität Ihres Fernseherlebnisses hängt vom gewählten Anbieter ab. Prüfen Sie [Preise](/preise) und [Senderliste](/senderliste) sorgfältig, bevor Sie sich langfristig binden."
+            "SmartOne IPTV ist ein Player – die rechtliche und technische Qualität Ihres Fernseherlebnisses hängt vom gewählten Anbieter ab. Prüfen Sie [Preise](/preise) und Senderliste sorgfältig, bevor Sie sich langfristig binden."
           ]
         }
       ]
@@ -378,7 +378,7 @@
         "SmartOne IPTV ist für Nutzer interessant, die IPTV direkt über den Smart TV schauen möchten, ohne zusätzliche Hardware anzuschließen. Die App bietet eine fernbedienungsfreundliche Oberfläche, Favoriten und ein Programmheft, sofern die Playlist entsprechende Daten liefert.",
         "Ob die App auf Ihrem konkreten Fernseher verfügbar ist, hängt von Marke, Modell, Betriebssystem und Region ab – prüfen Sie das direkt im Store Ihres Geräts. Ist SmartOne IPTV nicht auffindbar, ist eine externe [IPTV Box](/blog/iptv-box) oft die praktikabelste Alternative.",
         "Richten Sie die Playlist sorgfältig ein, prüfen Sie EPG und Favoriten, und vergleichen Sie bei Bedarf mit anderen Playern wie [SS IPTV](/blog/ss-iptv), [Flix IPTV](/blog/flix-iptv) oder [IPTV Smarters Pro](/blog/iptv-smarters-pro).",
-        "Entscheidend für ein gutes Ergebnis bleibt in jedem Fall der Anbieter hinter der Playlist. Vergleichen Sie [Preise](/preise) und [Senderliste](/senderliste) auf [iptvkaufenX](/), und starten Sie erst dann mit der Einrichtung von SmartOne IPTV auf Ihrem Gerät.",
+        "Entscheidend für ein gutes Ergebnis bleibt in jedem Fall der Anbieter hinter der Playlist. Vergleichen Sie [Preise](/preise) auf [iptvkaufenX](/), und starten Sie erst dann mit der Einrichtung von SmartOne IPTV auf Ihrem Gerät.",
         "Weitere vertiefende Artikel zu Playlists, Playern und Geräten finden Sie im [Blog](/blog); bei offenen Fragen helfen [FAQ](/faq) und [Kontakt](/kontakt).",
         "Mit einer sorgfältigen Ersteinrichtung und einem verlässlichen Anbieter im Hintergrund wird aus SmartOne IPTV ein alltagstaugliches Fernseherlebnis – ganz ohne zusätzliche Streaming-Box unter dem Fernseher."
       ]

@@ -72,7 +72,7 @@
         "IPTV Extreme ist vielen Nutzern als schlanke, funktionsreiche App zur Wiedergabe von IPTV-Playlists bekannt. Sie richtet sich an alle, die eine unkomplizierte Oberfläche für Live-TV suchen, ohne auf grundlegende Funktionen wie Favoriten, Kategorien oder ein Programmheft verzichten zu wollen.",
         "Wichtig vorab: IPTV Extreme ist ein Player, kein Senderanbieter. Die App spielt ab, was Ihre Playlist enthält – Inhalte und Stabilität kommen von Ihrem [IPTV Provider](/blog/iptv-provider). Ohne einen seriösen Zugang bleibt auch die aufgeräumteste App leer.",
         "Dieser Guide führt Sie durch Voraussetzungen, Installation, Playlist- und M3U-Einrichtung, EPG, Favoriten, Player-Einstellungen sowie den Umgang mit mehreren Playlists. Ergänzend ordnen wir IPTV Extreme im Vergleich zu [TiviMate IPTV](/blog/tivimate-iptv) und [IPTV Smarters Pro](/blog/iptv-smarters-pro) ein.",
-        "Wer einen breiteren Überblick über Player-Apps sucht, findet ihn in unserem [IPTV-Player-Vergleich](/blog/iptv-player). Hardware-Fragen klärt der Artikel zur [IPTV Box](/blog/iptv-box); aktuelle Pakete und die [Senderliste](/senderliste) finden Sie direkt auf [iptvkaufenX](/).",
+        "Wer einen breiteren Überblick über Player-Apps sucht, findet ihn in unserem [IPTV-Player-Vergleich](/blog/iptv-player). Hardware-Fragen klärt der Artikel zur [IPTV Box](/blog/iptv-box); aktuelle Pakete finden Sie direkt auf [iptvkaufenX](/).",
         "Am Ende dieses Ratgebers wissen Sie, wie Sie IPTV Extreme sauber einrichten, typische Stolperfallen vermeiden und einschätzen können, ob die App zu Ihrem Gerät und Ihrem Nutzungsstil passt.",
         "Nehmen Sie sich für die erste Einrichtung ausreichend Zeit. Eine sauber eingetragene Playlist, ein korrekt hinterlegtes EPG und eine überschaubare Favoritenliste zahlen sich jeden Abend aus – unabhängig davon, wie viele Menüpunkte die App theoretisch bietet."
       ],
@@ -114,7 +114,7 @@
         "Internetseitig empfiehlt sich eine Verbindung, die für Live-Streaming ausreichend Bandbreite und geringe Schwankungen bietet. Eine Kabelverbindung zum Router ist WLAN in der Regel überlegen, besonders wenn mehrere Geräte im Haushalt gleichzeitig streamen.",
         "Prüfen Sie außerdem, ob Ihr Gerät ausreichend Arbeitsspeicher und eine aktuelle Systemversion besitzt. Ältere oder sehr einfache Geräte können bei umfangreichen Playlists oder aktivem EPG-Sync spürbar langsamer reagieren.",
         "Halten Sie Zugangsdaten griffbereit, idealerweise aus der Willkommensmail oder dem Kundenbereich Ihres Anbieters. Das vermeidet Tippfehler und beschleunigt die spätere Einrichtung erheblich.",
-        "Sinnvoll ist außerdem ein kurzer Blick auf die [Senderliste](/senderliste) des Anbieters, bevor Sie eine App einrichten. So wissen Sie bereits vorab, ob die für Sie wichtigen Kanäle grundsätzlich im Paket enthalten sind."
+        "Sinnvoll ist außerdem ein kurzer Blick auf die Senderliste des Anbieters, bevor Sie eine App einrichten. So wissen Sie bereits vorab, ob die für Sie wichtigen Kanäle grundsätzlich im Paket enthalten sind."
       ]
     },
     {
@@ -312,7 +312,7 @@
         "„Kein EPG“: Häufig fehlt die EPG-Adresse, die Zeitzone stimmt nicht oder der erste Sync ist noch nicht abgeschlossen. Prüfen Sie die Playlist-Einstellungen und geben Sie der App etwas Zeit.",
         "„Ruckeln und Aussetzer“: Prüfen Sie zunächst WLAN gegenüber LAN, beenden Sie parallele Downloads und testen Sie zur Hauptsendezeit. Betrifft das Problem nur einzelne Sender, liegt die Ursache oft bei der jeweiligen Stream-Quelle.",
         "„App reagiert langsam oder stürzt ab“: Cache leeren, auf Updates prüfen und Hintergrund-Apps schließen, bevor Sie eine komplette Neuinstallation in Erwägung ziehen.",
-        "„Sender fehlen nach einem Update“: Aktualisieren Sie die Playlist und laden Sie Kategorien neu. Anbieter sortieren Listen gelegentlich um; ein Abgleich mit der aktuellen [Senderliste](/senderliste) schafft Klarheit.",
+        "„Sender fehlen nach einem Update“: Aktualisieren Sie die Playlist und laden Sie Kategorien neu. Anbieter sortieren Listen gelegentlich um; ein Abgleich mit der aktuellen Senderliste schafft Klarheit.",
         "Dokumentieren Sie bei anhaltenden Problemen, welches Gerät, welche Playlist und welche Uhrzeit betroffen sind. Das beschleunigt die Diagnose deutlich, egal ob Sie sich an den Support von iptvkaufenX oder an Ihren Anbieter wenden.",
         "„Playlist funktioniert auf einem Gerät, aber nicht auf einem anderen“: Prüfen Sie, ob auf beiden Geräten dieselbe URL und derselbe Zugang hinterlegt sind, und ob die Anzahl gleichzeitig erlaubter Streams Ihres Pakets nicht überschritten wird."
       ]
@@ -381,7 +381,7 @@
         "IPTV Extreme ist eine funktionale App für alle, die eine unkomplizierte Oberfläche für Live-TV-Playlists suchen. Mit korrekt eingetragener Playlist, sauberem EPG und aufgeräumten Favoriten wird aus einer technischen Liste ein bedienbares Fernseherlebnis.",
         "Wichtig bleibt die Trennung zwischen App und Anbieter: Stabilität, Senderumfang und Bildqualität liefert Ihr [IPTV Provider](/blog/iptv-provider) – IPTV Extreme zeigt lediglich an, was die Playlist enthält.",
         "Vergleichen Sie bei Bedarf mit [TiviMate IPTV](/blog/tivimate-iptv) oder [IPTV Smarters Pro](/blog/iptv-smarters-pro) und nutzen Sie unseren [IPTV-Player-Vergleich](/blog/iptv-player), um die für Ihr Gerät passende App zu finden.",
-        "Passende Hardware-Empfehlungen liefert der Artikel zur [IPTV Box](/blog/iptv-box); aktuelle Pakete, die [Senderliste](/senderliste) und Hilfe bei Fragen finden Sie über [Preise](/preise), [FAQ](/faq) und [Kontakt](/kontakt) auf [iptvkaufenX](/)."
+        "Passende Hardware-Empfehlungen liefert der Artikel zur [IPTV Box](/blog/iptv-box); aktuelle Pakete und Hilfe bei Fragen finden Sie über [Preise](/preise), [FAQ](/faq) und [Kontakt](/kontakt) auf [iptvkaufenX](/)."
       ]
     }
   ]

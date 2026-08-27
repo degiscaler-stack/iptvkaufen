@@ -56,7 +56,7 @@ const post = {
     {
       question: "Wie erkenne ich ein seriöses IPTV Abonnement?",
       answer:
-        "Achten Sie auf Impressum, erreichbaren Support, transparente [Senderliste](/senderliste) und klare Paketbeschreibungen. Fehlen diese Elemente, ist Vorsicht geboten – auch bei verlockend niedrigen Preisen.",
+        "Achten Sie auf Impressum, erreichbaren Support, transparente Senderliste und klare Paketbeschreibungen. Fehlen diese Elemente, ist Vorsicht geboten – auch bei verlockend niedrigen Preisen.",
     },
     {
       question: "Kann ich mein IPTV Abo auf der IPTV Box nutzen?",
@@ -98,7 +98,7 @@ const post = {
       paragraphs: [
         "Ein IPTV Abo – kurz für IPTV Abonnement – ist der Vertrag zwischen Ihnen und einem Dienstanbieter, der Live-TV über das Internet bereitstellt. Nach der Buchung erhalten Sie in der Regel Zugangsdaten: Server-URL, Benutzername und Passwort. Diese tragen Sie in eine kompatible IPTV-App ein – auf Smart TV, [IPTV Box](/blog/iptv-box), Fire TV Stick oder Smartphone.",
         "Im Gegensatz zum klassischen Kabel- oder Satellitenvertrag läuft alles über Ihre Breitbandverbindung. Es gibt keinen Techniker, der eine Leitung verlegt, und keinen Receiver, den der Anbieter verpflichtend vermietet. Sie wählen Hardware und App selbst – solange sie zum Angebot passen.",
-        "Die Leistung eines IPTV Abos umfasst typischerweise eine Senderliste mit deutschen und oft internationalen Kanälen, elektronischen Programmführer (EPG) und manchmal Video-on-Demand oder Catch-up. Der genaue Umfang steht im Paket – deshalb lohnt ein Blick auf die [Senderliste](/senderliste) vor dem Kauf.",
+        "Die Leistung eines IPTV Abos umfasst typischerweise eine Senderliste mit deutschen und oft internationalen Kanälen, elektronischen Programmführer (EPG) und manchmal Video-on-Demand oder Catch-up. Der genaue Umfang steht im Paket – deshalb lohnt ein Blick auf die Senderliste vor dem Kauf.",
         "Wichtig: Das Abo ersetzt nicht Ihren Internetanschluss. Sie brauchen weiterhin einen Router und eine Leitung, die HD oder 4K zuverlässig trägt. Das IPTV Abonnement liefert die Inhalte; Ihre Infrastruktur liefert die Datenübertragung.",
         "In Deutschland suchen viele Nutzer ein IPTV Abo, weil sie flexibler sein wollen als bei klassischen TV-Verträgen: kürzere Laufzeiten, mehr Sender, Nutzung auf mehreren Geräten, oft günstigere Gesamtkosten. Ob das für Sie zutrifft, hängt von Ihren Gewohnheiten und der Qualität des gewählten Anbieters ab.",
         "Der Begriff „Abo“ impliziert wiederkehrende Zahlung – monatlich, vierteljährlich oder jährlich. Einmalzahlungen für feste Zeiträume sind üblich; automatische Verlängerung sollte der Anbieter klar kommunizieren. Lesen Sie die AGB, bevor Sie buchen.",
@@ -130,7 +130,7 @@ const post = {
           paragraphs: [
             "Mit einem IPTV Abonnement streamen Sie auf dem Gerät, das Ihnen passt – nicht nur am Haupt-TV. Viele Pakete erlauben zwei oder drei parallele Streams für Familien.",
             "Umzug? Neue Wohnung, gleiches Abo – sofern die Internetleitung stimmt. Kein Termin mit dem Kabeltechniker, keine neue Sat-Schüssel.",
-            "Wer international lebt oder mehrsprachige Sender braucht, findet in IPTV Abos oft Kanäle, die klassische deutsche Pakete nicht führen. Prüfen Sie die [Senderliste](/senderliste) gezielt auf Ihre Must-have-Kanäle.",
+            "Wer international lebt oder mehrsprachige Sender braucht, findet in IPTV Abos oft Kanäle, die klassische deutsche Pakete nicht führen. Prüfen Sie die Senderliste gezielt auf Ihre Must-have-Kanäle.",
           ],
         },
         {
@@ -223,7 +223,7 @@ const post = {
       paragraphs: [
         "Das IPTV Abo ist nur so gut wie der Anbieter dahinter. Senderliste, Serverstabilität und Support machen den Unterschied – nicht die Länge der Feature-Liste auf der Website.",
         "Orientieren Sie sich an unserem [IPTV-Anbieter-Ratgeber](/blog/iptv-anbieter): Impressum, transparente Pakete, erreichbarer Service, realistische Versprechen.",
-        "Vor der Buchung: [FAQ](/faq) lesen, [Preise](/preise) vergleichen, [Senderliste](/senderliste) prüfen. Stellen Sie eine konkrete Frage an den Support – die Antwortqualität ist oft repräsentativ.",
+        "Vor der Buchung: [FAQ](/faq) lesen, [Preise](/preise) vergleichen, Senderliste prüfen. Stellen Sie eine konkrete Frage an den Support – die Antwortqualität ist oft repräsentativ.",
         "Testen Sie mit [IPTV Free Trial](/blog/iptv-free-trial) oder kurzem Monatsabo auf Ihrem Hauptgerät. Sport zur Hauptsendezeit und ein Film in HD sind gute Stresstests.",
         "Notieren Sie Stabilität, Ladezeiten beim Zappen, EPG-Genauigkeit und Support-Reaktion. Eine halbe Seite Notizen hilft bei der finalen Entscheidung für das IPTV Abonnement.",
         "Vermeiden Sie Druck durch Countdown-Angebote. Gute Anbieter überzeugen dauerhaft, nicht nur mit zeitlich begrenzten Rabattbannern.",
@@ -417,7 +417,7 @@ const post = {
       level: 2,
       paragraphs: [
         "Ein durchdacht gewähltes IPTV Abo kann Ihr Fernseherlebnis in Deutschland modernisieren – flexibler, oft günstiger und mit großer Senderauswahl. Entscheidend sind nicht Schlagworte wie „22.000 Kanäle“, sondern Stabilität zur Hauptsendezeit, transparente Preise, passende Laufzeit und Support, der im Ernstfall erreichbar ist.",
-        "Testen Sie vor längerer Bindung auf Ihrem Hauptgerät und Ihrer Leitung. Vergleichen Sie [Preise](/preise), prüfen Sie die [Senderliste](/senderliste) und lesen Sie den [IPTV-Anbieter-Ratgeber](/blog/iptv-anbieter). Grundlagen liefern [German IPTV](/blog/german-iptv); Hardware-Fragen der [IPTV-Box-Leitfaden](/blog/iptv-box).",
+        "Testen Sie vor längerer Bindung auf Ihrem Hauptgerät und Ihrer Leitung. Vergleichen Sie [Preise](/preise), prüfen Sie die Senderliste und lesen Sie den [IPTV-Anbieter-Ratgeber](/blog/iptv-anbieter). Grundlagen liefern [German IPTV](/blog/german-iptv); Hardware-Fragen der [IPTV-Box-Leitfaden](/blog/iptv-box).",
         "Monatsabos bieten Einstieg mit geringem Risiko; Jahrespakete lohnen nach bestandenem Praxistest. Familien achten auf parallele Streams; Sportfans auf die richtigen Sender im Paket.",
         "Wenn Sie ein IPTV Abonnement mit schneller Aktivierung, deutschsprachigem Support und zuverlässigen Streams suchen, informieren Sie sich auf der [Startseite](/) von iptvkaufenX – und wählen Sie ein Paket, das zu Ihrem Alltag passt.",
         "Nehmen Sie sich Zeit für Recherche und Test. Ein passendes IPTV Abo zahlt sich über Monate aus – in Form von stabilem Fernsehen, weniger Frust und klaren Kosten.",

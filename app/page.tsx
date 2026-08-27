@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import PackageHashScroll from "@/components/PackageHashScroll";
-import HeroImagePreload from "@/components/preloads/HeroImagePreload";
 import CompactTrustStrip from "@/components/CompactTrustStrip";
 import HomeSeoContent, { HOME_SEO_FAQ } from "@/components/HomeSeoContent";
 import {
@@ -26,13 +25,10 @@ import {
 } from "@/lib/seo";
 import { SEO_TITLES } from "@/lib/seo-titles";
 
-const ChannelLogos = dynamic(() => import("@/components/ChannelLogos"));
 const IptvBenefits = dynamic(() => import("@/components/IptvBenefits"));
 const IptvHowItWorks = dynamic(() => import("@/components/IptvHowItWorks"));
 const IptvFaq = dynamic(() => import("@/components/IptvFaq"));
 const IptvPricing = dynamic(() => import("@/components/IptvPricing"));
-const MoviesSeriesSlider = dynamic(() => import("@/components/MoviesSeriesSlider"));
-const SportsTeamsSlider = dynamic(() => import("@/components/SportsTeamsSlider"));
 const CompatibleDevicesSlider = dynamic(() => import("@/components/CompatibleDevicesSlider"));
 const PremiumEntertainment = dynamic(() => import("@/components/PremiumEntertainment"));
 const PremiumExperience = dynamic(() => import("@/components/PremiumExperience"));
@@ -41,18 +37,20 @@ const CustomerReviews = dynamic(() => import("@/components/CustomerReviews"));
 const MobileStickyPurchaseBar = dynamic(() => import("@/components/MobileStickyPurchaseBar"));
 
 const seoDescription =
-  "IPTV kaufen in DE: 22.000+ Sender, Sport & Filme in HD/4K. Test für 3€, 30 Tage Geld-zurück – jetzt bei iptvkaufenX.";
+  "IPTV kaufen in DE: Live-TV, Sport & Filme in HD/4K. Test für 3€, 30 Tage Geld-zurück – jetzt bei iptvkaufenX.";
+
+const HOME_OG_IMAGE = "/images/iptv-kaufen-premium-streaming-deutschland.webp";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.home,
   description: seoDescription,
   path: "/",
-  image: "/images/iptv-kaufen-hero-football.webp",
+  image: HOME_OG_IMAGE,
   imageAlt: "IPTV kaufen in Deutschland – Premium Live-TV Streaming",
 });
 
 const productDescription =
-  "Premium IPTV Zugang mit Live-TV Sendern, Filmen, Serien, Sport und internationaler Senderliste in HD, Full HD und 4K.";
+  "Premium IPTV Zugang mit Live-TV, Filmen, Serien und Sport in HD, Full HD und 4K.";
 
 const PRODUCT_ID = `${SITE_URL}/#product`;
 const productAggregateRating = buildProductAggregateRating();
@@ -115,7 +113,7 @@ const structuredData = {
       },
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/iptv-kaufen-hero-football.webp`,
+        url: `${SITE_URL}${HOME_OG_IMAGE}`,
       },
     },
     {
@@ -123,7 +121,7 @@ const structuredData = {
       "@id": PRODUCT_ID,
       name: "IPTV Kaufen Deutschland",
       description: productDescription,
-      image: `${SITE_URL}/images/iptv-kaufen-hero-football.webp`,
+      image: `${SITE_URL}${HOME_OG_IMAGE}`,
       url: `${SITE_URL}/`,
       brand: {
         "@type": "Brand",
@@ -172,7 +170,6 @@ const structuredData = {
 export default function Home() {
   return (
     <main className="pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
-      <HeroImagePreload />
       <PackageHashScroll />
       <script
         type="application/ld+json"
@@ -183,9 +180,6 @@ export default function Home() {
       <IptvPricing />
       <PremiumExperience />
       <IptvBenefits />
-      <ChannelLogos />
-      <MoviesSeriesSlider />
-      <SportsTeamsSlider />
       <ServiceHighlightsBar />
       <PremiumEntertainment />
       <CompatibleDevicesSlider />

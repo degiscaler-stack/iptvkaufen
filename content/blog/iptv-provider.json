@@ -340,7 +340,7 @@
       "paragraphs": [
         "Eine Senderliste ist technisch eine gepflegte Sammlung von Stream-Referenzen plus Metadaten. Ändern sich Quellsysteme, müssen URLs aktualisiert werden. Ohne Pflege entstehen tote Kanäle – sichtbar als schwarzer Bildschirm oder Dauerladen.",
         "EPG-Daten liegen häufig in einem eigenen XML-Format wie XMLTV und werden über Kennungen den Kanälen zugeordnet. Stimmen Zuordnung, Quelle oder Zeitzone nicht, kann der Stream laufen und das Programmheft trotzdem fehlen. Das ist kein Beweis für einen totalen Dienstausfall.",
-        "Gute Pflege ist unsichtbar, wenn sie funktioniert. Sichtbar wird sie erst bei Fehlern. Prüfen Sie deshalb regelmäßig, ob Ihre Must-have-Sender und Programmdaten konsistent bleiben – ergänzend zur öffentlichen [Senderliste](/senderliste).",
+        "Gute Pflege ist unsichtbar, wenn sie funktioniert. Sichtbar wird sie erst bei Fehlern. Prüfen Sie deshalb regelmäßig, ob Ihre Must-have-Sender und Programmdaten konsistent bleiben.",
         "Wie Playlists, HLS-M3U8 und EPG-Mapping zusammenhängen, erklärt der Artikel [IPTV M3U](/blog/iptv-m3u). Welche Zugangsdaten nach der Freischaltung dokumentiert sein sollten, steht in [IPTV Line kaufen](/blog/iptv-line-kaufen)."
       ]
     },

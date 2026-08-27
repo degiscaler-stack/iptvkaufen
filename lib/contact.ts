@@ -9,13 +9,7 @@ export const WHATSAPP_MESSAGES = {
     "Hallo, ich möchte den 24-Stunden-Test für 3€ bestellen. Bitte senden Sie mir die Zahlungsinformationen.",
   packageHelp:
     "Hallo, ich interessiere mich für ein IPTV-Paket und benötige Hilfe bei der Auswahl.",
-  senderlisteInquiry:
-    "Hallo, ich möchte wissen, ob ein bestimmter Sender in Ihrem IPTV-Angebot verfügbar ist.",
 } as const;
-
-export function buildSenderlisteCountryInquiryMessage(countryName: string) {
-  return `Hallo, ich möchte wissen, ob ein bestimmter Sender aus ${countryName} verfügbar ist.`;
-}
 
 export function buildWhatsAppUrl(_message?: string): string {
   return WHATSAPP_CHAT_URL;

@@ -48,7 +48,7 @@ const sections: LegalSection[] = [
   {
     title: "Kommerzielle Absicht",
     paragraphs: [
-      "iptvkaufenX verkauft einen digitalen IPTV-Dienst. Blog-Inhalte dienen der Information und Orientierung; sie können auf Angebote wie [Preise](/preise), [Senderliste](/senderliste) oder den 24-Stunden-Test hinweisen.",
+      "iptvkaufenX verkauft einen digitalen IPTV-Dienst. Blog-Inhalte dienen der Information und Orientierung; sie können auf Angebote wie [Preise](/preise) oder den 24-Stunden-Test hinweisen.",
       "Diese kommerzielle Absicht wird hier offen benannt. Redaktionelle Ratgeber ersetzen keine individuelle Beratung; bei konkreten Bestell- oder Einrichtungsfragen hilft der Support unter [Kontakt](/kontakt).",
     ],
   },

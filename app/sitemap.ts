@@ -9,7 +9,6 @@ const SITE_URL = "https://iptvkaufenx.de";
 /** Indexable static routes intentionally included in the sitemap. */
 const STATIC_SITEMAP_URLS = [
   `${SITE_URL}/`,
-  `${SITE_URL}/senderliste`,
   `${SITE_URL}/blog`,
   `${SITE_URL}/reseller`,
   `${SITE_URL}/kontakt`,
@@ -45,7 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const isHome = url === `${SITE_URL}/`;
     const isHub =
       url === `${SITE_URL}/blog` ||
-      url === `${SITE_URL}/senderliste` ||
       url === `${SITE_URL}/ueber-uns`;
 
     return {

@@ -34,7 +34,7 @@
   "faq": [
     {
       "question": "Was bedeutet IPTV Greek?",
-      "answer": "IPTV Greek ist ein gängiger Suchbegriff für den Empfang griechischsprachiger Fernsehinhalte über einen kompatiblen IPTV-Zugang und Player. Es ist keine genormte Produktkategorie mit festem Senderumfang – entscheidend ist die aktuelle [IPTV Senderliste](/senderliste)."
+      "answer": "IPTV Greek ist ein gängiger Suchbegriff für den Empfang griechischsprachiger Fernsehinhalte über einen kompatiblen IPTV-Zugang und Player. Es ist keine genormte Produktkategorie mit festem Senderumfang – entscheidend ist die aktuelle IPTV Senderliste."
     },
     {
       "question": "Kann ich griechische Sender in Deutschland empfangen?",
@@ -42,7 +42,7 @@
     },
     {
       "question": "Wie prüfe ich die aktuelle griechische Senderliste?",
-      "answer": "Öffnen Sie die [aktuelle IPTV Senderliste](/senderliste) und suchen Sie nach griechischsprachigen Kategorien sowie Ihren Must-have-Programmen. Achten Sie zusätzlich auf EPG-Hinweise, HD-Optionen und Paketbedingungen."
+      "answer": "Öffnen Sie die aktuelle IPTV Senderliste und suchen Sie nach griechischsprachigen Kategorien sowie Ihren Must-have-Programmen. Achten Sie zusätzlich auf EPG-Hinweise, HD-Optionen und Paketbedingungen."
     },
     {
       "question": "Welche Geräte eignen sich für IPTV Greek?",
@@ -85,7 +85,7 @@
           "title": "Kurz erklärt",
           "items": [
             "„IPTV Greek“ ist ein Suchbegriff – kein festes, genormtes Senderpaket.",
-            "Die [aktuelle IPTV Senderliste](/senderliste) entscheidet über Verfügbarkeit.",
+            "Die aktuelle IPTV Senderliste entscheidet über Verfügbarkeit.",
             "Favoriten, EPG und klare Kategorien erleichtern den Alltag spürbar.",
             "Gerätewahl und Verbindungslimits vorher klären.",
             "Nur rechtmäßige Dienste nutzen; Zugangsdaten privat halten."
@@ -125,7 +125,7 @@
         "Typische Interessen liegen bei Nachrichten, Unterhaltung, Serien, Filmen und Sport. Dazu kommen je nach Haushalt Musik, Kinderprogramme, Kulturangebote oder regionale Inhalte.",
         "Welche konkreten Programme in diesen Kategorien stehen, lässt sich nur listenbasiert klären. Dieser Ratgeber nennt bewusst keine einzelnen Sender als „garantiert enthalten“, weil Verfügbarkeit sich ändern kann.",
         "Sinnvoll ist eine private Checkliste: Welche Nachrichtenformate brauchen Sie täglich? Welche Unterhaltung? Welcher Sport zu welchen Zeiten? Kinderinhalte – ja oder nein? Mit dieser Liste vergleichen Sie Angebote schneller.",
-        "Die tatsächliche Auswahl hängt von der aktuellen [Senderliste](/senderliste) und dem gebuchten Paket ab – nicht vom Suchbegriff IPTV Greek allein.",
+        "Die tatsächliche Auswahl hängt von der aktuellen Senderliste und dem gebuchten Paket ab – nicht vom Suchbegriff IPTV Greek allein.",
         "Priorisieren Sie Inhalte nach Häufigkeit: täglich genutzte Nachrichten stehen vor seltenem Nischeninteresse. So bleibt der Vergleich fair und Sie erkennen schnell, ob ein Paket zu Ihrem Alltag passt."
       ],
       "list": [
@@ -155,7 +155,7 @@
           "title": "Kurz erklärt",
           "items": [
             "Must-have-Programme und Kategorien vorab notieren",
-            "[Aktuelle IPTV Senderliste](/senderliste) nach griechischsprachigen Einträgen durchsuchen",
+            "Aktuelle IPTV Senderliste nach griechischsprachigen Einträgen durchsuchen",
             "Nachrichten, Unterhaltung, Sport und Kinderinhalte abhaken",
             "EPG, HD-/Full-HD-Hinweise und Laufzeit prüfen",
             "Gerätekompatibilität und Verbindungslimits lesen",
@@ -347,7 +347,7 @@
       "heading": "Häufige Probleme und Lösungen",
       "level": 2,
       "paragraphs": [
-        "Griechische Kategorie fehlt: Liste aktualisieren und in der [Senderliste](/senderliste) prüfen, ob sie geliefert wird. Manchmal liegt der Inhalt unter einer anderen Bezeichnung.",
+        "Griechische Kategorie fehlt: Liste aktualisieren und in der Senderliste prüfen, ob sie geliefert wird. Manchmal liegt der Inhalt unter einer anderen Bezeichnung.",
         "Playlist lädt nicht: Internet, DNS und App-Berechtigungen prüfen, App neu starten, Zugangsdaten erneut kopieren.",
         "Login abgelehnt: Anmeldemethode, Leerzeichen und Groß-/Kleinschreibung kontrollieren.",
         "EPG fehlt oder Zeiten falsch: Zeitzone prüfen, EPG neu laden.",
@@ -395,7 +395,7 @@
       "paragraphs": [
         "IPTV Greek ist für viele Haushalte in Deutschland der praktische Weg zu griechischsprachigem Fernsehen – aber nur, wenn aktuelle Senderverfügbarkeit, Kategorien, Geräte und EPG vor dem Kauf geprüft werden. Das Label allein ersetzt keine Liste.",
         "Die geeignete Lösung hängt von griechischsprachiger Verfügbarkeit, Inhaltskategorien, Gerätekompatibilität, EPG, Stabilität, Bildqualität, Support und transparenten Anbieterinformationen ab.",
-        "Prüfen Sie die [aktuelle IPTV Senderliste](/senderliste), wählen Sie passende Geräte über den [IPTV-Player-Überblick](/blog/iptv-player) und starten Sie bei Bedarf über [iptvkaufenX](/). So wird aus dem Suchbegriff IPTV Greek eine nachvollziehbare Entscheidung.",
+        "Prüfen Sie die aktuelle IPTV Senderliste, wählen Sie passende Geräte über den [IPTV-Player-Überblick](/blog/iptv-player) und starten Sie bei Bedarf über [iptvkaufenX](/). So wird aus dem Suchbegriff IPTV Greek eine nachvollziehbare Entscheidung.",
         "Wer griechischsprachige Kategorien, Favoriten und Geräte von Anfang an mitdenkt, spart Support-Schleifen und Fehlkäufe. IPTV Greek funktioniert in Deutschland am besten als strukturiertes Setup – nicht als blindes Vertrauen in einen Produktnamen."
       ]
     }

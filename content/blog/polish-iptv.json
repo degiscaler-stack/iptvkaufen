@@ -38,7 +38,7 @@
   "faq": [
     {
       "question": "Was bedeutet Polish IPTV?",
-      "answer": "Polish IPTV ist ein gängiger Suchbegriff für den Empfang polnischsprachiger Fernsehinhalte über einen kompatiblen IPTV-Zugang und Player. Es ist keine genormte Produktkategorie mit festem Senderumfang – entscheidend ist die aktuelle [IPTV Senderliste](/senderliste)."
+      "answer": "Polish IPTV ist ein gängiger Suchbegriff für den Empfang polnischsprachiger Fernsehinhalte über einen kompatiblen IPTV-Zugang und Player. Es ist keine genormte Produktkategorie mit festem Senderumfang – entscheidend ist die aktuelle IPTV Senderliste."
     },
     {
       "question": "Kann ich polnische Sender in Deutschland empfangen?",
@@ -46,7 +46,7 @@
     },
     {
       "question": "Wie prüfe ich die aktuelle polnische Senderliste?",
-      "answer": "Öffnen Sie die [aktuelle IPTV Senderliste](/senderliste) und suchen Sie nach polnischsprachigen Kategorien sowie Ihren Must-have-Programmen. Achten Sie zusätzlich auf EPG-Hinweise, HD-Optionen und Paketbedingungen."
+      "answer": "Öffnen Sie die aktuelle IPTV Senderliste und suchen Sie nach polnischsprachigen Kategorien sowie Ihren Must-have-Programmen. Achten Sie zusätzlich auf EPG-Hinweise, HD-Optionen und Paketbedingungen."
     },
     {
       "question": "Welche Geräte eignen sich für Polish IPTV?",
@@ -89,7 +89,7 @@
           "title": "Kurz erklärt",
           "items": [
             "„Polish IPTV“ ist ein Suchbegriff – kein festes, genormtes Senderpaket.",
-            "Die [aktuelle IPTV Senderliste](/senderliste) entscheidet über Verfügbarkeit.",
+            "Die aktuelle IPTV Senderliste entscheidet über Verfügbarkeit.",
             "Favoriten, EPG und korrekte Zeichendarstellung erleichtern den Alltag.",
             "Gerätewahl und Verbindungslimits vorher klären.",
             "Nur rechtmäßige Dienste nutzen; Zugangsdaten privat halten."
@@ -129,7 +129,7 @@
         "Typische Interessen liegen bei Nachrichten, Unterhaltung, Serien, Filmen und Sport. Dazu kommen je nach Haushalt Kinderprogramme, Musik, Kultur, Dokumentationen oder regionale Inhalte.",
         "Welche konkreten Programme in diesen Kategorien stehen, lässt sich nur listenbasiert klären. Dieser Ratgeber nennt bewusst keine einzelnen Sender als „garantiert enthalten“, weil Verfügbarkeit sich ändern kann.",
         "Sinnvoll ist eine private Checkliste: Welche Nachrichtenformate brauchen Sie täglich? Welche Unterhaltung? Welcher Sport zu welchen Zeiten? Kinderinhalte – ja oder nein? Mit dieser Liste vergleichen Sie Angebote schneller.",
-        "Die tatsächliche Auswahl hängt von der aktuellen [Senderliste](/senderliste) und dem gebuchten Paket ab – nicht vom Suchbegriff Polish IPTV allein."
+        "Die tatsächliche Auswahl hängt von der aktuellen Senderliste und dem gebuchten Paket ab – nicht vom Suchbegriff Polish IPTV allein."
       ],
       "list": [
         "Nachrichten und Informationsprogramme",
@@ -158,7 +158,7 @@
           "title": "Kurz erklärt",
           "items": [
             "Must-have-Programme und Kategorien vorab notieren",
-            "[Aktuelle IPTV Senderliste](/senderliste) nach polnischsprachigen Einträgen durchsuchen",
+            "Aktuelle IPTV Senderliste nach polnischsprachigen Einträgen durchsuchen",
             "Nachrichten, Unterhaltung, Sport und Kinderinhalte abhaken",
             "EPG, HD-/Full-HD-Hinweise und Laufzeit prüfen",
             "Gerätekompatibilität, Verbindungslimits und Support lesen",
@@ -349,7 +349,7 @@
       "heading": "Häufige Probleme und Lösungen",
       "level": 2,
       "paragraphs": [
-        "Polnische Kategorie fehlt: Liste aktualisieren und in der [Senderliste](/senderliste) prüfen, ob sie geliefert wird. Manchmal liegt der Inhalt unter einer anderen Bezeichnung.",
+        "Polnische Kategorie fehlt: Liste aktualisieren und in der Senderliste prüfen, ob sie geliefert wird. Manchmal liegt der Inhalt unter einer anderen Bezeichnung.",
         "Playlist lädt nicht: Internet, DNS und App-Berechtigungen prüfen, App neu starten, Zugangsdaten erneut kopieren.",
         "Login abgelehnt: Anmeldemethode, Leerzeichen und Groß-/Kleinschreibung kontrollieren.",
         "Polnische Zeichen falsch: App- und Systemsprache prüfen, Liste neu laden, Player aktualisieren.",
@@ -398,7 +398,7 @@
       "paragraphs": [
         "Polish IPTV ist für viele Haushalte in Deutschland der praktische Weg zu polnischsprachigem Fernsehen – aber nur, wenn aktuelle Senderverfügbarkeit, Kategorien, Geräte, EPG und korrekte Zeichendarstellung vor dem Kauf geprüft werden. Das Label allein ersetzt keine Liste.",
         "Die geeignete Lösung hängt von polnischsprachiger Verfügbarkeit, Inhaltskategorien, Gerätekompatibilität, EPG, Stabilität, Bildqualität, Support und transparenten Anbieterinformationen ab.",
-        "Prüfen Sie die [aktuelle IPTV Senderliste](/senderliste), wählen Sie passende Geräte über den [IPTV-Player-Überblick](/blog/iptv-player) und starten Sie bei Bedarf über [iptvkaufenX](/). So wird aus dem Suchbegriff Polish IPTV eine nachvollziehbare Entscheidung.",
+        "Prüfen Sie die aktuelle IPTV Senderliste, wählen Sie passende Geräte über den [IPTV-Player-Überblick](/blog/iptv-player) und starten Sie bei Bedarf über [iptvkaufenX](/). So wird aus dem Suchbegriff Polish IPTV eine nachvollziehbare Entscheidung.",
         "Wer polnischsprachige Kategorien, Favoriten, Zeichendarstellung und Geräte von Anfang an mitdenkt, spart Support-Schleifen und Fehlkäufe. Polish IPTV funktioniert in Deutschland am besten als strukturiertes Setup – nicht als blindes Vertrauen in einen Produktnamen."
       ]
     }

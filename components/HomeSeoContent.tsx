@@ -44,11 +44,7 @@ const cards = [
         EPG und Bildqualität.
       </>,
       <>
-        Vor dem Kauf prüfen Sie Kanäle in der{" "}
-        <Link href="/senderliste" className={CONTEXTUAL_LINK_CLASS}>
-          IPTV Senderliste
-        </Link>{" "}
-        und lesen Auswahlkriterien im{" "}
+        Vor dem Kauf lesen Sie Auswahlkriterien im{" "}
         <Link href="/blog/iptv-provider" className={CONTEXTUAL_LINK_CLASS}>
           IPTV-Provider-Ratgeber
         </Link>
@@ -80,12 +76,8 @@ const cards = [
         erwartet, sollte Internetgeschwindigkeit und Gerät mitdenken.
       </>,
       <>
-        Wer{" "}
-        <Link href="/senderliste" className={CONTEXTUAL_LINK_CLASS}>
-          Sender gezielt suchen
-        </Link>{" "}
-        möchte, spart Zeit und enttäuscht sich nicht an unrealistischen „alle Sender“-Versprechen.
-        Weitere Tipps bietet der{" "}
+        Wer Sender gezielt prüft, spart Zeit und enttäuscht sich nicht an unrealistischen „alle
+        Sender“-Versprechen. Weitere Tipps bietet der{" "}
         <Link href="/blog" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Blog
         </Link>

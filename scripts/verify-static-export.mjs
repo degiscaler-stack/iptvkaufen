@@ -19,7 +19,7 @@ const requiredManifestRoutes = [
   "/blog/page",
   "/blog/[slug]/page",
   "/preise/page",
-  "/senderliste/page",
+  "/senderliste/route",
   "/faq/page",
   "/kontakt/page",
   "/sitemap.xml/route",

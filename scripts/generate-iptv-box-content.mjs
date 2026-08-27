@@ -51,7 +51,7 @@ const post = {
     {
       question: "Kann ich mit einer IPTV Box deutsche Sender sehen?",
       answer:
-        "Ja, sofern Ihr IPTV-Anbieter deutsche Live-Sender bereitstellt. Die Box ist nur das Wiedergabegerät – der Senderumfang hängt vom gebuchten Paket ab. Prüfen Sie vor dem Kauf die [Senderliste](/senderliste) Ihres Anbieters.",
+        "Ja, sofern Ihr IPTV-Anbieter deutsche Live-Sender bereitstellt. Die Box ist nur das Wiedergabegerät – der Senderumfang hängt vom gebuchten Paket ab. Prüfen Sie vor dem Kauf die Senderliste Ihres Anbieters.",
     },
     {
       question: "Was tun, wenn die IPTV Box ruckelt oder einfriert?",
@@ -97,7 +97,7 @@ const post = {
         "Eine IPTV Box ist ein dediziertes Endgerät, das Internet-TV auf Ihren Bildschirm bringt. Statt Signale über Antenne oder Kabel zu empfangen, lädt die Box Live-Streams von einem IPTV-Anbieter und gibt sie per HDMI aus. Sie denken in Apps, Netzwerk und Medienwiedergabe – nicht in Tunern und Koaxialkabeln.",
         "Der Begriff ist nicht streng geschützt. Umgangssprachlich meinen viele Nutzer jede Hardware, mit der IPTV läuft: klassische Android-TV-Boxen, Fire-TV-Geräte oder kleine Player mit vorinstallierter Software. Entscheidend ist die Funktion: IPTV-Zugangsdaten eingeben, Senderliste laden, fernsehen.",
         "Für deutsche Haushalte ist die IPTV Box besonders interessant, wenn der vorhandene TV kein brauchbares Smart-Interface bietet. Ein schlichter 4K-Fernseher plus gute Box kostet oft weniger als ein Premium-Smart-TV – bei vergleichbarem Streaming-Komfort.",
-        "Die Box ersetzt nicht Ihren IPTV-Anbieter. Sie ist die Bühne; Inhalte und Sender liefert Ihr Abo. Deshalb lohnt vor dem Hardware-Kauf ein Blick auf [Preise](/preise), [Senderliste](/senderliste) und [FAQ](/faq) des Dienstes, den Sie nutzen möchten.",
+        "Die Box ersetzt nicht Ihren IPTV-Anbieter. Sie ist die Bühne; Inhalte und Sender liefert Ihr Abo. Deshalb lohnt vor dem Hardware-Kauf ein Blick auf [Preise](/preise), Senderliste und [FAQ](/faq) des Dienstes, den Sie nutzen möchten.",
         "Im Alltag unterscheidet sich die Nutzung kaum vom gewohnten TV: Sender wählen, Lautstärke regeln, Programmzeiten im EPG nachschlagen. Der Unterschied liegt in der Vielfalt – internationale Kanäle, Sportpakete und Mediatheken-Inhalte lassen sich oft in einer Oberfläche bündeln, wenn Ihr Anbieter das unterstützt.",
       ],
       image: {
@@ -300,7 +300,7 @@ const post = {
         "Bevor Sie eine IPTV Box kaufen, klären Sie drei Fragen: Welchen Fernseher nutze ich? Wie schnell ist mein Internet? Welche IPTV-Apps muss das Gerät sicher unterstützen?",
         "Notieren Sie sich die Antworten schriftlich. Beim Händler oder in Online-Shops verlieren sich viele in technischen Details – Ihre drei Kernfragen halten den Fokus.",
         "Setzen Sie auf Plattformen mit Update-Versprechen und offiziellen App-Quellen. Ein günstiger Stick kann reichen, wenn Sie gelegentlich schauen. Für tägliches Hauptfernsehen lohnt Mittelklasse mit LAN und 4K.",
-        "Vergessen Sie nicht den Dienst hinter der Hardware. Eine perfekte Box hilft wenig, wenn der IPTV-Anbieter instabile Streams liefert. Vergleichen Sie Pakete, Sender und Support auf der [Preise](/preise)-Seite und prüfen Sie die vollständige [Senderliste](/senderliste).",
+        "Vergessen Sie nicht den Dienst hinter der Hardware. Eine perfekte Box hilft wenig, wenn der IPTV-Anbieter instabile Streams liefert. Vergleichen Sie Pakete, Sender und Support auf der [Preise](/preise)-Seite und prüfen Sie die vollständige Senderliste.",
         "Wer unsicher ist, startet mit einem erprobten Setup aus Anbieter-Empfehlung und begleiteter Einrichtung – etwa über [iptvkaufenX](https://iptvkaufenx.de/), wo Aktivierung und Gerätefragen aus einer Hand kommen können.",
         "Vergleichen Sie nicht nur Anschaffungskosten, sondern Gesamtkosten über zwei Jahre inklusive IPTV-Abo. Eine günstige Box mit schwachem Dienst ist teurer als solide Hardware mit stabilem Streaming und erreichbarem Support.",
       ],

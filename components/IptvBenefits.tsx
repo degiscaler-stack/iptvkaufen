@@ -1,7 +1,7 @@
 const benefits = [
   {
     icon: "channels",
-    title: "22.000+ Sender",
+    title: "Live-TV",
     text: "Live-TV aus Deutschland und weltweit.",
   },
   {

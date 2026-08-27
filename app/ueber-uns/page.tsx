@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.ueberUns,
   description:
-    "Über iptvkaufenX: digitaler IPTV-Service mit 22.000+ Sendern, Support und transparenten Informationen.",
+    "Über iptvkaufenX: digitaler IPTV-Service mit Live-TV, Support und transparenten Informationen.",
   path: "/ueber-uns",
 });
 
@@ -21,8 +21,8 @@ const sections: LegalSection[] = [
   {
     title: "Was wir anbieten",
     paragraphs: [
-      "iptvkaufenX bietet einen digitalen IPTV-Dienst mit über 22.000 Sendern, Inhalten in HD und 4K sowie Filmen, Serien und Sport. Die Nutzung ist auf bis zu zwei Geräten gleichzeitig vorgesehen.",
-      "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine 30-Tage-Geld-zurück-Garantie gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung). Aktuelle Pakete und Preise finden Sie unter [Preise](/preise); eine Übersicht der Kanäle unter [Senderliste](/senderliste).",
+      "iptvkaufenX bietet einen digitalen IPTV-Dienst mit Live-TV, Inhalten in HD und 4K sowie Filmen, Serien und Sport. Die Nutzung ist auf bis zu zwei Geräten gleichzeitig vorgesehen.",
+      "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine 30-Tage-Geld-zurück-Garantie gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung). Aktuelle Pakete und Preise finden Sie unter [Preise](/preise).",
     ],
   },
   {
@@ -43,7 +43,6 @@ const sections: LegalSection[] = [
   {
     title: "Weiterführende Seiten",
     items: [
-      "[Senderliste](/senderliste) – Kanalübersicht und Verfügbarkeit",
       "[Blog](/blog) – Ratgeber und Guides zu IPTV",
       "[Preise](/preise) – Pakete, Test und Konditionen",
       "[Kontakt](/kontakt) – E-Mail, WhatsApp und Formular",

@@ -123,7 +123,7 @@ const post = {
         "Seriosität lässt sich prüfen – ohne blind einem Werbeversprechen zu vertrauen. Zuerst sollte ein vollständiges Impressum und erreichbarer Kontakt vorhanden sein. Fehlen beides, ist Vorsicht geboten, egal wie attraktiv die Senderliste wirkt.",
         "Transparente IPTV Anbieter listen ihre Pakete klar auf: Welche Sender, wie viele parallele Streams, welche Laufzeit, welcher Preis. Nach der Buchung erhalten Sie Zugangsdaten zeitnah – oft innerhalb weniger Minuten – und eine verständliche Anleitung zur Einrichtung.",
         "Achten Sie auf Support-Kanäle, die im Alltag funktionieren: E-Mail, Chat oder Ticket-System mit realistischen Antwortzeiten. Wer vor dem Kauf Fragen stellt und schnelle, kompetente Antworten erhält, hat einen Hinweis auf spätere Servicequalität.",
-        "Seriöse Anbieter warnen nicht vor dem Wort „Support“ und verstecken keine Kosten in Kleingedrucktem. Sie bieten klare [FAQ](/faq)-Bereiche, nachvollziehbare [Preise](/preise) und eine einsehbare [Senderliste](/senderliste).",
+        "Seriöse Anbieter warnen nicht vor dem Wort „Support“ und verstecken keine Kosten in Kleingedrucktem. Sie bieten klare [FAQ](/faq)-Bereiche, nachvollziehbare [Preise](/preise) und eine einsehbare Senderliste.",
         "Prüfen Sie auch Bewertungen und Erfahrungsberichte – mit gesundem Skeptizismus. Extrem positive oder ausschließlich negative Rezensionen ohne Details sind wenig aussagekräftig. Konkrete Schilderungen zu Stabilität und Support helfen mehr.",
         "Ein seriöser IPTV Anbieter hat nichts dagegen, wenn Sie vor dem Kauf Fragen stellen. Zögern Sie nicht, Einrichtung, Sender und Testoptionen anzufragen – die Antwortqualität ist oft der beste Indikator.",
         "Rechtliche Transparenz bedeutet auch klare AGB und Datenschutzhinweise. Fehlen diese Elemente auf der Website, sollten Sie unabhängig vom Preis skeptisch werden.",
@@ -312,7 +312,7 @@ const post = {
           type: "info",
           title: "Hinweis",
           paragraphs: [
-            "Lassen Sie sich nicht unter Druck setzen. Seriöse IPTV Anbieter drängen nicht zu sofortiger Zahlung ohne Test oder klare Leistungsbeschreibung. Nehmen Sie sich Zeit für Vergleich, [Senderliste](/senderliste) und gegebenenfalls einen [IPTV Free Trial](/blog/iptv-free-trial).",
+            "Lassen Sie sich nicht unter Druck setzen. Seriöse IPTV Anbieter drängen nicht zu sofortiger Zahlung ohne Test oder klare Leistungsbeschreibung. Nehmen Sie sich Zeit für Vergleich, Senderliste und gegebenenfalls einen [IPTV Free Trial](/blog/iptv-free-trial).",
           ],
         },
       ],
@@ -323,7 +323,7 @@ const post = {
       level: 2,
       paragraphs: [
         "Die Wahl des richtigen IPTV Anbieters entscheidet über Ihr Fernseherlebnis in Deutschland – unabhängig davon, welche Hardware Sie nutzen. Wer Seriosität, Bildqualität, Senderangebot, Stabilität, Gerätekompatibilität und Support gemeinsam bewertet, trifft fundierte Entscheidungen statt impulsiver Schnäppchenkäufe.",
-        "Nutzen Sie Testphasen, vergleichen Sie transparente [Preise](/preise) und prüfen Sie die [Senderliste](/senderliste). Grundlagen zu Internet-TV finden Sie im [German-IPTV-Artikel](/blog/german-iptv); Hardware-Fragen klärt der [IPTV-Box-Leitfaden](/blog/iptv-box).",
+        "Nutzen Sie Testphasen, vergleichen Sie transparente [Preise](/preise) und prüfen Sie die Senderliste. Grundlagen zu Internet-TV finden Sie im [German-IPTV-Artikel](/blog/german-iptv); Hardware-Fragen klärt der [IPTV-Box-Leitfaden](/blog/iptv-box).",
         "Wenn Sie einen IPTV Anbieter mit schneller Aktivierung, deutschsprachigem Support und zuverlässigen Streams suchen, informieren Sie sich auf [iptvkaufenX](https://iptvkaufenx.de/) – und starten Sie mit einem Angebot, das zu Ihrem Alltag passt.",
         "Nehmen Sie sich die Zeit für Recherche und Test. Ein durchdachter Wechsel zu einem passenden IPTV Anbieter zahlt sich über Monate aus – in Form von stabilem Fernsehen, weniger Frust und einem Support, der im Ernstfall erreichbar ist.",
         "Ob Sie morgen oder in ein paar Wochen entscheiden: Mit dem Raster aus diesem Artikel treffen Sie eine informierte Wahl – unabhängig davon, welcher IPTV Anbieter am Ende zu Ihnen passt.",
