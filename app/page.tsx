@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
+import HeroImagePreload from "@/components/preloads/HeroImagePreload";
 import PackageHashScroll from "@/components/PackageHashScroll";
 import CompactTrustStrip from "@/components/CompactTrustStrip";
 import HomeSeoContent, { HOME_SEO_FAQ } from "@/components/HomeSeoContent";
@@ -170,6 +171,7 @@ const structuredData = {
 export default function Home() {
   return (
     <main className="pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
+      <HeroImagePreload />
       <PackageHashScroll />
       <script
         type="application/ld+json"
