@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.datenschutz,
   description:
-    "Datenschutzrichtlinie von iptvkaufenX: Informationen zur Verarbeitung von Kontakt-, Bestell-, Zahlungs- und Zugriffsdaten.",
+    "Datenschutzrichtlinie von iptvkaufenX: Informationen zur Verarbeitung von Kontakt- und Zugriffsdaten.",
   path: "/datenschutz",
   noIndex: true,
 });
@@ -15,34 +15,33 @@ const sections: LegalSection[] = [
   {
     title: "Verantwortlicher",
     paragraphs: [
-      "Verantwortlich für die Verarbeitung personenbezogener Daten im Zusammenhang mit dieser Website und dem digitalen IPTV-Service ist der Betreiber von iptvkaufenX.",
+      "Verantwortlich für die Verarbeitung personenbezogener Daten im Zusammenhang mit dieser Website ist der Betreiber von iptvkaufenX.",
       "Angaben gemäß § 5 TMG und weitere Betreiberinformationen werden vom Betreiber bereitgestellt. Für Datenschutzanfragen erreichen Sie uns über die unten genannten Kontaktmöglichkeiten.",
     ],
   },
   {
     title: "Welche Daten verarbeitet werden",
     paragraphs: [
-      "Wir verarbeiten nur Daten, die für die Bereitstellung, Nutzung, Abwicklung und Verbesserung unseres digitalen Dienstes erforderlich sind.",
+      "Wir verarbeiten nur Daten, die für den Betrieb der Website, Kontaktanfragen und gesetzliche Pflichten erforderlich sind.",
     ],
     items: [
-      "Kontaktangaben, wenn Sie uns per WhatsApp oder E-Mail kontaktieren.",
-      "Bestell- und Zugangsdaten, die für die Aktivierung des digitalen IPTV-Dienstes benötigt werden.",
+      "Kontaktangaben, wenn Sie uns per Formular, WhatsApp oder E-Mail kontaktieren.",
       "Technische Zugriffsdaten, die beim Besuch der Website automatisch entstehen.",
-      "Kommunikationsinhalte, wenn Sie Support oder Hilfe zur Einrichtung anfragen.",
+      "Kommunikationsinhalte, wenn Sie redaktionelle oder technische Fragen stellen.",
     ],
   },
   {
-    title: "Kontaktaufnahme per WhatsApp/E-Mail",
+    title: "Kontaktaufnahme per Formular, WhatsApp oder E-Mail",
     paragraphs: [
-      "Wenn Sie uns über WhatsApp oder E-Mail kontaktieren, verarbeiten wir Ihre Nachricht, die verwendete Kontaktadresse sowie alle Informationen, die Sie freiwillig übermitteln.",
-      "Diese Daten nutzen wir, um Ihre Anfrage zu beantworten, Support zu leisten, Bestellungen zuzuordnen oder technische Hinweise zur Nutzung des digitalen Dienstes zu geben.",
+      "Wenn Sie uns kontaktieren, verarbeiten wir Ihre Nachricht, die verwendete Kontaktadresse sowie alle Informationen, die Sie freiwillig übermitteln.",
+      "Diese Daten nutzen wir, um Ihre Anfrage zu beantworten.",
     ],
   },
   {
-    title: "Zahlungs- und Bestelldaten",
+    title: "Keine Bestell- oder Zahlungsabwicklung auf der Website",
     paragraphs: [
-      "Bei einer Bestellung können Daten zur gewählten Laufzeit, zum Status der Zahlung, zur Aktivierung und zur Bereitstellung des Zugangs verarbeitet werden.",
-      "Zahlungsinformationen werden, soweit externe Zahlungsdienste eingesetzt werden, durch den jeweiligen Zahlungsanbieter nach dessen Datenschutzregeln verarbeitet. iptvkaufenX speichert keine vollständigen Zahlungsdaten wie vollständige Kartennummern.",
+      "Über diese Website werden derzeit keine IPTV-Abonnements verkauft. Es findet keine Zahlungsabwicklung für Programmpakete statt.",
+      "iptvkaufenX speichert keine vollständigen Zahlungsdaten wie vollständige Kartennummern.",
     ],
   },
   {
@@ -62,9 +61,8 @@ const sections: LegalSection[] = [
   {
     title: "Zweck der Verarbeitung",
     items: [
-      "Bereitstellung und Aktivierung des digitalen IPTV-Dienstes.",
-      "Bearbeitung von Bestellungen, Supportanfragen und technischen Problemen.",
-      "Verbesserung der Website, Sicherheit und Missbrauchsvermeidung.",
+      "Bereitstellung und Sicherheit der Website.",
+      "Bearbeitung von Kontakt- und Korrekturanfragen.",
       "Erfüllung gesetzlicher Aufbewahrungs- und Nachweispflichten.",
     ],
   },
@@ -82,12 +80,6 @@ const sections: LegalSection[] = [
       "Wenn eine Verarbeitung auf Einwilligung beruht, können Sie diese Einwilligung mit Wirkung für die Zukunft widerrufen.",
     ],
   },
-  {
-    title: "Hinweis zum digitalen Dienst",
-    paragraphs: [
-      "iptvkaufenX bietet einen digitalen Dienst an. Für Aktivierung, technische Bereitstellung, Support und Verwaltung des Zugangs können die dafür erforderlichen Daten verarbeitet werden.",
-    ],
-  },
 ];
 
 export default function DatenschutzPage() {
@@ -95,8 +87,8 @@ export default function DatenschutzPage() {
     <LegalPage
       eyebrow="Datenschutz"
       title="Datenschutzrichtlinie"
-      updatedAt="13. Juni 2026"
-      intro="Diese Datenschutzrichtlinie erklärt, welche Daten bei der Nutzung von iptvkaufenX verarbeitet werden und zu welchen Zwecken dies geschieht."
+      updatedAt="28. August 2026"
+      intro="Diese Datenschutzrichtlinie erklärt, welche Daten bei der Nutzung der Website iptvkaufenx.de verarbeitet werden."
       sections={sections}
     />
   );

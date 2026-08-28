@@ -14,11 +14,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/preise",
-        destination: "/#pakete-start",
-        permanent: true,
-      },
-      {
         source: "/faq",
         destination: "/#faq",
         permanent: true,

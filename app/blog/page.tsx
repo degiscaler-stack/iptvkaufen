@@ -10,7 +10,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.blog,
   description:
-    "IPTV-Ratgeber für Deutschland: Geräte, Apps, Anbieter, Abo und Einrichtung – praxisnah von der iptvkaufenX Redaktion.",
+    "IPTV-Ratgeber für Deutschland: Geräte, Apps, M3U, Einrichtung und Fehlerbehebung – von der iptvkaufenX Redaktion.",
   path: "/blog",
 });
 

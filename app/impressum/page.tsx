@@ -36,10 +36,10 @@ const sections: LegalSection[] = [
     ],
   },
   {
-    title: "Digitaler Service",
+    title: "Redaktioneller Zweck",
     paragraphs: [
-      "iptvkaufenX bietet einen digitalen Dienst an. Die Bereitstellung, Aktivierung und Unterstützung erfolgen digital über die angegebenen Kontaktwege.",
-      "Bei Fragen zur Bestellung, Aktivierung, Einrichtung oder Nutzung wenden Sie sich bitte an den Support.",
+      "iptvkaufenX veröffentlicht technische Informationen zu IPTV. Die Website verkauft keine IPTV-Abonnements und stellt keine Senderkataloge bereit.",
+      "Bei Fragen zu Inhalten, Korrekturen oder zur Website wenden Sie sich bitte an die angegebenen Kontaktwege.",
     ],
   },
   {
@@ -67,7 +67,7 @@ export default function ImpressumPage() {
     <LegalPage
       eyebrow="Impressum"
       title="Impressum"
-      updatedAt="13. Juni 2026"
+      updatedAt="28. August 2026"
       intro="Hier finden Sie die Anbieter- und Kontaktinformationen zur Website iptvkaufenx.de."
       sections={sections}
     />

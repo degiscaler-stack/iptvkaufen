@@ -14,9 +14,9 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-13T10:00:00.000Z",
-  "updatedAt": "2026-07-13T20:00:00.000Z",
+  "updatedAt": "2026-08-28T12:00:00.000Z",
   "readingTimeMinutes": 18,
-  "image": "/images/post 19/beste-iptv-app-fur-fire-stick-1.webp",
+  "image": null,
   "imageAlt": "Beste IPTV App für Fire Stick – Startbildschirm mit App-Auswahl auf Amazon Fire TV",
   "featured": false,
   "popular": true,
@@ -125,15 +125,7 @@
         "Nach der Installation öffnen Sie die App direkt aus dem Startbildschirm und richten zunächst Ihre Playlist oder Ihren Xtream-Zugang ein, bevor Sie sich mit EPG, Favoriten oder erweiterten Einstellungen beschäftigen.",
         "Ein sauberer erster Eindruck hilft bei der Fehlersuche: Testen Sie direkt nach der Installation einen bekannten Sender. Läuft dieser stabil, war die Installation erfolgreich, und weitere Anpassungen betreffen nur Komfortfunktionen.",
         "Halten Sie beim ersten Einrichten Zugangsdaten, Playlist-URL oder Xtream-Login griffbereit, idealerweise aus der Anbieter-Mail kopiert. Wer Zeichenketten mühsam mit der Richtungstasten-Fernbedienung eintippt, produziert unnötig oft Tippfehler, die sich als „Playlist lädt nicht“ zeigen, obwohl der Zugang eigentlich funktioniert."
-      ],
-      "image": {
-        "src": "/images/post 19/beste-iptv-app-fur-fire-stick-2.webp",
-        "alt": "Beste IPTV App für Fire Stick – Installation über die Fire-TV-Fernbedienung",
-        "title": "IPTV App auf dem Fire TV Stick installieren",
-        "width": 1536,
-        "height": 1024,
-        "caption": "Installation einer IPTV App auf dem Fire TV Stick (16:10)"
-      }
+      ]
     },
     {
       "id": "app-verfuegbarkeit",
@@ -324,14 +316,6 @@
         "Wer mehrere Geräte gleichzeitig nutzt – etwa Fire Stick im Wohnzimmer und Smartphone unterwegs – profitiert von Apps mit breiter Plattformabdeckung, damit dieselbe Playlist überall funktioniert.",
         "Unabhängig vom Nutzertyp gilt: Testen Sie mit Ihrer eigenen Playlist über einige Tage, bevor Sie sich endgültig festlegen. Persönliche Vorlieben bei Bedienung und Optik wiegen im Alltag oft schwerer als jede allgemeine Empfehlung."
       ],
-      "image": {
-        "src": "/images/post 19/beste-iptv-app-fur-fire-stick-3.webp",
-        "alt": "Beste IPTV App für Fire Stick – Empfehlung je nach Nutzertyp und Gerät",
-        "title": "Die passende IPTV App für Ihren Fire Stick finden",
-        "width": 1536,
-        "height": 1024,
-        "caption": "Empfehlungen für die passende IPTV App auf dem Fire TV Stick (16:10)"
-      },
       "blocks": [
         {
           "type": "comparison-table",

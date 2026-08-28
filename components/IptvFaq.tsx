@@ -44,12 +44,12 @@ export default function IptvFaq() {
           >
             Häufige Fragen zu{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              IPTV Kaufen
+              IPTV-Technik
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:mt-4 sm:text-[15px] sm:leading-7">
-            Hier finden Sie Antworten auf die wichtigsten Fragen zu Nutzung, Geräten, Qualität und
-            Aktivierung.
+            Antworten zu Technik, Playern, Geräten, Playlisten und typischen Einrichtungsfehlern –
+            ohne Kauf- oder Abonnementangebote.
           </p>
         </div>
 

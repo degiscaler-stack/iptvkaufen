@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.kontakt,
   description:
-    "Kontaktieren Sie iptvkaufenX für Fragen zu IPTV Paketen, Einrichtung, Support und Aktivierung.",
+    "Kontaktieren Sie die iptvkaufenX Redaktion bei Fragen zu Artikeln, Technikhinweisen oder Korrekturen.",
   path: "/kontakt",
 });
 
@@ -41,11 +41,10 @@ const contactItems = [
     external: true,
   },
   {
-    label: "Support",
-    value: "24/7 verfügbar",
-    href: WHATSAPP_CHAT_URL,
+    label: "Redaktion",
+    value: "Allgemeine Anfragen",
+    href: "mailto:support@iptvkaufenx.de",
     Icon: FaHeadset,
-    external: true,
   },
 ] as const;
 
@@ -80,11 +79,6 @@ const socialLinks = [
     href: "https://www.youtube.com/@iptvkaufenx",
     Icon: FaYoutube,
   },
-  {
-    label: "WhatsApp-Support von iptvkaufenX öffnen",
-    href: WHATSAPP_CHAT_URL,
-    Icon: FaWhatsapp,
-  },
 ] as const;
 
 export default function KontaktPage() {
@@ -99,8 +93,9 @@ export default function KontaktPage() {
             Kontaktieren Sie uns
           </h1>
           <p className="mx-auto mt-4 max-w-[760px] text-[15px] leading-7 text-[#E6E6E6]/86 sm:text-[16px] sm:leading-8">
-            Haben Sie eine Frage, benötigen Sie Hilfe bei der Einrichtung oder möchten Sie mehr über
-            unsere IPTV Pakete erfahren? Unser Support-Team hilft Ihnen schnell und zuverlässig weiter.
+            Haben Sie eine Frage zu einem Artikel, einen Korrekturhinweis oder ein technisches
+            Thema zu IPTV-Apps, Geräten oder Playlisten? Die Redaktion antwortet auf allgemeine
+            Anfragen – nicht auf Bestellungen oder Senderwünsche.
           </p>
         </div>
 
@@ -112,8 +107,9 @@ export default function KontaktPage() {
               Direkter Kontakt
             </h2>
             <p className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/78">
-              Nutzen Sie den schnellen Kontakt per WhatsApp oder E-Mail. Unser Support ist täglich
-              erreichbar und hilft bei Fragen zu Paketen, Aktivierung und Einrichtung.
+              Nutzen Sie E-Mail oder WhatsApp für redaktionelle und technische Fragen. Wir helfen
+              bei Hinweisen zu Artikeln und allgemeinen Einrichtungsfragen – nicht bei der
+              Bestellung von IPTV-Zugängen.
             </p>
 
             <div className="mt-6 grid gap-4">
@@ -180,16 +176,6 @@ export default function KontaktPage() {
                 ))}
               </div>
             </div>
-
-            <a
-              href={WHATSAPP_CHAT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#A6FF00]/45 bg-[#A6FF00]/10 px-5 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-[#A6FF00] transition duration-300 hover:border-[#A6FF00]/70 hover:bg-[#A6FF00]/15"
-            >
-              <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
-              Schnell per WhatsApp
-            </a>
           </aside>
         </div>
       </section>

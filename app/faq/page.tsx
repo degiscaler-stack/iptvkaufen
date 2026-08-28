@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.faq,
   description:
-    "Antworten auf häufige Fragen zu IPTV Kaufen: Geräte, Aktivierung, Zahlung und Support.",
+    "Antworten auf häufige Fragen zu IPTV-Technik, Apps, Geräten und Einrichtung.",
   path: "/faq",
   noIndex: true,
 });

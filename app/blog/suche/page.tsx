@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import BlogBreadcrumb from "@/components/blog/BlogBreadcrumb";
 import BlogCategories from "@/components/blog/BlogCategories";
-import BlogCTA from "@/components/blog/BlogCTA";
 import BlogFooter from "@/components/blog/BlogFooter";
 import BlogNewsletter from "@/components/blog/BlogNewsletter";
 import BlogPopularArticles from "@/components/blog/BlogPopularArticles";
@@ -54,9 +53,6 @@ export default function BlogSearchPage() {
             >
               <BlogSearchResults posts={allPosts} />
             </Suspense>
-            <div className="mt-14">
-              <BlogCTA />
-            </div>
             <BlogFooter />
           </div>
 

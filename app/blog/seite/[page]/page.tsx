@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogCategories from "@/components/blog/BlogCategories";
-import BlogCTA from "@/components/blog/BlogCTA";
 import BlogFooter from "@/components/blog/BlogFooter";
 import BlogNewsletter from "@/components/blog/BlogNewsletter";
 import BlogPagination from "@/components/blog/BlogPagination";
@@ -63,9 +62,6 @@ export default async function BlogPaginatedPage({ params }: PageProps) {
               ))}
             </div>
             <BlogPagination currentPage={currentPage} totalPages={totalPages} />
-            <div className="mt-14">
-              <BlogCTA />
-            </div>
             <BlogFooter />
           </div>
 

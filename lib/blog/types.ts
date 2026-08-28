@@ -63,14 +63,6 @@ export type BlogFaqItem = {
   answer: string;
 };
 
-export type BlogCtaConfig = {
-  heading?: string;
-  description?: string;
-  primaryLabel?: string;
-  secondaryLabel?: string;
-  secondaryAction?: "pricing" | "whatsapp";
-};
-
 export type BlogPost = {
   slug: string;
   title: string;
@@ -92,8 +84,6 @@ export type BlogPost = {
   sections: BlogSection[];
   faq: BlogFaqItem[];
   relatedSlugs: string[];
-  /** Optional per-article CTA copy; BlogCTA keeps global defaults when omitted. */
-  cta?: BlogCtaConfig;
 };
 
 export type BlogPostSummary = Pick<
@@ -121,15 +111,15 @@ export const BLOG_CATEGORIES: Record<
 > = {
   "iptv-deutschland": {
     label: "IPTV Deutschland",
-    description: "German IPTV, Germany IPTV und Deutschland IPTV im Überblick",
+    description: "IPTV als Technik in Deutschland: Grundlagen, Geräte und Einrichtung",
   },
   "iptv-anbieter": {
     label: "IPTV Anbieter",
-    description: "Seriöse IPTV Anbieter und Auswahlkriterien für Deutschland",
+    description: "Wie IPTV-Anbieter technisch arbeiten und woran sich Angebote unterscheiden",
   },
   "iptv-abonnement": {
     label: "IPTV Abonnement",
-    description: "IPTV Abo und Abonnements für Deutschland im Vergleich",
+    description: "Technische Hintergründe zu Zugangsdaten, Playlisten und Laufzeiten",
   },
   "iptv-geraete": {
     label: "IPTV Geräte",
@@ -137,31 +127,31 @@ export const BLOG_CATEGORIES: Record<
   },
   "iptv-apps": {
     label: "IPTV Apps",
-    description: "IPTV Player und IPTV Smart Player für alle Geräte",
+    description: "IPTV Player und IPTV Smart Player für typische Geräte",
   },
   "iptv-vergleich": {
     label: "IPTV Vergleich",
-    description: "Best IPTV und IPTV Anbieter Vergleich für Deutschland",
+    description: "Technische Vergleiche von Playern, Geräten und Setups",
   },
   "iptv-test": {
     label: "IPTV Test",
-    description: "IPTV Free Trial und risikofreies Testen",
+    description: "Wie sich Player, Leitung und Einrichtung praktisch prüfen lassen",
   },
   "iptv-premium": {
     label: "IPTV Premium",
-    description: "Premium IPTV mit HD- und 4K-Qualität für Deutschland",
+    description: "HD- und 4K-Streaming technisch erklärt",
   },
   "iptv-senderliste": {
-    label: "Senderliste",
-    description: "IPTV Senderlisten, Kanalübersicht und Programmauswahl",
+    label: "Playlisten",
+    description: "M3U-Playlisten, EPG und technische Kanallisten",
   },
   "iptv-einrichtung": {
     label: "IPTV Einrichtung",
     description: "IPTV einrichten mit M3U, Apps und Zugangsdaten",
   },
   "iptv-sport": {
-    label: "IPTV Sport",
-    description: "Live-Sport über IPTV stabil streamen",
+    label: "Live-Streaming",
+    description: "Technische Hinweise zu Live-Streams und Bandbreite",
   },
 };
 

@@ -1,17 +1,18 @@
 import Link from "next/link";
-import { ctaSolidGreenClass } from "@/lib/cta-motion";
-import { BLOG_CLUSTER_ORDER, BLOG_CATEGORIES } from "@/lib/blog/types";
-
-const blogFooterLinks = [
-  { label: "Alle Artikel", href: "/blog" },
-  ...BLOG_CLUSTER_ORDER.map((slug) => ({
-    label: BLOG_CATEGORIES[slug].label,
-    href: `/blog/kategorie/${slug}`,
-  })),
-  { label: "RSS Feed", href: "/feed.xml" },
-] as const;
+import { getAllCategories } from "@/lib/blog/posts";
+import { BLOG_CATEGORIES } from "@/lib/blog/types";
 
 export default function BlogFooter() {
+  const categories = getAllCategories();
+  const blogFooterLinks = [
+    { label: "Alle Artikel", href: "/blog" },
+    ...categories.map((slug) => ({
+      label: BLOG_CATEGORIES[slug].label,
+      href: `/blog/kategorie/${slug}`,
+    })),
+    { label: "RSS Feed", href: "/feed.xml" },
+  ];
+
   return (
     <section
       aria-label="Blog Navigation"
@@ -23,14 +24,13 @@ export default function BlogFooter() {
             iptvkaufenX Blog
           </h2>
           <p className="mt-3 text-[14px] leading-7 text-[#F5F5F5]/72">
-            Strukturierte IPTV SEO-Leitfäden für Deutschland – nach Themenclustern sortiert und
-            redaktionell vorbereitet.
+            Technische IPTV-Ratgeber für Deutschland – zu Apps, Geräten, M3U und Einrichtung.
           </p>
         </div>
 
         <nav aria-label="Blog Kategorien">
           <h3 className="text-[13px] font-bold uppercase tracking-[0.14em] text-[#F5F5F5]/55">
-            Themencluster
+            Themen
           </h3>
           <ul className="mt-3 grid gap-2">
             {blogFooterLinks.map((link) => (
@@ -48,16 +48,17 @@ export default function BlogFooter() {
 
         <div>
           <h3 className="text-[13px] font-bold uppercase tracking-[0.14em] text-[#F5F5F5]/55">
-            Premium IPTV
+            Redaktion
           </h3>
           <p className="mt-3 text-[14px] leading-7 text-[#F5F5F5]/72">
-            Live-TV, Filme und Sport in HD &amp; 4K – sofort aktiviert.
+            Fragen zu Artikeln oder Korrekturhinweise? Die Redaktion ist über die Kontaktseite
+            erreichbar.
           </p>
           <Link
-            href="/"
-            className={`${ctaSolidGreenClass} mt-4 inline-flex rounded-full bg-[#A6FF00] px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.1em] transition duration-300 hover:bg-[#C7FF62]`}
+            href="/kontakt"
+            className="mt-4 inline-flex rounded-full border border-[#A6FF00]/30 px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#A6FF00] transition duration-300 hover:border-[#A6FF00]/55 hover:text-[#C7FF62]"
           >
-            Zur Startseite
+            Kontakt
           </Link>
         </div>
       </div>

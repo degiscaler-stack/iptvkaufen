@@ -3,95 +3,15 @@
   <channel>
     <title>iptvkaufenX Blog</title>
     <link>https://iptvkaufenx.de/blog</link>
-    <description>IPTV Guides, Tipps und News für Deutschland</description>
+    <description>Technische IPTV-Guides für Deutschland: Apps, Geräte, M3U und Einrichtung</description>
     <language>de-de</language>
-    <lastBuildDate>Tue, 25 Aug 2026 21:12:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 14:49:27 GMT</lastBuildDate>
     <atom:link href="https://iptvkaufenx.de/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>IPTV Line kaufen – Zugang, Aktivierung und sichere Auswahl</title>
-      <link>https://iptvkaufenx.de/blog/iptv-line-kaufen</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-line-kaufen</guid>
-      <description>IPTV Line kaufen verständlich erklärt: Was eine Line technisch bedeutet, welche Zugangsdaten Sie erhalten, wie sich Line, Account, Code und M3U unterscheiden und wie Sie den Zugang sicher aktivieren.</description>
-      <pubDate>Thu, 23 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV M3U – Playlist verstehen und einrichten</title>
-      <link>https://iptvkaufenx.de/blog/iptv-m3u</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-m3u</guid>
-      <description>IPTV M3U Playlist verständlich erklärt: Was M3U und M3U8 bedeuten, worin sich eine Senderliste von einer HLS-Playlist unterscheidet und wie Sie Playlists sicher einrichten.</description>
-      <pubDate>Tue, 07 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Provider Technik: Server, Stabilität und Streaming-Qualität erklärt</title>
-      <link>https://iptvkaufenx.de/blog/iptv-provider</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-provider</guid>
-      <description>Technischer Leitfaden zum IPTV Provider: Infrastrukturrollen, Stream-Auslieferung, Stabilität, Bitrate, Codec, EPG-Pflege und Troubleshooting – ohne kommerziellen Anbieter-Vergleich.</description>
-      <pubDate>Wed, 01 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Abo – Das beste IPTV Abonnement</title>
-      <link>https://iptvkaufenx.de/blog/iptv-abo</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-abo</guid>
-      <description>IPTV Abo im Überblick: Was ein gutes IPTV Abonnement ausmacht, welche Laufzeiten sinnvoll sind und worauf Sie vor dem Abschluss achten sollten – der Ratgeber für Nutzer in Deutschland.</description>
-      <pubDate>Mon, 29 Jun 2026 16:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Nordic – Nordische Sender in Deutschland empfangen</title>
-      <link>https://iptvkaufenx.de/blog/iptv-nordic</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-nordic</guid>
-      <description>IPTV Nordic verständlich erklärt: Nordische Sender in Deutschland prüfen, Ländergruppen organisieren und Geräte sowie EPG für skandinavische Programme klar einrichten.</description>
-      <pubDate>Sat, 25 Jul 2026 18:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Arab – Arabische Sender in Deutschland empfangen</title>
-      <link>https://iptvkaufenx.de/blog/iptv-arab</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-arab</guid>
-      <description>IPTV Arab verständlich erklärt: Arabische Sender in Deutschland prüfen, Regionen und Kategorien organisieren, arabische Schrift und EPG korrekt darstellen.</description>
-      <pubDate>Sat, 25 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>Polish IPTV – Polnische Sender in Deutschland empfangen</title>
-      <link>https://iptvkaufenx.de/blog/polish-iptv</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/polish-iptv</guid>
-      <description>Polish IPTV verständlich erklärt: Polnische Sender in Deutschland prüfen, Favoriten und EPG organisieren, Sonderzeichen korrekt anzeigen und Geräte sinnvoll einrichten.</description>
-      <pubDate>Fri, 24 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Greek – Griechische Sender in Deutschland empfangen</title>
-      <link>https://iptvkaufenx.de/blog/iptv-greek</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-greek</guid>
-      <description>IPTV Greek verständlich erklärt: Griechische Sender in Deutschland prüfen, Kategorien und Favoriten organisieren, EPG und Geräte sinnvoll einrichten.</description>
-      <pubDate>Thu, 23 Jul 2026 14:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Balkan – Sender, Sprachen und Empfang in Deutschland</title>
-      <link>https://iptvkaufenx.de/blog/iptv-balkan</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-balkan</guid>
-      <description>IPTV Balkan verständlich erklärt: Balkan-Sender und Sprachen in Deutschland empfangen, Verfügbarkeit prüfen, mehrsprachige Haushalte organisieren und Geräte sinnvoll einrichten.</description>
-      <pubDate>Thu, 23 Jul 2026 12:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Türkische Sender – Türkisches Fernsehen in Deutschland</title>
-      <link>https://iptvkaufenx.de/blog/iptv-tuerkische-sender</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-tuerkische-sender</guid>
-      <description>IPTV Türkische Sender verständlich erklärt: Wie türkisches Fernsehen über IPTV in Deutschland funktioniert, welche Kategorien üblich sind und wie Sie die Einrichtung sauber vornehmen.</description>
-      <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Sport – Live-Sport stabil auf allen Geräten streamen</title>
-      <link>https://iptvkaufenx.de/blog/iptv-sport</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-sport</guid>
-      <description>IPTV Sport verständlich erklärt: Wie Live-Sport über IPTV funktioniert, welche Voraussetzungen für stabile Übertragung wichtig sind und worauf Sie bei Anbietern achten sollten.</description>
+      <title>Beste IPTV App für Fire Stick – Vergleich und Empfehlungen</title>
+      <link>https://iptvkaufenx.de/blog/beste-iptv-app-fuer-fire-stick</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/beste-iptv-app-fuer-fire-stick</guid>
+      <description>Beste IPTV App für Fire Stick im Überblick: Welche Anforderungen zählen, wie die Installation funktioniert und welcher Player zu Ihrem Nutzertyp passt.</description>
       <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
       <author>iptvkaufenX Redaktion</author>
     </item>
@@ -104,27 +24,35 @@
       <author>iptvkaufenX Redaktion</author>
     </item>
     <item>
-      <title>Beste IPTV App für Fire Stick – Vergleich und Empfehlungen</title>
-      <link>https://iptvkaufenx.de/blog/beste-iptv-app-fuer-fire-stick</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/beste-iptv-app-fuer-fire-stick</guid>
-      <description>Beste IPTV App für Fire Stick im Überblick: Welche Anforderungen zählen, wie die Installation funktioniert und welcher Player zu Ihrem Nutzertyp passt.</description>
+      <title>Flix IPTV – Einrichtung, Funktionen und hilfreiche Tipps</title>
+      <link>https://iptvkaufenx.de/blog/flix-iptv</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/flix-iptv</guid>
+      <description>Flix IPTV verständlich erklärt: Installation, Playlist und M3U eintragen, EPG, Favoriten und Praxis-Setup für Smart TV und kompatible Geräte in Deutschland.</description>
       <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
       <author>iptvkaufenX Redaktion</author>
     </item>
     <item>
-      <title>IPTV Stick – Einrichtung, Vorteile und Gerätevergleich</title>
-      <link>https://iptvkaufenx.de/blog/iptv-stick</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-stick</guid>
-      <description>IPTV Stick verständlich erklärt: Was ein Streaming-Stick leistet, wie Sie ihn einrichten, worauf Sie bei Leistung und Verbindung achten und welches Gerät zu Ihnen passt.</description>
-      <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
+      <title>IPTV in Deutschland: Technik, Geräte und Einrichtung</title>
+      <link>https://iptvkaufenx.de/blog/german-iptv</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/german-iptv</guid>
+      <description>IPTV in Deutschland technisch erklärt: Übertragungsweg, Geräte, Playlisten und Einrichtung – ohne Verkauf von Zugängen oder Programmpaketen.</description>
+      <pubDate>Fri, 26 Jun 2026 10:00:00 GMT</pubDate>
       <author>iptvkaufenX Redaktion</author>
     </item>
     <item>
-      <title>IPTV Player – Auswahl, Einrichtung und Geräte im Vergleich</title>
-      <link>https://iptvkaufenx.de/blog/iptv-player</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-player</guid>
-      <description>IPTV Player verständlich erklärt: Was ein Player leistet, wie er sich vom Anbieter unterscheidet, welche Anmeldemethoden es gibt und welche Apps für welches Gerät passen.</description>
-      <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
+      <title>IPTV Anbieter verstehen: Technik, Kriterien und Risiken</title>
+      <link>https://iptvkaufenx.de/blog/iptv-anbieter</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-anbieter</guid>
+      <description>Wie IPTV-Anbieter technisch arbeiten, welche Kriterien zur Einordnung helfen und warum Kanalzahlen allein wenig aussagen.</description>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 GMT</pubDate>
+      <author>iptvkaufenX Redaktion</author>
+    </item>
+    <item>
+      <title>IPTV Box: Geräteklassen, Anschlüsse und Einrichtung</title>
+      <link>https://iptvkaufenx.de/blog/iptv-box</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-box</guid>
+      <description>Was eine IPTV Box technisch leistet, wie sie sich von Stick und Receiver unterscheidet und worauf es bei der Einrichtung ankommt.</description>
+      <pubDate>Sun, 28 Jun 2026 10:00:00 GMT</pubDate>
       <author>iptvkaufenX Redaktion</author>
     </item>
     <item>
@@ -136,10 +64,58 @@
       <author>iptvkaufenX Redaktion</author>
     </item>
     <item>
-      <title>SS IPTV – Einrichtung, Playlist und Problemlösungen</title>
-      <link>https://iptvkaufenx.de/blog/ss-iptv</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/ss-iptv</guid>
-      <description>SS IPTV verständlich erklärt: Installation, Playlist und M3U eintragen, EPG, Kanallisten, Fehlerlösungen und Praxis-Setup für Smart TV in Deutschland.</description>
+      <title>IPTV M3U – Playlist verstehen und einrichten</title>
+      <link>https://iptvkaufenx.de/blog/iptv-m3u</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-m3u</guid>
+      <description>IPTV M3U Playlist verständlich erklärt: Was M3U und M3U8 bedeuten, worin sich eine Senderliste von einer HLS-Playlist unterscheidet und wie Sie Playlists sicher einrichten.</description>
+      <pubDate>Tue, 07 Jul 2026 10:00:00 GMT</pubDate>
+      <author>iptvkaufenX Redaktion</author>
+    </item>
+    <item>
+      <title>IPTV Player – Auswahl, Einrichtung und Geräte im Vergleich</title>
+      <link>https://iptvkaufenx.de/blog/iptv-player</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-player</guid>
+      <description>IPTV Player verständlich erklärt: Was ein Player leistet, wie er sich vom Anbieter unterscheidet, welche Anmeldemethoden es gibt und welche Apps für welches Gerät passen.</description>
+      <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
+      <author>iptvkaufenX Redaktion</author>
+    </item>
+    <item>
+      <title>IPTV und 4K: Bandbreite, Geräte und Bildqualität</title>
+      <link>https://iptvkaufenx.de/blog/iptv-premium-4k</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-premium-4k</guid>
+      <description>Was Ultra-HD-Streaming technisch braucht: Bitrate, Leitung, Gerät und Player – ohne Kaufberatung für Programmpakete.</description>
+      <pubDate>Fri, 03 Jul 2026 10:00:00 GMT</pubDate>
+      <author>iptvkaufenX Redaktion</author>
+    </item>
+    <item>
+      <title>IPTV Provider Technik: Server, Stabilität und Streaming-Qualität erklärt</title>
+      <link>https://iptvkaufenx.de/blog/iptv-provider</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-provider</guid>
+      <description>Technischer Leitfaden zum IPTV Provider: Infrastrukturrollen, Stream-Auslieferung, Stabilität, Bitrate, Codec, EPG-Pflege und Troubleshooting – ohne kommerziellen Anbieter-Vergleich.</description>
+      <pubDate>Wed, 01 Jul 2026 10:00:00 GMT</pubDate>
+      <author>iptvkaufenX Redaktion</author>
+    </item>
+    <item>
+      <title>IPTV Receiver – Die besten Geräte im Vergleich</title>
+      <link>https://iptvkaufenx.de/blog/iptv-receiver</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-receiver</guid>
+      <description>IPTV Receiver im Überblick: Was ein Empfangsgerät für Internet-TV leistet, welche Modelle in Deutschland überzeugen und wie Sie Receiver mit Ihrem IPTV Abo verbinden.</description>
+      <pubDate>Tue, 30 Jun 2026 10:00:00 GMT</pubDate>
+      <author>iptvkaufenX Redaktion</author>
+    </item>
+    <item>
+      <title>IPTV Smarters Pro – Setup, Login und Tipps</title>
+      <link>https://iptvkaufenx.de/blog/iptv-smarters-pro</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-smarters-pro</guid>
+      <description>IPTV Smarters Pro verständlich erklärt: Installation, Login mit Xtream Codes oder M3U, Vorteile, Nachteile, Geräte und Tipps für stabiles Streaming in Deutschland.</description>
+      <pubDate>Sun, 05 Jul 2026 10:00:00 GMT</pubDate>
+      <author>iptvkaufenX Redaktion</author>
+    </item>
+    <item>
+      <title>IPTV Stick – Einrichtung, Vorteile und Gerätevergleich</title>
+      <link>https://iptvkaufenx.de/blog/iptv-stick</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-stick</guid>
+      <description>IPTV Stick verständlich erklärt: Was ein Streaming-Stick leistet, wie Sie ihn einrichten, worauf Sie bei Leistung und Verbindung achten und welches Gerät zu Ihnen passt.</description>
       <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
       <author>iptvkaufenX Redaktion</author>
     </item>
@@ -152,10 +128,10 @@
       <author>iptvkaufenX Redaktion</author>
     </item>
     <item>
-      <title>Flix IPTV – Einrichtung, Funktionen und hilfreiche Tipps</title>
-      <link>https://iptvkaufenx.de/blog/flix-iptv</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/flix-iptv</guid>
-      <description>Flix IPTV verständlich erklärt: Installation, Playlist und M3U eintragen, EPG, Favoriten und Praxis-Setup für Smart TV und kompatible Geräte in Deutschland.</description>
+      <title>SS IPTV – Einrichtung, Playlist und Problemlösungen</title>
+      <link>https://iptvkaufenx.de/blog/ss-iptv</link>
+      <guid isPermaLink="true">https://iptvkaufenx.de/blog/ss-iptv</guid>
+      <description>SS IPTV verständlich erklärt: Installation, Playlist und M3U eintragen, EPG, Kanallisten, Fehlerlösungen und Praxis-Setup für Smart TV in Deutschland.</description>
       <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
       <author>iptvkaufenX Redaktion</author>
     </item>
@@ -165,70 +141,6 @@
       <guid isPermaLink="true">https://iptvkaufenx.de/blog/tivimate-iptv</guid>
       <description>TiviMate IPTV verständlich erklärt: Installation, Playlist hinzufügen, EPG, Favoriten, Aufnahmen und Praxis-Setup für Android TV, Google TV und Fire TV in Deutschland.</description>
       <pubDate>Mon, 06 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Smarters Pro – Setup, Login und Tipps</title>
-      <link>https://iptvkaufenx.de/blog/iptv-smarters-pro</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-smarters-pro</guid>
-      <description>IPTV Smarters Pro verständlich erklärt: Installation, Login mit Xtream Codes oder M3U, Vorteile, Nachteile, Geräte und Tipps für stabiles Streaming in Deutschland.</description>
-      <pubDate>Sun, 05 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Alle Sender – Was die Werbung wirklich meint</title>
-      <link>https://iptvkaufenx.de/blog/iptv-alle-sender</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-alle-sender</guid>
-      <description>IPTV Alle Sender im Überblick: Was „alle Sender“ wirklich bedeutet, wie Sie eine echte Senderliste prüfen und woran Sie Qualität statt leerer Kanalversprechen erkennen.</description>
-      <pubDate>Sat, 04 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Premium 4K – Ultra HD Fernsehen richtig nutzen</title>
-      <link>https://iptvkaufenx.de/blog/iptv-premium-4k</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-premium-4k</guid>
-      <description>IPTV Premium 4K im Überblick: Was Ultra-HD-Streaming braucht, welche Geräte und Internetgeschwindigkeit sinnvoll sind und wie Sie Premium-4K-Angebote in Deutschland sinnvoll vergleichen.</description>
-      <pubDate>Fri, 03 Jul 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Receiver – Die besten Geräte im Vergleich</title>
-      <link>https://iptvkaufenx.de/blog/iptv-receiver</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-receiver</guid>
-      <description>IPTV Receiver im Überblick: Was ein Empfangsgerät für Internet-TV leistet, welche Modelle in Deutschland überzeugen und wie Sie Receiver mit Ihrem IPTV Abo verbinden.</description>
-      <pubDate>Tue, 30 Jun 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>Die besten IPTV Anbieter in Deutschland (2026)</title>
-      <link>https://iptvkaufenx.de/blog/iptv-anbieter</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-anbieter</guid>
-      <description>IPTV Anbieter in Deutschland vergleichen: Seriosität, Bildqualität, Sender, Stabilität, Support und Preise – die fundierte Kaufberatung für 2026.</description>
-      <pubDate>Mon, 29 Jun 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Box – Die besten Geräte für Deutschland (2026)</title>
-      <link>https://iptvkaufenx.de/blog/iptv-box</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-box</guid>
-      <description>IPTV Box im Überblick: Die besten Geräte für Deutschland, Einrichtung, Vor- und Nachteile sowie Kaufberatung für stabiles Live-TV per Streaming.</description>
-      <pubDate>Sun, 28 Jun 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>IPTV Free Trial: IPTV risikofrei in Deutschland testen</title>
-      <link>https://iptvkaufenx.de/blog/iptv-free-trial</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/iptv-free-trial</guid>
-      <description>IPTV Free Trial ermöglicht risikofreies Testen von Live-TV per Streaming in Deutschland. Dieser Leitfaden erklärt, wie Sie seriös testen, worauf Sie achten sollten und welche Fehler Sie vermeiden.</description>
-      <pubDate>Sat, 27 Jun 2026 10:00:00 GMT</pubDate>
-      <author>iptvkaufenX Redaktion</author>
-    </item>
-    <item>
-      <title>German IPTV: Der komplette Leitfaden für Deutschland (2026)</title>
-      <link>https://iptvkaufenx.de/blog/german-iptv</link>
-      <guid isPermaLink="true">https://iptvkaufenx.de/blog/german-iptv</guid>
-      <description>German IPTV verständlich erklärt – von der Technik über kompatible Geräte bis zur Einrichtung. Ein praxisnaher Leitfaden für alle, die Live-TV in Deutschland modern streamen möchten.</description>
-      <pubDate>Fri, 26 Jun 2026 10:00:00 GMT</pubDate>
       <author>iptvkaufenX Redaktion</author>
     </item>
   </channel>

@@ -6,70 +6,45 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.nutzungsbedingungen,
   description:
-    "Nutzungsbedingungen von iptvkaufenX für Nutzung, Zugangsdaten, Gerätekompatibilität, Zahlungen und Support.",
+    "Nutzungsbedingungen von iptvkaufenX für die Nutzung der informationalen Website.",
   path: "/nutzungsbedingungen",
   noIndex: true,
 });
 
 const sections: LegalSection[] = [
   {
-    title: "Nutzung des Services",
+    title: "Nutzung der Website",
     paragraphs: [
-      "iptvkaufenX bietet einen digitalen Dienst zur Nutzung von IPTV-Inhalten auf kompatiblen Geräten an. Die Nutzung setzt eine geeignete App, ein kompatibles Gerät und eine stabile Internetverbindung voraus.",
-      "Mit der Bestellung und Nutzung des Dienstes akzeptieren Sie diese Nutzungsbedingungen.",
+      "iptvkaufenX betreibt eine redaktionelle Website mit technischen Informationen zu IPTV. Die Nutzung der Inhalte setzt ein kompatibles Endgerät und eine Internetverbindung voraus.",
+      "Mit dem Aufruf der Website akzeptieren Sie diese Nutzungsbedingungen.",
     ],
   },
   {
-    title: "Zugangsdaten",
+    title: "Keine IPTV-Zugänge",
     paragraphs: [
-      "Zugangsdaten werden nach erfolgreicher Bestellung bereitgestellt. Sie sind sorgfältig aufzubewahren und dürfen nicht unbefugt weitergegeben, verkauft oder öffentlich veröffentlicht werden.",
-      "Der Nutzer ist dafür verantwortlich, Zugangsdaten vor dem Zugriff Dritter zu schützen.",
+      "Diese Website verkauft keine IPTV-Abonnements, stellt keine Senderkataloge bereit und vermittelt keinen Zugang zu urheberrechtlich geschützten Programmen Dritter.",
+      "Technische Erklärungen zu Playern, Playlisten und Geräten sind allgemein gehalten und ersetzen keine individuelle Beratung.",
     ],
   },
   {
-    title: "Gerätekompatibilität",
-    paragraphs: [
-      "Der Dienst kann auf vielen modernen Geräten genutzt werden, darunter Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet und TV Box.",
-      "Die tatsächliche Funktion hängt vom Gerät, der App-Version, dem Betriebssystem, der Internetverbindung und der korrekten Einrichtung ab.",
-    ],
-  },
-  {
-    title: "Verantwortung des Nutzers",
+    title: "Verantwortung der Nutzer",
     items: [
-      "Der Nutzer stellt sicher, dass die verwendete App und das Gerät korrekt eingerichtet sind.",
-      "Der Nutzer verwendet den Zugang nur im Rahmen des gewählten Pakets.",
-      "Der Nutzer unterlässt missbräuchliche Nutzung, Weitergabe, Weiterverkauf oder technische Manipulation.",
-      "Der Nutzer informiert den Support zeitnah, wenn technische Probleme auftreten.",
+      "Nutzerinnen und Nutzer verwenden die Informationen eigenverantwortlich.",
+      "Die Website darf nicht für rechtswidrige Zwecke genutzt werden.",
+      "Inhalte dürfen nicht so dargestellt werden, als biete iptvkaufenX lizenzierte Programmpakete oder Pay-TV-Zugänge an.",
     ],
   },
   {
     title: "Verfügbarkeit",
     paragraphs: [
-      "iptvkaufenX bemüht sich um eine stabile Bereitstellung des digitalen Dienstes. Kurzzeitige Unterbrechungen durch Wartung, technische Störungen, Drittanbieter, Internetprobleme oder höhere Gewalt können jedoch nicht vollständig ausgeschlossen werden.",
+      "iptvkaufenX bemüht sich um eine stabile Bereitstellung der Website. Kurzzeitige Unterbrechungen durch Wartung, technische Störungen oder höhere Gewalt können nicht vollständig ausgeschlossen werden.",
       "Eine dauerhaft unterbrechungsfreie Verfügbarkeit kann nicht garantiert werden.",
     ],
   },
   {
-    title: "Zahlungen",
+    title: "Kontakt",
     paragraphs: [
-      "Die Zahlung erfolgt vor Bereitstellung des digitalen Zugangs. Preise, Laufzeiten und Paketdetails ergeben sich aus den zum Zeitpunkt der Bestellung angezeigten Angaben.",
-      "Nach erfolgreicher Zahlung wird die Aktivierung beziehungsweise Bereitstellung eingeleitet.",
-    ],
-  },
-  {
-    title: "Support",
-    paragraphs: [
-      "Bei Fragen zur Einrichtung oder Nutzung steht Support zur Verfügung. Support kann Hinweise zu Apps, Geräten, Zugangsdaten und allgemeinen Einrichtungsschritten geben.",
-      "Der Nutzer muss bei der Fehleranalyse angemessen mitwirken, zum Beispiel durch Angabe des Geräts, der App und einer Beschreibung des Problems.",
-    ],
-  },
-  {
-    title: "Einschränkungen",
-    items: [
-      "Der Dienst darf nicht für rechtswidrige Zwecke genutzt werden.",
-      "Zugangsdaten dürfen nicht weiterverkauft oder öffentlich geteilt werden.",
-      "Technische Schutzmaßnahmen, Limits oder Paketbedingungen dürfen nicht umgangen werden.",
-      "Bei missbräuchlicher Nutzung kann der Zugang eingeschränkt oder gesperrt werden.",
+      "Bei Fragen zu diesen Bedingungen oder zu den veröffentlichten Inhalten erreichen Sie uns über die Seite [Kontakt](/kontakt).",
     ],
   },
   {
@@ -79,12 +54,6 @@ const sections: LegalSection[] = [
       "Es gilt die jeweils auf dieser Website veröffentlichte Fassung.",
     ],
   },
-  {
-    title: "Hinweis zum digitalen Dienst",
-    paragraphs: [
-      "Der Service wird digital bereitgestellt. Nach Aktivierung oder Übermittlung der Zugangsdaten kann die Leistung unmittelbar genutzt werden.",
-    ],
-  },
 ];
 
 export default function NutzungsbedingungenPage() {
@@ -92,8 +61,8 @@ export default function NutzungsbedingungenPage() {
     <LegalPage
       eyebrow="Bedingungen"
       title="Nutzungsbedingungen"
-      updatedAt="13. Juni 2026"
-      intro="Diese Nutzungsbedingungen regeln die Nutzung des digitalen IPTV-Dienstes von iptvkaufenX."
+      updatedAt="28. August 2026"
+      intro="Diese Nutzungsbedingungen regeln die Nutzung der informationalen Website iptvkaufenx.de."
       sections={sections}
     />
   );

@@ -49,7 +49,7 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>iptvkaufenX Blog</title>
     <link>${SITE_URL}/blog</link>
-    <description>IPTV Guides, Tipps und News für Deutschland</description>
+    <description>Technische IPTV-Guides für Deutschland: Apps, Geräte, M3U und Einrichtung</description>
     <language>de-de</language>
     <lastBuildDate>${buildDate}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>

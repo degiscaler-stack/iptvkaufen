@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
-import DeferredRecentPurchaseNotification from "@/components/DeferredRecentPurchaseNotification";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/Header";
-import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 import { SEO_TITLES } from "@/lib/seo-titles";
 import "./globals.css";
 
@@ -20,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://iptvkaufenx.de"),
   title: SEO_TITLES.siteDefault,
   description:
-    "IPTV kaufen in Deutschland. Live-TV, Filme, Serien und Sport in Ultra HD – auf Smart TV, Fire TV und mehr.",
+    "Informationen zu IPTV in Deutschland: Technik, Apps, Geräte, M3U, Einrichtung und Fehlerbehebung – erklärt von iptvkaufenX.",
   verification: {
     google: "EsW591o2eN7U4ge2cczx0ALhDErtq_qrj0F75xBbky0",
     other: {
@@ -46,8 +44,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <DeferredRecentPurchaseNotification />
-        <WhatsAppFloatButton />
         <Script id="statcounter-config" strategy="lazyOnload">
           {`
             var sc_project=13342730;
