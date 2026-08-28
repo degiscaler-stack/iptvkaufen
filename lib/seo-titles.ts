@@ -1,16 +1,17 @@
 import type { BlogCategory } from "@/lib/blog/types";
 
 export const SEO_TITLES = {
-  home: "IPTV in Deutschland – Technik, Apps & Einrichtung | iptvkaufenX",
-  siteDefault: "IPTV Technik, Apps & Einrichtung | iptvkaufenX",
+  home: "IPTV kaufen Deutschland – Große Senderauswahl | iptvkaufenX",
+  siteDefault: "IPTV Kaufen Deutschland: Premium IPTV | iptvkaufenX",
   blog: "IPTV Blog: Ratgeber & Guides (2026) | iptvkaufenX",
-  faq: "IPTV FAQ: Technik, Apps, Einrichtung | iptvkaufenX",
-  kontakt: "Kontakt & redaktionelle Anfragen | iptvkaufenX",
+  preise: "IPTV Preise: Pakete ab 9,99 € | iptvkaufenX",
+  faq: "IPTV FAQ: Häufige Fragen beantwortet | iptvkaufenX",
+  kontakt: "Kontakt & Support auf Deutsch | iptvkaufenX",
   datenschutz: "Datenschutz & DSGVO | iptvkaufenX",
   impressum: "Impressum & Anbieterkennzeichnung | iptvkaufenX",
-  nutzungsbedingungen: "Nutzungsbedingungen der Website | iptvkaufenX",
-  rueckerstattung: "Hinweise zu Rückerstattungen | iptvkaufenX",
-  ueberUns: "Über uns: IPTV-Wissen | iptvkaufenX",
+  nutzungsbedingungen: "AGB & Nutzungsbedingungen | iptvkaufenX",
+  rueckerstattung: "Rückerstattung: 30 Tage Garantie | iptvkaufenX",
+  ueberUns: "Über uns: IPTV Service | iptvkaufenX",
   redaktionelleRichtlinien: "Redaktionelle Richtlinien | iptvkaufenX",
   inhaltsrichtlinien: "Inhaltsrichtlinien | iptvkaufenX",
   autor: "Autor: iptvkaufenX Redaktion | iptvkaufenX",
@@ -19,12 +20,15 @@ export const SEO_TITLES = {
   blogCategoryNotFound: "Blog Kategorie nicht gefunden | iptvkaufenX",
   blogTagNotFound: "Blog Tag nicht gefunden | iptvkaufenX",
   articles: {
-    "german-iptv": "IPTV in Deutschland: Technik-Guide | iptvkaufenX",
-    "iptv-anbieter": "IPTV Anbieter verstehen (2026) | iptvkaufenX",
-    "iptv-box": "IPTV Box: Geräte & Einrichtung | iptvkaufenX",
-    "iptv-receiver": "IPTV Receiver: Geräte-Guide | iptvkaufenX",
+    "german-iptv": "German IPTV (2026): Premium Guide | iptvkaufenX",
+    "iptv-anbieter": "IPTV Anbieter Deutschland (2026) | iptvkaufenX",
+    "iptv-box": "IPTV Box kaufen: Beste Geräte (2026) | iptvkaufenX",
+    "iptv-free-trial": "IPTV Free Trial Deutschland | iptvkaufenX",
+    "iptv-abo": "IPTV Abo (2026): Bestes Abonnement | iptvkaufenX",
+    "iptv-receiver": "IPTV Receiver: Beste Geräte (2026) | iptvkaufenX",
     "iptv-provider": "IPTV Provider: Server & Stabilität | iptvkaufenX",
-    "iptv-premium-4k": "IPTV 4K Streaming: Technik-Guide | iptvkaufenX",
+    "iptv-premium-4k": "IPTV Premium 4K (2026): Guide | iptvkaufenX",
+    "iptv-alle-sender": "IPTV Alle Sender: Übersicht (2026) | iptvkaufenX",
     "iptv-smarters-pro": "IPTV Smarters Pro Setup (2026) | iptvkaufenX",
     "tivimate-iptv": "TiviMate IPTV Guide (2026) | iptvkaufenX",
     "iptv-m3u": "IPTV M3U Playlist (2026) | iptvkaufenX",
@@ -36,6 +40,14 @@ export const SEO_TITLES = {
     "iptv-stick": "IPTV Stick Guide (2026) | iptvkaufenX",
     "beste-iptv-app-fuer-fire-stick": "Beste IPTV App Fire Stick (2026) | iptvkaufenX",
     "beste-iptv-app-fuer-samsung-fernseher": "Beste IPTV App Samsung TV (2026) | iptvkaufenX",
+    "iptv-sport": "IPTV Sport Live streamen (2026) | iptvkaufenX",
+    "iptv-tuerkische-sender": "IPTV Türkische Sender (2026) | iptvkaufenX",
+    "iptv-line-kaufen": "IPTV Line kaufen – Zugang aktivieren | iptvkaufenX",
+    "iptv-balkan": "IPTV Balkan – Sender in Deutschland | iptvkaufenX",
+    "iptv-greek": "IPTV Greek – Griechisches Fernsehen | iptvkaufenX",
+    "polish-iptv": "Polish IPTV – Polnisches Fernsehen | iptvkaufenX",
+    "iptv-arab": "IPTV Arab – Arabisches Fernsehen | iptvkaufenX",
+    "iptv-nordic": "IPTV Nordic – Nordisches Fernsehen | iptvkaufenX",
   },
 } as const;
 
@@ -48,18 +60,21 @@ const CATEGORY_TITLES: Record<BlogCategory, string> = {
   "iptv-vergleich": "IPTV Vergleich: Blog Artikel | iptvkaufenX",
   "iptv-test": "IPTV Test: Blog Kategorie | iptvkaufenX",
   "iptv-premium": "IPTV Premium: Blog Kategorie | iptvkaufenX",
-  "iptv-senderliste": "Playlisten: Blog Kategorie | iptvkaufenX",
+  "iptv-senderliste": "Senderliste: Blog Kategorie | iptvkaufenX",
   "iptv-einrichtung": "IPTV Einrichtung: Blog Kategorie | iptvkaufenX",
-  "iptv-sport": "IPTV Streaming: Blog Kategorie | iptvkaufenX",
+  "iptv-sport": "IPTV Sport: Blog Kategorie | iptvkaufenX",
 };
 
 const TAG_TITLES: Record<string, string> = {
   "German IPTV": "German IPTV: Blog Tag | iptvkaufenX",
   "IPTV Anbieter": "IPTV Anbieter: Blog Tag | iptvkaufenX",
   "IPTV Box": "IPTV Box: Blog Tag | iptvkaufenX",
+  "IPTV Free Trial": "IPTV Free Trial: Blog Tag | iptvkaufenX",
+  "IPTV Abo": "IPTV Abo: Blog Tag | iptvkaufenX",
   "IPTV Receiver": "IPTV Receiver: Blog Tag | iptvkaufenX",
   "IPTV Provider": "IPTV Provider: Blog Tag | iptvkaufenX",
-  "IPTV Premium 4K": "IPTV 4K Technik: Blog Tag | iptvkaufenX",
+  "IPTV Premium 4K": "IPTV Premium 4K: Blog Tag | iptvkaufenX",
+  "IPTV Alle Sender": "IPTV Alle Sender: Blog Tag | iptvkaufenX",
   "IPTV Smarters Pro": "IPTV Smarters Pro: Blog Tag | iptvkaufenX",
   "TiviMate IPTV": "TiviMate IPTV: Blog Tag | iptvkaufenX",
   "IPTV M3U": "IPTV M3U: Blog Tag | iptvkaufenX",
@@ -71,6 +86,24 @@ const TAG_TITLES: Record<string, string> = {
   "IPTV Stick": "IPTV Stick: Blog Tag | iptvkaufenX",
   "Beste IPTV App für Fire Stick": "Beste IPTV App Fire Stick Tag | iptvkaufenX",
   "Beste IPTV App für Samsung Fernseher": "Beste IPTV App Samsung Tag | iptvkaufenX",
+  "IPTV Sport": "IPTV Sport: Blog Tag | iptvkaufenX",
+  "IPTV Türkische Sender": "IPTV Türkische Sender: Blog Tag | iptvkaufenX",
+  "IPTV Balkan": "IPTV Balkan: Blog Tag | iptvkaufenX",
+  "Balkan Sender": "Balkan Sender: Blog Tag | iptvkaufenX",
+  "Balkan TV": "Balkan TV: Blog Tag | iptvkaufenX",
+  "IPTV Greek": "IPTV Greek: Blog Tag | iptvkaufenX",
+  "Griechische Sender": "Griechische Sender: Blog Tag | iptvkaufenX",
+  "Griechisches Fernsehen": "Griechisches Fernsehen Tag | iptvkaufenX",
+  "Polish IPTV": "Polish IPTV: Blog Tag | iptvkaufenX",
+  "Poland IPTV": "Poland IPTV: Blog Tag | iptvkaufenX",
+  "Polnische Sender": "Polnische Sender: Blog Tag | iptvkaufenX",
+  "Polnisches Fernsehen": "Polnisches Fernsehen Tag | iptvkaufenX",
+  "IPTV Arab": "IPTV Arab: Blog Tag | iptvkaufenX",
+  "Arabische Sender": "Arabische Sender: Blog Tag | iptvkaufenX",
+  "Arabisches Fernsehen": "Arabisches Fernsehen Tag | iptvkaufenX",
+  "IPTV Nordic": "IPTV Nordic: Blog Tag | iptvkaufenX",
+  "Nordische Sender": "Nordische Sender: Blog Tag | iptvkaufenX",
+  "Nordisches Fernsehen": "Nordisches Fernsehen Tag | iptvkaufenX",
 };
 
 export function getBlogCategoryTitle(slug: BlogCategory): string {
@@ -90,11 +123,11 @@ function truncateTagTitle(tag: string): string {
   const prefix = `${tag}: Blog Tag`;
   const title = `${prefix}${suffix}`;
 
-  if (title.length <= 70) {
+  if (title.length <= 60) {
     return title;
   }
 
-  const maxTagLength = 70 - suffix.length - ": Blog Tag".length;
+  const maxTagLength = 60 - suffix.length - ": Blog Tag".length;
   return `${tag.slice(0, Math.max(maxTagLength, 1))}: Blog Tag${suffix}`;
 }
 
@@ -103,6 +136,7 @@ export function assertSeoTitleLimits(): void {
     ["home", SEO_TITLES.home],
     ["siteDefault", SEO_TITLES.siteDefault],
     ["blog", SEO_TITLES.blog],
+    ["preise", SEO_TITLES.preise],
     ["faq", SEO_TITLES.faq],
     ["kontakt", SEO_TITLES.kontakt],
     ["datenschutz", SEO_TITLES.datenschutz],
@@ -126,7 +160,7 @@ export function assertSeoTitleLimits(): void {
   const seen = new Map<string, string>();
 
   for (const [key, title] of entries) {
-    if (title.length > 70) {
+    if (title.length > 60) {
       throw new Error(`SEO title too long (${title.length}): ${key} -> ${title}`);
     }
 

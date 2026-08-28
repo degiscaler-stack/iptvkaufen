@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.redaktionelleRichtlinien,
   description:
-    "Redaktionelle Richtlinien von iptvkaufenX: Erstellung, Prüfung und Aktualisierung technischer Blog-Inhalte.",
+    "Redaktionelle Richtlinien von iptvkaufenX: Erstellung, Prüfung und Aktualisierung von Blog-Inhalten.",
   path: "/redaktionelle-richtlinien",
 });
 
@@ -20,36 +20,36 @@ const sections: LegalSection[] = [
   {
     title: "Erstellung von Inhalten",
     paragraphs: [
-      "Blog-Artikel werden von der iptvkaufenX Redaktion erstellt. Themen orientieren sich an praxisrelevanten Fragen zu IPTV-Technik in Deutschland – etwa Player-Apps, Geräte, M3U-Playlisten, Einrichtung und Fehlerbehebung.",
-      "Texte sollen verständlich und nachvollziehbar sein. iptvkaufenX verkauft keine IPTV-Zugänge; redaktionelle Beiträge dürfen das nicht nahelegen.",
+      "Blog-Artikel werden von der iptvkaufenX Redaktion (Rolle: IPTV Experten) erstellt. Themen orientieren sich an praxisrelevanten Fragen zu IPTV in Deutschland – etwa Anbieterwahl, Abonnements, Geräte, Apps, Einrichtung, Tests, Premium-Qualität und Senderlisten.",
+      "Texte sollen verständlich, nachvollziehbar und an den auf der Website dokumentierten Leistungen ausgerichtet sein. Marketingaussagen werden von redaktioneller Erklärung getrennt, soweit der Beitragskontext dies zulässt.",
     ],
   },
   {
     title: "Prüfung und Aktualisierung",
     paragraphs: [
       "Die Inhalte dieser Website werden mit Sorgfalt erstellt und regelmäßig geprüft. Bei Blog-Beiträgen werden Veröffentlichungs- und Aktualisierungsdaten ausgewiesen.",
-      "Wenn sich technische Hinweise oder verlinkte Seiten ändern, prüfen wir betroffene Beiträge und passen sie bei Bedarf an. Eine lückenlose Garantie für Vollständigkeit und Aktualität aller Angaben kann dennoch nicht übernommen werden.",
+      "Wenn sich technische Hinweise, Produktangaben oder verlinkte Seiten ändern, prüfen wir betroffene Beiträge und passen sie bei Bedarf an. Eine lückenlose Garantie für Vollständigkeit und Aktualität aller Angaben kann dennoch nicht übernommen werden.",
     ],
   },
   {
     title: "Quellen und Belege",
     paragraphs: [
-      "Redaktionelle Beiträge stützen sich auf allgemein zugängliches Fachwissen zu IPTV-Technik, Geräten und Apps sowie auf die auf dieser Website dokumentierten redaktionellen Hinweise.",
-      "Wir erfinden keine Unternehmensdaten, Zertifikate, Auszeichnungen, Lizenzen oder Personenangaben. Wo wir auf externe Angebote oder Tools verweisen, bleibt die Verantwortung für deren Inhalte beim jeweiligen Betreiber.",
+      "Redaktionelle Beiträge stützen sich auf die auf iptvkaufenx.de veröffentlichten Produkt- und Serviceinformationen sowie auf allgemein zugängliches Fachwissen zu IPTV-Technik, Geräten und Apps.",
+      "Wir erfinden keine Unternehmensdaten, Zertifikate, Auszeichnungen oder Personenangaben. Wo wir auf externe Angebote oder Tools verweisen, bleibt die Verantwortung für deren Inhalte beim jeweiligen Betreiber.",
     ],
   },
   {
     title: "Korrekturen",
     paragraphs: [
-      "Stellen Sie einen sachlichen Fehler in einem Blog-Beitrag fest, melden Sie ihn bitte über [Kontakt](/kontakt), per E-Mail an support@iptvkaufenx.de oder contact@iptvkaufenx.de.",
+      "Stellen Sie einen sachlichen Fehler in einem Blog-Beitrag fest, melden Sie ihn bitte über [Kontakt](/kontakt), per E-Mail an support@iptvkaufenx.de oder contact@iptvkaufenx.de beziehungsweise über WhatsApp (+44 7832 620735, internationaler Support auf Deutsch).",
       "Bestätigte Fehler korrigieren wir zeitnah und aktualisieren den Beitrag entsprechend.",
     ],
   },
   {
-    title: "Unabhängigkeit",
+    title: "Kommerzielle Absicht",
     paragraphs: [
-      "iptvkaufenX veröffentlicht technische Informationen. Die Website verkauft derzeit keine IPTV-Abonnements und stellt keine Senderkataloge bereit.",
-      "Markennamen von Geräten oder Apps dienen der technischen Einordnung. Sie bedeuten keine Partnerschaft, Lizenz oder Autorisierung.",
+      "iptvkaufenX verkauft einen digitalen IPTV-Dienst. Blog-Inhalte dienen der Information und Orientierung; sie können auf Angebote wie [Preise](/preise) oder den 24-Stunden-Test hinweisen.",
+      "Diese kommerzielle Absicht wird hier offen benannt. Redaktionelle Ratgeber ersetzen keine individuelle Beratung; bei konkreten Bestell- oder Einrichtungsfragen hilft der Support unter [Kontakt](/kontakt).",
     ],
   },
   {
@@ -79,8 +79,8 @@ export default function RedaktionelleRichtlinienPage() {
       <LegalPage
         eyebrow="Redaktion"
         title="Redaktionelle Richtlinien"
-        updatedAt="28. August 2026"
-        intro="So entstehen, prüfen und aktualisieren wir Blog-Inhalte bei iptvkaufenX – als technische Information, ohne Verkauf von IPTV-Zugängen."
+        updatedAt="11. Juli 2026"
+        intro="So entstehen, prüfen und aktualisieren wir Blog-Inhalte bei iptvkaufenX – transparent und mit klarer Trennung von Information und Angebot."
         sections={sections}
       />
     </>

@@ -109,8 +109,8 @@ export default function LegalPage({ eyebrow, title, updatedAt, intro, sections }
           <div className="mt-6 rounded-2xl border border-[#A6FF00]/22 bg-[#0A1008]/80 p-5 shadow-[inset_0_1px_0_rgba(166,255,0,0.08)] sm:p-6">
             <h2 className="text-[1.05rem] font-bold text-[#F5F5F5]">Kontakt</h2>
             <p className="mt-3 text-[14px] leading-7 text-[#E6E6E6]/82 sm:text-[15px]">
-              Bei Fragen zu dieser Seite oder zu den veröffentlichten Inhalten erreichen Sie
-              iptvkaufenX per E-Mail oder über WhatsApp.
+              Bei Fragen zu dieser Seite, zur Nutzung des digitalen Dienstes oder zu Ihrem Zugang
+              erreichen Sie iptvkaufenX über WhatsApp oder per E-Mail.
             </p>
             <div className="mt-4 flex flex-col gap-3 text-[14px] font-semibold sm:flex-row sm:flex-wrap">
               <a

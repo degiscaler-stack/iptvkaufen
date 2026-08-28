@@ -6,30 +6,70 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.rueckerstattung,
   description:
-    "Hinweise zu Rückerstattungen: iptvkaufenX verkauft derzeit keine IPTV-Abonnements über diese Website.",
+    "Rückerstattungsrichtlinie von iptvkaufenX für digitale IPTV-Dienste, Aktivierung, Bereitstellung und Supportanfragen.",
   path: "/rueckerstattung",
   noIndex: true,
 });
 
 const sections: LegalSection[] = [
   {
-    title: "Kein Verkauf über diese Website",
+    title: "30 Tage Geld-zurück-Garantie",
     paragraphs: [
-      "iptvkaufenX veröffentlicht technische Informationen zu IPTV. Über diese Website werden derzeit keine IPTV-Abonnements, Tests oder Programmpakete verkauft.",
-      "Eine Rückerstattung für neue Käufe über iptvkaufenx.de entfällt daher, weil keine solchen Käufe angeboten werden.",
+      "Wenn Sie mit dem Service nicht zufrieden sind, können Sie innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen.",
+      "Die Anfrage muss nachvollziehbar gestellt werden. Bitte geben Sie nach Möglichkeit Bestellinformationen, Zahlungsdatum, verwendetes Gerät und eine kurze Beschreibung Ihres Anliegens an.",
+      "Jede Rückerstattungsanfrage wird einzeln geprüft. Die Entscheidung richtet sich nach den unten beschriebenen Bedingungen für digitale Dienste.",
     ],
   },
   {
-    title: "Bestehende Anfragen",
+    title: "Digitale Dienstleistung",
     paragraphs: [
-      "Falls Sie eine historische Zahlungsfrage haben, beschreiben Sie den Vorgang über [Kontakt](/kontakt) oder per E-Mail an support@iptvkaufenx.de. Jede Anfrage wird einzeln geprüft.",
-      "Bitte geben Sie nach Möglichkeit Datum, verwendeten Kontaktweg und eine kurze Beschreibung an.",
+      "iptvkaufenX stellt einen digitalen Dienst bereit. Nach der Bereitstellung von Zugangsdaten, Aktivierung oder technischen Nutzungsinformationen beginnt die Leistungserbringung.",
+      "Da digitale Dienste unmittelbar nach Bereitstellung genutzt werden können, werden Rückerstattungen sorgfältig geprüft und hängen vom Einzelfall ab.",
     ],
   },
   {
-    title: "Redaktionelle Inhalte",
+    title: "Aktivierung und Bereitstellung",
     paragraphs: [
-      "Blog-Artikel, Ratgeber und technische Erklärungen sind kostenfrei zugänglich. Sie begründen keinen Kaufvertrag und keine Zugriffsberechtigung auf Programme Dritter.",
+      "Nach erfolgreicher Bestellung werden die Zugangsdaten oder die notwendigen Aktivierungsinformationen schnell bereitgestellt.",
+      "Sobald ein digitaler Zugang erstellt, übermittelt oder aktiviert wurde, gilt die Leistung grundsätzlich als begonnen.",
+    ],
+  },
+  {
+    title: "Rückerstattungsprüfung",
+    paragraphs: [
+      "Jede Rückerstattungsanfrage wird einzeln geprüft. Für die Prüfung können Angaben zur Bestellung, zur Zahlung, zum Aktivierungszeitpunkt, zum verwendeten Gerät und zur technischen Situation erforderlich sein.",
+      "Bitte kontaktieren Sie den Support zeitnah, wenn ein Problem mit der Aktivierung oder Nutzung auftritt, damit eine technische Prüfung möglich ist.",
+    ],
+  },
+  {
+    title: "Fälle, in denen Rückerstattung möglich ist",
+    items: [
+      "Wenn der digitale Zugang trotz erfolgreicher Zahlung nicht bereitgestellt wurde.",
+      "Wenn ein technischer Fehler auf Seiten des Dienstes die Aktivierung dauerhaft verhindert und keine Lösung angeboten werden kann.",
+      "Wenn versehentlich eine doppelte Zahlung für dieselbe Bestellung erfolgt ist.",
+      "Wenn vor Bereitstellung oder Aktivierung des digitalen Zugangs eine berechtigte Stornierungsanfrage eingeht.",
+    ],
+  },
+  {
+    title: "Fälle, in denen keine Rückerstattung möglich ist",
+    items: [
+      "Wenn der digitale Zugang bereits bereitgestellt, aktiviert oder genutzt wurde.",
+      "Wenn die Nutzung wegen falscher App, ungeeignetem Gerät, instabiler Internetverbindung oder fehlerhafter Einrichtung auf Nutzerseite nicht funktioniert.",
+      "Wenn Zugangsdaten weitergegeben, mehrfach verwendet oder entgegen den Nutzungsbedingungen eingesetzt wurden.",
+      "Wenn der Nutzer die notwendige technische Prüfung oder Supportunterstützung nicht ermöglicht.",
+    ],
+  },
+  {
+    title: "Kontakt für Rückerstattungsanfragen",
+    paragraphs: [
+      "Rückerstattungsanfragen müssen nachvollziehbar gestellt werden. Bitte geben Sie nach Möglichkeit Bestellinformationen, Zahlungsdatum, verwendetes Gerät und eine kurze Fehlerbeschreibung an.",
+      "Der Support prüft die Anfrage und informiert Sie über das Ergebnis sowie mögliche nächste Schritte.",
+    ],
+  },
+  {
+    title: "Hinweis zum digitalen Dienst",
+    paragraphs: [
+      "Der Service von iptvkaufenX ist ein digital bereitgestellter Dienst. Rückerstattungen werden daher insbesondere danach beurteilt, ob die digitale Leistung bereits bereitgestellt, aktiviert oder genutzt wurde.",
     ],
   },
 ];
@@ -38,9 +78,9 @@ export default function RueckerstattungPage() {
   return (
     <LegalPage
       eyebrow="Rückerstattung"
-      title="Hinweise zu Rückerstattungen"
-      updatedAt="28. August 2026"
-      intro="Diese Seite klärt, dass iptvkaufenX derzeit keine IPTV-Abonnements über die Website verkauft. Neue Käufe und damit verbundene Rückerstattungen werden hier nicht angeboten."
+      title="Rückerstattungsrichtlinie"
+      updatedAt="30. Juni 2026"
+      intro="Diese Richtlinie beschreibt die 30-Tage-Geld-zurück-Garantie von iptvkaufenX sowie die Prüfung von Rückerstattungsanfragen für digitale IPTV-Dienste."
       sections={sections}
     />
   );

@@ -5,7 +5,7 @@ import { resolveBlogOgImage } from "@/lib/blog/images";
 
 const SITE_URL = "https://iptvkaufenx.de";
 const SITE_NAME = "iptvkaufenX";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/brand/iptv-kaufen-logo.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/iptv-kaufen-premium-streaming-deutschland.webp`;
 
 type PageMetadataInput = {
   title: string;
@@ -158,7 +158,7 @@ export function buildBlogSchema() {
     "@type": "Blog",
     name: `${SITE_NAME} Blog`,
     description:
-      "Technische Ratgeber zu IPTV in Deutschland: Einrichtung, Geräte, Apps, M3U und Fehlerbehebung.",
+      "Expertenwissen zu IPTV in Deutschland: Einrichtung, Geräte, Sport, Streaming und Sicherheit.",
     url: `${SITE_URL}/blog`,
     publisher: {
       "@type": "Organization",

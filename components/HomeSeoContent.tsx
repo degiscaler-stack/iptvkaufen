@@ -3,89 +3,83 @@ import { CONTEXTUAL_LINK_CLASS } from "@/lib/blog/inline-content";
 
 export const HOME_SEO_FAQ = [
   {
-    question: "Was erklärt iptvkaufenX zu IPTV?",
+    question: "Was bedeutet IPTV kaufen?",
     answer:
-      "iptvkaufenX veröffentlicht technische und redaktionelle Informationen zu IPTV in Deutschland: Protokolle, Playlisten, Player-Apps, Geräte und typische Einrichtungsfehler. Die Website verkauft keine IPTV-Zugänge und stellt keine Senderlisten bereit.",
+      "IPTV kaufen heißt, Sie erwerben Zugang zu Live-TV und oft auch Filmen sowie Serien über das Internet – statt über Kabel oder Satellit. Bei iptvkaufenX erhalten Sie Zugangsdaten für kompatible Apps und Geräte.",
   },
   {
-    question: "Welche Geräte und Apps sind für IPTV relevant?",
+    question: "Auf welchen Geräten funktioniert IPTV?",
     answer:
-      "IPTV-Player laufen typischerweise auf Smart TV, Fire TV, Android TV, Apple TV sowie Smartphone und Tablet. Häufig genutzte Apps sind IPTV Smarters Pro und TiviMate; Playlisten werden oft als M3U oder M3U8 eingebunden.",
+      "Typisch sind Smart TV, Samsung TV, LG TV, Fire TV, Android TV, Apple TV sowie Smartphone und Tablet. Die Einrichtung erfolgt meist über Apps wie IPTV Smarters Pro oder TiviMate mit M3U oder Xtream Codes.",
   },
   {
-    question: "Wo finde ich weiterführende Anleitungen?",
+    question: "Wie starte ich bei iptvkaufenX?",
     answer:
-      "Im Blog finden Sie Ratgeber zu M3U, Playern, Receivern und Fehlerbehebung. Allgemeine Fragen beantwortet die FAQ; redaktionelle Hinweise nehmen wir über die Kontaktseite entgegen.",
+      "Wählen Sie ein Paket, schließen Sie den Kauf ab und richten Sie die Zugangsdaten in Ihrer App ein. Bei Fragen helfen FAQ, Kontakt und unsere Blog-Ratgeber weiter.",
   },
 ];
 
 const cards = [
   {
-    id: "iptv-technik-deutschland",
-    eyebrow: "TECHNIK",
+    id: "iptv-kaufen-deutschland",
+    eyebrow: "IPTV DEUTSCHLAND",
     title: (
       <>
-        IPTV als{" "}
-        <span className="text-[#A6FF00]">Übertragungsweg</span>
+        Live-TV per Internet in{" "}
+        <span className="text-[#A6FF00]">Deutschland</span>
       </>
     ),
     paragraphs: [
       <>
-        IPTV bedeutet Fernsehen über das Internet Protocol – also über eine Internetleitung statt
-        über klassischen Kabel- oder Satellitenempfang. Entscheidend sind Leitung, Player und die
-        Art der Playlist, nicht ein bestimmtes Programmpaket.
+        IPTV kaufen bedeutet Fernsehen über Ihre Internetleitung – ohne klassischen Kabelvertrag und
+        ohne Satellitenschüssel. Sie erhalten Zugangsdaten, installieren eine Player-App und
+        streamen Live-TV auf dem Gerät, das Sie bereits nutzen. Für Haushalte in Deutschland zählen
+        vor allem Stabilität zur Hauptsendezeit, transparente Pakete und erreichbarer Support auf
+        Deutsch.
       </>,
       <>
-        Für Haushalte in Deutschland zählen vor allem Stabilität zur Hauptsendezeit, nachvollziehbare
-        Technik und eine App, die M3U oder vergleichbare Zugangsdaten korrekt verarbeitet.
+        Der Unterschied zu fragwürdigen Billigangeboten zeigt sich im Alltag: gepflegte Sender,
+        nachvollziehbare Leistungen und Hilfe bei der Ersteinrichtung. Wer IPTV Deutschland ernst
+        nimmt, vergleicht Gesamtleistung statt nur den Monatspreis – inklusive paralleler Nutzung,
+        EPG und Bildqualität.
       </>,
       <>
-        Technische Hintergründe zu Servern und Stream-Qualität erklärt der{" "}
+        Vor dem Kauf lesen Sie Auswahlkriterien im{" "}
         <Link href="/blog/iptv-provider" className={CONTEXTUAL_LINK_CLASS}>
           IPTV-Provider-Ratgeber
         </Link>
-        .
+        . So starten Sie mit realistischen Erwartungen an Leitung und Gerät.
       </>,
     ],
   },
   {
-    id: "iptv-apps-playlisten",
-    eyebrow: "APPS & PLAYLISTEN",
+    id: "live-tv-sport-filme",
+    eyebrow: "INHALTE & SPORT",
     title: (
       <>
-        Player, M3U und{" "}
-        <span className="text-[#A6FF00]">Einrichtung</span>
+        Live-TV, Sport, <span className="text-[#A6FF00]">Filme &amp; Serien</span>
       </>
     ),
     paragraphs: [
       <>
-        Ein IPTV-Player ist die Oberfläche, mit der eine Playlist abgespielt wird. Die Playlist
-        selbst – oft als{" "}
-        <Link href="/blog/iptv-m3u" className={CONTEXTUAL_LINK_CLASS}>
-          M3U oder M3U8
-        </Link>{" "}
-        – beschreibt nur Stream-Adressen, Kategorien und optional EPG-Daten.
+        Starkes IPTV bündelt lineares Live-TV mit Unterhaltung on demand. Deutsche und
+        internationale Sender, Nachrichten und Sport gehören ebenso dazu wie Filme und Serien –
+        ergänzend zu Plattformen wie Netflix, Prime Video oder Disney+. Viele Haushalte nutzen genau
+        diesen Mix in einem Zugang.
       </>,
       <>
-        Als Einstiegsplayer eignet sich häufig{" "}
-        <Link href="/blog/iptv-smarters-pro" className={CONTEXTUAL_LINK_CLASS}>
-          IPTV Smarters Pro
-        </Link>
-        . Wer auf Android TV Feintuning sucht, greift oft zu{" "}
-        <Link href="/blog/tivimate-iptv" className={CONTEXTUAL_LINK_CLASS}>
-          TiviMate
-        </Link>
-        . Der{" "}
-        <Link href="/blog/iptv-player" className={CONTEXTUAL_LINK_CLASS}>
-          Player-Vergleich
+        Bei Sport zählt Stabilität mehr als Marketing. Große Events belasten Server und Leitung
+        gleichzeitig – genau dann muss der Stream halten. Wer HD oder{" "}
+        <Link href="/blog/iptv-premium-4k" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Premium 4K
         </Link>{" "}
-        ordnet die Unterschiede ein.
+        erwartet, sollte Internetgeschwindigkeit und Gerät mitdenken.
       </>,
       <>
-        Login-Fehler entstehen meist durch falsche Server-URL, veraltete App-Version oder instabile
-        Leitung. Kurze Antworten stehen in den{" "}
-        <Link href="/#faq" className={CONTEXTUAL_LINK_CLASS}>
-          FAQ
+        Wer Sender gezielt prüft, spart Zeit und enttäuscht sich nicht an unrealistischen „alle
+        Sender“-Versprechen. Weitere Tipps bietet der{" "}
+        <Link href="/blog" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Blog
         </Link>
         .
       </>,
@@ -96,63 +90,74 @@ const cards = [
     eyebrow: "GERÄTE",
     title: (
       <>
-        IPTV auf{" "}
-        <span className="text-[#A6FF00]">typischen Geräten</span>
+        IPTV auf <span className="text-[#A6FF00]">allen Geräten</span>
       </>
     ),
     paragraphs: [
       <>
-        Die meisten Setups starten auf dem Smart TV – etwa Samsung oder LG – oder nutzen Fire TV und
-        Android TV im Wohnzimmer. Apple TV, Smartphone und Tablet eignen sich als Zweitgerät. Wichtig
-        sind eine stabile Verbindung und eine passende App.
+        Die meisten Nutzer starten auf dem Smart TV – etwa Samsung TV oder LG TV – oder setzen Fire
+        TV und Android TV im Wohnzimmer ein. Apple TV, Smartphone und Tablet eignen sich für
+        unterwegs oder als Zweitgerät. Entscheidend ist eine stabile Verbindung und eine passende
+        App.
       </>,
       <>
         Ältere Fernseher ohne brauchbare Smart-Oberfläche profitieren oft von einer{" "}
         <Link href="/blog/iptv-box" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Box
         </Link>{" "}
-        oder einem{" "}
+        oder einem dedizierten{" "}
         <Link href="/blog/iptv-receiver" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Receiver
         </Link>
-        . Im Wohnzimmer lohnt LAN statt schwachem WLAN, besonders bei 4K-Bitraten.
+        . Im Wohnzimmer lohnt LAN statt schwachem WLAN, besonders bei 4K und parallelen Streams.
       </>,
       <>
-        Weitere Gerätehinweise und App-Guides finden Sie im{" "}
-        <Link href="/blog" className={CONTEXTUAL_LINK_CLASS}>
-          IPTV Blog
+        Testen Sie IPTV auf dem Gerät, das Sie täglich nutzen. Pakete finden Sie unter den{" "}
+        <Link href="/#pakete-start" className={CONTEXTUAL_LINK_CLASS}>
+          Preisen
+        </Link>
+        ; bei Fragen hilft der{" "}
+        <Link href="/kontakt" className={CONTEXTUAL_LINK_CLASS}>
+          Kontakt
         </Link>
         .
       </>,
     ],
   },
   {
-    id: "hinweis-kein-zugang",
-    eyebrow: "HINWEIS",
+    id: "iptv-einrichtung",
+    eyebrow: "EINRICHTUNG",
     title: (
       <>
-        Kein Verkauf von{" "}
-        <span className="text-[#A6FF00]">Zugängen</span>
+        Einfache <span className="text-[#A6FF00]">IPTV Einrichtung</span>
       </>
     ),
     paragraphs: [
       <>
-        iptvkaufenX veröffentlicht Informationen zur IPTV-Technik. Diese Website verkauft keine
-        Abonnements, stellt keine Senderkataloge bereit und vermittelt keinen Zugang zu Pay-TV,
-        Sportrechten, Filmen oder Serien Dritter.
-      </>,
-      <>
-        Markennamen von Geräten oder Apps dienen der technischen Einordnung. Eine Partnerschaft,
-        Lizenz oder Autorisierung durch Sender oder Streaming-Dienste besteht nicht.
-      </>,
-      <>
-        Redaktionelle Fragen richten Sie bitte an{" "}
-        <Link href="/kontakt" className={CONTEXTUAL_LINK_CLASS}>
-          Kontakt
+        Nach dem Kauf tragen Sie Ihre Zugangsdaten in einer IPTV-App ein – häufig per Xtream Codes
+        oder als{" "}
+        <Link href="/blog/iptv-m3u" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV M3U
         </Link>
-        . Zur Arbeitsweise siehe die{" "}
-        <Link href="/redaktionelle-richtlinien" className={CONTEXTUAL_LINK_CLASS}>
-          redaktionellen Richtlinien
+        -Playlist. Die Einrichtung dauert meist nur wenige Minuten; Senderliste und EPG laden
+        anschließend automatisch.
+      </>,
+      <>
+        Als Einstiegsplayer eignet sich oft{" "}
+        <Link href="/blog/iptv-smarters-pro" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Smarters Pro
+        </Link>
+        . Wer auf Android TV Feintuning und EPG-Komfort sucht, greift häufig zu{" "}
+        <Link href="/blog/tivimate-iptv" className={CONTEXTUAL_LINK_CLASS}>
+          TiviMate
+        </Link>
+        . Notieren Sie App-Name und Zugangsart – dann geht ein zweites Gerät schneller.
+      </>,
+      <>
+        Kommen Login-Fehler vor, helfen App-Update, korrekte Server-URL und Neustart von Router und
+        Gerät. Kurze Antworten stehen in den{" "}
+        <Link href="/#faq" className={CONTEXTUAL_LINK_CLASS}>
+          FAQ
         </Link>
         .
       </>,
@@ -175,14 +180,15 @@ export default function HomeSeoContent() {
             id="home-seo-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.65rem] lg:text-[3rem]"
           >
-            Technik, Apps und{" "}
+            Alles Wichtige{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              Einrichtung
+              auf einen Blick
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Kompakte Orientierung zu Übertragungsweg, Playern und Geräten – damit Sie IPTV als
-            Technik einordnen können, ohne Kauf- oder Programmpakete.
+            Kompakte Orientierung zu Inhalten, Geräten und Einrichtung – damit Sie IPTV in
+            Deutschland sicher und ohne Umwege starten. Die folgenden Punkte ergänzen die Abschnitte
+            oben und beantworten die Fragen, die vor dem Kauf am häufigsten bleiben.
           </p>
         </header>
 

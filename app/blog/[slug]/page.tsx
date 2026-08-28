@@ -5,6 +5,7 @@ import BlogBreadcrumb from "@/components/blog/BlogBreadcrumb";
 import BlogArticleContent, {
   BlogArticleHeroImage,
 } from "@/components/blog/BlogArticleContent";
+import BlogCTA from "@/components/blog/BlogCTA";
 import BlogFaq from "@/components/blog/BlogFaq";
 import BlogPlannedNotice from "@/components/blog/BlogPlannedNotice";
 import BlogPostNavigation from "@/components/blog/BlogPostNavigation";
@@ -179,6 +180,15 @@ export default async function BlogArticlePage({ params }: PageProps) {
             <BlogShareButtons title={post.title} slug={post.slug} />
             {!planned ? <BlogFaq items={post.faq} /> : null}
             <BlogPostNavigation previous={previous} next={next} />
+            <div className="mt-12">
+              <BlogCTA
+                heading={post.cta?.heading}
+                description={post.cta?.description}
+                primaryLabel={post.cta?.primaryLabel}
+                secondaryLabel={post.cta?.secondaryLabel}
+                secondaryAction={post.cta?.secondaryAction}
+              />
+            </div>
             <BlogRelatedPosts posts={related} />
           </div>
         </div>

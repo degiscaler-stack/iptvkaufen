@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.inhaltsrichtlinien,
   description:
-    "Inhaltsrichtlinien von iptvkaufenX: Genauigkeit, erlaubte Aussagen und Hinweise zur technischen Information.",
+    "Inhaltsrichtlinien von iptvkaufenX: Genauigkeit, erlaubte Aussagen und Hinweise zur sicheren Nutzung.",
   path: "/inhaltsrichtlinien",
 });
 
@@ -14,35 +14,35 @@ const sections: LegalSection[] = [
   {
     title: "Welche Inhalte wir veröffentlichen",
     paragraphs: [
-      "Auf iptvkaufenx.de veröffentlichen wir redaktionelle Beiträge im [Blog](/blog) sowie Informationen zur Website, zum Kontakt und zu rechtlichen Hinweisen wie [Impressum](/impressum), Datenschutz und Nutzungsbedingungen.",
-      "Blog-Themen decken unter anderem IPTV-Technik in Deutschland, Geräte und Apps, M3U-Playlisten und Einrichtung ab. Autorin der Beiträge ist die [iptvkaufenX Redaktion](/autor).",
+      "Auf iptvkaufenx.de veröffentlichen wir Informationen zum digitalen IPTV-Service von iptvkaufenX sowie redaktionelle Beiträge im [Blog](/blog). Dazu gehören Produktseiten (unter anderem [Preise](/preise)), Support- und Kontaktinformationen sowie rechtliche Hinweise wie [Impressum](/impressum), Datenschutz und Nutzungsbedingungen.",
+      "Blog-Themen decken unter anderem IPTV in Deutschland, Anbieter und Abonnements, Geräte und Apps, Einrichtung, Tests, Premium-Qualität und Senderlisten ab. Autorin der Beiträge ist die [iptvkaufenX Redaktion](/autor).",
     ],
   },
   {
     title: "Genauigkeitsstandards",
     paragraphs: [
-      "Inhalte werden mit Sorgfalt erstellt und regelmäßig geprüft. Technische Tipps beschreiben typische Setups und Vorgehensweisen. Die tatsächliche Funktion hängt von Gerät, App, Internetverbindung und korrekter Einrichtung ab.",
-      "iptvkaufenX verkauft keine IPTV-Zugänge und stellt keine Senderkataloge, Pay-TV- oder Sportrechte Dritter bereit. Leistungsangaben zu Abonnements oder Programmpaketen gehören nicht zu den veröffentlichten Inhalten.",
+      "Inhalte werden mit Sorgfalt erstellt und regelmäßig geprüft. Leistungsangaben zum Service – etwa HD/4K, Filme, Serien und Sport, Nutzung auf zwei Geräten, 24-Stunden-Test für 3 € sowie 30-Tage-Geld-zurück-Garantie – orientieren sich an den auf der Website ausgewiesenen Informationen.",
+      "Technische Tipps in Blog-Beiträgen beschreiben typische Setups und Vorgehensweisen. Die tatsächliche Funktion hängt von Gerät, App, Internetverbindung und korrekter Einrichtung ab.",
     ],
   },
   {
     title: "Keine erfundenen Angaben",
     paragraphs: [
-      "Wir erfinden keine Firmenadresse, Rechtsform, Erfahrungsjahre, Auszeichnungen, Zertifikate, Lizenzen, Senderpartnerschaften oder Mitarbeiternamen. Wo solche Angaben fehlen, bleiben sie bewusst ungenannt.",
+      "Wir erfinden keine Firmenadresse, Rechtsform, Erfahrungsjahre, Auszeichnungen, Zertifikate oder Mitarbeiternamen. Wo solche Angaben fehlen, bleiben sie bewusst ungenannt.",
       "Soziale Kanäle (Facebook, Instagram, TikTok, X, Pinterest und YouTube), die auf der Website als Kontaktwege veröffentlicht sind, werden als solche genannt – ohne darüber hinausgehende Eigentums- oder Partnerschaftsbehauptungen.",
     ],
   },
   {
-    title: "Hinweise zur Nutzung der Informationen",
+    title: "Hinweise zur sicheren Nutzung",
     paragraphs: [
-      "Die Ratgeber ersetzen keine individuelle Beratung und keine rechtliche Prüfung eines IPTV-Angebots Dritter. Prüfen Sie Rechte, Verträge und technische Voraussetzungen selbst.",
-      "Bei Fragen zu Artikeln wenden Sie sich an [Kontakt](/kontakt) oder die E-Mail-Adressen support@iptvkaufenx.de und contact@iptvkaufenx.de.",
+      "Schützen Sie Zugangsdaten und geben Sie sie nicht unbefugt weiter. Nutzen Sie den Dienst nur im Rahmen des gewählten Pakets und der [Nutzungsbedingungen](/nutzungsbedingungen).",
+      "Prüfen Sie vor einer längeren Buchung idealerweise den 24-Stunden-Test und die für Sie relevanten Sender. Bei Problemen wenden Sie sich an den Support über [Kontakt](/kontakt), WhatsApp (+44 7832 620735) oder die E-Mail-Adressen support@iptvkaufenx.de und contact@iptvkaufenx.de.",
     ],
   },
   {
     title: "Redaktionelle Einordnung",
     paragraphs: [
-      "Wie Inhalte entstehen, geprüft und korrigiert werden, ist in den [redaktionellen Richtlinien](/redaktionelle-richtlinien) beschrieben.",
+      "Wie Inhalte entstehen, geprüft und korrigiert werden und wie wir die kommerzielle Absicht (Verkauf von IPTV) offenlegen, ist in den [redaktionellen Richtlinien](/redaktionelle-richtlinien) beschrieben.",
     ],
   },
   {
@@ -73,8 +73,8 @@ export default function InhaltsrichtlinienPage() {
       <LegalPage
         eyebrow="Inhalte"
         title="Inhaltsrichtlinien"
-        updatedAt="28. August 2026"
-        intro="Diese Inhaltsrichtlinien legen fest, welche Angaben iptvkaufenX veröffentlicht und dass die Website technische Information bietet – keine IPTV-Zugänge."
+        updatedAt="11. Juli 2026"
+        intro="Diese Inhaltsrichtlinien legen fest, welche Angaben iptvkaufenX veröffentlicht, wie Genauigkeit angestrebt wird und worauf Nutzer achten sollten."
         sections={sections}
       />
     </>

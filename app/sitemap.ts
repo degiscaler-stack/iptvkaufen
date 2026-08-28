@@ -10,6 +10,7 @@ const SITE_URL = "https://iptvkaufenx.de";
 const STATIC_SITEMAP_URLS = [
   `${SITE_URL}/`,
   `${SITE_URL}/blog`,
+  `${SITE_URL}/reseller`,
   `${SITE_URL}/kontakt`,
   `${SITE_URL}/ueber-uns`,
   `${SITE_URL}/autor`,

@@ -1,0 +1,76 @@
+import PricingScrollLink from "@/components/PricingScrollLink";
+import { TrackedAnchor } from "@/components/TrackedLink";
+import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
+import { ctaSolidGreenClass } from "@/lib/cta-motion";
+
+type BlogCTAProps = {
+  heading?: string;
+  description?: string;
+  primaryLabel?: string;
+  secondaryLabel?: string;
+  secondaryAction?: "pricing" | "whatsapp";
+};
+
+const secondaryButtonClass =
+  "inline-flex w-fit items-center justify-center rounded-full border border-[#A6FF00]/30 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00] transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 hover:text-[#C7FF62]";
+
+export default function BlogCTA({
+  heading = "Bereit für Live-TV in HD & 4K?",
+  description = "Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 4 Geräten gleichzeitig und mit persönlichem Support bei der Einrichtung.",
+  primaryLabel = "Jetzt IPTV kaufen",
+  secondaryLabel = "Preise ansehen",
+  secondaryAction = "pricing",
+}: BlogCTAProps) {
+  const whatsappSecondary = secondaryAction === "whatsapp";
+
+  return (
+    <section
+      aria-labelledby="blog-cta-heading"
+      className="relative overflow-hidden rounded-[28px] border border-[#A6FF00]/22 bg-[radial-gradient(circle_at_80%_0%,rgba(166,255,0,0.14),transparent_42%),linear-gradient(135deg,#0A1008_0%,#050806_100%)] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.34)] sm:p-8 lg:p-10"
+    >
+      <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#A6FF00]/8 blur-3xl" aria-hidden="true" />
+      <div className="relative max-w-[640px]">
+        <p className="mb-3 inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
+          Premium IPTV
+        </p>
+        <h2
+          id="blog-cta-heading"
+          className="text-balance text-[1.65rem] font-black leading-[1.05] tracking-[-0.04em] text-[#F5F5F5] sm:text-[2rem]"
+        >
+          {heading}
+        </h2>
+        <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/82">{description}</p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <PricingScrollLink
+            buttonLocation="blog_cta_primary"
+            className={`${ctaSolidGreenClass} inline-flex w-fit items-center justify-center rounded-full bg-[#A6FF00] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-[#C7FF62]`}
+          >
+            {primaryLabel}
+          </PricingScrollLink>
+          {whatsappSecondary ? (
+            <TrackedAnchor
+              href={buildWhatsAppUrl(WHATSAPP_MESSAGES.packageHelp)}
+              target="_blank"
+              rel="noopener noreferrer"
+              analyticsEvent={ANALYTICS_EVENTS.whatsappClick}
+              analyticsParams={{ source: "blog_cta_whatsapp" }}
+              data-analytics="whatsapp_click"
+              data-analytics-source="blog_cta_whatsapp"
+              className={secondaryButtonClass}
+            >
+              {secondaryLabel}
+            </TrackedAnchor>
+          ) : (
+            <PricingScrollLink
+              buttonLocation="blog_cta_preise"
+              className={secondaryButtonClass}
+            >
+              {secondaryLabel}
+            </PricingScrollLink>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}

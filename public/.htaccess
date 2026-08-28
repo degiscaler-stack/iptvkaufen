@@ -34,27 +34,10 @@ Options -Indexes
   RewriteEngine On
   RewriteBase /
 
-  # Permanently retired URLs — genuine HTTP 410, do not rewrite to homepage
+  # Permanently retired Senderliste — genuine HTTP 410, do not rewrite to homepage
   RewriteRule ^senderliste/?$ - [G,L]
   RewriteRule ^senderliste/ - [G,L]
   RewriteRule ^senderliste\.html$ - [G,L]
-  RewriteRule ^reseller/?$ - [G,L]
-  RewriteRule ^reseller/ - [G,L]
-  RewriteRule ^reseller\.html$ - [G,L]
-  RewriteRule ^preise/?$ - [G,L]
-  RewriteRule ^preise/ - [G,L]
-  RewriteRule ^preise\.html$ - [G,L]
-  RewriteRule ^blog/iptv-alle-sender/?$ - [G,L]
-  RewriteRule ^blog/iptv-line-kaufen/?$ - [G,L]
-  RewriteRule ^blog/iptv-abo/?$ - [G,L]
-  RewriteRule ^blog/iptv-free-trial/?$ - [G,L]
-  RewriteRule ^blog/iptv-sport/?$ - [G,L]
-  RewriteRule ^blog/iptv-tuerkische-sender/?$ - [G,L]
-  RewriteRule ^blog/iptv-balkan/?$ - [G,L]
-  RewriteRule ^blog/iptv-greek/?$ - [G,L]
-  RewriteRule ^blog/polish-iptv/?$ - [G,L]
-  RewriteRule ^blog/iptv-arab/?$ - [G,L]
-  RewriteRule ^blog/iptv-nordic/?$ - [G,L]
 
   # Serve clean URLs from exported .html files
   RewriteCond %{REQUEST_FILENAME} !-f

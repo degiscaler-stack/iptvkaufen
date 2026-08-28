@@ -14,9 +14,9 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-13T10:00:00.000Z",
-  "updatedAt": "2026-08-28T12:00:00.000Z",
+  "updatedAt": "2026-07-13T21:00:00.000Z",
   "readingTimeMinutes": 18,
-  "image": null,
+  "image": "/images/post 20/beste-iptv-app-fur-samsung-fernseher-1.webp",
   "imageAlt": "Beste IPTV App für Samsung Fernseher – Smart-TV-Startbildschirm mit App-Auswahl",
   "featured": false,
   "popular": true,
@@ -174,6 +174,14 @@
         "Beachten Sie, dass sich Funktionsumfang und Verfügbarkeit im App-Store mit der Zeit ändern können. Prüfen Sie vor der endgültigen Entscheidung den aktuellen Stand direkt in der App-Beschreibung auf Ihrem Fernseher.",
         "Über die reine Funktionsliste hinaus lohnt sich auch ein Blick auf die Reaktionsgeschwindigkeit der jeweiligen App bei größeren Playlists. Gerade auf älteren Samsung-Modellen mit begrenztem Arbeitsspeicher kann sich hier ein deutlicher Unterschied zeigen, der in einer reinen Feature-Tabelle nicht abzulesen ist."
       ],
+      "image": {
+        "src": "/images/post 20/beste-iptv-app-fur-samsung-fernseher-2.webp",
+        "alt": "Beste IPTV App für Samsung Fernseher – Vergleich der Tizen-Apps auf dem Smart-TV",
+        "title": "IPTV Apps für Samsung Fernseher im Vergleich",
+        "width": 1536,
+        "height": 1024,
+        "caption": "Vergleich von IPTV Apps für Samsung Smart-TVs (16:10)"
+      },
       "blocks": [
         {
           "type": "comparison-table",
@@ -270,7 +278,15 @@
         "Nach dem Anschluss der externen Hardware richten Sie Ihre Playlist dort genauso ein wie zuvor auf dem Samsung-TV geplant – die grundlegenden Schritte mit Playlist- oder Xtream-Zugang bleiben gleich, nur die Umgebung ändert sich.",
         "Für viele Haushalte ist diese Kombination – Samsung-TV als Bildschirm, externes Gerät für IPTV – im Alltag sogar komfortabler, weil Updates und App-Verfügbarkeit dann nicht mehr an die Lebensdauer des Fernsehers gekoppelt sind.",
         "Ein weiterer Vorteil: Externe Geräte lassen sich bei einem künftigen Fernseherwechsel einfach mitnehmen. Ihre Playlist-Einrichtung, Favoriten und gewohnte App bleiben erhalten, während nur der Bildschirm dahinter ausgetauscht wird – ein klarer Pluspunkt gegenüber einer fest im TV-Betriebssystem verankerten Lösung."
-      ]
+      ],
+      "image": {
+        "src": "/images/post 20/beste-iptv-app-fur-samsung-fernseher-3.webp",
+        "alt": "Beste IPTV App für Samsung Fernseher – Fire TV Stick als Alternative am Samsung TV",
+        "title": "Fire TV Stick und IPTV Box als Alternative zum Samsung App-Store",
+        "width": 1536,
+        "height": 1024,
+        "caption": "Externe Hardware als Alternative, wenn keine passende App verfügbar ist (16:10)"
+      }
     },
     {
       "id": "haeufige-probleme",

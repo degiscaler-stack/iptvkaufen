@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.ueberUns,
   description:
-    "Über iptvkaufenX: redaktionelle Website mit technischen Informationen zu IPTV, Apps, Geräten und Einrichtung.",
+    "Über iptvkaufenX: digitaler IPTV-Service mit Live-TV, Support und transparenten Informationen.",
   path: "/ueber-uns",
 });
 
@@ -14,35 +14,37 @@ const sections: LegalSection[] = [
   {
     title: "Wer wir sind",
     paragraphs: [
-      "iptvkaufenX ist die Marke hinter den redaktionellen Inhalten auf [iptvkaufenx.de](https://iptvkaufenx.de). Wir veröffentlichen technische Informationen zu IPTV in Deutschland – zu Apps, Geräten, Playlisten, Einrichtung und Fehlerbehebung.",
-      "Diese Seite beschreibt den redaktionellen Zweck der Website. Gesetzliche Anbieterinformationen finden Sie im [Impressum](/impressum).",
+      "iptvkaufenX ist die Marke hinter dem digitalen IPTV-Angebot auf [iptvkaufenx.de](https://iptvkaufenx.de). Wir betreiben die Website und den zugehörigen Service für Nutzerinnen und Nutzer, die Live-TV, Filme, Serien und Sport über das Internet nutzen möchten.",
+      "Diese Seite stellt dar, was wir anbieten und wie Sie uns erreichen – ohne erfundene Unternehmensangaben. Gesetzliche Anbieterinformationen finden Sie im [Impressum](/impressum).",
     ],
   },
   {
-    title: "Was wir veröffentlichen",
+    title: "Was wir anbieten",
     paragraphs: [
-      "iptvkaufenX erklärt IPTV als Technik: Übertragung über das Internet Protocol, Player-Apps, M3U/M3U8-Playlisten und typische Geräte. Die Beiträge dienen der Orientierung, nicht dem Verkauf von Zugängen.",
-      "Die Website verkauft keine IPTV-Abonnements, stellt keine Senderkataloge bereit und vermittelt keinen Zugang zu Pay-TV, Sportrechten, Filmen oder Serien Dritter. Eine Lizenz, Partnerschaft oder Autorisierung durch Sender oder Streaming-Dienste besteht nicht.",
+      "iptvkaufenX bietet einen digitalen IPTV-Dienst mit Live-TV, Inhalten in HD und 4K sowie Filmen, Serien und Sport. Die Nutzung ist auf bis zu zwei Geräten gleichzeitig vorgesehen.",
+      "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine 30-Tage-Geld-zurück-Garantie gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung). Aktuelle Pakete und Preise finden Sie unter [Preise](/preise).",
     ],
   },
   {
-    title: "Redaktion und Kontakt",
+    title: "Support",
     paragraphs: [
-      "Fachbeiträge erscheinen im [Blog](/blog) unter dem Autorenhinweis [iptvkaufenX Redaktion](/autor). Standards sind in den [redaktionellen Richtlinien](/redaktionelle-richtlinien) und den [Inhaltsrichtlinien](/inhaltsrichtlinien) beschrieben.",
-      "Redaktionelle Fragen, Korrekturhinweise und allgemeine Anliegen erreichen uns über [Kontakt](/kontakt), per E-Mail an support@iptvkaufenx.de und contact@iptvkaufenx.de sowie über WhatsApp (+44 7832 620735, Kontakt auf Deutsch).",
+      "Bei Fragen zu Bestellung, Aktivierung, Einrichtung oder Nutzung erreichen Sie uns digital. Unser internationaler WhatsApp-Support steht auf Deutsch unter +44 7832 620735 zur Verfügung.",
+      "Per E-Mail erreichen Sie uns unter support@iptvkaufenx.de und contact@iptvkaufenx.de. Weitere Wege und Hinweise finden Sie auf der Seite [Kontakt](/kontakt).",
     ],
   },
   {
     title: "Transparenz",
     paragraphs: [
       "Die Inhalte dieser Website werden mit Sorgfalt erstellt und regelmäßig geprüft. Dennoch kann keine Gewähr für Vollständigkeit, Aktualität und Richtigkeit aller Angaben übernommen werden – wie im [Impressum](/impressum) beschrieben.",
-      "Wir erfinden keine Unternehmenslizenzen, Senderpartnerschaften oder Rechteinhaberschaften. Wo solche Nachweise fehlen, bleiben sie ungenannt.",
+      "Fachbeiträge und Ratgeber erscheinen im [Blog](/blog) unter dem Autorenhinweis [iptvkaufenX Redaktion](/autor). Redaktionelle und inhaltliche Standards sind in den [redaktionellen Richtlinien](/redaktionelle-richtlinien) und den [Inhaltsrichtlinien](/inhaltsrichtlinien) dargelegt.",
+      "Auf der Website sind zudem veröffentlichte Kontaktkanäle zu Facebook, Instagram, TikTok, X, Pinterest und YouTube hinterlegt. Diese dienen der Erreichbarkeit; nähere Angaben dazu finden Sie unter [Kontakt](/kontakt).",
     ],
   },
   {
     title: "Weiterführende Seiten",
     items: [
-      "[Blog](/blog) – technische Ratgeber und Guides",
+      "[Blog](/blog) – Ratgeber und Guides zu IPTV",
+      "[Preise](/preise) – Pakete, Test und Konditionen",
       "[Kontakt](/kontakt) – E-Mail, WhatsApp und Formular",
       "[Impressum](/impressum) – Anbieter- und Kontaktinformationen",
       "[Autor](/autor) – iptvkaufenX Redaktion",
@@ -67,8 +69,8 @@ export default function UeberUnsPage() {
       <LegalPage
         eyebrow="Über uns"
         title="Über uns"
-        updatedAt="28. August 2026"
-        intro="iptvkaufenX veröffentlicht technische Informationen zu IPTV in Deutschland – zu Apps, Geräten, Playlisten, Einrichtung und Fehlerbehebung. Die Website verkauft keine IPTV-Zugänge."
+        updatedAt="11. Juli 2026"
+        intro="iptvkaufenX bietet einen digitalen IPTV-Service für Deutschland – mit klaren Leistungsangaben, erreichbarem Support und transparenten Informationen auf iptvkaufenx.de."
         sections={sections}
       />
     </>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import BlogBreadcrumb from "@/components/blog/BlogBreadcrumb";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogCategories from "@/components/blog/BlogCategories";
+import BlogCTA from "@/components/blog/BlogCTA";
 import BlogFooter from "@/components/blog/BlogFooter";
 import BlogNewsletter from "@/components/blog/BlogNewsletter";
 import BlogPopularArticles from "@/components/blog/BlogPopularArticles";
@@ -105,6 +106,9 @@ export default async function BlogCategoryPage({ params }: PageProps) {
               </p>
             )}
 
+            <div className="mt-14">
+              <BlogCTA />
+            </div>
             <BlogFooter />
           </div>
 

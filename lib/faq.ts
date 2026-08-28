@@ -1,37 +1,37 @@
 export const FAQ_ITEMS = [
   {
-    question: "Was ist IPTV?",
+    question: "Was ist im IPTV-Paket enthalten?",
     answer:
-      "IPTV (Internet Protocol Television) überträgt Fernsehsignale über eine Internetleitung statt über Kabel oder Satellit. Ein Player auf dem Gerät ruft Streams anhand einer Playlist oder von Zugangsdaten ab.",
+      "Sie erhalten Zugriff auf Live-TV Sender, Filme, Serien, Sport und weitere Inhalte. Die Nutzung ist auf verschiedenen Geräten möglich, darunter Smart TV, Android TV, Fire TV, Smartphone, Tablet, PC und TV Box.",
   },
   {
-    question: "Was bedeuten M3U und M3U8?",
+    question: "Auf welchen Geräten kann ich IPTV nutzen?",
     answer:
-      "M3U und M3U8 sind Playlist-Formate. Sie listen Stream-Adressen, Namen und oft Gruppen. M3U8 wird häufig für HLS-Streams verwendet. Die Datei selbst enthält keine Filme oder Senderrechte – nur technische Verweise.",
+      "Der IPTV-Zugang funktioniert auf vielen modernen Geräten, zum Beispiel Smart TV, Android TV, Fire TV, MAG Box, Windows, Smartphone, Tablet, TV Box und weiteren kompatiblen Geräten.",
   },
   {
-    question: "Welche Apps eignen sich als IPTV-Player?",
+    question: "Kann ich IPTV auf mehreren Geräten gleichzeitig nutzen?",
     answer:
-      "Gängige Player sind unter anderem IPTV Smarters Pro, TiviMate, SS IPTV und gerätespezifische Apps. Welche App passt, hängt von Betriebssystem, EPG-Bedarf und Bedienung ab – nicht von einem bestimmten Programmpaket.",
+      "Ja. Je nach gewähltem Paket können Sie IPTV gleichzeitig auf bis zu 4 kompatiblen Geräten nutzen, zum Beispiel auf Smart TV, Smartphone, Tablet, Computer oder TV Box.",
   },
   {
-    question: "Auf welchen Geräten laufen IPTV-Player?",
+    question: "Wie schnell erhalte ich meinen Zugang nach der Bestellung?",
     answer:
-      "Typisch sind Smart TV, Android TV, Fire TV, Apple TV, Smartphone, Tablet, PC und TV-Boxen. Die tatsächliche Funktion hängt von App-Store, Systemversion und Internetverbindung ab.",
+      "Nach der Bestellung werden Ihre Zugangsdaten schnell bereitgestellt. Danach können Sie die Einrichtung auf Ihrem bevorzugten Gerät starten.",
   },
   {
-    question: "Warum ruckelt oder startet ein Stream nicht?",
+    question: "Welche Zahlungsmethoden werden unterstützt?",
     answer:
-      "Häufige Ursachen sind schwaches WLAN, zu hohe Bitrate für die Leitung, falsche Server-URL, veraltete App oder überlastete DNS-/CDN-Wege. LAN, App-Update und ein Neustart von Router und Gerät sind die ersten Prüfpunkte.",
+      "Nach Bestätigung Ihrer Bestellung über WhatsApp erhalten Sie die verfügbaren Zahlungsinformationen. PayPal, Visa, Mastercard und weitere gängige Zahlungsarten stehen zur Verfügung. Keine Zahlungsdaten werden direkt auf dieser Website eingegeben.",
   },
   {
-    question: "Bietet iptvkaufenX IPTV-Zugänge oder Senderlisten an?",
+    question: "Gibt es Support bei der Einrichtung?",
     answer:
-      "Nein. iptvkaufenX veröffentlicht technische Informationen zu IPTV. Die Website verkauft keine Abonnements, vermittelt keine Pay-TV- oder Sportzugänge und stellt keine Senderkataloge Dritter bereit.",
+      "Ja. Bei Fragen zur Einrichtung oder Nutzung steht Ihnen Support zur Verfügung, damit Sie IPTV schnell und korrekt auf Ihrem Gerät verwenden können.",
   },
   {
-    question: "Wie erreiche ich die Redaktion?",
+    question: "Gibt es eine Geld-zurück-Garantie?",
     answer:
-      "Über die Kontaktseite, per E-Mail an support@iptvkaufenx.de oder contact@iptvkaufenx.de. Fragen zu Artikeln, Korrekturen und Technikhinweisen sind willkommen.",
+      "Ja. Sie können innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn Sie mit dem Service nicht zufrieden sind – gemäß unserer Rückerstattungsrichtlinie.",
   },
 ] as const;

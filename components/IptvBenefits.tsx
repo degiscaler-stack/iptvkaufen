@@ -1,18 +1,18 @@
 const benefits = [
   {
     icon: "channels",
-    title: "Playlisten",
-    text: "M3U und M3U8 als technische Listenformat erklärt.",
+    title: "Live-TV",
+    text: "Live-TV aus Deutschland und weltweit.",
   },
   {
     icon: "media",
-    title: "Player-Apps",
-    text: "Smarters, TiviMate und weitere Apps im Überblick.",
+    title: "Filme & Serien",
+    text: "Aktuelle Inhalte jederzeit abrufbar.",
   },
   {
     icon: "quality",
-    title: "Geräte & Setup",
-    text: "Box, Stick, Receiver und typische Fehlerquellen.",
+    title: "4K Qualität",
+    text: "HD, Full HD und 4K Streaming.",
   },
 ] as const;
 
@@ -70,14 +70,14 @@ export default function IptvBenefits() {
             id="iptv-benefits-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.65rem] lg:text-[3rem]"
           >
-            Themen auf{" "}
+            Warum{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              iptvkaufenX
+              iptvkaufenX?
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[690px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Technische Schwerpunkte der Redaktion: Playlisten, Player-Apps und Geräte – erklärt ohne
-            Verkauf von Zugängen.
+            Alles, was Sie für ein modernes Streaming-Erlebnis brauchen – schnell, stabil und auf
+            allen Geräten verfügbar.
           </p>
         </div>
 

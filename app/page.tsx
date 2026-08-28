@@ -1,28 +1,60 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
+import HeroImagePreload from "@/components/preloads/HeroImagePreload";
+import PackageHashScroll from "@/components/PackageHashScroll";
+import CompactTrustStrip from "@/components/CompactTrustStrip";
 import HomeSeoContent, { HOME_SEO_FAQ } from "@/components/HomeSeoContent";
+import {
+  buildProductAggregateRating,
+  buildProductReviews,
+} from "@/lib/customer-reviews";
 import { FAQ_ITEMS } from "@/lib/faq";
-import { SITE_URL, buildPageMetadata } from "@/lib/seo";
+import {
+  buildDigitalOfferShippingDetails,
+  buildMerchantReturnPolicy,
+  buildMerchantReturnPolicyRef,
+} from "@/lib/merchant-listing";
+import {
+  getAllProductOffers,
+  getOfferSchemaId,
+  getOfferSchemaName,
+} from "@/lib/pricing";
+import {
+  SITE_URL,
+  buildPageMetadata,
+} from "@/lib/seo";
 import { SEO_TITLES } from "@/lib/seo-titles";
 
 const IptvBenefits = dynamic(() => import("@/components/IptvBenefits"));
 const IptvHowItWorks = dynamic(() => import("@/components/IptvHowItWorks"));
 const IptvFaq = dynamic(() => import("@/components/IptvFaq"));
+const IptvPricing = dynamic(() => import("@/components/IptvPricing"));
 const CompatibleDevicesSlider = dynamic(() => import("@/components/CompatibleDevicesSlider"));
+const PremiumEntertainment = dynamic(() => import("@/components/PremiumEntertainment"));
+const PremiumExperience = dynamic(() => import("@/components/PremiumExperience"));
+const ServiceHighlightsBar = dynamic(() => import("@/components/ServiceHighlightsBar"));
+const CustomerReviews = dynamic(() => import("@/components/CustomerReviews"));
+const MobileStickyPurchaseBar = dynamic(() => import("@/components/MobileStickyPurchaseBar"));
 
 const seoDescription =
-  "Informationen zu IPTV in Deutschland: Technik, Apps, Geräte, M3U, Einrichtung und Fehlerbehebung verständlich erklärt von iptvkaufenX.";
+  "IPTV kaufen in Deutschland mit großer Senderauswahl, flexiblen Paketen, einfacher Einrichtung und deutschsprachigem Support bei iptvkaufenX.";
 
-const HOME_OG_IMAGE = "/brand/iptv-kaufen-logo.webp";
+const HOME_OG_IMAGE = "/images/iptv-kaufen-premium-streaming-deutschland.webp";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.home,
   description: seoDescription,
   path: "/",
   image: HOME_OG_IMAGE,
-  imageAlt: "iptvkaufenX – IPTV-Technik, Apps und Einrichtung",
+  imageAlt: "IPTV kaufen in Deutschland – Premium Live-TV Streaming",
 });
+
+const productDescription =
+  "Premium IPTV Zugang mit Live-TV, Filmen, Serien und Sport in HD, Full HD und 4K.";
+
+const PRODUCT_ID = `${SITE_URL}/#product`;
+const productAggregateRating = buildProductAggregateRating();
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -40,7 +72,7 @@ const structuredData = {
       contactPoint: [
         {
           "@type": "ContactPoint",
-          contactType: "editorial",
+          contactType: "customer support",
           telephone: "+447832620735",
           email: "support@iptvkaufenx.de",
           availableLanguage: ["German", "de"],
@@ -55,7 +87,9 @@ const structuredData = {
         "https://www.pinterest.com/iptvkaufenx/",
         "https://www.youtube.com/@iptvkaufenx",
       ],
+      hasMerchantReturnPolicy: buildMerchantReturnPolicyRef(),
     },
+    buildMerchantReturnPolicy(),
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
@@ -76,12 +110,38 @@ const structuredData = {
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: {
         "@type": "Thing",
-        name: "IPTV-Technik",
+        name: "IPTV Kaufen",
       },
       primaryImageOfPage: {
         "@type": "ImageObject",
         url: `${SITE_URL}${HOME_OG_IMAGE}`,
       },
+    },
+    {
+      "@type": "Product",
+      "@id": PRODUCT_ID,
+      name: "IPTV Kaufen Deutschland",
+      description: productDescription,
+      image: `${SITE_URL}${HOME_OG_IMAGE}`,
+      url: `${SITE_URL}/`,
+      brand: {
+        "@type": "Brand",
+        name: "iptvkaufenX",
+      },
+      ...(productAggregateRating ? { aggregateRating: productAggregateRating } : {}),
+      review: buildProductReviews(PRODUCT_ID),
+      offers: getAllProductOffers().map((pkg) => ({
+        "@type": "Offer",
+        "@id": `${SITE_URL}/#${getOfferSchemaId(pkg)}`,
+        name: getOfferSchemaName(pkg),
+        price: Number(pkg.priceNumeric.toFixed(2)),
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/#preise`,
+        itemOffered: { "@id": PRODUCT_ID },
+        shippingDetails: buildDigitalOfferShippingDetails(),
+        hasMerchantReturnPolicy: buildMerchantReturnPolicyRef(),
+      })),
     },
     {
       "@type": "FAQPage",
@@ -110,17 +170,26 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
+      <HeroImagePreload />
+      <PackageHashScroll />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <Hero />
+      <CompactTrustStrip />
+      <IptvPricing />
+      <PremiumExperience />
+      <IptvBenefits />
+      <ServiceHighlightsBar />
+      <PremiumEntertainment />
       <CompatibleDevicesSlider />
       <IptvHowItWorks />
-      <IptvBenefits />
       <HomeSeoContent />
+      <CustomerReviews />
       <IptvFaq />
+      <MobileStickyPurchaseBar />
     </main>
   );
 }

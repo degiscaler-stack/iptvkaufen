@@ -18,7 +18,7 @@ const RESPONSE_MESSAGES = {
 
 function printUsage() {
   console.error("Usage: npm run indexnow -- <url> [url...]");
-  console.error("Example: npm run indexnow -- https://iptvkaufenx.de/ https://iptvkaufenx.de/blog");
+  console.error("Example: npm run indexnow -- https://iptvkaufenx.de/ https://iptvkaufenx.de/reseller");
 }
 
 function loadKey() {

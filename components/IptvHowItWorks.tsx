@@ -2,20 +2,20 @@ const steps = [
   {
     number: "01",
     icon: "order",
-    title: "Technik verstehen",
-    text: "IPTV überträgt Streams über das Internet. Playlisten wie M3U oder M3U8 beschreiben Adressen, nicht Programminhalte.",
+    title: "Paket auswählen",
+    text: "Wählen Sie das passende IPTV Paket und schließen Sie Ihre Bestellung sicher ab.",
   },
   {
     number: "02",
     icon: "access",
-    title: "Player wählen",
-    text: "Eine App auf dem Gerät lädt die Playlist und zeigt EPG, Kategorien und Wiedergabe – unabhängig vom Fernseherhersteller.",
+    title: "Zugang erhalten",
+    text: "Ihre Zugangsdaten werden nach der Bestellung schnell bereitgestellt.",
   },
   {
     number: "03",
     icon: "stream",
-    title: "Fehler prüfen",
-    text: "Ruckeln und Login-Fehler liegen oft an Leitung, URL oder App-Version. LAN, Update und Neustart sind die ersten Schritte.",
+    title: "Sofort streamen",
+    text: "Starten Sie IPTV auf Smart TV, Smartphone, Tablet, PC oder TV Box.",
   },
 ] as const;
 
@@ -68,14 +68,13 @@ export default function IptvHowItWorks() {
             id="iptv-how-it-works-heading"
             className="text-balance text-[2.05rem] font-black leading-[1.02] tracking-[-0.06em] text-[#F5F5F5] [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:text-[2.65rem] lg:text-[3rem]"
           >
-            So funktioniert{" "}
+            In 3 einfachen Schritten{" "}
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
-              IPTV-Technik
+              starten
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Drei Bausteine: Übertragungsweg, Player-App und eine stabile Leitung. iptvkaufenX erklärt
-            die Technik – ohne Zugänge oder Programmpakete zu verkaufen.
+            Wählen Sie Ihr Paket, erhalten Sie Ihre Zugangsdaten und genießen Sie IPTV auf bis zu 4 Geräten gleichzeitig – TV, Smartphone oder Tablet.
           </p>
         </div>
 
