@@ -5,7 +5,7 @@ export const HOME_SEO_FAQ = [
   {
     question: "Was bedeutet IPTV kaufen?",
     answer:
-      "IPTV kaufen heißt, Sie erwerben Zugang zu Live-TV und oft auch Filmen sowie Serien über das Internet – statt über Kabel oder Satellit. Bei iptvkaufenX erhalten Sie Zugangsdaten für kompatible Apps und Geräte.",
+      "IPTV kaufen heißt, Sie erwerben einen Internetzugang für IPTV auf kompatiblen Geräten – statt über klassischen Kabel- oder Satellitenempfang. Bei iptvkaufenX erhalten Sie Zugangsdaten, flexible Pakete und Unterstützung bei der Einrichtung.",
   },
   {
     question: "Auf welchen Geräten funktioniert IPTV?",
@@ -33,7 +33,7 @@ const cards = [
       <>
         IPTV kaufen bedeutet Fernsehen über Ihre Internetleitung – ohne klassischen Kabelvertrag und
         ohne Satellitenschüssel. Sie erhalten Zugangsdaten, installieren eine Player-App und
-        streamen Live-TV auf dem Gerät, das Sie bereits nutzen. Für Haushalte in Deutschland zählen
+        starten auf dem Gerät, das Sie bereits nutzen. Für Haushalte in Deutschland zählen
         vor allem Stabilität zur Hauptsendezeit, transparente Pakete und erreichbarer Support auf
         Deutsch.
       </>,
@@ -53,22 +53,22 @@ const cards = [
     ],
   },
   {
-    id: "live-tv-sport-filme",
-    eyebrow: "INHALTE & SPORT",
+    id: "iptv-pakete-qualitaet",
+    eyebrow: "PAKETE & QUALITÄT",
     title: (
       <>
-        Live-TV, Sport, <span className="text-[#A6FF00]">Filme &amp; Serien</span>
+        Flexible Pakete, <span className="text-[#A6FF00]">klare Einrichtung</span>
       </>
     ),
     paragraphs: [
       <>
-        Starkes IPTV bündelt lineares Live-TV mit Unterhaltung on demand. Deutsche und
-        internationale Sender, Nachrichten und Sport gehören ebenso dazu wie Filme und Serien –
-        ergänzend zu Plattformen wie Netflix, Prime Video oder Disney+. Viele Haushalte nutzen genau
-        diesen Mix in einem Zugang.
+        Starkes IPTV in Deutschland bedeutet vor allem stabile Übertragung, passende Geräte und
+        nachvollziehbare Pakete. Lineares Fernsehen über Internet unterscheidet sich von reinen
+        On-Demand-Diensten: Es geht um Einrichtung, App-Wahl und Alltagstauglichkeit – nicht um
+        pauschale Katalogversprechen.
       </>,
       <>
-        Bei Sport zählt Stabilität mehr als Marketing. Große Events belasten Server und Leitung
+        Bei hoher Last zählt Stabilität mehr als Marketing. Große Events belasten Server und Leitung
         gleichzeitig – genau dann muss der Stream halten. Wer HD oder{" "}
         <Link href="/blog/iptv-premium-4k" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Premium 4K
@@ -76,7 +76,7 @@ const cards = [
         erwartet, sollte Internetgeschwindigkeit und Gerät mitdenken.
       </>,
       <>
-        Wer Sender gezielt prüft, spart Zeit und enttäuscht sich nicht an unrealistischen „alle
+        Wer Angebote sachlich prüft, spart Zeit und enttäuscht sich nicht an unrealistischen „alle
         Sender“-Versprechen. Weitere Tipps bietet der{" "}
         <Link href="/blog" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Blog
@@ -186,7 +186,7 @@ export default function HomeSeoContent() {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
-            Kompakte Orientierung zu Inhalten, Geräten und Einrichtung – damit Sie IPTV in
+            Kompakte Orientierung zu Paketen, Geräten und Einrichtung – damit Sie IPTV in
             Deutschland sicher und ohne Umwege starten. Die folgenden Punkte ergänzen die Abschnitte
             oben und beantworten die Fragen, die vor dem Kauf am häufigsten bleiben.
           </p>

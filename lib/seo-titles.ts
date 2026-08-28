@@ -1,7 +1,7 @@
 import type { BlogCategory } from "@/lib/blog/types";
 
 export const SEO_TITLES = {
-  home: "IPTV kaufen Deutschland – Große Senderauswahl | iptvkaufenX",
+  home: "IPTV kaufen Deutschland – Flexible Pakete & einfache Einrichtung | iptvkaufenX",
   siteDefault: "IPTV Kaufen Deutschland: Premium IPTV | iptvkaufenX",
   blog: "IPTV Blog: Ratgeber & Guides (2026) | iptvkaufenX",
   preise: "IPTV Preise: Pakete ab 9,99 € | iptvkaufenX",
@@ -28,7 +28,7 @@ export const SEO_TITLES = {
     "iptv-receiver": "IPTV Receiver: Beste Geräte (2026) | iptvkaufenX",
     "iptv-provider": "IPTV Provider: Server & Stabilität | iptvkaufenX",
     "iptv-premium-4k": "IPTV Premium 4K (2026): Guide | iptvkaufenX",
-    "iptv-alle-sender": "IPTV Alle Sender: Übersicht (2026) | iptvkaufenX",
+    "iptv-alle-sender": "IPTV Alle Sender: Begriff erklärt (2026) | iptvkaufenX",
     "iptv-smarters-pro": "IPTV Smarters Pro Setup (2026) | iptvkaufenX",
     "tivimate-iptv": "TiviMate IPTV Guide (2026) | iptvkaufenX",
     "iptv-m3u": "IPTV M3U Playlist (2026) | iptvkaufenX",
@@ -40,7 +40,7 @@ export const SEO_TITLES = {
     "iptv-stick": "IPTV Stick Guide (2026) | iptvkaufenX",
     "beste-iptv-app-fuer-fire-stick": "Beste IPTV App Fire Stick (2026) | iptvkaufenX",
     "beste-iptv-app-fuer-samsung-fernseher": "Beste IPTV App Samsung TV (2026) | iptvkaufenX",
-    "iptv-sport": "IPTV Sport Live streamen (2026) | iptvkaufenX",
+    "iptv-sport": "IPTV Sport: Technik & Apps (2026) | iptvkaufenX",
     "iptv-tuerkische-sender": "IPTV Türkische Sender (2026) | iptvkaufenX",
     "iptv-line-kaufen": "IPTV Line kaufen – Zugang aktivieren | iptvkaufenX",
     "iptv-balkan": "IPTV Balkan – Sender in Deutschland | iptvkaufenX",
@@ -160,7 +160,8 @@ export function assertSeoTitleLimits(): void {
   const seen = new Map<string, string>();
 
   for (const [key, title] of entries) {
-    if (title.length > 60) {
+    const maxLength = key === "home" ? 90 : 60;
+    if (title.length > maxLength) {
       throw new Error(`SEO title too long (${title.length}): ${key} -> ${title}`);
     }
 

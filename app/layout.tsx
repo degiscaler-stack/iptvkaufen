@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://iptvkaufenx.de"),
   title: SEO_TITLES.siteDefault,
   description:
-    "IPTV kaufen in Deutschland. Live-TV, Filme, Serien und Sport in Ultra HD – auf Smart TV, Fire TV und mehr.",
+    "IPTV kaufen in Deutschland: flexible Pakete, einfache Einrichtung und deutschsprachiger Support auf Smart TV, Fire TV und weiteren Geräten.",
   verification: {
     google: "EsW591o2eN7U4ge2cczx0ALhDErtq_qrj0F75xBbky0",
     other: {

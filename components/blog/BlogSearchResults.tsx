@@ -37,7 +37,7 @@ export default function BlogSearchResults({ posts }: BlogSearchResultsProps) {
     return (
       <p className="rounded-2xl border border-[#1F1F1F] bg-[#0A0F0A] p-6 text-[15px] text-[#E6E6E6]/78">
         Keine Ergebnisse für &ldquo;{query}&rdquo;. Versuchen Sie andere Begriffe wie
-        &ldquo;Smart TV&rdquo;, &ldquo;Fire TV&rdquo; oder &ldquo;Bundesliga&rdquo;.
+        &ldquo;Smart TV&rdquo;, &ldquo;Fire TV&rdquo; oder &ldquo;M3U&rdquo;.
       </p>
     );
   }

@@ -51,7 +51,7 @@ export default function BlogFooter() {
             Premium IPTV
           </h3>
           <p className="mt-3 text-[14px] leading-7 text-[#F5F5F5]/72">
-            Live-TV, Filme und Sport in HD &amp; 4K – sofort aktiviert.
+            Flexible IPTV-Pakete, einfache Einrichtung und Support auf Deutsch.
           </p>
           <Link
             href="/"

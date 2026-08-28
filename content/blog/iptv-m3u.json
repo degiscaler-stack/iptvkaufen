@@ -398,7 +398,7 @@
           "heading": "IPTV Smarters Pro",
           "paragraphs": [
             "In [IPTV Smarters Pro](/blog/iptv-smarters-pro) wählen Sie beim Start oder unter „Add User“ die Option für M3U Playlist. Geben Sie einen Namen und die Playlist-URL ein. Optional tragen Sie die EPG-URL ein, falls Ihr Anbieter sie mitliefert.",
-            "Nach dem Speichern lädt die App Live-TV, Filme und Serien – je nach Paket. Tritt ein Ladefehler auf, prüfen Sie Tippfehler in der URL, die Internetverbindung und ob der Zugang aktiv ist."
+            "Nach dem Speichern lädt die App die Streams Ihres Zugangs. Tritt ein Ladefehler auf, prüfen Sie Tippfehler in der URL, die Internetverbindung und ob der Zugang aktiv ist."
           ]
         },
         {

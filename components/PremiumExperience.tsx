@@ -4,7 +4,7 @@ import PricingScrollLink from "@/components/PricingScrollLink";
 import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 const highlights = [
-  "Live-TV, Filme, Serien und Fußball",
+  "Flexible IPTV-Pakete",
   "HD, Full HD und 4K Qualität",
   "Auf bis zu 4 Geräten gleichzeitig nutzbar",
   "Schneller Zugriff nach der Bestellung",
@@ -34,12 +34,12 @@ export default function PremiumExperience() {
 
           <div className="mt-3 max-w-[590px] space-y-2 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:space-y-3 sm:text-base sm:leading-7">
             <p>
-              Mit IPTV Kaufen genießen Sie Live-TV, Filme, Serien und Fußball in HD, Full HD und 4K.
-              Schnell, modern und auf bis zu 4 Geräten gleichzeitig nutzbar.
+              Mit IPTV Kaufen erhalten Sie flexible Pakete, einfache Einrichtung und Nutzung auf bis
+              zu 4 Geräten gleichzeitig – in HD, Full HD und 4K.
             </p>
             <p>
-              TV, Smartphone oder Tablet – auf bis zu 4 Geräten gleichzeitig. Ihre Inhalte sind klar
-              strukturiert und sofort verfügbar.
+              TV, Smartphone oder Tablet – auf bis zu 4 Geräten gleichzeitig. Die Bedienung bleibt
+              klar strukturiert, der Start nach der Bestellung schnell.
             </p>
           </div>
 

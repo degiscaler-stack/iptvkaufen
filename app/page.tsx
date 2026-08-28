@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import HeroImagePreload from "@/components/preloads/HeroImagePreload";
 import PackageHashScroll from "@/components/PackageHashScroll";
 import CompactTrustStrip from "@/components/CompactTrustStrip";
 import HomeSeoContent, { HOME_SEO_FAQ } from "@/components/HomeSeoContent";
@@ -38,7 +37,7 @@ const CustomerReviews = dynamic(() => import("@/components/CustomerReviews"));
 const MobileStickyPurchaseBar = dynamic(() => import("@/components/MobileStickyPurchaseBar"));
 
 const seoDescription =
-  "IPTV kaufen in Deutschland mit großer Senderauswahl, flexiblen Paketen, einfacher Einrichtung und deutschsprachigem Support bei iptvkaufenX.";
+  "IPTV kaufen in Deutschland: flexible Pakete, einfache Einrichtung, Unterstützung für verschiedene Geräte und deutschsprachiger Support bei iptvkaufenX.";
 
 const HOME_OG_IMAGE = "/images/iptv-kaufen-premium-streaming-deutschland.webp";
 
@@ -47,11 +46,11 @@ export const metadata: Metadata = buildPageMetadata({
   description: seoDescription,
   path: "/",
   image: HOME_OG_IMAGE,
-  imageAlt: "IPTV kaufen in Deutschland – Premium Live-TV Streaming",
+  imageAlt: "IPTV kaufen in Deutschland – flexible Pakete und einfache Einrichtung",
 });
 
 const productDescription =
-  "Premium IPTV Zugang mit Live-TV, Filmen, Serien und Sport in HD, Full HD und 4K.";
+  "IPTV kaufen in Deutschland: flexible Pakete, Nutzung auf mehreren Geräten, einfache Einrichtung und deutschsprachiger Support."
 
 const PRODUCT_ID = `${SITE_URL}/#product`;
 const productAggregateRating = buildProductAggregateRating();
@@ -171,7 +170,6 @@ const structuredData = {
 export default function Home() {
   return (
     <main className="pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
-      <HeroImagePreload />
       <PackageHashScroll />
       <script
         type="application/ld+json"

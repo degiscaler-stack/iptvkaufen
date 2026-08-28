@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.preise,
   description:
-    "IPTV Pakete ab 9,99 € – flexible Laufzeiten, Live-TV, Filme und Sport in HD & 4K.",
+    "IPTV Pakete ab 9,99 € – flexible Laufzeiten, mehrere Geräte und deutschsprachiger Support.",
   path: "/preise",
   noIndex: true,
 });

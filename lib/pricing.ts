@@ -246,11 +246,11 @@ export const MULTI_DEVICE_BADGE_TEXT = getDeviceBadgeText(1);
 export const MULTI_DEVICE_BADGE_SUPPORT = getDeviceSupportText(1);
 
 export const PRICING_TRUST_LINE =
-  "Bis zu 4 Geräte gleichzeitig · Live-TV · HD, Full HD & 4K · Support auf Deutsch";
+  "Bis zu 4 Geräte gleichzeitig · HD, Full HD & 4K · Einfache Einrichtung · Support auf Deutsch";
 
 export const IPTV_PACKAGE_FEATURES = [
-  "Live-TV Sender",
-  "Filme & Serien auf Abruf",
+  "Flexible Pakete",
+  "Nutzung auf mehreren Geräten",
   "HD, Full HD & 4K Qualität",
   "Schnelle Aktivierung",
   "24/7 Support",

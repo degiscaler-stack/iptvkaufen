@@ -2,7 +2,7 @@ export const FAQ_ITEMS = [
   {
     question: "Was ist im IPTV-Paket enthalten?",
     answer:
-      "Sie erhalten Zugriff auf Live-TV Sender, Filme, Serien, Sport und weitere Inhalte. Die Nutzung ist auf verschiedenen Geräten möglich, darunter Smart TV, Android TV, Fire TV, Smartphone, Tablet, PC und TV Box.",
+      "Sie erhalten einen IPTV-Zugang mit flexiblen Paketen, Nutzung auf verschiedenen Geräten und Unterstützung bei der Einrichtung. Kompatibel sind unter anderem Smart TV, Android TV, Fire TV, Smartphone, Tablet, PC und TV Box.",
   },
   {
     question: "Auf welchen Geräten kann ich IPTV nutzen?",

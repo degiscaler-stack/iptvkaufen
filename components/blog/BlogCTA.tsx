@@ -16,7 +16,7 @@ const secondaryButtonClass =
   "inline-flex w-fit items-center justify-center rounded-full border border-[#A6FF00]/30 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#A6FF00] transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00]/60 hover:bg-[#A6FF00]/8 hover:text-[#C7FF62]";
 
 export default function BlogCTA({
-  heading = "Bereit für Live-TV in HD & 4K?",
+  heading = "Bereit für IPTV in HD & 4K?",
   description = "Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 4 Geräten gleichzeitig und mit persönlichem Support bei der Einrichtung.",
   primaryLabel = "Jetzt IPTV kaufen",
   secondaryLabel = "Preise ansehen",

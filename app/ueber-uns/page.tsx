@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.ueberUns,
   description:
-    "Über iptvkaufenX: digitaler IPTV-Service mit Live-TV, Support und transparenten Informationen.",
+    "Über iptvkaufenX: digitaler IPTV-Service mit Paketen, Support und transparenten Informationen.",
   path: "/ueber-uns",
 });
 
@@ -14,14 +14,14 @@ const sections: LegalSection[] = [
   {
     title: "Wer wir sind",
     paragraphs: [
-      "iptvkaufenX ist die Marke hinter dem digitalen IPTV-Angebot auf [iptvkaufenx.de](https://iptvkaufenx.de). Wir betreiben die Website und den zugehörigen Service für Nutzerinnen und Nutzer, die Live-TV, Filme, Serien und Sport über das Internet nutzen möchten.",
+      "iptvkaufenX ist die Marke hinter dem digitalen IPTV-Angebot auf [iptvkaufenx.de](https://iptvkaufenx.de). Wir betreiben die Website und den zugehörigen Service für Nutzerinnen und Nutzer, die IPTV über das Internet auf kompatiblen Geräten nutzen möchten.",
       "Diese Seite stellt dar, was wir anbieten und wie Sie uns erreichen – ohne erfundene Unternehmensangaben. Gesetzliche Anbieterinformationen finden Sie im [Impressum](/impressum).",
     ],
   },
   {
     title: "Was wir anbieten",
     paragraphs: [
-      "iptvkaufenX bietet einen digitalen IPTV-Dienst mit Live-TV, Inhalten in HD und 4K sowie Filmen, Serien und Sport. Die Nutzung ist auf bis zu zwei Geräten gleichzeitig vorgesehen.",
+      "iptvkaufenX bietet einen digitalen IPTV-Dienst mit flexiblen Paketen, Inhalten in HD und 4K sowie Nutzung je nach Paket auf mehreren Geräten gleichzeitig.",
       "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine 30-Tage-Geld-zurück-Garantie gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung). Aktuelle Pakete und Preise finden Sie unter [Preise](/preise).",
     ],
   },

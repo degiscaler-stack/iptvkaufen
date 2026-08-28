@@ -152,7 +152,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-[360px] text-[14px] leading-7 text-[#F5F5F5]/76">
-              Premium IPTV Deutschland mit Live-TV, Filmen, Serien und Sport in HD, Full HD und 4K.
+              Premium IPTV Deutschland: flexible Pakete, einfache Einrichtung und Support auf Deutsch.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3" aria-label="Social Media Links">

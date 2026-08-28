@@ -1,13 +1,13 @@
 const benefits = [
   {
     icon: "channels",
-    title: "Live-TV",
-    text: "Live-TV aus Deutschland und weltweit.",
+    title: "Flexible Pakete",
+    text: "Laufzeit und Geräteanzahl passend wählen.",
   },
   {
     icon: "media",
-    title: "Filme & Serien",
-    text: "Aktuelle Inhalte jederzeit abrufbar.",
+    title: "Einfache Einrichtung",
+    text: "Schnell startklar auf kompatiblen Geräten.",
   },
   {
     icon: "quality",
