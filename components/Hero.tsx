@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import PricingScrollLink from "@/components/PricingScrollLink";
 import { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
@@ -14,14 +15,19 @@ export default function Hero() {
       aria-label="IPTV kaufen in Deutschland"
       className="relative isolate flex min-h-0 items-center justify-center overflow-hidden bg-[#000000] px-5 pb-[clamp(1.5rem,3vh,2.5rem)] pt-[clamp(5.5rem,calc(4.5rem+3vh),9rem)] text-center sm:min-h-[clamp(620px,88vh,900px)] sm:px-8 lg:min-h-[clamp(740px,calc(88vh+110px),1040px)]"
     >
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#050505]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_10%,rgba(166,255,0,0.16),transparent_42%),radial-gradient(ellipse_at_80%_80%,rgba(166,255,0,0.08),transparent_46%),linear-gradient(180deg,#070707_0%,#050505_55%,#000000_100%)]" />
-        <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(166,255,0,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(166,255,0,0.18)_1px,transparent_1px)] [background-size:72px_72px]" />
-        <div className="absolute -left-24 top-16 h-64 w-64 rotate-12 rounded-[32px] border border-[#A6FF00]/18 bg-[#A6FF00]/5 blur-[1px]" />
-        <div className="absolute -right-16 bottom-10 h-48 w-48 -rotate-6 rounded-full border border-[#A6FF00]/14 bg-[#A6FF00]/[0.04]" />
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+        <Image
+          src="/images/iptv-kaufen-hero-football.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          aria-hidden="true"
+          className="h-full w-full scale-[1.02] object-cover object-[42%_center] sm:object-center lg:object-[center_58%]"
+        />
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.12)_0%,rgba(5,5,5,0.28)_48%,rgba(5,5,5,0.72)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.55)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.22)_0%,rgba(5,5,5,0.42)_48%,rgba(5,5,5,0.78)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.08)_42%,rgba(5,5,5,0.62)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#000000] to-transparent" />
       <div
         aria-hidden="true"
