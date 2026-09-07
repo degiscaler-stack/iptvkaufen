@@ -6,7 +6,7 @@ import { SEO_TITLES } from "@/lib/seo-titles";
 export const metadata: Metadata = buildPageMetadata({
   title: SEO_TITLES.ueberUns,
   description:
-    "Über iptvkaufenX: digitaler IPTV-Service mit Paketen, Support und transparenten Informationen.",
+    "Über iptvkaufenX: Marke und digitaler IPTV-Service für Deutschland – Leistungen, Support und transparente Informationen auf iptvkaufenx.de.",
   path: "/ueber-uns",
 });
 
@@ -14,30 +14,31 @@ const sections: LegalSection[] = [
   {
     title: "Wer wir sind",
     paragraphs: [
-      "iptvkaufenX ist die Marke hinter dem digitalen IPTV-Angebot auf [iptvkaufenx.de](https://iptvkaufenx.de). Wir betreiben die Website und den zugehörigen Service für Nutzerinnen und Nutzer, die IPTV über das Internet auf kompatiblen Geräten nutzen möchten.",
-      "Diese Seite stellt dar, was wir anbieten und wie Sie uns erreichen – ohne erfundene Unternehmensangaben. Gesetzliche Anbieterinformationen finden Sie im [Impressum](/impressum).",
+      "iptvkaufenX ist die Marke und Website hinter dem digitalen IPTV-Angebot auf [iptvkaufenx.de](https://iptvkaufenx.de). Wir richten uns an Nutzerinnen und Nutzer in Deutschland, die Live-TV, Filme und Serien über das Internet auf kompatiblen Geräten nutzen möchten.",
+      "Auf dieser Seite erfahren Sie, was der Service umfasst, wie Sie uns erreichen und wo Sie rechtliche sowie redaktionelle Informationen finden. Gesetzliche Anbieterangaben stehen im [Impressum](/impressum).",
     ],
   },
   {
-    title: "Was wir anbieten",
+    title: "Was Nutzer erwarten können",
     paragraphs: [
-      "iptvkaufenX bietet einen digitalen IPTV-Dienst mit flexiblen Paketen, Inhalten in HD und 4K sowie Nutzung je nach Paket auf mehreren Geräten gleichzeitig.",
-      "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine 30-Tage-Geld-zurück-Garantie gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung). Aktuelle Pakete und Preise finden Sie unter [Preise](/#pakete-start).",
+      "iptvkaufenX bietet einen digitalen IPTV-Dienst mit flexiblen Paketlaufzeiten. Je nach gewähltem Paket sind Inhalte in HD, Full HD und 4K verfügbar; die gleichzeitige Nutzung auf mehreren Geräten richtet sich nach dem gebuchten Tarif.",
+      "Die Einrichtung erfolgt digital – in der Regel mit Zugangsdaten und einer passenden App auf dem gewünschten Gerät. Aktuelle Pakete, Geräteoptionen und Preise sind auf der Website unter [Preise](/#pakete-start) einsehbar.",
+      "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine 30-Tage-Geld-zurück-Garantie gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung).",
     ],
   },
   {
     title: "Support",
     paragraphs: [
-      "Bei Fragen zu Bestellung, Aktivierung, Einrichtung oder Nutzung erreichen Sie uns digital. Unser internationaler WhatsApp-Support steht auf Deutsch unter +44 7832 620735 zur Verfügung.",
-      "Per E-Mail erreichen Sie uns unter support@iptvkaufenx.de und contact@iptvkaufenx.de. Weitere Wege und Hinweise finden Sie auf der Seite [Kontakt](/kontakt).",
+      "Bei Fragen zu Bestellung, Aktivierung, Einrichtung oder Nutzung erreichen Sie uns digital. Unser internationaler WhatsApp-Support ist auf Deutsch unter +44 7832 620735 erreichbar.",
+      "Per E-Mail wenden Sie sich an support@iptvkaufenx.de oder contact@iptvkaufenx.de. Formular, weitere Kontaktwege und Hinweise finden Sie auf der Seite [Kontakt](/kontakt).",
     ],
   },
   {
     title: "Transparenz",
     paragraphs: [
+      "Paketdetails, Preise und Leistungsangaben werden auf der Website ausgewiesen. Rechtliche Informationen zum Anbieter finden Sie im [Impressum](/impressum); zum Datenschutz in der [Datenschutzrichtlinie](/datenschutz). Nutzungsbedingungen und Rückerstattungsregeln sind unter [Nutzungsbedingungen](/nutzungsbedingungen) bzw. [Rückerstattungsrichtlinie](/rueckerstattung) abrufbar.",
       "Die Inhalte dieser Website werden mit Sorgfalt erstellt und regelmäßig geprüft. Dennoch kann keine Gewähr für Vollständigkeit, Aktualität und Richtigkeit aller Angaben übernommen werden – wie im [Impressum](/impressum) beschrieben.",
-      "Fachbeiträge und Ratgeber erscheinen im [Blog](/blog) unter dem Autorenhinweis [iptvkaufenX Redaktion](/autor). Redaktionelle und inhaltliche Standards sind in den [redaktionellen Richtlinien](/redaktionelle-richtlinien) und den [Inhaltsrichtlinien](/inhaltsrichtlinien) dargelegt.",
-      "Auf der Website sind zudem veröffentlichte Kontaktkanäle zu Facebook, Instagram, TikTok, X, Pinterest und YouTube hinterlegt. Diese dienen der Erreichbarkeit; nähere Angaben dazu finden Sie unter [Kontakt](/kontakt).",
+      "Ratgeber und Fachbeiträge erscheinen im [Blog](/blog) unter dem Autorenhinweis [iptvkaufenX Redaktion](/autor). Standards für redaktionelle und veröffentlichte Inhalte sind in den [redaktionellen Richtlinien](/redaktionelle-richtlinien) und [Inhaltsrichtlinien](/inhaltsrichtlinien) beschrieben.",
     ],
   },
   {
@@ -48,6 +49,9 @@ const sections: LegalSection[] = [
       "[Kontakt](/kontakt) – E-Mail, WhatsApp und Formular",
       "[Impressum](/impressum) – Anbieter- und Kontaktinformationen",
       "[Autor](/autor) – iptvkaufenX Redaktion",
+      "[Datenschutz](/datenschutz) – Datenschutzrichtlinie",
+      "[Nutzungsbedingungen](/nutzungsbedingungen) – Nutzungsbedingungen",
+      "[Rückerstattung](/rueckerstattung) – Rückerstattungsrichtlinie",
     ],
   },
 ];
@@ -69,8 +73,8 @@ export default function UeberUnsPage() {
       <LegalPage
         eyebrow="Über uns"
         title="Über uns"
-        updatedAt="11. Juli 2026"
-        intro="iptvkaufenX bietet einen digitalen IPTV-Service für Deutschland – mit klaren Leistungsangaben, erreichbarem Support und transparenten Informationen auf iptvkaufenx.de."
+        updatedAt="7. September 2026"
+        intro="iptvkaufenX ist die Marke hinter iptvkaufenx.de – ein digitaler IPTV-Service für Deutschland mit ausgewiesenen Paketen, erreichbarem Support und verlinkten Rechts- sowie Richtlinien-Seiten."
         sections={sections}
       />
     </>

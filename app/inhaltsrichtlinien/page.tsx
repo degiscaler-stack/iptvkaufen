@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "Inhaltsrichtlinien von iptvkaufenX: Genauigkeit, erlaubte Aussagen und Hinweise zur sicheren Nutzung.",
   path: "/inhaltsrichtlinien",
+  noIndex: true,
 });
 
 const sections: LegalSection[] = [

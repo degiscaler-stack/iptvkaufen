@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "Redaktionelle Richtlinien von iptvkaufenX: Erstellung, Prüfung und Aktualisierung von Blog-Inhalten.",
   path: "/redaktionelle-richtlinien",
+  noIndex: true,
 });
 
 const sections: LegalSection[] = [

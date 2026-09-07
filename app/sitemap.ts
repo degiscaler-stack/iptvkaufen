@@ -14,8 +14,6 @@ const STATIC_SITEMAP_URLS = [
   `${SITE_URL}/kontakt`,
   `${SITE_URL}/ueber-uns`,
   `${SITE_URL}/autor`,
-  `${SITE_URL}/redaktionelle-richtlinien`,
-  `${SITE_URL}/inhaltsrichtlinien`,
 ] as const;
 
 function parseContentDate(value: string | undefined): Date | undefined {
