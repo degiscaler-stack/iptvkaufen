@@ -1,24 +1,6 @@
 import Link from "next/link";
 import { CONTEXTUAL_LINK_CLASS } from "@/lib/blog/inline-content";
 
-export const HOME_SEO_FAQ = [
-  {
-    question: "Was bedeutet IPTV kaufen?",
-    answer:
-      "IPTV kaufen heißt, Sie erwerben einen Internetzugang für IPTV auf kompatiblen Geräten – statt über klassischen Kabel- oder Satellitenempfang. Bei iptvkaufenX erhalten Sie Zugangsdaten, flexible Pakete und Unterstützung bei der Einrichtung.",
-  },
-  {
-    question: "Auf welchen Geräten funktioniert IPTV?",
-    answer:
-      "Typisch sind Smart TV, Samsung TV, LG TV, Fire TV, Android TV, Apple TV sowie Smartphone und Tablet. Die Einrichtung erfolgt meist über Apps wie IPTV Smarters Pro oder TiviMate mit M3U oder Xtream Codes.",
-  },
-  {
-    question: "Wie starte ich bei iptvkaufenX?",
-    answer:
-      "Wählen Sie ein Paket, schließen Sie den Kauf ab und richten Sie die Zugangsdaten in Ihrer App ein. Bei Fragen helfen FAQ, Kontakt und unsere Blog-Ratgeber weiter.",
-  },
-];
-
 const cards = [
   {
     id: "iptv-kaufen-deutschland",

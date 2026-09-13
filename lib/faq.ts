@@ -1,5 +1,10 @@
 export const FAQ_ITEMS = [
   {
+    question: "Was bedeutet IPTV kaufen?",
+    answer:
+      "IPTV kaufen heißt, Sie erwerben einen Internetzugang für IPTV auf kompatiblen Geräten – statt über klassischen Kabel- oder Satellitenempfang. Bei iptvkaufenX erhalten Sie Zugangsdaten, flexible Pakete und Unterstützung bei der Einrichtung.",
+  },
+  {
     question: "Was ist im IPTV-Paket enthalten?",
     answer:
       "Sie erhalten einen IPTV-Zugang mit flexiblen Paketen, Nutzung auf verschiedenen Geräten und Unterstützung bei der Einrichtung. Kompatibel sind unter anderem Smart TV, Android TV, Fire TV, Smartphone, Tablet, PC und TV Box.",
@@ -33,5 +38,15 @@ export const FAQ_ITEMS = [
     question: "Gibt es eine Geld-zurück-Garantie?",
     answer:
       "Ja. Sie können innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn Sie mit dem Service nicht zufrieden sind – gemäß unserer Rückerstattungsrichtlinie.",
+  },
+  {
+    question: "Auf welchen Geräten funktioniert IPTV?",
+    answer:
+      "Typisch sind Smart TV, Samsung TV, LG TV, Fire TV, Android TV, Apple TV sowie Smartphone und Tablet. Die Einrichtung erfolgt meist über Apps wie IPTV Smarters Pro oder TiviMate mit M3U oder Xtream Codes.",
+  },
+  {
+    question: "Wie starte ich bei iptvkaufenX?",
+    answer:
+      "Wählen Sie ein Paket, schließen Sie den Kauf ab und richten Sie die Zugangsdaten in Ihrer App ein. Bei Fragen helfen FAQ, Kontakt und unsere Blog-Ratgeber weiter.",
   },
 ] as const;

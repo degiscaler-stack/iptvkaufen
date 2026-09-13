@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import PackageHashScroll from "@/components/PackageHashScroll";
 import CompactTrustStrip from "@/components/CompactTrustStrip";
-import HomeSeoContent, { HOME_SEO_FAQ } from "@/components/HomeSeoContent";
+import HomeSeoContent from "@/components/HomeSeoContent";
 import {
   buildProductAggregateRating,
   buildProductReviews,
@@ -144,7 +144,7 @@ const structuredData = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [...FAQ_ITEMS, ...HOME_SEO_FAQ].map((item) => ({
+      mainEntity: FAQ_ITEMS.map((item) => ({
         "@type": "Question",
         name: item.question,
         acceptedAnswer: {
