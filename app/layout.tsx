@@ -5,6 +5,7 @@ import DeferredRecentPurchaseNotification from "@/components/DeferredRecentPurch
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/Header";
+import SupportChatWidget from "@/components/SupportChatWidget";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 import { SEO_TITLES } from "@/lib/seo-titles";
 import "./globals.css";
@@ -48,6 +49,7 @@ export default function RootLayout({
         <Footer />
         <DeferredRecentPurchaseNotification />
         <WhatsAppFloatButton />
+        <SupportChatWidget />
         <Script id="statcounter-config" strategy="lazyOnload">
           {`
             var sc_project=13354800;

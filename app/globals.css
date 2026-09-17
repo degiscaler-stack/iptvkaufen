@@ -49,6 +49,45 @@ html {
   }
 }
 
+@keyframes support-chat-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.28;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.support-chat-typing span {
+  display: inline-block;
+  animation: support-chat-dot 1.2s infinite ease-in-out;
+}
+
+.support-chat-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.support-chat-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.support-chat-fab {
+  animation: support-chat-fab-in 0.45s ease-out;
+}
+
+@keyframes support-chat-fab-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body {
   min-height: 100vh;
   margin: 0;
