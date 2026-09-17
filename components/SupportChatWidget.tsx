@@ -5,6 +5,7 @@ import {
   useEffect,
   useRef,
   useState,
+  type CSSProperties,
   type FormEvent,
   type KeyboardEvent,
 } from "react";
@@ -19,6 +20,7 @@ import {
   SUPPORT_WELCOME_MESSAGE,
   buildWhatsAppPayload,
   clearStoredConversationId,
+  createClientRequestId,
   createSupportEventSource,
   customerReceiptState,
   isValidSupportEmail,
@@ -36,6 +38,7 @@ import {
   typingHoldMsForReply,
   type PublicConversation,
   type SupportChatMessage,
+  type SupportSendFailure,
   type SupportStatus,
 } from "@/lib/support-chat";
 
@@ -46,6 +49,8 @@ const WELCOME_MESSAGE: SupportChatMessage = {
   createdAt: "",
   local: true,
 };
+
+const AI_PRESENTATION_QUIET_MS = 2000;
 
 const PUBLIC_SSE_EVENTS = [
   "message.ai",
@@ -171,6 +176,7 @@ export default function SupportChatWidget() {
   const [messages, setMessages] = useState<SupportChatMessage[]>([WELCOME_MESSAGE]);
   const [hiddenSupportIds, setHiddenSupportIds] = useState<string[]>([]);
   const [conversationId, setConversationId] = useState<string | null>(null);
+  const [owner, setOwner] = useState<"AI" | "HUMAN" | string>("AI");
   const [supportStatus, setSupportStatus] = useState<SupportStatus | null>(null);
   const [supportTyping, setSupportTyping] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -189,6 +195,7 @@ export default function SupportChatWidget() {
   const [contactSending, setContactSending] = useState(false);
 
   const conversationIdRef = useRef<string | null>(null);
+  const ownerRef = useRef<"AI" | "HUMAN" | string>("AI");
   const openRef = useRef(false);
   const messagesRef = useRef(messages);
   const hiddenSupportIdsRef = useRef<string[]>([]);
@@ -203,6 +210,7 @@ export default function SupportChatWidget() {
   const queuedRevealIdsRef = useRef<Set<string>>(new Set());
   const lastCustomerSentAtRef = useRef(0);
   const expectingReplyRef = useRef(false);
+  const sendEpochRef = useRef(0);
   const supportStatusRef = useRef<SupportStatus | null>(null);
   const eventSourceRef = useRef<EventSource | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -231,10 +239,35 @@ export default function SupportChatWidget() {
   };
 
   const syncTypingIndicator = useCallback((backendTyping = false) => {
+    const status = supportStatusRef.current;
+    const ownerNow = ownerRef.current;
+
+    if (status === "HUMAN_NEEDED" || status === "CLOSED") {
+      expectingReplyRef.current = false;
+      setSupportTyping(false);
+      return;
+    }
+
     const waitingReveal = hiddenSupportIdsRef.current.length > 0;
-    const preDelay = supportStatusRef.current === "HUMAN_ACTIVE" ? 700 : 1800;
+    const humanOwned = ownerNow === "HUMAN" || status === "HUMAN_ACTIVE";
+    const waitingForCustomer = status === "WAITING_CUSTOMER";
+    const quietMs = humanOwned ? 700 : AI_PRESENTATION_QUIET_MS;
     const waitingForNaturalStart =
-      expectingReplyRef.current && Date.now() - lastCustomerSentAtRef.current < preDelay;
+      !humanOwned &&
+      !waitingForCustomer &&
+      expectingReplyRef.current &&
+      Date.now() - lastCustomerSentAtRef.current < quietMs;
+
+    if (waitingForCustomer) {
+      expectingReplyRef.current = false;
+      setSupportTyping(waitingReveal || backendTyping);
+      return;
+    }
+
+    if (humanOwned) {
+      setSupportTyping(waitingReveal || backendTyping);
+      return;
+    }
 
     setSupportTyping((waitingReveal || backendTyping || expectingReplyRef.current) && !waitingForNaturalStart);
   }, []);
@@ -254,20 +287,40 @@ export default function SupportChatWidget() {
       hiddenSupportIdsRef.current = [...hiddenSupportIdsRef.current, message.id];
       setHiddenSupportIds(hiddenSupportIdsRef.current);
 
+      const status = supportStatusRef.current;
       const liveHuman =
-        supportStatusRef.current === "HUMAN_ACTIVE" || message.sender === "SUPPORT";
-      const preDelay = preTypingDelayMs(liveHuman);
-      const hold = typingHoldMsForReply(message.content, liveHuman);
+        ownerRef.current === "HUMAN" ||
+        status === "HUMAN_ACTIVE" ||
+        message.sender === "SUPPORT";
+      const presentationDelay =
+        typeof message.presentationDelayMs === "number" && message.presentationDelayMs > 0
+          ? message.presentationDelayMs
+          : 0;
+      const preDelay = liveHuman ? preTypingDelayMs(true) : AI_PRESENTATION_QUIET_MS;
+      const hold = Math.max(typingHoldMsForReply(message.content, liveHuman), presentationDelay);
       const sinceSend = lastCustomerSentAtRef.current
         ? Date.now() - lastCustomerSentAtRef.current
         : Number.POSITIVE_INFINITY;
       const tiedToRecentSend = Number.isFinite(sinceSend) && sinceSend < 20000;
       const waitBeforeTyping = tiedToRecentSend ? Math.max(0, preDelay - sinceSend) : liveHuman ? 400 : 800;
       const revealWait = tiedToRecentSend
-        ? Math.max(0, preDelay + hold - sinceSend)
+        ? Math.max(0, preDelay + hold - sinceSend, presentationDelay)
         : waitBeforeTyping + hold;
 
+      if (status === "HUMAN_NEEDED") {
+        scheduleTimer(() => {
+          hiddenSupportIdsRef.current = hiddenSupportIdsRef.current.filter((id) => id !== message.id);
+          setHiddenSupportIds([...hiddenSupportIdsRef.current]);
+          expectingReplyRef.current = false;
+          setSupportTyping(false);
+        }, presentationDelay);
+        return;
+      }
+
       scheduleTimer(() => {
+        if (supportStatusRef.current === "HUMAN_NEEDED") {
+          return;
+        }
         expectingReplyRef.current = false;
         syncTypingIndicator(false);
         setSupportTyping(true);
@@ -277,7 +330,7 @@ export default function SupportChatWidget() {
         hiddenSupportIdsRef.current = hiddenSupportIdsRef.current.filter((id) => id !== message.id);
         setHiddenSupportIds([...hiddenSupportIdsRef.current]);
         expectingReplyRef.current = false;
-        if (hiddenSupportIdsRef.current.length === 0) {
+        if (hiddenSupportIdsRef.current.length === 0 || supportStatusRef.current === "HUMAN_NEEDED") {
           setSupportTyping(false);
         }
       }, Math.max(waitBeforeTyping + 160, revealWait));
@@ -289,8 +342,36 @@ export default function SupportChatWidget() {
     (conversation: PublicConversation, options?: { delayNewSupport?: boolean }) => {
       const mapped = mapApiMessages(conversation.messages);
       const previousIds = new Set(messagesRef.current.filter((item) => !item.local).map((item) => item.id));
+      const humanNeededNow = conversation.humanNeeded || conversation.supportStatus === "HUMAN_NEEDED";
+      const humanOwned = conversation.owner === "HUMAN";
 
-      if (options?.delayNewSupport) {
+      setConversationId(conversation.conversationId);
+      conversationIdRef.current = conversation.conversationId;
+      storeConversationId(conversation.conversationId);
+      setOwner(conversation.owner);
+      ownerRef.current = conversation.owner;
+      setSupportStatus(conversation.supportStatus);
+      supportStatusRef.current = conversation.supportStatus;
+      setHumanNeeded(humanNeededNow);
+      setContactRequired(conversation.contactRequired);
+      setContactSubmitted(conversation.contactSubmitted);
+      setContactConsentText(conversation.contactConsentText);
+
+      const replyPending =
+        conversation.aiPending || conversation.supportStatus === "AI_THINKING";
+      const waitingForCustomer = conversation.supportStatus === "WAITING_CUSTOMER";
+
+      if (humanNeededNow || humanOwned || waitingForCustomer || !replyPending) {
+        expectingReplyRef.current = false;
+      } else {
+        expectingReplyRef.current = true;
+      }
+
+      if (humanNeededNow) {
+        hiddenSupportIdsRef.current = [];
+        setHiddenSupportIds([]);
+        setSupportTyping(false);
+      } else if (options?.delayNewSupport) {
         for (const message of mapped) {
           if (message.role === "support" && !previousIds.has(message.id)) {
             queueSupportReveal(message);
@@ -300,17 +381,12 @@ export default function SupportChatWidget() {
 
       const merged = mergeMessages(messagesRef.current, mapped);
       setMessages(merged.length > 0 ? merged : [WELCOME_MESSAGE]);
-      setConversationId(conversation.conversationId);
-      conversationIdRef.current = conversation.conversationId;
-      storeConversationId(conversation.conversationId);
-      setSupportStatus(conversation.supportStatus);
-      supportStatusRef.current = conversation.supportStatus;
-      setHumanNeeded(conversation.humanNeeded);
-      setContactRequired(conversation.contactRequired);
-      setContactSubmitted(conversation.contactSubmitted);
-      setContactConsentText(conversation.contactConsentText);
 
-      syncTypingIndicator(conversation.supportTyping || conversation.supportStatus === "AI_THINKING");
+      syncTypingIndicator(
+        conversation.supportTyping ||
+          conversation.aiPending ||
+          conversation.supportStatus === "AI_THINKING",
+      );
 
       if (!openRef.current && previousIds.size > 0) {
         const newSupportCount = mapped.filter(
@@ -337,6 +413,8 @@ export default function SupportChatWidget() {
           setConversationId(null);
           setSupportStatus(null);
           supportStatusRef.current = null;
+          setOwner("AI");
+          ownerRef.current = "AI";
           setMessages([WELCOME_MESSAGE]);
           setHiddenSupportIds([]);
           hiddenSupportIdsRef.current = [];
@@ -383,10 +461,11 @@ export default function SupportChatWidget() {
 
   useEffect(() => {
     conversationIdRef.current = conversationId;
+    ownerRef.current = owner;
     messagesRef.current = messages;
     openRef.current = open;
     supportStatusRef.current = supportStatus;
-  }, [conversationId, messages, open, supportStatus]);
+  }, [conversationId, owner, messages, open, supportStatus]);
 
   useEffect(() => {
     const stored = readStoredConversationId();
@@ -428,6 +507,23 @@ export default function SupportChatWidget() {
         return;
       }
 
+      if (typeof event.payload?.owner === "string") {
+        setOwner(event.payload.owner);
+        ownerRef.current = event.payload.owner;
+      }
+
+      if (typeof event.payload?.supportStatus === "string") {
+        setSupportStatus(event.payload.supportStatus);
+        supportStatusRef.current = event.payload.supportStatus;
+        if (event.payload.supportStatus === "HUMAN_NEEDED") {
+          expectingReplyRef.current = false;
+          hiddenSupportIdsRef.current = [];
+          setHiddenSupportIds([]);
+          setSupportTyping(false);
+          setHumanNeeded(true);
+        }
+      }
+
       if (
         event.type === "conversation.reopened" ||
         event.type === "message.ai" ||
@@ -435,11 +531,9 @@ export default function SupportChatWidget() {
         event.type === "human.takeover" ||
         event.type === "human.return_to_ai"
       ) {
-        if (typeof event.payload?.supportStatus === "string") {
-          setSupportStatus(event.payload.supportStatus);
-          supportStatusRef.current = event.payload.supportStatus;
-        }
-        void refreshRef.current(conversationId, event.type.startsWith("message.") || event.type === "human.takeover");
+        const delayNewSupport =
+          event.type.startsWith("message.") && supportStatusRef.current !== "HUMAN_NEEDED";
+        void refreshRef.current(conversationId, delayNewSupport);
       }
     };
 
@@ -593,8 +687,8 @@ export default function SupportChatWidget() {
     }, 1600);
   };
 
-  const handleSend = async () => {
-    const text = draft.trim();
+  const handleSend = async (retryOf?: SupportChatMessage) => {
+    const text = (retryOf?.content ?? draft).trim();
     if (!text || submitting || closed) {
       return;
     }
@@ -604,80 +698,131 @@ export default function SupportChatWidget() {
       return;
     }
 
+    const epoch = ++sendEpochRef.current;
     setSubmitting(true);
     setSendError(null);
     sendTypingStop();
 
-    const optimistic: SupportChatMessage = {
-      id: `local-${Date.now()}`,
-      role: "customer",
-      sender: "CUSTOMER",
-      content: text,
-      createdAt: new Date().toISOString(),
-      local: true,
-    };
+    const clientRequestId = retryOf?.clientRequestId || createClientRequestId();
+    const optimistic: SupportChatMessage = retryOf
+      ? { ...retryOf, failed: false, local: true, deliveryStatus: undefined, clientRequestId }
+      : {
+          id: `local-${Date.now()}`,
+          role: "customer",
+          sender: "CUSTOMER",
+          content: text,
+          createdAt: new Date().toISOString(),
+          local: true,
+          clientRequestId,
+        };
 
     setMessages((current) => {
       const withoutWelcome = current.filter((item) => item.id !== WELCOME_MESSAGE.id);
+      if (retryOf) {
+        return withoutWelcome.map((item) => (item.id === retryOf.id ? optimistic : item));
+      }
       return [...withoutWelcome, optimistic];
     });
-    setDraft("");
+    if (!retryOf) {
+      setDraft("");
+    }
     stickToBottomRef.current = true;
-    lastCustomerSentAtRef.current = Date.now();
-    expectingReplyRef.current = true;
-    setSupportTyping(false);
-
-    const liveHuman = supportStatusRef.current === "HUMAN_ACTIVE";
-    const typingGate = preTypingDelayMs(liveHuman);
-    scheduleTimer(() => {
-      if (expectingReplyRef.current || hiddenSupportIdsRef.current.length > 0) {
-        setSupportTyping(true);
-      }
-    }, typingGate);
 
     try {
       const result = await postCustomerMessage({
         message: text,
         conversationId: conversationIdRef.current,
+        clientRequestId,
       });
+
+      if (epoch !== sendEpochRef.current) {
+        return;
+      }
 
       conversationIdRef.current = result.conversationId;
       setConversationId(result.conversationId);
       storeConversationId(result.conversationId);
+      setOwner(result.owner);
+      ownerRef.current = result.owner;
       setSupportStatus(result.supportStatus);
       supportStatusRef.current = result.supportStatus;
       setHumanNeeded(result.humanNeeded);
       setContactRequired(result.contactRequired);
       setContactSubmitted(result.contactSubmitted);
+      if (result.contactConsentText) {
+        setContactConsentText(result.contactConsentText);
+      }
+      setSendError(null);
       setMessages((current) =>
         current.map((item) =>
-          item.id === optimistic.id ? { ...item, deliveryStatus: "SENT" } : item,
+          item.id === optimistic.id
+            ? { ...item, deliveryStatus: "SENT", failed: false, local: true, clientRequestId }
+            : item,
         ),
       );
-      await refreshRef.current(result.conversationId, true);
-      if (hiddenSupportIdsRef.current.length === 0 && !result.reply) {
+
+      lastCustomerSentAtRef.current = Date.now();
+      const humanOwned = result.owner === "HUMAN";
+      const handedOff = result.humanNeeded || result.supportStatus === "HUMAN_NEEDED";
+      const waitForAi =
+        !humanOwned &&
+        !handedOff &&
+        (result.aiPending || result.supportStatus === "AI_THINKING");
+
+      if (humanOwned || handedOff) {
+        expectingReplyRef.current = false;
+        setSupportTyping(false);
+      } else if (waitForAi) {
+        expectingReplyRef.current = true;
+        scheduleTimer(() => {
+          if (epoch !== sendEpochRef.current) {
+            return;
+          }
+          if (
+            ownerRef.current === "HUMAN" ||
+            supportStatusRef.current === "HUMAN_NEEDED" ||
+            supportStatusRef.current === "WAITING_CUSTOMER"
+          ) {
+            return;
+          }
+          if (expectingReplyRef.current || hiddenSupportIdsRef.current.length > 0) {
+            setSupportTyping(true);
+          }
+        }, AI_PRESENTATION_QUIET_MS);
+      } else {
         expectingReplyRef.current = false;
       }
-      scheduleTimer(() => {
-        if (hiddenSupportIdsRef.current.length === 0) {
-          expectingReplyRef.current = false;
-          setSupportTyping(false);
-        }
-      }, 12000);
+
+      void refreshRef.current(result.conversationId, true);
     } catch (error) {
-      expectingReplyRef.current = false;
-      setSupportTyping(false);
-      setSendError(SUPPORT_SEND_ERROR);
-      setDraft(text);
-      setMessages((current) => {
-        const next = current.filter((item) => item.id !== optimistic.id);
-        return next.length > 0 ? next : [WELCOME_MESSAGE];
-      });
-      if ((error as { closed?: boolean }).closed && conversationIdRef.current) {
+      if (epoch === sendEpochRef.current) {
+        expectingReplyRef.current = false;
+        setSupportTyping(false);
+        setSendError(SUPPORT_SEND_ERROR);
+        setMessages((current) =>
+          current.map((item) =>
+            item.id === optimistic.id
+              ? { ...item, failed: true, local: true, clientRequestId }
+              : item,
+          ),
+        );
+      }
+
+      const failure = error as SupportSendFailure;
+      if (typeof failure.conversationId === "string" && failure.conversationId) {
+        conversationIdRef.current = failure.conversationId;
+        setConversationId(failure.conversationId);
+        storeConversationId(failure.conversationId);
+      }
+      if (failure.closed && conversationIdRef.current) {
+        void refreshRef.current(conversationIdRef.current, false);
+      } else if (conversationIdRef.current) {
         void refreshRef.current(conversationIdRef.current, false);
       }
     } finally {
-      setSubmitting(false);
+      if (epoch === sendEpochRef.current) {
+        setSubmitting(false);
+      }
     }
   };
 
@@ -736,8 +881,11 @@ export default function SupportChatWidget() {
     seenRef.current.clear();
     expectingReplyRef.current = false;
     lastCustomerSentAtRef.current = 0;
+    sendEpochRef.current += 1;
     setHiddenSupportIds([]);
     setConversationId(null);
+    setOwner("AI");
+    ownerRef.current = "AI";
     setSupportStatus(null);
     supportStatusRef.current = null;
     setMessages([WELCOME_MESSAGE]);
@@ -778,12 +926,8 @@ export default function SupportChatWidget() {
 
   return (
     <div
-      className="pointer-events-none fixed right-[25px] z-[9998] flex flex-col items-end gap-3 bottom-[calc(1rem+var(--sticky-purchase-offset,0px)+5rem)] lg:bottom-[calc(25px+4.75rem)]"
-      style={
-        keyboardInset > 0
-          ? { bottom: `calc(1rem + var(--sticky-purchase-offset, 0px) + 5rem + ${keyboardInset}px)` }
-          : undefined
-      }
+      className="support-chat-root"
+      style={{ "--support-keyboard-inset": `${keyboardInset}px` } as CSSProperties}
     >
       {open ? (
         <div
@@ -791,12 +935,9 @@ export default function SupportChatWidget() {
           role="dialog"
           aria-modal="false"
           aria-labelledby="kundenservice-title"
-          className="pointer-events-auto flex w-[min(100vw-1.5rem,400px)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A] text-white shadow-[0_18px_50px_rgba(0,0,0,0.55)] max-md:w-[min(100vw-1rem,100%)]"
-          style={{
-            height: `min(640px, calc(100dvh - 8rem - var(--sticky-purchase-offset, 0px) - ${keyboardInset}px))`,
-          }}
+          className="support-chat-panel flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A] text-white shadow-[0_18px_50px_rgba(0,0,0,0.55)]"
         >
-          <div className="flex items-center gap-3 border-b border-white/10 bg-[#050505] px-4 py-3">
+          <div className="flex min-h-0 shrink-0 items-center gap-3 border-b border-white/10 bg-[#050505] px-4 py-3">
             <span className="relative shrink-0">
               <SupportAvatar />
               <span
@@ -829,7 +970,7 @@ export default function SupportChatWidget() {
           <div
             ref={listRef}
             onScroll={onListScroll}
-            className="flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-3 py-4"
+            className="min-h-0 flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-3 py-4"
             aria-live="polite"
           >
             {visibleMessages.map((message) => {
@@ -859,6 +1000,16 @@ export default function SupportChatWidget() {
                     >
                       {time ? <time dateTime={message.createdAt}>{time}</time> : null}
                       {isCustomer ? <DeliveryChecks state={receipt} /> : null}
+                      {isCustomer && message.failed ? (
+                        <button
+                          type="button"
+                          onClick={() => void handleSend(message)}
+                          disabled={submitting}
+                          className="ml-1 text-[10px] font-medium text-[#A6FF00] underline-offset-2 hover:underline disabled:opacity-40"
+                        >
+                          Erneut senden
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -973,7 +1124,7 @@ export default function SupportChatWidget() {
             ) : null}
           </div>
 
-          <form onSubmit={onSubmit} className="border-t border-white/10 bg-[#050505] p-3">
+          <form onSubmit={onSubmit} className="shrink-0 border-t border-white/10 bg-[#050505] p-3">
             {sendError ? (
               <p className="mb-2 text-xs text-[#FFB4B4]" role="alert">
                 {sendError}

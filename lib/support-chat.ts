@@ -37,13 +37,23 @@ export type SupportChatMessage = {
   createdAt: string;
   deliveryStatus?: string;
   presentationDelayMs?: number | null;
+  clientRequestId?: string;
   local?: boolean;
+  failed?: boolean;
+};
+
+export type SupportSendFailure = Error & {
+  closed?: boolean;
+  httpStatus?: number;
+  category?: string;
+  conversationId?: string;
 };
 
 export type PublicConversation = {
   conversationId: string;
   owner: "AI" | "HUMAN" | string;
   supportStatus: SupportStatus;
+  aiPending: boolean;
   aiPaused: boolean;
   supportTyping: boolean;
   supportTypingLabel: string | null;
@@ -63,15 +73,18 @@ export type PublicConversation = {
 };
 
 export type ChatPostResponse = {
+  status?: string;
   conversationId: string;
   reply: string;
   owner: "AI" | "HUMAN" | string;
   supportStatus: SupportStatus;
+  aiPending: boolean;
   presentationDelayMs: number;
   aiPaused: boolean;
   humanNeeded: boolean;
   contactRequired: boolean;
   contactSubmitted: boolean;
+  contactConsentText: string | null;
 };
 
 export type LiveChatEvent = {
@@ -134,6 +147,14 @@ export function clearStoredConversationId(): void {
   }
 }
 
+export function createClientRequestId(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+
+  return `cr-${Date.now().toString(16)}-${Math.random().toString(16).slice(2, 10)}`;
+}
+
 export function mapApiMessages(messages: PublicConversation["messages"]): SupportChatMessage[] {
   return messages
     .filter((message) => message.sender !== "SYSTEM" && message.content.trim())
@@ -167,14 +188,17 @@ function mapConversationFields(data: Record<string, unknown>, fallbackStatus: Su
 export async function postCustomerMessage(options: {
   message: string;
   conversationId?: string | null;
+  clientRequestId: string;
 }): Promise<ChatPostResponse> {
   const body: {
     site: SupportSite;
     message: string;
+    clientRequestId: string;
     conversationId?: string;
   } = {
     site: SUPPORT_SITE,
     message: options.message,
+    clientRequestId: options.clientRequestId,
   };
 
   if (options.conversationId) {
@@ -188,27 +212,43 @@ export async function postCustomerMessage(options: {
   });
 
   const data: unknown = await response.json().catch(() => null);
+  const record = isRecord(data) ? data : null;
+  const conversationIdFromBody = record && typeof record.conversationId === "string" ? record.conversationId : undefined;
+  const failedStatus = record && (record.status === "error" || record.ok === false);
+  const accepted =
+    Boolean(record && conversationIdFromBody) &&
+    !failedStatus &&
+    (response.status === 202 || response.ok);
 
-  if (!response.ok || !isRecord(data) || typeof data.conversationId !== "string") {
-    const closed = response.status === 400;
-    const error = new Error("send_failed") as Error & { closed?: boolean };
-    error.closed = closed;
+  if (!accepted || !conversationIdFromBody || !record) {
+    const error = new Error("send_failed") as SupportSendFailure;
+    error.httpStatus = response.status;
+    error.category = record && typeof record.category === "string" ? record.category : undefined;
+    error.conversationId = conversationIdFromBody;
+    const apiError = record && typeof record.error === "string" ? record.error.toLowerCase() : "";
+    error.closed = response.status === 400 && (apiError.includes("closed") || apiError.includes("geschlossen"));
     throw error;
   }
 
-  const fields = mapConversationFields(data, readString(data.supportStatus) ?? "AI_ACTIVE");
+  const payload = record;
+  const fields = mapConversationFields(payload, readString(payload.supportStatus) ?? "AI_ACTIVE");
+  const aiPending =
+    readBoolean(payload.aiPending) ?? fields.supportStatus === "AI_THINKING";
 
   return {
-    conversationId: data.conversationId,
-    reply: typeof data.reply === "string" ? data.reply : "",
-    owner: typeof data.owner === "string" ? data.owner : "AI",
+    status: typeof payload.status === "string" ? payload.status : "accepted",
+    conversationId: conversationIdFromBody,
+    reply: typeof payload.reply === "string" ? payload.reply : "",
+    owner: typeof payload.owner === "string" ? payload.owner : "AI",
     supportStatus: fields.supportStatus,
+    aiPending,
     presentationDelayMs:
-      typeof data.presentationDelayMs === "number" ? data.presentationDelayMs : 0,
-    aiPaused: Boolean(data.aiPaused),
+      typeof payload.presentationDelayMs === "number" ? payload.presentationDelayMs : 0,
+    aiPaused: Boolean(payload.aiPaused),
     humanNeeded: fields.humanNeeded,
     contactRequired: fields.contactRequired,
     contactSubmitted: fields.contactSubmitted,
+    contactConsentText: fields.contactConsentText,
   };
 }
 
@@ -234,11 +274,13 @@ export async function loadPublicConversation(
 
   const messages = Array.isArray(data.messages) ? data.messages : [];
   const fields = mapConversationFields(data, "AI_ACTIVE");
+  const aiPending = readBoolean(data.aiPending) ?? fields.supportStatus === "AI_THINKING";
 
   return {
     conversationId: data.conversationId,
     owner: typeof data.owner === "string" ? data.owner : "AI",
     supportStatus: fields.supportStatus,
+    aiPending,
     aiPaused: Boolean(data.aiPaused),
     supportTyping: Boolean(data.supportTyping),
     supportTypingLabel: typeof data.supportTypingLabel === "string" ? data.supportTypingLabel : null,
