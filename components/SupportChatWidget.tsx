@@ -11,19 +11,29 @@ import {
 import { HiChatBubbleLeftRight, HiPaperAirplane, HiXMark } from "react-icons/hi2";
 import {
   SUPPORT_CLOSED_NOTICE,
+  SUPPORT_CONTACT_CONFIRMATION,
+  SUPPORT_CONTACT_CONSENT_FALLBACK,
+  SUPPORT_DIAL_COUNTRIES,
   SUPPORT_MAX_MESSAGE_LENGTH,
   SUPPORT_SEND_ERROR,
   SUPPORT_WELCOME_MESSAGE,
+  buildWhatsAppPayload,
   clearStoredConversationId,
   createSupportEventSource,
+  customerReceiptState,
+  isValidSupportEmail,
   loadPublicConversation,
   mapApiMessages,
   parseLiveEvent,
   postCustomerMessage,
   postCustomerTyping,
   postReceipts,
+  postSupportContact,
+  preTypingDelayMs,
   readStoredConversationId,
+  splitMessageContent,
   storeConversationId,
+  typingHoldMsForReply,
   type PublicConversation,
   type SupportChatMessage,
   type SupportStatus,
@@ -76,6 +86,85 @@ function mergeMessages(
   return [...Array.from(byId.values()).sort((a, b) => a.createdAt.localeCompare(b.createdAt)), ...locals];
 }
 
+function formatMessageTime(iso: string): string {
+  if (!iso) {
+    return "";
+  }
+
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+
+  return new Intl.DateTimeFormat("de-DE", {
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
+}
+
+function presenceForStatus(status: SupportStatus | null, closed: boolean) {
+  if (closed) {
+    return { label: "Geschlossen", tone: "idle" as const };
+  }
+  if (status === "HUMAN_NEEDED") {
+    return { label: "An Support weitergeleitet", tone: "pending" as const };
+  }
+  if (status === "HUMAN_ACTIVE") {
+    return { label: "Support aktiv", tone: "online" as const };
+  }
+  return { label: "Online", tone: "online" as const };
+}
+
+function MessageBody({ content, className }: { content: string; className: string }) {
+  const parts = splitMessageContent(content);
+
+  return (
+    <p className={className}>
+      {parts.map((part, index) =>
+        part.type === "link" ? (
+          <a key={`${part.href}-${index}`} href={part.href} target="_blank" rel="noopener noreferrer">
+            {part.value}
+          </a>
+        ) : (
+          <span key={`text-${index}`}>{part.value}</span>
+        ),
+      )}
+    </p>
+  );
+}
+
+function DeliveryChecks({ state }: { state: ReturnType<typeof customerReceiptState> }) {
+  if (state === "pending") {
+    return (
+      <span className="ml-1 text-[10px] text-black/45" aria-label="Wird gesendet">
+        ·
+      </span>
+    );
+  }
+
+  const seen = state === "seen";
+  const double = state === "delivered" || seen;
+  const color = seen ? "text-[#1D4ED8]" : "text-black/55";
+
+  return (
+    <span className={`ml-0.5 inline-flex items-center text-[11px] leading-none ${color}`} aria-hidden="true">
+      {double ? "✓✓" : "✓"}
+    </span>
+  );
+}
+
+function SupportAvatar({ size = "md" }: { size?: "sm" | "md" }) {
+  const dim = size === "md" ? "h-10 w-10 text-[11px]" : "h-7 w-7 text-[9px]";
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#111111] font-semibold tracking-wide text-[#A6FF00] ${dim}`}
+      aria-hidden="true"
+    >
+      KS
+    </span>
+  );
+}
+
 export default function SupportChatWidget() {
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState("");
@@ -89,6 +178,15 @@ export default function SupportChatWidget() {
   const [unreadCount, setUnreadCount] = useState(0);
   const [keyboardInset, setKeyboardInset] = useState(0);
   const [eventStreamKey, setEventStreamKey] = useState(0);
+  const [humanNeeded, setHumanNeeded] = useState(false);
+  const [contactRequired, setContactRequired] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactConsentText, setContactConsentText] = useState<string | null>(null);
+  const [contactCountry, setContactCountry] = useState("DE");
+  const [contactPhone, setContactPhone] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactError, setContactError] = useState<string | null>(null);
+  const [contactSending, setContactSending] = useState(false);
 
   const conversationIdRef = useRef<string | null>(null);
   const openRef = useRef(false);
@@ -102,6 +200,10 @@ export default function SupportChatWidget() {
   const pollTimerRef = useRef<number | null>(null);
   const reconnectTimerRef = useRef<number | null>(null);
   const revealTimersRef = useRef<number[]>([]);
+  const queuedRevealIdsRef = useRef<Set<string>>(new Set());
+  const lastCustomerSentAtRef = useRef(0);
+  const expectingReplyRef = useRef(false);
+  const supportStatusRef = useRef<SupportStatus | null>(null);
   const eventSourceRef = useRef<EventSource | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const composerRef = useRef<HTMLTextAreaElement | null>(null);
@@ -112,28 +214,76 @@ export default function SupportChatWidget() {
   const closed = supportStatus === "CLOSED";
   const hiddenIdSet = new Set(hiddenSupportIds);
   const visibleMessages = messages.filter((message) => !hiddenIdSet.has(message.id));
+  const presence = presenceForStatus(supportStatus, closed);
+  const selectedDial = SUPPORT_DIAL_COUNTRIES.find((item) => item.iso === contactCountry)?.dial ?? "+49";
+  const showContactForm =
+    !closed &&
+    contactRequired &&
+    !contactSubmitted &&
+    Boolean(conversationId) &&
+    hiddenSupportIds.length === 0;
+  const showContactConfirmation = contactSubmitted;
 
-  const queueSupportReveal = useCallback((message: SupportChatMessage) => {
-    const delay = Math.max(0, Math.min(message.presentationDelayMs ?? 0, 2200));
-    if (delay <= 0 || hiddenSupportIdsRef.current.includes(message.id)) {
-      return delay > 0;
-    }
-
-    hiddenSupportIdsRef.current = [...hiddenSupportIdsRef.current, message.id];
-    setHiddenSupportIds(hiddenSupportIdsRef.current);
-    setSupportTyping(true);
-
-    const timer = window.setTimeout(() => {
-      hiddenSupportIdsRef.current = hiddenSupportIdsRef.current.filter((id) => id !== message.id);
-      setHiddenSupportIds([...hiddenSupportIdsRef.current]);
-      if (hiddenSupportIdsRef.current.length === 0) {
-        setSupportTyping(false);
-      }
-    }, delay);
-
+  const scheduleTimer = (fn: () => void, delay: number) => {
+    const timer = window.setTimeout(fn, Math.max(0, delay));
     revealTimersRef.current.push(timer);
-    return true;
+    return timer;
+  };
+
+  const syncTypingIndicator = useCallback((backendTyping = false) => {
+    const waitingReveal = hiddenSupportIdsRef.current.length > 0;
+    const preDelay = supportStatusRef.current === "HUMAN_ACTIVE" ? 700 : 1800;
+    const waitingForNaturalStart =
+      expectingReplyRef.current && Date.now() - lastCustomerSentAtRef.current < preDelay;
+
+    setSupportTyping((waitingReveal || backendTyping || expectingReplyRef.current) && !waitingForNaturalStart);
   }, []);
+
+  const queueSupportReveal = useCallback(
+    (message: SupportChatMessage) => {
+      if (
+        message.role !== "support" ||
+        message.local ||
+        queuedRevealIdsRef.current.has(message.id) ||
+        hiddenSupportIdsRef.current.includes(message.id)
+      ) {
+        return;
+      }
+
+      queuedRevealIdsRef.current.add(message.id);
+      hiddenSupportIdsRef.current = [...hiddenSupportIdsRef.current, message.id];
+      setHiddenSupportIds(hiddenSupportIdsRef.current);
+
+      const liveHuman =
+        supportStatusRef.current === "HUMAN_ACTIVE" || message.sender === "SUPPORT";
+      const preDelay = preTypingDelayMs(liveHuman);
+      const hold = typingHoldMsForReply(message.content, liveHuman);
+      const sinceSend = lastCustomerSentAtRef.current
+        ? Date.now() - lastCustomerSentAtRef.current
+        : Number.POSITIVE_INFINITY;
+      const tiedToRecentSend = Number.isFinite(sinceSend) && sinceSend < 20000;
+      const waitBeforeTyping = tiedToRecentSend ? Math.max(0, preDelay - sinceSend) : liveHuman ? 400 : 800;
+      const revealWait = tiedToRecentSend
+        ? Math.max(0, preDelay + hold - sinceSend)
+        : waitBeforeTyping + hold;
+
+      scheduleTimer(() => {
+        expectingReplyRef.current = false;
+        syncTypingIndicator(false);
+        setSupportTyping(true);
+      }, waitBeforeTyping);
+
+      scheduleTimer(() => {
+        hiddenSupportIdsRef.current = hiddenSupportIdsRef.current.filter((id) => id !== message.id);
+        setHiddenSupportIds([...hiddenSupportIdsRef.current]);
+        expectingReplyRef.current = false;
+        if (hiddenSupportIdsRef.current.length === 0) {
+          setSupportTyping(false);
+        }
+      }, Math.max(waitBeforeTyping + 160, revealWait));
+    },
+    [syncTypingIndicator],
+  );
 
   const applyConversation = useCallback(
     (conversation: PublicConversation, options?: { delayNewSupport?: boolean }) => {
@@ -154,13 +304,13 @@ export default function SupportChatWidget() {
       conversationIdRef.current = conversation.conversationId;
       storeConversationId(conversation.conversationId);
       setSupportStatus(conversation.supportStatus);
+      supportStatusRef.current = conversation.supportStatus;
+      setHumanNeeded(conversation.humanNeeded);
+      setContactRequired(conversation.contactRequired);
+      setContactSubmitted(conversation.contactSubmitted);
+      setContactConsentText(conversation.contactConsentText);
 
-      const waitingReveal = hiddenSupportIdsRef.current.length > 0;
-      setSupportTyping(
-        conversation.supportTyping ||
-          waitingReveal ||
-          conversation.supportStatus === "AI_THINKING",
-      );
+      syncTypingIndicator(conversation.supportTyping || conversation.supportStatus === "AI_THINKING");
 
       if (!openRef.current && previousIds.size > 0) {
         const newSupportCount = mapped.filter(
@@ -171,7 +321,7 @@ export default function SupportChatWidget() {
         }
       }
     },
-    [queueSupportReveal],
+    [queueSupportReveal, syncTypingIndicator],
   );
 
   const refreshConversation = useCallback(
@@ -186,9 +336,13 @@ export default function SupportChatWidget() {
           conversationIdRef.current = null;
           setConversationId(null);
           setSupportStatus(null);
+          supportStatusRef.current = null;
           setMessages([WELCOME_MESSAGE]);
           setHiddenSupportIds([]);
           hiddenSupportIdsRef.current = [];
+          setHumanNeeded(false);
+          setContactRequired(false);
+          setContactSubmitted(false);
         }
         return null;
       }
@@ -231,7 +385,8 @@ export default function SupportChatWidget() {
     conversationIdRef.current = conversationId;
     messagesRef.current = messages;
     openRef.current = open;
-  }, [conversationId, messages, open]);
+    supportStatusRef.current = supportStatus;
+  }, [conversationId, messages, open, supportStatus]);
 
   useEffect(() => {
     const stored = readStoredConversationId();
@@ -260,13 +415,15 @@ export default function SupportChatWidget() {
       }
 
       if (event.type === "typing.support") {
-        setSupportTyping(Boolean(event.payload?.typing) || hiddenSupportIdsRef.current.length > 0);
+        syncTypingIndicator(Boolean(event.payload?.typing));
         return;
       }
 
       if (event.type === "conversation.closed") {
         setSupportStatus("CLOSED");
+        supportStatusRef.current = "CLOSED";
         setSupportTyping(false);
+        expectingReplyRef.current = false;
         void refreshRef.current(conversationId, false);
         return;
       }
@@ -274,16 +431,15 @@ export default function SupportChatWidget() {
       if (
         event.type === "conversation.reopened" ||
         event.type === "message.ai" ||
-        event.type === "message.human"
+        event.type === "message.human" ||
+        event.type === "human.takeover" ||
+        event.type === "human.return_to_ai"
       ) {
-        void refreshRef.current(conversationId, event.type.startsWith("message."));
-        return;
-      }
-
-      if (event.type === "human.takeover" || event.type === "human.return_to_ai") {
         if (typeof event.payload?.supportStatus === "string") {
           setSupportStatus(event.payload.supportStatus);
+          supportStatusRef.current = event.payload.supportStatus;
         }
+        void refreshRef.current(conversationId, event.type.startsWith("message.") || event.type === "human.takeover");
       }
     };
 
@@ -316,7 +472,7 @@ export default function SupportChatWidget() {
         eventSourceRef.current = null;
       }
     };
-  }, [conversationId, eventStreamKey, disconnectEvents, startPolling, stopPolling]);
+  }, [conversationId, eventStreamKey, disconnectEvents, startPolling, stopPolling, syncTypingIndicator]);
 
   useEffect(() => {
     return () => {
@@ -373,7 +529,7 @@ export default function SupportChatWidget() {
 
   useEffect(() => {
     scrollToBottomIfNeeded(true);
-  }, [visibleMessages, supportTyping, open, scrollToBottomIfNeeded]);
+  }, [visibleMessages, supportTyping, open, showContactForm, showContactConfirmation, scrollToBottomIfNeeded]);
 
   useEffect(() => {
     if (!open) {
@@ -455,6 +611,7 @@ export default function SupportChatWidget() {
     const optimistic: SupportChatMessage = {
       id: `local-${Date.now()}`,
       role: "customer",
+      sender: "CUSTOMER",
       content: text,
       createdAt: new Date().toISOString(),
       local: true,
@@ -466,7 +623,17 @@ export default function SupportChatWidget() {
     });
     setDraft("");
     stickToBottomRef.current = true;
-    setSupportTyping(true);
+    lastCustomerSentAtRef.current = Date.now();
+    expectingReplyRef.current = true;
+    setSupportTyping(false);
+
+    const liveHuman = supportStatusRef.current === "HUMAN_ACTIVE";
+    const typingGate = preTypingDelayMs(liveHuman);
+    scheduleTimer(() => {
+      if (expectingReplyRef.current || hiddenSupportIdsRef.current.length > 0) {
+        setSupportTyping(true);
+      }
+    }, typingGate);
 
     try {
       const result = await postCustomerMessage({
@@ -478,12 +645,27 @@ export default function SupportChatWidget() {
       setConversationId(result.conversationId);
       storeConversationId(result.conversationId);
       setSupportStatus(result.supportStatus);
-      void refreshRef.current(result.conversationId, true);
-
-      if (result.aiPaused && !result.reply) {
-        setSupportTyping(hiddenSupportIdsRef.current.length > 0);
+      supportStatusRef.current = result.supportStatus;
+      setHumanNeeded(result.humanNeeded);
+      setContactRequired(result.contactRequired);
+      setContactSubmitted(result.contactSubmitted);
+      setMessages((current) =>
+        current.map((item) =>
+          item.id === optimistic.id ? { ...item, deliveryStatus: "SENT" } : item,
+        ),
+      );
+      await refreshRef.current(result.conversationId, true);
+      if (hiddenSupportIdsRef.current.length === 0 && !result.reply) {
+        expectingReplyRef.current = false;
       }
+      scheduleTimer(() => {
+        if (hiddenSupportIdsRef.current.length === 0) {
+          expectingReplyRef.current = false;
+          setSupportTyping(false);
+        }
+      }, 12000);
     } catch (error) {
+      expectingReplyRef.current = false;
       setSupportTyping(false);
       setSendError(SUPPORT_SEND_ERROR);
       setDraft(text);
@@ -499,22 +681,78 @@ export default function SupportChatWidget() {
     }
   };
 
+  const handleContactSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    const id = conversationIdRef.current;
+    if (!id || contactSending || contactSubmitted) {
+      return;
+    }
+
+    const email = contactEmail.trim().toLowerCase();
+    const payload = buildWhatsAppPayload({
+      countryIso: contactCountry,
+      nationalOrInternational: contactPhone,
+    });
+
+    if (!payload) {
+      setContactError("Bitte geben Sie eine gültige WhatsApp-Nummer im internationalen Format ein.");
+      return;
+    }
+
+    if (!isValidSupportEmail(email)) {
+      setContactError("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+      return;
+    }
+
+    setContactSending(true);
+    setContactError(null);
+
+    const result = await postSupportContact({
+      conversationId: id,
+      whatsapp: payload.whatsapp,
+      email,
+      countryCode: payload.countryCode,
+    });
+
+    setContactSending(false);
+
+    if (!result.ok) {
+      setContactError(result.message);
+      return;
+    }
+
+    setContactSubmitted(true);
+    void refreshRef.current(id, false);
+  };
+
   const startNewConversation = () => {
     disconnectEvents();
     stopPolling();
     clearStoredConversationId();
     conversationIdRef.current = null;
     hiddenSupportIdsRef.current = [];
+    queuedRevealIdsRef.current.clear();
     deliveredRef.current.clear();
     seenRef.current.clear();
+    expectingReplyRef.current = false;
+    lastCustomerSentAtRef.current = 0;
     setHiddenSupportIds([]);
     setConversationId(null);
     setSupportStatus(null);
+    supportStatusRef.current = null;
     setMessages([WELCOME_MESSAGE]);
     setSupportTyping(false);
     setSendError(null);
     setDraft("");
     setUnreadCount(0);
+    setHumanNeeded(false);
+    setContactRequired(false);
+    setContactSubmitted(false);
+    setContactConsentText(null);
+    setContactPhone("");
+    setContactEmail("");
+    setContactError(null);
+    setContactCountry("DE");
   };
 
   const onSubmit = (event: FormEvent) => {
@@ -559,17 +797,24 @@ export default function SupportChatWidget() {
           }}
         >
           <div className="flex items-center gap-3 border-b border-white/10 bg-[#050505] px-4 py-3">
-            <span
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#A6FF00]/30 bg-[#111111] text-[#A6FF00]"
-              aria-hidden="true"
-            >
-              <HiChatBubbleLeftRight className="h-5 w-5" />
+            <span className="relative shrink-0">
+              <SupportAvatar />
+              <span
+                className={`absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-[#050505] ${
+                  presence.tone === "online"
+                    ? "bg-[#22C55E]"
+                    : presence.tone === "pending"
+                      ? "bg-[#F59E0B]"
+                      : "bg-[#6B7280]"
+                }`}
+                aria-hidden="true"
+              />
             </span>
             <div className="min-w-0 flex-1">
               <h2 id="kundenservice-title" className="text-sm font-semibold tracking-wide">
                 Kundenservice
               </h2>
-              <p className="text-xs text-[#B8B8B8]">{closed ? "Geschlossen" : "Support"}</p>
+              <p className="truncate text-xs text-[#B8B8B8]">{presence.label}</p>
             </div>
             <button
               type="button"
@@ -584,39 +829,133 @@ export default function SupportChatWidget() {
           <div
             ref={listRef}
             onScroll={onListScroll}
-            className="flex-1 space-y-3 overflow-y-auto px-3 py-4"
+            className="flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-3 py-4"
             aria-live="polite"
           >
             {visibleMessages.map((message) => {
               const isCustomer = message.role === "customer";
+              const time = formatMessageTime(message.createdAt);
+              const receipt = customerReceiptState(message.deliveryStatus, supportStatus, message.local);
+
               return (
-                <div key={message.id} className={`flex ${isCustomer ? "justify-end" : "justify-start"}`}>
-                  <p
-                    className={`max-w-[82%] whitespace-pre-wrap rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
-                      isCustomer
-                        ? "rounded-br-md bg-[#A6FF00] text-black"
-                        : "rounded-bl-md border border-white/10 bg-[#151515] text-[#F5F5F5]"
-                    }`}
-                  >
-                    {message.content}
-                  </p>
+                <div
+                  key={message.id}
+                  className={`flex min-w-0 items-end gap-2 ${isCustomer ? "justify-end" : "justify-start"}`}
+                >
+                  {!isCustomer ? <SupportAvatar size="sm" /> : null}
+                  <div className="min-w-0 max-w-[min(82%,calc(100%-2.5rem))]">
+                    <MessageBody
+                      content={message.content}
+                      className={`support-chat-bubble whitespace-pre-wrap rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
+                        isCustomer
+                          ? "rounded-br-md bg-[#A6FF00] text-black"
+                          : "rounded-bl-md border border-white/10 bg-[#151515] text-[#F5F5F5]"
+                      }`}
+                    />
+                    <div
+                      className={`mt-1 flex items-center gap-1 px-1 text-[10px] leading-none ${
+                        isCustomer ? "justify-end text-white/45" : "justify-start text-white/40"
+                      }`}
+                    >
+                      {time ? <time dateTime={message.createdAt}>{time}</time> : null}
+                      {isCustomer ? <DeliveryChecks state={receipt} /> : null}
+                    </div>
+                  </div>
                 </div>
               );
             })}
 
             {supportTyping && !closed ? (
-              <div className="flex justify-start">
+              <div className="flex min-w-0 items-end justify-start gap-2">
+                <SupportAvatar size="sm" />
                 <div
-                  className="rounded-2xl rounded-bl-md border border-white/10 bg-[#151515] px-3.5 py-2.5 text-sm text-[#B8B8B8]"
+                  className="max-w-[min(82%,calc(100%-2.5rem))] rounded-2xl rounded-bl-md border border-white/10 bg-[#151515] px-3.5 py-2.5 text-sm text-[#B8B8B8]"
                   aria-label="Kundenservice schreibt"
                 >
-                  <span>Kundenservice schreibt</span>
+                  <span>Kundenservice schreibt…</span>
                   <span className="support-chat-typing ml-1" aria-hidden="true">
                     <span>•</span>
                     <span>•</span>
                     <span>•</span>
                   </span>
                 </div>
+              </div>
+            ) : null}
+
+            {showContactForm ? (
+              <form
+                onSubmit={handleContactSubmit}
+                className="rounded-2xl border border-white/10 bg-[#111111] px-3 py-3"
+              >
+                <p className="text-sm font-medium text-white">Kontakt für den Support</p>
+                <p className="mt-1 text-xs text-[#A3A3A3]">
+                  Internationales Format, z. B. {selectedDial} 151 23456789
+                </p>
+
+                <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-phone">
+                  WhatsApp-Nummer
+                </label>
+                <div className="mt-1 flex min-w-0 gap-2">
+                  <select
+                    value={contactCountry}
+                    onChange={(event) => setContactCountry(event.target.value)}
+                    aria-label="Ländervorwahl"
+                    className="h-11 max-w-[7.5rem] shrink-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-2 text-xs text-white outline-none focus-visible:border-[#A6FF00]/50"
+                  >
+                    {SUPPORT_DIAL_COUNTRIES.map((country) => (
+                      <option key={country.iso} value={country.iso}>
+                        {country.iso} {country.dial}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    id="support-contact-phone"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    value={contactPhone}
+                    onChange={(event) => setContactPhone(event.target.value)}
+                    placeholder="151 23456789"
+                    className="h-11 min-w-0 flex-1 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
+                  />
+                </div>
+
+                <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-email">
+                  E-Mail-Adresse
+                </label>
+                <input
+                  id="support-contact-email"
+                  type="email"
+                  autoComplete="email"
+                  value={contactEmail}
+                  onChange={(event) => setContactEmail(event.target.value)}
+                  placeholder="name@email.de"
+                  className="mt-1 h-11 w-full min-w-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
+                />
+
+                <p className="mt-3 text-[11px] leading-relaxed text-[#8A8A8A]">
+                  {contactConsentText || SUPPORT_CONTACT_CONSENT_FALLBACK}
+                </p>
+
+                {contactError ? (
+                  <p className="mt-2 text-xs text-[#FFB4B4]" role="alert">
+                    {contactError}
+                  </p>
+                ) : null}
+
+                <button
+                  type="submit"
+                  disabled={contactSending}
+                  className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-4 text-sm font-semibold text-black transition hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  {contactSending ? "Wird übermittelt…" : "Kontaktdaten senden"}
+                </button>
+              </form>
+            ) : null}
+
+            {showContactConfirmation ? (
+              <div className="rounded-2xl border border-[#A6FF00]/20 bg-[#111111] px-3 py-3 text-sm text-[#D8D8D8]">
+                {SUPPORT_CONTACT_CONFIRMATION}
               </div>
             ) : null}
 

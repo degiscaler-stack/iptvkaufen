@@ -73,6 +73,25 @@ html {
   animation-delay: 0.3s;
 }
 
+.support-chat-bubble {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.support-chat-bubble a {
+  color: #4da3ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.support-chat-bubble a:hover {
+  color: #7cbcff;
+}
+
 .support-chat-fab {
   animation: support-chat-fab-in 0.45s ease-out;
 }
