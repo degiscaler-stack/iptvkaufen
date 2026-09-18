@@ -80,6 +80,10 @@ html {
   max-width: 100%;
 }
 
+.support-chat-bubble strong {
+  font-weight: 700;
+}
+
 .support-chat-bubble a {
   color: #4da3ff;
   text-decoration: underline;

@@ -1,8 +1,10 @@
 "use client";
 
 import {
+  memo,
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type CSSProperties,
@@ -125,18 +127,143 @@ function MessageBody({ content, className }: { content: string; className: strin
 
   return (
     <p className={className}>
-      {parts.map((part, index) =>
-        part.type === "link" ? (
-          <a key={`${part.href}-${index}`} href={part.href} target="_blank" rel="noopener noreferrer">
-            {part.value}
-          </a>
-        ) : (
-          <span key={`text-${index}`}>{part.value}</span>
-        ),
-      )}
+      {parts.map((part, index) => {
+        if (part.type === "link") {
+          return (
+            <a key={`${part.href}-${index}`} href={part.href} target="_blank" rel="noopener noreferrer">
+              {part.value}
+            </a>
+          );
+        }
+
+        if (part.type === "bold") {
+          return <strong key={`bold-${index}`}>{part.value}</strong>;
+        }
+
+        return <span key={`text-${index}`}>{part.value}</span>;
+      })}
     </p>
   );
 }
+
+type SupportContactFormProps = {
+  consentText: string;
+  selectedDial: string;
+  country: string;
+  phone: string;
+  email: string;
+  error: string | null;
+  sending: boolean;
+  onCountryChange: (value: string) => void;
+  onPhoneChange: (value: string) => void;
+  onEmailChange: (value: string) => void;
+  onFocusField: () => void;
+  onBlurField: () => void;
+  onSubmit: (event: FormEvent) => void;
+};
+
+const SupportContactForm = memo(function SupportContactForm({
+  consentText,
+  selectedDial,
+  country,
+  phone,
+  email,
+  error,
+  sending,
+  onCountryChange,
+  onPhoneChange,
+  onEmailChange,
+  onFocusField,
+  onBlurField,
+  onSubmit,
+}: SupportContactFormProps) {
+  const stopComposerCapture = (event: KeyboardEvent<HTMLElement>) => {
+    event.stopPropagation();
+  };
+
+  return (
+    <form
+      id="support-contact-form"
+      onSubmit={onSubmit}
+      onFocusCapture={onFocusField}
+      onBlurCapture={(event) => {
+        const next = event.relatedTarget;
+        if (next instanceof Node && event.currentTarget.contains(next)) {
+          return;
+        }
+        onBlurField();
+      }}
+      onKeyDown={stopComposerCapture}
+      className="rounded-2xl border border-white/10 bg-[#111111] px-3 py-3"
+    >
+      <p className="text-sm font-medium text-white">Kontakt für den Support</p>
+      <p className="mt-1 text-xs text-[#A3A3A3]">
+        Internationales Format, z. B. {selectedDial} 151 23456789
+      </p>
+
+      <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-phone">
+        WhatsApp-Nummer
+      </label>
+      <div className="mt-1 flex min-w-0 gap-2">
+        <select
+          value={country}
+          onChange={(event) => onCountryChange(event.target.value)}
+          aria-label="Ländervorwahl"
+          className="h-11 max-w-[7.5rem] shrink-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-2 text-xs text-white outline-none focus-visible:border-[#A6FF00]/50"
+        >
+          {SUPPORT_DIAL_COUNTRIES.map((item) => (
+            <option key={item.iso} value={item.iso}>
+              {item.iso} {item.dial}
+            </option>
+          ))}
+        </select>
+        <input
+          id="support-contact-phone"
+          name="support-contact-phone"
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          autoFocus={false}
+          value={phone}
+          onChange={(event) => onPhoneChange(event.target.value)}
+          placeholder="151 23456789"
+          className="h-11 min-w-0 flex-1 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
+        />
+      </div>
+
+      <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-email">
+        E-Mail-Adresse
+      </label>
+      <input
+        id="support-contact-email"
+        name="support-contact-email"
+        type="email"
+        autoComplete="email"
+        autoFocus={false}
+        value={email}
+        onChange={(event) => onEmailChange(event.target.value)}
+        placeholder="name@email.de"
+        className="mt-1 h-11 w-full min-w-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
+      />
+
+      <p className="mt-3 text-[11px] leading-relaxed text-[#8A8A8A]">{consentText}</p>
+
+      {error ? (
+        <p className="mt-2 text-xs text-[#FFB4B4]" role="alert">
+          {error}
+        </p>
+      ) : null}
+
+      <button
+        type="submit"
+        disabled={sending}
+        className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-4 text-sm font-semibold text-black transition hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        {sending ? "Wird übermittelt…" : "Kontaktdaten senden"}
+      </button>
+    </form>
+  );
+});
 
 function DeliveryChecks({ state }: { state: ReturnType<typeof customerReceiptState> }) {
   if (state === "pending") {
@@ -215,21 +342,31 @@ export default function SupportChatWidget() {
   const eventSourceRef = useRef<EventSource | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const composerRef = useRef<HTMLTextAreaElement | null>(null);
+  const panelWasOpenRef = useRef(false);
+  const contactFieldFocusedRef = useRef(false);
+  const contactPhoneRef = useRef("");
+  const contactEmailRef = useRef("");
   const refreshRef = useRef<(id: string, delayNewSupport?: boolean) => Promise<PublicConversation | null>>(
     async () => null,
   );
 
   const closed = supportStatus === "CLOSED";
-  const hiddenIdSet = new Set(hiddenSupportIds);
-  const visibleMessages = messages.filter((message) => !hiddenIdSet.has(message.id));
+  const visibleMessages = useMemo(() => {
+    if (hiddenSupportIds.length === 0) {
+      return messages;
+    }
+    const hiddenIdSet = new Set(hiddenSupportIds);
+    return messages.filter((message) => !hiddenIdSet.has(message.id));
+  }, [messages, hiddenSupportIds]);
   const presence = presenceForStatus(supportStatus, closed);
   const selectedDial = SUPPORT_DIAL_COUNTRIES.find((item) => item.iso === contactCountry)?.dial ?? "+49";
+  const hasUnsentContactDraft = Boolean(contactPhone.trim() || contactEmail.trim());
   const showContactForm =
     !closed &&
-    contactRequired &&
     !contactSubmitted &&
     Boolean(conversationId) &&
-    hiddenSupportIds.length === 0;
+    hiddenSupportIds.length === 0 &&
+    (contactRequired || hasUnsentContactDraft);
   const showContactConfirmation = contactSubmitted;
 
   const scheduleTimer = (fn: () => void, delay: number) => {
@@ -354,8 +491,12 @@ export default function SupportChatWidget() {
       supportStatusRef.current = conversation.supportStatus;
       setHumanNeeded(humanNeededNow);
       setContactRequired(conversation.contactRequired);
-      setContactSubmitted(conversation.contactSubmitted);
-      setContactConsentText(conversation.contactConsentText);
+      if (conversation.contactSubmitted) {
+        setContactSubmitted(true);
+      }
+      if (conversation.contactConsentText) {
+        setContactConsentText(conversation.contactConsentText);
+      }
 
       const replyPending =
         conversation.aiPending || conversation.supportStatus === "AI_THINKING";
@@ -627,11 +768,29 @@ export default function SupportChatWidget() {
 
   useEffect(() => {
     if (!open) {
+      panelWasOpenRef.current = false;
       return;
     }
 
     setUnreadCount(0);
-    const frame = window.requestAnimationFrame(() => composerRef.current?.focus());
+
+    if (panelWasOpenRef.current) {
+      return;
+    }
+
+    panelWasOpenRef.current = true;
+
+    if (contactFieldFocusedRef.current || document.getElementById("support-contact-form")) {
+      return;
+    }
+
+    composerRef.current?.focus();
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
 
     const id = conversationIdRef.current;
     const supportIds = messagesRef.current
@@ -652,8 +811,6 @@ export default function SupportChatWidget() {
         void postReceipts({ conversationId: id, type: "seen", messageIds: seen });
       }
     }
-
-    return () => window.cancelAnimationFrame(frame);
   }, [open, visibleMessages]);
 
   const sendTypingStop = useCallback(() => {
@@ -748,7 +905,9 @@ export default function SupportChatWidget() {
       supportStatusRef.current = result.supportStatus;
       setHumanNeeded(result.humanNeeded);
       setContactRequired(result.contactRequired);
-      setContactSubmitted(result.contactSubmitted);
+      if (result.contactSubmitted) {
+        setContactSubmitted(true);
+      }
       if (result.contactConsentText) {
         setContactConsentText(result.contactConsentText);
       }
@@ -826,6 +985,24 @@ export default function SupportChatWidget() {
     }
   };
 
+  const handleContactPhoneChange = useCallback((value: string) => {
+    contactPhoneRef.current = value;
+    setContactPhone(value);
+  }, []);
+
+  const handleContactEmailChange = useCallback((value: string) => {
+    contactEmailRef.current = value;
+    setContactEmail(value);
+  }, []);
+
+  const handleContactFieldFocus = useCallback(() => {
+    contactFieldFocusedRef.current = true;
+  }, []);
+
+  const handleContactFieldBlur = useCallback(() => {
+    contactFieldFocusedRef.current = false;
+  }, []);
+
   const handleContactSubmit = async (event: FormEvent) => {
     event.preventDefault();
     const id = conversationIdRef.current;
@@ -833,10 +1010,10 @@ export default function SupportChatWidget() {
       return;
     }
 
-    const email = contactEmail.trim().toLowerCase();
+    const email = (contactEmailRef.current || contactEmail).trim().toLowerCase();
     const payload = buildWhatsAppPayload({
       countryIso: contactCountry,
-      nationalOrInternational: contactPhone,
+      nationalOrInternational: contactPhoneRef.current || contactPhone,
     });
 
     if (!payload) {
@@ -899,6 +1076,9 @@ export default function SupportChatWidget() {
     setContactConsentText(null);
     setContactPhone("");
     setContactEmail("");
+    contactPhoneRef.current = "";
+    contactEmailRef.current = "";
+    contactFieldFocusedRef.current = false;
     setContactError(null);
     setContactCountry("DE");
   };
@@ -1034,74 +1214,21 @@ export default function SupportChatWidget() {
             ) : null}
 
             {showContactForm ? (
-              <form
+              <SupportContactForm
+                consentText={contactConsentText || SUPPORT_CONTACT_CONSENT_FALLBACK}
+                selectedDial={selectedDial}
+                country={contactCountry}
+                phone={contactPhone}
+                email={contactEmail}
+                error={contactError}
+                sending={contactSending}
+                onCountryChange={setContactCountry}
+                onPhoneChange={handleContactPhoneChange}
+                onEmailChange={handleContactEmailChange}
+                onFocusField={handleContactFieldFocus}
+                onBlurField={handleContactFieldBlur}
                 onSubmit={handleContactSubmit}
-                className="rounded-2xl border border-white/10 bg-[#111111] px-3 py-3"
-              >
-                <p className="text-sm font-medium text-white">Kontakt für den Support</p>
-                <p className="mt-1 text-xs text-[#A3A3A3]">
-                  Internationales Format, z. B. {selectedDial} 151 23456789
-                </p>
-
-                <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-phone">
-                  WhatsApp-Nummer
-                </label>
-                <div className="mt-1 flex min-w-0 gap-2">
-                  <select
-                    value={contactCountry}
-                    onChange={(event) => setContactCountry(event.target.value)}
-                    aria-label="Ländervorwahl"
-                    className="h-11 max-w-[7.5rem] shrink-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-2 text-xs text-white outline-none focus-visible:border-[#A6FF00]/50"
-                  >
-                    {SUPPORT_DIAL_COUNTRIES.map((country) => (
-                      <option key={country.iso} value={country.iso}>
-                        {country.iso} {country.dial}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    id="support-contact-phone"
-                    type="tel"
-                    inputMode="tel"
-                    autoComplete="tel"
-                    value={contactPhone}
-                    onChange={(event) => setContactPhone(event.target.value)}
-                    placeholder="151 23456789"
-                    className="h-11 min-w-0 flex-1 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
-                  />
-                </div>
-
-                <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-email">
-                  E-Mail-Adresse
-                </label>
-                <input
-                  id="support-contact-email"
-                  type="email"
-                  autoComplete="email"
-                  value={contactEmail}
-                  onChange={(event) => setContactEmail(event.target.value)}
-                  placeholder="name@email.de"
-                  className="mt-1 h-11 w-full min-w-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
-                />
-
-                <p className="mt-3 text-[11px] leading-relaxed text-[#8A8A8A]">
-                  {contactConsentText || SUPPORT_CONTACT_CONSENT_FALLBACK}
-                </p>
-
-                {contactError ? (
-                  <p className="mt-2 text-xs text-[#FFB4B4]" role="alert">
-                    {contactError}
-                  </p>
-                ) : null}
-
-                <button
-                  type="submit"
-                  disabled={contactSending}
-                  className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-4 text-sm font-semibold text-black transition hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  {contactSending ? "Wird übermittelt…" : "Kontaktdaten senden"}
-                </button>
-              </form>
+              />
             ) : null}
 
             {showContactConfirmation ? (
@@ -1142,6 +1269,7 @@ export default function SupportChatWidget() {
                 onChange={(event) => handleDraftChange(event.target.value)}
                 onKeyDown={onComposerKeyDown}
                 disabled={closed}
+                autoFocus={false}
                 placeholder={closed ? "Unterhaltung geschlossen" : "Nachricht schreiben…"}
                 className="max-h-28 min-h-11 flex-1 resize-none rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50 disabled:opacity-60"
               />

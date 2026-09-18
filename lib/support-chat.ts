@@ -436,7 +436,29 @@ export function parseLiveEvent(data: string): LiveChatEvent | null {
 
 export type MessageContentPart =
   | { type: "text"; value: string }
+  | { type: "bold"; value: string }
   | { type: "link"; value: string; href: string };
+
+function splitBoldSegments(text: string): Array<{ type: "text" | "bold"; value: string }> {
+  const parts: Array<{ type: "text" | "bold"; value: string }> = [];
+  const regex = /\*\*([^*]+)\*\*/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push({ type: "text", value: text.slice(lastIndex, match.index) });
+    }
+    parts.push({ type: "bold", value: match[1] });
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push({ type: "text", value: text.slice(lastIndex) });
+  }
+
+  return parts.length > 0 ? parts : [{ type: "text", value: text }];
+}
 
 export function splitMessageContent(content: string): MessageContentPart[] {
   const parts: MessageContentPart[] = [];
@@ -444,9 +466,15 @@ export function splitMessageContent(content: string): MessageContentPart[] {
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
+  const pushText = (value: string) => {
+    for (const segment of splitBoldSegments(value)) {
+      parts.push(segment);
+    }
+  };
+
   while ((match = regex.exec(content)) !== null) {
     if (match.index > lastIndex) {
-      parts.push({ type: "text", value: content.slice(lastIndex, match.index) });
+      pushText(content.slice(lastIndex, match.index));
     }
 
     const raw = match[0];
@@ -459,20 +487,20 @@ export function splitMessageContent(content: string): MessageContentPart[] {
       if (url.protocol === "http:" || url.protocol === "https:") {
         parts.push({ type: "link", value: core, href: url.toString() });
         if (suffix) {
-          parts.push({ type: "text", value: suffix });
+          pushText(suffix);
         }
       } else {
-        parts.push({ type: "text", value: raw });
+        pushText(raw);
       }
     } catch {
-      parts.push({ type: "text", value: raw });
+      pushText(raw);
     }
 
     lastIndex = regex.lastIndex;
   }
 
   if (lastIndex < content.length) {
-    parts.push({ type: "text", value: content.slice(lastIndex) });
+    pushText(content.slice(lastIndex));
   }
 
   return parts.length > 0 ? parts : [{ type: "text", value: content }];
