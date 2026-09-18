@@ -606,31 +606,53 @@ export const SUPPORT_DIAL_COUNTRIES: DialCountry[] = [
   { iso: "SA", dial: "+966", label: "Saudi-Arabien" },
 ];
 
+function stripPhoneFormatting(value: string): string {
+  return value.trim().replace(/[\s\-().]/g, "");
+}
+
 export function buildWhatsAppPayload(input: {
   countryIso: string;
   nationalOrInternational: string;
-}): { whatsapp: string; countryCode?: string } | null {
+}): { whatsapp: string; countryCode: string } | null {
   const country = SUPPORT_DIAL_COUNTRIES.find((item) => item.iso === input.countryIso);
-  const raw = input.nationalOrInternational.trim();
-  if (!country || !raw) {
+  const compact = stripPhoneFormatting(input.nationalOrInternational);
+  if (!country || !compact) {
     return null;
   }
 
-  if (raw.startsWith("+")) {
-    const digits = raw.replace(/[^\d]/g, "");
-    if (digits.length < 8 || digits.length > 16) {
-      return null;
-    }
-    return { whatsapp: `+${digits}` };
+  const countryDigits = country.dial.replace(/\D/g, "");
+  let rest = compact;
+
+  if (rest.startsWith("+")) {
+    rest = rest.slice(1);
+  } else if (rest.startsWith("00")) {
+    rest = rest.slice(2);
   }
 
-  const national = raw.replace(/[^\d]/g, "").replace(/^0+/, "");
-  if (national.length < 6 || national.length > 14) {
+  rest = rest.replace(/[^\d]/g, "");
+  if (!rest) {
+    return null;
+  }
+
+  if (rest.startsWith(countryDigits)) {
+    rest = rest.slice(countryDigits.length);
+  }
+
+  if (rest.startsWith("0")) {
+    rest = rest.slice(1);
+  }
+
+  if (!rest) {
+    return null;
+  }
+
+  const whatsapp = `${countryDigits}${rest}`;
+  if (whatsapp.length < 8 || whatsapp.length > 15) {
     return null;
   }
 
   return {
-    whatsapp: `${country.dial}${national}`,
+    whatsapp,
     countryCode: country.iso,
   };
 }
