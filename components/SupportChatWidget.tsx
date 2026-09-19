@@ -17,6 +17,8 @@ import {
   SUPPORT_CONTACT_CONFIRMATION,
   SUPPORT_CONTACT_CONSENT_FALLBACK,
   SUPPORT_DIAL_COUNTRIES,
+  SUPPORT_IMAGE_ACCEPT,
+  SUPPORT_IMAGE_SEND_ERROR,
   SUPPORT_MAX_MESSAGE_LENGTH,
   SUPPORT_SEND_ERROR,
   SUPPORT_WELCOME_MESSAGE,
@@ -36,10 +38,12 @@ import {
   postSupportContact,
   preTypingDelayMs,
   readStoredConversationId,
+  revokeBlobUrl,
   splitMessageContent,
   storeConversationId,
   trackPaymentLinkClick,
   typingHoldMsForReply,
+  validateCustomerImageFile,
   type PublicConversation,
   type SupportChatMessage,
   type SupportSendFailure,
@@ -66,6 +70,32 @@ const PUBLIC_SSE_EVENTS = [
   "human.return_to_ai",
 ] as const;
 
+function messageHasImage(message: SupportChatMessage): boolean {
+  return Boolean(message.localPreviewUrl) || (message.attachments?.some((item) => item.kind === "image") ?? false);
+}
+
+function localMatchesIncoming(local: SupportChatMessage, incoming: SupportChatMessage): boolean {
+  if (incoming.role !== local.role) {
+    return false;
+  }
+
+  if (local.clientRequestId && incoming.clientRequestId && local.clientRequestId === incoming.clientRequestId) {
+    return true;
+  }
+
+  if (incoming.content !== local.content) {
+    return false;
+  }
+
+  const localImage = messageHasImage(local);
+  const incomingImage = messageHasImage(incoming);
+  if (localImage || incomingImage) {
+    return localImage && incomingImage;
+  }
+
+  return true;
+}
+
 function mergeMessages(
   current: SupportChatMessage[],
   incoming: SupportChatMessage[],
@@ -87,9 +117,7 @@ function mergeMessages(
       return false;
     }
 
-    return !incoming.some(
-      (item) => item.role === message.role && item.content === message.content,
-    );
+    return !incoming.some((item) => localMatchesIncoming(message, item));
   });
 
   return [...Array.from(byId.values()).sort((a, b) => a.createdAt.localeCompare(b.createdAt)), ...locals];
@@ -160,6 +188,98 @@ function MessageBody({
         return <span key={`text-${index}`}>{part.value}</span>;
       })}
     </p>
+  );
+}
+
+function PaperclipIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M21.44 11.05 12.25 20.24a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+    </svg>
+  );
+}
+
+function MessageAttachments({
+  message,
+  isCustomer,
+  onOpen,
+}: {
+  message: SupportChatMessage;
+  isCustomer: boolean;
+  onOpen: (url: string) => void;
+}) {
+  const urls = (message.attachments ?? [])
+    .filter((attachment) => attachment.kind === "image" && attachment.url)
+    .map((attachment) => attachment.url);
+  const previewUrls = urls.length > 0 ? urls : message.localPreviewUrl ? [message.localPreviewUrl] : [];
+
+  if (previewUrls.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className={message.content.trim() ? "mb-2 flex flex-col gap-2" : "flex flex-col gap-2"}>
+      {previewUrls.map((url) => (
+        <button
+          key={url}
+          type="button"
+          onClick={() => onOpen(url)}
+          className={`block max-w-full overflow-hidden rounded-xl border p-0 text-left ${
+            isCustomer ? "border-black/10 bg-black/10" : "border-white/10 bg-black/30"
+          }`}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={url}
+            alt="Angehängtes Bild"
+            className="block h-auto max-h-44 w-auto max-w-full object-contain"
+          />
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function ImageLightbox({
+  url,
+  onClose,
+}: {
+  url: string;
+  onClose: () => void;
+}) {
+  return (
+    <div
+      className="pointer-events-auto fixed inset-0 z-[10000] flex items-center justify-center bg-black/80 p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Bildvorschau"
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white hover:border-[#A6FF00]/50 hover:text-[#A6FF00]"
+        aria-label="Vorschau schließen"
+      >
+        <HiXMark className="h-5 w-5" aria-hidden="true" />
+      </button>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={url}
+        alt="Bildvorschau"
+        className="max-h-[85vh] max-w-[min(92vw,720px)] object-contain"
+        onClick={(event) => event.stopPropagation()}
+      />
+    </div>
   );
 }
 
@@ -337,6 +457,9 @@ export default function SupportChatWidget() {
   const [contactEmail, setContactEmail] = useState("");
   const [contactError, setContactError] = useState<string | null>(null);
   const [contactSending, setContactSending] = useState(false);
+  const [pendingFile, setPendingFile] = useState<File | null>(null);
+  const [pendingPreviewUrl, setPendingPreviewUrl] = useState<string | null>(null);
+  const [lightboxUrl, setLightboxUrl] = useState<string | null>(null);
 
   const conversationIdRef = useRef<string | null>(null);
   const ownerRef = useRef<"AI" | "HUMAN" | string>("AI");
@@ -359,6 +482,8 @@ export default function SupportChatWidget() {
   const eventSourceRef = useRef<EventSource | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const composerRef = useRef<HTMLTextAreaElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const pendingPreviewUrlRef = useRef<string | null>(null);
   const panelWasOpenRef = useRef(false);
   const contactFieldFocusedRef = useRef(false);
   const contactPhoneRef = useRef("");
@@ -538,6 +663,14 @@ export default function SupportChatWidget() {
       }
 
       const merged = mergeMessages(messagesRef.current, mapped);
+      const keptPreviewUrls = new Set(
+        merged.map((item) => item.localPreviewUrl).filter((url): url is string => Boolean(url)),
+      );
+      for (const previous of messagesRef.current) {
+        if (previous.localPreviewUrl && !keptPreviewUrls.has(previous.localPreviewUrl)) {
+          revokeBlobUrl(previous.localPreviewUrl);
+        }
+      }
       setMessages(merged.length > 0 ? merged : [WELCOME_MESSAGE]);
 
       syncTypingIndicator(
@@ -734,6 +867,10 @@ export default function SupportChatWidget() {
       if (typingStopTimerRef.current) {
         window.clearTimeout(typingStopTimerRef.current);
       }
+      revokeBlobUrl(pendingPreviewUrlRef.current);
+      for (const message of messagesRef.current) {
+        revokeBlobUrl(message.localPreviewUrl);
+      }
     };
   }, [disconnectEvents, stopPolling]);
 
@@ -758,14 +895,23 @@ export default function SupportChatWidget() {
 
   useEffect(() => {
     const onKeyDown = (event: globalThis.KeyboardEvent) => {
-      if (event.key === "Escape" && openRef.current) {
+      if (event.key !== "Escape") {
+        return;
+      }
+
+      if (lightboxUrl) {
+        setLightboxUrl(null);
+        return;
+      }
+
+      if (openRef.current) {
         setOpen(false);
       }
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [lightboxUrl]);
 
   const scrollToBottomIfNeeded = useCallback((smooth = true) => {
     const node = listRef.current;
@@ -861,9 +1007,47 @@ export default function SupportChatWidget() {
     }, 1600);
   };
 
+  const clearPendingImage = (revoke = true) => {
+    if (revoke) {
+      revokeBlobUrl(pendingPreviewUrlRef.current);
+    }
+    pendingPreviewUrlRef.current = null;
+    setPendingPreviewUrl(null);
+    setPendingFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  const handleImageSelect = (file: File | undefined) => {
+    if (!file || closed) {
+      return;
+    }
+
+    const validation = validateCustomerImageFile(file);
+    if (!validation.ok) {
+      setSendError(validation.message);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+      return;
+    }
+
+    setSendError(null);
+    revokeBlobUrl(pendingPreviewUrlRef.current);
+    const previewUrl = URL.createObjectURL(file);
+    pendingPreviewUrlRef.current = previewUrl;
+    setPendingPreviewUrl(previewUrl);
+    setPendingFile(file);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
   const handleSend = async (retryOf?: SupportChatMessage) => {
     const text = (retryOf?.content ?? draft).trim();
-    if (!text || submitting || closed) {
+    const image = retryOf?.localFile ?? pendingFile;
+    if ((!text && !image) || submitting || closed) {
       return;
     }
 
@@ -872,14 +1056,23 @@ export default function SupportChatWidget() {
       return;
     }
 
+    if (image) {
+      const validation = validateCustomerImageFile(image);
+      if (!validation.ok) {
+        setSendError(validation.message);
+        return;
+      }
+    }
+
     const epoch = ++sendEpochRef.current;
     setSubmitting(true);
     setSendError(null);
     sendTypingStop();
 
     const clientRequestId = retryOf?.clientRequestId || createClientRequestId();
+    const previewUrl = retryOf?.localPreviewUrl ?? pendingPreviewUrl ?? undefined;
     const optimistic: SupportChatMessage = retryOf
-      ? { ...retryOf, failed: false, local: true, deliveryStatus: undefined, clientRequestId }
+      ? { ...retryOf, failed: false, local: true, deliveryStatus: undefined, clientRequestId, localFile: image ?? retryOf.localFile, localPreviewUrl: previewUrl }
       : {
           id: `local-${Date.now()}`,
           role: "customer",
@@ -888,6 +1081,8 @@ export default function SupportChatWidget() {
           createdAt: new Date().toISOString(),
           local: true,
           clientRequestId,
+          localFile: image ?? undefined,
+          localPreviewUrl: previewUrl ?? undefined,
         };
 
     setMessages((current) => {
@@ -895,10 +1090,25 @@ export default function SupportChatWidget() {
       if (retryOf) {
         return withoutWelcome.map((item) => (item.id === retryOf.id ? optimistic : item));
       }
-      return [...withoutWelcome, optimistic];
+      return [
+        ...withoutWelcome.filter(
+          (item) =>
+            !(
+              item.failed &&
+              item.local &&
+              item.role === "customer" &&
+              item.content === text &&
+              Boolean(item.localFile) === Boolean(image)
+            ),
+        ),
+        optimistic,
+      ];
     });
     if (!retryOf) {
       setDraft("");
+      if (image) {
+        clearPendingImage(false);
+      }
     }
     stickToBottomRef.current = true;
 
@@ -907,6 +1117,7 @@ export default function SupportChatWidget() {
         message: text,
         conversationId: conversationIdRef.current,
         clientRequestId,
+        image,
       });
 
       if (epoch !== sendEpochRef.current) {
@@ -974,11 +1185,20 @@ export default function SupportChatWidget() {
       if (epoch === sendEpochRef.current) {
         expectingReplyRef.current = false;
         setSupportTyping(false);
-        setSendError(SUPPORT_SEND_ERROR);
+        if (image) {
+          setSendError(SUPPORT_IMAGE_SEND_ERROR);
+          setDraft(text);
+          const restoreUrl = optimistic.localPreviewUrl ?? URL.createObjectURL(image);
+          pendingPreviewUrlRef.current = restoreUrl;
+          setPendingPreviewUrl(restoreUrl);
+          setPendingFile(image);
+        } else {
+          setSendError(SUPPORT_SEND_ERROR);
+        }
         setMessages((current) =>
           current.map((item) =>
             item.id === optimistic.id
-              ? { ...item, failed: true, local: true, clientRequestId }
+              ? { ...item, failed: true, local: true, clientRequestId, localFile: image ?? item.localFile }
               : item,
           ),
         );
@@ -1086,6 +1306,8 @@ export default function SupportChatWidget() {
     setSupportTyping(false);
     setSendError(null);
     setDraft("");
+    clearPendingImage(true);
+    setLightboxUrl(null);
     setUnreadCount(0);
     setHumanNeeded(false);
     setContactRequired(false);
@@ -1182,24 +1404,31 @@ export default function SupportChatWidget() {
                 >
                   {!isCustomer ? <SupportAvatar size="sm" /> : null}
                   <div className="min-w-0 max-w-[min(82%,calc(100%-2.5rem))]">
-                    <MessageBody
-                      content={message.content}
-                      className={`support-chat-bubble whitespace-pre-wrap rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
+                    <div
+                      className={`support-chat-bubble rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
                         isCustomer
                           ? "rounded-br-md bg-[#A6FF00] text-black"
                           : "rounded-bl-md border border-white/10 bg-[#151515] text-[#F5F5F5]"
                       }`}
-                      onCheckoutLinkClick={
-                        isCustomer
-                          ? undefined
-                          : (url) => {
-                              trackPaymentLinkClick({
-                                conversationId: conversationIdRef.current,
-                                url,
-                              });
-                            }
-                      }
-                    />
+                    >
+                      <MessageAttachments message={message} isCustomer={isCustomer} onOpen={setLightboxUrl} />
+                      {message.content.trim() ? (
+                        <MessageBody
+                          content={message.content}
+                          className="whitespace-pre-wrap"
+                          onCheckoutLinkClick={
+                            isCustomer
+                              ? undefined
+                              : (url) => {
+                                  trackPaymentLinkClick({
+                                    conversationId: conversationIdRef.current,
+                                    url,
+                                  });
+                                }
+                          }
+                        />
+                      ) : null}
+                    </div>
                     <div
                       className={`mt-1 flex items-center gap-1 px-1 text-[10px] leading-none ${
                         isCustomer ? "justify-end text-white/45" : "justify-start text-white/40"
@@ -1284,7 +1513,46 @@ export default function SupportChatWidget() {
                 {sendError}
               </p>
             ) : null}
+            {pendingPreviewUrl ? (
+              <div className="mb-2 flex items-start gap-2">
+                <div className="relative max-w-[7.5rem] overflow-hidden rounded-xl border border-white/10 bg-[#111111]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={pendingPreviewUrl}
+                    alt="Bildvorschau"
+                    className="block h-auto max-h-20 w-auto max-w-full object-contain"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => clearPendingImage(true)}
+                    className="absolute right-1 top-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black/75 text-white hover:text-[#A6FF00]"
+                    aria-label="Bild entfernen"
+                    title="Bild entfernen"
+                  >
+                    <HiXMark className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+            ) : null}
             <div className="flex items-end gap-2">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept={SUPPORT_IMAGE_ACCEPT}
+                className="hidden"
+                onChange={(event) => handleImageSelect(event.target.files?.[0])}
+                disabled={closed}
+              />
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={closed || submitting}
+                aria-label="Attach image"
+                title="Attach image"
+                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-[#111111] text-[#A6FF00] transition hover:border-[#A6FF00]/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                <PaperclipIcon className="h-5 w-5" />
+              </button>
               <label className="sr-only" htmlFor="kundenservice-input">
                 Nachricht an den Kundenservice
               </label>
@@ -1298,11 +1566,11 @@ export default function SupportChatWidget() {
                 disabled={closed}
                 autoFocus={false}
                 placeholder={closed ? "Unterhaltung geschlossen" : "Nachricht schreiben…"}
-                className="max-h-28 min-h-11 flex-1 resize-none rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50 disabled:opacity-60"
+                className="max-h-28 min-h-11 min-w-0 flex-1 resize-none rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50 disabled:opacity-60"
               />
               <button
                 type="submit"
-                disabled={closed || submitting || !draft.trim()}
+                disabled={closed || submitting || (!draft.trim() && !pendingFile)}
                 aria-label="Nachricht senden"
                 className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#A6FF00] text-black transition hover:bg-[#B8FF4D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00] disabled:cursor-not-allowed disabled:opacity-40"
               >
@@ -1332,6 +1600,7 @@ export default function SupportChatWidget() {
           </span>
         ) : null}
       </button>
+      {lightboxUrl ? <ImageLightbox url={lightboxUrl} onClose={() => setLightboxUrl(null)} /> : null}
     </div>
   );
 }

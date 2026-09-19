@@ -13,6 +13,11 @@ export const SUPPORT_CONTACT_CONSENT_FALLBACK =
   "Mit dem Absenden stimmen Sie zu, dass unser Support Sie zu dieser Anfrage per WhatsApp oder E-Mail kontaktieren darf.";
 export const SUPPORT_CONTACT_ERROR =
   "Die Kontaktdaten konnten gerade nicht übermittelt werden. Bitte versuchen Sie es erneut.";
+export const SUPPORT_IMAGE_MAX_BYTES = 5 * 1024 * 1024;
+export const SUPPORT_IMAGE_ACCEPT = "image/jpeg,image/png,image/webp";
+export const SUPPORT_IMAGE_TYPE_ERROR = "Nur JPG, PNG oder WebP.";
+export const SUPPORT_IMAGE_SIZE_ERROR = "Das Bild darf maximal 5 MB groß sein.";
+export const SUPPORT_IMAGE_SEND_ERROR = "Bild konnte nicht gesendet werden.";
 
 export type SupportSite = typeof SUPPORT_SITE;
 
@@ -29,6 +34,14 @@ export type ApiMessageSender = "CUSTOMER" | "AI" | "SUPPORT" | "SYSTEM" | string
 
 export type WidgetMessageRole = "customer" | "support";
 
+export type SupportChatAttachment = {
+  id: string;
+  kind: "image";
+  mimeType: string;
+  sizeBytes: number;
+  url: string;
+};
+
 export type SupportChatMessage = {
   id: string;
   role: WidgetMessageRole;
@@ -38,6 +51,9 @@ export type SupportChatMessage = {
   deliveryStatus?: string;
   presentationDelayMs?: number | null;
   clientRequestId?: string;
+  attachments?: SupportChatAttachment[];
+  localPreviewUrl?: string;
+  localFile?: File;
   local?: boolean;
   failed?: boolean;
 };
@@ -69,6 +85,7 @@ export type PublicConversation = {
     createdAt: string;
     deliveryStatus: string;
     presentationDelayMs: number | null;
+    attachments?: SupportChatAttachment[];
   }>;
 };
 
@@ -155,9 +172,117 @@ export function createClientRequestId(): string {
   return `cr-${Date.now().toString(16)}-${Math.random().toString(16).slice(2, 10)}`;
 }
 
+function supportApiOrigin(): string {
+  return new URL(SUPPORT_API_BASE).origin;
+}
+
+export function resolveSafeAttachmentUrl(value: string | null | undefined): string | null {
+  if (!value || typeof value !== "string") {
+    return null;
+  }
+
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  try {
+    const resolved = new URL(trimmed, `${SUPPORT_API_BASE}/`);
+    if (resolved.protocol !== "http:" && resolved.protocol !== "https:") {
+      return null;
+    }
+
+    if (resolved.origin !== supportApiOrigin()) {
+      return null;
+    }
+
+    return resolved.toString();
+  } catch {
+    return null;
+  }
+}
+
+export function revokeBlobUrl(url: string | null | undefined): void {
+  if (url && url.startsWith("blob:")) {
+    URL.revokeObjectURL(url);
+  }
+}
+
+function mapApiAttachments(value: unknown): SupportChatAttachment[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  const attachments: SupportChatAttachment[] = [];
+
+  for (const item of value) {
+    if (!isRecord(item)) {
+      continue;
+    }
+
+    const id = readString(item.id)?.trim();
+    const kind = readString(item.kind)?.trim().toLowerCase();
+    const mimeType = readString(item.mimeType)?.trim() ?? "";
+    const url = resolveSafeAttachmentUrl(readString(item.url));
+    const sizeBytes = typeof item.sizeBytes === "number" && Number.isFinite(item.sizeBytes) ? item.sizeBytes : 0;
+
+    if (!id || !url || kind !== "image") {
+      continue;
+    }
+
+    attachments.push({
+      id,
+      kind: "image",
+      mimeType,
+      sizeBytes,
+      url,
+    });
+  }
+
+  return attachments;
+}
+
+const ALLOWED_CUSTOMER_IMAGE_TYPES = new Set(["image/jpeg", "image/jpg", "image/pjpeg", "image/png", "image/webp"]);
+
+export function validateCustomerImageFile(file: File): { ok: true } | { ok: false; message: string } {
+  const name = file.name.toLowerCase();
+  const type = file.type.toLowerCase();
+
+  if (
+    /\.(svg|pdf|gif|html?|exe|js|mjs)$/i.test(name) ||
+    type === "image/svg+xml" ||
+    type === "image/gif" ||
+    type === "application/pdf" ||
+    type === "text/html"
+  ) {
+    return { ok: false, message: SUPPORT_IMAGE_TYPE_ERROR };
+  }
+
+  const typeAllowed = type ? ALLOWED_CUSTOMER_IMAGE_TYPES.has(type) : false;
+  const extensionAllowed = /\.(jpe?g|png|webp)$/i.test(name);
+
+  if (!typeAllowed && !extensionAllowed) {
+    return { ok: false, message: SUPPORT_IMAGE_TYPE_ERROR };
+  }
+
+  if (type && !ALLOWED_CUSTOMER_IMAGE_TYPES.has(type)) {
+    return { ok: false, message: SUPPORT_IMAGE_TYPE_ERROR };
+  }
+
+  if (file.size > SUPPORT_IMAGE_MAX_BYTES) {
+    return { ok: false, message: SUPPORT_IMAGE_SIZE_ERROR };
+  }
+
+  return { ok: true };
+}
+
 export function mapApiMessages(messages: PublicConversation["messages"]): SupportChatMessage[] {
   return messages
-    .filter((message) => message.sender !== "SYSTEM" && message.content.trim())
+    .filter(
+      (message) =>
+        message.sender !== "SYSTEM" &&
+        (message.content.trim().length > 0 || (message.attachments?.length ?? 0) > 0),
+    )
     .map((message) => ({
       id: message.id,
       role: message.sender === "CUSTOMER" ? "customer" : "support",
@@ -166,6 +291,7 @@ export function mapApiMessages(messages: PublicConversation["messages"]): Suppor
       createdAt: message.createdAt,
       deliveryStatus: message.deliveryStatus,
       presentationDelayMs: message.presentationDelayMs,
+      attachments: message.attachments,
     }));
 }
 
@@ -185,32 +311,7 @@ function mapConversationFields(data: Record<string, unknown>, fallbackStatus: Su
   };
 }
 
-export async function postCustomerMessage(options: {
-  message: string;
-  conversationId?: string | null;
-  clientRequestId: string;
-}): Promise<ChatPostResponse> {
-  const body: {
-    site: SupportSite;
-    message: string;
-    clientRequestId: string;
-    conversationId?: string;
-  } = {
-    site: SUPPORT_SITE,
-    message: options.message,
-    clientRequestId: options.clientRequestId,
-  };
-
-  if (options.conversationId) {
-    body.conversationId = options.conversationId;
-  }
-
-  const response = await fetch(`${SUPPORT_API_BASE}/api/chat`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-
+async function parseChatPostResponse(response: Response): Promise<ChatPostResponse> {
   const data: unknown = await response.json().catch(() => null);
   const record = isRecord(data) ? data : null;
   const conversationIdFromBody = record && typeof record.conversationId === "string" ? record.conversationId : undefined;
@@ -250,6 +351,55 @@ export async function postCustomerMessage(options: {
     contactSubmitted: fields.contactSubmitted,
     contactConsentText: fields.contactConsentText,
   };
+}
+
+export async function postCustomerMessage(options: {
+  message: string;
+  conversationId?: string | null;
+  clientRequestId: string;
+  image?: File | null;
+}): Promise<ChatPostResponse> {
+  const conversationId = options.conversationId?.trim() || undefined;
+  let response: Response;
+
+  if (options.image) {
+    const form = new FormData();
+    form.append("site", SUPPORT_SITE);
+    form.append("message", options.message);
+    form.append("clientRequestId", options.clientRequestId);
+    if (conversationId) {
+      form.append("conversationId", conversationId);
+    }
+    form.append("image", options.image);
+
+    response = await fetch(`${SUPPORT_API_BASE}/api/chat`, {
+      method: "POST",
+      body: form,
+    });
+  } else {
+    const body: {
+      site: SupportSite;
+      message: string;
+      clientRequestId: string;
+      conversationId?: string;
+    } = {
+      site: SUPPORT_SITE,
+      message: options.message,
+      clientRequestId: options.clientRequestId,
+    };
+
+    if (conversationId) {
+      body.conversationId = conversationId;
+    }
+
+    response = await fetch(`${SUPPORT_API_BASE}/api/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  }
+
+  return parseChatPostResponse(response);
 }
 
 export async function loadPublicConversation(
@@ -297,6 +447,7 @@ export async function loadPublicConversation(
       deliveryStatus: typeof message.deliveryStatus === "string" ? message.deliveryStatus : "SENT",
       presentationDelayMs:
         typeof message.presentationDelayMs === "number" ? message.presentationDelayMs : null,
+      attachments: mapApiAttachments(message.attachments),
     })),
   };
 }
