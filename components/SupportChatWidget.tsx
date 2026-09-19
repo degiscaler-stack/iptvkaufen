@@ -1583,7 +1583,7 @@ export default function SupportChatWidget() {
 
       <button
         type="button"
-        className="support-chat-fab pointer-events-auto relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#A6FF00]/25 bg-[#050505] text-white shadow-[0_10px_24px_rgba(0,0,0,0.45)] transition duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A6FF00] sm:h-[60px] sm:w-[60px]"
+        className="support-chat-fab pointer-events-auto relative inline-flex h-[60px] w-[60px] items-center justify-center rounded-full border border-[#A6FF00]/25 bg-[#050505] text-white shadow-[0_10px_24px_rgba(0,0,0,0.45)] transition duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A6FF00]"
         aria-label={open ? "Kundenservice schließen" : "Kundenservice öffnen"}
         aria-expanded={open}
         aria-controls="kundenservice-panel"
