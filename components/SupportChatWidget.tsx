@@ -25,6 +25,7 @@ import {
   createClientRequestId,
   createSupportEventSource,
   customerReceiptState,
+  isCheckoutUrl,
   isValidSupportEmail,
   loadPublicConversation,
   mapApiMessages,
@@ -37,6 +38,7 @@ import {
   readStoredConversationId,
   splitMessageContent,
   storeConversationId,
+  trackPaymentLinkClick,
   typingHoldMsForReply,
   type PublicConversation,
   type SupportChatMessage,
@@ -122,15 +124,30 @@ function presenceForStatus(status: SupportStatus | null, closed: boolean) {
   return { label: "Online", tone: "online" as const };
 }
 
-function MessageBody({ content, className }: { content: string; className: string }) {
+function MessageBody({
+  content,
+  className,
+  onCheckoutLinkClick,
+}: {
+  content: string;
+  className: string;
+  onCheckoutLinkClick?: (url: string) => void;
+}) {
   const parts = splitMessageContent(content);
 
   return (
     <p className={className}>
       {parts.map((part, index) => {
         if (part.type === "link") {
+          const trackCheckout = Boolean(onCheckoutLinkClick && isCheckoutUrl(part.href));
           return (
-            <a key={`${part.href}-${index}`} href={part.href} target="_blank" rel="noopener noreferrer">
+            <a
+              key={`${part.href}-${index}`}
+              href={part.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackCheckout ? () => onCheckoutLinkClick?.(part.href) : undefined}
+            >
               {part.value}
             </a>
           );
@@ -1172,6 +1189,16 @@ export default function SupportChatWidget() {
                           ? "rounded-br-md bg-[#A6FF00] text-black"
                           : "rounded-bl-md border border-white/10 bg-[#151515] text-[#F5F5F5]"
                       }`}
+                      onCheckoutLinkClick={
+                        isCustomer
+                          ? undefined
+                          : (url) => {
+                              trackPaymentLinkClick({
+                                conversationId: conversationIdRef.current,
+                                url,
+                              });
+                            }
+                      }
                     />
                     <div
                       className={`mt-1 flex items-center gap-1 px-1 text-[10px] leading-none ${

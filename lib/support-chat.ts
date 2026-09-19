@@ -406,6 +406,53 @@ export async function postReceipts(options: {
   }).catch(() => undefined);
 }
 
+function checkoutHostname(hostname: string): string {
+  return hostname.toLowerCase().replace(/^www\./, "");
+}
+
+export function isCheckoutUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+      return false;
+    }
+
+    const host = checkoutHostname(parsed.hostname);
+    if (host !== "degiscaler.com") {
+      return false;
+    }
+
+    const path = parsed.pathname.toLowerCase().replace(/\/+$/, "") || "/";
+    return path === "/checkout" || path.startsWith("/checkout/");
+  } catch {
+    return false;
+  }
+}
+
+export function trackPaymentLinkClick(options: {
+  conversationId: string | null | undefined;
+  url: string;
+}): void {
+  const conversationId = options.conversationId?.trim();
+  const url = options.url.trim();
+  if (!conversationId || !url || !isCheckoutUrl(url)) {
+    return;
+  }
+
+  void fetch(`${SUPPORT_API_BASE}/api/chat/payment-click`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      site: SUPPORT_SITE,
+      conversationId,
+      url,
+    }),
+    keepalive: true,
+    mode: "cors",
+    credentials: "omit",
+  }).catch(() => undefined);
+}
+
 export function createSupportEventSource(conversationId: string): EventSource {
   const url = new URL(`${SUPPORT_API_BASE}/api/chat/events`);
   url.searchParams.set("site", SUPPORT_SITE);
