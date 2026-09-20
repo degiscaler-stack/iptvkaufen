@@ -1660,18 +1660,17 @@ export default function SupportChatWidget() {
 
       <button
         type="button"
-        className="support-chat-fab pointer-events-auto relative inline-flex h-[70px] w-[70px] items-center justify-center rounded-full border border-[#A6FF00]/25 bg-[#050505] text-white transition duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A6FF00] lg:h-[76px] lg:w-[76px]"
+        className="support-chat-fab pointer-events-auto relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#A6FF00]/25 bg-[#050505] text-white transition-[box-shadow,border-color] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A6FF00] lg:h-[60px] lg:w-[60px]"
         aria-label={open ? "Kundenservice schließen" : "Kundenservice öffnen"}
         aria-expanded={open}
         aria-controls="kundenservice-panel"
         onClick={() => setOpen((value) => !value)}
       >
         <span className="support-chat-fab-ring" aria-hidden="true" />
-        <span className="support-chat-fab-ring support-chat-fab-ring-delayed" aria-hidden="true" />
         {open ? (
-          <HiXMark className="h-8 w-8 lg:h-9 lg:w-9" aria-hidden="true" />
+          <HiXMark className="h-[26px] w-[26px] lg:h-7 lg:w-7" aria-hidden="true" />
         ) : (
-          <HiChatBubbleLeftRight className="h-8 w-8 text-[#A6FF00] lg:h-9 lg:w-9" aria-hidden="true" />
+          <HiChatBubbleLeftRight className="h-[26px] w-[26px] text-[#A6FF00] lg:h-7 lg:w-7" aria-hidden="true" />
         )}
         {!open && unreadCount > 0 ? (
           <span className="absolute -right-1 -top-1 inline-flex min-h-5 min-w-5 items-center justify-center rounded-full bg-[#A6FF00] px-1 text-[11px] font-bold text-black">
