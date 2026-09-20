@@ -1,9 +1,8 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import PricingScrollLink from "@/components/PricingScrollLink";
-import { TrackedAnchor } from "@/components/TrackedLink";
+import PurchaseIntentButton from "@/components/PurchaseIntentButton";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/contact";
 import { CTA_MOTION_DELAYS, ctaMotionFeaturedClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 
 const trustBadges = ["Einfache Einrichtung", "Ultra HD & 4K", "Mehrere Geräte", "Sofortiger Zugang"];
@@ -61,10 +60,8 @@ export default function Hero() {
           >
             JETZT IPTV KAUFEN
           </PricingScrollLink>
-          <TrackedAnchor
-            href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <PurchaseIntentButton
+            intent={{ kind: "TRIAL" }}
             analyticsEvent={ANALYTICS_EVENTS.heroTrialClick}
             analyticsParams={{
               source: "hero_secondary",
@@ -73,14 +70,13 @@ export default function Hero() {
               currency: "EUR",
               page_path: "/",
             }}
-            alsoTrackCheckout
             alsoTrackTrial
             data-analytics="hero_trial_click"
             className={`${ctaMotionFeaturedClass} inline-flex min-h-11 w-[calc(100%_-_88px)] max-w-[285px] items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] text-[#F5F5F5] whitespace-nowrap backdrop-blur-xl transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00] hover:bg-[#111111]/70 hover:text-[#A6FF00] sm:w-auto sm:min-h-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em]`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.heroTrial } as CSSProperties}
           >
             24H-TEST FÜR 3€ STARTEN
-          </TrackedAnchor>
+          </PurchaseIntentButton>
         </div>
 
         <p className="hero-fade-up hero-fade-up-4 mt-3 text-[11px] font-medium tracking-[0.02em] text-[#F5F5F5]/78 sm:text-xs">

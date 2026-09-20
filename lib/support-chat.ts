@@ -18,6 +18,22 @@ export const SUPPORT_IMAGE_ACCEPT = "image/jpeg,image/png,image/webp";
 export const SUPPORT_IMAGE_TYPE_ERROR = "Nur JPG, PNG oder WebP.";
 export const SUPPORT_IMAGE_SIZE_ERROR = "Das Bild darf maximal 5 MB groß sein.";
 export const SUPPORT_IMAGE_SEND_ERROR = "Bild konnte nicht gesendet werden.";
+export const SUPPORT_PURCHASE_INTENT_EVENT = "support-chat:purchase-intent";
+export const SUPPORT_PURCHASE_INTENT_ERROR =
+  "Die Auswahl konnte gerade nicht geladen werden. Bitte versuche es erneut oder schreibe uns kurz hier im Chat.";
+
+export type SupportPurchaseDurationMonths = 1 | 3 | 6 | 12;
+export type SupportPurchaseDeviceCount = 1 | 2 | 3 | 4;
+
+export type SupportPurchaseIntentDetail =
+  | {
+      kind: "PACKAGE";
+      durationMonths: SupportPurchaseDurationMonths;
+      devices: SupportPurchaseDeviceCount;
+    }
+  | {
+      kind: "TRIAL";
+    };
 
 export type SupportSite = typeof SUPPORT_SITE;
 
@@ -170,6 +186,36 @@ export function createClientRequestId(): string {
   }
 
   return `cr-${Date.now().toString(16)}-${Math.random().toString(16).slice(2, 10)}`;
+}
+
+export function dispatchSupportPurchaseIntent(detail: SupportPurchaseIntentDetail): void {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.dispatchEvent(
+    new CustomEvent<SupportPurchaseIntentDetail>(SUPPORT_PURCHASE_INTENT_EVENT, { detail }),
+  );
+}
+
+export function isSupportPurchaseIntentDetail(
+  value: unknown,
+): value is SupportPurchaseIntentDetail {
+  if (!isRecord(value) || (value.kind !== "PACKAGE" && value.kind !== "TRIAL")) {
+    return false;
+  }
+
+  if (value.kind === "TRIAL") {
+    return true;
+  }
+
+  return (
+    (value.durationMonths === 1 ||
+      value.durationMonths === 3 ||
+      value.durationMonths === 6 ||
+      value.durationMonths === 12) &&
+    (value.devices === 1 || value.devices === 2 || value.devices === 3 || value.devices === 4)
+  );
 }
 
 function supportApiOrigin(): string {
@@ -400,6 +446,54 @@ export async function postCustomerMessage(options: {
   }
 
   return parseChatPostResponse(response);
+}
+
+export async function postPurchaseIntent(options: {
+  conversationId?: string | null;
+  clientRequestId: string;
+  intent: SupportPurchaseIntentDetail;
+}): Promise<{ conversationId: string }> {
+  const conversationId = options.conversationId?.trim() || undefined;
+  const body: Record<string, string | number> = {
+    site: SUPPORT_SITE,
+    clientRequestId: options.clientRequestId,
+    kind: options.intent.kind,
+  };
+
+  if (conversationId) {
+    body.conversationId = conversationId;
+  }
+
+  if (options.intent.kind === "PACKAGE") {
+    body.durationMonths = options.intent.durationMonths;
+    body.devices = options.intent.devices;
+  }
+
+  const response = await fetch(`${SUPPORT_API_BASE}/api/chat/purchase-intent`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+  const data: unknown = await response.json().catch(() => null);
+  const record = isRecord(data) ? data : null;
+  const conversationIdFromBody =
+    record && typeof record.conversationId === "string" ? record.conversationId.trim() : "";
+  const failedStatus = record && (record.status === "error" || record.ok === false);
+  const accepted =
+    Boolean(conversationIdFromBody) &&
+    !failedStatus &&
+    (response.status === 202 || response.ok);
+
+  if (!accepted) {
+    const error = new Error("purchase_intent_failed") as SupportSendFailure;
+    error.httpStatus = response.status;
+    error.category = record && typeof record.category === "string" ? record.category : undefined;
+    error.conversationId = conversationIdFromBody || undefined;
+    throw error;
+  }
+
+  return { conversationId: conversationIdFromBody };
 }
 
 export async function loadPublicConversation(

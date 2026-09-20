@@ -4,6 +4,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import AggregateRatingLine from "@/components/AggregateRatingLine";
+import PurchaseIntentButton from "@/components/PurchaseIntentButton";
 import TrackedLink, { TrackedAnchor } from "@/components/TrackedLink";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import {
@@ -11,11 +12,11 @@ import {
   scrollToPackages,
 } from "@/lib/scroll-to-pricing";
 import {
-  buildWhatsAppUrl,
   PHONE_TEL_HREF,
   WHATSAPP_MESSAGES,
   WHATSAPP_PHONE_DISPLAY,
   WHATSAPP_SUPPORT_LABEL,
+  buildWhatsAppUrl,
 } from "@/lib/contact";
 import {
   COMPARISON_PRICE_LABEL,
@@ -225,10 +226,8 @@ export default function IptvPricing() {
               {TRIAL_REASSURANCE_TEXT}
             </p>
           </div>
-          <TrackedAnchor
-            href={buildWhatsAppUrl(WHATSAPP_MESSAGES.trial24h)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <PurchaseIntentButton
+            intent={{ kind: "TRIAL" }}
             analyticsEvent={ANALYTICS_EVENTS.trial3EuroClick}
             analyticsParams={{
               price: TRIAL_PRICE_NUMERIC,
@@ -236,14 +235,13 @@ export default function IptvPricing() {
               page_path: "/",
               button_location: "pricing_trial_banner",
             }}
-            alsoTrackCheckout
             alsoTrackTrial
             data-analytics="trial_3_euro_click"
             className={`${trialCtaClass} mt-4 shrink-0 lg:mt-0`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.trialBanner } as CSSProperties}
           >
             24H-TEST FÜR 3€ STARTEN
-          </TrackedAnchor>
+          </PurchaseIntentButton>
         </div>
 
         <AggregateRatingLine />
@@ -404,10 +402,12 @@ export default function IptvPricing() {
                   ))}
                 </ul>
 
-                <TrackedAnchor
-                  href={buildWhatsAppUrl(item.whatsappMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <PurchaseIntentButton
+                  intent={{
+                    kind: "PACKAGE",
+                    durationMonths: item.durationMonths,
+                    devices: item.deviceCount,
+                  }}
                   analyticsEvent={item.analyticsEvent}
                   analyticsParams={{
                     item_name: item.duration,
@@ -418,7 +418,6 @@ export default function IptvPricing() {
                     button_location: "pricing_card",
                     device_count: item.deviceCount,
                   }}
-                  alsoTrackCheckout
                   alsoTrackSelectItem
                   data-analytics={item.analyticsEvent}
                   data-package={item.id}
@@ -427,7 +426,7 @@ export default function IptvPricing() {
                   style={{ "--cta-motion-delay": CTA_MOTION_DELAYS[item.id] } as CSSProperties}
                 >
                   {item.buttonLabel}
-                </TrackedAnchor>
+                </PurchaseIntentButton>
               </div>
             </article>
           ))}

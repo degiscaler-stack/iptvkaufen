@@ -28,12 +28,14 @@ import {
   createSupportEventSource,
   customerReceiptState,
   isCheckoutUrl,
+  isSupportPurchaseIntentDetail,
   isValidSupportEmail,
   loadPublicConversation,
   mapApiMessages,
   parseLiveEvent,
   postCustomerMessage,
   postCustomerTyping,
+  postPurchaseIntent,
   postReceipts,
   postSupportContact,
   preTypingDelayMs,
@@ -41,11 +43,14 @@ import {
   revokeBlobUrl,
   splitMessageContent,
   storeConversationId,
+  SUPPORT_PURCHASE_INTENT_ERROR,
+  SUPPORT_PURCHASE_INTENT_EVENT,
   trackPaymentLinkClick,
   typingHoldMsForReply,
   validateCustomerImageFile,
   type PublicConversation,
   type SupportChatMessage,
+  type SupportPurchaseIntentDetail,
   type SupportSendFailure,
   type SupportStatus,
 } from "@/lib/support-chat";
@@ -478,6 +483,10 @@ export default function SupportChatWidget() {
   const lastCustomerSentAtRef = useRef(0);
   const expectingReplyRef = useRef(false);
   const sendEpochRef = useRef(0);
+  const purchaseIntentInFlightRef = useRef(false);
+  const handlePurchaseIntentRef = useRef<(detail: SupportPurchaseIntentDetail) => Promise<void>>(
+    async () => undefined,
+  );
   const supportStatusRef = useRef<SupportStatus | null>(null);
   const eventSourceRef = useRef<EventSource | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -913,6 +922,21 @@ export default function SupportChatWidget() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [lightboxUrl]);
 
+  useEffect(() => {
+    const onPurchaseIntent = (event: Event) => {
+      const detail = (event as CustomEvent<unknown>).detail;
+      if (!isSupportPurchaseIntentDetail(detail)) {
+        return;
+      }
+      void handlePurchaseIntentRef.current(detail);
+    };
+
+    window.addEventListener(SUPPORT_PURCHASE_INTENT_EVENT, onPurchaseIntent);
+    return () => {
+      window.removeEventListener(SUPPORT_PURCHASE_INTENT_EVENT, onPurchaseIntent);
+    };
+  }, []);
+
   const scrollToBottomIfNeeded = useCallback((smooth = true) => {
     const node = listRef.current;
     if (!node || !stickToBottomRef.current) {
@@ -1222,6 +1246,97 @@ export default function SupportChatWidget() {
     }
   };
 
+  const startNewConversation = () => {
+    disconnectEvents();
+    stopPolling();
+    clearStoredConversationId();
+    conversationIdRef.current = null;
+    hiddenSupportIdsRef.current = [];
+    queuedRevealIdsRef.current.clear();
+    deliveredRef.current.clear();
+    seenRef.current.clear();
+    expectingReplyRef.current = false;
+    lastCustomerSentAtRef.current = 0;
+    sendEpochRef.current += 1;
+    setHiddenSupportIds([]);
+    setConversationId(null);
+    setOwner("AI");
+    ownerRef.current = "AI";
+    setSupportStatus(null);
+    supportStatusRef.current = null;
+    setMessages([WELCOME_MESSAGE]);
+    setSupportTyping(false);
+    setSendError(null);
+    setDraft("");
+    clearPendingImage(true);
+    setLightboxUrl(null);
+    setUnreadCount(0);
+    setHumanNeeded(false);
+    setContactRequired(false);
+    setContactSubmitted(false);
+    setContactConsentText(null);
+    setContactPhone("");
+    setContactEmail("");
+    contactPhoneRef.current = "";
+    contactEmailRef.current = "";
+    contactFieldFocusedRef.current = false;
+    setContactError(null);
+    setContactCountry("DE");
+  };
+
+  const handlePurchaseIntent = async (detail: SupportPurchaseIntentDetail) => {
+    if (!openRef.current) {
+      setOpen(true);
+    }
+
+    if (purchaseIntentInFlightRef.current) {
+      return;
+    }
+
+    purchaseIntentInFlightRef.current = true;
+    setSendError(null);
+    stickToBottomRef.current = true;
+
+    if (supportStatusRef.current === "CLOSED") {
+      startNewConversation();
+    }
+
+    const clientRequestId = createClientRequestId();
+    lastCustomerSentAtRef.current = Date.now();
+    expectingReplyRef.current = true;
+    syncTypingIndicator(false);
+
+    try {
+      const result = await postPurchaseIntent({
+        conversationId: conversationIdRef.current,
+        clientRequestId,
+        intent: detail,
+      });
+
+      conversationIdRef.current = result.conversationId;
+      setConversationId(result.conversationId);
+      storeConversationId(result.conversationId);
+      setSendError(null);
+      void refreshRef.current(result.conversationId, true);
+    } catch (error) {
+      expectingReplyRef.current = false;
+      setSupportTyping(false);
+      setSendError(SUPPORT_PURCHASE_INTENT_ERROR);
+
+      const failure = error as SupportSendFailure;
+      if (typeof failure.conversationId === "string" && failure.conversationId) {
+        conversationIdRef.current = failure.conversationId;
+        setConversationId(failure.conversationId);
+        storeConversationId(failure.conversationId);
+        void refreshRef.current(failure.conversationId, false);
+      }
+    } finally {
+      purchaseIntentInFlightRef.current = false;
+    }
+  };
+
+  handlePurchaseIntentRef.current = handlePurchaseIntent;
+
   const handleContactPhoneChange = useCallback((value: string) => {
     contactPhoneRef.current = value;
     setContactPhone(value);
@@ -1282,44 +1397,6 @@ export default function SupportChatWidget() {
 
     setContactSubmitted(true);
     void refreshRef.current(id, false);
-  };
-
-  const startNewConversation = () => {
-    disconnectEvents();
-    stopPolling();
-    clearStoredConversationId();
-    conversationIdRef.current = null;
-    hiddenSupportIdsRef.current = [];
-    queuedRevealIdsRef.current.clear();
-    deliveredRef.current.clear();
-    seenRef.current.clear();
-    expectingReplyRef.current = false;
-    lastCustomerSentAtRef.current = 0;
-    sendEpochRef.current += 1;
-    setHiddenSupportIds([]);
-    setConversationId(null);
-    setOwner("AI");
-    ownerRef.current = "AI";
-    setSupportStatus(null);
-    supportStatusRef.current = null;
-    setMessages([WELCOME_MESSAGE]);
-    setSupportTyping(false);
-    setSendError(null);
-    setDraft("");
-    clearPendingImage(true);
-    setLightboxUrl(null);
-    setUnreadCount(0);
-    setHumanNeeded(false);
-    setContactRequired(false);
-    setContactSubmitted(false);
-    setContactConsentText(null);
-    setContactPhone("");
-    setContactEmail("");
-    contactPhoneRef.current = "";
-    contactEmailRef.current = "";
-    contactFieldFocusedRef.current = false;
-    setContactError(null);
-    setContactCountry("DE");
   };
 
   const onSubmit = (event: FormEvent) => {
@@ -1583,16 +1660,18 @@ export default function SupportChatWidget() {
 
       <button
         type="button"
-        className="support-chat-fab pointer-events-auto relative inline-flex h-[60px] w-[60px] items-center justify-center rounded-full border border-[#A6FF00]/25 bg-[#050505] text-white shadow-[0_10px_24px_rgba(0,0,0,0.45)] transition duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A6FF00]"
+        className="support-chat-fab pointer-events-auto relative inline-flex h-[70px] w-[70px] items-center justify-center rounded-full border border-[#A6FF00]/25 bg-[#050505] text-white transition duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A6FF00] lg:h-[76px] lg:w-[76px]"
         aria-label={open ? "Kundenservice schließen" : "Kundenservice öffnen"}
         aria-expanded={open}
         aria-controls="kundenservice-panel"
         onClick={() => setOpen((value) => !value)}
       >
+        <span className="support-chat-fab-ring" aria-hidden="true" />
+        <span className="support-chat-fab-ring support-chat-fab-ring-delayed" aria-hidden="true" />
         {open ? (
-          <HiXMark className="h-7 w-7" aria-hidden="true" />
+          <HiXMark className="h-8 w-8 lg:h-9 lg:w-9" aria-hidden="true" />
         ) : (
-          <HiChatBubbleLeftRight className="h-7 w-7 text-[#A6FF00]" aria-hidden="true" />
+          <HiChatBubbleLeftRight className="h-8 w-8 text-[#A6FF00] lg:h-9 lg:w-9" aria-hidden="true" />
         )}
         {!open && unreadCount > 0 ? (
           <span className="absolute -right-1 -top-1 inline-flex min-h-5 min-w-5 items-center justify-center rounded-full bg-[#A6FF00] px-1 text-[11px] font-bold text-black">

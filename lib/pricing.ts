@@ -1,4 +1,5 @@
 import { ANALYTICS_EVENTS, type AnalyticsEventName } from "@/lib/analytics";
+import type { SupportPurchaseDurationMonths } from "@/lib/support-chat";
 
 export type DeviceCount = 1 | 2 | 3 | 4;
 export type PackageId = "1-month" | "3-months" | "6-months" | "12-months";
@@ -34,7 +35,7 @@ export const PACKAGE_PRICES_CENTS: Record<DeviceCount, Record<PackageId, number>
   },
 };
 
-const PACKAGE_MONTHS: Record<PackageId, number> = {
+export const PACKAGE_MONTHS: Record<PackageId, SupportPurchaseDurationMonths> = {
   "1-month": 1,
   "3-months": 3,
   "6-months": 6,
@@ -104,6 +105,7 @@ export type IptvPackage = {
   badge?: string;
   highlighted: boolean;
   analyticsEvent: AnalyticsEventName;
+  durationMonths: SupportPurchaseDurationMonths;
   deviceCount: DeviceCount;
   deviceBadgeText: string;
   deviceSupportText: string;
@@ -203,6 +205,7 @@ function buildPackageForDevices(meta: PackageMeta, deviceCount: DeviceCount): Ip
     badge: meta.badge,
     highlighted: meta.highlighted,
     analyticsEvent: meta.analyticsEvent,
+    durationMonths: months,
     deviceCount,
     deviceBadgeText: getDeviceBadgeText(deviceCount),
     deviceSupportText: getDeviceSupportText(deviceCount),
@@ -274,7 +277,7 @@ export const PAYMENT_METHODS_HEADING = "Flexible Zahlungsmöglichkeiten";
 export const PAYMENT_METHODS_PRIMARY =
   "PayPal · Visa · Mastercard · Weitere gängige Zahlungsarten";
 export const PAYMENT_METHODS_SUPPORTING =
-  "Die verfügbaren Zahlungsinformationen erhalten Sie nach Bestätigung Ihrer Bestellung über WhatsApp.";
+  "Die verfügbaren Zahlungsinformationen erhalten Sie nach Bestätigung Ihrer Bestellung im Kundenservice-Chat.";
 export const PAYMENT_METHODS_NO_DATA_ON_SITE =
   "Keine Zahlungsdaten werden direkt auf dieser Website eingegeben.";
 
@@ -286,9 +289,9 @@ export const ORDER_PROCESS_STEPS = [
     description: "Wählen Sie Laufzeit und die gewünschte Anzahl gleichzeitiger Verbindungen.",
   },
   {
-    title: "Bestellung über WhatsApp bestätigen",
+    title: "Bestellung im Chat bestätigen",
     description:
-      "Nach dem Klick öffnet sich WhatsApp mit dem ausgewählten Paket, der Geräteanzahl und dem Preis.",
+      "Nach dem Klick öffnet sich der Kundenservice-Chat mit dem ausgewählten Paket und der Geräteanzahl.",
   },
   {
     title: "Zahlungsmethode auswählen",
