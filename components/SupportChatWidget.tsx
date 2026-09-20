@@ -7,10 +7,10 @@ import {
   useMemo,
   useRef,
   useState,
-  type CSSProperties,
   type FormEvent,
   type KeyboardEvent,
 } from "react";
+import { createPortal } from "react-dom";
 import { HiChatBubbleLeftRight, HiPaperAirplane, HiXMark } from "react-icons/hi2";
 import {
   SUPPORT_CLOSED_NOTICE,
@@ -54,6 +54,13 @@ import {
   type SupportSendFailure,
   type SupportStatus,
 } from "@/lib/support-chat";
+import {
+  applySupportChatViewportVars,
+  isSupportChatMobileViewport,
+  lockSupportChatPageScroll,
+  SUPPORT_CHAT_MOBILE_MEDIA,
+  unlockSupportChatPageScroll,
+} from "@/lib/support-chat-viewport";
 
 const WELCOME_MESSAGE: SupportChatMessage = {
   id: "__welcome__",
@@ -263,7 +270,7 @@ function ImageLightbox({
 }) {
   return (
     <div
-      className="pointer-events-auto fixed inset-0 z-[10000] flex items-center justify-center bg-black/80 p-4"
+      className="support-chat-lightbox pointer-events-auto fixed inset-0 flex items-center justify-center bg-black/80 p-4"
       role="dialog"
       aria-modal="true"
       aria-label="Bildvorschau"
@@ -451,7 +458,7 @@ export default function SupportChatWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
   const [unreadCount, setUnreadCount] = useState(0);
-  const [keyboardInset, setKeyboardInset] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const [eventStreamKey, setEventStreamKey] = useState(0);
   const [humanNeeded, setHumanNeeded] = useState(false);
   const [contactRequired, setContactRequired] = useState(false);
@@ -489,6 +496,7 @@ export default function SupportChatWidget() {
   );
   const supportStatusRef = useRef<SupportStatus | null>(null);
   const eventSourceRef = useRef<EventSource | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const composerRef = useRef<HTMLTextAreaElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -884,23 +892,74 @@ export default function SupportChatWidget() {
   }, [disconnectEvents, stopPolling]);
 
   useEffect(() => {
-    const viewport = window.visualViewport;
-    if (!viewport) {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!open) {
+      unlockSupportChatPageScroll();
       return;
     }
 
-    const update = () => {
-      setKeyboardInset(Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop));
+    const syncLock = () => {
+      if (isSupportChatMobileViewport()) {
+        lockSupportChatPageScroll();
+      } else {
+        unlockSupportChatPageScroll();
+      }
     };
 
-    update();
-    viewport.addEventListener("resize", update);
-    viewport.addEventListener("scroll", update);
+    syncLock();
+    const media = window.matchMedia(SUPPORT_CHAT_MOBILE_MEDIA);
+    media.addEventListener("change", syncLock);
+    window.addEventListener("orientationchange", syncLock);
     return () => {
-      viewport.removeEventListener("resize", update);
-      viewport.removeEventListener("scroll", update);
+      media.removeEventListener("change", syncLock);
+      window.removeEventListener("orientationchange", syncLock);
+      unlockSupportChatPageScroll();
     };
-  }, []);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const root = rootRef.current;
+    if (!root) {
+      return;
+    }
+
+    const apply = () => {
+      if (!isSupportChatMobileViewport()) {
+        return;
+      }
+
+      applySupportChatViewportVars(root);
+
+      if (!stickToBottomRef.current) {
+        return;
+      }
+
+      const node = listRef.current;
+      if (node) {
+        node.scrollTop = node.scrollHeight;
+      }
+    };
+
+    apply();
+    const visual = window.visualViewport;
+    visual?.addEventListener("resize", apply);
+    visual?.addEventListener("scroll", apply);
+    window.addEventListener("resize", apply);
+    window.addEventListener("orientationchange", apply);
+    return () => {
+      visual?.removeEventListener("resize", apply);
+      visual?.removeEventListener("scroll", apply);
+      window.removeEventListener("resize", apply);
+      window.removeEventListener("orientationchange", apply);
+    };
+  }, [open, mounted]);
 
   useEffect(() => {
     const onKeyDown = (event: globalThis.KeyboardEvent) => {
@@ -914,6 +973,10 @@ export default function SupportChatWidget() {
       }
 
       if (openRef.current) {
+        composerRef.current?.blur();
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
         setOpen(false);
       }
     };
@@ -971,7 +1034,7 @@ export default function SupportChatWidget() {
       return;
     }
 
-    composerRef.current?.focus();
+    composerRef.current?.focus({ preventScroll: true });
   }, [open]);
 
   useEffect(() => {
@@ -1420,20 +1483,21 @@ export default function SupportChatWidget() {
     stickToBottomRef.current = node.scrollHeight - node.scrollTop - node.clientHeight < 72;
   };
 
-  return (
+  const ui = (
     <div
+      ref={rootRef}
       className="support-chat-root"
-      style={{ "--support-keyboard-inset": `${keyboardInset}px` } as CSSProperties}
+      data-open={open ? "true" : "false"}
     >
       {open ? (
         <div
           id="kundenservice-panel"
           role="dialog"
-          aria-modal="false"
+          aria-modal="true"
           aria-labelledby="kundenservice-title"
           className="support-chat-panel flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A] text-white shadow-[0_18px_50px_rgba(0,0,0,0.55)]"
         >
-          <div className="flex min-h-0 shrink-0 items-center gap-3 border-b border-white/10 bg-[#050505] px-4 py-3">
+          <div className="support-chat-header flex min-h-0 shrink-0 items-center gap-3 border-b border-white/10 bg-[#050505] px-4 py-3">
             <span className="relative shrink-0">
               <SupportAvatar />
               <span
@@ -1455,7 +1519,13 @@ export default function SupportChatWidget() {
             </div>
             <button
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                composerRef.current?.blur();
+                if (document.activeElement instanceof HTMLElement) {
+                  document.activeElement.blur();
+                }
+                setOpen(false);
+              }}
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-[#A6FF00]/40 hover:text-[#A6FF00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6FF00]"
               aria-label="Kundenservice minimieren"
             >
@@ -1466,7 +1536,7 @@ export default function SupportChatWidget() {
           <div
             ref={listRef}
             onScroll={onListScroll}
-            className="min-h-0 flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-3 py-4"
+            className="support-chat-messages min-h-0 flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-3 py-4"
             aria-live="polite"
           >
             {visibleMessages.map((message) => {
@@ -1584,7 +1654,7 @@ export default function SupportChatWidget() {
             ) : null}
           </div>
 
-          <form onSubmit={onSubmit} className="shrink-0 border-t border-white/10 bg-[#050505] p-3">
+          <form onSubmit={onSubmit} className="support-chat-composer shrink-0 border-t border-white/10 bg-[#050505] p-3">
             {sendError ? (
               <p className="mb-2 text-xs text-[#FFB4B4]" role="alert">
                 {sendError}
@@ -1664,7 +1734,15 @@ export default function SupportChatWidget() {
         aria-label={open ? "Kundenservice schließen" : "Kundenservice öffnen"}
         aria-expanded={open}
         aria-controls="kundenservice-panel"
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => {
+          if (open) {
+            composerRef.current?.blur();
+            if (document.activeElement instanceof HTMLElement) {
+              document.activeElement.blur();
+            }
+          }
+          setOpen((value) => !value);
+        }}
       >
         <span className="support-chat-fab-ring" aria-hidden="true" />
         {open ? (
@@ -1681,4 +1759,10 @@ export default function SupportChatWidget() {
       {lightboxUrl ? <ImageLightbox url={lightboxUrl} onClose={() => setLightboxUrl(null)} /> : null}
     </div>
   );
+
+  if (!mounted) {
+    return null;
+  }
+
+  return createPortal(ui, document.body);
 }
