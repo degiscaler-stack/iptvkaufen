@@ -72,7 +72,7 @@ export default function Hero() {
             }}
             alsoTrackTrial
             data-analytics="hero_trial_click"
-            className={`${ctaMotionFeaturedClass} inline-flex min-h-11 w-[calc(100%_-_88px)] max-w-[285px] items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-[18px] py-2.5 text-center text-[11px] font-extrabold leading-none uppercase tracking-[0.10em] text-[#F5F5F5] whitespace-nowrap backdrop-blur-xl transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00] hover:bg-[#111111]/70 hover:text-[#A6FF00] sm:w-auto sm:min-h-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:text-[13px] sm:tracking-[0.16em]`}
+            className={`${ctaMotionFeaturedClass} inline-flex min-h-11 w-max max-w-full min-w-0 items-center justify-center rounded-full border border-[#A6FF00]/35 bg-[#111111]/55 px-3 py-2.5 text-center !text-[15px] font-extrabold leading-none uppercase tracking-[0.10em] text-[#F5F5F5] whitespace-nowrap backdrop-blur-xl transition-[background-color,border-color,color] duration-300 hover:border-[#A6FF00] hover:bg-[#111111]/70 hover:text-[#A6FF00] sm:w-auto sm:min-h-0 sm:max-w-none sm:px-[22px] sm:py-3 sm:!text-[16px] sm:tracking-[0.16em]`}
             style={{ "--cta-motion-delay": CTA_MOTION_DELAYS.heroTrial } as CSSProperties}
           >
             24H-TEST FÜR 3€ STARTEN
