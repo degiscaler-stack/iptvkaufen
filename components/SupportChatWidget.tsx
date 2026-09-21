@@ -151,16 +151,25 @@ function formatMessageTime(iso: string): string {
   }).format(date);
 }
 
-function presenceForStatus(status: SupportStatus | null, closed: boolean) {
+function presenceForStatus(
+  status: SupportStatus | null,
+  closed: boolean,
+  owner?: string | null,
+  humanNeeded?: boolean,
+) {
   if (closed) {
     return { label: "Geschlossen", tone: "idle" as const };
   }
-  if (status === "HUMAN_NEEDED") {
-    return { label: "An Support weitergeleitet", tone: "pending" as const };
-  }
-  if (status === "HUMAN_ACTIVE") {
+
+  const humanActive = owner === "HUMAN" || status === "HUMAN_ACTIVE";
+  if (humanActive) {
     return { label: "Support aktiv", tone: "online" as const };
   }
+
+  if (status === "HUMAN_NEEDED" || humanNeeded) {
+    return { label: "An Support weitergeleitet", tone: "pending" as const };
+  }
+
   return { label: "Online", tone: "online" as const };
 }
 
@@ -517,7 +526,7 @@ export default function SupportChatWidget() {
     const hiddenIdSet = new Set(hiddenSupportIds);
     return messages.filter((message) => !hiddenIdSet.has(message.id));
   }, [messages, hiddenSupportIds]);
-  const presence = presenceForStatus(supportStatus, closed);
+  const presence = presenceForStatus(supportStatus, closed, owner, humanNeeded);
   const selectedDial = SUPPORT_DIAL_COUNTRIES.find((item) => item.iso === contactCountry)?.dial ?? "+49";
   const hasUnsentContactDraft = Boolean(contactPhone.trim() || contactEmail.trim());
   const showContactForm =
