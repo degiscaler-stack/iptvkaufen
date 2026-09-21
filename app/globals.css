@@ -111,7 +111,7 @@ html {
   justify-content: flex-end;
   gap: 0.75rem;
   right: max(12px, env(safe-area-inset-right, 0px));
-  bottom: calc(1rem + var(--sticky-purchase-offset, 0px) + 56px + 12px);
+  bottom: calc(1rem + var(--sticky-purchase-offset, 0px));
   top: auto;
   left: auto;
   width: auto;
