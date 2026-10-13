@@ -28,6 +28,9 @@ import {
   createSupportEventSource,
   customerReceiptState,
   isCheckoutUrl,
+  readAcquisitionCookie,
+  recordAttributedCheckout,
+  withAcquisitionRef,
   isSupportPurchaseIntentDetail,
   isValidSupportEmail,
   loadPublicConversation,
@@ -188,14 +191,15 @@ function MessageBody({
     <p className={className}>
       {parts.map((part, index) => {
         if (part.type === "link") {
-          const trackCheckout = Boolean(onCheckoutLinkClick && isCheckoutUrl(part.href));
+          const href = withAcquisitionRef(part.href, readAcquisitionCookie());
+          const trackCheckout = Boolean(onCheckoutLinkClick && isCheckoutUrl(href));
           return (
             <a
               key={`${part.href}-${index}`}
-              href={part.href}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackCheckout ? () => onCheckoutLinkClick?.(part.href) : undefined}
+              onClick={trackCheckout ? () => onCheckoutLinkClick?.(href) : undefined}
             >
               {part.value}
             </a>
@@ -1577,6 +1581,10 @@ export default function SupportChatWidget() {
                               ? undefined
                               : (url) => {
                                   trackPaymentLinkClick({
+                                    conversationId: conversationIdRef.current,
+                                    url,
+                                  });
+                                  recordAttributedCheckout({
                                     conversationId: conversationIdRef.current,
                                     url,
                                   });

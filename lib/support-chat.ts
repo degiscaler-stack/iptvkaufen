@@ -416,6 +416,10 @@ export async function postCustomerMessage(options: {
     if (conversationId) {
       form.append("conversationId", conversationId);
     }
+    const acquisitionRef = readAcquisitionCookie();
+    if (acquisitionRef) {
+      form.append("acquisitionRef", acquisitionRef);
+    }
     form.append("image", options.image);
 
     response = await fetch(`${SUPPORT_API_BASE}/api/chat`, {
@@ -436,6 +440,10 @@ export async function postCustomerMessage(options: {
 
     if (conversationId) {
       body.conversationId = conversationId;
+    }
+    const acquisitionRef = readAcquisitionCookie();
+    if (acquisitionRef) {
+      (body as { acquisitionRef?: string }).acquisitionRef = acquisitionRef;
     }
 
     response = await fetch(`${SUPPORT_API_BASE}/api/chat`, {
@@ -672,6 +680,40 @@ export function isCheckoutUrl(url: string): boolean {
   } catch {
     return false;
   }
+}
+
+const ACQUISITION_REF = /^[A-Za-z0-9_-]{32,128}$/;
+
+export function readAcquisitionCookie(): string | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(/(?:^|; )acquisition_ref=([^;]*)/);
+  const token = match ? decodeURIComponent(match[1] ?? "") : "";
+  return ACQUISITION_REF.test(token) ? token : null;
+}
+
+export function withAcquisitionRef(url: string, token: string | null): string {
+  if (!token || !isCheckoutUrl(url)) return url;
+  const parsed = new URL(url);
+  parsed.searchParams.set("ref", token);
+  return parsed.toString();
+}
+
+export function recordAttributedCheckout(options: {
+  url: string;
+  conversationId?: string | null;
+}): void {
+  const token = readAcquisitionCookie();
+  if (!token || !isCheckoutUrl(options.url)) return;
+  const path = new URL(options.url).pathname;
+  fetch(`${SUPPORT_API_BASE}/api/acquisition/checkout`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      token,
+      checkoutKey: `${options.conversationId ?? "visit"}:${path}`.slice(0, 191),
+      chatSessionId: options.conversationId ?? null,
+    }),
+  }).catch(() => undefined);
 }
 
 export function trackPaymentLinkClick(options: {

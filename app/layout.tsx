@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import AcquisitionVisit from "@/components/AcquisitionVisit";
 import DeferredRecentPurchaseNotification from "@/components/DeferredRecentPurchaseNotification";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
@@ -56,6 +57,7 @@ export default function RootLayout({
         <DeferredRecentPurchaseNotification />
         <WhatsAppFloatButton />
         <SupportChatWidget />
+        <AcquisitionVisit />
         <Script id="statcounter-config" strategy="lazyOnload">
           {`
             var sc_project=13354800;
