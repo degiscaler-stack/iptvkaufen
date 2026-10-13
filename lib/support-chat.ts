@@ -150,6 +150,12 @@ function readString(value: unknown): string | undefined {
   return typeof value === "string" ? value : undefined;
 }
 
+export const SUPPORT_TEST_CONFIRMATION = "TEST chat attribution confirmed.";
+
+export function isTestConversationId(conversationId: string | null | undefined): boolean {
+  return typeof conversationId === "string" && conversationId.startsWith("test_");
+}
+
 export function readStoredConversationId(): string | null {
   if (typeof window === "undefined") {
     return null;
@@ -158,7 +164,7 @@ export function readStoredConversationId(): string | null {
   try {
     const value = window.localStorage.getItem(SUPPORT_CONVERSATION_STORAGE_KEY);
     const trimmed = value?.trim() ?? "";
-    return trimmed && trimmed.length <= 128 ? trimmed : null;
+    return trimmed && trimmed.length <= 128 && !isTestConversationId(trimmed) ? trimmed : null;
   } catch {
     return null;
   }

@@ -21,6 +21,7 @@ import {
   SUPPORT_IMAGE_SEND_ERROR,
   SUPPORT_MAX_MESSAGE_LENGTH,
   SUPPORT_SEND_ERROR,
+  SUPPORT_TEST_CONFIRMATION,
   SUPPORT_WELCOME_MESSAGE,
   buildWhatsAppPayload,
   clearStoredConversationId,
@@ -28,6 +29,7 @@ import {
   createSupportEventSource,
   customerReceiptState,
   isCheckoutUrl,
+  isTestConversationId,
   readAcquisitionCookie,
   recordAttributedCheckout,
   withAcquisitionRef,
@@ -1221,6 +1223,28 @@ export default function SupportChatWidget() {
       });
 
       if (epoch !== sendEpochRef.current) {
+        return;
+      }
+
+      if (isTestConversationId(result.conversationId)) {
+        expectingReplyRef.current = false;
+        setSupportTyping(false);
+        setSendError(null);
+        setMessages((current) => [
+          ...current.map((item) =>
+            item.id === optimistic.id
+              ? { ...item, deliveryStatus: "SENT", failed: false, local: true, clientRequestId }
+              : item,
+          ),
+          {
+            id: `test-confirmation-${Date.now()}`,
+            role: "support",
+            sender: "SUPPORT",
+            content: SUPPORT_TEST_CONFIRMATION,
+            createdAt: new Date().toISOString(),
+            local: true,
+          },
+        ]);
         return;
       }
 
