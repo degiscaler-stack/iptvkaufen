@@ -8,7 +8,7 @@ export const SUPPORT_SEND_ERROR =
 export const SUPPORT_CLOSED_NOTICE =
   "Diese Unterhaltung wurde geschlossen. Sie können eine neue Unterhaltung starten.";
 export const SUPPORT_CONTACT_CONFIRMATION =
-  "Vielen Dank. Ihre Kontaktdaten wurden an unser Support-Team übermittelt.";
+  "Ihre Anfrage wurde an unser Support-Team gesendet. Sie können uns auch direkt über WhatsApp kontaktieren.";
 export const SUPPORT_CONTACT_CONSENT_FALLBACK =
   "Mit dem Absenden stimmen Sie zu, dass unser Support Sie zu dieser Anfrage per WhatsApp oder E-Mail kontaktieren darf.";
 export const SUPPORT_CONTACT_ERROR =
@@ -20,7 +20,7 @@ export const SUPPORT_IMAGE_SIZE_ERROR = "Das Bild darf maximal 5 MB groß sein."
 export const SUPPORT_IMAGE_SEND_ERROR = "Bild konnte nicht gesendet werden.";
 export const SUPPORT_PURCHASE_INTENT_EVENT = "support-chat:purchase-intent";
 export const SUPPORT_PURCHASE_INTENT_ERROR =
-  "Die Auswahl konnte gerade nicht geladen werden. Bitte versuche es erneut oder schreibe uns kurz hier im Chat.";
+  "Die Auswahl konnte gerade nicht geladen werden. Bitte versuchen Sie es erneut oder schreiben Sie uns kurz hier im Chat.";
 
 export type SupportPurchaseDurationMonths = 1 | 3 | 6 | 12;
 export type SupportPurchaseDeviceCount = 1 | 2 | 3 | 4;
@@ -563,21 +563,34 @@ export async function loadPublicConversation(
 export async function postSupportContact(options: {
   conversationId: string;
   whatsapp: string;
-  email: string;
+  email?: string;
   countryCode?: string;
+  name?: string;
+  issue?: string;
 }): Promise<ContactPostResult> {
   const body: {
     site: SupportSite;
     conversationId: string;
     whatsapp: string;
-    email: string;
+    email?: string;
     countryCode?: string;
+    name?: string;
+    issue?: string;
   } = {
     site: SUPPORT_SITE,
     conversationId: options.conversationId,
     whatsapp: options.whatsapp,
-    email: options.email,
   };
+
+  if (options.email) {
+    body.email = options.email;
+  }
+  if (options.name) {
+    body.name = options.name;
+  }
+  if (options.issue) {
+    body.issue = options.issue;
+  }
 
   if (options.countryCode) {
     body.countryCode = options.countryCode;

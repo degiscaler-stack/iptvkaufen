@@ -59,6 +59,7 @@ import {
   type SupportSendFailure,
   type SupportStatus,
 } from "@/lib/support-chat";
+import { WHATSAPP_CHAT_URL } from "@/lib/contact";
 import {
   applySupportChatViewportVars,
   isSupportChatMobileViewport,
@@ -315,11 +316,15 @@ type SupportContactFormProps = {
   selectedDial: string;
   country: string;
   phone: string;
+  name: string;
+  issue: string;
   email: string;
   error: string | null;
   sending: boolean;
   onCountryChange: (value: string) => void;
   onPhoneChange: (value: string) => void;
+  onNameChange: (value: string) => void;
+  onIssueChange: (value: string) => void;
   onEmailChange: (value: string) => void;
   onFocusField: () => void;
   onBlurField: () => void;
@@ -331,11 +336,15 @@ const SupportContactForm = memo(function SupportContactForm({
   selectedDial,
   country,
   phone,
+  name,
+  issue,
   email,
   error,
   sending,
   onCountryChange,
   onPhoneChange,
+  onNameChange,
+  onIssueChange,
   onEmailChange,
   onFocusField,
   onBlurField,
@@ -395,8 +404,34 @@ const SupportContactForm = memo(function SupportContactForm({
         />
       </div>
 
+      <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-name">
+        Name (optional)
+      </label>
+      <input
+        id="support-contact-name"
+        name="support-contact-name"
+        type="text"
+        autoComplete="name"
+        value={name}
+        onChange={(event) => onNameChange(event.target.value)}
+        className="mt-1 h-11 w-full min-w-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
+      />
+
+      <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-issue">
+        Kurze Beschreibung
+      </label>
+      <textarea
+        id="support-contact-issue"
+        name="support-contact-issue"
+        rows={3}
+        required
+        value={issue}
+        onChange={(event) => onIssueChange(event.target.value)}
+        className="mt-1 w-full min-w-0 rounded-xl border border-white/10 bg-[#0A0A0A] px-3 py-2 text-sm text-white outline-none placeholder:text-[#7A7A7A] focus-visible:border-[#A6FF00]/50"
+      />
+
       <label className="mt-3 block text-xs text-[#C8C8C8]" htmlFor="support-contact-email">
-        E-Mail-Adresse
+        E-Mail-Adresse (optional)
       </label>
       <input
         id="support-contact-email"
@@ -482,6 +517,9 @@ export default function SupportChatWidget() {
   const [contactCountry, setContactCountry] = useState("DE");
   const [contactPhone, setContactPhone] = useState("");
   const [contactEmail, setContactEmail] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [contactIssue, setContactIssue] = useState("");
+  const [contactIssueTouched, setContactIssueTouched] = useState(false);
   const [contactError, setContactError] = useState<string | null>(null);
   const [contactSending, setContactSending] = useState(false);
   const [pendingFile, setPendingFile] = useState<File | null>(null);
@@ -520,6 +558,8 @@ export default function SupportChatWidget() {
   const contactFieldFocusedRef = useRef(false);
   const contactPhoneRef = useRef("");
   const contactEmailRef = useRef("");
+  const contactNameRef = useRef("");
+  const contactIssueRef = useRef("");
   const refreshRef = useRef<(id: string, delayNewSupport?: boolean) => Promise<PublicConversation | null>>(
     async () => null,
   );
@@ -542,6 +582,19 @@ export default function SupportChatWidget() {
     hiddenSupportIds.length === 0 &&
     (contactRequired || hasUnsentContactDraft);
   const showContactConfirmation = contactSubmitted;
+  const suggestedIssue = useMemo(() => {
+    if (!showContactForm) {
+      return "";
+    }
+    return messages
+      .filter((message) => message.role === "customer")
+      .map((message) => message.content.trim())
+      .filter(Boolean)
+      .slice(-2)
+      .join(" ")
+      .slice(0, 500);
+  }, [showContactForm, messages]);
+  const issueFieldValue = contactIssueTouched ? contactIssue : suggestedIssue;
 
   const scheduleTimer = (fn: () => void, delay: number) => {
     const timer = window.setTimeout(fn, Math.max(0, delay));
@@ -1377,8 +1430,13 @@ export default function SupportChatWidget() {
     setContactConsentText(null);
     setContactPhone("");
     setContactEmail("");
+    setContactName("");
+    setContactIssue("");
+    setContactIssueTouched(false);
     contactPhoneRef.current = "";
     contactEmailRef.current = "";
+    contactNameRef.current = "";
+    contactIssueRef.current = "";
     contactFieldFocusedRef.current = false;
     setContactError(null);
     setContactCountry("DE");
@@ -1447,6 +1505,17 @@ export default function SupportChatWidget() {
     setContactEmail(value);
   }, []);
 
+  const handleContactNameChange = useCallback((value: string) => {
+    contactNameRef.current = value;
+    setContactName(value);
+  }, []);
+
+  const handleContactIssueChange = useCallback((value: string) => {
+    contactIssueRef.current = value;
+    setContactIssueTouched(true);
+    setContactIssue(value);
+  }, []);
+
   const handleContactFieldFocus = useCallback(() => {
     contactFieldFocusedRef.current = true;
   }, []);
@@ -1463,6 +1532,10 @@ export default function SupportChatWidget() {
     }
 
     const email = (contactEmailRef.current || contactEmail).trim().toLowerCase();
+    const issue = (
+      contactIssueTouched ? contactIssueRef.current || contactIssue : suggestedIssue
+    ).trim();
+    const name = (contactNameRef.current || contactName).trim();
     const payload = buildWhatsAppPayload({
       countryIso: contactCountry,
       nationalOrInternational: contactPhoneRef.current || contactPhone,
@@ -1473,8 +1546,13 @@ export default function SupportChatWidget() {
       return;
     }
 
-    if (!isValidSupportEmail(email)) {
+    if (email && !isValidSupportEmail(email)) {
       setContactError("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+      return;
+    }
+
+    if (issue.length < 2) {
+      setContactError("Bitte beschreiben Sie kurz Ihr Anliegen.");
       return;
     }
 
@@ -1484,8 +1562,10 @@ export default function SupportChatWidget() {
     const result = await postSupportContact({
       conversationId: id,
       whatsapp: payload.whatsapp,
-      email,
+      email: email || undefined,
       countryCode: payload.countryCode,
+      name: name || undefined,
+      issue,
     });
 
     setContactSending(false);
@@ -1663,11 +1743,15 @@ export default function SupportChatWidget() {
                 selectedDial={selectedDial}
                 country={contactCountry}
                 phone={contactPhone}
+                name={contactName}
+                issue={issueFieldValue}
                 email={contactEmail}
                 error={contactError}
                 sending={contactSending}
                 onCountryChange={setContactCountry}
                 onPhoneChange={handleContactPhoneChange}
+                onNameChange={handleContactNameChange}
+                onIssueChange={handleContactIssueChange}
                 onEmailChange={handleContactEmailChange}
                 onFocusField={handleContactFieldFocus}
                 onBlurField={handleContactFieldBlur}
@@ -1677,7 +1761,15 @@ export default function SupportChatWidget() {
 
             {showContactConfirmation ? (
               <div className="rounded-2xl border border-[#A6FF00]/20 bg-[#111111] px-3 py-3 text-sm text-[#D8D8D8]">
-                {SUPPORT_CONTACT_CONFIRMATION}
+                <p>{SUPPORT_CONTACT_CONFIRMATION}</p>
+                <a
+                  href={WHATSAPP_CHAT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#A6FF00] px-4 text-sm font-semibold text-black transition hover:bg-[#B8FF4D]"
+                >
+                  WhatsApp-Support öffnen
+                </a>
               </div>
             ) : null}
 
