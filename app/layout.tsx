@@ -58,25 +58,27 @@ export default function RootLayout({
         <WhatsAppFloatButton />
         <SupportChatWidget />
         <AcquisitionVisit />
-        <Script id="statcounter-config" strategy="lazyOnload">
+        <Script id="statcounter-config" strategy="beforeInteractive">
           {`
-            var sc_project=13354800;
+            var sc_project=13361833;
             var sc_invisible=1;
-            var sc_security="4473ab4c";
+            var sc_security="39e6e024";
           `}
         </Script>
+        {/* Statcounter tracks URL/title changes itself; do not send duplicate route pageviews. */}
         <Script
           id="statcounter-counter"
           src="https://www.statcounter.com/counter/counter.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
+          async
         />
         <noscript>
           <div className="statcounter">
-            <a title="Web Analytics" href="https://statcounter.com/" target="_blank" rel="noopener noreferrer">
+            <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank" rel="noopener noreferrer">
               <img
                 className="statcounter"
-                src="https://c.statcounter.com/13354800/0/4473ab4c/1/"
-                alt="Web Analytics"
+                src="https://c.statcounter.com/13361833/0/39e6e024/1/"
+                alt="Web Analytics Made Easy - Statcounter"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </a>
