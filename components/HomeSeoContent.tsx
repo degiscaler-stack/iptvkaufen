@@ -13,17 +13,16 @@ const cards = [
     ),
     paragraphs: [
       <>
-        IPTV kaufen bedeutet Fernsehen über Ihre Internetleitung – ohne klassischen Kabelvertrag und
+        IPTV ermöglicht Fernsehen über Ihre Internetleitung – ohne klassischen Kabelvertrag und
         ohne Satellitenschüssel. Sie erhalten Zugangsdaten, installieren eine Player-App und
         starten auf dem Gerät, das Sie bereits nutzen. Für Haushalte in Deutschland zählen
         vor allem Stabilität zur Hauptsendezeit, transparente Pakete und erreichbarer Support auf
         Deutsch.
       </>,
       <>
-        Der Unterschied zu fragwürdigen Billigangeboten zeigt sich im Alltag: gepflegte Sender,
-        nachvollziehbare Leistungen und Hilfe bei der Ersteinrichtung. Wer IPTV Deutschland ernst
-        nimmt, vergleicht Gesamtleistung statt nur den Monatspreis – inklusive paralleler Nutzung,
-        EPG und Bildqualität.
+        Prüfen Sie vor dem Kauf die enthaltenen Sender, nachvollziehbare Leistungen und Hilfe bei
+        der Ersteinrichtung. Vergleichen Sie nicht nur den Preis, sondern auch Laufzeit, parallele
+        Verbindungen, EPG und Bildqualität. Maßgeblich sind die Angaben zum gewählten Paket.
       </>,
       <>
         Vor dem Kauf lesen Sie Auswahlkriterien im{" "}
@@ -58,7 +57,7 @@ const cards = [
         erwartet, sollte Internetgeschwindigkeit und Gerät mitdenken.
       </>,
       <>
-        Wer Angebote sachlich prüft, spart Zeit und enttäuscht sich nicht an unrealistischen „alle
+        Wer Angebote sachlich prüft, spart Zeit und vermeidet unrealistische Erwartungen an „alle
         Sender“-Versprechen. Weitere Tipps bietet der{" "}
         <Link href="/blog" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Blog
@@ -72,7 +71,7 @@ const cards = [
     eyebrow: "GERÄTE",
     title: (
       <>
-        IPTV auf <span className="text-[#A6FF00]">allen Geräten</span>
+        IPTV auf <span className="text-[#A6FF00]">passenden Geräten</span>
       </>
     ),
     paragraphs: [

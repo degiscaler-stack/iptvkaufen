@@ -1,7 +1,7 @@
 import type { BlogCategory } from "@/lib/blog/types";
 
 export const SEO_TITLES = {
-  home: "IPTV kaufen Deutschland – Flexible Pakete & einfache Einrichtung | iptvkaufenX",
+  home: "IPTV kaufen in Deutschland – Pakete & Support | iptvkaufenX",
   siteDefault: "IPTV Kaufen Deutschland: Premium IPTV | iptvkaufenX",
   blog: "IPTV Blog: Ratgeber & Guides (2026) | iptvkaufenX",
   preise: "IPTV Preise: Pakete ab 9,99 € | iptvkaufenX",
