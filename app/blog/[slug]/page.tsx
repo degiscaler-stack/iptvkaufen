@@ -6,6 +6,7 @@ import BlogArticleContent, {
   BlogArticleHeroImage,
 } from "@/components/blog/BlogArticleContent";
 import BlogCTA from "@/components/blog/BlogCTA";
+import MobileStickyPurchaseBar from "@/components/MobileStickyPurchaseBar";
 import BlogFaq from "@/components/blog/BlogFaq";
 import BlogPlannedNotice from "@/components/blog/BlogPlannedNotice";
 import BlogPostNavigation from "@/components/blog/BlogPostNavigation";
@@ -193,6 +194,9 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </div>
         </div>
       </article>
+      {!planned ? (
+        <MobileStickyPurchaseBar pagePath={`/blog/${post.slug}`} location="mobile_sticky_blog" />
+      ) : null}
     </main>
   );
 }

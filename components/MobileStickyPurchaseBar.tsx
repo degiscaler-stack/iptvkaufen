@@ -9,7 +9,17 @@ import { ctaSolidGreenClass } from "@/lib/cta-motion";
 
 const STICKY_OFFSET = "5.75rem";
 
-export default function MobileStickyPurchaseBar() {
+type MobileStickyPurchaseBarProps = {
+  /** Page the bar is shown on, used for analytics attribution. */
+  pagePath?: string;
+  /** Analytics location label; keep distinct per page type to measure separately. */
+  location?: string;
+};
+
+export default function MobileStickyPurchaseBar({
+  pagePath = "/",
+  location = "mobile_sticky",
+}: MobileStickyPurchaseBarProps = {}) {
   useEffect(() => {
     document.documentElement.style.setProperty("--sticky-purchase-offset", STICKY_OFFSET);
 
@@ -26,10 +36,10 @@ export default function MobileStickyPurchaseBar() {
     >
       <div className="mx-auto flex max-w-[520px] items-center gap-2.5">
         <PricingScrollLink
-          buttonLocation="mobile_sticky"
-          pagePath="/"
+          buttonLocation={location}
+          pagePath={pagePath}
           data-analytics="pricing_scroll_click"
-          data-analytics-source="mobile_sticky"
+          data-analytics-source={location}
           className={`${ctaSolidGreenClass} pointer-events-auto inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-[#A6FF00] px-4 text-center text-[11px] font-extrabold uppercase tracking-[0.12em] hover:bg-[#B8FF4D]`}
           aria-label="Jetzt kaufen"
         >
@@ -44,7 +54,7 @@ export default function MobileStickyPurchaseBar() {
           onClick={() => {
             trackEvent(ANALYTICS_EVENTS.whatsappClick, {
               source: "mobile_sticky_bar",
-              button_location: "mobile_sticky",
+              button_location: location,
             });
           }}
         >
