@@ -13,6 +13,7 @@ export const ANALYTICS_EVENTS = {
   trial3EuroClick: "trial_3_euro_click",
   trialWhatsappClick: "trial_whatsapp_click",
   whatsappClick: "whatsapp_click",
+  chatOpen: "chat_open",
   beginCheckout: "begin_checkout",
   checkoutOpen: "checkout_open",
   checkoutError: "checkout_error",
@@ -50,13 +51,19 @@ export function trackEvent(
     firedOnceKeys.add(options.onceKey);
   }
 
-  if (typeof window.gtag === "function" && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
+  if (typeof window.gtag === "function" && getGaMeasurementId()) {
     window.gtag("event", name, params ?? {});
   }
 }
 
+/**
+ * GA4 Measurement IDs are public (visible in page source), so a code-level fallback is safe.
+ * NEXT_PUBLIC_GA_MEASUREMENT_ID, when set at build time, takes precedence.
+ */
+const GA_MEASUREMENT_ID_FALLBACK = "G-4M2PC3JMKJ";
+
 export function getGaMeasurementId(): string | undefined {
-  return process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  return process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || GA_MEASUREMENT_ID_FALLBACK || undefined;
 }
 
 export function trackCheckoutError(params?: AnalyticsParams): void {

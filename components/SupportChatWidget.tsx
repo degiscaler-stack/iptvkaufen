@@ -59,6 +59,7 @@ import {
   type SupportSendFailure,
   type SupportStatus,
 } from "@/lib/support-chat";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import { WHATSAPP_CHAT_URL } from "@/lib/contact";
 import {
   applySupportChatViewportVars,
@@ -1873,6 +1874,9 @@ export default function SupportChatWidget() {
             if (document.activeElement instanceof HTMLElement) {
               document.activeElement.blur();
             }
+          }
+          if (!open) {
+            trackEvent(ANALYTICS_EVENTS.chatOpen, { source: "chat_fab" });
           }
           setOpen((value) => !value);
         }}

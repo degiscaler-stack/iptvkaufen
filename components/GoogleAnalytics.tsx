@@ -19,8 +19,18 @@ export default function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           window.gtag = gtag;
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+          });
           gtag('js', new Date());
-          gtag('config', '${measurementId}', { anonymize_ip: true });
+          gtag('config', '${measurementId}', {
+            anonymize_ip: true,
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false
+          });
         `}
       </Script>
     </>
