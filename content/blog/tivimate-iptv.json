@@ -1,8 +1,8 @@
 {
   "slug": "tivimate-iptv",
   "title": "TiviMate IPTV – Der komplette Guide für Android TV",
-  "seoTitle": "TiviMate IPTV Guide (2026) | iptvkaufenX",
-  "seoDescription": "TiviMate IPTV Guide 2026: Installation auf Android TV, Google TV und Fire TV, Playlist & Xtream einrichten, EPG, Favoriten, Aufnahmen und Premium-Features.",
+  "seoTitle": "TiviMate IPTV: Einrichtung & Playlist (2026) | iptvkaufenX",
+  "seoDescription": "TiviMate IPTV einrichten: Installation auf Android TV, Google TV und Fire TV, Playlist oder Xtream hinzufügen, EPG, Favoriten und Premium-Funktionen.",
   "description": "TiviMate IPTV verständlich erklärt: Installation, Playlist hinzufügen, EPG, Favoriten, Aufnahmen und Praxis-Setup für Android TV, Google TV und Fire TV in Deutschland.",
   "keyword": "TiviMate IPTV",
   "category": "iptv-apps",
@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-06T10:00:00.000Z",
-  "updatedAt": "2026-07-06T14:00:00.000Z",
+  "updatedAt": "2026-11-07T15:33:48.730Z",
   "readingTimeMinutes": 19,
   "image": "/images/post 11/tivimate-iptv-1.webp",
   "imageAlt": "TiviMate IPTV App auf Android TV – Live-TV Oberfläche mit Senderliste und EPG",
@@ -61,6 +61,10 @@
     {
       "question": "Welche Geräte eignen sich am besten für TiviMate IPTV?",
       "answer": "Ideal sind Android TV und Google TV Boxen mit ausreichend RAM und LAN-Anschluss. Fire TV Stick funktioniert per Sideload gut als Zweitgerät. Ältere Fernseher ohne App-Store profitieren von einer externen [IPTV Box](/blog/iptv-box) oder einem [IPTV Receiver](/blog/iptv-receiver). Senderauswahl prüfen Sie in der Senderliste."
+    },
+    {
+      "question": "Gibt es TiviMate für Samsung oder LG Fernseher?",
+      "answer": "TiviMate ist eine App für Android-basierte Geräte wie Android TV, Google TV und Fire TV. Auf Samsung-Fernsehern (Tizen) und LG-Fernsehern (webOS) ist sie nicht verfügbar; dort kommen andere IPTV Player zum Einsatz, oder Sie nutzen einen Stick beziehungsweise eine Box mit Android TV."
     }
   ],
   "sections": [

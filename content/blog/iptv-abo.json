@@ -1,8 +1,8 @@
 {
   "slug": "iptv-abo",
   "title": "IPTV Abo – Das beste IPTV Abonnement",
-  "seoTitle": "IPTV Abo (2026): Bestes Abonnement | iptvkaufenX",
-  "seoDescription": "IPTV Abo erklärt: Laufzeiten, Verlängerung, Kündigung, Geräte und wie Sie ein passendes Abonnement wählen – der Ratgeber für Deutschland.",
+  "seoTitle": "IPTV Abo & Abonnement: Laufzeit, Kündigung | iptvkaufenX",
+  "seoDescription": "IPTV Abo und IPTV Abonnement in Deutschland: Laufzeiten, Preisfaktoren, Verlängerung, Kündigung und Verbraucherrecht im Überblick – der Ratgeber.",
   "description": "IPTV Abo im Überblick: Was ein gutes IPTV Abonnement ausmacht, welche Laufzeiten sinnvoll sind und worauf Sie vor dem Abschluss achten sollten – der Ratgeber für Nutzer in Deutschland.",
   "keyword": "IPTV Abo",
   "category": "iptv-abonnement",
@@ -12,7 +12,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-06-29T16:00:00.000Z",
-  "updatedAt": "2026-08-03T08:00:00.000Z",
+  "updatedAt": "2026-11-07T15:33:48.730Z",
   "readingTimeMinutes": 20,
   "image": "/images/post 5/iptv-abo-1.webp",
   "imageAlt": "IPTV Abo auf Smart TV – Live-TV per IPTV Abonnement in Deutschland",
@@ -63,6 +63,10 @@
     {
       "question": "Kann ich ein IPTV Abo vor längerer Bindung testen?",
       "answer": "Ja, viele Anbieter bieten Testzugänge oder kurze Probephasen. So prüfen Sie Qualität auf Ihrem Gerät und Ihrer Leitung. Details finden Sie in unserem Leitfaden zum [IPTV Free Trial](/blog/iptv-free-trial)."
+    },
+    {
+      "question": "Gibt es für ein IPTV Abo einen Kündigungsbutton?",
+      "answer": "Für Verbraucherverträge, die online über eine Website abgeschlossen werden und eine laufende Leistung betreffen, schreibt § 312k BGB grundsätzlich einen Kündigungsbutton vor. Ob und wie er bei einem konkreten Angebot umgesetzt ist, sollten Sie vor dem Abschluss prüfen. Dies ersetzt keine Rechtsberatung."
     }
   ],
   "sections": [
@@ -310,6 +314,16 @@
         "Achten Sie auf: Verlängerungsdatum, Zahlungsweg, ob sich der Preis ändern kann und wie Sie vor dem nächsten Zeitraum informiert werden. Fehlen diese Angaben, ist Vorsicht geboten.",
         "Bewahren Sie Bestätigungsmails und Rechnungshinweise auf. So können Sie später nachvollziehen, welche Laufzeit und welche Verlängerungsregelung Sie gewählt haben.",
         "Dieser Abschnitt ersetzt keine Rechtsberatung und keine individuellen Vertragsprüfungen. Maßgeblich sind stets die zum Zeitpunkt der Bestellung gültigen Bedingungen des jeweiligen Anbieters."
+      ]
+    },
+    {
+      "id": "verbraucherrecht-iptv-abo",
+      "heading": "Verbraucherrecht: Laufzeit, Verlängerung und Kündigungsbutton",
+      "level": 2,
+      "paragraphs": [
+        "Bei einem IPTV Abonnement gelten für Verbraucher in Deutschland die allgemeinen Regeln des Vertragsrechts. Dazu gehören Vorgaben zur Vertragslaufzeit und zu automatischen Verlängerungen in [§ 309 BGB](https://www.gesetze-im-internet.de/bgb/__309.html).",
+        "Nach diesen Regeln darf sich ein Vertrag mit Verbrauchern nach Ablauf der Erstlaufzeit nur dann stillschweigend verlängern, wenn er danach mit kurzer Frist kündbar ist. Für online abgeschlossene Verträge über laufende Leistungen sieht [§ 312k BGB](https://www.gesetze-im-internet.de/bgb/__312k.html) außerdem einen Kündigungsbutton auf der Website vor. Welche Regeln im Einzelfall gelten, hängt vom konkreten Vertrag ab; dieser Abschnitt ersetzt keine Rechtsberatung.",
+        "Praktisch heißt das: Notieren Sie Startdatum, Laufzeit und Kündigungsweg und achten Sie darauf, dass Verlängerung und Kündigung vor dem Abschluss klar einsehbar sind. Konkrete Schritte beschreibt der folgende Abschnitt zur Kündigung."
       ]
     },
     {

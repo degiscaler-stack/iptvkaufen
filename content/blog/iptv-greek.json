@@ -1,8 +1,8 @@
 {
   "slug": "iptv-greek",
   "title": "IPTV Greek – Griechische Sender in Deutschland empfangen",
-  "seoTitle": "IPTV Greek – Griechisches Fernsehen | iptvkaufenX",
-  "seoDescription": "IPTV Greek in Deutschland: Erfahren Sie, wie Sie griechische Sender prüfen, geeignete Geräte auswählen und EPG, Favoriten sowie Bildqualität optimal einrichten.",
+  "seoTitle": "IPTV Greek – Griechisches Fernsehen empfangen | iptvkaufenX",
+  "seoDescription": "IPTV Greek und griechisches Fernsehen in Deutschland empfangen: Wege über Kabel, Satellit und Internet, Senderliste prüfen, Geräte und Einrichtung.",
   "description": "IPTV Greek verständlich erklärt: Griechische Sender in Deutschland prüfen, Kategorien und Favoriten organisieren, EPG und Geräte sinnvoll einrichten.",
   "keyword": "IPTV Greek",
   "category": "iptv-senderliste",
@@ -16,7 +16,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-23T14:00:00.000Z",
-  "updatedAt": "2026-07-23T20:00:00.000Z",
+  "updatedAt": "2026-11-07T15:33:48.730Z",
   "readingTimeMinutes": 17,
   "image": "/images/post 25/iptv-greek-1.webp",
   "imageAlt": "Griechisches Fernsehen auf dem Smart TV in Deutschland empfangen",
@@ -63,6 +63,10 @@
     {
       "question": "Was kann ich tun, wenn griechische Zeichen falsch angezeigt werden?",
       "answer": "Prüfen Sie App-Sprache, Zeichensatz/Font-Unterstützung und ob die Senderliste korrekt geladen wurde. App aktualisieren, Playlist neu laden und Gerät neu starten helfen oft. Bleibt das Problem, kontaktieren Sie den Support mit Geräte- und App-Angaben – ohne Passwörter öffentlich zu teilen."
+    },
+    {
+      "question": "Wie kann ich griechisches Fernsehen in Deutschland über das Internet empfangen?",
+      "answer": "Griechisches Fernsehen lässt sich in Deutschland über die Online-Angebote einzelner Sender oder über IPTV mit einer Player-App empfangen. Für beides brauchen Sie eine stabile Internetverbindung. Welche Sender verfügbar sind, kann je nach Angebot und Region variieren – prüfen Sie die aktuelle Senderliste vor dem Kauf."
     }
   ],
   "sections": [
@@ -115,6 +119,18 @@
         "Ein Vorteil von IPTV: Der Empfang ist nicht an eine einzelne Antenne gebunden. Mit kompatiblem Player und gültigem Zugang lassen sich Programme auf verschiedenen Geräten nutzen – immer abhängig von Paketregeln und App-Verfügbarkeit.",
         "Dieser Abschnitt beschreibt Nutzungsszenarien, keine statistischen Behauptungen. Entscheidend bleibt, ob die für Sie wichtigen griechischen Inhalte in der aktuellen Liste stehen.",
         "Gerade in Mehrgenerationen-Haushalten hilft eine gemeinsame Oberfläche mit getrennten Favoriten mehr als mehrere parallele Empfangswege. Wer das früh plant, reduziert Konflikte um Fernbedienung und Senderwahl."
+      ]
+    },
+    {
+      "id": "griechisches-fernsehen-empfangen-wege",
+      "heading": "Griechisches Fernsehen in Deutschland empfangen: Kabel, Satellit oder Internet",
+      "level": 2,
+      "paragraphs": [
+        "Wer griechisches Fernsehen in Deutschland empfangen möchte, hat grundsätzlich drei Wege: Kabel, Satellit und das Internet. Welcher Weg passt, hängt von Wohnsituation, Gerät und gewünschten Sendern ab – und davon, wie dauerhaft das Angebot verfügbar ist.",
+        "Kabel: Deutsche Kabelnetzbetreiber bieten fremdsprachige Sender nur in begrenztem Umfang an. Ob griechische Programme enthalten sind, hängt vom Netzbetreiber, der Region und dem gebuchten Paket ab. Fragen Sie das vor einem Vertragsabschluss direkt beim Betreiber ab.",
+        "Satellit: Über eine Satellitenanlage sind je nach Sender und Satellitenposition einzelne griechische Programme empfangbar. Dafür sind eine passend ausgerichtete Schüssel und ein kompatibler Receiver nötig; Verschlüsselung und Verfügbarkeit unterscheiden sich je Sender. In Mietwohnungen ist eine eigene Anlage nicht immer möglich.",
+        "Internet: Viele Sender und Rundfunkanstalten stellen eigene Online-Angebote bereit, zum Beispiel der öffentlich-rechtliche Sender [ERT](https://www.ert.gr/). Live-Inhalte können außerhalb Griechenlands allerdings regional eingeschränkt sein; prüfen Sie die Verfügbarkeit direkt auf der Seite des Senders.",
+        "IPTV: Wer mehrere Sender in einer App bündeln möchte, nutzt häufig IPTV über eine Player-App. Vorteile sind Favoriten, EPG und die Nutzung auf Smart TV, Stick oder Smartphone. Prüfen Sie vor dem Kauf, welche Sender im gewählten Paket enthalten sind, denn Senderlisten können sich ändern. Wenn Sie [IPTV kaufen](/) möchten, finden Sie auf der Startseite die aktuellen Pakete."
       ]
     },
     {

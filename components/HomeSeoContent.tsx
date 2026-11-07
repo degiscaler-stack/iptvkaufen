@@ -144,6 +144,96 @@ const cards = [
       </>,
     ],
   },
+  {
+    id: "iptv-kaufen-checkliste",
+    eyebrow: "IPTV KAUFEN",
+    title: (
+      <>
+        IPTV kaufen: <span className="text-[#A6FF00]">Das sollten Sie prüfen</span>
+      </>
+    ),
+    paragraphs: [
+      <>
+        Wer IPTV kaufen möchte, sollte vor der Bestellung Laufzeit, Anzahl paralleler Verbindungen,
+        unterstützte Geräte und die Erreichbarkeit des Supports vergleichen. Im Ratgeber{" "}
+        <Link href="/blog/iptv-abo" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Abo
+        </Link>{" "}
+        erfahren Sie, wie sich Monats- und Jahrespakete unterscheiden, wie Verlängerung und
+        Kündigung typischerweise geregelt sind und worauf Sie in den Bedingungen achten sollten.
+      </>,
+      <>
+        Auch der Zugangsweg zählt: Beim{" "}
+        <Link href="/blog/iptv-line-kaufen" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Line kaufen
+        </Link>{" "}
+        erhalten Sie Zugangsdaten für eine Player-App. Wie ein Test vor dem Kauf grundsätzlich
+        funktioniert, beschreibt der Beitrag zum{" "}
+        <Link href="/blog/iptv-free-trial" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Free Trial
+        </Link>
+        .
+      </>,
+      <>
+        Die aktuellen Pakete und Preise finden Sie direkt bei den{" "}
+        <Link href="/#pakete-start" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV-Paketen
+        </Link>
+        . Maßgeblich sind immer die Angaben zum gewählten Paket.
+      </>,
+    ],
+  },
+  {
+    id: "iptv-sender-nach-sprache",
+    eyebrow: "SENDER NACH SPRACHE",
+    title: (
+      <>
+        Internationale Sender in <span className="text-[#A6FF00]">Deutschland</span>
+      </>
+    ),
+    paragraphs: [
+      <>
+        Viele Haushalte in Deutschland möchten Programme in ihrer Muttersprache nutzen. Unsere
+        Ratgeber erklären für jede Sprachgruppe, worauf es bei Senderauswahl, Geräten und Einrichtung
+        ankommt:{" "}
+        <Link href="/blog/iptv-greek" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Greek
+        </Link>
+        ,{" "}
+        <Link href="/blog/polish-iptv" className={CONTEXTUAL_LINK_CLASS}>
+          Polish IPTV
+        </Link>{" "}
+        und{" "}
+        <Link href="/blog/iptv-tuerkische-sender" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Türkische Sender
+        </Link>
+        .
+      </>,
+      <>
+        Weitere Übersichten gibt es zu{" "}
+        <Link href="/blog/iptv-balkan" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Balkan
+        </Link>
+        ,{" "}
+        <Link href="/blog/iptv-arab" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Arab
+        </Link>{" "}
+        und{" "}
+        <Link href="/blog/iptv-nordic" className={CONTEXTUAL_LINK_CLASS}>
+          IPTV Nordic
+        </Link>
+        . Welche Sender im gewählten Paket enthalten sind, sollten Sie vor dem Kauf prüfen, da sich
+        Senderlisten ändern können.
+      </>,
+      <>
+        Für allgemeine Fragen zu deutschem Live-TV über das Internet lesen Sie den Leitfaden{" "}
+        <Link href="/blog/german-iptv" className={CONTEXTUAL_LINK_CLASS}>
+          German IPTV
+        </Link>
+        .
+      </>,
+    ],
+  },
 ] as const;
 
 export default function HomeSeoContent() {
