@@ -1,8 +1,8 @@
 {
   "slug": "iptv-arab",
   "title": "IPTV Arab – Arabische Sender in Deutschland empfangen",
-  "seoTitle": "IPTV Arab – Arabisches Fernsehen | iptvkaufenX",
-  "seoDescription": "IPTV Arab in Deutschland: Erfahren Sie, wie Sie arabische Sender prüfen, geeignete Geräte wählen und Kategorien, EPG sowie Favoriten optimal einrichten.",
+  "seoTitle": "IPTV Arab: Arabische Sender in Deutschland | iptvkaufenX",
+  "seoDescription": "IPTV Arab in Deutschland: arabische Sender prüfen, passende Geräte wählen, Kategorien, EPG und Favoriten einrichten – mit Test für 3 € vor dem Kauf.",
   "description": "IPTV Arab verständlich erklärt: Arabische Sender in Deutschland prüfen, Regionen und Kategorien organisieren, arabische Schrift und EPG korrekt darstellen.",
   "keyword": "IPTV Arab",
   "category": "iptv-senderliste",
@@ -16,7 +16,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-25T10:00:00.000Z",
-  "updatedAt": "2026-07-25T10:00:00.000Z",
+  "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
   "image": "/images/post 27/iptv-arab-1.webp",
   "imageAlt": "Arabisches Fernsehen auf dem Smart TV in Deutschland empfangen",
@@ -66,6 +66,10 @@
     {
       "question": "Kann IPTV Arab auf mehreren Geräten genutzt werden?",
       "answer": "Das hängt von der erlaubten Anzahl gleichzeitiger Verbindungen im Paket ab. Wohnzimmer-TV plus Smartphone ist üblich – aber nur innerhalb der freigegebenen Limits. Schützen Sie Ihre Zugangsdaten und prüfen Sie die Paketregeln."
+    },
+    {
+      "question": "Gibt es bei iptvkaufenX arabische Sender?",
+      "answer": "Das Angebot umfasst internationale Sender, darunter deutsche und europäische Programme. Ob konkrete arabische Kanäle in Ihrem Paket enthalten sind, bestätigt der Support vor dem Kauf. Einzelne Sender sagen wir hier nicht verbindlich zu, weil sich Senderlisten ändern können."
     }
   ],
   "sections": [
@@ -426,6 +430,15 @@
       ]
     },
     {
+      "id": "arabische-sender-testen",
+      "heading": "Arabische Sender prüfen, bevor Sie buchen",
+      "level": 2,
+      "paragraphs": [
+        "iptvkaufenX bietet internationale Sender an, darunter deutsche und europäische Programme. Ob bestimmte arabische Kanäle in Ihrem Paket enthalten sind, nennen wir hier nicht als Zusage – fragen Sie vor dem Kauf beim Support nach Ihren Wunschsendern und prüfen Sie Bild und Programmübersicht im [24-Stunden-Test](/blog/iptv-free-trial).",
+        "Passt alles, wählen Sie Laufzeit und Geräteanzahl bei den [IPTV-Paketen](/#pakete-start). Wer mehrere Sprachgruppen vergleicht, findet Orientierung im Ratgeber zu [IPTV Alle Sender](/blog/iptv-alle-sender)."
+      ]
+    },
+    {
       "id": "fazit",
       "heading": "Fazit",
       "level": 2,
@@ -436,5 +449,12 @@
         "Wer Regionen, arabische Schrift, Favoriten und Geräte von Anfang an mitdenkt, spart Support-Schleifen und Fehlkäufe. IPTV Arab funktioniert in Deutschland am besten als strukturiertes Setup – nicht als blindes Vertrauen in einen Produktnamen."
       ]
     }
-  ]
+  ],
+  "cta": {
+    "heading": "Erst testen, dann Paket wählen",
+    "description": "Der 24-Stunden-Test kostet 3 € und gilt für ein Gerät. Danach wählen Sie 1, 3, 6 oder 12 Monate – ohne automatische Verlängerung.",
+    "primaryLabel": "IPTV-Pakete ansehen",
+    "secondaryLabel": "Fragen per WhatsApp",
+    "secondaryAction": "whatsapp"
+  }
 }

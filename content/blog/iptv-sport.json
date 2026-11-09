@@ -2,7 +2,7 @@
   "slug": "iptv-sport",
   "title": "IPTV Sport – Technik, Apps und Wiedergabe erklärt",
   "seoTitle": "IPTV Sport: Technik & Apps (2026) | iptvkaufenX",
-  "seoDescription": "IPTV Sport erklärt: Technik, Apps und Wiedergabe, Internetgeschwindigkeit, Geräte und worauf Sie bei Angeboten achten sollten – ohne Rechteversprechen.",
+  "seoDescription": "IPTV Sport erklärt: Technik, Apps, Internetgeschwindigkeit und Geräte für stabile Live-Wiedergabe – ohne Rechteversprechen, mit 24-Stunden-Test für 3 €.",
   "description": "IPTV Sport verständlich erklärt: Wie Live-Sport über IPTV funktioniert, welche Voraussetzungen für stabile Übertragung wichtig sind und worauf Sie bei Anbietern achten sollten.",
   "keyword": "IPTV Sport",
   "category": "iptv-sport",
@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-13T10:00:00.000Z",
-  "updatedAt": "2026-07-13T22:00:00.000Z",
+  "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
   "image": "/images/post 21/iptv-sport-1.webp",
   "imageAlt": "IPTV Sport live streamen – Sportübertragung auf Smart TV in Deutschland",
@@ -61,6 +61,10 @@
     {
       "question": "Ist IPTV Sport in Deutschland legal nutzbar?",
       "answer": "IPTV als Technologie ist grundsätzlich legal. Entscheidend ist, dass Sie einen seriösen Anbieter mit transparenter Geschäftspraxis nutzen. Meiden Sie anonyme Angebote ohne Impressum oder erreichbaren Support; Details dazu finden Sie im Abschnitt zu rechtlichen Hinweisen in diesem Artikel."
+    },
+    {
+      "question": "Welche Sportübertragungen sind bei iptvkaufenX enthalten?",
+      "answer": "Zu einzelnen Wettbewerben oder Übertragungen geben wir keine Zusage. Fragen Sie vor der Buchung beim Support nach dem gewünschten Sender und prüfen Sie die Wiedergabe im 24-Stunden-Test (3 €, ein Gerät)."
     }
   ],
   "sections": [
@@ -305,6 +309,15 @@
       ]
     },
     {
+      "id": "sport-streams-pruefen",
+      "heading": "Sport-Streams prüfen – ohne Versprechen zu Einzelübertragungen",
+      "level": 2,
+      "paragraphs": [
+        "Zu einzelnen Wettbewerben oder Übertragungen machen wir keine Zusagen; Rechte und Angebote ändern sich. Fragen Sie vor dem Kauf konkret nach dem Sender, der Sie interessiert, und prüfen Sie Stabilität und Bildqualität im [24-Stunden-Test](/blog/iptv-free-trial) (3 €, ein Gerät) zur Hauptsendezeit auf Ihrem Gerät.",
+        "Passt die Wiedergabe, wählen Sie Laufzeit und gleichzeitige Geräte bei den [IPTV-Paketen](/#pakete-start). Technische Voraussetzungen für Ultra HD erklärt der Ratgeber zu [IPTV Premium 4K](/blog/iptv-premium-4k)."
+      ]
+    },
+    {
       "id": "fazit",
       "heading": "Fazit",
       "level": 2,
@@ -316,5 +329,12 @@
         "Weitere Vertiefung zu Geräten, Paketen und Grundlagen finden Sie im [Blog](/blog), in der [FAQ](/faq) und über den [Kontakt](/kontakt) zu iptvkaufenX."
       ]
     }
-  ]
+  ],
+  "cta": {
+    "heading": "Erst testen, dann Paket wählen",
+    "description": "Der 24-Stunden-Test kostet 3 € und gilt für ein Gerät. Danach wählen Sie 1, 3, 6 oder 12 Monate – ohne automatische Verlängerung.",
+    "primaryLabel": "IPTV-Pakete ansehen",
+    "secondaryLabel": "Fragen per WhatsApp",
+    "secondaryAction": "whatsapp"
+  }
 }

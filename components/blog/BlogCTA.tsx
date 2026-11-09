@@ -17,7 +17,7 @@ const secondaryButtonClass =
 
 export default function BlogCTA({
   heading = "Bereit für IPTV in HD & 4K?",
-  description = "Starten Sie jetzt mit iptvkaufenX – sofort aktiviert, stabil auf bis zu 4 Geräten gleichzeitig und mit persönlichem Support bei der Einrichtung.",
+  description = "Starten Sie jetzt mit iptvkaufenX – schnell bereitgestellt, nutzbar auf bis zu 4 Geräten gleichzeitig und mit persönlichem Support bei der Einrichtung.",
   primaryLabel = "Jetzt IPTV kaufen",
   secondaryLabel = "Preise ansehen",
   secondaryAction = "pricing",

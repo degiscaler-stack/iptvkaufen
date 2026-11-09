@@ -1,8 +1,8 @@
 {
   "slug": "iptv-smarters-pro",
   "title": "IPTV Smarters Pro – Setup, Login und Tipps",
-  "seoTitle": "IPTV Smarters Pro Setup (2026) | iptvkaufenX",
-  "seoDescription": "IPTV Smarters Pro Setup 2026: Installation, Xtream Codes Login, M3U, Gerätekompatibilität, Stabilitätstipps und Vergleich mit TiviMate für Deutschland.",
+  "seoTitle": "IPTV Smarters Pro: Einrichtung & Kosten (2026) | iptvkaufenX",
+  "seoDescription": "IPTV Smarters Pro einrichten: Installation, Xtream-Codes-Login, M3U, Geräte und Tipps – plus was App und IPTV-Zugang kosten (Test 3 €, Pakete ab 9,99 €).",
   "description": "IPTV Smarters Pro verständlich erklärt: Installation, Login mit Xtream Codes oder M3U, Vorteile, Nachteile, Geräte und Tipps für stabiles Streaming in Deutschland.",
   "keyword": "IPTV Smarters Pro",
   "category": "iptv-apps",
@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-05T10:00:00.000Z",
-  "updatedAt": "2026-07-05T14:00:00.000Z",
+  "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
   "image": "/images/post 10/iptv-smarters-pro-1.webp",
   "imageAlt": "IPTV Smarters Pro App auf Smart TV – Live-TV Setup in Deutschland",
@@ -68,6 +68,10 @@
     {
       "question": "Brauche ich ein IPTV Abo für IPTV Smarters Pro?",
       "answer": "Ja. Die App allein liefert keine Sender – Sie benötigen Zugangsdaten eines seriösen Anbieters und ein passendes [IPTV Abo](/blog/iptv-abo). Vergleichen Sie [Preise](/preise) und Senderliste, bevor Sie langfristig buchen."
+    },
+    {
+      "question": "Was kostet IPTV Smarters Pro mit einem iptvkaufenX-Zugang?",
+      "answer": "App und Zugang sind getrennt: Die Konditionen der App bestimmt der App-Store bzw. Hersteller. Der IPTV-Zugang von iptvkaufenX kostet im Test 3 € (24 Stunden, ein Gerät); Abos beginnen bei 9,99 € für einen Monat und ein Gerät. Maßgeblich ist die Preisübersicht auf der Startseite."
     }
   ],
   "sections": [
@@ -383,6 +387,58 @@
         "height": 1024,
         "caption": "IPTV Smarters Pro – Zugangsdaten vom Anbieter korrekt hinterlegt (16:10)"
       }
+    },
+    {
+      "id": "smarters-pro-kosten-und-zugang",
+      "heading": "Kosten: App und IPTV-Zugang getrennt betrachten",
+      "level": 2,
+      "paragraphs": [
+        "IPTV Smarters Pro ist ein Player eines Drittanbieters und mit iptvkaufenX nicht identisch. Die Konditionen der App legt der jeweilige App-Store bzw. Hersteller fest und können sich ändern; sie sind unabhängig vom Zugang. Für den IPTV-Zugang selbst gelten die Preise von iptvkaufenX: Der Test kostet 3 € (24 Stunden, ein Gerät), Abos starten bei 9,99 € für einen Monat und ein Gerät.",
+        "Die Einrichtung erfolgt mit Xtream Codes oder M3U. Probieren Sie sie mit dem [24-Stunden-Test](/blog/iptv-free-trial) aus und wählen Sie danach bei den [IPTV-Paketen](/#pakete-start) Laufzeit und Geräte. Abos verlängern sich nicht automatisch."
+      ],
+      "blocks": [
+        {
+          "type": "comparison-table",
+          "caption": "Preise der iptvkaufenX-Pakete (Stand der Preisübersicht auf der Startseite)",
+          "headers": [
+            "Laufzeit",
+            "1 Gerät",
+            "2 Geräte",
+            "3 Geräte",
+            "4 Geräte"
+          ],
+          "rows": [
+            [
+              "1 Monat",
+              "9,99 €",
+              "14,99 €",
+              "19,99 €",
+              "24,99 €"
+            ],
+            [
+              "3 Monate",
+              "19,99 €",
+              "29,99 €",
+              "39,99 €",
+              "49,99 €"
+            ],
+            [
+              "6 Monate",
+              "29,99 €",
+              "44,99 €",
+              "59,99 €",
+              "74,99 €"
+            ],
+            [
+              "12 Monate",
+              "49,99 €",
+              "74,99 €",
+              "99,99 €",
+              "124,99 €"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "fazit",

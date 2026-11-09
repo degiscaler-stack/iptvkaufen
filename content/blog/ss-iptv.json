@@ -1,8 +1,8 @@
 {
   "slug": "ss-iptv",
   "title": "SS IPTV – Einrichtung, Playlist und Problemlösungen",
-  "seoTitle": "SS IPTV Einrichtung (2026) | iptvkaufenX",
-  "seoDescription": "SS IPTV Einrichtung 2026: Installation auf Smart TV, Playlist und M3U eintragen, EPG, Kanallisten, häufige Fehler und Vergleich für Deutschland.",
+  "seoTitle": "SS IPTV einrichten: Playlist & Fehler (2026) | iptvkaufenX",
+  "seoDescription": "SS IPTV einrichten: Installation auf dem Smart TV, Playlist und M3U eintragen, EPG, Kanallisten und häufige Fehler – Anleitung für Deutschland.",
   "description": "SS IPTV verständlich erklärt: Installation, Playlist und M3U eintragen, EPG, Kanallisten, Fehlerlösungen und Praxis-Setup für Smart TV in Deutschland.",
   "keyword": "SS IPTV",
   "category": "iptv-apps",
@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-13T10:00:00.000Z",
-  "updatedAt": "2026-07-13T16:00:00.000Z",
+  "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
   "image": "/images/post 15/ss-iptv-1.webp",
   "imageAlt": "SS IPTV auf Smart TV im Wohnzimmer – Live-TV Player mit Kanalliste und Programmheft",
@@ -61,6 +61,10 @@
     {
       "question": "Wie gehe ich mit meinen Daten bei IPTV-Apps sicher um?",
       "answer": "Teilen Sie Playlist-URL und Zugangsdaten nicht öffentlich, installieren Sie Apps nur über offizielle Stores und wählen Sie einen Anbieter mit klarer Datenschutzerklärung und erreichbarem Support. So minimieren Sie Risiken im Alltag mit IPTV deutlich."
+    },
+    {
+      "question": "Kann ich SS IPTV mit einem iptvkaufenX-Zugang nutzen?",
+      "answer": "Der Zugang wird für kompatible Player als M3U oder Xtream Codes bereitgestellt. Ob SS IPTV auf Ihrem Fernseher verfügbar ist, hängt von Store und Gerätemodell ab. Fragen Sie vor der Buchung beim Support nach und prüfen Sie es im 24-Stunden-Test (3 €, ein Gerät)."
     }
   ],
   "sections": [
@@ -364,6 +368,15 @@
       ]
     },
     {
+      "id": "ss-iptv-mit-zugang-testen",
+      "heading": "SS IPTV mit einem Zugang testen, bevor Sie buchen",
+      "level": 2,
+      "paragraphs": [
+        "Eine saubere Playlist ist Voraussetzung dafür, dass SS IPTV Sender zeigt. Der Zugang von iptvkaufenX wird als M3U oder Xtream Codes für kompatible Player bereitgestellt; welche Variante in Ihrer App passt, klärt der Support. Zum Prüfen dient der [24-Stunden-Test](/blog/iptv-free-trial) (3 €, ein Gerät, Zahlung vor Aktivierung).",
+        "Anschließend wählen Sie Laufzeit und Geräte bei den [IPTV-Paketen](/#pakete-start). Wer die App für den Samsung-Fernseher vergleicht, liest den Ratgeber [Beste IPTV App für Samsung Fernseher](/blog/beste-iptv-app-fuer-samsung-fernseher)."
+      ]
+    },
+    {
       "id": "fazit",
       "heading": "Fazit",
       "level": 2,
@@ -376,5 +389,12 @@
         "Mit einer sorgfältigen Ersteinrichtung und einem verlässlichen Anbieter im Hintergrund wird aus SS IPTV ein alltagstaugliches Fernseherlebnis – ganz ohne zusätzliche Streaming-Box unter dem Fernseher."
       ]
     }
-  ]
+  ],
+  "cta": {
+    "heading": "Erst testen, dann Paket wählen",
+    "description": "Der 24-Stunden-Test kostet 3 € und gilt für ein Gerät. Danach wählen Sie 1, 3, 6 oder 12 Monate – ohne automatische Verlängerung.",
+    "primaryLabel": "IPTV-Pakete ansehen",
+    "secondaryLabel": "Fragen per WhatsApp",
+    "secondaryAction": "whatsapp"
+  }
 }

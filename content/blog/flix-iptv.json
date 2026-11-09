@@ -1,8 +1,8 @@
 {
   "slug": "flix-iptv",
   "title": "Flix IPTV – Einrichtung, Funktionen und hilfreiche Tipps",
-  "seoTitle": "Flix IPTV Setup (2026) | iptvkaufenX",
-  "seoDescription": "Flix IPTV Setup 2026: Installation auf Smart TV, Playlist und M3U einrichten, EPG, Favoriten, Gerätekompatibilität und Praxistipps für Deutschland.",
+  "seoTitle": "Flix IPTV einrichten: Anleitung (2026) | iptvkaufenX",
+  "seoDescription": "Flix IPTV einrichten: Installation auf dem Smart TV, Playlist per M3U, EPG, Favoriten und Fehlerhilfe – plus wie Sie die App mit einem eigenen Zugang testen.",
   "description": "Flix IPTV verständlich erklärt: Installation, Playlist und M3U eintragen, EPG, Favoriten und Praxis-Setup für Smart TV und kompatible Geräte in Deutschland.",
   "keyword": "Flix IPTV",
   "category": "iptv-apps",
@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-13T10:00:00.000Z",
-  "updatedAt": "2026-07-13T14:00:00.000Z",
+  "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
   "image": "/images/post 13/flix-iptv-1.webp",
   "imageAlt": "Flix IPTV auf Smart TV im Wohnzimmer – Live-TV Player Oberfläche mit Senderliste",
@@ -61,6 +61,10 @@
     {
       "question": "Warum funktioniert Flix IPTV nicht auf meinem Gerät?",
       "answer": "Häufige Gründe sind eine fehlende Store-Verfügbarkeit auf dem jeweiligen Modell, eine veraltete Firmware, eine falsch eingetragene Playlist-URL oder ein instabiles Netzwerk. Prüfen Sie zuerst Internetverbindung und Zugangsdaten, bevor Sie von einem grundsätzlichen Defekt ausgehen."
+    },
+    {
+      "question": "Kann ich Flix IPTV mit einem iptvkaufenX-Zugang nutzen?",
+      "answer": "Der Zugang wird für kompatible Player als M3U oder Xtream Codes bereitgestellt. Ob Flix IPTV auf Ihrem Fernseher läuft, hängt vom Store und vom Gerätemodell ab. Fragen Sie vor der Buchung beim Support nach und prüfen Sie es im 24-Stunden-Test (3 €, ein Gerät)."
     }
   ],
   "sections": [
@@ -360,6 +364,15 @@
       ]
     },
     {
+      "id": "flix-iptv-mit-eigenem-zugang",
+      "heading": "Flix IPTV mit eigenem Zugang ausprobieren",
+      "level": 2,
+      "paragraphs": [
+        "Flix IPTV ist nur der Player; Sender und Programmübersicht kommen vom Anbieter. Der Zugang von iptvkaufenX wird typischerweise als M3U oder per Xtream Codes bereitgestellt – welche Variante zu Ihrer App und Ihrem Fernseher passt, klärt der Support bei der Einrichtung. Prüfen Sie vorab im Store Ihres Fernsehers, ob die App dort angeboten wird.",
+        "Zum Kennenlernen gibt es den [24-Stunden-Test](/blog/iptv-free-trial) (3 €, ein Gerät, Zahlung vor Aktivierung). Funktioniert alles, finden Sie Laufzeiten und Preise bei den [IPTV-Paketen auf der Startseite](/#pakete-start). Hintergründe zum Dateiformat erklärt der [M3U-Ratgeber](/blog/iptv-m3u)."
+      ]
+    },
+    {
       "id": "fazit",
       "heading": "Fazit",
       "level": 2,
@@ -371,5 +384,12 @@
         "Weitere vertiefende Artikel zu Playlists, Playern und Geräten finden Sie im [Blog](/blog); bei offenen Fragen helfen [FAQ](/faq) und [Kontakt](/kontakt)."
       ]
     }
-  ]
+  ],
+  "cta": {
+    "heading": "Erst testen, dann Paket wählen",
+    "description": "Der 24-Stunden-Test kostet 3 € und gilt für ein Gerät. Danach wählen Sie 1, 3, 6 oder 12 Monate – ohne automatische Verlängerung.",
+    "primaryLabel": "IPTV-Pakete ansehen",
+    "secondaryLabel": "Fragen per WhatsApp",
+    "secondaryAction": "whatsapp"
+  }
 }

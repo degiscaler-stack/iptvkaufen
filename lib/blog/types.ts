@@ -145,7 +145,7 @@ export const BLOG_CATEGORIES: Record<
   },
   "iptv-test": {
     label: "IPTV Test",
-    description: "IPTV Free Trial und risikofreies Testen",
+    description: "IPTV Test: 24-Stunden-Test für 3 € und Testen vor dem Kauf",
   },
   "iptv-premium": {
     label: "IPTV Premium",

@@ -170,7 +170,7 @@ const cards = [
         erhalten Sie Zugangsdaten für eine Player-App. Wie ein Test vor dem Kauf grundsätzlich
         funktioniert, beschreibt der Beitrag zum{" "}
         <Link href="/blog/iptv-free-trial" className={CONTEXTUAL_LINK_CLASS}>
-          IPTV Free Trial
+          24-Stunden-Test
         </Link>
         .
       </>,
