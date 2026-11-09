@@ -23,7 +23,7 @@ export const SEO_TITLES = {
     "german-iptv": "German IPTV 2026: Guide & Anbieter-Check | iptvkaufenX",
     "iptv-anbieter": "IPTV Anbieter vergleichen: Kriterien 2026 | iptvkaufenX",
     "iptv-box": "IPTV Box kaufen: Welche Box passt? (2026) | iptvkaufenX",
-    "iptv-free-trial": "IPTV Free Trial Deutschland | iptvkaufenX",
+    "iptv-free-trial": "IPTV Test: 24 Stunden für 3 € statt Free Trial | iptvkaufenX",
     "iptv-abo": "IPTV Abo: Laufzeiten, Preise & Verlängerung | iptvkaufenX",
     "iptv-receiver": "IPTV Receiver: Unterschied zur Box & Kauftipps | iptvkaufenX",
     "iptv-provider": "IPTV Provider: Server & Stabilität | iptvkaufenX",
