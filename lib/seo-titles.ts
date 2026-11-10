@@ -48,6 +48,14 @@ export const SEO_TITLES = {
     "polish-iptv": "Polish IPTV – Polnische Sender empfangen | iptvkaufenX",
     "iptv-arab": "IPTV Arab: Arabische Sender in Deutschland | iptvkaufenX",
     "iptv-nordic": "IPTV Nordic: Nordische Sender in Deutschland | iptvkaufenX",
+    "epg-iptv": "EPG IPTV: Programmübersicht einrichten (2026) | iptvkaufenX",
+    "iptv-europe": "IPTV Europe: Sender aus Europa empfangen | iptvkaufenX",
+    "beste-iptv-app-fuer-lg-tv": "Beste IPTV App für LG TV: Vergleich (2026) | iptvkaufenX",
+    "iptv-kosten": "IPTV Kosten: Was Sie wirklich zahlen (2026) | iptvkaufenX",
+    "bester-iptv-player-windows": "Bester IPTV Player Windows: Optionen (2026) | iptvkaufenX",
+    "german-iptv-erfahrungen": "German IPTV Erfahrungen: Worauf achten? (2026) | iptvkaufenX",
+    "iptv-internet-protocol": "IPTV Internet Protocol: Was ist IPTV? (2026) | iptvkaufenX",
+    "beste-iptv-app-fuer-apple-tv": "Beste IPTV App für Apple TV: Vergleich (2026) | iptvkaufenX",
   },
 } as const;
 

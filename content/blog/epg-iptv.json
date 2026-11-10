@@ -1,0 +1,282 @@
+{
+  "slug": "epg-iptv",
+  "title": "EPG bei IPTV: Programmübersicht verstehen und einrichten",
+  "seoTitle": "EPG IPTV: Programmübersicht einrichten (2026) | iptvkaufenX",
+  "seoDescription": "EPG bei IPTV erklärt: Woher die Programmdaten kommen, wie XMLTV und tvg-id zusammenspielen und was bei leerer Übersicht oder falschen Zeiten hilft.",
+  "description": "Was die EPG bei IPTV ist, woher die Programmdaten kommen und warum die Übersicht manchmal leer bleibt oder falsche Uhrzeiten zeigt – mit Schritt-für-Schritt-Hilfe.",
+  "keyword": "EPG IPTV",
+  "category": "iptv-einrichtung",
+  "tags": [
+    "EPG IPTV",
+    "Programmübersicht",
+    "XMLTV"
+  ],
+  "author": {
+    "name": "iptvkaufenX Redaktion",
+    "role": "IPTV Experten"
+  },
+  "publishedAt": "2026-11-10T01:03:19.913Z",
+  "updatedAt": "2026-11-10T01:03:19.913Z",
+  "readingTimeMinutes": 7,
+  "image": "/images/blog-new/epg-iptv-programmuebersicht-cover.webp",
+  "imageAlt": "Fernseher mit Programmübersicht und dem Schriftzug EPG bei IPTV auf dunklem Hintergrund",
+  "featured": false,
+  "popular": false,
+  "status": "published",
+  "relatedSlugs": [
+    "iptv-m3u",
+    "tivimate-iptv",
+    "iptv-smarters-pro",
+    "iptv-player",
+    "iptv-line-kaufen",
+    "iptv-provider"
+  ],
+  "cta": {
+    "heading": "Programmübersicht vor dem Kauf prüfen",
+    "description": "Mit dem 24-Stunden-Test (3 €, ein Gerät) sehen Sie auf Ihrem eigenen Gerät, wie vollständig die Programmübersicht für Ihre Sender ist. Abos verlängern sich nicht automatisch.",
+    "primaryLabel": "IPTV-Pakete ansehen",
+    "secondaryLabel": "Fragen per WhatsApp",
+    "secondaryAction": "whatsapp"
+  },
+  "faq": [
+    {
+      "question": "Was bedeutet EPG bei IPTV?",
+      "answer": "EPG steht für Elektronischer Programmführer. Er zeigt Titel, Startzeit und Dauer der Sendungen und oft eine kurze Beschreibung. Bei IPTV liegen die Programmdaten häufig in einer separaten XMLTV-Datei, die der Player den Kanälen zuordnet."
+    },
+    {
+      "question": "Warum zeigt mein IPTV-Player keine Programmübersicht?",
+      "answer": "Häufige Gründe sind eine fehlende oder falsche EPG-Adresse, ein noch laufender Download oder eine fehlerhafte Zuordnung zwischen Kanal und EPG-Eintrag. Prüfen Sie EPG-Quelle, Internetverbindung und die Zuordnung nach Kennung oder Name."
+    },
+    {
+      "question": "Was ist XMLTV?",
+      "answer": "XMLTV ist ein verbreitetes Dateiformat für Fernsehprogramme. Player wie das Kodi-Add-on PVR IPTV Simple Client lesen XMLTV-Dateien lokal oder über eine Internet-Adresse ein und verbinden sie mit den Kanälen der Playlist."
+    },
+    {
+      "question": "Brauche ich für die EPG eine zusätzliche Datei?",
+      "answer": "Das hängt von App und Zugang ab. Manche Player verlangen eine eigene EPG-Adresse, andere nutzen Daten des Anbieters. Fragen Sie vor der Buchung, ob eine EPG-Quelle zum Zugang gehört."
+    },
+    {
+      "question": "Warum stimmen die Uhrzeiten in der EPG nicht?",
+      "answer": "Meist liegt es an Zeitzone oder Zeitverschiebung. Viele Player erlauben, die EPG-Zeiten zu verschieben; das Kodi-Add-on bietet laut Dokumentation eine Verschiebung zwischen −12 und +14 Stunden."
+    },
+    {
+      "question": "Kann ich jede EPG-Datei mit jeder Playlist verwenden?",
+      "answer": "Nur wenn Kennungen oder Kanalnamen zueinander passen. Der Player gleicht Kanäle zuerst über die ID, danach über Namen ab. Passt nichts zusammen, bleibt die Übersicht leer."
+    },
+    {
+      "question": "Kann ich die Programmübersicht im 24-Stunden-Test von iptvkaufenX prüfen?",
+      "answer": "Ja, der Test (3 €, 24 Stunden, ein Gerät, Zahlung vor Aktivierung) eignet sich dazu, Senderliste und Programmübersicht auf Ihrem eigenen Gerät zu prüfen. Welche EPG-Quelle für Ihren Zugang gilt, klärt der Support bei der Einrichtung."
+    }
+  ],
+  "sections": [
+    {
+      "id": "kurzantwort",
+      "heading": "Kurzantwort: Was ist die EPG bei IPTV?",
+      "level": 2,
+      "paragraphs": [
+        "Die EPG (Elektronischer Programmführer) zeigt in Ihrer IPTV-App, welche Sendung wann auf welchem Sender läuft. Bei IPTV kommen diese Programmdaten häufig nicht im Videostream selbst an, sondern als getrennte Datei, meist im Format XMLTV. Der Player muss Kanäle und Programmdaten zusammenführen – und genau dabei entstehen die meisten Probleme.",
+        "Dieser Ratgeber erklärt den Aufbau, zeigt typische Fehlerbilder und gibt eine Anleitung, mit der Sie die Programmübersicht systematisch prüfen. Wer vor einer Buchung wissen möchte, wie gut die EPG für die eigenen Sender funktioniert, findet am Ende konkrete Prüfschritte und die [IPTV-Pakete von iptvkaufenX](/#pakete-start)."
+      ],
+      "blocks": [
+        {
+          "type": "summary",
+          "title": "Kurz erklärt",
+          "items": [
+            "EPG = Elektronischer Programmführer: Titel, Startzeit und Dauer jeder Sendung, oft mit Beschreibung.",
+            "Bei IPTV liegt die EPG häufig als separate XMLTV-Datei vor; der Player ordnet sie den Kanälen zu.",
+            "Die Zuordnung klappt über Kennungen (tvg-id) oder Namen – passen sie nicht, bleibt die Übersicht leer.",
+            "Falsche Uhrzeiten lassen sich oft über eine Zeitverschiebung im Player korrigieren.",
+            "Ob eine EPG-Quelle zu Ihrem Zugang gehört, klärt der Anbieter – prüfen Sie es vor dem Kauf im Test."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "was-ist-epg",
+      "heading": "Was ist ein elektronischer Programmführer?",
+      "level": 2,
+      "paragraphs": [
+        "Eine EPG ersetzt die gedruckte Fernsehzeitschrift. Nach der Beschreibung bei [Wikipedia zum Elektronischen Programmführer](https://de.wikipedia.org/wiki/Elektronischer_Programmf%C3%BChrer) enthält jeder Eintrag mindestens Titel, Startzeit und Dauer einer Sendung; optional kommen Kurzbeschreibung, Genre oder Altersfreigabe hinzu. Wie vollständig diese Zusatzfelder sind, hängt vom Datenlieferanten ab.",
+        "Im digitalen Fernsehen werden die Programmdaten laut derselben Quelle als Teil des Signals übertragen (DVB-SI, Event Information Table). Beim Fernsehen über das Internet gibt es kein Rundfunksignal in diesem Sinn – deshalb müssen Programmdaten auf anderem Weg zum Player gelangen."
+      ]
+    },
+    {
+      "id": "woher-kommen-die-daten",
+      "heading": "Woher kommen die Programmdaten bei IPTV?",
+      "level": 2,
+      "paragraphs": [
+        "Eine IPTV-Playlist (zum Beispiel im M3U-Format) enthält die Senderliste mit den Adressen der Streams. Die Programmdaten stehen meist in einer eigenen XMLTV-Datei, die je Kanal eine Kennung und die zugehörigen Sendungen enthält. Der Player lädt beide Quellen und verbindet sie.",
+        "Als Beispiel dokumentiert das Projekt hinter dem Kodi-Add-on [PVR IPTV Simple Client](https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md), dass XMLTV-Dateien lokal oder über eine Internet-Adresse geladen werden können und auch als gzip- oder XZ-Archiv vorliegen dürfen. Das [Kodi-Wiki](https://kodi.wiki/view/Add-on:PVR_IPTV_Simple_Client) nennt M3U-Playlists, Live-TV und EPG als Funktionen desselben Add-ons.",
+        "Wie Ihre App die EPG bezieht, unterscheidet sich je nach Zugangsart und Programm: Manche Apps verlangen eine eigene EPG-Adresse, andere übernehmen Daten, die der Anbieter bereitstellt. Welche Variante zu Ihrem Zugang passt, sagt der jeweilige Anbieter – bei iptvkaufenX klärt das der Support bei der Einrichtung."
+      ],
+      "image": {
+        "src": "/images/blog-new/epg-iptv-ablauf-playlist-xmltv-player.webp",
+        "alt": "Ablaufdiagramm: Playlist, XMLTV-Datei und Player-App führen zur Programmübersicht",
+        "title": "EPG bei IPTV – vom Playlist-Eintrag zur Programmübersicht",
+        "caption": "Playlist, XMLTV-Datei und Player müssen zusammenpassen",
+        "width": 1600,
+        "height": 1000
+      }
+    },
+    {
+      "id": "zuordnung-kanal-epg",
+      "heading": "Wie Player Kanäle und EPG zuordnen",
+      "level": 2,
+      "paragraphs": [
+        "Damit eine Sendung beim richtigen Sender erscheint, braucht der Player eine Verbindung zwischen Kanal und EPG-Eintrag. Das Kodi-Projekt beschreibt dafür eine feste Reihenfolge: Zuerst wird die Kanal-ID aus der XMLTV-Datei mit dem Attribut tvg-id der Playlist verglichen, danach der tvg-name und zuletzt der angezeigte Kanalname.",
+        "Andere Apps arbeiten ähnlich, nennen die Einstellungen aber anders. Entscheidend ist die Logik: Stimmen Kennung oder Name nicht überein, findet der Player keine Sendungen – die Übersicht bleibt leer, obwohl der Stream läuft."
+      ],
+      "image": {
+        "src": "/images/blog-new/epg-iptv-zuordnung-kennung-name.webp",
+        "alt": "Vier Karten zur Zuordnung von EPG und Kanal: tvg-id, tvg-name, Kanalname und Zeitverschiebung",
+        "title": "EPG-Zuordnung bei IPTV-Playern",
+        "caption": "Beispiel: Kodi PVR IPTV Simple Client laut Projekt-README",
+        "width": 1600,
+        "height": 1000
+      }
+    },
+    {
+      "id": "epg-einrichten",
+      "heading": "EPG einrichten: So gehen Sie vor",
+      "level": 2,
+      "paragraphs": [
+        "Die Menünamen unterscheiden sich je nach App. Dieser Ablauf gilt sinngemäß für die meisten Player:"
+      ],
+      "blocks": [
+        {
+          "type": "process",
+          "title": "EPG in sechs Schritten prüfen und einrichten",
+          "steps": [
+            "Playlist laden und prüfen, ob die Senderliste vollständig erscheint.",
+            "EPG-Quelle eintragen: Adresse der XMLTV-Datei oder Option „EPG des Anbieters“ wählen, falls die App sie anbietet.",
+            "Einige Minuten warten – der erste Download einer EPG-Datei kann dauern.",
+            "Mehrere Sender stichprobenartig öffnen und prüfen, ob Sendungen erscheinen.",
+            "Bei falschen Uhrzeiten die Zeitverschiebung der EPG im Player anpassen.",
+            "App neu starten oder den EPG-Cache leeren, falls Änderungen nicht erscheinen."
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Praxistipp",
+          "paragraphs": [
+            "Notieren Sie sich, bei welchen Sendern die Übersicht fehlt. Fehlen nur einzelne Kanäle, liegt es meist an der Datenquelle; fehlt alles, ist oft die EPG-Adresse oder die Zuordnung falsch."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typische-fehler",
+      "heading": "Typische Fehlerbilder und ihre Ursachen",
+      "level": 2,
+      "paragraphs": [
+        "Die folgende Tabelle ordnet häufige Symptome möglichen Ursachen zu. Sie ersetzt keine individuelle Diagnose, hilft aber bei der Eingrenzung."
+      ],
+      "blocks": [
+        {
+          "type": "comparison-table",
+          "caption": "EPG-Probleme bei IPTV",
+          "headers": [
+            "Symptom",
+            "Mögliche Ursache",
+            "Was Sie prüfen können"
+          ],
+          "rows": [
+            [
+              "Übersicht komplett leer",
+              "EPG nicht geladen oder falsche Adresse",
+              "EPG-Quelle und Internetverbindung prüfen, Download abwarten"
+            ],
+            [
+              "Nur einzelne Sender ohne Sendungen",
+              "Kanal fehlt in der EPG-Datei oder Kennung stimmt nicht",
+              "Zuordnung nach tvg-id, tvg-name und Kanalname kontrollieren"
+            ],
+            [
+              "Sendungen zur falschen Uhrzeit",
+              "Zeitzone oder Zeitverschiebung",
+              "Zeitverschiebung im Player anpassen (Kodi erlaubt −12 bis +14 Stunden)"
+            ],
+            [
+              "Veraltete Sendungen",
+              "EPG wird nicht aktualisiert",
+              "Aktualisierungsintervall und Cache prüfen"
+            ],
+            [
+              "Beschreibungen fehlen",
+              "Datenquelle liefert nur Titel und Zeiten",
+              "Andere EPG-Quelle oder Anbieter fragen"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apps-und-epg",
+      "heading": "Apps und EPG: Wo sich welche Funktion findet",
+      "level": 2,
+      "paragraphs": [
+        "Am Desktop unterstützt der Open-Source-Player [IPTVnator](https://github.com/4gray/iptvnator) laut Projektseite XMLTV-Programmführer, Mehrkanal-EPG und Catch-up; die Web-Version enthält diese XMLTV-Funktion nicht. Auf Android TV und Fire TV finden Sie die EPG-Einstellungen in den Anleitungen zu [TiviMate](/blog/tivimate-iptv) und [IPTV Smarters Pro](/blog/iptv-smarters-pro). Wie Playlists aufgebaut sind, erklärt der Ratgeber zu [IPTV M3U](/blog/iptv-m3u); einen Überblick über Apps bietet der [IPTV-Player-Vergleich](/blog/iptv-player)."
+      ]
+    },
+    {
+      "id": "epg-vor-dem-kauf",
+      "heading": "EPG als Kaufkriterium",
+      "level": 2,
+      "paragraphs": [
+        "Eine saubere Programmübersicht entscheidet im Alltag darüber, wie bequem IPTV wirkt. Stellen Sie dem Anbieter deshalb vor der Buchung konkrete Fragen: Gehört eine EPG-Quelle zum Zugang? Welche Sender sind abgedeckt? Wie oft wird aktualisiert? Wer sich für IPTV in Deutschland entscheidet, vergleicht auf der [Startseite von iptvkaufenX](/) Laufzeiten und Geräteanzahl.",
+        "iptvkaufenX bietet internationale Sender, darunter deutsche und europäische Programme. Ob die Programmübersicht für Ihre Wunschsender vollständig ist, prüfen Sie am besten selbst: Der [24-Stunden-Test](/blog/iptv-free-trial) kostet 3 € (24 Stunden, ein Gerät, Zahlung vor Aktivierung). Danach wählen Sie 1, 3, 6 oder 12 Monate – Abos verlängern sich nicht automatisch."
+      ],
+      "blocks": [
+        {
+          "type": "comparison-table",
+          "caption": "Preise der iptvkaufenX-Pakete (Stand der Preisübersicht auf der Startseite)",
+          "headers": [
+            "Laufzeit",
+            "1 Gerät",
+            "2 Geräte",
+            "3 Geräte",
+            "4 Geräte"
+          ],
+          "rows": [
+            [
+              "1 Monat",
+              "9,99 €",
+              "14,99 €",
+              "19,99 €",
+              "24,99 €"
+            ],
+            [
+              "3 Monate",
+              "19,99 €",
+              "29,99 €",
+              "39,99 €",
+              "49,99 €"
+            ],
+            [
+              "6 Monate",
+              "29,99 €",
+              "44,99 €",
+              "59,99 €",
+              "74,99 €"
+            ],
+            [
+              "12 Monate",
+              "49,99 €",
+              "74,99 €",
+              "99,99 €",
+              "124,99 €"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fazit",
+      "heading": "Fazit",
+      "level": 2,
+      "paragraphs": [
+        "Die EPG ist bei IPTV kein Selbstläufer, sondern das Ergebnis von drei Dingen: einer sauberen Playlist, einer passenden Datenquelle und einer korrekten Zuordnung im Player. Wer diese Kette kennt, findet Fehler schnell. Prüfen Sie die Programmübersicht immer auf dem Gerät, das Sie später nutzen, und zur Hauptsendezeit am Abend."
+      ]
+    }
+  ]
+}
