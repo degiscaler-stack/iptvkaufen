@@ -46,7 +46,7 @@ export const RESELLER_PACKAGES: readonly ResellerPackage[] = [
     highlighted: false,
     whatsappMessage:
       "Hallo, ich interessiere mich für das Starter Reseller-Paket mit 120 Credits für 339 €. Bitte senden Sie mir weitere Informationen.",
-    buttonLabel: "DIESES PAKET ANFRAGEN",
+    buttonLabel: "JETZT KAUFEN",
   },
   {
     id: "business",
@@ -60,7 +60,7 @@ export const RESELLER_PACKAGES: readonly ResellerPackage[] = [
     highlighted: true,
     whatsappMessage:
       "Hallo, ich interessiere mich für das Business Reseller-Paket mit 240 Credits für 559 €. Bitte senden Sie mir weitere Informationen.",
-    buttonLabel: "DIESES PAKET ANFRAGEN",
+    buttonLabel: "JETZT KAUFEN",
   },
   {
     id: "professional",
@@ -73,7 +73,7 @@ export const RESELLER_PACKAGES: readonly ResellerPackage[] = [
     highlighted: false,
     whatsappMessage:
       "Hallo, ich interessiere mich für das Professional Reseller-Paket mit 720 Credits für 1.549 €. Bitte senden Sie mir weitere Informationen.",
-    buttonLabel: "DIESES PAKET ANFRAGEN",
+    buttonLabel: "JETZT KAUFEN",
   },
 ] as const;
 

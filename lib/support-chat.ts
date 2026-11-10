@@ -24,6 +24,7 @@ export const SUPPORT_PURCHASE_INTENT_ERROR =
 
 export type SupportPurchaseDurationMonths = 1 | 3 | 6 | 12;
 export type SupportPurchaseDeviceCount = 1 | 2 | 3 | 4;
+export type SupportResellerPackage = "starter" | "business" | "professional";
 
 export type SupportPurchaseIntentDetail =
   | {
@@ -33,6 +34,10 @@ export type SupportPurchaseIntentDetail =
     }
   | {
       kind: "TRIAL";
+    }
+  | {
+      kind: "RESELLER";
+      resellerPackage: SupportResellerPackage;
     };
 
 export type SupportSite = typeof SUPPORT_SITE;
@@ -207,8 +212,19 @@ export function dispatchSupportPurchaseIntent(detail: SupportPurchaseIntentDetai
 export function isSupportPurchaseIntentDetail(
   value: unknown,
 ): value is SupportPurchaseIntentDetail {
-  if (!isRecord(value) || (value.kind !== "PACKAGE" && value.kind !== "TRIAL")) {
+  if (
+    !isRecord(value) ||
+    (value.kind !== "PACKAGE" && value.kind !== "TRIAL" && value.kind !== "RESELLER")
+  ) {
     return false;
+  }
+
+  if (value.kind === "RESELLER") {
+    return (
+      value.resellerPackage === "starter" ||
+      value.resellerPackage === "business" ||
+      value.resellerPackage === "professional"
+    );
   }
 
   if (value.kind === "TRIAL") {
@@ -476,6 +492,10 @@ export async function postPurchaseIntent(options: {
 
   if (conversationId) {
     body.conversationId = conversationId;
+  }
+
+  if (options.intent.kind === "RESELLER") {
+    body.resellerPackage = options.intent.resellerPackage;
   }
 
   if (options.intent.kind === "PACKAGE") {

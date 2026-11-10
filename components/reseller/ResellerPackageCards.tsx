@@ -1,12 +1,10 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { TrackedAnchor } from "@/components/TrackedLink";
+import PurchaseIntentButton from "@/components/PurchaseIntentButton";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { ctaMotionFeaturedClass, ctaMotionStandardClass, ctaSolidGreenClass } from "@/lib/cta-motion";
 import {
-  getResellerWhatsAppUrl,
   RESELLER_PACKAGE_FEATURES,
   RESELLER_PACKAGES,
   type ResellerPackage,
@@ -84,11 +82,9 @@ export default function ResellerPackageCards() {
               ))}
             </ul>
 
-            <TrackedAnchor
-              href={getResellerWhatsAppUrl(pkg.whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              analyticsEvent={ANALYTICS_EVENTS.whatsappClick}
+            <PurchaseIntentButton
+              intent={{ kind: "RESELLER", resellerPackage: pkg.id }}
+              analyticsEvent={ANALYTICS_EVENTS.selectItem}
               analyticsParams={{
                 source: "reseller_package",
                 package_name: pkg.name,
@@ -99,15 +95,13 @@ export default function ResellerPackageCards() {
                 page_path: "/reseller",
                 button_location: "reseller_package_card",
               }}
-              data-analytics="whatsapp_click"
-              data-analytics-source="reseller_package"
+              data-analytics="reseller_package_select"
               data-package={pkg.id}
               className={pkg.highlighted ? packageCtaFeaturedClass : packageCtaBaseClass}
               style={{ "--cta-motion-delay": motionDelays[pkg.id] } as CSSProperties}
             >
-              <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
               {pkg.buttonLabel}
-            </TrackedAnchor>
+            </PurchaseIntentButton>
           </div>
         </article>
       ))}
