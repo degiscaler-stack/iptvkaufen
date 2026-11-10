@@ -16,10 +16,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:30:39.116Z",
+  "updatedAt": "2026-11-10T08:41:02.159Z",
   "readingTimeMinutes": 7,
-  "image": "/images/blog/epg-iptv/epg-iptv-fernseher-menue-fernbedienung.webp",
-  "imageAlt": "Hand mit Fernbedienung vor einem Fernseher, auf dem ein Menü mit Senderübersicht zu sehen ist",
+  "image": "/images/blog/epg-iptv/epg-iptv-programmuebersicht-fernseher.webp",
+  "imageAlt": "Fernseher im Wohnzimmer mit EPG-Programmübersicht aus Senderliste, Sendungen und Zeitleiste, davor eine Fernbedienung auf dem Tisch",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -110,12 +110,12 @@
         "Wie Ihre App die EPG bezieht, unterscheidet sich je nach Zugangsart und Programm: Manche Apps verlangen eine eigene EPG-Adresse, andere übernehmen Daten, die der Anbieter bereitstellt. Welche Variante zu Ihrem Zugang passt, sagt der jeweilige Anbieter – bei iptvkaufenX klärt das der Support bei der Einrichtung."
       ],
       "image": {
-        "src": "/images/blog/epg-iptv/epg-iptv-wohnzimmer-fernseher-abend.webp",
-        "alt": "Fernseher in einem abendlich beleuchteten Wohnzimmer, davor eine Fernbedienung in der Hand",
-        "title": "Fernsehen am Abend im Wohnzimmer",
-        "caption": "Fernsehen am Abend im Wohnzimmer – Foto: Soumith Soman / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/epg-iptv/epg-iptv-programmdaten-playlist-xmltv.webp",
+        "alt": "Fernseher mit EPG-Ansicht, links zwei Kästen für Playlist/M3U und XMLTV-Programmdaten, die über Pfeile zusammengeführt werden",
+        "title": "Playlist und XMLTV-Programmdaten werden verbunden",
+        "caption": "Playlist und XMLTV-Programmdaten werden verbunden – Illustrative KI-Darstellung, kein Screenshot einer realen App oder Webseite.",
+        "width": 1586,
+        "height": 992
       }
     },
     {
@@ -127,12 +127,12 @@
         "Andere Apps arbeiten ähnlich, nennen die Einstellungen aber anders. Entscheidend ist die Logik: Stimmen Kennung oder Name nicht überein, findet der Player keine Sendungen – die Übersicht bleibt leer, obwohl der Stream läuft."
       ],
       "image": {
-        "src": "/images/blog/epg-iptv/epg-iptv-fernbedienung-guide-taste.webp",
-        "alt": "Nahaufnahme einer Fernbedienung mit Tasten für Menü und Programmführer",
-        "title": "Fernbedienung mit Guide-Taste",
-        "caption": "Fernbedienung mit Guide-Taste – Foto: Geri Tech / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/epg-iptv/epg-iptv-kanal-zuordnung-fernbedienung.webp",
+        "alt": "Mann richtet die Fernbedienung auf einen Fernseher, der links eine Senderliste mit hervorgehobenem Sender und rechts die passende Programmzeile mit Zeitleiste zeigt",
+        "title": "Kanal und Sendung werden einander zugeordnet",
+        "caption": "Kanal und Sendung werden einander zugeordnet – Illustrative KI-Darstellung, kein Screenshot einer realen App oder Webseite.",
+        "width": 1585,
+        "height": 992
       }
     },
     {
@@ -215,7 +215,7 @@
       "heading": "Apps und EPG: Wo sich welche Funktion findet",
       "level": 2,
       "paragraphs": [
-        "Am Desktop unterstützt der Open-Source-Player [IPTVnator](https://github.com/4gray/iptvnator) laut Projektseite XMLTV-Programmführer, Mehrkanal-EPG und Catch-up; die Web-Version enthält diese XMLTV-Funktion nicht. Auf Android TV und Fire TV finden Sie die EPG-Einstellungen in den Anleitungen zu [TiviMate](/blog/tivimate-iptv) und [IPTV Smarters Pro](/blog/iptv-smarters-pro). Wie Playlists aufgebaut sind, erklärt der Ratgeber zu [IPTV M3U](/blog/iptv-m3u); einen Überblick über Apps bietet der [IPTV-Player-Vergleich](/blog/iptv-player)."
+        "Am Desktop unterstützt der Open-Source-Player [IPTVnator](https://github.com/4gray/iptvnator) laut Projektseite XMLTV-Programmführer, Mehrkanal-EPG und Catch-up; die Web-Version enthält diese XMLTV-Funktion nicht. Auf Android TV und Fire TV finden Sie die EPG-Einstellungen in den Anleitungen zu [TiviMate](/blog/tivimate-iptv) und [IPTV Smarters Pro](/blog/iptv-smarters-pro). Wie Playlists aufgebaut sind, erklärt der Ratgeber zu [IPTV M3U](/blog/iptv-m3u); einen Überblick über Apps bietet der [IPTV-Player-Vergleich](/blog/iptv-player); Optionen für den PC beschreibt der Ratgeber [Bester IPTV Player für Windows](/blog/bester-iptv-player-windows)."
       ]
     },
     {

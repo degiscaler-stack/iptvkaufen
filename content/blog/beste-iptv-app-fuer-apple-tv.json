@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:30:39.116Z",
+  "updatedAt": "2026-11-10T08:41:02.159Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog/beste-iptv-app-fuer-apple-tv/apple-tv-box-siri-remote-smartphone.webp",
-  "imageAlt": "Siri Remote, Smartphone und Gamecontroller auf einem Tisch, oben im Bild die Apple TV Box",
+  "image": "/images/blog/beste-iptv-app-fuer-apple-tv/beste-iptv-app-fuer-apple-tv-streaming-box-fernbedienung.webp",
+  "imageAlt": "Apple TV Box mit Siri Remote vor einem Fernseher, der eine IPTV-App-Oberfläche mit Live-Sport zeigt",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -126,12 +126,12 @@
         }
       ],
       "image": {
-        "src": "/images/blog/beste-iptv-app-fuer-apple-tv/apple-tv-smartphone-streaming-app-uebersicht.webp",
-        "alt": "Smartphone auf einer spiegelnden Fläche, auf dem Display eine Streaming-App mit Filmkacheln",
-        "title": "Streaming-App auf dem Smartphone",
-        "caption": "Streaming-App auf dem Smartphone – Foto: Torsten Dettlaff / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/beste-iptv-app-fuer-apple-tv/beste-iptv-app-fuer-apple-tv-app-store-eintrag-pruefen.webp",
+        "alt": "Mann hält ein Smartphone mit einer App-Installationsseite, daneben Apple TV Box, Fernbedienung und Checkliste zu Kompatibilität, Funktionen, Kosten und Sicherheit",
+        "title": "App-Store-Eintrag vor der Installation prüfen",
+        "caption": "App-Store-Eintrag vor der Installation prüfen – Illustrative KI-Darstellung, kein Screenshot aus dem App Store; Sterne im Bild sind keine echte Bewertung.",
+        "width": 1585,
+        "height": 992
       }
     },
     {
@@ -202,12 +202,12 @@
         }
       ],
       "image": {
-        "src": "/images/blog/beste-iptv-app-fuer-apple-tv/apple-tv-hand-smartphone-fernseher-app-uebersicht.webp",
-        "alt": "Hand hält ein Smartphone vor einem Fernseher mit bunter App-Übersicht",
-        "title": "Smartphone und Fernseher mit App-Übersicht",
-        "caption": "Smartphone und Fernseher mit App-Übersicht – Foto: Jakub Zerdzicki / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/beste-iptv-app-fuer-apple-tv/beste-iptv-app-fuer-apple-tv-einrichtung-fernbedienung.webp",
+        "alt": "Fernseher zeigt eine Anleitung zur Einrichtung einer IPTV-App in vier Schritten, davor Apple TV Box und Fernbedienung, rechts ein Tablet",
+        "title": "IPTV-App auf dem Apple TV einrichten",
+        "caption": "IPTV-App auf dem Apple TV einrichten – Illustrative KI-Darstellung, kein Screenshot einer realen App; Zahlen im Bild sind keine Zusage.",
+        "width": 1672,
+        "height": 941
       }
     },
     {

@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:30:39.116Z",
+  "updatedAt": "2026-11-10T08:41:02.159Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog/bester-iptv-player-windows/iptv-player-windows-laptop-videoplattform.webp",
-  "imageAlt": "Laptop auf einem Holztisch, auf dem Bildschirm eine dunkle Videoplattform",
+  "image": "/images/blog/bester-iptv-player-windows/bester-iptv-player-windows-laptop-videowiedergabe.webp",
+  "imageAlt": "Laptop mit Windows-Desktop und geöffnetem Player-Fenster, in dem ein Fußballspiel neben einer Senderliste läuft",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -136,12 +136,12 @@
         }
       ],
       "image": {
-        "src": "/images/blog/bester-iptv-player-windows/iptv-player-windows-heimarbeitsplatz-monitor.webp",
-        "alt": "Schwarz-weiße Aufnahme eines Schreibtischs mit Monitor, auf dem eine Videosoftware läuft, daneben ein Studiolicht und Bücher",
-        "title": "Schreibtisch mit Monitor und Videosoftware",
-        "caption": "Schreibtisch mit Monitor und Videosoftware – Foto: Amar Preciado / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/bester-iptv-player-windows/bester-iptv-player-windows-drei-optionen-vergleichen.webp",
+        "alt": "Laptop zeigt eine Gegenüberstellung von drei Player-Oberflächen für Windows mit Merkmalen und Haken, daneben eine Kaffeetasse und eine deutsche Flagge",
+        "title": "Drei Player-Oberflächen im Vergleich",
+        "caption": "Drei Player-Oberflächen im Vergleich – Illustrative KI-Darstellung eines Player-Vergleichs, kein Screenshot; die geprüften Optionen stehen in der Tabelle: VLC, Kodi mit PVR IPTV Simple Client und IPTVnator.",
+        "width": 1586,
+        "height": 992
       }
     },
     {
@@ -173,12 +173,12 @@
         }
       ],
       "image": {
-        "src": "/images/blog/bester-iptv-player-windows/iptv-player-windows-laptop-staender-monitor.webp",
-        "alt": "Laptop auf einem Ständer neben einem großen Monitor und einer Tastatur auf einem weißen Schreibtisch",
-        "title": "Laptop und Monitor am Schreibtisch",
-        "caption": "Laptop und Monitor am Schreibtisch – Foto: Adam Sondel / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/bester-iptv-player-windows/bester-iptv-player-windows-einrichtung-am-pc.webp",
+        "alt": "Mann bedient am Laptop ein Fenster „Playlist hinzufügen“ mit M3U-URL, daneben eine Checkliste zur Einrichtung",
+        "title": "Playlist im Player am PC hinzufügen",
+        "caption": "Playlist im Player am PC hinzufügen – Illustrative KI-Darstellung, kein Screenshot einer realen Software.",
+        "width": 1585,
+        "height": 992
       }
     },
     {

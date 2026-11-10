@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:30:39.116Z",
+  "updatedAt": "2026-11-10T08:41:02.159Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog/iptv-europe/iptv-europe-familie-sofa-fernsehen.webp",
-  "imageAlt": "Familie sitzt abends gemeinsam auf dem Sofa und schaut fern, der Vater hält die Fernbedienung",
+  "image": "/images/blog/iptv-europe/iptv-europe-europaeische-sender-fernsehen.webp",
+  "imageAlt": "Paar schaut abends auf dem Sofa fern; der Bildschirm zeigt Ansichten europäischer Städte und eine Länderauswahl mit Flaggen",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -146,12 +146,12 @@
         }
       ],
       "image": {
-        "src": "/images/blog/iptv-europe/iptv-europe-europakarte-pinnadeln.webp",
-        "alt": "Landkarte von Europa mit blauen Pinnnadeln, die verschiedene Länder markieren",
-        "title": "Europakarte mit Markierungen",
-        "caption": "Europakarte mit Markierungen – Foto: Lara Jameson / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/iptv-europe/iptv-europe-sprachgruppen-europakarte.webp",
+        "alt": "Fernseher mit einer Europakarte und einer Liste von Sprachgruppen wie deutschsprachige, französische, italienische, spanische und englische Sender",
+        "title": "Europakarte mit Sprachgruppen",
+        "caption": "Europakarte mit Sprachgruppen – Illustrative KI-Darstellung; Länder, Sprachgruppen und Zahlen im Bild sind keine Senderzusage.",
+        "width": 1585,
+        "height": 992
       }
     },
     {
@@ -183,12 +183,12 @@
         }
       ],
       "image": {
-        "src": "/images/blog/iptv-europe/iptv-europe-stadtplan-berlin-smartphone.webp",
-        "alt": "Hand auf einem Stadtplan von Berlin, am Kartenrand Fotos von Sehenswürdigkeiten",
-        "title": "Stadtplan von Berlin bei der Reiseplanung",
-        "caption": "Stadtplan von Berlin bei der Reiseplanung – Foto: Kateryna Naidenko / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/iptv-europe/iptv-europe-senderliste-pruefen-vor-dem-kauf.webp",
+        "alt": "Mann prüft am Laptop eine Senderliste nach Ländern, davor ein Notizblock mit Checkliste „vor dem Kauf“, daneben Flaggen von Deutschland und der EU",
+        "title": "Senderliste vor dem Kauf prüfen",
+        "caption": "Senderliste vor dem Kauf prüfen – Illustrative KI-Darstellung; Sendernamen und Zahlen im Bild sind keine Senderzusage.",
+        "width": 1585,
+        "height": 992
       }
     },
     {

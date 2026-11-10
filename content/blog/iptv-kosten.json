@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:30:39.116Z",
+  "updatedAt": "2026-11-10T08:41:02.159Z",
   "readingTimeMinutes": 6,
-  "image": "/images/blog/iptv-kosten/iptv-kosten-taschenrechner-euro-muenzen.webp",
-  "imageAlt": "Taschenrechner, Euro-Banknoten und Münzen auf einer beigen Unterlage",
+  "image": "/images/blog/iptv-kosten/iptv-kosten-gesamtkosten-berechnen.webp",
+  "imageAlt": "Schreibtisch mit Notizblock zur IPTV-Kostenübersicht, Taschenrechner, Euro-Scheinen und Münzen, dahinter ein Fernseher mit Kostenübersicht",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -126,12 +126,12 @@
         }
       ],
       "image": {
-        "src": "/images/blog/iptv-kosten/iptv-kosten-rechnungen-taschenrechner-smartphone.webp",
-        "alt": "Schreibtisch mit Rechnungen, Taschenrechner, Euro-Schein und Smartphone",
-        "title": "Rechnungen und Taschenrechner",
-        "caption": "Rechnungen und Taschenrechner – Foto: Jakub Zerdzicki / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/iptv-kosten/iptv-kosten-bestandteile-abo-internet-geraet-app.webp",
+        "alt": "Vier Kostenbestandteile als Symbole nebeneinander: IPTV-Abo, Internet-Router, Streaming-Box als Gerät und App auf dem Smartphone, verbunden durch Pluszeichen",
+        "title": "Kostenbestandteile: Abo, Internet, Gerät, App",
+        "caption": "Kostenbestandteile: Abo, Internet, Gerät, App – Illustrative Darstellung der vier Kostenposten.",
+        "width": 1585,
+        "height": 992
       }
     },
     {
@@ -194,12 +194,12 @@
         "Die längere Laufzeit ist also rechnerisch günstiger, bindet aber stärker. Wer noch unsicher ist, startet mit dem Test oder einem kürzeren Paket. Hintergründe zu Laufzeiten und Vertragsfragen erklärt der Ratgeber [IPTV Abo](/blog/iptv-abo)."
       ],
       "image": {
-        "src": "/images/blog/iptv-kosten/iptv-kosten-schwarzer-taschenrechner.webp",
-        "alt": "Nahaufnahme eines schwarzen Taschenrechners neben einem Stift",
-        "title": "Taschenrechner in der Nahaufnahme",
-        "caption": "Taschenrechner in der Nahaufnahme – Foto: Tara Winstead / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/iptv-kosten/iptv-kosten-monatspreis-rechnen-pakete.webp",
+        "alt": "Mann rechnet mit einem Taschenrechner, daneben ein Notizblock und eine Tafel mit Paketpreisen für 1, 3, 6 und 12 Monate",
+        "title": "Monatspreis aus Paketpreisen berechnen",
+        "caption": "Monatspreis aus Paketpreisen berechnen – Illustrative Darstellung; maßgeblich sind die Preise in der Tabelle und auf der Startseite.",
+        "width": 1586,
+        "height": 992
       }
     },
     {
@@ -224,7 +224,7 @@
       "heading": "Versteckte Kosten erkennen",
       "level": 2,
       "paragraphs": [
-        "Vergleichen Sie Angebote anhand dieser Fragen, bevor Sie bezahlen:"
+        "Vergleichen Sie Angebote anhand dieser Fragen, bevor Sie bezahlen (zur Einordnung von Bewertungen siehe [German IPTV Erfahrungen](/blog/german-iptv-erfahrungen)):"
       ],
       "list": [
         "Wann wird gezahlt – vor oder nach der Aktivierung?",

@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:30:39.116Z",
+  "updatedAt": "2026-11-10T08:41:02.159Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-wlan-router-holz.webp",
-  "imageAlt": "Kleiner weißer WLAN-Router mit zwei Antennen auf einer Holzfläche, daran ein grünes Netzwerkkabel",
+  "image": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-fernsehen-ueber-internet.webp",
+  "imageAlt": "Mann mit Fernbedienung vor einem Fernseher mit Live-Sport, davor ein WLAN-Router; Symbole zeigen den Weg Internet, Router, Fernseher",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -94,12 +94,12 @@
         "Daneben nutzen viele Anbieter und Apps den Begriff für Live-Fernsehen per Internet auf beliebigen Geräten: Sie erhalten Zugangsdaten, tragen sie in eine Player-App ein und sehen die Senderliste auf Smart TV, Stick, Tablet oder PC. Genau diese zweite Bedeutung meinen die meisten Anleitungen auf dieser Website."
       ],
       "image": {
-        "src": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-wohnzimmer-fernseher-holzwand.webp",
-        "alt": "Wohnzimmer mit Holzpaneelwand, daran ein Fernseher, davor ein helles Sofa",
-        "title": "Wohnzimmer mit Fernseher",
-        "caption": "Wohnzimmer mit Fernseher – Foto: Max Vakhtbovych / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-zwei-bedeutungen-receiver-und-app.webp",
+        "alt": "Links ein Fernseher mit IPTV-Receiver, rechts ein Mann mit Tablet; Beschriftungen unterscheiden die Nutzung mit Receiver und mit App",
+        "title": "IPTV mit Receiver oder mit App",
+        "caption": "IPTV mit Receiver oder mit App – Illustrative KI-Darstellung der zwei Nutzungsarten.",
+        "width": 1585,
+        "height": 992
       }
     },
     {
@@ -119,12 +119,12 @@
         "Bei Problemen lohnt eine systematische Eingrenzung: Läuft derselbe Sender auf einem zweiten Gerät? Hilft ein LAN-Kabel? Ändert sich das Verhalten zu anderen Uhrzeiten?"
       ],
       "image": {
-        "src": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-netzwerkdosen-lan-kabel.webp",
-        "alt": "Zwei Netzwerkdosen an einer Wand mit angeschlossenen LAN-Kabeln",
-        "title": "Netzwerkdosen mit LAN-Kabeln",
-        "caption": "Netzwerkdosen mit LAN-Kabeln – Foto: panumas nikhomkhai / Pexels",
-        "width": 1600,
-        "height": 1000
+        "src": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-weg-zum-bildschirm-heimnetz.webp",
+        "alt": "Schematische Darstellung des Signalwegs: Internet, Glasfaser- oder DSL-Anschluss mit Modem, Router und Smart-TV oder Streaming-Box vor einem Wohnzimmer",
+        "title": "Weg des IPTV-Signals ins Heimnetz",
+        "caption": "Weg des IPTV-Signals ins Heimnetz – Vereinfachte, illustrative Darstellung des Signalwegs.",
+        "width": 1586,
+        "height": 992
       }
     },
     {
@@ -173,7 +173,7 @@
       "heading": "Welche Internetgeschwindigkeit brauche ich?",
       "level": 2,
       "paragraphs": [
-        "Einen verbindlichen Wert für IPTV gibt es nicht; er hängt von Auflösung, Sender und Zahl paralleler Streams ab. Als Orientierung für Streaming allgemein nennt die [Netflix-Hilfe](https://help.netflix.com/de/node/306) mindestens 3 Mbit/s für 720p, 5 Mbit/s für 1080p und 15 Mbit/s für 4K. Planen Sie bei mehreren Geräten und höherer Qualität mehr ein und nutzen Sie, wenn möglich, ein LAN-Kabel am Fernseher. Mehr zur Qualität erklärt der Ratgeber [IPTV Premium 4K](/blog/iptv-premium-4k)."
+        "Einen verbindlichen Wert für IPTV gibt es nicht; er hängt von Auflösung, Sender und Zahl paralleler Streams ab. Als Orientierung für Streaming allgemein nennt die [Netflix-Hilfe](https://help.netflix.com/de/node/306) mindestens 3 Mbit/s für 720p, 5 Mbit/s für 1080p und 15 Mbit/s für 4K. Planen Sie bei mehreren Geräten und höherer Qualität mehr ein und nutzen Sie, wenn möglich, ein LAN-Kabel am Fernseher. Mehr zur Qualität erklärt der Ratgeber [IPTV Premium 4K](/blog/iptv-premium-4k); welche Kosten Internet, Gerät und App zusätzlich verursachen, zeigt der Ratgeber [IPTV Kosten](/blog/iptv-kosten)."
       ]
     },
     {
