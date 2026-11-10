@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:03:19.913Z",
+  "updatedAt": "2026-11-10T01:30:39.116Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog-new/iptv-europe-sender-aus-europa-cover.webp",
-  "imageAlt": "Fernseher mit dem Schriftzug IPTV Europe auf dunklem Hintergrund mit grünem Akzent",
+  "image": "/images/blog-photos/iptv-europe-familie-sofa-fernsehen.webp",
+  "imageAlt": "Familie sitzt abends gemeinsam auf dem Sofa und schaut fern, der Vater hält die Fernbedienung",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -146,10 +146,10 @@
         }
       ],
       "image": {
-        "src": "/images/blog-new/iptv-europe-sprachgruppen-uebersicht.webp",
-        "alt": "Sternförmige Übersicht mit IPTV Europe in der Mitte und sechs Sprachgruppen",
-        "title": "IPTV Europe – Sprachgruppen im Überblick",
-        "caption": "Zu jeder Region gibt es einen eigenen Ratgeber",
+        "src": "/images/blog-photos/iptv-europe-europakarte-pinnadeln.webp",
+        "alt": "Landkarte von Europa mit blauen Pinnnadeln, die verschiedene Länder markieren",
+        "title": "Europakarte mit Markierungen",
+        "caption": "Europakarte mit Markierungen – Foto: Lara Jameson / Pexels",
         "width": 1600,
         "height": 1000
       }
@@ -183,10 +183,10 @@
         }
       ],
       "image": {
-        "src": "/images/blog-new/iptv-europe-pruefschritte-vor-dem-kauf.webp",
-        "alt": "Vier Schritte: Sprache und Region, Senderliste, Gerät und App, 24-Stunden-Test",
-        "title": "IPTV Europe – Prüfschritte vor dem Kauf",
-        "caption": "Vier Schritte statt pauschaler Versprechen",
+        "src": "/images/blog-photos/iptv-europe-stadtplan-berlin-smartphone.webp",
+        "alt": "Hand auf einem Stadtplan von Berlin, am Kartenrand Fotos von Sehenswürdigkeiten",
+        "title": "Stadtplan von Berlin bei der Reiseplanung",
+        "caption": "Stadtplan von Berlin bei der Reiseplanung – Foto: Kateryna Naidenko / Pexels",
         "width": 1600,
         "height": 1000
       }

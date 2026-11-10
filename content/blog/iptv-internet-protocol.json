@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:03:19.913Z",
+  "updatedAt": "2026-11-10T01:30:39.116Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog-new/iptv-internet-protocol-was-ist-iptv-cover.webp",
-  "imageAlt": "Fernseher mit dem Schriftzug Was ist IPTV auf dunklem Hintergrund mit grünem Akzent",
+  "image": "/images/blog-photos/iptv-internet-protocol-wlan-router-holz.webp",
+  "imageAlt": "Kleiner weißer WLAN-Router mit zwei Antennen auf einer Holzfläche, daran ein grünes Netzwerkkabel",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -94,10 +94,10 @@
         "Daneben nutzen viele Anbieter und Apps den Begriff für Live-Fernsehen per Internet auf beliebigen Geräten: Sie erhalten Zugangsdaten, tragen sie in eine Player-App ein und sehen die Senderliste auf Smart TV, Stick, Tablet oder PC. Genau diese zweite Bedeutung meinen die meisten Anleitungen auf dieser Website."
       ],
       "image": {
-        "src": "/images/blog-new/iptv-internet-protocol-zwei-bedeutungen.webp",
-        "alt": "Zwei Karten: IPTV vom Netzbetreiber mit eigenem Receiver und Live-TV per App auf eigenen Geräten",
-        "title": "Zwei typische Bedeutungen von IPTV",
-        "caption": "Darum wirken Erklärungen im Netz widersprüchlich",
+        "src": "/images/blog-photos/iptv-internet-protocol-wohnzimmer-fernseher-holzwand.webp",
+        "alt": "Wohnzimmer mit Holzpaneelwand, daran ein Fernseher, davor ein helles Sofa",
+        "title": "Wohnzimmer mit Fernseher",
+        "caption": "Wohnzimmer mit Fernseher – Foto: Max Vakhtbovych / Pexels",
         "width": 1600,
         "height": 1000
       }
@@ -119,10 +119,10 @@
         "Bei Problemen lohnt eine systematische Eingrenzung: Läuft derselbe Sender auf einem zweiten Gerät? Hilft ein LAN-Kabel? Ändert sich das Verhalten zu anderen Uhrzeiten?"
       ],
       "image": {
-        "src": "/images/blog-new/iptv-internet-protocol-weg-zum-bildschirm.webp",
-        "alt": "Vier Stationen: Programm, Verteilung im IP-Netz, Internetanschluss, Receiver oder App",
-        "title": "Der Weg des IPTV-Signals zum Bildschirm",
-        "caption": "Vereinfachte Darstellung",
+        "src": "/images/blog-photos/iptv-internet-protocol-netzwerkdosen-lan-kabel.webp",
+        "alt": "Zwei Netzwerkdosen an einer Wand mit angeschlossenen LAN-Kabeln",
+        "title": "Netzwerkdosen mit LAN-Kabeln",
+        "caption": "Netzwerkdosen mit LAN-Kabeln – Foto: panumas nikhomkhai / Pexels",
         "width": 1600,
         "height": 1000
       }

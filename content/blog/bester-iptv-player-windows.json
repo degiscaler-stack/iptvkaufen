@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:03:19.913Z",
+  "updatedAt": "2026-11-10T01:30:39.116Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog-new/iptv-player-windows-optionen-cover.webp",
-  "imageAlt": "Fernseher mit dem Schriftzug Bester IPTV Player für Windows auf dunklem Hintergrund",
+  "image": "/images/blog-photos/iptv-player-windows-laptop-videoplattform.webp",
+  "imageAlt": "Laptop auf einem Holztisch, auf dem Bildschirm eine dunkle Videoplattform",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -136,10 +136,10 @@
         }
       ],
       "image": {
-        "src": "/images/blog-new/iptv-player-windows-vlc-kodi-iptvnator.webp",
-        "alt": "Drei Karten: VLC, Kodi mit IPTV Simple Client und IPTVnator als Optionen für Windows",
-        "title": "Drei verbreitete IPTV-Player für Windows",
-        "caption": "Eigenschaften laut offiziellen Projektseiten",
+        "src": "/images/blog-photos/iptv-player-windows-heimarbeitsplatz-monitor.webp",
+        "alt": "Schwarz-weiße Aufnahme eines Schreibtischs mit Monitor, auf dem eine Videosoftware läuft, daneben ein Studiolicht und Bücher",
+        "title": "Schreibtisch mit Monitor und Videosoftware",
+        "caption": "Schreibtisch mit Monitor und Videosoftware – Foto: Amar Preciado / Pexels",
         "width": 1600,
         "height": 1000
       }
@@ -173,10 +173,10 @@
         }
       ],
       "image": {
-        "src": "/images/blog-new/iptv-player-windows-einrichtung-schritte.webp",
-        "alt": "Vier Schritte der Einrichtung am PC: Player laden, Zugang eintragen, EPG zuweisen, testen",
-        "title": "IPTV-Player am Windows-PC einrichten",
-        "caption": "Gilt sinngemäß für die meisten Player",
+        "src": "/images/blog-photos/iptv-player-windows-laptop-staender-monitor.webp",
+        "alt": "Laptop auf einem Ständer neben einem großen Monitor und einer Tastatur auf einem weißen Schreibtisch",
+        "title": "Laptop und Monitor am Schreibtisch",
+        "caption": "Laptop und Monitor am Schreibtisch – Foto: Adam Sondel / Pexels",
         "width": 1600,
         "height": 1000
       }

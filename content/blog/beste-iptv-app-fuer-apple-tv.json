@@ -15,10 +15,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:03:19.913Z",
+  "updatedAt": "2026-11-10T01:30:39.116Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog-new/apple-tv-iptv-app-vergleich-cover.webp",
-  "imageAlt": "Fernseher mit dem Schriftzug Beste IPTV App für Apple TV auf dunklem Hintergrund",
+  "image": "/images/blog-photos/apple-tv-box-siri-remote-smartphone.webp",
+  "imageAlt": "Siri Remote, Smartphone und Gamecontroller auf einem Tisch, oben im Bild die Apple TV Box",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -126,10 +126,10 @@
         }
       ],
       "image": {
-        "src": "/images/blog-new/apple-tv-iptv-app-eintrag-pruefen.webp",
-        "alt": "Vier Karten: Kompatibilität, Playlist-Arten, Kosten und eigene Inhalte als Prüfpunkte im App-Store-Eintrag",
-        "title": "Den App-Store-Eintrag einer IPTV App prüfen",
-        "caption": "Vier Angaben vor dem Download",
+        "src": "/images/blog-photos/apple-tv-smartphone-streaming-app-uebersicht.webp",
+        "alt": "Smartphone auf einer spiegelnden Fläche, auf dem Display eine Streaming-App mit Filmkacheln",
+        "title": "Streaming-App auf dem Smartphone",
+        "caption": "Streaming-App auf dem Smartphone – Foto: Torsten Dettlaff / Pexels",
         "width": 1600,
         "height": 1000
       }
@@ -202,10 +202,10 @@
         }
       ],
       "image": {
-        "src": "/images/blog-new/apple-tv-iptv-einrichtung-ablauf.webp",
-        "alt": "Vier Schritte vom App Store zur Wiedergabe auf dem Apple TV: App Store, App laden, Zugang eintragen, Test",
-        "title": "IPTV App auf dem Apple TV einrichten",
-        "caption": "Ablauf auf dem Apple TV",
+        "src": "/images/blog-photos/apple-tv-hand-smartphone-fernseher-app-uebersicht.webp",
+        "alt": "Hand hält ein Smartphone vor einem Fernseher mit bunter App-Übersicht",
+        "title": "Smartphone und Fernseher mit App-Übersicht",
+        "caption": "Smartphone und Fernseher mit App-Übersicht – Foto: Jakub Zerdzicki / Pexels",
         "width": 1600,
         "height": 1000
       }

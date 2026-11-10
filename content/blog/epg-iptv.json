@@ -16,10 +16,10 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-11-10T01:03:19.913Z",
-  "updatedAt": "2026-11-10T01:03:19.913Z",
+  "updatedAt": "2026-11-10T01:30:39.116Z",
   "readingTimeMinutes": 7,
-  "image": "/images/blog-new/epg-iptv-programmuebersicht-cover.webp",
-  "imageAlt": "Fernseher mit Programmübersicht und dem Schriftzug EPG bei IPTV auf dunklem Hintergrund",
+  "image": "/images/blog-photos/epg-iptv-fernseher-menue-fernbedienung.webp",
+  "imageAlt": "Hand mit Fernbedienung vor einem Fernseher, auf dem ein Menü mit Senderübersicht zu sehen ist",
   "featured": false,
   "popular": false,
   "status": "published",
@@ -110,10 +110,10 @@
         "Wie Ihre App die EPG bezieht, unterscheidet sich je nach Zugangsart und Programm: Manche Apps verlangen eine eigene EPG-Adresse, andere übernehmen Daten, die der Anbieter bereitstellt. Welche Variante zu Ihrem Zugang passt, sagt der jeweilige Anbieter – bei iptvkaufenX klärt das der Support bei der Einrichtung."
       ],
       "image": {
-        "src": "/images/blog-new/epg-iptv-ablauf-playlist-xmltv-player.webp",
-        "alt": "Ablaufdiagramm: Playlist, XMLTV-Datei und Player-App führen zur Programmübersicht",
-        "title": "EPG bei IPTV – vom Playlist-Eintrag zur Programmübersicht",
-        "caption": "Playlist, XMLTV-Datei und Player müssen zusammenpassen",
+        "src": "/images/blog-photos/epg-iptv-wohnzimmer-fernseher-abend.webp",
+        "alt": "Fernseher in einem abendlich beleuchteten Wohnzimmer, davor eine Fernbedienung in der Hand",
+        "title": "Fernsehen am Abend im Wohnzimmer",
+        "caption": "Fernsehen am Abend im Wohnzimmer – Foto: Soumith Soman / Pexels",
         "width": 1600,
         "height": 1000
       }
@@ -127,10 +127,10 @@
         "Andere Apps arbeiten ähnlich, nennen die Einstellungen aber anders. Entscheidend ist die Logik: Stimmen Kennung oder Name nicht überein, findet der Player keine Sendungen – die Übersicht bleibt leer, obwohl der Stream läuft."
       ],
       "image": {
-        "src": "/images/blog-new/epg-iptv-zuordnung-kennung-name.webp",
-        "alt": "Vier Karten zur Zuordnung von EPG und Kanal: tvg-id, tvg-name, Kanalname und Zeitverschiebung",
-        "title": "EPG-Zuordnung bei IPTV-Playern",
-        "caption": "Beispiel: Kodi PVR IPTV Simple Client laut Projekt-README",
+        "src": "/images/blog-photos/epg-iptv-fernbedienung-guide-taste.webp",
+        "alt": "Nahaufnahme einer Fernbedienung mit Tasten für Menü und Programmführer",
+        "title": "Fernbedienung mit Guide-Taste",
+        "caption": "Fernbedienung mit Guide-Taste – Foto: Geri Tech / Pexels",
         "width": 1600,
         "height": 1000
       }
