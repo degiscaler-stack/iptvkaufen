@@ -99,13 +99,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
   ].filter(Boolean);
 
   return (
-    <main className="min-h-screen bg-[#000000] px-5 pb-14 pt-28 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-32 lg:px-0 lg:pb-20 lg:pt-36">
+    <main className="min-h-screen w-full max-w-full bg-[#000000] px-5 pb-14 pt-28 text-[#F5F5F5] sm:px-8 sm:pb-16 sm:pt-32 lg:px-0 lg:pb-20 lg:pt-36">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
 
-      <article className="mx-auto max-w-[1120px] lg:px-12">
+      <article className="mx-auto w-full min-w-0 max-w-[1120px] lg:px-12">
         <BlogBreadcrumb
           items={[
             { label: "Startseite", href: "/" },
@@ -115,7 +115,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
           ]}
         />
 
-        <header className="mb-8 max-w-[820px]">
+        <header className="mb-8 min-w-0 max-w-[820px]">
           <div className="mb-3 flex flex-wrap gap-2">
             <p className="inline-flex rounded-full border border-[#A6FF00]/25 bg-[#111111]/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#A6FF00]">
               {category.label}
@@ -126,10 +126,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
               </p>
             ) : null}
           </div>
-          <h1 className="text-balance text-[2rem] font-black leading-[1.04] tracking-[-0.05em] text-[#F5F5F5] sm:text-[2.65rem] lg:text-[3rem]">
+          <h1 className="text-balance break-words [overflow-wrap:anywhere] [hyphens:auto] text-[1.75rem] font-black leading-[1.1] tracking-[-0.04em] text-[#F5F5F5] min-[400px]:text-[2rem] sm:text-[2.65rem] sm:leading-[1.06] lg:text-[3rem]">
             {post.title}
           </h1>
-          <p className="mt-4 text-[15px] leading-7 text-[#E6E6E6]/84 sm:text-[16px]">
+          <p className="mt-4 break-words text-[15px] leading-7 text-[#E6E6E6]/84 sm:text-[16px]">
             {post.description}
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-[#F5F5F5]/58">
@@ -165,14 +165,14 @@ export default async function BlogArticlePage({ params }: PageProps) {
           title={post.imageAlt}
         />
 
-        <div className={planned ? "max-w-[820px]" : "grid gap-10 lg:grid-cols-[240px_1fr] lg:gap-12"}>
+        <div className={planned ? "max-w-[820px]" : "grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12"}>
           {!planned ? (
-            <aside className="lg:sticky lg:top-32 lg:self-start">
+            <aside className="min-w-0 lg:sticky lg:top-32 lg:self-start">
               <BlogTableOfContents sections={post.sections} />
             </aside>
           ) : null}
 
-          <div>
+          <div className="min-w-0">
             {planned ? (
               <BlogPlannedNotice />
             ) : (

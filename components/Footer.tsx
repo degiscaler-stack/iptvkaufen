@@ -138,7 +138,7 @@ export default function Footer() {
     <footer className="relative border-t border-[#A6FF00]/30 bg-[#080B08] px-5 pb-8 pt-12 sm:px-8 sm:pb-9 sm:pt-14 lg:px-0 lg:pt-16">
       <div className="mx-auto max-w-[1360px] lg:px-12">
         <div className="rounded-[26px] border border-[#1F1F1F]/95 bg-[#0A0F0A] p-5 shadow-[0_22px_60px_rgba(0,0,0,0.34)] sm:p-7 lg:p-8">
-          <div className="grid gap-10 border-b border-[#1F1F1F]/90 pb-10 sm:grid-cols-2 sm:gap-11 lg:grid-cols-[1.35fr_0.75fr_0.9fr_0.85fr_0.9fr] lg:gap-10 lg:pb-12 xl:gap-12">
+          <div className="grid gap-10 border-b border-[#1F1F1F]/90 pb-10 sm:grid-cols-2 sm:gap-11 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.75fr)_minmax(0,0.9fr)_minmax(0,0.85fr)_minmax(0,0.9fr)] lg:gap-10 lg:pb-12 xl:gap-12">
           <div className="max-w-[430px] rounded-2xl border border-[#1F1F1F]/85 bg-[#080B08] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] sm:p-6 lg:-ml-1">
             <Link href="/" aria-label="iptvkaufenX Startseite" className="inline-flex rounded-xl">
               <Image

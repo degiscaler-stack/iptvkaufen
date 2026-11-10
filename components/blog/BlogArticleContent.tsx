@@ -250,7 +250,7 @@ export function BlogArticleHeroImage({
   const useDirectImage = Boolean(image && image.startsWith("/images/"));
 
   return (
-    <figure className="relative mb-8 aspect-[16/9] overflow-hidden rounded-[26px] border border-[#1F1F1F] bg-[#050505]">
+    <figure className={`relative mb-8 ${useDirectImage ? "aspect-[16/10]" : "aspect-[16/9]"} overflow-hidden rounded-[26px] border border-[#1F1F1F] bg-[#050505]`}>
       {useDirectImage ? (
         <Image
           src={image!}

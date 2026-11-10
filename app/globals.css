@@ -400,6 +400,8 @@ button {
 
 /* Blog article typography */
 .blog-prose {
+  min-width: 0;
+  overflow-wrap: break-word;
   color: rgba(230, 230, 230, 0.86);
   font-size: 15px;
   line-height: 1.85;
@@ -407,6 +409,21 @@ button {
 
 .blog-prose > section + section {
   margin-top: 2.5rem;
+}
+
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.blog-prose li {
+  min-width: 0;
+}
+
+.blog-prose li > * {
+  min-width: 0;
 }
 
 .blog-prose h2 {

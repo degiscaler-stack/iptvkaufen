@@ -9,7 +9,7 @@ export default function BlogTableOfContents({ sections }: BlogTableOfContentsPro
   if (!headings.length) return null;
 
   return (
-    <nav aria-labelledby="toc-heading" className="rounded-2xl border border-[#1F1F1F] bg-[#050806]/80 p-5">
+    <nav aria-labelledby="toc-heading" className="rounded-2xl border border-[#1F1F1F] bg-[#050806]/80 p-4 sm:p-5">
       <h2
         id="toc-heading"
         className="text-[13px] font-bold uppercase tracking-[0.16em] text-[#A6FF00]"
@@ -21,12 +21,12 @@ export default function BlogTableOfContents({ sections }: BlogTableOfContentsPro
           <li key={section.id}>
             <a
               href={`#${section.id}`}
-              className="flex gap-3 text-[14px] leading-6 text-[#E6E6E6]/78 transition duration-300 hover:text-[#A6FF00]"
+              className="flex min-w-0 gap-3 text-[14px] leading-6 text-[#E6E6E6]/78 transition duration-300 hover:text-[#A6FF00]"
             >
               <span className="shrink-0 font-semibold text-[#A6FF00]/60">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span>{section.heading}</span>
+              <span className="min-w-0 break-words [overflow-wrap:anywhere]">{section.heading}</span>
             </a>
           </li>
         ))}
