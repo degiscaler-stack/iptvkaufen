@@ -17,7 +17,7 @@ const post = {
   publishedAt: "2026-06-27T10:00:00.000Z",
   updatedAt: "2026-06-27T14:00:00.000Z",
   readingTimeMinutes: 19,
-  image: "/images/post 2/iptv-free-trial-1.webp",
+  image: "/images/blog/iptv-test/iptv-test-mann-sofa-fernseher.webp",
   imageAlt: "IPTV Free Trial auf Smart TV und Tablet in Deutschland",
   featured: false,
   popular: true,
@@ -106,7 +106,7 @@ const post = {
         "Für technisch weniger erfahrene Nutzer klingt die Einrichtung zunächst kompliziert. In der Praxis wiederholt sich das Muster bei fast jedem seriösen IPTV Dienst: App öffnen, Login-Daten einfügen, Senderliste laden, fertig. Ein guter Free Trial unterscheidet sich oft nur durch verständliche Anleitungen und erreichbaren Support – nicht durch eine andere Technik.",
       ],
       image: {
-        src: "/images/post 2/iptv-free-trial-2.webp",
+        src: "/images/blog/iptv-test/iptv-test-fernbedienung-hand-fernseher.webp",
         alt: "IPTV Free Trial Einrichtung auf Smart TV mit Senderübersicht",
         title: "IPTV Free Trial – Testzugang auf dem Fernseher einrichten",
         caption:
@@ -227,7 +227,7 @@ const post = {
         },
       ],
       image: {
-        src: "/images/post 2/iptv-free-trial-3.webp",
+        src: "/images/blog/iptv-test/iptv-test-fernseher-tablet-smartphone.webp",
         alt: "IPTV Free Trial auf Fire TV und Smartphone parallel testen",
         title: "IPTV Free Trial – Video Streaming auf mehreren Geräten prüfen",
         caption:

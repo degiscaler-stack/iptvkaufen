@@ -17,7 +17,7 @@
   "publishedAt": "2026-11-10T01:03:19.913Z",
   "updatedAt": "2026-11-10T01:30:39.116Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog-photos/iptv-europe-familie-sofa-fernsehen.webp",
+  "image": "/images/blog/iptv-europe/iptv-europe-familie-sofa-fernsehen.webp",
   "imageAlt": "Familie sitzt abends gemeinsam auf dem Sofa und schaut fern, der Vater hält die Fernbedienung",
   "featured": false,
   "popular": false,
@@ -146,7 +146,7 @@
         }
       ],
       "image": {
-        "src": "/images/blog-photos/iptv-europe-europakarte-pinnadeln.webp",
+        "src": "/images/blog/iptv-europe/iptv-europe-europakarte-pinnadeln.webp",
         "alt": "Landkarte von Europa mit blauen Pinnnadeln, die verschiedene Länder markieren",
         "title": "Europakarte mit Markierungen",
         "caption": "Europakarte mit Markierungen – Foto: Lara Jameson / Pexels",
@@ -183,7 +183,7 @@
         }
       ],
       "image": {
-        "src": "/images/blog-photos/iptv-europe-stadtplan-berlin-smartphone.webp",
+        "src": "/images/blog/iptv-europe/iptv-europe-stadtplan-berlin-smartphone.webp",
         "alt": "Hand auf einem Stadtplan von Berlin, am Kartenrand Fotos von Sehenswürdigkeiten",
         "title": "Stadtplan von Berlin bei der Reiseplanung",
         "caption": "Stadtplan von Berlin bei der Reiseplanung – Foto: Kateryna Naidenko / Pexels",

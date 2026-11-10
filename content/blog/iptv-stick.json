@@ -16,7 +16,7 @@
   "publishedAt": "2026-07-13T10:00:00.000Z",
   "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
-  "image": "/images/post 18/iptv-stick-1.webp",
+  "image": "/images/blog/iptv-stick/iptv-stick-stick-fernbedienung-fernseher.webp",
   "imageAlt": "IPTV Stick am HDMI-Anschluss eines Fernsehers in Deutschland",
   "featured": false,
   "popular": true,
@@ -133,7 +133,7 @@
         "Notieren Sie sich nach der Ersteinrichtung kurz, welches WLAN-Netzwerk verwendet wurde und ob ein Update installiert wurde. Bei späteren Problemen hilft diese kleine Notiz, schneller zwischen einem Netzwerk- und einem App-Problem zu unterscheiden."
       ],
       "image": {
-        "src": "/images/post 18/iptv-stick-2.webp",
+        "src": "/images/blog/iptv-stick/iptv-stick-stick-vorteile-uebersicht.webp",
         "alt": "IPTV Stick Anschluss am HDMI-Port eines Fernsehers",
         "title": "IPTV Stick – Anschluss und erste Einrichtung",
         "width": 1536,
@@ -220,7 +220,7 @@
         "Manche Fernbedienungen unterstützen zusätzlich Sprachsteuerung zur Sendersuche. Ob diese Funktion mit einer bestimmten IPTV-App zusammenarbeitet, hängt von der jeweiligen App-Integration ab und sollte im Zweifel direkt getestet werden."
       ],
       "image": {
-        "src": "/images/post 18/iptv-stick-3.webp",
+        "src": "/images/blog/iptv-stick/iptv-stick-stick-hdmi-fernbedienung.webp",
         "alt": "IPTV Stick Fernbedienung und Senderauswahl auf dem Fernseher",
         "title": "IPTV Stick – Bedienung mit der Fernbedienung",
         "width": 1536,

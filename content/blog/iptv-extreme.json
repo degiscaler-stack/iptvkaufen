@@ -16,7 +16,7 @@
   "publishedAt": "2026-07-13T10:00:00.000Z",
   "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
-  "image": "/images/post 16/iptv-extreme-1.webp",
+  "image": "/images/blog/iptv-extreme/iptv-extreme-fernseher-smartphone-oberflaeche.webp",
   "imageAlt": "IPTV Extreme App auf Android TV – Live-TV Oberfläche mit Senderliste",
   "featured": false,
   "popular": true,
@@ -131,7 +131,7 @@
         "Nach erfolgreicher Installation lohnt ein kurzer Blick in die Berechtigungen der App, insbesondere wenn Sie später lokale Playlist-Dateien laden oder Einstellungen exportieren möchten. Erteilen Sie nur die Zugriffe, die für Ihre geplante Nutzung tatsächlich notwendig sind."
       ],
       "image": {
-        "src": "/images/post 16/iptv-extreme-2.webp",
+        "src": "/images/blog/iptv-extreme/iptv-extreme-playlist-oberflaeche-fernseher.webp",
         "alt": "IPTV Extreme Installation und Startbildschirm auf Android",
         "title": "IPTV Extreme – Installation und Ersteinrichtung",
         "width": 1536,
@@ -222,7 +222,7 @@
         "Grundsätzlich gilt: Player-Einstellungen können die Wiedergabe innerhalb der Möglichkeiten Ihres Geräts und Ihrer Leitung optimieren, sie können aber keine grundsätzlich schwache Verbindung oder einen überlasteten Server ausgleichen."
       ],
       "image": {
-        "src": "/images/post 16/iptv-extreme-3.webp",
+        "src": "/images/blog/iptv-extreme/iptv-extreme-funktionsuebersicht-geraete.webp",
         "alt": "IPTV Extreme Player-Einstellungen und Wiedergabeoptionen",
         "title": "IPTV Extreme – Player-Einstellungen anpassen",
         "width": 1536,

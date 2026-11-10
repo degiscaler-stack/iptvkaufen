@@ -17,7 +17,7 @@
   "publishedAt": "2026-11-10T01:03:19.913Z",
   "updatedAt": "2026-11-10T01:30:39.116Z",
   "readingTimeMinutes": 5,
-  "image": "/images/blog-photos/iptv-internet-protocol-wlan-router-holz.webp",
+  "image": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-wlan-router-holz.webp",
   "imageAlt": "Kleiner weißer WLAN-Router mit zwei Antennen auf einer Holzfläche, daran ein grünes Netzwerkkabel",
   "featured": false,
   "popular": false,
@@ -94,7 +94,7 @@
         "Daneben nutzen viele Anbieter und Apps den Begriff für Live-Fernsehen per Internet auf beliebigen Geräten: Sie erhalten Zugangsdaten, tragen sie in eine Player-App ein und sehen die Senderliste auf Smart TV, Stick, Tablet oder PC. Genau diese zweite Bedeutung meinen die meisten Anleitungen auf dieser Website."
       ],
       "image": {
-        "src": "/images/blog-photos/iptv-internet-protocol-wohnzimmer-fernseher-holzwand.webp",
+        "src": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-wohnzimmer-fernseher-holzwand.webp",
         "alt": "Wohnzimmer mit Holzpaneelwand, daran ein Fernseher, davor ein helles Sofa",
         "title": "Wohnzimmer mit Fernseher",
         "caption": "Wohnzimmer mit Fernseher – Foto: Max Vakhtbovych / Pexels",
@@ -119,7 +119,7 @@
         "Bei Problemen lohnt eine systematische Eingrenzung: Läuft derselbe Sender auf einem zweiten Gerät? Hilft ein LAN-Kabel? Ändert sich das Verhalten zu anderen Uhrzeiten?"
       ],
       "image": {
-        "src": "/images/blog-photos/iptv-internet-protocol-netzwerkdosen-lan-kabel.webp",
+        "src": "/images/blog/iptv-internet-protocol/iptv-internet-protocol-netzwerkdosen-lan-kabel.webp",
         "alt": "Zwei Netzwerkdosen an einer Wand mit angeschlossenen LAN-Kabeln",
         "title": "Netzwerkdosen mit LAN-Kabeln",
         "caption": "Netzwerkdosen mit LAN-Kabeln – Foto: panumas nikhomkhai / Pexels",

@@ -18,7 +18,7 @@
   "publishedAt": "2026-07-25T18:00:00.000Z",
   "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
-  "image": "/images/post 28/iptv-nordic-1.webp",
+  "image": "/images/blog/iptv-nordic/iptv-nordic-nordische-sender-fernseher.webp",
   "imageAlt": "Nordisches Fernsehen auf dem Smart TV in Deutschland empfangen",
   "featured": false,
   "popular": true,
@@ -291,7 +291,7 @@
         "Organisieren Sie nordische und deutsche Kanäle getrennt. Wenn sich Kategorien nach einem Update verschieben, laden Sie die Playlist neu und prüfen Sie Favoriten erneut – manche Apps behalten sie, andere nicht."
       ],
       "image": {
-        "src": "/images/post 28/iptv-nordic-2.webp",
+        "src": "/images/blog/iptv-nordic/iptv-nordic-nordische-sender-programmuebersicht.webp",
         "alt": "Nordische Sender nach Land und Kategorie in Favoriten und EPG organisieren",
         "title": "Länder, Favoriten und EPG für nordische Programme",
         "width": 1536,
@@ -350,7 +350,7 @@
         "Account-Sicherheit bleibt zentral: Zugangsdaten nicht öffentlich teilen, nicht in Gruppenchats posten und starke Passwörter nutzen, wo Sie eigene Kontodaten setzen können."
       ],
       "image": {
-        "src": "/images/post 28/iptv-nordic-3.webp",
+        "src": "/images/blog/iptv-nordic/iptv-nordic-nordische-sender-mehrere-geraete.webp",
         "alt": "Nordisches IPTV auf Smart TV, Stick und Tablet im Haushalt nutzen",
         "title": "Mehrgeräte-Nutzung für IPTV Nordic",
         "width": 1536,

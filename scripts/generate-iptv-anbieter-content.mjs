@@ -17,7 +17,7 @@ const post = {
   publishedAt: "2026-06-29T10:00:00.000Z",
   updatedAt: "2026-06-29T14:00:00.000Z",
   readingTimeMinutes: 18,
-  image: "/images/post 4/iptv-anbieter-1.webp",
+  image: "/images/blog/iptv-anbieter/iptv-anbieter-anbietervergleich-laptop-checkliste.webp",
   imageAlt: "IPTV Anbieter Vergleich auf Smart TV in Deutschland",
   featured: false,
   popular: true,
@@ -108,7 +108,7 @@ const post = {
         "Wer bereits [German IPTV](/blog/german-iptv) versteht, kann Anbieter gezielter vergleichen: Es geht nicht um eine neue Empfangsart, sondern um den Dienst, der sie zuverlässig bereitstellt.",
       ],
       image: {
-        src: "/images/post 4/iptv-anbieter-2.webp",
+        src: "/images/blog/iptv-anbieter/iptv-anbieter-anbietervergleich-schreibtisch.webp",
         alt: "IPTV Anbieter Senderübersicht auf dem Fernseher in Deutschland",
         title: "IPTV Anbieter – Live-TV und Senderauswahl im Überblick",
         caption:
@@ -200,7 +200,7 @@ const post = {
         "Barrierefreiheit und einfache Menüs sind für ältere Nutzer entscheidend. IPTV Anbieter mit verständlichen Anleitungen und großer Schrift in Apps erleichtern den Einstieg im Mehrgenerationenhaushalt.",
       ],
       image: {
-        src: "/images/post 4/iptv-anbieter-3.webp",
+        src: "/images/blog/iptv-anbieter/iptv-anbieter-fernsehen-sofa-tablet.webp",
         alt: "IPTV Anbieter auf Fire TV und Smartphone parallel genutzt",
         title: "IPTV Anbieter – Multi-Device Streaming in Deutschland",
         caption:

@@ -16,7 +16,7 @@ const post = {
   publishedAt: "2026-06-28T10:00:00.000Z",
   updatedAt: "2026-06-28T14:00:00.000Z",
   readingTimeMinutes: 17,
-  image: "/images/post 3/iptv-box-1.webp",
+  image: "/images/blog/iptv-box/iptv-box-box-wohnzimmer-fernseher.webp",
   imageAlt: "IPTV Box mit Fernbedienung am modernen Fernseher in Deutschland",
   featured: false,
   popular: true,
@@ -101,7 +101,7 @@ const post = {
         "Im Alltag unterscheidet sich die Nutzung kaum vom gewohnten TV: Sender wählen, Lautstärke regeln, Programmzeiten im EPG nachschlagen. Der Unterschied liegt in der Vielfalt – internationale Kanäle, Sportpakete und Mediatheken-Inhalte lassen sich oft in einer Oberfläche bündeln, wenn Ihr Anbieter das unterstützt.",
       ],
       image: {
-        src: "/images/post 3/iptv-box-2.webp",
+        src: "/images/blog/iptv-box/iptv-box-box-fernbedienung-nahaufnahme.webp",
         alt: "IPTV Box Setup mit HDMI am Fernseher in Deutschland",
         title: "IPTV Box – Anschluss und Einrichtung am TV",
         caption: "IPTV Box – Kompakte Hardware für Live-TV per Streaming (16:10)",
@@ -253,7 +253,7 @@ const post = {
         "Favoriten anlegen und Bedienung mit der Familie testen",
       ],
       image: {
-        src: "/images/post 3/iptv-box-3.webp",
+        src: "/images/blog/iptv-box/iptv-box-einrichtungsassistent-fernseher.webp",
         alt: "IPTV Box Einrichtung mit Media Player App auf dem TV",
         title: "IPTV Box – Media Player und Senderliste einrichten",
         caption: "IPTV Box – App-Setup für stabiles Live-TV (16:10)",

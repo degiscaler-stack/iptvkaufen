@@ -16,7 +16,7 @@
   "publishedAt": "2026-07-13T10:00:00.000Z",
   "updatedAt": "2026-11-09T23:41:37.700Z",
   "readingTimeMinutes": 18,
-  "image": "/images/post 13/flix-iptv-1.webp",
+  "image": "/images/blog/flix-iptv/flix-iptv-fernseher-sportuebersicht.webp",
   "imageAlt": "Flix IPTV auf Smart TV im Wohnzimmer – Live-TV Player Oberfläche mit Senderliste",
   "featured": false,
   "popular": true,
@@ -177,7 +177,7 @@
         "Mehr zur Struktur von Playlists und zum Unterschied zwischen M3U und Zugangsdaten mit Benutzername und Passwort erklärt unser Artikel [IPTV M3U](/blog/iptv-m3u)."
       ],
       "image": {
-        "src": "/images/post 13/flix-iptv-2.webp",
+        "src": "/images/blog/flix-iptv/flix-iptv-playlist-einrichtung-oberflaeche.webp",
         "alt": "Flix IPTV Playlist und M3U Zugangsdaten auf dem Smart TV einrichten",
         "title": "Flix IPTV – Playlist einrichten auf dem Smart TV",
         "width": 1536,
@@ -230,7 +230,7 @@
         "Mobilgeräte und Tablets sind bei Flix IPTV in der Regel nicht der Hauptanwendungsfall. Wer plattformübergreifend dieselbe Playlist nutzen möchte, sollte prüfen, ob ein alternativer Player wie [IPTV Smarters Pro](/blog/iptv-smarters-pro) für diese Geräte besser passt."
       ],
       "image": {
-        "src": "/images/post 13/flix-iptv-3.webp",
+        "src": "/images/blog/flix-iptv/flix-iptv-fernseher-tablet-smartphone.webp",
         "alt": "Flix IPTV Gerätekompatibilität – Smart TV und alternative Streaming-Geräte im Vergleich",
         "title": "Flix IPTV – Gerätekompatibilität im Überblick",
         "width": 1536,

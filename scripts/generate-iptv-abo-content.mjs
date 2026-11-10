@@ -16,7 +16,7 @@ const post = {
   publishedAt: "2026-06-29T16:00:00.000Z",
   updatedAt: "2026-06-29T18:00:00.000Z",
   readingTimeMinutes: 17,
-  image: "/images/post 5/iptv-abo-1.webp",
+  image: "/images/blog/iptv-abo/iptv-abo-familie-fernsehabend.webp",
   imageAlt: "IPTV Abo auf Smart TV mit Senderübersicht in Deutschland",
   featured: false,
   popular: true,
@@ -229,7 +229,7 @@ const post = {
         "Vermeiden Sie Druck durch Countdown-Angebote. Gute Anbieter überzeugen dauerhaft, nicht nur mit zeitlich begrenzten Rabattbannern.",
       ],
       image: {
-        src: "/images/post 5/iptv-abo-2.webp",
+        src: "/images/blog/iptv-abo/iptv-abo-tarifvergleich-laptop.webp",
         alt: "IPTV Abo Paketvergleich auf Tablet und Smart TV in Deutschland",
         title: "IPTV Abo – Pakete und Sender auf mehreren Geräten",
         caption: "IPTV Abo – Flexibel auf TV und Mobilgerät nutzen (16:10)",
@@ -405,7 +405,7 @@ const post = {
         },
       ],
       image: {
-        src: "/images/post 5/iptv-abo-3.webp",
+        src: "/images/blog/iptv-abo/iptv-abo-fernseher-box-smartphone.webp",
         alt: "IPTV Abo Einrichtung mit Fernbedienung und EPG auf dem Fernseher",
         title: "IPTV Abo – Einrichtung und Programmführer in der Praxis",
         caption: "IPTV Abo – EPG und Sender nach der Aktivierung (16:10)",
