@@ -2,7 +2,7 @@ const trustPoints = [
   "Schnelle Aktivierung",
   "Sichere Zahlung",
   "Deutschsprachiger Support",
-  "30 Tage Geld-zurück-Garantie",
+  "Geld-zurück-Garantie während der gesamten Laufzeit",
 ] as const;
 
 export default function CompactTrustStrip() {

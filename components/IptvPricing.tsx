@@ -107,7 +107,7 @@ const reassurancePoints = [
   "Schnelle Aktivierung nach Zahlungseingang",
   "Hilfe bei der Einrichtung",
   "Deutschsprachiger Support",
-  "30 Tage Geld-zurück-Garantie",
+  "Geld-zurück-Garantie während der gesamten Laufzeit",
 ] as const;
 
 const packageCtaBaseClass =
@@ -523,10 +523,10 @@ export default function IptvPricing() {
         </div>
 
         <div className="mx-auto mt-6 max-w-[820px] rounded-[20px] border border-[#A6FF00]/16 bg-[#0A0F0A]/78 p-4 text-center sm:mt-8 sm:p-5">
-          <h3 className="text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">30 Tage Geld-zurück-Garantie</h3>
+          <h3 className="text-[15px] font-bold text-[#F5F5F5] sm:text-[16px]">Geld-zurück-Garantie während der gesamten Abonnementlaufzeit</h3>
           <p className="mt-2 text-[14px] leading-6 text-[#E6E6E6]/86 sm:text-[15px]">
-            Wenn Sie mit dem Service nicht zufrieden sind, können Sie innerhalb von 30 Tagen nach dem Kauf eine
-            Rückerstattung gemäß unserer Rückerstattungsrichtlinie beantragen.
+            Nicht zufrieden oder ein Problem mit Ihrem Kauf? Sie können während der gesamten Laufzeit Ihres Abonnements
+            jederzeit eine vollständige Rückerstattung beantragen.
           </p>
           <TrackedLink
             href="/rueckerstattung"

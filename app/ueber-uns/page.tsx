@@ -23,7 +23,7 @@ const sections: LegalSection[] = [
     paragraphs: [
       "iptvkaufenX bietet einen digitalen IPTV-Dienst mit flexiblen Paketlaufzeiten. Je nach gewähltem Paket sind Inhalte in HD, Full HD und 4K verfügbar; die gleichzeitige Nutzung auf mehreren Geräten richtet sich nach dem gebuchten Tarif.",
       "Die Einrichtung erfolgt digital – in der Regel mit Zugangsdaten und einer passenden App auf dem gewünschten Gerät. Aktuelle Pakete, Geräteoptionen und Preise sind auf der Website unter [Preise](/#pakete-start) einsehbar.",
-      "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine 30-Tage-Geld-zurück-Garantie gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung).",
+      "Zum Kennenlernen steht ein 24-Stunden-Test für 3 € zur Verfügung. Für gebuchte Pakete gilt eine Geld-zurück-Garantie während der gesamten Abonnementlaufzeit gemäß unserer [Rückerstattungsrichtlinie](/rueckerstattung).",
     ],
   },
   {

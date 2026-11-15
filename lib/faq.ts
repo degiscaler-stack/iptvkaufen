@@ -37,7 +37,7 @@ export const FAQ_ITEMS = [
   {
     question: "Gibt es eine Geld-zurück-Garantie?",
     answer:
-      "Ja. Sie können innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn Sie mit dem Service nicht zufrieden sind – gemäß unserer Rückerstattungsrichtlinie.",
+      "Ja. Nicht zufrieden oder ein Problem mit Ihrem Kauf? Sie können während der gesamten Laufzeit Ihres Abonnements jederzeit eine vollständige Rückerstattung beantragen – gemäß unserer Rückerstattungsrichtlinie.",
   },
   {
     question: "Auf welchen Geräten funktioniert IPTV?",

@@ -22,7 +22,7 @@ const sections: LegalSection[] = [
   {
     title: "Genauigkeitsstandards",
     paragraphs: [
-      "Inhalte werden mit Sorgfalt erstellt und regelmäßig geprüft. Leistungsangaben zum Service – etwa HD/4K, flexible Pakete, Nutzung auf mehreren Geräten, 24-Stunden-Test für 3 € sowie 30-Tage-Geld-zurück-Garantie – orientieren sich an den auf der Website ausgewiesenen Informationen.",
+      "Inhalte werden mit Sorgfalt erstellt und regelmäßig geprüft. Leistungsangaben zum Service – etwa HD/4K, flexible Pakete, Nutzung auf mehreren Geräten, 24-Stunden-Test für 3 € sowie Geld-zurück-Garantie während der gesamten Abonnementlaufzeit – orientieren sich an den auf der Website ausgewiesenen Informationen.",
       "Technische Tipps in Blog-Beiträgen beschreiben typische Setups und Vorgehensweisen. Die tatsächliche Funktion hängt von Gerät, App, Internetverbindung und korrekter Einrichtung ab.",
     ],
   },

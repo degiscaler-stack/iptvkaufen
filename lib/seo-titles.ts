@@ -10,7 +10,7 @@ export const SEO_TITLES = {
   datenschutz: "Datenschutz & DSGVO | iptvkaufenX",
   impressum: "Impressum & Anbieterkennzeichnung | iptvkaufenX",
   nutzungsbedingungen: "AGB & Nutzungsbedingungen | iptvkaufenX",
-  rueckerstattung: "Rückerstattung: 30 Tage Garantie | iptvkaufenX",
+  rueckerstattung: "Rückerstattung: Geld-zurück-Garantie | iptvkaufenX",
   ueberUns: "Über uns: IPTV Service | iptvkaufenX",
   redaktionelleRichtlinien: "Redaktionelle Richtlinien | iptvkaufenX",
   inhaltsrichtlinien: "Inhaltsrichtlinien | iptvkaufenX",

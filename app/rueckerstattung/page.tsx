@@ -13,11 +13,11 @@ export const metadata: Metadata = buildPageMetadata({
 
 const sections: LegalSection[] = [
   {
-    title: "30 Tage Geld-zurück-Garantie",
+    title: "Geld-zurück-Garantie während der gesamten Abonnementlaufzeit",
     paragraphs: [
-      "Wenn Sie mit dem Service nicht zufrieden sind, können Sie innerhalb von 30 Tagen nach dem Kauf eine Rückerstattung beantragen.",
+      "Nicht zufrieden oder ein Problem mit Ihrem Kauf? Sie können während der gesamten Laufzeit Ihres Abonnements jederzeit eine vollständige Rückerstattung beantragen.",
       "Die Anfrage muss nachvollziehbar gestellt werden. Bitte geben Sie nach Möglichkeit Bestellinformationen, Zahlungsdatum, verwendetes Gerät und eine kurze Beschreibung Ihres Anliegens an.",
-      "Jede Rückerstattungsanfrage wird einzeln geprüft. Die Entscheidung richtet sich nach den unten beschriebenen Bedingungen für digitale Dienste.",
+      "Der Support prüft Ihre Anfrage und informiert Sie über das Ergebnis sowie mögliche nächste Schritte.",
     ],
   },
   {
@@ -80,7 +80,7 @@ export default function RueckerstattungPage() {
       eyebrow="Rückerstattung"
       title="Rückerstattungsrichtlinie"
       updatedAt="30. Juni 2026"
-      intro="Diese Richtlinie beschreibt die 30-Tage-Geld-zurück-Garantie von iptvkaufenX sowie die Prüfung von Rückerstattungsanfragen für digitale IPTV-Dienste."
+      intro="Diese Richtlinie beschreibt die Geld-zurück-Garantie von iptvkaufenX während der gesamten Abonnementlaufzeit sowie die Prüfung von Rückerstattungsanfragen für digitale IPTV-Dienste."
       sections={sections}
     />
   );
