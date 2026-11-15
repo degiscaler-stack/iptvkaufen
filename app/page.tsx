@@ -11,8 +11,6 @@ import {
 import { FAQ_ITEMS } from "@/lib/faq";
 import {
   buildDigitalOfferShippingDetails,
-  buildMerchantReturnPolicy,
-  buildMerchantReturnPolicyRef,
 } from "@/lib/merchant-listing";
 import {
   getAllProductOffers,
@@ -86,9 +84,7 @@ const structuredData = {
         "https://www.pinterest.com/iptvkaufenx/",
         "https://www.youtube.com/@iptvkaufenx",
       ],
-      hasMerchantReturnPolicy: buildMerchantReturnPolicyRef(),
     },
-    buildMerchantReturnPolicy(),
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
@@ -139,7 +135,6 @@ const structuredData = {
         url: `${SITE_URL}/#preise`,
         itemOffered: { "@id": PRODUCT_ID },
         shippingDetails: buildDigitalOfferShippingDetails(),
-        hasMerchantReturnPolicy: buildMerchantReturnPolicyRef(),
       })),
     },
     {
