@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-07T10:00:00.000Z",
-  "updatedAt": "2026-11-09T23:41:37.700Z",
+  "updatedAt": "2026-11-15T12:56:51.042Z",
   "readingTimeMinutes": 20,
   "image": "/images/blog/iptv-m3u/iptv-m3u-m3u-url-laptop-box.webp",
   "imageAlt": "IPTV M3U Playlist auf Smart TV einrichten – Live-TV Streaming in Deutschland",
@@ -287,7 +287,7 @@
         "Neben IPTV M3U begegnen Ihnen oft Xtream Codes. Beide Wege führen zum gleichen Ziel – Live-TV in der App – unterscheiden sich aber in der Anmeldung. Wer die Unterschiede kennt, wählt die passende Methode für Gerät und Anbieter.",
         "Bei M3U fügen Sie eine Playlist-URL oder Datei ein. Die App lädt die Senderliste aus dieser Playlist. Bei Xtream Codes geben Sie drei Felder ein: Server-Adresse, Benutzername und Passwort. Die App holt Sender, Kategorien und oft auch EPG über die API.",
         "Viele Player wie [IPTV Smarters Pro](/blog/iptv-smarters-pro) und [TiviMate IPTV](/blog/tivimate-iptv) können M3U und Xtream verarbeiten. Welche Methode Sie nutzen, hängt vom Anbieter und Ihrer App ab – nicht von der Hardware allein. Die Login-Methode ist kein Beweis für bessere Bildqualität; das erklärt [IPTV Line kaufen](/blog/iptv-line-kaufen).",
-        "Xtream wirkt oft komfortabler, weil Kategorien und EPG gebündelt ankommen. M3U bleibt universell: Selbst einfache Player und VLC verstehen Playlists. Entscheidend bleibt die Quelle. Ob M3U oder Xtream: Eine instabile Free-Liste bleibt instabil."
+        "Xtream wirkt oft komfortabler, weil Kategorien und EPG gebündelt ankommen. M3U bleibt universell: Selbst einfache Player und VLC verstehen Playlists. Entscheidend bleibt die Quelle. Ob M3U oder Xtream: Eine instabile Free-Liste bleibt instabil. Wie sich Xtream-Login und Playlist-Upload bei Apps wie Smart IPTV unterscheiden, erklärt der Ratgeber [Smart IPTV Xtream Player](/blog/smart-iptv-xtream-player)."
       ],
       "blocks": [
         {
@@ -504,7 +504,7 @@
       "level": 2,
       "paragraphs": [
         "Schritt 1: Wählen Sie einen seriösen Anbieter und ein passendes Paket. Prüfen Sie [Preise](/preise), Senderliste und Gerätekompatibilität. Ein [Testzugang für 3 €](/blog/iptv-free-trial) reduziert das Risiko.",
-        "Schritt 2: Installieren Sie eine kompatible App – etwa [IPTV Smarters Pro](/blog/iptv-smarters-pro) oder [TiviMate IPTV](/blog/tivimate-iptv) auf Android oder Fire TV, alternativ VLC zum Kurztest am PC. Bei älteren Fernsehern hilft eine [IPTV Box](/blog/iptv-box).",
+        "Schritt 2: Installieren Sie eine kompatible App – etwa [IPTV Smarters Pro](/blog/iptv-smarters-pro) oder [TiviMate IPTV](/blog/tivimate-iptv) auf Android oder Fire TV, alternativ VLC zum Kurztest am PC. Bei älteren Fernsehern hilft eine [IPTV Box](/blog/iptv-box). Wer die App Smart IPTV nutzt, lädt die Playlist über eine Webseite hoch; den Ablauf beschreibt der Ratgeber [Smart IPTV aktivieren](/blog/smart-iptv-aktivieren).",
         "Schritt 3: Kopieren Sie die IPTV M3U URL aus dem Kundenbereich oder der Willkommensmail. Fügen Sie sie in der App unter M3U Playlist ein. Vergeben Sie einen klaren Namen.",
         "Schritt 4: Tragen Sie optional die EPG-URL ein und starten Sie den ersten Sync. Warten Sie, bis Sender und Programmheft geladen sind.",
         "Schritt 5: Testen Sie Must-have-Sender zur Hauptsendezeit. Prüfen Sie Bild, Ton und Umschaltzeiten. So erkennen Sie früh, ob Leitung oder Playlist das Problem ist.",

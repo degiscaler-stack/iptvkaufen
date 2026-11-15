@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-01T10:00:00.000Z",
-  "updatedAt": "2026-11-09T23:41:37.700Z",
+  "updatedAt": "2026-11-15T12:56:51.042Z",
   "readingTimeMinutes": 18,
   "image": "/images/blog/iptv-provider/iptv-provider-provider-fernseher-laptop.webp",
   "imageAlt": "IPTV Provider Technik – Streaming-Infrastruktur und Serverqualität erklärt",
@@ -109,7 +109,7 @@
       "paragraphs": [
         "Ein IPTV-Dienst muss nicht jede technische Komponente in einem einzigen Unternehmen vereinen. Die ITU-T beschreibt in der funktionalen Architektur vier Domänen: Content Provider, Service Provider, Network Provider und End User. Ein Unternehmen kann mehrere Rollen ausfüllen; die Rollen können aber auch getrennt sein.",
         "Der Content Provider stellt Inhalte oder Nutzungsrechte bereit. Der Service Provider packt den Dienst für Endnutzer – etwa Zugang, Senderübersicht, Authentifizierung und oft EPG. Der Network Provider betreibt Netzkomponenten, über die der Dienst läuft. Der End User empfängt den Dienst über Player, App und Heimnetz.",
-        "Wenn in diesem Artikel von einem IPTV Provider die Rede ist, meinen wir im Verbraucher-Sinn den Dienst, mit dem Sie sich anmelden und Streams abspielen. Das heißt nicht automatisch, dass derselbe Anbieter Origin-Server, CDN, Transitnetz und Player selbst betreibt. Genau diese Unterscheidung ist wichtig, bevor Sie Buffering oder Ausfälle einer einzigen Ursache zuordnen.",
+        "Wenn in diesem Artikel von einem IPTV Provider die Rede ist, meinen wir im Verbraucher-Sinn den Dienst, mit dem Sie sich anmelden und Streams abspielen. Das heißt nicht automatisch, dass derselbe Anbieter Origin-Server, CDN, Transitnetz und Player selbst betreibt. Genau diese Unterscheidung ist wichtig, bevor Sie Buffering oder Ausfälle einer einzigen Ursache zuordnen. Die technischen Grundlagen von IPTV erklärt der Beitrag [IPTV Internet Protocol](/blog/iptv-internet-protocol).",
         "Typische Aufgaben auf Dienstseite sind Ingest oder Übernahme von Quellen, Bereitstellung passender Stream-Profile, Authentifizierung, Pflege von Kanalmetadaten und die Ausgabe einer Playlist oder eines anderen Zugangsformats. Hardware wie [IPTV Box](/blog/iptv-box) oder [IPTV Receiver](/blog/iptv-receiver) dekodiert und zeigt den Stream. Der Player – etwa ein [IPTV Player](/blog/iptv-player) – ist die Bedienoberfläche, nicht die Infrastruktur."
       ],
       "list": [

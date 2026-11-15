@@ -14,7 +14,7 @@
     "role": "IPTV Experten"
   },
   "publishedAt": "2026-07-06T10:00:00.000Z",
-  "updatedAt": "2026-11-07T15:33:48.730Z",
+  "updatedAt": "2026-11-15T12:56:51.042Z",
   "readingTimeMinutes": 19,
   "image": "/images/blog/tivimate-iptv/tivimate-iptv-tivimate-fernseher-tablet.webp",
   "imageAlt": "TiviMate IPTV App auf Android TV – Live-TV Oberfläche mit Senderliste und EPG",
@@ -135,7 +135,7 @@
       "heading": "Nachteile und Grenzen",
       "level": 2,
       "paragraphs": [
-        "TiviMate IPTV läuft primär im Android-Ökosystem. Auf vielen Smart-TVs ohne Android, auf Apple TV oder reinen Web-OS-/Tizen-Lösungen ist die App nicht oder nur eingeschränkt verfügbar. Dann brauchen Sie eine externe Box oder einen anderen Player.",
+        "TiviMate IPTV läuft primär im Android-Ökosystem. Auf vielen Smart-TVs ohne Android, auf Apple TV oder reinen Web-OS-/Tizen-Lösungen ist die App nicht oder nur eingeschränkt verfügbar. Dann brauchen Sie eine externe Box oder einen anderen Player. Für Apple TV gibt es einen eigenen Ratgeber: [Beste IPTV App für Apple TV](/blog/beste-iptv-app-fuer-apple-tv).",
         "Auf dem Fire TV Stick ist die Installation oft umständlicher als im Google Play Store. Sideloading schreckt Einsteiger ab – obwohl es mit Downloader und klarer Anleitung gut funktioniert. Wer „eine Taste, fertig“ erwartet, sollte den Aufwand realistisch einschätzen.",
         "Die App liefert keine Inhalte. Fällt Ihr Provider aus, hilft TiviMate IPTV nicht weiter. Ruckler, fehlende Sender oder totes EPG sind häufig Anbieter- oder Netzprobleme – die App zeigt sie nur an. Deshalb bleibt die Wahl des [IPTV Providers](/blog/iptv-provider) entscheidend.",
         "Der Funktionsumfang kann Einsteiger überfordern. Viele Menüpunkte, EPG-Quellen, Buffer-Einstellungen und Aufnahmeoptionen wirken anfangs komplex. Wer nur drei Sender sehen will, kommt mit einer schlankeren App manchmal schneller zum Ziel – verliert aber langfristig Komfort.",
@@ -148,7 +148,7 @@
       "level": 2,
       "paragraphs": [
         "Die Installation von TiviMate IPTV unterscheidet sich je nach Gerät. Auf vielen Android-TV- und Google-TV-Boxen finden Sie die App im Play Store oder laden sie über den Hersteller-Store. Auf dem Fire TV Stick ist Sideloading der übliche Weg – das ist legal für die App selbst, erfordert aber ein paar zusätzliche Schritte.",
-        "Android TV / Google TV: Öffnen Sie den Play Store, suchen Sie nach TiviMate, installieren Sie die App und starten Sie sie von der Startseite. Erlauben Sie bei Bedarf Speicherzugriff, wenn Sie Aufnahmen oder lokale Playlists nutzen wollen. Danach geht es direkt zur Playlist-Einrichtung.",
+        "Android TV / Google TV: Öffnen Sie den Play Store, suchen Sie nach TiviMate, installieren Sie die App und starten Sie sie von der Startseite. Erlauben Sie bei Bedarf Speicherzugriff, wenn Sie Aufnahmen oder lokale Playlists nutzen wollen. Danach geht es direkt zur Playlist-Einrichtung. Eine Übersicht weiterer Apps für den Fernseher samt Auswahlkriterien bietet der Ratgeber [Beste IPTV App für Android TV](/blog/beste-iptv-app-fuer-android-tv).",
         "Fire TV Stick: Installieren Sie zuerst eine Downloader-App aus dem Amazon Appstore. Aktivieren Sie in den Geräteeinstellungen die Installation aus unbekannten Quellen für diese App. Laden Sie die aktuelle TiviMate-APK über eine vertrauenswürdige Quelle, installieren Sie sie und öffnen Sie TiviMate IPTV. Bewahren Sie die APK-Datei nicht unnötig auf öffentlichen Shares auf.",
         "Nach der Installation sollten Sie die App nicht sofort mit Dutzenden Experimenten überladen. Tragen Sie zuerst eine funktionierende Playlist ein, prüfen Sie einen bekannten Sender und richten Sie erst danach EPG und Favoriten ein. So trennen Sie Installationsfehler von Provider-Problemen.",
         "Geräteempfehlung parallel zur Installation: Eine Box mit mindestens 2 GB RAM, aktuellem Android und idealerweise LAN-Anschluss macht TiviMate IPTV spürbar flüssiger. Schwache Sticks mit überlastetem WLAN zeigen Ruckler, die fälschlich der App zugeschrieben werden. Mehr zur Hardware im [IPTV-Box-Ratgeber](/blog/iptv-box) und zum [IPTV Receiver](/blog/iptv-receiver).",
