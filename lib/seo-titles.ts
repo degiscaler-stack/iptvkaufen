@@ -56,6 +56,12 @@ export const SEO_TITLES = {
     "german-iptv-erfahrungen": "German IPTV Erfahrungen: Echt oder Werbung? | iptvkaufenX",
     "iptv-internet-protocol": "IPTV Internet Protocol: So funktioniert IPTV | iptvkaufenX",
     "beste-iptv-app-fuer-apple-tv": "Beste IPTV App für Apple TV: Worauf es ankommt | iptvkaufenX",
+    "bester-iptv-player-android": "Bester IPTV Player Android: 4 Apps im Check | iptvkaufenX",
+    "smart-iptv-aktivieren": "Smart IPTV aktivieren: Kosten & Schritte | iptvkaufenX",
+    "beste-iptv-app-fuer-android-tv": "Beste IPTV App Android TV: Auswahl & Setup | iptvkaufenX",
+    "smart-iptv-xtream-player": "Smart IPTV Xtream Player: Was steckt dahinter? | iptvkaufenX",
+    "iptv-anbieter-guenstig": "IPTV Anbieter günstig: Ab 9,99 € im Preischeck | iptvkaufenX",
+    "iptv-anbieter-erfahrungen": "IPTV Anbieter Erfahrungen richtig nutzen | iptvkaufenX",
   },
 } as const;
 
