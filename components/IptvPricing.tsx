@@ -21,6 +21,8 @@ import {
 import {
   COMPARISON_PRICE_LABEL,
   DEFAULT_DEVICE_COUNT,
+  DEVICE_SELECTOR_HEADING,
+  DEVICE_USAGE_NOTE,
   DEVICE_COUNTS,
   type DeviceCount,
   getDeviceCountLabel,
@@ -199,7 +201,7 @@ export default function IptvPricing() {
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:text-[15px] sm:leading-7">
             Flexible IPTV Pakete für jeden Bedarf – sofort aktiv und stabil. Wählen Sie zwischen 1 und 4
-            gleichzeitigen Verbindungen.
+            Geräten.
           </p>
         </div>
 
@@ -248,7 +250,7 @@ export default function IptvPricing() {
 
         <div className="mx-auto mt-6 max-w-[720px] sm:mt-8">
           <p className="mb-3 text-center text-[12px] font-medium text-[#F5F5F5]/75 sm:text-[13px]">
-            Anzahl gleichzeitiger Verbindungen
+            {DEVICE_SELECTOR_HEADING}
           </p>
           <div
             role="group"
@@ -295,6 +297,9 @@ export default function IptvPricing() {
               );
             })}
           </div>
+          <p className="mx-auto mt-3 max-w-[640px] text-center text-[12px] leading-5 text-[#F5F5F5]/72 sm:text-[13px] sm:leading-6">
+            {DEVICE_USAGE_NOTE}
+          </p>
         </div>
 
         <div className="mx-auto mt-6 grid max-w-[1240px] gap-7 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:items-stretch lg:gap-5">
@@ -383,8 +388,8 @@ export default function IptvPricing() {
                   ) : null}
                 </div>
 
-                <div className="mx-auto mt-3 w-full max-w-[250px] sm:mt-4 sm:max-w-[215px]">
-                  <div className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#AFFF00] px-2.5 py-1.5 text-[10px] font-extrabold uppercase leading-tight tracking-[0.04em] text-[#050505] sm:px-3 sm:text-[10.5px]">
+                <div className="mx-auto mt-3 w-full max-w-[250px] sm:mt-4 sm:max-w-[215px] lg:-mx-4 lg:w-auto lg:max-w-none">
+                  <div className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#AFFF00] px-2.5 py-1.5 text-[10px] font-extrabold uppercase leading-tight tracking-[0.04em] text-[#050505] sm:px-3 sm:text-[10.5px] lg:gap-1 lg:px-2 lg:text-[9px] lg:tracking-[0.01em] min-[1100px]:text-[10px] min-[1100px]:tracking-[0.04em]">
                     <MultiDeviceIcon className="h-3.5 w-3.5 shrink-0 text-[#050505]" />
                     <span>{item.deviceBadgeText}</span>
                   </div>

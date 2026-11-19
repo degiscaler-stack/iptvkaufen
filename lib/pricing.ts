@@ -128,15 +128,17 @@ export function getSimultaneousDevicesLabel(count: DeviceCount): string {
 }
 
 export function getDeviceBadgeText(count: DeviceCount): string {
-  return getSimultaneousDevicesLabel(count).toUpperCase();
+  return count === 1 ? "AUF 1 GERÄT NUTZBAR" : `AUF ${count} GERÄTEN NUTZBAR`;
 }
 
-export function getDeviceSupportText(count: DeviceCount): string {
-  if (count === 1) {
-    return "Streamen Sie auf einem Gerät Ihrer Wahl";
-  }
-  return `Gleichzeitig auf bis zu ${count} Geräten streamen`;
+export function getDeviceSupportText(_count: DeviceCount): string {
+  return "Ein Gerät gleichzeitig empfohlen";
 }
+
+export const DEVICE_SELECTOR_HEADING = "Anzahl der Geräte";
+
+export const DEVICE_USAGE_NOTE =
+  "Mehrere Geräte nutzbar, jedoch empfehlen wir immer nur einen Stream gleichzeitig. Parallele Nutzung kann zu Unterbrechungen führen. Für gleichzeitiges Fernsehen empfehlen wir separate Abonnements.";
 
 /**
  * Multi-device savings vs buying the same number of separate 1-device subscriptions.
@@ -249,7 +251,7 @@ export const MULTI_DEVICE_BADGE_TEXT = getDeviceBadgeText(1);
 export const MULTI_DEVICE_BADGE_SUPPORT = getDeviceSupportText(1);
 
 export const PRICING_TRUST_LINE =
-  "Bis zu 4 Geräte gleichzeitig · HD, Full HD & 4K · Einfache Einrichtung · Support auf Deutsch";
+  "Bis zu 4 Geräte nutzbar · HD, Full HD & 4K · Einfache Einrichtung · Support auf Deutsch";
 
 export const IPTV_PACKAGE_FEATURES = [
   "Flexible Pakete",
@@ -286,7 +288,7 @@ export const ORDER_PROCESS_HEADING = "So funktioniert Ihre Bestellung";
 export const ORDER_PROCESS_STEPS = [
   {
     title: "Paket und Geräteanzahl auswählen",
-    description: "Wählen Sie Laufzeit und die gewünschte Anzahl gleichzeitiger Verbindungen.",
+    description: "Wählen Sie Laufzeit und die gewünschte Anzahl der Geräte.",
   },
   {
     title: "Bestellung im Chat bestätigen",

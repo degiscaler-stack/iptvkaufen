@@ -17,7 +17,7 @@ export const FAQ_ITEMS = [
   {
     question: "Kann ich IPTV auf mehreren Geräten gleichzeitig nutzen?",
     answer:
-      "Ja. Je nach gewähltem Paket können Sie IPTV gleichzeitig auf bis zu 4 kompatiblen Geräten nutzen, zum Beispiel auf Smart TV, Smartphone, Tablet, Computer oder TV Box.",
+      "Ja, Ihr Abonnement ist je nach gewähltem Paket auf mehreren kompatiblen Geräten nutzbar, zum Beispiel auf Smart TV, Smartphone, Tablet, Computer oder TV Box. Für ein stabileres Seherlebnis empfehlen wir, immer nur einen Stream gleichzeitig zu nutzen; parallele Nutzung kann zu Unterbrechungen führen. Für gleichzeitiges Fernsehen empfehlen wir separate Abonnements.",
   },
   {
     question: "Wie schnell erhalte ich meinen Zugang nach der Bestellung?",
