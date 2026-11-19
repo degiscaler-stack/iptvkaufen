@@ -6,7 +6,7 @@ import { CTA_MOTION_DELAYS, ctaMotionStandardClass, ctaSolidGreenClass } from "@
 const highlights = [
   "Flexible IPTV-Pakete",
   "HD, Full HD und 4K Qualität",
-  "Auf bis zu 4 Geräten gleichzeitig nutzbar",
+  "Auf bis zu 4 Geräten nutzbar",
   "Schneller Zugriff nach der Bestellung",
 ];
 
@@ -35,10 +35,10 @@ export default function PremiumExperience() {
           <div className="mt-3 max-w-[590px] space-y-2 text-[14px] leading-6 text-[#F5F5F5]/86 sm:mt-4 sm:space-y-3 sm:text-base sm:leading-7">
             <p>
               Mit IPTV Kaufen erhalten Sie flexible Pakete, einfache Einrichtung und Nutzung auf bis
-              zu 4 Geräten gleichzeitig – in HD, Full HD und 4K.
+              zu 4 Geräten – in HD, Full HD und 4K.
             </p>
             <p>
-              TV, Smartphone oder Tablet – auf bis zu 4 Geräten gleichzeitig. Die Bedienung bleibt
+              TV, Smartphone oder Tablet – auf bis zu 4 Geräten nutzbar. Die Bedienung bleibt
               klar strukturiert, der Start nach der Bestellung schnell.
             </p>
           </div>

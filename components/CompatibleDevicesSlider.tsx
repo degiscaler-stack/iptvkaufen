@@ -20,11 +20,11 @@ export default function CompatibleDevicesSlider() {
             <span className="bg-gradient-to-r from-[#F5F5F5] via-[#A6FF00] to-[#F5F5F5] bg-clip-text text-transparent [text-shadow:none]">
               4 Geräten
             </span>{" "}
-            gleichzeitig streamen
+            nutzbar
           </h2>
           <p className="mx-auto mt-3 max-w-[640px] text-[14px] leading-6 text-[#E6E6E6]/88 sm:mt-4 sm:text-[15px] sm:leading-7">
-            Genießen Sie Ihren IPTV-Zugang gleichzeitig auf bis zu 4 kompatiblen Geräten – zum
-            Beispiel Smart TV, Smartphone, Tablet, Computer oder TV Box.
+            Nutzen Sie Ihren IPTV-Zugang auf bis zu 4 kompatiblen Geräten – zum
+            Beispiel Smart TV, Smartphone, Tablet, Computer oder TV Box. Für ein stabiles Seherlebnis empfehlen wir einen Stream gleichzeitig.
           </p>
         </div>
 

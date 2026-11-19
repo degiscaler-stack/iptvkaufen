@@ -124,7 +124,7 @@ export function getDeviceCountLabel(count: DeviceCount): string {
 }
 
 export function getSimultaneousDevicesLabel(count: DeviceCount): string {
-  return count === 1 ? "1 Gerät gleichzeitig" : `${count} Geräte gleichzeitig`;
+  return count === 1 ? "auf 1 Gerät nutzbar" : `auf ${count} Geräten nutzbar`;
 }
 
 export function getDeviceBadgeText(count: DeviceCount): string {
@@ -240,8 +240,8 @@ export function getOfferSchemaId(pkg: IptvPackage): string {
 }
 
 /**
- * Canonical Offer name: duration first, then simultaneous devices.
- * Example: "12 Monate – 3 Geräte gleichzeitig"
+ * Canonical Offer name: duration first, then usable device count.
+ * Example: "12 Monate – auf 3 Geräten nutzbar"
  */
 export function getOfferSchemaName(pkg: IptvPackage): string {
   return `${pkg.duration} – ${getSimultaneousDevicesLabel(pkg.deviceCount)}`;

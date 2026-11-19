@@ -21,8 +21,8 @@ const cards = [
       </>,
       <>
         Prüfen Sie vor dem Kauf die enthaltenen Sender, nachvollziehbare Leistungen und Hilfe bei
-        der Ersteinrichtung. Vergleichen Sie nicht nur den Preis, sondern auch Laufzeit, parallele
-        Verbindungen, EPG und Bildqualität. Maßgeblich sind die Angaben zum gewählten Paket.
+        der Ersteinrichtung. Vergleichen Sie nicht nur den Preis, sondern auch Laufzeit, nutzbare
+        Geräte, EPG und Bildqualität. Maßgeblich sind die Angaben zum gewählten Paket.
       </>,
       <>
         Vor dem Kauf lesen Sie Auswahlkriterien im{" "}
@@ -154,7 +154,7 @@ const cards = [
     ),
     paragraphs: [
       <>
-        Wer IPTV kaufen möchte, sollte vor der Bestellung Laufzeit, Anzahl paralleler Verbindungen,
+        Wer IPTV kaufen möchte, sollte vor der Bestellung Laufzeit, Anzahl nutzbarer Geräte,
         unterstützte Geräte und die Erreichbarkeit des Supports vergleichen. Im Ratgeber{" "}
         <Link href="/blog/iptv-abo" className={CONTEXTUAL_LINK_CLASS}>
           IPTV Abo
