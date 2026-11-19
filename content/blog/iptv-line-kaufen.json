@@ -54,7 +54,7 @@
     },
     {
       "question": "Ist Gerätezahl dasselbe wie gleichzeitige Verbindungen?",
-      "answer": "Nein. Ein Zugang kann auf mehreren Geräten eingerichtet sein, während nur eine festgelegte Zahl aktiver Streams parallel erlaubt ist. Bei iptvkaufenX wählen Sie Pakete mit 1 bis 4 gleichzeitigen Verbindungen. Andere Anbieter können andere Regeln haben."
+      "answer": "Nein. Ein Zugang kann auf mehreren Geräten eingerichtet sein, während nur eine festgelegte Zahl aktiver Streams parallel erlaubt ist. Bei iptvkaufenX wählen Sie Pakete für 1 bis 4 Geräte; empfohlen ist ein Stream gleichzeitig. Andere Anbieter können andere Regeln haben."
     },
     {
       "question": "Wie aktiviere ich eine IPTV Line?",
@@ -206,7 +206,7 @@
       "level": 2,
       "paragraphs": [
         "Ein Dienst kann erlauben, Zugangsdaten auf mehreren Geräten zu hinterlegen, und trotzdem die Zahl gleichzeitig aktiver Streams begrenzen. Sie können also TV, Stick und Smartphone einrichten – aber nicht unbedingt alle drei parallel abspielen.",
-        "Es gibt kein universelles Limit für alle Anbieter. Lesen Sie die Regel Ihres Pakets. Bei iptvkaufenX wählen Sie Laufzeit und die Anzahl gleichzeitiger Verbindungen; angeboten werden 1, 2, 3 oder 4 parallele Verbindungen, in der Produktkommunikation oft als gleichzeitig nutzbare Geräte beschrieben. Aktuelle Pakete stehen unter [Preise](/preise).",
+        "Es gibt kein universelles Limit für alle Anbieter. Lesen Sie die Regel Ihres Pakets. Bei iptvkaufenX wählen Sie Laufzeit und die Anzahl der Geräte; angeboten werden Pakete für 1, 2, 3 oder 4 Geräte. Für ein stabiles Seherlebnis empfehlen wir einen Stream gleichzeitig, für paralleles Fernsehen separate Abonnements. Aktuelle Pakete stehen unter [Preise](/preise).",
         "Wer Zugangsdaten teilt, verbraucht dasselbe Limit, ohne es zu merken. Überlastete Sessions wirken dann wie ein Serverproblem. Klären Sie vor der Einrichtung, wie viele parallele Streams Ihr Zugang wirklich erlaubt – nicht nur, auf wie vielen Geräten die App installiert ist."
       ]
     },

@@ -57,7 +57,7 @@
     },
     {
       "question": "Lohnt sich ein Paket mit mehreren Geräten?",
-      "answer": "Rechnerisch ja, wenn Sie mehrere Geräte gleichzeitig nutzen: Vier Geräte kosten bei 12 Monaten 124,99 €, das entspricht rund 31,25 € je Gerät statt 49,99 €. Nutzen Sie nur ein Gerät, ist das Paket für ein Gerät günstiger."
+      "answer": "Rechnerisch ja, wenn Sie Ihr Abo auf mehreren Geräten einrichten möchten: Vier Geräte kosten bei 12 Monaten 124,99 €, das entspricht rund 31,25 € je Gerät statt 49,99 €. Für ein stabiles Seherlebnis empfehlen wir einen Stream gleichzeitig; wer parallel auf mehreren Geräten schauen möchte, fährt mit separaten Abonnements besser. Nutzen Sie nur ein Gerät, ist das Paket für ein Gerät günstiger."
     },
     {
       "question": "Verlängert sich das Abo automatisch?",
@@ -198,14 +198,14 @@
       "heading": "Mehrere Geräte: Preis je Gerät",
       "level": 2,
       "paragraphs": [
-        "Wer mehrere Geräte gleichzeitig nutzt, zahlt für ein Paket mit mehreren Geräten weniger als für mehrere Einzelzugänge. „Gleichzeitig“ bezieht sich auf die Nutzung zur selben Zeit, nicht auf die Zahl der Geräte im Haushalt. Die Tabelle zeigt Beispiele für 12 Monate:"
+        "Ein Paket für mehrere Geräte kostet pro Gerät weniger als mehrere Einzelzugänge. Das Abo ist dann auf mehreren Geräten nutzbar; für ein stabiles Seherlebnis empfehlen wir, immer nur einen Stream gleichzeitig zu nutzen. Die Tabelle zeigt Beispiele für 12 Monate:"
       ],
       "blocks": [
         {
           "type": "comparison-table",
           "caption": "12-Monats-Pakete: Preis je Gerät (rechnerisch)",
           "headers": [
-            "Geräte gleichzeitig",
+            "Nutzbare Geräte",
             "Paketpreis",
             "Pro Gerät und Jahr",
             "Pro Gerät und Monat"
@@ -252,8 +252,8 @@
       "heading": "Beispiel: Haushalt mit zwei oder vier Geräten",
       "level": 2,
       "paragraphs": [
-        "Ein Beispiel zeigt den Effekt: Zwei Einzelzugänge für 12 Monate kosten 2 × 49,99 € = 99,98 €. Das Paket für zwei gleichzeitige Geräte kostet 74,99 € – rechnerisch 24,99 € weniger, also rund 25 %. Bei vier Geräten stehen 4 × 49,99 € = 199,96 € einem Paketpreis von 124,99 € gegenüber, eine Differenz von 74,97 € oder rund 37 %.",
-        "Der Vorteil gilt nur, wenn Sie die Geräte wirklich gleichzeitig nutzen. Läuft immer nur ein Fernseher, ist das Paket für ein Gerät günstiger. Prüfen Sie deshalb ehrlich, wie viele Personen zur selben Zeit schauen."
+        "Ein Beispiel zeigt den Effekt: Zwei Einzelzugänge für 12 Monate kosten 2 × 49,99 € = 99,98 €. Das Paket für zwei Geräte kostet 74,99 € – rechnerisch 24,99 € weniger, also rund 25 %. Bei vier Geräten stehen 4 × 49,99 € = 199,96 € einem Paketpreis von 124,99 € gegenüber, eine Differenz von 74,97 € oder rund 37 %.",
+        "Der Vorteil gilt nur, wenn Sie das Abo wirklich auf mehreren Geräten nutzen. Läuft immer nur ein Fernseher, ist das Paket für ein Gerät günstiger. Wenn mehrere Personen zur selben Zeit schauen, empfehlen wir separate Abonnements mit eigenen Zugangsdaten."
       ]
     },
     {
@@ -299,7 +299,7 @@
           "type": "process",
           "title": "Günstigen Anbieter auswählen",
           "steps": [
-            "Gerät und Zahl gleichzeitiger Nutzer festlegen.",
+            "Gerät und Zahl der Nutzer festlegen.",
             "Angebote auf Monatspreis und Preis je Gerät umrechnen.",
             "Zahlung, Verlängerung, Support und Rückerstattung vergleichen.",
             "Mit dem Test auf dem eigenen Gerät prüfen, ob Bild und Senderauswahl passen.",

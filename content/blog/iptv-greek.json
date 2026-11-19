@@ -58,7 +58,7 @@
     },
     {
       "question": "Können griechische Sender auf mehreren Geräten genutzt werden?",
-      "answer": "Das hängt von der erlaubten Anzahl gleichzeitiger Verbindungen im Paket ab. Wohnzimmer-TV plus Smartphone ist üblich – aber nur innerhalb der freigegebenen Limits. Schützen Sie Ihre Zugangsdaten und prüfen Sie die Paketregeln."
+      "answer": "Das hängt vom Paket ab: Bei iptvkaufenX ist ein Abo je nach Paket auf mehreren Geräten nutzbar, wir empfehlen jedoch einen Stream gleichzeitig. Wohnzimmer-TV plus Smartphone ist üblich – aber nur innerhalb der freigegebenen Limits. Schützen Sie Ihre Zugangsdaten und prüfen Sie die Paketregeln."
     },
     {
       "question": "Was kann ich tun, wenn griechische Zeichen falsch angezeigt werden?",
@@ -345,7 +345,7 @@
       "heading": "IPTV Greek auf mehreren Geräten nutzen",
       "level": 2,
       "paragraphs": [
-        "Typisch: Smart TV im Wohnzimmer, Smartphone für persönliche Nachrichten, Tablet für flexible Nutzung, optional Fire TV oder Android TV in einem weiteren Raum. Das funktioniert nur innerhalb der erlaubten gleichzeitigen Verbindungen.",
+        "Typisch: Smart TV im Wohnzimmer, Smartphone für persönliche Nachrichten, Tablet für flexible Nutzung, optional Fire TV oder Android TV in einem weiteren Raum. Für ein stabiles Seherlebnis empfehlen wir, immer nur ein Gerät gleichzeitig zu nutzen.",
         "Prüfen Sie die Paketregeln vor der Parallelnutzung. Wird das Limit überschritten, kann der Login abgelehnt oder ein Stream beendet werden.",
         "Account-Sicherheit bleibt zentral: Zugangsdaten nicht öffentlich teilen, nicht in Gruppenchats posten und starke Passwörter nutzen, wo Sie eigene Kontodaten setzen können."
       ],

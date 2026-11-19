@@ -66,7 +66,7 @@
     },
     {
       "question": "Kann Polish IPTV auf mehreren Geräten genutzt werden?",
-      "answer": "Das hängt von der erlaubten Anzahl gleichzeitiger Verbindungen im Paket ab. Wohnzimmer-TV plus Smartphone ist üblich – aber nur innerhalb der freigegebenen Limits. Schützen Sie Ihre Zugangsdaten und prüfen Sie die Paketregeln."
+      "answer": "Das hängt vom Paket ab: Bei iptvkaufenX ist ein Abo je nach Paket auf mehreren Geräten nutzbar, wir empfehlen jedoch einen Stream gleichzeitig. Wohnzimmer-TV plus Smartphone ist üblich – aber nur innerhalb der freigegebenen Limits. Schützen Sie Ihre Zugangsdaten und prüfen Sie die Paketregeln."
     },
     {
       "question": "Kann ich polnische Sender über Kabel in Deutschland empfangen?",
@@ -347,7 +347,7 @@
       "heading": "Polish IPTV auf mehreren Geräten nutzen",
       "level": 2,
       "paragraphs": [
-        "Typisch: Smart TV im Wohnzimmer, Fire TV oder Android TV in einem weiteren Raum, Smartphone für persönliche Nutzung, Tablet für flexible Wiedergabe und Computer für Desktop-Tests. Das funktioniert nur innerhalb der erlaubten gleichzeitigen Verbindungen.",
+        "Typisch: Smart TV im Wohnzimmer, Fire TV oder Android TV in einem weiteren Raum, Smartphone für persönliche Nutzung, Tablet für flexible Wiedergabe und Computer für Desktop-Tests. Für ein stabiles Seherlebnis empfehlen wir, immer nur ein Gerät gleichzeitig zu nutzen.",
         "Prüfen Sie die Paketregeln vor der Parallelnutzung. Wird das Limit überschritten, kann der Login abgelehnt oder ein Stream beendet werden.",
         "Account-Sicherheit bleibt zentral: Zugangsdaten nicht öffentlich teilen, nicht in Gruppenchats posten und starke Passwörter nutzen, wo Sie eigene Kontodaten setzen können."
       ],

@@ -60,7 +60,7 @@
     },
     {
       "question": "Lohnt sich ein größeres Paket für mehrere Geräte?",
-      "answer": "Meist ja, wenn mehrere Geräte gleichzeitig laufen sollen: Vier Geräte bei einem Monat kosten 24,99 € (rund 6,25 € je Gerät) statt viermal 9,99 €."
+      "answer": "Meist ja, wenn Sie Ihr Abo auf mehreren Geräten nutzen möchten: Vier Geräte bei einem Monat kosten 24,99 € (rund 6,25 € je Gerät) statt viermal 9,99 €. Für gleichzeitiges Fernsehen auf mehreren Geräten empfehlen wir separate Abonnements."
     }
   ],
   "sections": [
@@ -79,7 +79,7 @@
           "items": [
             "Gesamtkosten = Zugang + Internet + Gerät + gegebenenfalls App.",
             "iptvkaufenX: Test 3 € (24 Stunden, ein Gerät); Abo ab 9,99 € für 1 Monat und ein Gerät.",
-            "Längere Laufzeit senkt den rechnerischen Monatspreis; mehr gleichzeitige Geräte erhöhen den Paketpreis.",
+            "Längere Laufzeit senkt den rechnerischen Monatspreis; mehr nutzbare Geräte erhöhen den Paketpreis.",
             "Abos verlängern sich nicht automatisch – es entstehen keine ungewollten Folgezahlungen."
           ]
         }
@@ -104,7 +104,7 @@
           "rows": [
             [
               "Zugang / Abo",
-              "Laufzeit und Zahl gleichzeitiger Geräte",
+              "Laufzeit und Zahl der nutzbaren Geräte",
               "Preis je Laufzeit, Zahlungszeitpunkt, Verlängerungsregel"
             ],
             [
@@ -139,7 +139,7 @@
       "heading": "Die Preise von iptvkaufenX im Detail",
       "level": 2,
       "paragraphs": [
-        "Die Tabelle zeigt die Paketpreise je Laufzeit und Zahl gleichzeitiger Geräte. Sie entspricht der Preisübersicht der Startseite zum Zeitpunkt dieser Veröffentlichung; bei Abweichungen gelten die Angaben auf der Startseite."
+        "Die Tabelle zeigt die Paketpreise je Laufzeit und Zahl der nutzbaren Geräte. Sie entspricht der Preisübersicht der Startseite zum Zeitpunkt dieser Veröffentlichung; bei Abweichungen gelten die Angaben auf der Startseite."
       ],
       "blocks": [
         {
@@ -207,8 +207,8 @@
       "heading": "Mehrere Geräte: Wann sich ein größeres Paket lohnt",
       "level": 2,
       "paragraphs": [
-        "Ein Paket für mehrere gleichzeitige Geräte kostet mehr als eines für ein Gerät, aber weniger als mehrere Einzelzugänge: Vier Geräte bei 1 Monat kosten 24,99 € – rechnerisch 6,25 € je Gerät statt 9,99 €. Bei 12 Monaten sind es 124,99 € für vier Geräte, also rund 31,25 € je Gerät statt 49,99 €.",
-        "Beispiel: Ein Haushalt mit zwei gleichzeitigen Geräten zahlt für 6 Monate 44,99 €, das sind 7,50 € pro Monat. „Gleichzeitig“ bezieht sich auf die Nutzung zur selben Zeit, nicht auf die Zahl der Geräte im Haushalt."
+        "Ein Paket für mehrere Geräte kostet mehr als eines für ein Gerät, aber weniger als mehrere Einzelzugänge: Vier Geräte bei 1 Monat kosten 24,99 € – rechnerisch 6,25 € je Gerät statt 9,99 €. Bei 12 Monaten sind es 124,99 € für vier Geräte, also rund 31,25 € je Gerät statt 49,99 €. Für ein stabiles Seherlebnis empfehlen wir, immer nur einen Stream gleichzeitig zu nutzen; für paralleles Fernsehen eignen sich separate Abonnements.",
+        "Beispiel: Ein Haushalt mit einem Paket für zwei Geräte zahlt für 6 Monate 44,99 €, das sind 7,50 € pro Monat. Die Geräteanzahl gibt an, auf wie vielen Geräten das Abo nutzbar ist – nicht, dass alle gleichzeitig stabil streamen."
       ]
     },
     {

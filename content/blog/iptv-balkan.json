@@ -62,7 +62,7 @@
     },
     {
       "question": "Kann IPTV Balkan auf mehreren Geräten genutzt werden?",
-      "answer": "Das hängt von der erlaubten Anzahl gleichzeitiger Verbindungen im Paket ab. Wohnzimmer-TV plus Smartphone ist üblich – aber nur innerhalb der freigegebenen Limits. Prüfen Sie die Paketbedingungen und schützen Sie Ihre Zugangsdaten."
+      "answer": "Das hängt vom Paket ab: Bei iptvkaufenX ist ein Abo je nach Paket auf mehreren Geräten nutzbar, wir empfehlen jedoch einen Stream gleichzeitig. Wohnzimmer-TV plus Smartphone ist üblich – aber nur innerhalb der freigegebenen Limits. Prüfen Sie die Paketbedingungen und schützen Sie Ihre Zugangsdaten."
     },
     {
       "question": "Sind Balkan-Sender bei iptvkaufenX enthalten?",
@@ -317,7 +317,7 @@
       "heading": "IPTV Balkan auf mehreren Geräten nutzen",
       "level": 2,
       "paragraphs": [
-        "Typisch für mehrsprachige Haushalte: Smart TV im Wohnzimmer für gemeinsames Programm, Smartphone oder Tablet für persönliche Nachrichten, optional Fire TV oder Android TV in einem weiteren Raum. Das funktioniert nur innerhalb der erlaubten gleichzeitigen Verbindungen.",
+        "Typisch für mehrsprachige Haushalte: Smart TV im Wohnzimmer für gemeinsames Programm, Smartphone oder Tablet für persönliche Nachrichten, optional Fire TV oder Android TV in einem weiteren Raum. Für ein stabiles Seherlebnis empfehlen wir, immer nur ein Gerät gleichzeitig zu nutzen.",
         "Prüfen Sie vor der Parallelnutzung die Paketregeln. Wird das Limit überschritten, kann der Login abgelehnt oder ein Stream beendet werden. Das ist kein Fehler der App allein – oft die Folge zu vieler aktiver Sessions.",
         "Account-Sicherheit bleibt zentral: Zugangsdaten nicht teilen, nicht in Gruppenchats posten und starke Passwörter nutzen, wo Sie eigene Kontodaten setzen können. Wer Geräte plant, sollte auch klären, wer im Haushalt den Zugang verwaltet."
       ],
